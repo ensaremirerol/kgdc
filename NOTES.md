@@ -100,6 +100,34 @@ what happened → what fixed it or would.
     per-class individual counts it issued precise, grounded hints — but it
     also over-counts, hence 23.
 
+## Plan → mint → fill (the structure that works for small workers)
+
+26. **Let the big model decide WHAT exists; let the small model only fill.**
+    Orchestrator plans every individual (class + label), server mints them
+    (`mint`), tasks are sets of minted IRIs to fill (`targets`) plus IRIs to
+    link to (`related`), workers `set(subject, predicate, {type, value})`.
+    First run on this structure: all 34 individuals present in the right
+    numbers, 0 unfilled, links land, 2 min, $0.01–0.02 — after a dozen runs
+    where free-form workers never got past 1 of 10 processes.
+27. **Plan on the plain document.** With `[s1] …` segment markers the 27B
+    planner listed "the persons in each segment" (16 Persons, nothing
+    else). Plan on the raw text and attach segments afterwards by label
+    match.
+28. **Mint copyable IRIs.** Small models cannot reproduce a 32-hex UUID —
+    nano drifted into `49f0f4f0b4f94f4f8f4f4f4f…` and every link was rejected
+    as unknown. `ex:<class>/<label-slug>` (unique per run) fixed it at once.
+    Keep `style: "uuid"` for when identity must not leak the label.
+29. **Coverage must be measured, not asked.** `unfilled_targets` (minted
+    individuals with no property beyond type/label) replaced the LLM's own
+    counting, which over-counted ("2 visits") and under-counted at will.
+    Exempt classes that have no properties (a Person is complete with a
+    label).
+30. **Small models fill MUST slots and stop.** With the schema template in
+    front of them they still skip optional-but-stated properties (date,
+    performer, status, unit). Give them a per-target checklist ("go through
+    the template's properties one by one") rather than "everything the text
+    supports".
+
 ## Cost (vignette_065, 12–17 calls)
 
 - 27B workers via LiteLLM: n/a (internal); ~3.5 min.

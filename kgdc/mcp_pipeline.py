@@ -18,7 +18,7 @@ from .pipeline import _segment
 from .progress import log
 from .schema import Schema
 
-AGENT_TOOLS = ["lookup", "add_triple", "add_triples", "validate", "finalize"]   # vocabulary slice is in the system prompt
+AGENT_TOOLS = ["set", "set_many", "validate", "finalize"]   # no Turtle: typed values on pre-minted targets
 MAX_TURNS = int(os.getenv("KGDC_AGENT_TURNS", "40"))   # one individual per call: a 10-measurement task needs ~15
 MAX_RERUNS = int(os.getenv("KGDC_MAX_RERUNS", "1"))
 
@@ -91,31 +91,37 @@ def _known_block(mcp: Mcp) -> str:
 
 
 def _worker_system(task: dict, vocab: str, ctx_notes: str, known: str = "") -> str:
-    return f"""You build part of a knowledge graph with tools. Your task {task['id']}: extract every
-{task['class']} the TEXT states, and only that (plus the individuals it links to directly).
+    targets = "\n".join(f"  {t}" for t in task.get("target_lines", [])) or "  (none)"
+    related = "\n".join(f"  {t}" for t in task.get("related_lines", [])) or "  (none)"
+    return f"""You fill in a knowledge graph with tools. The orchestrator has already created the
+individuals; you set their properties from the TEXT. Nothing else.
 
-How to work:
-1. Call `lookup` ONCE per thing that another task may already have built (people, units,
-   statuses, places): reuse the IRI you find. An empty result means it does not exist yet —
-   mint it yourself in the next call; never look up the same thing twice.
-2. Add facts with `add_triple(subject, predicate, object)` — one triple per call, terms as
-   short strings: subject "ex:person_Ann", predicate "a" or "chr:hasCode", object
-   "chr:Person", "ex:unit_cm", "<https://loinc.org/8302-2>" or a literal like
-   "\"104.0\"^^xsd:float". Prefixes are predefined. (`add_triples` with `lines` exists for
-   several statements at once, but keep calls small.) The response lists rejections with
-   reasons and the SHACL violations on your subjects. Fix what the text lets you fix; do
-   not resend a rejected triple unchanged.
-   If a triple is rejected as "unknown individual", CREATE that individual (its `a` type and
-   rdfs:label) in the same call and resend the triple — do not drop the link.
-   Keep going until EVERY instance the text states is added (ten measurements in the text
-   means ten add calls); only then finalize.
-3. When done, call `finalize` with notes: every MUST slot you could not fill from the text
-   ("chr:hasX — not stated"), anything ambiguous, anything rejected you believe is right.
+YOUR TARGETS (the only subjects you may write; each is "<iri> a <class> ; label"):
+{targets}
+
+RELATED INDIVIDUALS you may link to (use these exact IRIs as {{"type":"uri"}} values):
+{related}
+
+How to work — a checklist, not a judgement call:
+1. Take the TEMPLATE for your class in the vocabulary below. For EACH target, go through the
+   template's properties ONE BY ONE: if the TEXT or the SHARED CONTEXT gives the value, set it;
+   if not, skip it. Optional properties count too — "MUST" only says what the validator
+   demands, not what to extract. The task notes may tell you where a value comes from
+   (e.g. which person is the performer, which date applies).
+2. Send one `set_many` per target:
+   {{"subject": "<target iri>", "predicate": "chr:hasX", "object": {{"type": ..., "value": ...}}}}.
+   Object types: "uri" (a RELATED IRI copied exactly, or an external IRI like
+   https://loinc.org/8302-2), "float", "integer", "string", "dateTime", "date", "boolean".
+   The response lists rejections with reasons and the SHACL violations on your targets.
+   Fix what the text lets you fix; do not resend a rejected triple unchanged.
+3. Cover EVERY target (ten targets = ten set_many calls). Then call `finalize` with notes:
+   every MUST slot you could not fill from the text ("chr:hasX — not stated"), and anything
+   ambiguous.
 
 {prompts.NO_FABRICATION}
 {"Task hint from the orchestrator: " + task['hint'] if task.get('hint') else ""}
-{ctx_notes}{known}
-VOCABULARY FOR THIS TASK:
+{ctx_notes}
+VOCABULARY FOR THIS TASK (properties per class, with expected value types):
 {vocab}
 
 SHARED CONTEXT (facts stated once for the whole document; they count as text):
@@ -131,10 +137,9 @@ def run_worker(mcp: Mcp, task: dict, task_ctx: str) -> dict:
     name = task["class"].split(":")[-1]
     vocab = mcp.call("vocabulary", **{"class": task["class"]})
     ctx_notes = prompts._task(task_ctx) if task_ctx else ""
-    messages = [{"role": "system", "content": _worker_system(task, vocab, ctx_notes, _known_block(mcp))},
+    messages = [{"role": "system", "content": _worker_system(task, vocab, ctx_notes)},
                 {"role": "user", "content": f"Start. Task id: {task['id']}."}]
-    have_graph = mcp.call("status")["triples"] > 0
-    tools = mcp.openai_tools([t for t in AGENT_TOOLS if have_graph or t != "lookup"])   # nothing to look up in an empty graph
+    tools = mcp.openai_tools(AGENT_TOOLS)
     trace = {"task": task["id"], "class": task["class"], "turns": 0, "calls": [], "finalized": False}
     log(f"  {name} [{task['id']}]: worker starts")
     seen_snippets: set[str] = set()
@@ -153,7 +158,7 @@ def run_worker(mcp: Mcp, task: dict, task_ctx: str) -> dict:
                 trace["finalized"] = True
                 log(f"  {name}: malformed tool calls, finalized with note")
                 return trace
-            messages.append({"role": "user", "content": "Your last tool call was not valid JSON. Call exactly ONE tool with small arguments: prefer add_triple(subject, predicate, object) for one triple at a time."})
+            messages.append({"role": "user", "content": "Your last tool call was not valid JSON. Call exactly ONE tool with small arguments: `set` for one property at a time."})
             continue
         except Exception as e:  # noqa: BLE001 — a dead endpoint must not take the whole run down
             note = f"worker LLM failure: {str(e)[:200]}"
@@ -170,7 +175,7 @@ def run_worker(mcp: Mcp, task: dict, task_ctx: str) -> dict:
             text_only += 1
             if text_only > 2:
                 break
-            messages.append({"role": "user", "content": "Use the tools. Call add_triples for each individual, then finalize."})
+            messages.append({"role": "user", "content": "Use the tools. Call set_many for each target, then finalize."})
             continue
         for c in msg.tool_calls:
             args = salvage_args(c.function.arguments or "{}")
@@ -182,11 +187,10 @@ def run_worker(mcp: Mcp, task: dict, task_ctx: str) -> dict:
                 continue
             if len(c.function.arguments or "") > 3000 and "task_id" not in args:
                 log(f"  {name}: salvaged arguments from a degenerate tool call")
-            if c.function.name in ("add_triple", "add_triples", "finalize", "validate"):
+            if c.function.name in ("set", "set_many", "add_triple", "add_triples", "finalize", "validate"):
                 args["task_id"] = task["id"]
-            if c.function.name in ("add_triple", "add_triples"):
-                key = " ".join((str(args.get("turtle", "")) + " " + " ".join(args.get("lines") or [])
-                                + " " + " ".join(str(args.get(k, "")) for k in ("subject", "predicate", "object"))).split())
+            if c.function.name in ("set", "set_many", "add_triple", "add_triples"):
+                key = json.dumps({k: v for k, v in args.items() if k != "task_id"}, sort_keys=True)
                 if key in seen_snippets:   # identical snippet again: the model is stuck, stop here
                     messages.append({"role": "tool", "tool_call_id": c.id, "content": "identical snippet already rejected; change it or finalize with a note"})
                     mcp.call("finalize", task_id=task["id"], notes=["worker repeated a rejected snippet and was stopped"])
@@ -197,10 +201,10 @@ def run_worker(mcp: Mcp, task: dict, task_ctx: str) -> dict:
             res = mcp.call(c.function.name, **args)
             short = res if isinstance(res, str) else json.dumps(res)
             trace["calls"].append({"tool": c.function.name, "args": {k: (v[:200] if isinstance(v, str) else v) for k, v in args.items()}, "result": short[:600]})
-            if c.function.name in ("add_triple", "add_triples") and isinstance(res, dict):
+            if c.function.name in ("set", "set_many", "add_triple", "add_triples") and isinstance(res, dict):
                 log(f"  {name}: +{res.get('accepted', 0)} triples, {len(res.get('rejected', []))} rejected, {len(res.get('violations_for_task', []))} violations")
             messages.append({"role": "tool", "tool_call_id": c.id, "content": short[:6000]})
-            if c.function.name in ("add_triple", "add_triples") and isinstance(res, dict) and res.get("accepted", 0) > 0:
+            if c.function.name in ("set", "set_many", "add_triple", "add_triples") and isinstance(res, dict) and res.get("accepted", 0) > 0:
                 added += res["accepted"]
                 idle_since_add = 0
             else:
@@ -224,39 +228,88 @@ def run_worker(mcp: Mcp, task: dict, task_ctx: str) -> dict:
     return trace
 
 
+def _plan_prompt(schema: Schema, text: str, present: list[str], task: str) -> str:
+    classes = "\n".join(f"- {c}: {schema.classes[c]}" for c in present)
+    return f"""List EVERY individual the document states, as instances of these classes only:
+{classes}
+{prompts._task(task)}
+Rules: one entry per real-world thing the text describes, for EVERY class above that the text
+instantiates — including small ones like units of measure (one Unit per distinct unit symbol),
+statuses (one ProcessStatus per distinct status value), care units, persons. Ten measurements
+= ten Measurement entries and ten MeasurementProcess entries. Each real thing appears once
+(the same person mentioned ten times is one entry). The label is a short name taken from the
+text. Do not invent things the text does not state.
+
+Return ONLY JSON: [{{"class": "<qname>", "label": "<from text>"}}]
+
+DOCUMENT:
+\"\"\"{text.strip()}\"\"\"
+"""
+
+
 def run_mcp(schema: Schema, text: str, workers: int = 4, task: str = "") -> McpResult:
     mcp = Mcp(schema.ontology_path, schema.shapes_path)
     try:
         context, segs = _segment(schema, text, task)
         present = sorted({c for s in segs for c in s.get("concepts", []) if c in schema.classes})
-        levels = mcp.call("status", **{"class": ",".join(present)})["build_order"]
+        # dependencies of present classes that no segment named (units, statuses, persons) are
+        # still needed as link targets: let the planner see them
+        for c in list(present):
+            for d in schema.subset([c]).classes:
+                if d not in present:
+                    present.append(d)
+        present.sort()
+        # ---- plan + mint (orchestrator) ----
+        log("planning individuals (orchestrator) ...")
+        plan = json.loads(llm.strip_fences(llm.chat(_plan_prompt(schema, text, present, task), model=llm.BIG)))
+        plan = [e for e in plan if e.get("class") in schema.classes and e.get("label")]
+        # attach each entity to the segment that mentions its label (verbatim, case-insensitive);
+        # things only in the header (or unmatched) get the whole document
+        for e in plan:
+            key = e["label"].lower()
+            e["segment"] = next((s["id"] for s in segs if key and key in s["text"].lower()), None)
+        minted = mcp.call("mint", items=[{"class": e["class"], "label": e["label"]} for e in plan])
+        for e, m in zip(plan, minted):
+            e["uri"] = m["uri"]
+        by_class: dict[str, list[dict]] = {}
+        for e in plan:
+            by_class.setdefault(e["class"], []).append(e)
+        log(f"minted {len(minted)} individuals: " + ", ".join(f"{c.split(':')[-1]}×{len(v)}" for c, v in sorted(by_class.items())))
+        levels = mcp.call("status", **{"class": ",".join(by_class)})["build_order"]
         log("build order: " + " -> ".join("[" + ", ".join(c.split(":")[-1] for c in l) + "]" for l in levels))
+        line = lambda e: f'{e["uri"]} a {e["class"]} ; "{e["label"]}"'
+        seg_by_id = {s["id"]: s["text"] for s in segs}
         traces, decisions = [], []
         for li, level in enumerate(levels):
             tasks = []
             for cls in level:
-                spans = [s["text"] for s in segs if cls in s.get("concepts", [])]
-                tasks.append(mcp.call("create_task", **{"class": cls, "text": "\n\n".join(spans) or text, "context": context}))
-            log(f"level {li}: {len(tasks)} task(s)")
+                ents = by_class.get(cls, [])
+                if not ents:
+                    continue
+                deps = schema.subset([cls]).classes
+                related = [e for c2, es in by_class.items() if c2 != cls and c2 in deps for e in es]
+                spans = {seg_by_id[e["segment"]] for e in ents if e.get("segment") in seg_by_id}
+                t = mcp.call("create_task", targets=[e["uri"] for e in ents], related=[e["uri"] for e in related],
+                             text="\n\n".join(sorted(spans)) or text, context=context)
+                t["target_lines"], t["related_lines"] = [line(e) for e in ents], [line(e) for e in related]
+                tasks.append(t)
+            log(f"level {li}: {len(tasks)} task(s), {sum(len(t['targets']) for t in tasks)} targets")
             with ThreadPoolExecutor(max_workers=workers) as ex:
                 traces += list(ex.map(lambda t: run_worker(mcp, t, task), tasks))
-            # orchestrator judgement for this level
+            # ---- orchestrator judgement: deterministic coverage + notes/violations ----
             status = mcp.call("status")
             viol = mcp.call("validate")
-            for t in status["tasks"]:
-                t["_viol"] = [v for v in viol if any(v["focus"].endswith(s.rsplit("/", 1)[-1]) for s in t["subjects"])]
-            built = {}
-            for line in mcp.call("lookup"):
-                cls = line.split(" a ", 1)[1].split(" ;")[0] if " a " in line else "?"
-                built[cls] = built.get(cls, 0) + 1
-            view = [{"task_id": t["id"], "class": t["class"], "accepted": t["accepted"], "rejected": t["rejected"], "notes": t["notes"], "violations": t["_viol"][:15],
-                     "individuals_of_task_class_in_graph": built.get(t["class"], 0),
-                     "text": (t["context"] + "\n" + t["text"])[:4000]}
-                    for t in status["tasks"] if t["id"] in {x["id"] for x in tasks}]
-            log(f"level {li}: orchestrator reviewing {len(view)} task(s), {sum(len(v['violations']) for v in view)} violation(s)")
-            prompt = _decision_prompt(view)
+            unfilled = status.get("unfilled_targets", {})
+            view = []
+            for t in tasks:
+                st_t = next(x for x in status["tasks"] if x["id"] == t["id"])
+                tv = [v for v in viol if any(v["focus"].endswith(s.rsplit("/", 1)[-1]) for s in st_t["subjects"])]
+                view.append({"task_id": t["id"], "class": t["class"], "targets": len(t["targets"]), "unfilled_targets": unfilled.get(t["id"], []),
+                             "accepted": st_t["accepted"], "rejected": st_t["rejected"], "notes": st_t["notes"], "violations": tv[:15],
+                             "text": (t["context"] + "\n" + t["text"])[:4000]})
+            log(f"level {li}: orchestrator reviewing {len(view)} task(s), {sum(len(v['violations']) for v in view)} violation(s), {sum(len(v['unfilled_targets']) for v in view)} unfilled target(s)")
             try:
-                decs = json.loads(llm.strip_fences(llm.chat(prompt, model=llm.BIG)))
+                decs = json.loads(llm.strip_fences(llm.chat(_decision_prompt(view), model=llm.BIG)))
             except (json.JSONDecodeError, TypeError):
                 decs = []
             for d in decs:
@@ -271,14 +324,13 @@ def run_mcp(schema: Schema, text: str, workers: int = 4, task: str = "") -> McpR
                 elif d.get("action") == "rerun" and t.get("_reruns", 0) < MAX_RERUNS:
                     t["_reruns"] = t.get("_reruns", 0) + 1
                     log(f"  {t['class'].split(':')[-1]}: rerun — {str(d.get('hint', ''))[:80]}")
-                    # keep what the task built; the rerun adds/corrects (discarding lost correct work
-                    # whenever the orchestrator over-counted). An explicit "discard": true in the decision overrides.
                     t2 = mcp.call("reopen_task", task_id=t["id"], hint=d.get("hint", ""), discard_triples=bool(d.get("discard")))
+                    t2["target_lines"], t2["related_lines"] = t["target_lines"], t["related_lines"]
                     traces.append(run_worker(mcp, t2, task))
         final_status = mcp.call("status")
         viol = mcp.call("validate")
         ttl = mcp.call("export")
-        log(f"final: {'conforms' if not viol else f'{len(viol)} violation(s)'}, {final_status['triples']} triples, {len(final_status['issues'])} issue(s)")
+        log(f"final: {'conforms' if not viol else f'{len(viol)} violation(s)'}, {final_status['triples']} triples, {sum(len(v) for v in final_status.get('unfilled_targets', {}).values())} unfilled target(s), {len(final_status['issues'])} issue(s)")
         return McpResult(ttl=ttl, conforms=not viol, violations=viol, tasks=final_status["tasks"], issues=final_status["issues"],
                          decisions=decisions, trace=traces, llm_calls=len(llm.USAGE), usage=llm.usage_summary())
     finally:
@@ -293,10 +345,9 @@ def _decision_prompt(view: list[dict]) -> str:
 Never ask for facts to be invented to satisfy a violation. Prefer "accept" when in doubt.
 Each task carries the text it was given ("text"): check claims in the notes against it before
 deciding — a note that something is "not stated" is only wrong if the text does state it.
-Check COVERAGE: count the instances of the task's class the text describes and compare with
-"individuals_of_task_class_in_graph". If the task built clearly fewer (e.g. 1 of 10
-measurements), that is a "rerun" with the hint "the text states N <class>; you built K — add
-the missing ones: <list them>".
+COVERAGE is measured for you: "unfilled_targets" lists the task's individuals that got no
+property at all. A non-empty list is a "rerun" with the hint naming those targets. Do not
+rerun for coverage on your own count.
 
 TASKS:
 {json.dumps(view, indent=1)}

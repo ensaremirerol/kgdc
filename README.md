@@ -78,5 +78,12 @@ cd kgdc-mcp && cargo build --release
 | `status(class?)` | orchestrator | conformance, tasks, notes, issues, bottom-up build order |
 | `export()` | any | the graph as Turtle |
 
-`tests/test_mcp.py` drives it over stdio (skipped until the binary is built).
-The Python agent loop / orchestrator against this server is the next piece.
+`--mcp` mode (`kgdc/mcp_pipeline.py`) drives it: the orchestrator (big model)
+segments, **plans every individual** (class + label) and mints them
+(`mint` → `ex:<class>/<label-slug>`); each task is a set of minted IRIs to
+fill (`targets`) plus IRIs it may link to (`related`); workers (small model)
+call `set`/`set_many` with typed values — `{"type": "uri"|"float"|"integer"|
+"string"|"dateTime"|"date"|"boolean", "value": ...}` — never Turtle. Coverage
+is measured by the server (`status.unfilled_targets`); the orchestrator
+reviews notes, violations and coverage per level and reruns additively,
+raises issues, or accepts. `tests/test_mcp.py` drives the server over stdio.

@@ -187,6 +187,8 @@ struct Task {
     class: String, // qname
     text: String,
     context: String,
+    targets: Vec<String>,  // minted IRIs this task must fill (subjects it may write)
+    related: Vec<String>,  // minted IRIs it may link to
     status: String, // open | done | discarded
     hint: String,
     notes: Vec<String>,
@@ -209,7 +211,35 @@ struct Server(Arc<Mutex<State>>);
 #[derive(Deserialize, schemars::JsonSchema)]
 struct ClassParam { #[serde(default)] class: Option<String> }
 #[derive(Deserialize, schemars::JsonSchema)]
-struct CreateTaskParam { class: String, text: String, #[serde(default)] context: String }
+struct CreateTaskParam {
+    /// Class qname; optional when `targets` are given (derived from the first target's type).
+    #[serde(default)] class: String,
+    text: String,
+    #[serde(default)] context: String,
+    /// Minted IRIs this task must fill (only these may be subjects). Empty = free-form task.
+    #[serde(default)] targets: Vec<String>,
+    /// Minted IRIs the task may link to.
+    #[serde(default)] related: Vec<String>,
+}
+#[derive(Deserialize, schemars::JsonSchema)]
+struct MintItem { class: String, #[serde(default)] label: String }
+#[derive(Deserialize, schemars::JsonSchema)]
+struct MintParam {
+    items: Vec<MintItem>,
+    /// "slug" (default): ex:<class>/<label-slug>, unique per run — small models can copy it. "uuid": ex:<class>/<uuid>.
+    #[serde(default)] style: String,
+}
+#[derive(Serialize, schemars::JsonSchema)]
+struct Minted { uri: String, class: String, label: String }
+/// A typed value: {"type": "uri"|"string"|"float"|"integer"|"dateTime"|"date"|"boolean"|"literal", "value": ..., "datatype": optional qname for "literal"}
+#[derive(Deserialize, schemars::JsonSchema, Clone)]
+struct Value { #[serde(rename = "type")] kind: String, value: serde_json::Value, #[serde(default)] datatype: String }
+#[derive(Deserialize, schemars::JsonSchema, Clone)]
+struct SetItem { subject: String, predicate: String, object: Value }
+#[derive(Deserialize, schemars::JsonSchema)]
+struct SetParam { task_id: String, subject: String, predicate: String, object: Value }
+#[derive(Deserialize, schemars::JsonSchema)]
+struct SetManyParam { task_id: String, triples: Vec<SetItem> }
 #[derive(Deserialize, schemars::JsonSchema)]
 struct AddParam {
     task_id: String,
@@ -238,7 +268,7 @@ struct AddResult { accepted: usize, rejected: Vec<String>, subjects_in_task: usi
 #[derive(Clone, Serialize, schemars::JsonSchema)]
 struct Violation { focus: String, path: String, message: String, severity: String }
 #[derive(Serialize, schemars::JsonSchema)]
-struct Status { triples: usize, conforms: bool, violations: usize, tasks: Vec<Task>, issues: Vec<String>, build_order: Vec<Vec<String>> }
+struct Status { triples: usize, conforms: bool, violations: usize, tasks: Vec<Task>, issues: Vec<String>, build_order: Vec<Vec<String>>, unfilled_targets: HashMap<String, Vec<String>> }
 
 #[tool_router(server_handler)]
 impl Server {
@@ -294,11 +324,21 @@ impl Server {
     }
 
     #[tool(description = "Orchestrator: register a scoped extraction job. `class` = qname the agent must build, `text` = the segment, `context` = shared facts. Returns the task.")]
-    fn create_task(&self, Parameters(CreateTaskParam { class, text, context }): Parameters<CreateTaskParam>) -> Result<Json<Task>, String> {
+    fn create_task(&self, Parameters(CreateTaskParam { class, text, context, targets, related }): Parameters<CreateTaskParam>) -> Result<Json<Task>, String> {
         let mut st = self.0.lock().unwrap();
-        let iri = st.vocab.expand(&class);
-        if !st.vocab.classes.contains_key(&iri) { return Err(format!("{class} is not a class of the vocabulary")); }
-        let t = Task { id: format!("t{}", st.tasks.len() + 1), class: st.vocab.qname(&iri), text, context,
+        let targets: Vec<String> = targets.iter().map(|t| st.vocab.expand(t)).collect();
+        let related: Vec<String> = related.iter().map(|t| st.vocab.expand(t)).collect();
+        for u in targets.iter().chain(related.iter()) {
+            if st.graph.triples_for_subject(NamedNodeRef::new(u).map_err(|e| e.to_string())?).next().is_none() {
+                return Err(format!("{} is not a minted individual (use mint first)", st.vocab.qname(u)));
+            }
+        }
+        let iri = if !class.is_empty() { st.vocab.expand(&class) } else {
+            let first = targets.first().ok_or("give `class` or at least one target")?;
+            iri_objects(&st.graph, NamedOrBlankNodeRef::NamedNode(NamedNodeRef::new(first).unwrap()), rdf::TYPE).into_iter().next().ok_or("target has no type")?
+        };
+        if !st.vocab.classes.contains_key(&iri) { return Err(format!("{} is not a class of the vocabulary", st.vocab.qname(&iri))); }
+        let t = Task { id: format!("t{}", st.tasks.len() + 1), class: st.vocab.qname(&iri), text, context, targets, related,
             status: "open".into(), hint: String::new(), notes: vec![], subjects: vec![], accepted: 0, rejected: 0 };
         st.tasks.push(t.clone());
         Ok(Json(t))
@@ -330,12 +370,21 @@ impl Server {
         let task_cls = st.vocab.expand(&st.tasks[ti].class);
         let mut scope = st.vocab.dependencies(&task_cls);
         scope.insert(task_cls);
+        let targets: HashSet<String> = st.tasks[ti].targets.iter().cloned().collect();
         let cap = st.max_subjects_per_task;
         let mut subjects: HashSet<String> = st.tasks[ti].subjects.iter().cloned().collect();
         let mut accepted = 0usize;
         let mut keep: Vec<Triple> = vec![];
         let batch_subjects: HashSet<String> = g.iter().filter_map(|t| match t.subject { NamedOrBlankNodeRef::NamedNode(n) => Some(n.as_str().to_string()), _ => None }).collect();
         for t in g.iter() {
+            if !targets.is_empty() {
+                if let NamedOrBlankNodeRef::NamedNode(sn) = t.subject {
+                    if !targets.contains(sn.as_str()) {
+                        rejected.push(format!("{} -> {} is not one of this task's targets", short_triple(&st.vocab, t), st.vocab.qname(sn.as_str())));
+                        continue;
+                    }
+                }
+            }
             match gate(&st.vocab, &st.graph, &scope, t, &subjects, cap) {
                 Ok(()) => {
                     if let TermRef::NamedNode(o) = t.object {   // vocabulary passed: the object must be a real individual
@@ -383,6 +432,56 @@ impl Server {
         }
         let line = format!("{} {} {} .", subject.trim(), predicate, object);
         self.add_triples(Parameters(AddParam { task_id, lines: vec![line], turtle: String::new() }))
+    }
+
+    #[tool(description = "Orchestrator: create individuals up front. Each item {class, label} gets a fresh IRI `ex:<class>/<uuid>`, its rdf:type and rdfs:label. Returns the minted IRIs; hand them to workers as targets / related.")]
+    fn mint(&self, Parameters(MintParam { items, style }): Parameters<MintParam>) -> Result<Json<Vec<Minted>>, String> {
+        let mut st = self.0.lock().unwrap();
+        let mut out = vec![];
+        for it in items {
+            let cls = st.vocab.expand(&it.class);
+            if !st.vocab.classes.contains_key(&cls) { return Err(format!("{} is not a class of the vocabulary", it.class)); }
+            let base = format!("{}{}/", st.vocab.ns, local(&cls).to_lowercase());
+            let uri = if style == "uuid" || it.label.trim().is_empty() {
+                format!("{base}{}", uuid::Uuid::new_v4().simple())
+            } else {
+                let slug: String = it.label.to_lowercase().chars().map(|c| if c.is_ascii_alphanumeric() { c } else { '_' }).collect::<String>()
+                    .split('_').filter(|p| !p.is_empty()).collect::<Vec<_>>().join("_").chars().take(40).collect();
+                let slug = if slug.is_empty() { format!("x{}", &uuid::Uuid::new_v4().simple().to_string()[..6]) } else { slug };   // e.g. label "%"
+                let mut candidate = format!("{base}{slug}");
+                let mut n = 2;
+                while st.graph.triples_for_subject(NamedNodeRef::new_unchecked(&candidate)).next().is_some() {
+                    candidate = format!("{base}{slug}_{n}"); n += 1;
+                }
+                candidate
+            };
+            let subj = NamedNode::new_unchecked(uri.clone());
+            st.graph.insert(TripleRef::new(subj.as_ref(), rdf::TYPE, NamedNodeRef::new_unchecked(&cls)));
+            if !it.label.is_empty() {
+                st.graph.insert(TripleRef::new(subj.as_ref(), rdfs::LABEL, oxrdf::LiteralRef::new_simple_literal(&it.label)));
+            }
+            out.push(Minted { uri: st.vocab.qname(&uri), class: st.vocab.qname(&cls), label: it.label });
+        }
+        Ok(Json(out))
+    }
+
+    #[tool(description = "Agent: set ONE property of a target individual. `object` is typed: {\"type\":\"uri\",\"value\":\"ex:unit/…\"} for links (must be a minted/related IRI or an external IRI like https://loinc.org/8302-2), or {\"type\":\"float\"|\"integer\"|\"string\"|\"dateTime\"|\"date\"|\"boolean\",\"value\":…} for literals ({\"type\":\"literal\",\"datatype\":\"xsd:…\"} for others). No Turtle syntax involved. Same gate as add_triples; returns rejections and the task's SHACL violations.")]
+    fn set(&self, Parameters(SetParam { task_id, subject, predicate, object }): Parameters<SetParam>) -> Result<Json<AddResult>, String> {
+        self.set_many(Parameters(SetManyParam { task_id, triples: vec![SetItem { subject, predicate, object }] }))
+    }
+
+    #[tool(description = "Agent: set several properties at once (same item shape as `set`). Each triple is gated on its own.")]
+    fn set_many(&self, Parameters(SetManyParam { task_id, triples }): Parameters<SetManyParam>) -> Result<Json<AddResult>, String> {
+        let lines: Vec<String> = {
+            let st = self.0.lock().unwrap();
+            triples.iter().map(|t| {
+                let p = st.vocab.expand(&t.predicate);
+                let dt = st.vocab.properties.get(&p).and_then(|i| i.ranges.iter().find(|r| r.starts_with(XSD)).cloned()).map(|r| st.vocab.qname(&r));
+                let obj = render_value(&st.vocab, &t.object, dt.as_deref());
+                format!("<{}> {} {} .", st.vocab.expand(&t.subject), t.predicate.trim(), obj)   // full IRIs: minted local names contain '/' 
+            }).collect()
+        };
+        self.add_triples(Parameters(AddParam { task_id, lines, turtle: String::new() }))
     }
 
     #[tool(description = "Agent: find existing individuals to link to instead of minting new ones. `query` = case-insensitive substring of label or IRI; `class` (qname) restricts by type.")]
@@ -461,7 +560,18 @@ impl Server {
             None => st.tasks.iter().map(|t| st.vocab.expand(&t.class)).collect(),
         };
         let order = build_order(&st.vocab, &classes).into_iter().map(|l| l.into_iter().map(|c| st.vocab.qname(&c)).collect()).collect();
-        Json(Status { triples: st.graph.len(), conforms: v.is_empty(), violations: v.len(), tasks: st.tasks.clone(), issues: st.issues.clone(), build_order: order })
+        let mut unfilled: HashMap<String, Vec<String>> = HashMap::new();
+        for t in &st.tasks {
+            let cls = st.vocab.expand(&t.class);
+            let anc = st.vocab.ancestors(&cls);
+            let has_props = st.vocab.properties.values().any(|i| i.domains.iter().any(|d| anc.contains(d)));
+            if !has_props { continue; }   // e.g. Person: type + label is all the schema allows
+            for u in &t.targets {
+                let n = st.graph.triples_for_subject(NamedNodeRef::new_unchecked(u)).filter(|tr| tr.predicate != rdf::TYPE && tr.predicate != rdfs::LABEL).count();
+                if n == 0 { unfilled.entry(t.id.clone()).or_default().push(st.vocab.qname(u)); }
+            }
+        }
+        Json(Status { triples: st.graph.len(), conforms: v.is_empty(), violations: v.len(), tasks: st.tasks.clone(), issues: st.issues.clone(), build_order: order, unfilled_targets: unfilled })
     }
 
     #[tool(description = "The shared graph as Turtle.")]
@@ -505,6 +615,22 @@ fn gate(v: &Vocab, graph: &Graph, scope: &HashSet<String>, t: TripleRef, subject
         TermRef::NamedNode(_) if info.datatype => Err(format!("{} takes a literal ({}), not an IRI", v.qname(p), ranges())),
         TermRef::BlankNode(_) => Err("blank nodes are not allowed".into()),
         _ => Ok(()),
+    }
+}
+
+/// Typed JSON value -> Turtle term. `range_dt` (qname) types bare literals when the property has a datatype range.
+fn render_value(v: &Vocab, val: &Value, range_dt: Option<&str>) -> String {
+    let raw = match &val.value { serde_json::Value::String(s) => s.clone(), other => other.to_string() };
+    let esc = raw.replace('\\', "\\\\").replace('"', "\\\"");
+    match val.kind.to_lowercase().as_str() {
+        "uri" | "iri" => format!("<{}>", v.expand(raw.trim())),
+        "float" | "double" | "decimal" => format!("\"{}\"^^{}", raw, range_dt.unwrap_or("xsd:float")),
+        "integer" | "int" => format!("\"{}\"^^{}", raw, range_dt.unwrap_or("xsd:integer")),
+        "datetime" => format!("\"{esc}\"^^xsd:dateTime"),
+        "date" => format!("\"{esc}\"^^xsd:date"),
+        "boolean" | "bool" => format!("\"{}\"^^xsd:boolean", raw.to_lowercase()),
+        "literal" if !val.datatype.is_empty() => format!("\"{}\"^^{}", esc, val.datatype),
+        _ => match range_dt { Some(dt) => format!("\"{esc}\"^^{dt}"), None => format!("\"{esc}\"") },
     }
 }
 
