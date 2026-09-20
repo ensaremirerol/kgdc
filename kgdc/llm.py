@@ -56,7 +56,11 @@ def chat(prompt: str, model: str | None = None, temperature: float = 0.0, attemp
     # setting, so the two roles can live on different endpoints/keys.
     role = "LLM_BIG_" if model == BIG else "LLM_"
     env = lambda k: os.getenv(role + k) or os.environ["LLM_" + k]
-    client = OpenAI(base_url=env("BASE_URL"), api_key=env("API_KEY"), timeout=float(os.getenv("LLM_TIMEOUT", "90")), max_retries=0)
+    headers = {}
+    if os.getenv(role + "BASIC_AUTH"):   # e.g. an Ollama behind an auth proxy: "user:password"
+        import base64
+        headers["Authorization"] = "Basic " + base64.b64encode(os.environ[role + "BASIC_AUTH"].encode()).decode()
+    client = OpenAI(base_url=env("BASE_URL"), api_key=env("API_KEY"), timeout=float(os.getenv("LLM_TIMEOUT", "90")), max_retries=0, default_headers=headers)
     model = env("MODEL") if model in (None, BIG) else model
     for i in range(1, attempts + 1):
         try:
@@ -93,7 +97,11 @@ def chat_messages(messages: list[dict], tools: list[dict] | None = None, model: 
     """Multi-turn / tool-calling variant of chat(): returns the assistant message object."""
     role = "LLM_BIG_" if model == BIG else "LLM_"
     env = lambda k: os.getenv(role + k) or os.environ["LLM_" + k]
-    client = OpenAI(base_url=env("BASE_URL"), api_key=env("API_KEY"), timeout=float(os.getenv("LLM_TIMEOUT", "90")), max_retries=0)
+    headers = {}
+    if os.getenv(role + "BASIC_AUTH"):   # e.g. an Ollama behind an auth proxy: "user:password"
+        import base64
+        headers["Authorization"] = "Basic " + base64.b64encode(os.environ[role + "BASIC_AUTH"].encode()).decode()
+    client = OpenAI(base_url=env("BASE_URL"), api_key=env("API_KEY"), timeout=float(os.getenv("LLM_TIMEOUT", "90")), max_retries=0, default_headers=headers)
     model = env("MODEL") if model in (None, BIG) else model
     for i in range(1, attempts + 1):
         try:

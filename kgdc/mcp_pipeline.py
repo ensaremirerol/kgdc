@@ -14,7 +14,7 @@ from dataclasses import dataclass, field
 
 from . import llm, prompts
 from .mcp_client import Mcp
-from .pipeline import _segment
+from .pipeline import _segment, json_call
 from .progress import log
 from .schema import Schema
 
@@ -317,10 +317,21 @@ def run_mcp(schema: Schema, text: str, workers: int = 4, task: str = "") -> McpR
                 if d not in present:
                     present.append(d)
         present.sort()
+        if not present:
+            present = sorted(schema.classes)
         # ---- plan + mint (orchestrator) ----
         log("planning individuals (orchestrator) ...")
-        plan = json.loads(llm.strip_fences(llm.chat(_plan_prompt(schema, text, present, task), model=llm.BIG)))
-        plan = [e for e in plan if e.get("class") in schema.classes and e.get("label")]
+        plan = []
+        for attempt in range(2):
+            raw_plan = json_call(_plan_prompt(schema, text, present, task), model=llm.BIG)
+            if isinstance(raw_plan, dict):   # {"individuals": [...]} wrapper, or a single entry
+                raw_plan = next((v for v in raw_plan.values() if isinstance(v, list)), [raw_plan] if "class" in raw_plan else [])
+            plan = [e for e in raw_plan if isinstance(e, dict) and e.get("class") in schema.classes and e.get("label")]
+            if plan:
+                break
+            log(f"plan unusable ({str(raw_plan)[:80]!r}); retrying")
+        if not plan:
+            raise ValueError("orchestrator produced no usable plan")
         # attach each entity to the segment that mentions its label (verbatim, case-insensitive);
         # things only in the header (or unmatched) get the whole document
         for e in plan:
@@ -367,8 +378,8 @@ def run_mcp(schema: Schema, text: str, workers: int = 4, task: str = "") -> McpR
                              "text": (t["context"] + "\n" + t["text"])[:4000]})
             log(f"level {li}: orchestrator reviewing {len(view)} task(s), {sum(len(v['violations']) for v in view)} violation(s), {sum(len(v['unfilled_targets']) for v in view)} unfilled target(s)")
             try:
-                decs = json.loads(llm.strip_fences(llm.chat(_decision_prompt(view), model=llm.BIG)))
-            except (json.JSONDecodeError, TypeError):
+                decs = json_call(_decision_prompt(view), model=llm.BIG)
+            except (ValueError, TypeError):
                 decs = []
             for d in decs:
                 d["level"] = li

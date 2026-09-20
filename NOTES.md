@@ -143,6 +143,16 @@ what happened → what fixed it or would.
 33. **Never truncate slug IRIs.** The model rebuilds them from labels; a
     40-char cut made every long-named target unreachable.
 
+34. **Orchestrator JSON needs element-wise salvage.** gemma4 dropped one
+    colon (`"label "%"`) in a 34-entry plan — deterministic for that prompt.
+    Whole-document parsing lost everything; longest-prefix lost 19 entries;
+    skipping the bad element and resyncing at the next `{` keeps 33.
+35. **Local 7B via Ollama drives native tools** (qwen2.5:7b: clean
+    CareUnit/Person tasks) but at ~10–20 tok/s a 4k-token multi-turn task
+    takes minutes; use `--workers 2` and expect 15–25 min per document until
+    the box is faster. Quality on optional-but-stated slots: not yet measured
+    (run cut short).
+
 ## Cost (vignette_065, 12–17 calls)
 
 - 27B workers via LiteLLM: n/a (internal); ~3.5 min.

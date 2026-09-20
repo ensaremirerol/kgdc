@@ -30,11 +30,57 @@ class Result:
     error: str | None = None                              # set when the merge pass failed (graph = un-merged union)
 
 
+def json_call(prompt: str, model=None, attempts: int = 2):
+    """chat() that must return JSON: strip fences, tolerate a truncated/degenerate tail, retry once."""
+    for i in range(attempts):
+        raw = llm.strip_fences(llm.chat(prompt, model=model))
+        try:
+            return json.loads(raw)
+        except json.JSONDecodeError:
+            pass
+        # salvage: a list -> the longest prefix of well-formed elements; an object -> longest valid prefix
+        a = raw.find("[")
+        if a >= 0 and (raw.find("{") < 0 or a < raw.find("{")):
+            dec, items, pos = json.JSONDecoder(), [], a + 1
+            while True:
+                while pos < len(raw) and raw[pos] in " \n\r\t,":
+                    pos += 1
+                if pos >= len(raw) or raw[pos] == "]":
+                    break
+                try:
+                    obj, end = dec.raw_decode(raw, pos)
+                except json.JSONDecodeError:
+                    nxt = raw.find("{", pos + 1)   # skip the malformed element, resync at the next one
+                    if nxt < 0:
+                        break
+                    pos = nxt
+                    continue
+                items.append(obj)
+                pos = end
+            if items:
+                log(f"orchestrator JSON salvaged: {len(items)} element(s)")
+                return items
+        b = raw.find("{")
+        if b >= 0:
+            try:
+                obj, _ = json.JSONDecoder().raw_decode(raw, b)
+                return obj
+            except json.JSONDecodeError:
+                pass
+        log(f"orchestrator returned invalid JSON (attempt {i + 1}); retrying")
+        prompt += "\n\nYour previous answer was not valid JSON. Return ONLY the JSON, nothing else."
+    raise ValueError("orchestrator did not return valid JSON")
+
+
 def _segment(schema: Schema, text: str, task: str) -> tuple[str, list[dict]]:
     log("segmenting (orchestrator) ...")
-    raw = llm.strip_fences(llm.chat(prompts.segment(schema, text, task), model=BIG_MODEL))   # planning: big model
-    data = json.loads(raw)
-    segs = [s for s in data.get("segments", []) if s.get("text")]
+    data = json_call(prompts.segment(schema, text, task), model=BIG_MODEL)   # planning: big model
+    if not isinstance(data, dict):
+        data = {}
+    segs = [s for s in data.get("segments", []) if isinstance(s, dict) and s.get("text")]
+    if not segs:   # degraded orchestrator reply: treat the whole document as one segment
+        log("segmentation unusable; using the whole document as one segment")
+        segs = [{"id": "s1", "concepts": list(schema.classes), "text": text}]
     log(f"{len(segs)} segments: " + ", ".join(f"{s['id']}[{','.join(c.split(':')[-1] for c in s.get('concepts', []))}]" for s in segs))
     for s in segs:  # verbatim check — paraphrased spans are the first place facts get invented
         s["verbatim"] = s["text"].strip() in text
