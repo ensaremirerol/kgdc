@@ -446,7 +446,7 @@ impl Server {
                 format!("{base}{}", uuid::Uuid::new_v4().simple())
             } else {
                 let slug: String = it.label.to_lowercase().chars().map(|c| if c.is_ascii_alphanumeric() { c } else { '_' }).collect::<String>()
-                    .split('_').filter(|p| !p.is_empty()).collect::<Vec<_>>().join("_").chars().take(40).collect();
+                    .split('_').filter(|p| !p.is_empty()).collect::<Vec<_>>().join("_").chars().take(120).collect();
                 let slug = if slug.is_empty() { format!("x{}", &uuid::Uuid::new_v4().simple().to_string()[..6]) } else { slug };   // e.g. label "%"
                 let mut candidate = format!("{base}{slug}");
                 let mut n = 2;

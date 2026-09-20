@@ -132,14 +132,53 @@ TEXT:
 """
 
 
+class _Call:
+    """A tool call parsed from plain text (endpoints without a tool-call parser)."""
+    def __init__(self, name: str, args: dict, i: int):
+        self.id = f"text-{i}"
+        self.function = type("F", (), {"name": name, "arguments": json.dumps(args)})()
+
+
+TEXT_PROTOCOL = """
+TOOL PROTOCOL (this endpoint has no native tool calling): reply with ONLY one JSON object per
+message, nothing else — no prose, no code fences:
+  {"tool": "<name>", "args": {...}}
+The tool's result comes back as the next message. Tools:
+%s
+"""
+
+
+def _text_tool_call(content: str) -> _Call | None:
+    """Parse {"tool": ..., "args": {...}} out of a text reply (tolerates fences/prose around it)."""
+    m = re.search(r"\{.*\}", content or "", re.S)
+    if not m:
+        return None
+    obj = salvage_args(m.group(0))
+    if not obj or "tool" not in obj:
+        try:
+            obj = json.loads(m.group(0))
+        except json.JSONDecodeError:
+            return None
+    if not isinstance(obj, dict) or "tool" not in obj:
+        return None
+    return _Call(str(obj["tool"]), obj.get("args") or {k: v for k, v in obj.items() if k != "tool"}, 0)
+
+
 def run_worker(mcp: Mcp, task: dict, task_ctx: str) -> dict:
-    """Tool loop for one task. Ends on `finalize` or MAX_TURNS (then finalizes with a note)."""
+    """Tool loop for one task. Ends on `finalize` or MAX_TURNS (then finalizes with a note).
+
+    Native tool calling when the endpoint supports it; otherwise (400 mentioning tool
+    choice / tool-call parser, or KGDC_TOOL_MODE=text) a JSON-in-text protocol."""
     name = task["class"].split(":")[-1]
     vocab = mcp.call("vocabulary", **{"class": task["class"]})
     ctx_notes = prompts._task(task_ctx) if task_ctx else ""
     messages = [{"role": "system", "content": _worker_system(task, vocab, ctx_notes)},
                 {"role": "user", "content": f"Start. Task id: {task['id']}."}]
     tools = mcp.openai_tools(AGENT_TOOLS)
+    text_mode = os.getenv("KGDC_TOOL_MODE", "native") == "text"
+    tool_doc = "\n".join(f"- {t['function']['name']}: {t['function']['description'][:300]}\n  args schema: {json.dumps(t['function']['parameters'].get('properties', {}))[:600]}" for t in tools)
+    if text_mode:
+        messages[0]["content"] += TEXT_PROTOCOL % tool_doc
     trace = {"task": task["id"], "class": task["class"], "turns": 0, "calls": [], "finalized": False}
     log(f"  {name} [{task['id']}]: worker starts")
     seen_snippets: set[str] = set()
@@ -150,7 +189,7 @@ def run_worker(mcp: Mcp, task: dict, task_ctx: str) -> dict:
     malformed = 0   # tool calls that added nothing after the last successful add
     for turn in range(MAX_TURNS):
         try:
-            msg = llm.chat_messages(messages, tools=tools)
+            msg = llm.chat_messages(messages, tools=None if text_mode else tools)
         except llm.MalformedToolCall as e:
             malformed += 1
             if malformed > 3:
@@ -161,6 +200,11 @@ def run_worker(mcp: Mcp, task: dict, task_ctx: str) -> dict:
             messages.append({"role": "user", "content": "Your last tool call was not valid JSON. Call exactly ONE tool with small arguments: `set` for one property at a time."})
             continue
         except Exception as e:  # noqa: BLE001 — a dead endpoint must not take the whole run down
+            if not text_mode and any(k in str(e) for k in ("tool_choice", "tool-call-parser", "tool choice")):
+                text_mode = True   # endpoint cannot do native tools: switch protocol and retry the turn
+                messages[0]["content"] += TEXT_PROTOCOL % tool_doc
+                log(f"  {name}: endpoint lacks native tool calling, switching to text protocol")
+                continue
             note = f"worker LLM failure: {str(e)[:200]}"
             mcp.call("finalize", task_id=task["id"], notes=[note])
             trace["finalized"] = True
@@ -168,19 +212,32 @@ def run_worker(mcp: Mcp, task: dict, task_ctx: str) -> dict:
             log(f"  {name}: LLM failure, finalized with note ({str(e)[:80]})")
             return trace
         trace["turns"] += 1
-        messages.append({"role": "assistant", "content": msg.content or "",
+        if text_mode:
+            call = _text_tool_call(msg.content or "")
+            messages.append({"role": "assistant", "content": msg.content or ""})
+            if call is None:
+                text_only += 1
+                if text_only > 2:
+                    break
+                messages.append({"role": "user", "content": 'Reply with ONLY a JSON object {"tool": ..., "args": {...}}.'})
+                continue
+            tool_calls = [call]
+        else:
+            tool_calls = msg.tool_calls or []
+        if not text_mode:
+          messages.append({"role": "assistant", "content": msg.content or "",
                          "tool_calls": [{"id": c.id, "type": "function", "function": {"name": c.function.name, "arguments": c.function.arguments}} for c in (msg.tool_calls or [])]}
                         if msg.tool_calls else {"role": "assistant", "content": msg.content or ""})
-        if not msg.tool_calls:   # plain text answer: nudge twice, then stop
+        if not tool_calls:   # plain text answer: nudge twice, then stop
             text_only += 1
             if text_only > 2:
                 break
             messages.append({"role": "user", "content": "Use the tools. Call set_many for each target, then finalize."})
             continue
-        for c in msg.tool_calls:
+        for c in tool_calls:
             args = salvage_args(c.function.arguments or "{}")
             if args is None:
-                messages.append({"role": "tool", "tool_call_id": c.id,
+                messages.append({"role": "user" if text_mode else "tool", **({} if text_mode else {"tool_call_id": c.id}),
                                  "content": "arguments were not valid JSON. Send ONE individual per call — a few short lines — and continue."})
                 trace["calls"].append({"tool": c.function.name, "args": {"_invalid": (c.function.arguments or "")[:120]}, "result": "invalid JSON arguments"})
                 log(f"  {name}: unusable tool arguments, asked for smaller calls")
@@ -192,7 +249,7 @@ def run_worker(mcp: Mcp, task: dict, task_ctx: str) -> dict:
             if c.function.name in ("set", "set_many", "add_triple", "add_triples"):
                 key = json.dumps({k: v for k, v in args.items() if k != "task_id"}, sort_keys=True)
                 if key in seen_snippets:   # identical snippet again: the model is stuck, stop here
-                    messages.append({"role": "tool", "tool_call_id": c.id, "content": "identical snippet already rejected; change it or finalize with a note"})
+                    messages.append({"role": "user" if text_mode else "tool", **({} if text_mode else {"tool_call_id": c.id}), "content": "identical snippet already rejected; change it or finalize with a note"})
                     mcp.call("finalize", task_id=task["id"], notes=["worker repeated a rejected snippet and was stopped"])
                     trace["finalized"] = True
                     log(f"  {name}: repeated rejected snippet, stopped")
@@ -203,7 +260,8 @@ def run_worker(mcp: Mcp, task: dict, task_ctx: str) -> dict:
             trace["calls"].append({"tool": c.function.name, "args": {k: (v[:200] if isinstance(v, str) else v) for k, v in args.items()}, "result": short[:600]})
             if c.function.name in ("set", "set_many", "add_triple", "add_triples") and isinstance(res, dict):
                 log(f"  {name}: +{res.get('accepted', 0)} triples, {len(res.get('rejected', []))} rejected, {len(res.get('violations_for_task', []))} violations")
-            messages.append({"role": "tool", "tool_call_id": c.id, "content": short[:6000]})
+            messages.append({"role": "user", "content": f"[{c.function.name} result] " + short[:6000]} if text_mode
+                            else {"role": "tool", "tool_call_id": c.id, "content": short[:6000]})
             if c.function.name in ("set", "set_many", "add_triple", "add_triples") and isinstance(res, dict) and res.get("accepted", 0) > 0:
                 added += res["accepted"]
                 idle_since_add = 0

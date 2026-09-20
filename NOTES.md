@@ -128,6 +128,21 @@ what happened → what fixed it or would.
     the template's properties one by one") rather than "everything the text
     supports".
 
+31. **The structure was never the ceiling; the worker was.** Same
+    plan→mint→fill pipeline: nano F1 0.35 (fills MUST slots only), gemma4-27B
+    F1 0.79 with one legitimate violation (fills date/performer/status/unit).
+    One-shot ordered with the same 27B model is still higher (0.95) on a
+    document that fits in context; the fill structure buys honesty,
+    per-triple gating and measured coverage at ~2× the wall-clock.
+32. **Endpoints without a tool-call parser need a text protocol.** vLLM
+    without `--enable-auto-tool-choice --tool-call-parser` rejects every
+    `tools=` request; `KGDC_TOOL_MODE=text` (auto on that error) has the
+    model answer with one `{"tool", "args"}` JSON per message. A 27B model
+    follows it reliably; sometimes it answers in prose first — the loop
+    nudges twice, then the orchestrator's coverage rerun catches it.
+33. **Never truncate slug IRIs.** The model rebuilds them from labels; a
+    40-char cut made every long-named target unreachable.
+
 ## Cost (vignette_065, 12–17 calls)
 
 - 27B workers via LiteLLM: n/a (internal); ~3.5 min.
