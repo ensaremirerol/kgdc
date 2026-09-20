@@ -1,0 +1,679 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix chr:  <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix ex:   <http://example.org/clinical/> .
+
+# =============================================================================
+# SHACL shapes for the Clinical Health Record (CHR) Schema — schema-level.
+#
+# Derived mechanically from the TBox's rdfs:domain / rdfs:range declarations
+# (tbox/chr_schema.ttl, 25 classes / 20 properties).
+#
+# Encoding style: FLAT PREDICATES — one target per predicate, one class check
+# per domain/range. This is intentionally stricter than the ontology-level
+# SHACL (chr_shacl_ontology.ttl) because the flat-predicate ABoxes need a
+# non-trivial cardinality signal for the SHACL-correction loop to produce
+# measurable repair.
+#
+# Severity conventions:
+#   sh:Violation — structural/type error that should fail validation.
+#   sh:Warning   — advisory (cardinality or plausibility).
+#
+# MedicalProcedure subclass handling: the TBox defines MedicalProcedure as
+# the parent of MeasurementProcess, EvaluationProcess, and
+# MedicationAdministration. Because pyshacl is run with inference='none',
+# sh:class checks against MedicalProcedure will NOT match instances of the
+# subclasses. Shapes below enumerate the four acceptable types explicitly
+# via sh:or.
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# VISIT / PATIENT / PROVIDER / CARE UNIT
+# -----------------------------------------------------------------------------
+
+chr:HasPatientVisitShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasPatient ;
+    sh:or (
+        [ sh:class chr:ClinicalVisit ]
+        [ sh:class chr:MedicalProcedure ]
+        [ sh:class chr:MeasurementProcess ]
+        [ sh:class chr:EvaluationProcess ]
+        [ sh:class chr:MedicationAdministration ]
+    ) ;
+    sh:message "Subject of chr:hasPatient must be a ClinicalVisit or a MedicalProcedure (MeasurementProcess, EvaluationProcess, MedicationAdministration)." ;
+    sh:severity sh:Violation .
+
+chr:HasPatientRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasPatient ;
+    sh:class chr:Person ;
+    sh:message "Object of chr:hasPatient must be a chr:Person." ;
+    sh:severity sh:Violation .
+
+chr:HasCareProviderDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasCareProvider ;
+    sh:class chr:ClinicalVisit ;
+    sh:message "Subject of chr:hasCareProvider must be a chr:ClinicalVisit." ;
+    sh:severity sh:Violation .
+
+chr:HasCareProviderRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasCareProvider ;
+    sh:class chr:Person ;
+    sh:message "Object of chr:hasCareProvider must be a chr:Person." ;
+    sh:severity sh:Violation .
+
+chr:HasCareUnitDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasCareUnit ;
+    sh:class chr:ClinicalVisit ;
+    sh:message "Subject of chr:hasCareUnit must be a chr:ClinicalVisit." ;
+    sh:severity sh:Violation .
+
+chr:HasCareUnitRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasCareUnit ;
+    sh:class chr:CareUnit ;
+    sh:message "Object of chr:hasCareUnit must be a chr:CareUnit." ;
+    sh:severity sh:Violation .
+
+
+chr:HasDateDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasDate ;
+    sh:class chr:ClinicalVisit ;
+    sh:message "Subject of chr:hasDate must be a chr:ClinicalVisit." ;
+    sh:severity sh:Violation .
+
+chr:HasDateDatatypeShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasDate ;
+    sh:property [
+        sh:path chr:hasDate ;
+        sh:datatype xsd:dateTime ;
+        sh:message "chr:hasDate must be an xsd:dateTime." ;
+    ] ;
+    sh:severity sh:Violation .
+
+chr:HasProcedureDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasProcedure ;
+    sh:class chr:ClinicalVisit ;
+    sh:message "Subject of chr:hasProcedure must be a chr:ClinicalVisit." ;
+    sh:severity sh:Violation .
+
+chr:HasProcedureRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasProcedure ;
+    sh:or (
+        [ sh:class chr:MedicalProcedure ]
+        [ sh:class chr:MeasurementProcess ]
+        [ sh:class chr:EvaluationProcess ]
+        [ sh:class chr:MedicationAdministration ]
+    ) ;
+    sh:message "Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof." ;
+    sh:severity sh:Violation .
+
+
+# -----------------------------------------------------------------------------
+# MEASUREMENT PROCESS / MEASUREMENT / DEVICE / UNIT
+# -----------------------------------------------------------------------------
+
+chr:HasDeviceDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasDevice ;
+    sh:class chr:MeasurementProcess ;
+    sh:message "Subject of chr:hasDevice must be a chr:MeasurementProcess." ;
+    sh:severity sh:Violation .
+
+chr:HasDeviceRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasDevice ;
+    sh:class chr:Device ;
+    sh:message "Object of chr:hasDevice must be a chr:Device." ;
+    sh:severity sh:Violation .
+
+chr:HasResultDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasResult ;
+    sh:class chr:MeasurementProcess ;
+    sh:message "Subject of chr:hasResult must be a chr:MeasurementProcess." ;
+    sh:severity sh:Violation .
+
+chr:HasResultRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasResult ;
+    sh:class chr:Measurement ;
+    sh:message "Object of chr:hasResult must be a chr:Measurement." ;
+    sh:severity sh:Violation .
+
+chr:MeasurementProcessCardinalityShape
+    a sh:NodeShape ;
+    sh:targetClass chr:MeasurementProcess ;
+    sh:property [
+        sh:path chr:hasPatient ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A MeasurementProcess must link to exactly one Patient via chr:hasPatient." ;
+    ] ;
+    sh:property [
+        sh:path chr:hasResult ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A MeasurementProcess must link to exactly one Measurement via chr:hasResult." ;
+    ] ;
+    sh:severity sh:Violation .
+
+chr:HasUnitDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasUnit ;
+    sh:class chr:Measurement ;
+    sh:message "Subject of chr:hasUnit must be a chr:Measurement." ;
+    sh:severity sh:Violation .
+
+chr:HasUnitRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasUnit ;
+    sh:class chr:Unit ;
+    sh:message "Object of chr:hasUnit must be a chr:Unit individual." ;
+    sh:severity sh:Violation .
+
+chr:UnitCodeShape
+    a sh:NodeShape ;
+    sh:targetClass chr:Unit ;
+    sh:property [
+        sh:path chr:hasCode ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^https://biomedit\\.ch/rdf/sphn-resource/ucum/" ;
+        sh:message "A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...)." ;
+    ] ;
+    sh:severity sh:Violation .
+
+chr:HasQuantityValueShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasQuantityValue ;
+    sh:class chr:Measurement ;
+    sh:property [
+        sh:path chr:hasQuantityValue ;
+        sh:datatype xsd:float ;
+        sh:message "chr:hasQuantityValue must be an xsd:float." ;
+    ] ;
+    sh:severity sh:Violation .
+
+chr:HasMeasuredDateShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasMeasuredDate ;
+    sh:class chr:Measurement ;
+    sh:property [
+        sh:path chr:hasMeasuredDate ;
+        sh:datatype xsd:dateTime ;
+        sh:message "chr:hasMeasuredDate must be an xsd:dateTime." ;
+    ] ;
+    sh:severity sh:Violation .
+
+
+# -----------------------------------------------------------------------------
+# CLINICAL CONDITION
+# -----------------------------------------------------------------------------
+
+chr:HasLocatedInDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasLocatedIn ;
+    sh:class chr:ClinicalCondition ;
+    sh:message "Subject of chr:hasLocatedIn must be a chr:ClinicalCondition." ;
+    sh:severity sh:Violation .
+
+chr:HasLocatedInRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasLocatedIn ;
+    sh:class chr:AnatomicalStructure ;
+    sh:message "Object of chr:hasLocatedIn must be a chr:AnatomicalStructure." ;
+    sh:severity sh:Violation .
+
+chr:HasSeverityDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasSeverity ;
+    sh:class chr:ClinicalCondition ;
+    sh:message "Subject of chr:hasSeverity must be a chr:ClinicalCondition." ;
+    sh:severity sh:Violation .
+
+chr:HasSeverityRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasSeverity ;
+    sh:class chr:Severity ;
+    sh:message "Object of chr:hasSeverity must be a chr:Severity (not a Person or other class)." ;
+    sh:severity sh:Violation .
+
+chr:HasRecordDateShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasRecordDate ;
+    sh:class chr:ClinicalCondition ;
+    sh:property [
+        sh:path chr:hasRecordDate ;
+        sh:datatype xsd:dateTime ;
+        sh:message "chr:hasRecordDate must be an xsd:dateTime." ;
+    ] ;
+    sh:severity sh:Violation .
+
+chr:ClinicalConditionRecordDateShape
+    a sh:NodeShape ;
+    sh:targetClass chr:ClinicalCondition ;
+    sh:property [
+        sh:path chr:hasRecordDate ;
+        sh:minCount 1 ;
+        sh:message "A ClinicalCondition should have a record date (chr:hasRecordDate)." ;
+    ] ;
+    sh:severity sh:Warning .
+
+
+# -----------------------------------------------------------------------------
+# CARE PLAN / MEDICAL PROCEDURE
+# -----------------------------------------------------------------------------
+
+chr:HasMedicalProcedureDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasMedicalProcedure ;
+    sh:class chr:CarePlan ;
+    sh:message "Subject of chr:hasMedicalProcedure must be a chr:CarePlan." ;
+    sh:severity sh:Violation .
+
+chr:HasMedicalProcedureRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasMedicalProcedure ;
+    sh:or (
+        [ sh:class chr:MedicalProcedure ]
+        [ sh:class chr:MeasurementProcess ]
+        [ sh:class chr:EvaluationProcess ]
+        [ sh:class chr:MedicationAdministration ]
+    ) ;
+    sh:message "Object of chr:hasMedicalProcedure must be a chr:MedicalProcedure or subclass thereof." ;
+    sh:severity sh:Violation .
+
+chr:CarePlanCardinalityShape
+    a sh:NodeShape ;
+    sh:targetClass chr:CarePlan ;
+    sh:property [
+        sh:path chr:hasMedicalProcedure ;
+        sh:minCount 1 ;
+        sh:message "A CarePlan should refer to at least one MedicalProcedure." ;
+    ] ;
+    sh:severity sh:Warning .
+
+
+# -----------------------------------------------------------------------------
+# EVALUATION PROCESS
+# -----------------------------------------------------------------------------
+
+chr:HasCodeRangeShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasCode ;
+    sh:property [
+        sh:path chr:hasCode ;
+        sh:nodeKind sh:IRI ;
+        sh:message "chr:hasCode must be an IRI (SNOMED CT, LOINC, or UCUM concept URI)." ;
+    ] ;
+    sh:severity sh:Violation .
+
+chr:HasConditionDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasCondition ;
+    sh:class chr:EvaluationProcess ;
+    sh:message "Subject of chr:hasCondition must be a chr:EvaluationProcess." ;
+    sh:severity sh:Violation .
+
+chr:HasConditionRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasCondition ;
+    sh:class chr:ClinicalCondition ;
+    sh:message "Object of chr:hasCondition must be a chr:ClinicalCondition." ;
+    sh:severity sh:Violation .
+
+chr:HasObservationDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasObservation ;
+    sh:class chr:EvaluationProcess ;
+    sh:message "Subject of chr:hasObservation must be a chr:EvaluationProcess." ;
+    sh:severity sh:Violation .
+
+chr:HasObservationRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasObservation ;
+    sh:class chr:DiagnosticStatement ;
+    sh:message "Object of chr:hasObservation must be a chr:DiagnosticStatement, not ClinicalCondition." ;
+    sh:severity sh:Violation .
+
+
+# -----------------------------------------------------------------------------
+# PERFORMER / STATUS / DATE TYPING  (MedicalProcedure domain)
+# -----------------------------------------------------------------------------
+
+chr:HasPerformerDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasPerformer ;
+    sh:or (
+        [ sh:class chr:MedicalProcedure ]
+        [ sh:class chr:MeasurementProcess ]
+        [ sh:class chr:EvaluationProcess ]
+        [ sh:class chr:MedicationAdministration ]
+    ) ;
+    sh:message "Subject of chr:hasPerformer must be a MedicalProcedure (or one of its subclasses: MeasurementProcess, EvaluationProcess, MedicationAdministration)." ;
+    sh:severity sh:Violation .
+
+chr:HasPerformerRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasPerformer ;
+    sh:class chr:Person ;
+    sh:message "Object of chr:hasPerformer must be a chr:Person." ;
+    sh:severity sh:Violation .
+
+chr:HasStatusDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasStatus ;
+    sh:or (
+        [ sh:class chr:MedicalProcedure ]
+        [ sh:class chr:MeasurementProcess ]
+        [ sh:class chr:EvaluationProcess ]
+        [ sh:class chr:MedicationAdministration ]
+    ) ;
+    sh:message "Subject of chr:hasStatus must be a MedicalProcedure (or a subclass)." ;
+    sh:severity sh:Violation .
+
+chr:HasStatusRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasStatus ;
+    sh:class chr:ProcessStatus ;
+    sh:message "Object of chr:hasStatus must be a chr:ProcessStatus." ;
+    sh:severity sh:Violation .
+
+chr:HasPerformedDateShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasPerformedDate ;
+    sh:or (
+        [ sh:class chr:MedicalProcedure ]
+        [ sh:class chr:MeasurementProcess ]
+        [ sh:class chr:EvaluationProcess ]
+        [ sh:class chr:MedicationAdministration ]
+    ) ;
+    sh:property [
+        sh:path chr:hasPerformedDate ;
+        sh:datatype xsd:dateTime ;
+        sh:message "chr:hasPerformedDate must be an xsd:dateTime." ;
+    ] ;
+    sh:message "Subject of chr:hasPerformedDate must be a MedicalProcedure (or a subclass)." ;
+    sh:severity sh:Violation .
+
+chr:HasConditionEndDateShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasConditionEndDate ;
+    sh:class chr:ClinicalCondition ;
+    sh:property [
+        sh:path chr:hasConditionEndDate ;
+        sh:datatype xsd:dateTime ;
+        sh:message "chr:hasConditionEndDate must be an xsd:dateTime." ;
+    ] ;
+    sh:severity sh:Violation .
+
+
+# -----------------------------------------------------------------------------
+# MEDICATION ADMINISTRATION / PHARMACEUTICAL
+# -----------------------------------------------------------------------------
+
+chr:HasPharmaceuticalProductDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasPharmaceuticalProduct ;
+    sh:class chr:MedicationAdministration ;
+    sh:message "Subject of chr:hasPharmaceuticalProduct must be a chr:MedicationAdministration." ;
+    sh:severity sh:Violation .
+
+chr:HasPharmaceuticalProductRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasPharmaceuticalProduct ;
+    sh:class chr:PharmaceuticalProduct ;
+    sh:message "Object of chr:hasPharmaceuticalProduct must be a chr:PharmaceuticalProduct." ;
+    sh:severity sh:Violation .
+
+chr:HasDoseFormDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasDoseForm ;
+    sh:class chr:PharmaceuticalProduct ;
+    sh:message "Subject of chr:hasDoseForm must be a chr:PharmaceuticalProduct." ;
+    sh:severity sh:Violation .
+
+chr:HasDoseFormRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasDoseForm ;
+    sh:class chr:PharmaceuticalDoseForm ;
+    sh:message "Object of chr:hasDoseForm must be a chr:PharmaceuticalDoseForm." ;
+    sh:severity sh:Violation .
+
+chr:HasDoseQuantityDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf chr:hasDoseQuantity ;
+    sh:class chr:PharmaceuticalProduct ;
+    sh:message "Subject of chr:hasDoseQuantity must be a chr:PharmaceuticalProduct." ;
+    sh:severity sh:Violation .
+
+chr:HasDoseQuantityRangeShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf chr:hasDoseQuantity ;
+    sh:class chr:PharmaceuticalDose ;
+    sh:message "Object of chr:hasDoseQuantity must be a chr:PharmaceuticalDose." ;
+    sh:severity sh:Violation .
+
+
+# -----------------------------------------------------------------------------
+# ORPHAN CLASS COVERAGE
+#
+# Seven classes declared in the TBox are not referenced by any property's
+# rdfs:domain or rdfs:range:
+#   Occupation, TreatmentPlan, CareProviderRole, InstrumentRole,
+#   OutputRole, PerformerRole, SubjectOfCareRole.
+#
+# The five Role classes belong to the SULO n-ary Role-mediated encoding
+# pattern; they are structurally unused on the flat-predicate schema track.
+# Occupation and TreatmentPlan are substantive CHR concepts that the TBox
+# declares but does not wire into the property graph.
+#
+# For full class coverage ("every declared class has at least one SHACL
+# shape") we add one minimum-viable NodeShape per orphan class here.
+# These shapes:
+#   - target the class via sh:targetClass (so pyshacl exercises them),
+#   - require rdfs:label at Warning severity (won't break conformance on
+#     valid ABoxes, but fires if the LLM invents typeless instances),
+#   - give each orphan class a footprint in the shape file so coverage
+#     tests (test_shape_coverage.py) can report 100% class coverage.
+#
+# If the supervisor decides to delete these classes from the TBox, these
+# shapes should be removed in lockstep.
+# -----------------------------------------------------------------------------
+
+chr:OccupationShape
+    a sh:NodeShape ;
+    sh:targetClass chr:Occupation ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:message "A chr:Occupation instance should carry an rdfs:label (e.g. \"Cardiologist\")." ;
+    ] ;
+    sh:severity sh:Warning .
+
+chr:TreatmentPlanShape
+    a sh:NodeShape ;
+    sh:targetClass chr:TreatmentPlan ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:message "A chr:TreatmentPlan instance should carry an rdfs:label." ;
+    ] ;
+    sh:severity sh:Warning .
+
+chr:CareProviderRoleShape
+    a sh:NodeShape ;
+    sh:targetClass chr:CareProviderRole ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:message "A chr:CareProviderRole instance should carry an rdfs:label (schema-track placeholder for the ontology-track Role pattern)." ;
+    ] ;
+    sh:severity sh:Warning .
+
+chr:InstrumentRoleShape
+    a sh:NodeShape ;
+    sh:targetClass chr:InstrumentRole ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:message "A chr:InstrumentRole instance should carry an rdfs:label." ;
+    ] ;
+    sh:severity sh:Warning .
+
+chr:OutputRoleShape
+    a sh:NodeShape ;
+    sh:targetClass chr:OutputRole ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:message "A chr:OutputRole instance should carry an rdfs:label." ;
+    ] ;
+    sh:severity sh:Warning .
+
+chr:PerformerRoleShape
+    a sh:NodeShape ;
+    sh:targetClass chr:PerformerRole ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:message "A chr:PerformerRole instance should carry an rdfs:label." ;
+    ] ;
+    sh:severity sh:Warning .
+
+chr:SubjectOfCareRoleShape
+    a sh:NodeShape ;
+    sh:targetClass chr:SubjectOfCareRole ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:message "A chr:SubjectOfCareRole instance should carry an rdfs:label." ;
+    ] ;
+    sh:severity sh:Warning .
+
+# =============================================================================
+# CLOSED-WORLD VOCABULARY
+# -----------------------------------------------------------------------------
+# The shapes above check that a property is used *correctly*; the shapes
+# below check that only schema vocabulary is used at all. Without them a
+# graph using chr:hasPhysician or chr:Diagnosis (terms the LLM invents in
+# the schema namespace) passes validation untouched.
+#
+# Targets are SPARQL-based (SHACL-AF; pyshacl needs advanced=True, which
+# the pipeline and audit already set) so that they select ABox individuals
+# only. pyshacl merges the TBox (ont_graph) into the data graph before
+# validation, so a plain sh:targetSubjectsOf rdf:type would also hit the
+# TBox's own class/property declarations. An "individual" is any typed
+# subject outside the chr: namespace; the last shape forbids minting
+# individuals inside it.
+#
+# Class membership is tested against the TBox hierarchy (rdfs:subClassOf*
+# chr:CHRConcept), so new classes only need a subClassOf axiom. The
+# property list mirrors the 24 rdfs:Property declarations in
+# tbox/chr_schema.ttl and must be kept in sync with it.
+# =============================================================================
+
+chr:SchemaClassVocabularyShape
+    a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            SELECT DISTINCT ?this WHERE {
+                ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?this .
+                FILTER (!STRSTARTS(STR(?s), "https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/"))
+            }
+        """ ;
+    ] ;
+    sh:nodeKind sh:IRI ;
+    # Membership test against the TBox rather than a hand-maintained list:
+    # the class must sit under the abstract root chr:CHRConcept. Requires
+    # the TBox in the validated graph (pyshacl ont_graph does this; for
+    # other engines pass tbox/chr_schema.ttl as an extra data file).
+    sh:pattern "^https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/" ;
+    sh:property [
+        sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ;
+        sh:hasValue chr:CHRConcept ;
+        sh:message "rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema." ;
+    ] ;
+    sh:not [
+        sh:in ( chr:CHRConcept ) ;
+        sh:message "chr:CHRConcept is abstract; type the individual with a concrete CHR class." ;
+    ] ;
+    sh:message "rdf:type must be a class declared in the CHR schema; this class is not in the schema." ;
+    sh:severity sh:Violation .
+
+# Every individual is closed over the schema's properties. rdf:type and
+# rdfs:label are the only non-chr: predicates an ABox may carry.
+chr:SchemaPropertyVocabularyShape
+    a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            SELECT DISTINCT ?this WHERE {
+                ?this <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?t .
+                FILTER (!STRSTARTS(STR(?this), "https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/"))
+            }
+        """ ;
+    ] ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type rdfs:label ) ;
+    sh:property [ sh:path chr:hasCareProvider ] ;
+    sh:property [ sh:path chr:hasCareUnit ] ;
+    sh:property [ sh:path chr:hasCode ] ;
+    sh:property [ sh:path chr:hasCondition ] ;
+    sh:property [ sh:path chr:hasConditionEndDate ] ;
+    sh:property [ sh:path chr:hasDate ] ;
+    sh:property [ sh:path chr:hasDevice ] ;
+    sh:property [ sh:path chr:hasDoseForm ] ;
+    sh:property [ sh:path chr:hasDoseQuantity ] ;
+    sh:property [ sh:path chr:hasLocatedIn ] ;
+    sh:property [ sh:path chr:hasMeasuredDate ] ;
+    sh:property [ sh:path chr:hasMedicalProcedure ] ;
+    sh:property [ sh:path chr:hasObservation ] ;
+    sh:property [ sh:path chr:hasPatient ] ;
+    sh:property [ sh:path chr:hasPerformedDate ] ;
+    sh:property [ sh:path chr:hasPerformer ] ;
+    sh:property [ sh:path chr:hasPharmaceuticalProduct ] ;
+    sh:property [ sh:path chr:hasProcedure ] ;
+    sh:property [ sh:path chr:hasQuantityValue ] ;
+    sh:property [ sh:path chr:hasRecordDate ] ;
+    sh:property [ sh:path chr:hasResult ] ;
+    sh:property [ sh:path chr:hasSeverity ] ;
+    sh:property [ sh:path chr:hasStatus ] ;
+    sh:property [ sh:path chr:hasUnit ] ;
+    sh:message "Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual." ;
+    sh:severity sh:Violation .
+
+# Closes the one gap in the two shapes above: a typed node *inside* the
+# chr: namespace is exempt from them (that is where the TBox lives), so it
+# must be a schema declaration, never an individual.
+chr:NoIndividualsInSchemaNamespaceShape
+    a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            SELECT DISTINCT ?this WHERE {
+                ?this <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?t .
+                FILTER (STRSTARTS(STR(?this), "https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/"))
+            }
+        """ ;
+    ] ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:in ( rdfs:Class rdfs:Property ) ;
+        sh:message "Individuals must be minted in the ex: namespace, not the chr: schema namespace." ;
+    ] ;
+    sh:severity sh:Violation .

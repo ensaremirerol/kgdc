@@ -1,0 +1,349 @@
+@prefix : <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sulo: <https://w3id.org/sulo/> .
+
+<https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821>
+    dct:title "Clinical Health Record Schema" ;
+    dct:description "Example schema covering core clinical concepts: visits, lab results, procedures, conditions, severity, treatments, and drugs." ;
+    rdfs:seeAlso <https://w3id.org/sulo/> .
+
+# ── Classes ──────────────────────────────────────────────────────────────
+
+:CHRConcept
+    a rdfs:Class ;
+    rdfs:label "CHR Concept" ;
+    rdfs:comment "Abstract root of the CHR class hierarchy. Every CHR class is a (transitive) subclass of it, so validators can test class membership with rdfs:subClassOf* :CHRConcept instead of a hand-maintained list. Never instantiated directly." .
+
+
+:AnatomicalStructure
+    a rdfs:Class ;
+    rdfs:label "Anatomical Structure" ;
+    rdfs:comment "A body part or anatomical site relevant to a clinical finding or procedure." ;
+    rdfs:subClassOf :CHRConcept .
+
+:CarePlan
+    a rdfs:Class ;
+    rdfs:label "Care Plan" ;
+    rdfs:comment "A structured set of intended actions or treatments for a patient." ;
+    rdfs:subClassOf :CHRConcept .
+
+:CareProviderRole
+    a rdfs:Class ;
+    rdfs:label "Care Provider Role" ;
+    rdfs:comment "The role played by a person or organisation providing care." ;
+    rdfs:subClassOf :CHRConcept .
+
+:CareUnit
+    a rdfs:Class ;
+    rdfs:label "Care Unit" ;
+    rdfs:comment "An organisational unit responsible for delivering a type of care." ;
+    rdfs:subClassOf :CHRConcept .
+
+:ClinicalCondition
+    a rdfs:Class ;
+    rdfs:label "Clinical Condition" ;
+    rdfs:comment "A medical condition, disease, or disorder affecting a patient." ;
+    rdfs:subClassOf :CHRConcept .
+
+:ClinicalVisit
+    a rdfs:Class ;
+    rdfs:label "Clinical Visit" ;
+    rdfs:comment "A healthcare encounter between a patient and a provider." ;
+    rdfs:subClassOf :CHRConcept .
+
+:Device
+    a rdfs:Class ;
+    rdfs:label "Device" ;
+    rdfs:comment "A physical instrument or medical device used in a clinical or diagnostic process." ;
+    rdfs:subClassOf :CHRConcept .
+
+:DiagnosticStatement
+    a rdfs:Class ;
+    rdfs:label "Diagnostic Statement" ;
+    rdfs:comment "An information object representing a diagnostic finding or clinical assertion." ;
+    rdfs:subClassOf :CHRConcept .
+
+:EvaluationProcess
+    a rdfs:Class ;
+    rdfs:label "Evaluation Process" ;
+    rdfs:comment "A process of assessing or evaluating a clinical finding, condition, or patient state." ;
+    rdfs:subClassOf :MedicalProcedure .
+
+:InstrumentRole
+    a rdfs:Class ;
+    rdfs:label "Instrument Role" ;
+    rdfs:comment "The role of a device or tool used in a clinical procedure." ;
+    rdfs:subClassOf :CHRConcept .
+
+:Measurement
+    a rdfs:Class ;
+    rdfs:label "Measurement" ;
+    rdfs:comment "The outcome of a laboratory test or diagnostic analysis." ;
+    rdfs:subClassOf :CHRConcept .
+
+:MeasurementProcess
+    a rdfs:Class ;
+    rdfs:label "Measurement Process" ;
+    rdfs:comment "A process of measuring or quantifying a clinical observable or parameter." ;
+    rdfs:subClassOf :MedicalProcedure .
+
+:MedicalProcedure
+    a rdfs:Class ;
+    rdfs:label "Medical Procedure" ;
+    rdfs:comment "A clinical action or intervention performed on a patient." ;
+    rdfs:subClassOf :CHRConcept .
+
+:MedicationAdministration
+    a rdfs:Class ;
+    rdfs:label "Medication Administration" ;
+    rdfs:comment "A process of administering a drug or pharmaceutical substance to a patient." ;
+    rdfs:subClassOf :MedicalProcedure .
+
+:Occupation
+    a rdfs:Class ;
+    rdfs:label "Occupation" ;
+    rdfs:comment "A job, profession, or occupational role held by a person." ;
+    rdfs:subClassOf :CHRConcept .
+
+:OutputRole
+    a rdfs:Class ;
+    rdfs:label "Output Role" ;
+    rdfs:comment "The role of an entity produced as an output of a clinical process." ;
+    rdfs:subClassOf :CHRConcept .
+
+:PerformerRole
+    a rdfs:Class ;
+    rdfs:label "Performer Role" ;
+    rdfs:comment "The role of an agent who performs a clinical action or procedure." ;
+    rdfs:subClassOf :CHRConcept .
+
+:Person
+    a rdfs:Class ;
+    rdfs:label "Person" ;
+    rdfs:comment "A human being, either as a patient or a care participant." ;
+    rdfs:subClassOf :CHRConcept .
+
+:PharmaceuticalDose
+    a rdfs:Class ;
+    rdfs:label "Pharmaceutical Dose" ;
+    rdfs:comment "The quantity and form of a drug administered in a single instance." ;
+    rdfs:subClassOf :CHRConcept .
+
+:PharmaceuticalDoseForm
+    a rdfs:Class ;
+    rdfs:label "Pharmaceutical Dose Form" ;
+    rdfs:comment "The physical form of a pharmaceutical product (e.g. tablet, capsule, solution)." ;
+    rdfs:subClassOf :CHRConcept .
+
+:PharmaceuticalProduct
+    a rdfs:Class ;
+    rdfs:label "Pharmaceutical Product" ;
+    rdfs:comment "A drug or medicinal product used in the treatment or prevention of disease." ;
+    rdfs:subClassOf :CHRConcept .
+
+:ProcessStatus
+    a rdfs:Class ;
+    rdfs:label "Process Status" ;
+    rdfs:comment "The state or status of a clinical process or workflow step." ;
+    rdfs:subClassOf :CHRConcept .
+
+:Severity
+    a rdfs:Class ;
+    rdfs:label "Severity" ;
+    rdfs:comment "The degree of seriousness of a condition, symptom, or finding." ;
+    rdfs:subClassOf :CHRConcept .
+
+:SubjectOfCareRole
+    a rdfs:Class ;
+    rdfs:label "Subject of Care Role" ;
+    rdfs:comment "The role played by a person who is the subject of a care activity." ;
+    rdfs:subClassOf :CHRConcept .
+
+:TreatmentPlan
+    a rdfs:Class ;
+    rdfs:label "Treatment / Treatment Plan" ;
+    rdfs:comment "A drug administration event or planned course of treatment." ;
+    rdfs:subClassOf :CHRConcept .
+
+:Unit
+    a rdfs:Class ;
+    rdfs:label "Unit" ;
+    rdfs:comment "A unit of measure, identified by its UCUM code via chr:hasCode." ;
+    rdfs:subClassOf :CHRConcept .
+
+# ── Properties ───────────────────────────────────────────────────────────
+
+:hasCareProvider
+    a rdfs:Property ;
+    rdfs:label "Has Care Provider" ;
+    rdfs:comment "Links a clinical visit to the care provider." ;
+    rdfs:domain :ClinicalVisit ;
+    rdfs:range :Person .
+
+:hasCareUnit
+    a rdfs:Property ;
+    rdfs:label "Has Care Unit" ;
+    rdfs:comment "Links a clinical visit to the care unit where it takes place." ;
+    rdfs:domain :ClinicalVisit ;
+    rdfs:range :CareUnit .
+
+:hasCode
+    a rdfs:Property ;
+    rdfs:label "Has Code" ;
+    rdfs:comment "Links a clinical entity to its formal terminology code IRI (SNOMED CT: http://snomed.info/id/{code}, LOINC: https://loinc.org/{code}, UCUM: https://biomedit.ch/rdf/sphn-resource/ucum/{encoded})." .
+
+:hasConditionEndDate
+    a rdfs:Property ;
+    rdfs:label "Has Condition End Date" ;
+    rdfs:comment "Links a clinical condition to the date and time it ended." ;
+    rdfs:domain :ClinicalCondition ;
+    rdfs:range xsd:dateTime .
+
+:hasDevice
+    a rdfs:Property ;
+    rdfs:label "Has Device" ;
+    rdfs:comment "Links a measurement process to the device used as an instrument." ;
+    rdfs:domain :MeasurementProcess ;
+    rdfs:range :Device .
+
+:hasDoseForm
+    a rdfs:Property ;
+    rdfs:label "Has Dose Form" ;
+    rdfs:comment "Links a pharmaceutical product to its dose form." ;
+    rdfs:domain :PharmaceuticalProduct ;
+    rdfs:range :PharmaceuticalDoseForm .
+
+:hasDoseQuantity
+    a rdfs:Property ;
+    rdfs:label "Has Dose Quantity" ;
+    rdfs:comment "Links a pharmaceutical product to its dose quantity." ;
+    rdfs:domain :PharmaceuticalProduct ;
+    rdfs:range :PharmaceuticalDose .
+
+:hasLocatedIn
+    a rdfs:Property ;
+    rdfs:label "Has Located In" ;
+    rdfs:comment "Links a clinical condition to the anatomical structure where it is located." ;
+    rdfs:domain :ClinicalCondition ;
+    rdfs:range :AnatomicalStructure .
+
+:hasMeasuredDate
+    a rdfs:Property ;
+    rdfs:label "Has Measured Date" ;
+    rdfs:comment "Links a measurement to the date and time it was recorded." ;
+    rdfs:domain :Measurement ;
+    rdfs:range xsd:dateTime .
+
+:hasMedicalProcedure
+    a rdfs:Property ;
+    rdfs:label "Has Medical Procedure" ;
+    rdfs:comment "Links a plan to the medical procedure it refers to." ;
+    rdfs:domain :CarePlan ;
+    rdfs:range :MedicalProcedure .
+
+:hasDate
+    a rdfs:Property ;
+    rdfs:label "Has Date" ;
+    rdfs:comment "Links a clinical visit to the date and time it took place." ;
+    rdfs:domain :ClinicalVisit ;
+    rdfs:range xsd:dateTime .
+
+:hasProcedure
+    a rdfs:Property ;
+    rdfs:label "Has Procedure" ;
+    rdfs:comment "Links a clinical visit to a medical procedure performed during that visit." ;
+    rdfs:domain :ClinicalVisit ;
+    rdfs:range :MedicalProcedure .
+
+:hasCondition
+    a rdfs:Property ;
+    rdfs:label "Has Condition" ;
+    rdfs:comment "Links an evaluation process to the clinical condition it assessed." ;
+    rdfs:domain :EvaluationProcess ;
+    rdfs:range :ClinicalCondition .
+
+:hasObservation
+    a rdfs:Property ;
+    rdfs:label "Has Observation" ;
+    rdfs:comment "Links an evaluation process to the diagnostic statement produced as its output." ;
+    rdfs:domain :EvaluationProcess ;
+    rdfs:range :DiagnosticStatement .
+
+:hasPatient
+    a rdfs:Property ;
+    rdfs:label "Has Patient" ;
+    rdfs:comment "Links a medical procedure to the patient it is performed on." ;
+    rdfs:domain :MedicalProcedure ;
+    rdfs:range :Person .
+
+:hasPatient
+    a rdfs:Property ;
+    rdfs:label "Has Patient" ;
+    rdfs:comment "Links a clinical visit to the patient (subject of care)." ;
+    rdfs:domain :ClinicalVisit ;
+    rdfs:range :Person .
+
+:hasPerformedDate
+    a rdfs:Property ;
+    rdfs:label "Has Performed Date" ;
+    rdfs:comment "Links a medical procedure to the date and time it was performed." ;
+    rdfs:domain :MedicalProcedure ;
+    rdfs:range xsd:dateTime .
+
+:hasPerformer
+    a rdfs:Property ;
+    rdfs:label "Has Performer" ;
+    rdfs:comment "Links a medical procedure to the person who performed it." ;
+    rdfs:domain :MedicalProcedure ;
+    rdfs:range :Person .
+
+:hasPharmaceuticalProduct
+    a rdfs:Property ;
+    rdfs:label "Has Pharmaceutical Product" ;
+    rdfs:comment "Links a medication administration to the pharmaceutical product being administered." ;
+    rdfs:domain :MedicationAdministration ;
+    rdfs:range :PharmaceuticalProduct .
+
+:hasQuantityValue
+    a rdfs:Property ;
+    rdfs:label "Has Quantity Value" ;
+    rdfs:comment "Links a measurement to its numeric quantity value." ;
+    rdfs:domain :Measurement ;
+    rdfs:range xsd:float .
+
+:hasRecordDate
+    a rdfs:Property ;
+    rdfs:label "Has Record Date" ;
+    rdfs:comment "Links a clinical condition to the date and time it was recorded." ;
+    rdfs:domain :ClinicalCondition ;
+    rdfs:range xsd:dateTime .
+
+:hasResult
+    a rdfs:Property ;
+    rdfs:label "Has Result" ;
+    rdfs:comment "Links a measurement process to its result via an output role." ;
+    rdfs:domain :MeasurementProcess ;
+    rdfs:range :Measurement .
+
+:hasSeverity
+    a rdfs:Property ;
+    rdfs:label "Has Severity" ;
+    rdfs:comment "Links a clinical condition to its severity." ;
+    rdfs:domain :ClinicalCondition ;
+    rdfs:range :Severity .
+
+:hasStatus
+    a rdfs:Property ;
+    rdfs:label "Has Status" ;
+    rdfs:comment "Links a medical procedure to its current status." ;
+    rdfs:domain :MedicalProcedure ;
+    rdfs:range :ProcessStatus .
+
+:hasUnit
+    a rdfs:Property ;
+    rdfs:label "Has Unit" ;
+    rdfs:comment "Links a measurement to its unit of measure." ;
+    rdfs:domain :Measurement ;
+    rdfs:range :Unit .
