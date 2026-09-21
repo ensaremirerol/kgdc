@@ -287,3 +287,9 @@ what happened → what fixed it or would.
     batch runner). `examples/chr/repair_truncated.py` rebuilds the union from a trace for
     outputs produced before the fix. Documents with ~43 segments still overflow the 32k
     context at merge time (2 of 200) and keep the union, by design.
+
+56. **Held-out check (docs 21-40, never read while tuning):** Airport strict macro 0.866 / lenient
+    0.957 (dev set: 0.948 strict), Building 0.903 / 0.945 (dev 0.838), ADE 0.610 / 0.759 (dev
+    0.576 / 0.786). The context conventions transfer; the dev-set numbers were not memorisation.
+    Airport's drop is the same kinds of gold conventions as before (a fact the gold omits, a
+    rounded elevation), not new failure modes.

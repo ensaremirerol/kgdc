@@ -26,6 +26,9 @@ honest gaps beats a conformant graph with invented values.
 | WebNLG Airport | 20 | label triple F1, macro | **0.948** | — |
 | WebNLG Building | 20 | label triple F1, macro | **0.838** | — |
 | ADE corpus (drug → adverse effect) | 20 | label triple F1, micro, strict / lenient | **0.52 / 0.80** | — |
+| WebNLG Airport, **held-out** docs 21-40 | 20 | label triple F1, macro, strict / lenient | **0.866 / 0.957** | — |
+| WebNLG Building, **held-out** docs 21-39 | 19 | label triple F1, macro, strict / lenient | **0.903 / 0.945** | — |
+| ADE corpus, **held-out** docs 21-40 | 20 | label triple F1, macro, strict / lenient | **0.610 / 0.759** | — |
 
 Per-document scores for every system are in `results/2026-09-21/`; the extracted graphs, traces and logs of the
 200-document batch are in `runs/chr-2026-09-21/` (`pass1/` and `truncated/` keep the outputs replaced by the second pass and by the repair script).
@@ -511,6 +514,15 @@ per mention.
 **3. Failed outputs.** A document a system could not produce, or whose Turtle does not parse, scores
 0 and is not dropped (`examples/chr/compare.py`).
 
+**4. Development versus held-out documents.** No gold ever reaches the pipeline: the CLI reads the
+ontology, the shapes, the text and the context file, and nothing in the `kgdc` package references
+gold. But the context files and a few prompt rules were written by reading the misses of scored
+documents (vignettes 065 and 001-010 for CHR; documents 1-20 of each WebNLG category and of ADE),
+so those documents are *development* data and their scores are optimistic. For WebNLG and ADE the
+next 20 documents of each corpus (`docs 21-40`, prepared with the same scripts) were run once, after
+all tuning, and are reported separately as held-out; for CHR the final table is also given without
+the 11 development vignettes.
+
 Aggregates: *micro* pools triples over the corpus (large documents weigh more), *macro* averages
 per-document F1. Paired comparisons report the per-document ΔF1, wins/ties/losses and an exact
 two-sided sign test.
@@ -576,6 +588,18 @@ and the affected documents are being re-run. The comparison is *pipeline + model
 | ADE corpus | 20 | label F1 strict / lenient | micro 0.52 / 0.80, 6 perfect |
 | CHR vignette_065, `--mcp` | 1 | identity-hash F1 | 0.24-0.37 (same model; high variance) |
 | CHR vignette_065, `KGDC_VERIFY=1` | 1 | identity-hash F1 | 0.854 vs 0.953 without, +12 calls |
+
+### Held-out documents (no tuning on them)
+
+| corpus, docs 21-40 | n | strict micro P / R / F1 | strict macro F1 (perfect) | lenient micro F1 | lenient macro F1 (perfect) |
+|---|---|---|---|---|---|
+| WebNLG Airport | 20 | 0.821 / 0.908 / 0.863 | 0.866 (12) | 0.950 | 0.957 (17) |
+| WebNLG Building | 19 | 0.901 / 0.883 / 0.892 | 0.903 (10) | 0.941 | 0.945 (12) |
+| ADE corpus | 20 | 0.729 / 0.495 / 0.590 | 0.610 (5) | 0.717 | 0.759 (7) |
+
+Held-out and development numbers are close for all three corpora (Airport 0.87 vs 0.95 strict,
+Building 0.90 vs 0.84, ADE 0.61 vs 0.52 strict): the context-file conventions transfer, they do
+not memorise. Score files: `results/2026-09-21/heldout/`.
 
 Residual misses across corpora: text-supported facts the gold omits, entity-granularity
 conventions of the gold (one "City, State" place; DBpedia entity names for what the text

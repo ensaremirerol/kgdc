@@ -38,3 +38,11 @@ processes) are queued for a second pass with the scope filter. See NOTES.md 53-5
 ## ADE corpus (20 documents)
 
 - strict label F1 micro 0.52 (`ade_scores_strict.txt`), lenient (`--lenient`: aliases as labels, span containment) micro 0.80, 6/20 perfect (`ade_scores_lenient.txt`)
+
+## Held-out documents (docs 21-40 per corpus, run once after all tuning; `heldout/`)
+
+| corpus | n | strict micro F1 | strict macro F1 (perfect) | lenient micro F1 | lenient macro F1 (perfect) |
+|---|---|---|---|---|---|
+| WebNLG Airport | 20 | 0.863 | 0.866 (12) | 0.950 | 0.957 (17) |
+| WebNLG Building | 19 | 0.892 | 0.903 (10) | 0.941 | 0.945 (12) |
+| ADE corpus | 20 | 0.590 | 0.610 (5) | 0.717 | 0.759 (7) |
