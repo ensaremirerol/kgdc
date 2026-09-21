@@ -1,0 +1,46 @@
+[   0.1s] segmenting (orchestrator) ...
+[  96.2s] 37 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[MeasurementProcess,Measurement,ProcessStatus], s23[MeasurementProcess,Measurement,ProcessStatus], s24[MeasurementProcess,Measurement,ProcessStatus], s25[MeasurementProcess,Measurement,ProcessStatus], s26[MeasurementProcess,Measurement,ProcessStatus], s27[MeasurementProcess,Measurement,ProcessStatus], s28[MeasurementProcess,Measurement,ProcessStatus], s29[MeasurementProcess,Measurement,ProcessStatus], s30[MeasurementProcess,Measurement,ProcessStatus], s31[MeasurementProcess,Measurement,ProcessStatus], s32[MeasurementProcess,Measurement,ProcessStatus], s33[MeasurementProcess,Measurement,ProcessStatus], s34[MeasurementProcess,Measurement,ProcessStatus], s35[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s36[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s37[CarePlan]
+[  96.2s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  96.2s] level 0: 6 agent(s), 0 known entities
+[  96.2s]   CareUnit: extracting (251 chars, 1 classes in view)
+[  96.2s]   ClinicalCondition: extracting (458 chars, 3 classes in view)
+[  96.2s]   DiagnosticStatement: extracting (458 chars, 1 classes in view)
+[  96.2s]   Measurement: extracting (8308 chars, 2 classes in view)
+[ 102.4s]   CareUnit: cycle 0 -> conforms
+[ 102.4s]   Person: extracting (251 chars, 1 classes in view)
+[ 104.2s]   DiagnosticStatement: cycle 0 -> conforms
+[ 104.2s]   ProcessStatus: extracting (8308 chars, 1 classes in view)
+[ 106.1s]   ClinicalCondition: cycle 0 -> conforms
+[ 108.8s]   Person: cycle 0 -> conforms
+[ 109.0s]   ProcessStatus: cycle 0 -> conforms
+[ 190.9s]   Measurement: cycle 0 -> 1 violation(s)
+[ 190.9s]   Measurement: fixing ...
+[ 278.0s]   Measurement: cycle 1 -> 1 violation(s)
+[ 278.0s]   Measurement: stopping (plateau)
+[ 278.0s]   Measurement: 2 unresolved (honest gaps)
+[ 278.0s] level 1: 2 agent(s), 8 known entities
+[ 278.0s]   EvaluationProcess: extracting (458 chars, 7 classes in view)
+[ 278.0s]   MeasurementProcess: extracting (8308 chars, 6 classes in view)
+[ 294.9s]   EvaluationProcess: cycle 0 -> conforms
+[ 480.4s]   MeasurementProcess: cycle 0 -> 1 violation(s)
+[ 480.4s]   MeasurementProcess: fixing ...
+https://biomedit.ch/rdf/sphn-resource/ucum/mLpermincbl1dot73sbrper m2cbr does not look like a valid URI, trying to serialize this will break.
+[ 677.0s]   MeasurementProcess: cycle 1 -> 1 violation(s)
+[ 677.0s]   MeasurementProcess: fixing ...
+[ 863.4s]   MeasurementProcess: cycle 2 -> conforms
+[ 863.4s]   MeasurementProcess: 10 unresolved (honest gaps)
+[ 863.5s] level 2: 2 agent(s), 81 known entities
+[ 863.5s]   CarePlan: extracting (9278 chars, 4 classes in view)
+[ 863.5s]   ClinicalVisit: extracting (9278 chars, 5 classes in view)
+[ 872.2s]   CarePlan: cycle 0 -> conforms
+[ 872.2s]   CarePlan: 1 unresolved (honest gaps)
+[ 982.8s]   ClinicalVisit: cycle 0 -> conforms
+[ 983.0s] merging (orchestrator): 0 violation(s), 13 unresolved, 1 unparsed
+[1164.9s] merge output rejected (at line 471 of <>:
+Bad syntax (EOF found when expected verb ) - returning the un-merged union
+[1165.0s] final: conforms
+conforms=True segments=10 llm_calls=15 unresolved=0
+  orchestrator   2 calls    28083 in   14898 out  cost n/a  gemma4-g1
+  total         15 calls   115798 in   66073 out  cost n/a  
+  worker        13 calls    87715 in   51175 out  cost n/a  gemma4-g1
+exit=0

@@ -1,0 +1,57 @@
+[   0.1s] segmenting (orchestrator) ...
+[  52.0s] 19 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[MeasurementProcess,Measurement,Unit,ProcessStatus], s4[MeasurementProcess,Measurement,Unit,ProcessStatus], s5[MeasurementProcess,Measurement,Unit,ProcessStatus], s6[MeasurementProcess,Measurement,Unit,ProcessStatus], s7[MeasurementProcess,Measurement,Unit,ProcessStatus], s8[MeasurementProcess,Measurement,Unit,ProcessStatus], s9[MeasurementProcess,Measurement,Unit,ProcessStatus], s10[MeasurementProcess,Measurement,Unit,ProcessStatus], s11[MeasurementProcess,Measurement,Unit,ProcessStatus], s12[MeasurementProcess,Measurement,Unit,ProcessStatus], s13[MeasurementProcess,Measurement,Unit,ProcessStatus], s14[MeasurementProcess,Measurement,Unit,ProcessStatus], s15[MeasurementProcess,Measurement,Unit,ProcessStatus], s16[MeasurementProcess,Measurement,Unit,ProcessStatus], s17[MeasurementProcess,Measurement,Unit,ProcessStatus], s18[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s19[CarePlan]
+[  52.0s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, ProcessStatus, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  52.0s] level 0: 6 agent(s), 0 known entities
+[  52.0s]   CareUnit: extracting (228 chars, 1 classes in view)
+[  52.0s]   ClinicalCondition: extracting (238 chars, 3 classes in view)
+[  52.0s]   DiagnosticStatement: extracting (238 chars, 1 classes in view)
+[  52.0s]   Person: extracting (228 chars, 1 classes in view)
+[  56.6s]   CareUnit: cycle 0 -> conforms
+[  56.6s]   ProcessStatus: extracting (4155 chars, 1 classes in view)
+[  57.5s]   DiagnosticStatement: cycle 0 -> conforms
+[  57.5s]   Unit: extracting (4155 chars, 1 classes in view)
+[  58.2s]   Person: cycle 0 -> conforms
+[  58.4s]   ClinicalCondition: cycle 0 -> conforms
+[  67.9s]   Unit: cycle 0 -> conforms
+[  82.9s]   ProcessStatus: cycle 0 -> 32 violation(s)
+[  82.9s]   ProcessStatus: fixing ...
+[ 104.5s]   ProcessStatus: cycle 1 -> conforms
+[ 104.5s] level 1: 2 agent(s), 28 known entities
+[ 104.5s]   EvaluationProcess: extracting (238 chars, 7 classes in view)
+[ 104.5s]   Measurement: extracting (4155 chars, 2 classes in view)
+[ 118.9s]   EvaluationProcess: cycle 0 -> conforms
+[ 148.8s]   Measurement: cycle 0 -> conforms
+[ 148.8s] level 2: 1 agent(s), 45 known entities
+[ 148.8s]   MeasurementProcess: extracting (4155 chars, 6 classes in view)
+[ 233.4s]   MeasurementProcess: cycle 0 -> conforms
+[ 233.4s] level 3: 2 agent(s), 61 known entities
+[ 233.4s]   CarePlan: extracting (4838 chars, 4 classes in view)
+[ 233.4s]   ClinicalVisit: extracting (4838 chars, 5 classes in view)
+[ 239.9s]   CarePlan: cycle 0 -> conforms
+[ 294.2s]   ClinicalVisit: cycle 0 -> conforms
+[ 294.4s] merging (orchestrator): 0 violation(s), 0 unresolved, 0 unparsed
+[ 401.1s] final: 3 violation(s)
+conforms=False segments=11 llm_calls=14 unresolved=0
+  orchestrator   2 calls    14640 in    8899 out  cost n/a  gemma4-g1
+  total         14 calls    65041 in   24088 out  cost n/a  
+  worker        12 calls    50401 in   15189 out  cost n/a  gemma4-g1
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultRangeShape
+	Focus Node: ex:measurement_hemoglobin_a1c_4548-4
+	Value Node: ex:measurement_hemoglobin_a1c_4548-4
+	Message: Object of chr:hasResult must be a chr:Measurement.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultRangeShape
+	Focus Node: ex:measurement_sodium_2951-2
+	Value Node: ex:measurement_sodium_2951-2
+	Message: Object of chr:hasResult must be a chr:Measurement.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultRangeShape
+	Focus Node: ex:measurement_specific_gravity_5811-5
+	Value Node: ex:measurement_specific_gravity_5811-5
+	Message: Object of chr:hasResult must be a chr:Measurement.
+
+exit=1

@@ -1,0 +1,70 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 104.4s] 41 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[MeasurementProcess,Measurement], s11[MeasurementProcess,Measurement], s12[MeasurementProcess,Measurement], s13[MeasurementProcess,Measurement], s14[MeasurementProcess,Measurement], s15[MeasurementProcess,Measurement], s16[MeasurementProcess,Measurement], s17[MeasurementProcess,Measurement], s18[MeasurementProcess,Measurement], s19[MeasurementProcess,Measurement], s20[MeasurementProcess,Measurement], s21[MeasurementProcess,Measurement], s22[MeasurementProcess,Measurement], s23[MeasurementProcess,Measurement], s24[MeasurementProcess,Measurement], s25[MeasurementProcess,Measurement], s26[MeasurementProcess,Measurement], s27[MeasurementProcess,Measurement], s28[MeasurementProcess,Measurement], s29[MeasurementProcess,Measurement], s30[MeasurementProcess,Measurement], s31[MeasurementProcess,Measurement], s32[MeasurementProcess,Measurement], s33[MeasurementProcess,Measurement], s34[MeasurementProcess,Measurement], s35[MeasurementProcess,Measurement], s36[MeasurementProcess,Measurement], s37[MeasurementProcess,Measurement], s38[MeasurementProcess,Measurement], s39[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s40[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s41[CarePlan]
+[ 104.4s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 104.4s] level 0: 5 agent(s), 0 known entities
+[ 104.4s]   CareUnit: extracting (238 chars, 1 classes in view)
+[ 104.4s]   ClinicalCondition: extracting (473 chars, 3 classes in view)
+[ 104.4s]   DiagnosticStatement: extracting (473 chars, 1 classes in view)
+[ 104.4s]   Measurement: extracting (8969 chars, 2 classes in view)
+[ 115.3s]   CareUnit: cycle 0 -> conforms
+[ 115.3s]   Person: extracting (238 chars, 1 classes in view)
+[ 117.0s]   DiagnosticStatement: cycle 0 -> conforms
+[ 118.6s]   ClinicalCondition: cycle 0 -> conforms
+[ 121.0s]   Person: cycle 0 -> conforms
+[ 259.5s]   Measurement: dropped 12 individual(s) of other classes (already built by earlier levels)
+[ 259.6s]   Measurement: cycle 0 -> 12 violation(s)
+[ 259.6s]   Measurement: fixing ...
+https://biomedit.ch/rdf/sphn-resource/ucum/{cblscorecbr} does not look like a valid URI, trying to serialize this will break.
+https://biomedit.ch/rdf/sphn-resource/ucum/kgper m2 does not look like a valid URI, trying to serialize this will break.
+[ 406.5s]   Measurement: cycle 1 -> 2 violation(s)
+[ 406.5s]   Measurement: fixing ...
+[ 524.9s]   Measurement: cycle 2 -> conforms
+[ 524.9s] level 1: 2 agent(s), 56 known entities
+[ 524.9s]   EvaluationProcess: extracting (473 chars, 7 classes in view)
+[ 525.0s]   MeasurementProcess: extracting (8969 chars, 6 classes in view)
+[ 542.1s]   EvaluationProcess: dropped 2 individual(s) of other classes (already built by earlier levels)
+[ 542.1s]   EvaluationProcess: cycle 0 -> 3 violation(s)
+[ 542.1s]   EvaluationProcess: fixing ...
+[ 553.6s]   EvaluationProcess: cycle 1 -> conforms
+[ 779.3s]   MeasurementProcess: dropped 38 individual(s) of other classes (already built by earlier levels)
+[ 779.5s]   MeasurementProcess: cycle 0 -> 38 violation(s)
+[ 779.5s]   MeasurementProcess: fixing ...
+[ 921.5s]   MeasurementProcess: cycle 1 -> 2 violation(s)
+[ 921.5s]   MeasurementProcess: fixing ...
+[1066.5s]   MeasurementProcess: cycle 2 -> 1 violation(s)
+[1066.5s]   MeasurementProcess: stopping (fix budget spent)
+[1066.5s] level 2: 2 agent(s), 96 known entities
+[1066.5s]   CarePlan: extracting (9941 chars, 4 classes in view)
+[1066.5s]   ClinicalVisit: extracting (9941 chars, 5 classes in view)
+[1077.4s]   CarePlan: cycle 0 -> 1 violation(s)
+[1077.4s]   CarePlan: fixing ...
+[1086.7s]   CarePlan: cycle 1 -> 1 violation(s)
+[1086.7s]   CarePlan: stopping (plateau)
+[1221.0s]   ClinicalVisit: dropped 3 individual(s) of other classes (already built by earlier levels)
+[1221.2s]   ClinicalVisit: cycle 0 -> 3 violation(s)
+[1221.2s]   ClinicalVisit: fixing ...
+[1381.6s]   ClinicalVisit: cycle 1 -> 4 violation(s)
+[1381.6s]   ClinicalVisit: fixing ...
+[1550.2s]   ClinicalVisit: cycle 2 -> 2 violation(s)
+[1550.2s]   ClinicalVisit: stopping (fix budget spent)
+[1550.4s] merging (orchestrator): 2 violation(s), 0 unresolved, 0 unparsed
+[1739.8s] merge output rejected (string index out of range) - returning the un-merged union
+[1739.9s] final: 2 violation(s)
+conforms=False segments=9 llm_calls=19 unresolved=0
+  orchestrator   2 calls    28124 in   15451 out  cost n/a  gemma4-g1
+  total         19 calls   191846 in   91041 out  cost n/a  
+  worker        17 calls   163722 in   75590 out  cost n/a  gemma4-g1
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:MP_Pain_72514-3_20250625T164723
+	Value Node: ex:MP_Pain_72514-3_20250625T164723
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultRangeShape
+	Focus Node: ex:Pain_severity_72514-3_20250625T180634
+	Value Node: ex:Pain_severity_72514-3_20250625T180634
+	Message: Object of chr:hasResult must be a chr:Measurement.
+
+exit=1

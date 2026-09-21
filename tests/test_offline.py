@@ -141,3 +141,23 @@ def test_scope_filter_drops_recreated_dependencies():
     assert "ex:v a chr:ClinicalVisit" in ttl.replace("\n    ", " ") or "chr:ClinicalVisit" in ttl
     assert "ex:mp1 chr:hasStatus" in ttl.replace("\n    ", " ") or "hasStatus" in ttl, "triples about known IRIs are kept"
     assert "# UNRESOLVED" in ttl
+
+
+def test_big_class_is_split_over_several_agents(monkeypatch):
+    """More segments of one class than KGDC_MAX_SEGS_PER_AGENT -> several agents, each with its own chunk; containers stay whole."""
+    seen = {}
+    def fake(prompt, model=None, **kw):
+        if prompt.startswith("You split"):
+            return json.dumps({"shared_context": "", "segments": [{"id": f"s{i}", "concepts": ["chr:Unit"], "text": f"{i} cm."} for i in range(1, 6)]
+                                                                 + [{"id": "s9", "concepts": ["chr:ClinicalVisit"], "text": "Visit header."}]})
+        if prompt.startswith("Build an RDF graph"):
+            seen.setdefault(prompt.split("Build: ", 1)[1].split(" ", 1)[0], []).append(prompt.split("TEXT:", 1)[1])
+        return HONEST
+    monkeypatch.setattr(llm, "chat", fake)
+    monkeypatch.setattr(pipeline, "MAX_FIX", 0)
+    monkeypatch.setattr(pipeline, "MAX_SEGS_PER_AGENT", 2)
+    r = kgdc.run_ordered(kgdc.load(EX / "ontology.ttl", EX / "shapes.ttl"), "Visit header. 1 cm. 2 cm. 3 cm. 4 cm. 5 cm.")
+    unit_jobs = [s for s in r.segments if s["id"].startswith("chr:Unit")]
+    assert [s["id"] for s in unit_jobs] == ["chr:Unit#1", "chr:Unit#2", "chr:Unit#3"] and len(seen["chr:Unit"]) == 3
+    assert "1 cm" in seen["chr:Unit"][0] and "5 cm" in seen["chr:Unit"][2] and "5 cm" not in seen["chr:Unit"][0]
+    assert len([s for s in r.segments if s["id"] == "chr:ClinicalVisit"]) == 1

@@ -257,6 +257,7 @@ def _known_block(g: Graph, schema: Schema) -> str:
 
 MERGE_MAX_CHARS = int(os.getenv("KGDC_MERGE_MAX_CHARS", "12000"))   # per section of the merge prompt
 MERGE_MIN_KEEP = float(os.getenv("KGDC_MERGE_MIN_KEEP", "0.5"))   # merge output smaller than this fraction of the union is a cut-off reply
+MAX_SEGS_PER_AGENT = int(os.getenv("KGDC_MAX_SEGS_PER_AGENT", "12"))   # a class with more segments gets several agents: one reply must fit the output cap
 
 
 def _cap(s: str, n: int = MERGE_MAX_CHARS) -> str:
@@ -311,7 +312,11 @@ def run_ordered(schema: Schema, text: str, workers: int = 4, task: str = "") -> 
             # The last level holds the containers (visit, plan): their links to everything
             # built before are stated all over the document, not in their own segment.
             whole = level is levels[-1] and len(levels) > 1
-            jobs.append({"id": cls, "concepts": [cls], "text": text if whole else "\n\n".join(spans) or text})
+            if whole or len(spans) <= MAX_SEGS_PER_AGENT:
+                jobs.append({"id": cls, "concepts": [cls], "text": text if whole else "\n\n".join(spans) or text})
+            else:   # divide: 40 measurement sentences would need a reply beyond any output cap
+                for i in range(0, len(spans), MAX_SEGS_PER_AGENT):
+                    jobs.append({"id": f"{cls}#{i // MAX_SEGS_PER_AGENT + 1}", "concepts": [cls], "text": "\n\n".join(spans[i:i + MAX_SEGS_PER_AGENT])})
         with ThreadPoolExecutor(max_workers=workers) as ex:
             level_traces = list(ex.map(lambda j: _agent(schema, context, j, task, known, known_ttl), jobs))
         for t in level_traces:

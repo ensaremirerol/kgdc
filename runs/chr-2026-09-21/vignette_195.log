@@ -1,0 +1,48 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 111.2s] 37 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[MeasurementProcess,Measurement,ProcessStatus], s23[MeasurementProcess,Measurement,ProcessStatus], s24[MeasurementProcess,Measurement,ProcessStatus], s25[MeasurementProcess,Measurement,ProcessStatus], s26[MeasurementProcess,Measurement,ProcessStatus], s27[MeasurementProcess,Measurement,ProcessStatus], s28[MeasurementProcess,Measurement,ProcessStatus], s29[MeasurementProcess,Measurement,ProcessStatus], s30[MeasurementProcess,Measurement,ProcessStatus], s31[MeasurementProcess,Measurement,ProcessStatus], s32[MeasurementProcess,Measurement,ProcessStatus], s33[MeasurementProcess,Measurement,ProcessStatus], s34[MeasurementProcess,Measurement,ProcessStatus], s35[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s36[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s37[CarePlan]
+[ 111.2s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 111.2s] level 0: 6 agent(s), 0 known entities
+[ 111.2s]   CareUnit: extracting (228 chars, 1 classes in view)
+[ 111.2s]   ClinicalCondition: extracting (465 chars, 3 classes in view)
+[ 111.2s]   DiagnosticStatement: extracting (465 chars, 1 classes in view)
+[ 111.2s]   Measurement: extracting (8313 chars, 2 classes in view)
+[ 116.3s]   CareUnit: cycle 0 -> conforms
+[ 116.3s]   Person: extracting (228 chars, 1 classes in view)
+[ 118.2s]   DiagnosticStatement: cycle 0 -> conforms
+[ 118.2s]   ProcessStatus: extracting (8313 chars, 1 classes in view)
+[ 120.3s]   ClinicalCondition: cycle 0 -> conforms
+[ 122.5s]   Person: cycle 0 -> conforms
+[ 123.0s]   ProcessStatus: cycle 0 -> conforms
+[ 205.1s]   Measurement: cycle 0 -> 1 violation(s)
+[ 205.1s]   Measurement: fixing ...
+[ 303.5s]   Measurement: cycle 1 -> 1 violation(s)
+[ 303.5s]   Measurement: fixing ...
+[ 393.3s]   Measurement: cycle 2 -> 1 violation(s)
+[ 393.3s]   Measurement: stopping (fix budget spent)
+[ 393.3s]   Measurement: 1 unresolved (honest gaps)
+[ 393.3s] level 1: 2 agent(s), 8 known entities
+[ 393.3s]   EvaluationProcess: extracting (465 chars, 7 classes in view)
+[ 393.3s]   MeasurementProcess: extracting (8313 chars, 6 classes in view)
+[ 409.3s]   EvaluationProcess: dropped 1 individual(s) of other classes (already built by earlier levels)
+[ 409.3s]   EvaluationProcess: cycle 0 -> 1 violation(s)
+[ 409.3s]   EvaluationProcess: fixing ...
+[ 428.1s]   EvaluationProcess: cycle 1 -> conforms
+[ 592.5s]   MeasurementProcess: dropped 44 individual(s) of other classes (already built by earlier levels)
+[ 592.6s]   MeasurementProcess: cycle 0 -> 33 violation(s)
+[ 592.6s]   MeasurementProcess: fixing ...
+[ 773.4s]   MeasurementProcess: cycle 1 -> 11 violation(s)
+[ 773.4s]   MeasurementProcess: fixing ...
+[ 940.5s]   MeasurementProcess: cycle 2 -> conforms
+[ 940.5s] level 2: 2 agent(s), 87 known entities
+[ 940.5s]   CarePlan: extracting (9223 chars, 4 classes in view)
+[ 940.5s]   ClinicalVisit: extracting (9223 chars, 5 classes in view)
+[ 947.7s]   CarePlan: cycle 0 -> conforms
+[1066.6s]   ClinicalVisit: cycle 0 -> conforms
+[1066.8s] merging (orchestrator): 0 violation(s), 1 unresolved, 1 unparsed
+[1255.3s] merge output rejected (Quote expected in string at ^ in r:hasPerformedDate "^2014-0) - returning the un-merged union
+[1255.4s] final: conforms
+conforms=True segments=10 llm_calls=17 unresolved=0
+  orchestrator   2 calls    27390 in   15574 out  cost n/a  gemma4-g1
+  total         17 calls   122580 in   70596 out  cost n/a  
+  worker        15 calls    95190 in   55022 out  cost n/a  gemma4-g1
+exit=0

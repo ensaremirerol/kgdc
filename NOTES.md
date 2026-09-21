@@ -293,3 +293,10 @@ what happened → what fixed it or would.
     0.576 / 0.786). The context conventions transfer; the dev-set numbers were not memorisation.
     Airport's drop is the same kinds of gold conventions as before (a fact the gold omits, a
     rounded elevation), not new failure modes.
+57. **The biggest documents need the divide step inside a class.** Vignettes with 41-53 segments
+    (40+ measurement processes) make one MeasurementProcess agent write a graph beyond the
+    endpoint's output cap: the reply is cut off, unparsable, the merge prompt then overflows the
+    32k context, and the union that remains has no processes at all (8 documents at F1 ≤ 0.07 in
+    pass 1). `KGDC_MAX_SEGS_PER_AGENT` (12) now splits a class with more segments over several
+    agents (`chr:MeasurementProcess#1`, `#2`, …); each reply stays small, and the known-entities
+    block gives them the shared individuals. Containers (last level) stay whole.

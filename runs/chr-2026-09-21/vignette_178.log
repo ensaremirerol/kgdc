@@ -1,0 +1,155 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 102.0s] 40 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[MeasurementProcess,Measurement], s11[MeasurementProcess,Measurement], s12[MeasurementProcess,Measurement], s13[MeasurementProcess,Measurement], s14[MeasurementProcess,Measurement], s15[MeasurementProcess,Measurement], s16[MeasurementProcess,Measurement], s17[MeasurementProcess,Measurement], s18[MeasurementProcess,Measurement], s19[MeasurementProcess,Measurement,Severity], s20[MeasurementProcess,Measurement], s21[MeasurementProcess,Measurement], s22[MeasurementProcess,Measurement], s23[MeasurementProcess,Measurement], s24[MeasurementProcess,Measurement], s25[MeasurementProcess,Measurement], s26[MeasurementProcess,Measurement], s27[MeasurementProcess,Measurement], s28[MeasurementProcess,Measurement], s29[MeasurementProcess,Measurement], s30[MeasurementProcess,Measurement], s31[MeasurementProcess,Measurement], s32[MeasurementProcess,Measurement], s33[MeasurementProcess,Measurement], s34[MeasurementProcess,Measurement], s35[MeasurementProcess,Measurement], s36[MeasurementProcess,Measurement], s37[MeasurementProcess,Measurement], s38[MeasurementProcess,Measurement], s39[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s40[CarePlan]
+[ 102.0s] build order: [CareUnit, DiagnosticStatement, Measurement, Person, Severity] -> [ClinicalCondition, MeasurementProcess] -> [EvaluationProcess] -> [CarePlan, ClinicalVisit]
+[ 102.0s] level 0: 5 agent(s), 0 known entities
+[ 102.0s]   CareUnit: extracting (238 chars, 1 classes in view)
+[ 102.0s]   DiagnosticStatement: extracting (234 chars, 1 classes in view)
+[ 102.0s]   Measurement: extracting (8971 chars, 2 classes in view)
+[ 102.1s]   Person: extracting (238 chars, 1 classes in view)
+[ 108.4s]   CareUnit: cycle 0 -> conforms
+[ 108.4s]   Severity: extracting (257 chars, 1 classes in view)
+[ 109.2s]   DiagnosticStatement: cycle 0 -> conforms
+[ 109.2s]   Person: cycle 0 -> conforms
+[ 113.6s]   Severity: cycle 0 -> 5 violation(s)
+[ 113.6s]   Severity: fixing ...
+[ 118.8s]   Severity: cycle 1 -> 5 violation(s)
+[ 118.8s]   Severity: stopping (plateau)
+[ 225.1s]   Measurement: dropped 12 individual(s) of other classes (already built by earlier levels)
+[ 225.1s]   Measurement: cycle 0 -> 12 violation(s)
+[ 225.1s]   Measurement: fixing ...
+https://biomedit.ch/rdf/sphn-resource/ucum/{cblscorecbr} does not look like a valid URI, trying to serialize this will break.
+[ 354.9s]   Measurement: cycle 1 -> 1 violation(s)
+[ 354.9s]   Measurement: fixing ...
+[ 488.2s]   Measurement: cycle 2 -> conforms
+[ 488.2s] level 1: 2 agent(s), 54 known entities
+[ 488.2s]   ClinicalCondition: extracting (234 chars, 3 classes in view)
+[ 488.2s]   MeasurementProcess: extracting (8971 chars, 6 classes in view)
+[ 495.9s]   ClinicalCondition: cycle 0 -> 12 violation(s)
+[ 495.9s]   ClinicalCondition: fixing ...
+[ 502.3s]   ClinicalCondition: cycle 1 -> 12 violation(s)
+[ 502.3s]   ClinicalCondition: stopping (plateau)
+[ 704.2s]   MeasurementProcess: cycle 0 -> 752 violation(s)
+[ 704.2s]   MeasurementProcess: fixing ...
+[ 902.3s]   MeasurementProcess: cycle 1 -> 6 violation(s)
+[ 902.3s]   MeasurementProcess: fixing ...
+[1076.5s]   MeasurementProcess: cycle 2 -> 5 violation(s)
+[1076.5s]   MeasurementProcess: stopping (fix budget spent)
+[1076.5s] level 2: 1 agent(s), 89 known entities
+[1076.5s]   EvaluationProcess: extracting (234 chars, 7 classes in view)
+[1086.3s]   EvaluationProcess: cycle 0 -> 12 violation(s)
+[1086.3s]   EvaluationProcess: fixing ...
+[1095.5s]   EvaluationProcess: cycle 1 -> 13 violation(s)
+[1095.5s]   EvaluationProcess: fixing ...
+[1105.3s]   EvaluationProcess: cycle 2 -> 12 violation(s)
+[1105.3s]   EvaluationProcess: stopping (fix budget spent)
+[1105.3s] level 3: 2 agent(s), 91 known entities
+[1105.3s]   CarePlan: extracting (9704 chars, 4 classes in view)
+[1105.3s]   ClinicalVisit: extracting (9704 chars, 5 classes in view)
+[1114.2s]   CarePlan: cycle 0 -> 12 violation(s)
+[1114.2s]   CarePlan: fixing ...
+[1120.4s]   CarePlan: cycle 1 -> 12 violation(s)
+[1120.4s]   CarePlan: stopping (plateau)
+[1220.8s]   ClinicalVisit: dropped 5 individual(s) of other classes (already built by earlier levels)
+[1221.0s]   ClinicalVisit: cycle 0 -> 16 violation(s)
+[1221.0s]   ClinicalVisit: fixing ...
+[1315.0s]   ClinicalVisit: cycle 1 -> 16 violation(s)
+[1315.0s]   ClinicalVisit: stopping (plateau)
+[1315.2s] merging (orchestrator): 16 violation(s), 0 unresolved, 0 unparsed
+[1539.9s] merge output rejected (at line 570 of <>:
+Bad syntax (EOF found when expected verb ) - returning the un-merged union
+[1540.0s] final: 16 violation(s)
+conforms=False segments=10 llm_calls=22 unresolved=0
+  orchestrator   2 calls    26137 in   17187 out  cost n/a  gemma4-g1
+  total         22 calls   190654 in   82248 out  cost n/a  
+  worker        20 calls   164517 in   65061 out  cost n/a  gemma4-g1
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Pain_severity_0-10_verbal_numeric_rating_Score
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Part-time_employment_finding
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Pain_severity_0-10_verbal_numeric_rating_Score
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Part-time_employment_finding
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Part-time_employment_finding
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:Pain_severity_0-10_verbal_numeric_rating_Score
+	Value Node: <https://loinc.org/72514-3>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:Part-time_employment_finding
+	Value Node: <http://snomed.info/id/160904001>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:Part-time_employment_finding
+	Value Node: Literal("2025-10-22T17:39:06+02:00" = 2025-10-22 17:39:06+02:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal("rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]
+	Focus Node: ns1:ClinicalCondition
+	Result Path: [ sh:zeroOrMorePath rdfs:subClassOf ]
+	Message: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.
+Constraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal("rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]
+	Focus Node: ns1:Severity
+	Result Path: [ sh:zeroOrMorePath rdfs:subClassOf ]
+	Message: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:proc_cholesterol_hdl_2085_9
+	Value Node: ex:proc_cholesterol_hdl_2085_9
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:proc_cholesterol_ldl_18262_6
+	Value Node: ex:proc_cholesterol_ldl_18262_6
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:proc_gad7_70274_6
+	Value Node: ex:proc_gad7_70274_6
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:proc_microalbumin_creatinine_urine_14959_1
+	Value Node: ex:proc_microalbumin_creatinine_urine_14959_1
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaClassVocabularyShape
+	Focus Node: ns1:ClinicalCondition
+	Value Node: ns1:ClinicalCondition
+	Message: rdf:type must be a class declared in the CHR schema; this class is not in the schema.
+Constraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaClassVocabularyShape
+	Focus Node: ns1:Severity
+	Value Node: ns1:Severity
+	Message: rdf:type must be a class declared in the CHR schema; this class is not in the schema.
+
+exit=1

@@ -1,0 +1,56 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 110.8s] 38 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[MeasurementProcess,Measurement,Unit,ProcessStatus], s4[MeasurementProcess,Measurement,Unit,ProcessStatus], s5[MeasurementProcess,Measurement,Unit,ProcessStatus], s6[MeasurementProcess,Measurement,Unit,ProcessStatus], s7[MeasurementProcess,Measurement,Unit,ProcessStatus], s8[MeasurementProcess,Measurement,Unit,ProcessStatus], s9[MeasurementProcess,Measurement,Unit,ProcessStatus], s10[MeasurementProcess,Measurement,Unit,ProcessStatus], s11[MeasurementProcess,Measurement,Unit,ProcessStatus], s12[MeasurementProcess,Measurement,Unit,ProcessStatus], s13[MeasurementProcess,Measurement,Unit,ProcessStatus], s14[MeasurementProcess,Measurement,Unit,ProcessStatus], s15[MeasurementProcess,Measurement,Unit,ProcessStatus], s16[MeasurementProcess,Measurement,Unit,ProcessStatus], s17[MeasurementProcess,Measurement,Unit,ProcessStatus], s18[MeasurementProcess,Measurement,Unit,ProcessStatus], s19[MeasurementProcess,Measurement,Unit,ProcessStatus], s20[MeasurementProcess,Measurement,Unit,ProcessStatus], s21[MeasurementProcess,Measurement,Unit,ProcessStatus], s22[MeasurementProcess,Measurement,Unit,ProcessStatus], s23[MeasurementProcess,Measurement,Unit,ProcessStatus], s24[MeasurementProcess,Measurement,Unit,ProcessStatus], s25[MeasurementProcess,Measurement,Unit,ProcessStatus], s26[MeasurementProcess,Measurement,Unit,ProcessStatus], s27[MeasurementProcess,Measurement,Unit,ProcessStatus], s28[MeasurementProcess,Measurement,Unit,ProcessStatus], s29[MeasurementProcess,Measurement,Unit,ProcessStatus], s30[MeasurementProcess,Measurement,Unit,ProcessStatus], s31[MeasurementProcess,Measurement,Unit,ProcessStatus], s32[MeasurementProcess,Measurement,Unit,ProcessStatus], s33[MeasurementProcess,Measurement,Unit,ProcessStatus], s34[MeasurementProcess,Measurement,Unit,ProcessStatus], s35[EvaluationProcess,DiagnosticStatement,Person], s36[EvaluationProcess,DiagnosticStatement,ClinicalCondition,Person], s37[EvaluationProcess,DiagnosticStatement,ClinicalCondition,Person], s38[CarePlan]
+[ 110.9s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, ProcessStatus, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 110.9s] level 0: 6 agent(s), 0 known entities
+[ 110.9s]   CareUnit: extracting (228 chars, 1 classes in view)
+[ 110.9s]   ClinicalCondition: extracting (513 chars, 3 classes in view)
+[ 110.9s]   DiagnosticStatement: extracting (753 chars, 1 classes in view)
+[ 110.9s]   Person: extracting (983 chars, 1 classes in view)
+[ 115.9s]   CareUnit: cycle 0 -> conforms
+[ 115.9s]   ProcessStatus: extracting (8260 chars, 1 classes in view)
+[ 117.4s]   Person: cycle 0 -> conforms
+[ 117.4s]   Unit: extracting (8260 chars, 1 classes in view)
+[ 120.9s]   DiagnosticStatement: cycle 0 -> conforms
+[ 120.9s]   ClinicalCondition: cycle 0 -> conforms
+[ 132.3s]   Unit: cycle 0 -> conforms
+[ 154.0s]   ProcessStatus: cycle 0 -> conforms
+[ 154.0s] level 1: 2 agent(s), 51 known entities
+[ 154.0s]   EvaluationProcess: extracting (753 chars, 7 classes in view)
+[ 154.0s]   Measurement: extracting (8260 chars, 2 classes in view)
+[ 181.4s]   EvaluationProcess: dropped 1 individual(s) of other classes (already built by earlier levels)
+[ 181.5s]   EvaluationProcess: cycle 0 -> 1 violation(s)
+[ 181.5s]   EvaluationProcess: fixing ...
+[ 207.7s]   EvaluationProcess: cycle 1 -> conforms
+[ 246.6s]   Measurement: cycle 0 -> 1 violation(s)
+[ 246.6s]   Measurement: fixing ...
+[ 326.8s]   Measurement: cycle 1 -> 1 violation(s)
+[ 326.8s]   Measurement: fixing ...
+[ 412.3s]   Measurement: cycle 2 -> 1 violation(s)
+[ 412.3s]   Measurement: stopping (fix budget spent)
+[ 412.3s]   Measurement: 2 unresolved (honest gaps)
+[ 412.3s] level 2: 1 agent(s), 54 known entities
+[ 412.3s]   MeasurementProcess: extracting (8260 chars, 6 classes in view)
+[ 591.3s]   MeasurementProcess: cycle 0 -> 1 violation(s)
+[ 591.3s]   MeasurementProcess: fixing ...
+[ 785.1s]   MeasurementProcess: cycle 1 -> 1 violation(s)
+[ 785.1s]   MeasurementProcess: fixing ...
+[ 971.5s]   MeasurementProcess: cycle 2 -> 1 violation(s)
+[ 971.5s]   MeasurementProcess: stopping (fix budget spent)
+[ 971.5s]   MeasurementProcess: 2 unresolved (honest gaps)
+[ 971.5s] level 3: 2 agent(s), 54 known entities
+[ 971.5s]   CarePlan: extracting (9458 chars, 4 classes in view)
+[ 971.5s]   ClinicalVisit: extracting (9458 chars, 5 classes in view)
+[ 981.3s]   CarePlan: cycle 0 -> conforms
+[1109.8s]   ClinicalVisit: dropped 33 individual(s) of other classes (already built by earlier levels)
+[1109.9s]   ClinicalVisit: cycle 0 -> 33 violation(s)
+[1109.9s]   ClinicalVisit: fixing ...
+[1124.9s]   ClinicalVisit: cycle 1 -> conforms
+[1125.0s] merging (orchestrator): 0 violation(s), 4 unresolved, 2 unparsed
+[1379.4s] merge output rejected (at line 340 of <>:
+Bad syntax (objectList expected) at ^ in:) - returning the un-merged union
+[1379.4s] final: conforms
+conforms=True segments=11 llm_calls=19 unresolved=0
+  orchestrator   2 calls    19761 in   19296 out  cost n/a  gemma4-g1
+  total         19 calls   139731 in   77828 out  cost n/a  
+  worker        17 calls   119970 in   58532 out  cost n/a  gemma4-g1
+exit=0

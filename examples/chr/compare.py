@@ -1,12 +1,13 @@
 """Paired comparison of kgdc vs the Thesis systems on the same vignettes, same scorer.
 
-  python examples/chr/compare.py RUN_DIR            # expects RUN_DIR/scores.txt (kgdc) and RUN_DIR/old_{a,b,d}.txt
+  python examples/chr/compare.py RUN_DIR [--exclude vignette_065,vignette_001,...]   # expects RUN_DIR/scores.txt (kgdc) and RUN_DIR/old_{a,b,d}.txt
 
 Reports micro/macro P/R/F1 per system, paired per-document deltas, wins/ties/losses and a two-sided
 sign test (exact binomial) of kgdc vs each system."""
 import math, re, sys
 from pathlib import Path
 R = Path(sys.argv[1])
+EXCLUDE = set(sys.argv[sys.argv.index("--exclude") + 1].split(",")) if "--exclude" in sys.argv else set()   # e.g. the development vignettes
 def load(p):
     out = {}
     for l in Path(p).read_text().splitlines():
@@ -16,7 +17,8 @@ def load(p):
 systems = {"kgdc": load(R / "scores.txt")}
 for s in "abd":
     if (R / f"old_{s}.txt").exists(): systems[f"thesis_{s}"] = load(R / f"old_{s}.txt")
-common = sorted(systems["kgdc"])
+common = sorted(d for d in systems["kgdc"] if d not in EXCLUDE)
+if EXCLUDE: print(f"excluded {len(EXCLUDE & set(systems['kgdc']))} development documents: {', '.join(sorted(EXCLUDE))}")
 for name, sc in systems.items():   # a document a system could not produce or that does not parse scores 0, it is not dropped
     for d in common:
         sc.setdefault(d, (systems["kgdc"][d][0], 0, 0, 0.0, 0.0, 0.0))

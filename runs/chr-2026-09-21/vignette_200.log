@@ -1,0 +1,57 @@
+[   0.1s] segmenting (orchestrator) ...
+[  46.9s] 19 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess], s3[MeasurementProcess], s4[MeasurementProcess], s5[MeasurementProcess], s6[MeasurementProcess], s7[MeasurementProcess], s8[MeasurementProcess], s9[MeasurementProcess], s10[MeasurementProcess], s11[MeasurementProcess], s12[MeasurementProcess], s13[MeasurementProcess], s14[MeasurementProcess], s15[MeasurementProcess], s16[MeasurementProcess], s17[MeasurementProcess], s18[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s19[CarePlan]
+[  46.9s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  46.9s] level 0: 4 agent(s), 0 known entities
+[  46.9s]   CareUnit: extracting (251 chars, 1 classes in view)
+[  46.9s]   ClinicalCondition: extracting (237 chars, 3 classes in view)
+[  46.9s]   DiagnosticStatement: extracting (237 chars, 1 classes in view)
+[  46.9s]   Person: extracting (251 chars, 1 classes in view)
+[  52.6s]   CareUnit: cycle 0 -> conforms
+[  53.2s]   DiagnosticStatement: cycle 0 -> conforms
+[  53.5s]   Person: cycle 0 -> conforms
+[  53.7s]   ClinicalCondition: cycle 0 -> conforms
+[  53.7s] level 1: 2 agent(s), 5 known entities
+[  53.7s]   EvaluationProcess: extracting (237 chars, 7 classes in view)
+[  53.7s]   MeasurementProcess: extracting (4156 chars, 6 classes in view)
+[  66.6s]   EvaluationProcess: cycle 0 -> conforms
+[ 166.0s]   MeasurementProcess: dropped 23 individual(s) of other classes (already built by earlier levels)
+[ 166.1s]   MeasurementProcess: cycle 0 -> 17 violation(s)
+[ 166.1s]   MeasurementProcess: fixing ...
+[ 260.2s]   MeasurementProcess: cycle 1 -> 21 violation(s)
+[ 260.2s]   MeasurementProcess: fixing ...
+[ 356.3s]   MeasurementProcess: cycle 2 -> conforms
+[ 356.3s] level 2: 2 agent(s), 43 known entities
+[ 356.3s]   CarePlan: extracting (4905 chars, 4 classes in view)
+[ 356.3s]   ClinicalVisit: extracting (4905 chars, 5 classes in view)
+[ 362.2s]   CarePlan: cycle 0 -> conforms
+[ 429.8s]   ClinicalVisit: dropped 1 individual(s) of other classes (already built by earlier levels)
+[ 429.9s]   ClinicalVisit: cycle 0 -> 1 violation(s)
+[ 429.9s]   ClinicalVisit: fixing ...
+[ 492.0s]   ClinicalVisit: cycle 1 -> 1 violation(s)
+[ 492.0s]   ClinicalVisit: stopping (plateau)
+[ 492.1s] merging (orchestrator): 1 violation(s), 0 unresolved, 0 unparsed
+[ 611.8s] final: 3 violation(s)
+conforms=False segments=8 llm_calls=13 unresolved=0
+  orchestrator   2 calls    14081 in    8904 out  cost n/a  gemma4-g1
+  total         13 calls    71408 in   34805 out  cost n/a  
+  worker        11 calls    57327 in   25901 out  cost n/a  gemma4-g1
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultRangeShape
+	Focus Node: ex:measurement_sodium_serum_20140723T164723
+	Value Node: ex:measurement_sodium_serum_20140723T164723
+	Message: Object of chr:hasResult must be a chr:Measurement.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultRangeShape
+	Focus Node: ex:measurement_urea_nitrogen_serum_20140723T164723
+	Value Node: ex:measurement_urea_nitrogen_serum_20140723T164723
+	Message: Object of chr:hasResult must be a chr:Measurement.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_process_potassium_serum_20140723T164723
+	Value Node: ex:measurement_process_potassium_serum_20140723T164723
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+
+exit=1

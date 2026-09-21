@@ -1,0 +1,110 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_1 a chr:CarePlan ;
+    rdfs:label "A care plan" ;
+    chr:hasMedicalProcedure ex:evaluation_20140129T154723 .
+
+ex:process_status_bilirubin_total_20505_4 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/20505-4> .
+
+ex:process_status_calcium_17861_6 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/17861-6> .
+
+ex:process_status_carbon_dioxide_2028_9 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/2028-9> .
+
+ex:process_status_chloride_2075_0 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/2075-0> .
+
+ex:process_status_creatinine_2160_0 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/2160-0> .
+
+ex:process_status_glomerular_filtration_rate_33914_3 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/33914-3> .
+
+ex:process_status_glucose_2345_7 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/2345-7> .
+
+ex:process_status_glucose_urine_5792_7 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/5792-7> .
+
+ex:process_status_hemoglobin_a1c_4548_4 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/4548-4> .
+
+ex:process_status_ketones_5797_6 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/5797-6> .
+
+ex:process_status_ph_urine_5803_2 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/5803-2> .
+
+ex:process_status_potassium_2823_3 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/2823-3> .
+
+ex:process_status_protein_5804_0 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/5804-0> .
+
+ex:process_status_sodium_2951_2 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/2951-2> .
+
+ex:process_status_specific_gravity_5811_5 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/5811-5> .
+
+ex:process_status_urea_nitrogen_3094_0 a chr:ProcessStatus ;
+    rdfs:label "completed" ;
+    chr:hasCode <https://loinc.org/3094-0> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:visit_20140129T154723 a chr:ClinicalVisit ;
+    rdfs:label "CLINICAL VISIT NOTE" ;
+    chr:hasCareProvider ex:Dr_Dana512_Wilkinson796 ;
+    chr:hasCareUnit ex:URGENT_CARE_PHYSICIANS_PC ;
+    chr:hasDate "2014-01-29T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasProcedure ex:evaluation_20140129T154723 .
+
+ex:Medication_review_due_situation a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2014-01-29T15:47:23+01:00"^^xsd:dateTime .
+
+ex:URGENT_CARE_PHYSICIANS_PC a chr:CareUnit ;
+    rdfs:label "URGENT CARE PHYSICIANS PC" .
+
+ex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:Bryant814_Clarence5_Grimes165 a chr:Person ;
+    rdfs:label "Bryant814 Clarence5 Grimes165" .
+
+ex:Dr_Dana512_Wilkinson796 a chr:Person ;
+    rdfs:label "Dr. Dana512 Wilkinson796" .
+
+ex:evaluation_20140129T154723 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Medication_review_due_situation ;
+    chr:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-01-29T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Dana512_Wilkinson796 .
+
