@@ -207,3 +207,30 @@ MERGED GRAPH:
 {ttl}
 
 Return ONLY the final Turtle. No prose, no code fences."""
+
+
+def verify(lines: list[str], context: str, segment_text: str, task: str = "") -> str:
+    return f"""You audit a knowledge graph that an agent built from the TEXT. Answer two questions, nothing else.
+
+1. DROP: which numbered triples does the TEXT (with the SHARED CONTEXT and the task notes) NOT
+   support? A value that differs from the text (digit, date, name), a link the text does not
+   state, an individual the text never mentions. Encoding conventions from the task notes count
+   as support (a code IRI built from a code in the text is supported). Never drop a triple for
+   being incomplete or for a formatting choice.
+2. MISSING: which facts does the TEXT state that no triple carries? One short line each, naming
+   the thing and the value exactly as the text gives it. Empty if nothing is missing.
+{_task(task)}
+SHARED CONTEXT (counts as text):
+\"\"\"
+{context.strip()}
+\"\"\"
+
+TEXT:
+\"\"\"
+{segment_text.strip()}
+\"\"\"
+
+TRIPLES:
+{chr(10).join(lines)}
+
+Return ONLY JSON: {{"drop": [<triple numbers>], "missing": ["<stated fact absent from the graph>"]}}"""

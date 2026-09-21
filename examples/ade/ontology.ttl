@@ -1,0 +1,12 @@
+@prefix ade:  <https://example.org/ade#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# Mini ontology for the ADE corpus (drug -> adverse effect, drug -> dosage) from case-report sentences.
+
+ade:Drug          a owl:Class ; rdfs:label "Drug" ; rdfs:comment "A drug, medication or substance administered to the patient, named as in the text (e.g. azithromycin, methotrexate)." .
+ade:AdverseEffect a owl:Class ; rdfs:label "Adverse effect" ; rdfs:comment "An adverse event, toxicity, symptom, sign or finding the text attributes to a drug (e.g. ototoxicity, hypercalcemia, severe rash)." .
+
+ade:causes  a owl:ObjectProperty ; rdfs:domain ade:Drug ; rdfs:range ade:AdverseEffect ; rdfs:comment "The drug induced / caused / was associated with / led to the adverse effect." .
+ade:dosage  a owl:DatatypeProperty ; rdfs:domain ade:Drug ; rdfs:range xsd:string ; rdfs:comment "The dose or regimen phrase stated for the drug, as written (e.g. \"1500 mg/m2\", \"4 times per day\")." .

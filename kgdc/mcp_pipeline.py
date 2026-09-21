@@ -82,14 +82,6 @@ def salvage_args(raw: str) -> dict | None:
     return out or None
 
 
-def _known_block(mcp: Mcp) -> str:
-    known = mcp.call("lookup")
-    if not known:
-        return ""
-    return ("\nKNOWN ENTITIES already in the graph — link to these exact IRIs, never invent a new IRI for the same thing:\n"
-            + "\n".join(f"  {k}" for k in known[:80]) + "\n")
-
-
 def _worker_system(task: dict, vocab: str, ctx_notes: str, known: str = "") -> str:
     targets = "\n".join(f"  {t}" for t in task.get("target_lines", [])) or "  (none)"
     related = "\n".join(f"  {t}" for t in task.get("related_lines", [])) or "  (none)"
@@ -355,9 +347,9 @@ def run_mcp(schema: Schema, text: str, workers: int = 4, task: str = "") -> McpR
                 ents = by_class.get(cls, [])
                 if not ents:
                     continue
-                deps = schema.subset([cls]).classes
+                deps = schema.dependencies(cls)   # incl. subclasses of a range: a Visit links to MeasurementProcesses, not just MedicalProcedure
                 related = [e for c2, es in by_class.items() if c2 != cls and c2 in deps for e in es]
-                spans = {seg_by_id[e["segment"]] for e in ents if e.get("segment") in seg_by_id}
+                spans = {seg_by_id[e["segment"]] for e in ents if e.get("segment") in seg_by_id}   # targets' segments only: adding related segments made workers fill non-targets
                 t = mcp.call("create_task", targets=[e["uri"] for e in ents], related=[e["uri"] for e in related],
                              text="\n\n".join(sorted(spans)) or text, context=context)
                 t["target_lines"], t["related_lines"] = [line(e) for e in ents], [line(e) for e in related]

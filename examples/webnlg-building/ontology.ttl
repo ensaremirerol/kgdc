@@ -1,0 +1,26 @@
+@prefix bd:   <https://example.org/webnlg/building#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# Mini ontology for the WebNLG "Building" category (DBpedia-style property names kept verbatim).
+
+bd:Building     a owl:Class ; rdfs:label "Building" ; rdfs:comment "A building, hall, tower, stadium or other structure." .
+bd:Person       a owl:Class ; rdfs:label "Person" ; rdfs:comment "A person, e.g. an architect or a chancellor." .
+bd:Organisation a owl:Class ; rdfs:label "Organisation" ; rdfs:comment "A company, university, school, agency or other body that owns or occupies a building." .
+bd:Place        a owl:Class ; rdfs:label "Place" ; rdfs:comment "A city, town, state or region." .
+bd:Country      a owl:Class ; rdfs:label "Country" ; rdfs:comment "A sovereign state." .
+bd:ArchitecturalStyle a owl:Class ; rdfs:label "Architectural style" ; rdfs:comment "A style such as Modern architecture, Gothic Revival, Brutalism." .
+
+bd:architect    a owl:ObjectProperty ; rdfs:domain bd:Building ; rdfs:range bd:Person ; rdfs:comment "The architect who designed the building." .
+bd:architecturalStyle a owl:ObjectProperty ; rdfs:domain bd:Building ; rdfs:range bd:ArchitecturalStyle ; rdfs:comment "The building's architectural style." .
+bd:owner        a owl:ObjectProperty ; rdfs:domain bd:Building ; rdfs:range bd:Organisation ; rdfs:comment "The organisation that owns the building." .
+bd:currentTenants a owl:ObjectProperty ; rdfs:domain bd:Building ; rdfs:range bd:Organisation ; rdfs:comment "The organisation currently occupying the building (\"current tenant\")." .
+bd:tenant       a owl:ObjectProperty ; rdfs:domain bd:Building ; rdfs:range bd:Organisation ; rdfs:comment "A tenant of the building (when the text says \"tenant\" without \"current\")." .
+bd:location     a owl:ObjectProperty ; rdfs:domain bd:Building ; rdfs:range bd:Place ; rdfs:comment "The city/town/state the building is in." .
+bd:address      a owl:DatatypeProperty ; rdfs:domain bd:Building ; rdfs:range xsd:string ; rdfs:comment "Street address as written, e.g. \"101 Ukrop Way\"." .
+bd:buildingStartDate a owl:DatatypeProperty ; rdfs:domain bd:Building ; rdfs:range xsd:string ; rdfs:comment "When construction began, as written in the text." .
+bd:completionDate a owl:DatatypeProperty ; rdfs:domain bd:Building ; rdfs:range xsd:string ; rdfs:comment "When the building was completed, as written in the text." .
+
+bd:country      a owl:ObjectProperty ; rdfs:domain bd:Place, bd:Organisation ; rdfs:range bd:Country ; rdfs:comment "The country of a place or organisation." .
+bd:chancellor   a owl:ObjectProperty ; rdfs:domain bd:Organisation ; rdfs:range bd:Person ; rdfs:comment "The chancellor of a university." .

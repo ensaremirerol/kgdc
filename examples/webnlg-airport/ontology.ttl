@@ -1,0 +1,33 @@
+@prefix ap:   <https://example.org/webnlg/airport#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# Mini ontology for the WebNLG "Airport" category (DBpedia-style property names kept verbatim).
+
+ap:Airport       a owl:Class ; rdfs:label "Airport" ; rdfs:comment "An airport, airfield or air base." .
+ap:Organisation  a owl:Class ; rdfs:label "Organisation" ; rdfs:comment "A company, authority or agency, e.g. the operator of an airport." .
+ap:Place         a owl:Class ; rdfs:label "Place" ; rdfs:comment "A city, town, region, county or province." .
+ap:Country       a owl:Class ; rdfs:label "Country" ; rdfs:comment "A sovereign state." .
+ap:Person        a owl:Class ; rdfs:label "Person" ; rdfs:comment "A person, e.g. the founder of an organisation." .
+ap:Aircraft      a owl:Class ; rdfs:label "Aircraft" ; rdfs:comment "An aircraft type." .
+ap:RunwaySurface a owl:Class ; rdfs:label "Runway surface" ; rdfs:comment "A runway surface type such as Asphalt or Concrete." .
+
+ap:operatingOrganisation a owl:ObjectProperty ; rdfs:domain ap:Airport ; rdfs:range ap:Organisation ; rdfs:comment "The organisation that operates the airport." .
+ap:location      a owl:ObjectProperty ; rdfs:domain ap:Airport ; rdfs:range ap:Place ; rdfs:comment "Where the airport is located (city, town, region)." .
+ap:cityServed    a owl:ObjectProperty ; rdfs:domain ap:Airport ; rdfs:range ap:Place ; rdfs:comment "The city the airport serves." .
+ap:runwaySurfaceType a owl:ObjectProperty ; rdfs:domain ap:Airport ; rdfs:range ap:RunwaySurface ; rdfs:comment "Surface of the runway (Asphalt, Concrete, ...)." .
+ap:runwayLength  a owl:DatatypeProperty ; rdfs:domain ap:Airport ; rdfs:range xsd:float ; rdfs:comment "Runway length as a number (metres), e.g. 3500.0." .
+ap:elevationAboveTheSeaLevel a owl:DatatypeProperty ; rdfs:domain ap:Airport ; rdfs:range xsd:float ; rdfs:comment "Elevation as a number (metres), e.g. 610.0." .
+ap:icaoLocationIdentifier a owl:DatatypeProperty ; rdfs:domain ap:Airport ; rdfs:range xsd:string ; rdfs:comment "ICAO code, e.g. \"EGBF\"." .
+ap:runwayName    a owl:DatatypeProperty ; rdfs:domain ap:Airport ; rdfs:range xsd:string ; rdfs:comment "Runway designation, e.g. \"14L/32R\"." .
+
+ap:city          a owl:ObjectProperty ; rdfs:domain ap:Organisation ; rdfs:range ap:Place ; rdfs:comment "City where the organisation is based / headquartered." .
+ap:foundedBy     a owl:ObjectProperty ; rdfs:domain ap:Organisation ; rdfs:range ap:Person ; rdfs:comment "Founder of the organisation." .
+ap:transportAircraft a owl:ObjectProperty ; rdfs:domain ap:Organisation ; rdfs:range ap:Aircraft ; rdfs:comment "Aircraft type operated by the organisation." .
+ap:foundingYear  a owl:DatatypeProperty ; rdfs:domain ap:Organisation ; rdfs:range xsd:integer ; rdfs:comment "Year the organisation was founded." .
+
+ap:country       a owl:ObjectProperty ; rdfs:domain ap:Place ; rdfs:range ap:Country ; rdfs:comment "Country the place is in." .
+ap:ceremonialCounty a owl:ObjectProperty ; rdfs:domain ap:Place ; rdfs:range ap:Place ; rdfs:comment "Ceremonial county of the place." .
+ap:areaCode      a owl:DatatypeProperty ; rdfs:domain ap:Place ; rdfs:range xsd:string ; rdfs:comment "Telephone area code." .
+ap:postalCode    a owl:DatatypeProperty ; rdfs:domain ap:Place ; rdfs:range xsd:string ; rdfs:comment "Postal code, e.g. \"MK44\"." .

@@ -1,0 +1,34 @@
+@prefix ap:   <https://example.org/webnlg/airport#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+ap:AirportShape a sh:NodeShape ; sh:targetClass ap:Airport ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ; sh:message "every airport needs its name as rdfs:label" ] ;
+  sh:property [ sh:path ap:operatingOrganisation ; sh:class ap:Organisation ] ;
+  sh:property [ sh:path ap:location ; sh:class ap:Place ] ;
+  sh:property [ sh:path ap:cityServed ; sh:class ap:Place ] ;
+  sh:property [ sh:path ap:runwaySurfaceType ; sh:class ap:RunwaySurface ] ;
+  sh:property [ sh:path ap:runwayLength ; sh:datatype xsd:float ] ;
+  sh:property [ sh:path ap:elevationAboveTheSeaLevel ; sh:datatype xsd:float ] ;
+  sh:property [ sh:path ap:icaoLocationIdentifier ; sh:datatype xsd:string ; sh:maxCount 1 ] ;
+  sh:property [ sh:path ap:runwayName ; sh:datatype xsd:string ] .
+
+ap:OrganisationShape a sh:NodeShape ; sh:targetClass ap:Organisation ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ] ;
+  sh:property [ sh:path ap:city ; sh:class ap:Place ] ;
+  sh:property [ sh:path ap:foundedBy ; sh:class ap:Person ] ;
+  sh:property [ sh:path ap:transportAircraft ; sh:class ap:Aircraft ] ;
+  sh:property [ sh:path ap:foundingYear ; sh:datatype xsd:integer ] .
+
+ap:PlaceShape a sh:NodeShape ; sh:targetClass ap:Place ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ] ;
+  sh:property [ sh:path ap:country ; sh:class ap:Country ] ;
+  sh:property [ sh:path ap:ceremonialCounty ; sh:class ap:Place ] ;
+  sh:property [ sh:path ap:areaCode ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ap:postalCode ; sh:datatype xsd:string ] .
+
+ap:CountryShape a sh:NodeShape ; sh:targetClass ap:Country ; sh:property [ sh:path rdfs:label ; sh:minCount 1 ] .
+ap:PersonShape a sh:NodeShape ; sh:targetClass ap:Person ; sh:property [ sh:path rdfs:label ; sh:minCount 1 ] .
+ap:AircraftShape a sh:NodeShape ; sh:targetClass ap:Aircraft ; sh:property [ sh:path rdfs:label ; sh:minCount 1 ] .
+ap:RunwaySurfaceShape a sh:NodeShape ; sh:targetClass ap:RunwaySurface ; sh:property [ sh:path rdfs:label ; sh:minCount 1 ] .

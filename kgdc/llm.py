@@ -15,7 +15,7 @@ load_dotenv()
 _RETRYABLE = ("429", "500", "502", "503", "504", "Connection error", "empty choices", "timed out", "Timeout")
 
 
-BIG = "big"   # pass model=BIG for the orchestrator (segmentation plan, final merge)
+BIG = "big"   # pass model=BIG for the orchestrator (segmentation plan, final merge); LLM_BIG_TIMEOUT defaults to 600 s (a merge writes the whole graph)
 
 
 class MalformedToolCall(Exception):
@@ -60,17 +60,18 @@ def chat(prompt: str, model: str | None = None, temperature: float = 0.0, attemp
     if os.getenv(role + "BASIC_AUTH"):   # e.g. an Ollama behind an auth proxy: "user:password"
         import base64
         headers["Authorization"] = "Basic " + base64.b64encode(os.environ[role + "BASIC_AUTH"].encode()).decode()
-    client = OpenAI(base_url=env("BASE_URL"), api_key=env("API_KEY"), timeout=float(os.getenv("LLM_TIMEOUT", "90")), max_retries=0, default_headers=headers)
+    client = OpenAI(base_url=env("BASE_URL"), api_key=env("API_KEY"), timeout=float(os.getenv(role + "TIMEOUT") or ("600" if role == "LLM_BIG_" else os.getenv("LLM_TIMEOUT", "90"))), max_retries=0, default_headers=headers)
     model = env("MODEL") if model in (None, BIG) else model
     for i in range(1, attempts + 1):
         try:
             extra = {"usage": {"include": True}}   # OpenRouter: report cost; ignored elsewhere
             if os.getenv(role + "PROVIDER_SORT"):   # OpenRouter: e.g. "throughput" to avoid slow providers
                 extra["provider"] = {"sort": os.environ[role + "PROVIDER_SORT"], "allow_fallbacks": True}
+            kw = {"max_tokens": int(os.environ[role + "MAX_TOKENS"])} if role == "LLM_BIG_" and os.getenv("LLM_BIG_MAX_TOKENS") else {}   # a merge writes the whole graph: endpoints cap output by default
             r = client.chat.completions.create(
                 model=model, temperature=temperature,
                 messages=[{"role": "user", "content": prompt}],
-                extra_body=extra,
+                extra_body=extra, **kw,
             )
             if not r.choices:   # OpenRouter: upstream error delivered as 200 with an `error` field
                 err = (r.model_dump().get("error") or {})
@@ -101,7 +102,7 @@ def chat_messages(messages: list[dict], tools: list[dict] | None = None, model: 
     if os.getenv(role + "BASIC_AUTH"):   # e.g. an Ollama behind an auth proxy: "user:password"
         import base64
         headers["Authorization"] = "Basic " + base64.b64encode(os.environ[role + "BASIC_AUTH"].encode()).decode()
-    client = OpenAI(base_url=env("BASE_URL"), api_key=env("API_KEY"), timeout=float(os.getenv("LLM_TIMEOUT", "90")), max_retries=0, default_headers=headers)
+    client = OpenAI(base_url=env("BASE_URL"), api_key=env("API_KEY"), timeout=float(os.getenv(role + "TIMEOUT") or ("600" if role == "LLM_BIG_" else os.getenv("LLM_TIMEOUT", "90"))), max_retries=0, default_headers=headers)
     model = env("MODEL") if model in (None, BIG) else model
     for i in range(1, attempts + 1):
         try:

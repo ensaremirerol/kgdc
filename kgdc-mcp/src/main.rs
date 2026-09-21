@@ -371,6 +371,23 @@ impl Server {
         let mut scope = st.vocab.dependencies(&task_cls);
         scope.insert(task_cls);
         let targets: HashSet<String> = st.tasks[ti].targets.iter().cloned().collect();
+        if targets.len() == 1 {
+            // Lenient: a one-target task can only mean that target, yet workers rename it
+            // (ex:clinicalvisit/visit_1 for ex:clinicalvisit/clinical_visit) and lose every triple.
+            // Rewrite foreign ex: subjects to the target; rdf:type stays foreign (an invented node's
+            // class must not become the target's) and is rejected below like before.
+            let single = NamedNode::new_unchecked(targets.iter().next().unwrap().clone());
+            let foreign = |t: TripleRef| t.predicate != rdf::TYPE
+                && matches!(t.subject, NamedOrBlankNodeRef::NamedNode(s) if !targets.contains(s.as_str()) && s.as_str().starts_with(&st.vocab.ns));
+            let renamed: Vec<Triple> = g.iter().filter(|t| foreign(*t))
+                .map(|t| Triple::new(single.clone(), t.predicate.into_owned(), t.object.into_owned())).collect();
+            if !renamed.is_empty() {
+                let mut g2 = Graph::new();
+                for t in g.iter() { if !foreign(t) { g2.insert(t); } }
+                for t in &renamed { g2.insert(t); }
+                g = g2;
+            }
+        }
         let cap = st.max_subjects_per_task;
         let mut subjects: HashSet<String> = st.tasks[ti].subjects.iter().cloned().collect();
         let mut accepted = 0usize;

@@ -7,7 +7,7 @@ import re
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 
-from rdflib import Graph, URIRef
+from rdflib import RDF, Graph, URIRef
 
 from . import llm, prompts
 from .progress import log
@@ -15,6 +15,7 @@ from .schema import Schema
 from .validate import _BAD_IRI, unresolved, validate
 
 MAX_FIX = int(os.getenv("KGDC_MAX_FIX", "2"))
+VERIFY = os.getenv("KGDC_VERIFY", "0") == "1"   # one audit call per segment before the union: drop unsupported triples, note missing facts
 BIG_MODEL = llm.BIG   # orchestrator role: LLM_BIG_* env, falls back to LLM_*
 
 
@@ -107,6 +108,30 @@ def _whole_sentences(text: str, span: str) -> str:
     return text[start:end].strip()
 
 
+def scope_filter(ttl: str, schema: Schema, concepts: list[str], known_ttl: str) -> tuple[str, int]:
+    """Ordered mode, levels above the first: every class an agent may link to was built by an earlier
+    level, so a *new* individual typed with another class is a duplicate (the visit agent re-creating
+    the processes it should link). Drop such individuals and every triple about them; the links to
+    them stay and surface as SHACL violations for the fix round. Returns (ttl, dropped individuals)."""
+    try:
+        g = Graph().parse(data=ttl, format="turtle")
+    except Exception:  # noqa: BLE001 — unparsable output is handled downstream
+        return ttl, 0
+    known = {s for s in Graph().parse(data=known_ttl, format="turtle").subjects(RDF.type, None)} if known_ttl.strip() else set()
+    mine = {URIRef(next(ns for p, ns in schema.prefixes.items() if c.startswith(p + ":")) + c.split(":", 1)[1]) for c in concepts if ":" in c}
+    mine |= {URIRef(next(ns for p, ns in schema.prefixes.items() if d.startswith(p + ":")) + d.split(":", 1)[1])
+             for c in concepts for d in schema.descendants(c)}
+    bad = {s for s, t in g.subject_objects(RDF.type) if s not in known and t not in mine and str(t) in schema.terms}
+    if not bad:
+        return ttl, 0
+    for s in bad:
+        g.remove((s, None, None))
+    for p, ns in schema.prefixes.items():
+        g.bind(p, ns)
+    comments = "\n".join(l for l in ttl.splitlines() if l.strip().startswith("# UNRESOLVED"))
+    return g.serialize(format="turtle") + ("\n" + comments if comments else ""), len(bad)
+
+
 def _agent(schema: Schema, context: str, seg: dict, task: str, known: str = "", known_ttl: str = "") -> dict:
     """One sub-agent: one-shot extraction, then up to MAX_FIX validator-guided fixes.
 
@@ -117,8 +142,18 @@ def _agent(schema: Schema, context: str, seg: dict, task: str, known: str = "", 
     schema = schema.subset(trace["concepts"])   # only the relevant slice of the vocabulary goes in the prompt
     name = seg["id"].split(":")[-1]
     log(f"  {name}: extracting ({len(seg['text'])} chars, {len(schema.classes)} classes in view)")
-    ttl = llm.strip_fences(llm.chat(prompts.extract(schema, context, seg["text"], trace["concepts"], task, known)))
+    try:
+        ttl = llm.strip_fences(llm.chat(prompts.extract(schema, context, seg["text"], trace["concepts"], task, known)))
+    except Exception as e:  # noqa: BLE001 — one dead agent (context window, endpoint) must not take the document down
+        log(f"  {name}: extraction FAILED ({str(e)[:100]})")
+        trace.update(ttl="", unresolved=[f"UNRESOLVED: agent {name} failed: {str(e)[:200]}"], error=str(e)[:300])
+        return trace
     trace["llm_calls"] += 1
+    if known_ttl:   # ordered mode, level >= 1: only individuals of this agent's class are new; the rest exist already
+        ttl, dropped = scope_filter(ttl, schema, trace["concepts"], known_ttl)
+        if dropped:
+            trace["scope_dropped"] = dropped
+            log(f"  {name}: dropped {dropped} individual(s) of other classes (already built by earlier levels)")
     prev = None
     for cycle in range(MAX_FIX + 1):
         ok, report, _ = validate(ttl + "\n" + known_ttl if known_ttl else ttl, schema)
@@ -131,13 +166,63 @@ def _agent(schema: Schema, context: str, seg: dict, task: str, known: str = "", 
             break
         prev = report
         log(f"  {name}: fixing ...")
-        ttl = llm.strip_fences(llm.chat(prompts.fix(schema, ttl, report, context, seg["text"], task, known)))
+        try:
+            ttl = llm.strip_fences(llm.chat(prompts.fix(schema, ttl, _cap(report), context, seg["text"], task, known)))   # a verbose SHACL report blew a 32k context
+        except Exception as e:  # noqa: BLE001 — keep the last graph; the merge pass still sees the violations
+            log(f"  {name}: fix FAILED ({str(e)[:100]}), keeping the graph as is")
+            trace["error"] = str(e)[:300]
+            break
         trace["llm_calls"] += 1
+    trace["unresolved"] = unresolved(ttl)   # before the verifier re-serialises (comments do not survive rdflib)
+    if VERIFY:
+        ttl, trace["verifier"] = _verify(schema, ttl, context, seg["text"], task)
+        trace["llm_calls"] += 1
+        trace["unresolved"] += [f"MISSING (verifier): {m}" for m in trace["verifier"].get("missing", [])]
+        log(f"  {name}: verifier dropped {len(trace['verifier'].get('dropped', []))}, missing {len(trace['verifier'].get('missing', []))}")
     trace["ttl"] = ttl
-    trace["unresolved"] = unresolved(ttl)
     if trace["unresolved"]:
         log(f"  {name}: {len(trace['unresolved'])} unresolved (honest gaps)")
     return trace
+
+
+def _verify(schema: Schema, ttl: str, context: str, segment_text: str, task: str) -> tuple[str, dict]:
+    """One worker call over the numbered triples: drop what the text does not support (by index,
+    so the verifier can only remove, never invent), and list stated facts the graph lacks —
+    those go to the merge pass, which sees the whole document."""
+    try:
+        g = Graph().parse(data=ttl, format="turtle")
+    except Exception:  # noqa: BLE001 — unparsed output is the merge pass's problem, not the verifier's
+        return ttl, {"skipped": "not valid Turtle"}
+    for p, ns in schema.prefixes.items():
+        g.bind(p, ns)
+    triples = sorted(g)
+    lines = [f"{i}: " + " ".join(x.n3(g.namespace_manager) for x in t) for i, t in enumerate(triples)]
+    try:
+        v = json_call(prompts.verify(lines, context, segment_text, task))
+    except (ValueError, TypeError):
+        return ttl, {"skipped": "verifier returned no JSON"}
+    v = v if isinstance(v, dict) else {}
+    drop = {int(i) for i in v.get("drop", []) if str(i).isdigit() and int(i) < len(triples)}
+    gone = {triples[i][0] for i in drop if triples[i][1] == RDF.type}   # an unsupported individual goes entirely
+    for i, t in enumerate(triples):
+        if i in drop or t[0] in gone:
+            g.remove(t)
+    return g.serialize(format="turtle"), {"dropped": [lines[i] for i in sorted(drop)], "missing": [str(m) for m in v.get("missing", []) if m]}
+
+
+def drop_redundant_types(g: Graph, schema: Schema) -> int:
+    """Remove `x a Super` where g also says `x a Sub` and Sub ⊑ Super in the ontology. Models add
+    the range class next to the real one (`a chr:MeasurementProcess, chr:MedicalProcedure`); it is
+    entailed anyway and re-keys the node for identity-hash scoring. Returns the number removed."""
+    iri = {q: next(ns for p, ns in schema.prefixes.items() if q.startswith(p + ":")) + q.split(":", 1)[1] for q in schema.parents}
+    qn = {v: k for k, v in iri.items()}
+    n = 0
+    for s in set(g.subjects(RDF.type, None)):
+        types = [t for t in g.objects(s, RDF.type) if str(t) in qn]
+        for t in types:
+            if any(qn[str(t)] in schema.ancestors(qn[str(u)]) - {qn[str(u)]} for u in types if u != t):
+                g.remove((s, RDF.type, t)); n += 1
+    return n
 
 
 def _union(schema: Schema, ttls: list[str]) -> tuple[str, list[str]]:
@@ -151,6 +236,7 @@ def _union(schema: Schema, ttls: list[str]) -> tuple[str, list[str]]:
             g.parse(data=t, format="turtle")
         except Exception:  # noqa: BLE001 — the merge pass gets it as text; facts must not vanish silently
             unparsed.append(t)
+    drop_redundant_types(g, schema)
     # rdflib parses IRIs with illegal characters but cannot serialise them; such
     # triples already fail the IRI check in the agent's trace, so drop them here.
     for trip in [t for t in g if any(isinstance(x, URIRef) and _BAD_IRI.search(str(x)) for x in t)]:
@@ -170,6 +256,7 @@ def _known_block(g: Graph, schema: Schema) -> str:
 
 
 MERGE_MAX_CHARS = int(os.getenv("KGDC_MERGE_MAX_CHARS", "12000"))   # per section of the merge prompt
+MERGE_MIN_KEEP = float(os.getenv("KGDC_MERGE_MIN_KEEP", "0.5"))   # merge output smaller than this fraction of the union is a cut-off reply
 
 
 def _cap(s: str, n: int = MERGE_MAX_CHARS) -> str:
@@ -187,6 +274,18 @@ def _final(schema: Schema, text: str, merged: str, report: str, unres: list[str]
     except Exception as e:  # noqa: BLE001 — e.g. context window exceeded: the union is still a result
         final, err = merged, f"merge pass failed: {str(e)[:300]}"
         log(f"merge FAILED ({str(e)[:80]}...) - returning the un-merged union")
+    try:
+        gf = Graph().parse(data=final, format="turtle")
+        drop_redundant_types(gf, schema)
+        n_union = len(Graph().parse(data=merged, format="turtle"))
+        if len(gf) < MERGE_MIN_KEEP * n_union:   # a merge dedupes, it does not lose half the graph: the reply was cut short
+            raise ValueError(f"merge output has {len(gf)} triples, union has {n_union}")
+        for p, ns in schema.prefixes.items():
+            gf.bind(p, ns)
+        final = gf.serialize(format="turtle")
+    except Exception as e:  # noqa: BLE001 — a truncated/garbled merge output loses facts: keep the union instead
+        final, err = merged, f"merge output rejected ({str(e)[:100]}): kept the un-merged union"
+        log(f"merge output rejected ({str(e)[:60]}) - returning the un-merged union")
     ok, report, _ = validate(final, schema)
     return final, ok, report, err
 
@@ -208,8 +307,11 @@ def run_ordered(schema: Schema, text: str, workers: int = 4, task: str = "") -> 
         for cls in level:
             spans = [s["text"] for s in segs if cls in s.get("concepts", [])]
             # a class no segment names (e.g. the encounter itself, folded into the header)
-            # still gets built — from the whole document, which its agent can afford here
-            jobs.append({"id": cls, "concepts": [cls], "text": "\n\n".join(spans) or text})
+            # still gets built — from the whole document, which its agent can afford here.
+            # The last level holds the containers (visit, plan): their links to everything
+            # built before are stated all over the document, not in their own segment.
+            whole = level is levels[-1] and len(levels) > 1
+            jobs.append({"id": cls, "concepts": [cls], "text": text if whole else "\n\n".join(spans) or text})
         with ThreadPoolExecutor(max_workers=workers) as ex:
             level_traces = list(ex.map(lambda j: _agent(schema, context, j, task, known, known_ttl), jobs))
         for t in level_traces:

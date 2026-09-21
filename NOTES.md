@@ -169,3 +169,121 @@ what happened → what fixed it or would.
   costs; whether `issue` fires on real ambiguities.
 - Workers at 12B–14B (gemma-3-12b at 64 tok/s) as the sweet spot between 8B
   reliability and 27B cost.
+
+36. **Same model, same document, MCP fill mode is high-variance and far below one-shot ordered**
+    (gemma4-g1 on LiteLLM, vignette_065, 2026-09-20): ordered 0.953 (P 0.91 / R 1.00, the
+    only FPs are labels on process nodes and the CarePlan link the gold lacks); `--mcp`
+    0.37 and 0.24 in two runs (0.79 earlier). Build on the ordered path; treat `--mcp` as
+    the small-model experiment it is.
+37. **Workers rename a lone target and lose everything.** ClinicalVisit target
+    `ex:clinicalvisit/clinical_visit` → worker writes `ex:clinicalvisit/visit_1` /
+    `…/visit_t9`; every triple rejected as "not a target", rerun repeats it. Server now
+    rewrites foreign `ex:` subjects to the task's single target (rdf:type excluded).
+    Multi-target tasks still depend on the model copying IRIs.
+38. **hasProcedure is not in the text.** The visit→process links come from a convention
+    (context.md), not a sentence; in fill mode the worker instead invents
+    `ex:medicalprocedure/well_child_visit` from "Encounter type: Well child visit
+    (procedure)". Offering the process IRIs as RELATED (`schema.dependencies`, which
+    includes subclasses of the range — `subset` did not) is necessary but not sufficient.
+    Adding the related individuals' segments to the task text made it worse: the worker
+    started filling those non-target subjects. Ordered mode gets all 11 links.
+39. **A per-segment verifier pass (`KGDC_VERIFY=1`) did not pay on this document**: 0.953 →
+    0.854, +12 calls. It dropped one triple (a misspelled patient IRI — a real defect, but
+    dropping the link cost more than the typo), and its "missing" list is noise because each
+    verifier sees one class slice. Only worth trying on a worker that actually hallucinates.
+40. **`load_dotenv()` re-adds a variable you `unset`** (it only skips keys present in the
+    environment). A role-swap script must `export LLM_BASIC_AUTH=` (empty), or the Ollama
+    Basic header rides along to LiteLLM as a 401 "Virtual Key expected".
+
+## Other vocabularies (WebNLG, 2026-09-20)
+
+41. **A new use case is three files.** `examples/webnlg-airport/` (7 classes, 16 properties)
+    and `examples/webnlg-building/` (6 classes, 11 properties) were written from the
+    category's triple table in ~15 min each: ontology with `rdfs:domain`/`range`, SHACL
+    shapes (labels MUST, value kinds), a context file with naming conventions. No code
+    change. `examples/webnlg/prepare.py` pulls the documents + gold, `score.py` scores
+    by normalised label (accents, underscores, dashes, punctuation, articles, dates).
+42. **Results (gemma4-g1 both roles, ordered mode, 20 docs each, size ≥ 3):** Airport
+    micro F1 0.940 / macro 0.948, 12/20 perfect, ~15 s per document. Building micro 0.854 /
+    macro 0.838, 9/20 perfect. Residual misses are gold conventions, not extraction
+    errors: text-supported facts the gold omits ("Alcobendas, Spain" → country, 6×),
+    entity granularity ("Williamsburg, Virginia" as one Place — fixed by one context
+    line: 0.769 → 0.838 macro), where the gold hangs a country (on the tenant), synonymous
+    entity labels ("Georgian style" vs the DBpedia "Georgian architecture"). Real errors:
+    one rounded number (83.2 for 83.2104), one state-as-country.
+43. **Scoring by label needs a normaliser, not a stricter prompt.** The first building
+    pass scored 0.00 on most docs because of "Alan B Miller Hall" vs "Alan B. Miller
+    Hall", "&" vs "and", "the College…", "March 30th, 2007" vs "30 March 2007". The
+    extraction was right each time. Normalise both sides before blaming the model.
+44. **Gold-vs-text artefacts also decide the CHR numbers.** With exact labels vignette_001
+    scores 0.667; with honorifics stripped ("Ms." is in the gold, not in the text) 0.928.
+    On 003/004/006 exactly one EvaluationProcess re-keys because the vignette text prints
+    the condition's record date as the evaluation date while the gold uses the visit
+    date (`fhir_to_text.py` vs `fhir_to_chr.py`). These are corpus issues to fix in the
+    Thesis repo, not extraction losses.
+
+## Ordered mode on 10 CHR documents (2026-09-20, gemma4-g1 both roles)
+
+45. **Containers need the whole document.** The ClinicalVisit agent saw only the header
+    segment; on a 22-process document it wrote "hasProcedure — not stated" (22 FN) although
+    all processes were in KNOWN ENTITIES. Last build level now gets the full text
+    (`run_ordered`). Side effect: the agent then types the processes it links with the
+    range class (`a chr:MedicalProcedure` next to `a chr:MeasurementProcess`, 19× on one
+    document) — entailed, harmless for SHACL, but it re-keys every node under identity-hash
+    scoring (0.50 → 0.86). `drop_redundant_types()` removes `x a Super` when `x a Sub` is
+    present, after the union and after the merge.
+46. **Big documents break the fixed timeouts.** A 266-triple merge takes minutes: with
+    `LLM_TIMEOUT=90` it timed out 5× (9 min wasted) and the un-merged union was returned.
+    Orchestrator calls now default to `LLM_BIG_TIMEOUT=600`. A verbose pySHACL report in a
+    fix prompt blew the 32k context on vignette_002 and killed the whole run; the report is
+    capped (`_cap`) and an agent exception now finalises that agent with a note instead.
+47. **Per-document scoring artefacts dominate the spread.** Exact-label identity-hash F1 on
+    vignettes 001-010: 0.46-0.74. Honorifics stripped: 0.75-0.93. The residual per-document
+    losses are the corpus date inconsistency (44), the CarePlan link, and labels on process
+    nodes the gold lacks — none is an extraction error the pipeline can fix.
+48. **Stricter KNOWN-ENTITIES wording backfired.** Telling agents "NEVER declare an
+    individual of a class in this list" made the visit agent split one visit into four
+    (vignette_008: 0.864 → 0.785). The original wording ("create only what is not in the
+    list") stays. Prompt tightening is not free; measure each change on ≥2 documents.
+49. **Results after the fixes (ordered, gemma4-g1 both roles; identity-hash F1 with
+    honorifics stripped and redundant supertypes dropped):** 001 0.93, 002 0.87, 003 0.75,
+    004 0.91, 005 0.93 (0.79 before the whole-document visit agent + merge timeout fix:
+    all 22 hasProcedure links now land, merge finishes in 252 s instead of timing out),
+    006 0.90, 007 0.79 (ran before the fix; same 22-link gap), 008 0.86, 009 0.90,
+    010 0.93 — macro 0.88 over 10 documents. Remaining per-document loss is one
+    re-keyed EvaluationProcess (corpus date, 44), 4-28 labels on process nodes and the
+    CarePlan link the gold lacks. WebNLG: Airport 0.95 macro, Building 0.84 macro (42).
+
+## ADE corpus (medical, real prose; 2026-09-20)
+
+50. **Setup in 30 min, same recipe:** `examples/ade/` (2 classes, 2 properties, `prepare.py`
+    groups the annotated sentences of one case report into a document; gold = every
+    drug→adverse effect / drug→dose pair). The WebNLG label scorer is generic and scores it.
+51. **Span-level gold punishes a graph.** ADE annotates each *mention*: "5-FU" and
+    "5-fluorouracil", "MTX" and "methotrexate" are separate gold subjects; "hives" is the
+    span where the model writes "occasional hives"; "heparin-induced thrombocytopenia" vs
+    "thrombocytopenia". A KG merges the aliases into one node, so exact-label F1 is low even
+    when the extraction is right. `score.py --lenient` treats a node as all its labels and
+    matches arguments by containment (one-to-one): strict 0.52 / lenient 0.80 micro F1.
+52. **Two conventions moved it (strict 0.38 → 0.52, lenient 0.54 → 0.80, 6/20 perfect):**
+    (a) one Drug per drug with one rdfs:label per surface form used in the text (the model
+    had made separate nodes for cyclophosphamide / cytoxan / CP and hung the effects on one);
+    (b) every sign, symptom and finding is its own AdverseEffect next to the diagnosis (the
+    model had extracted "AGEP" where the gold lists erythema, pustules, malaise, fever).
+    Remaining misses are mostly gold noise: the same fact annotated once per alias, "human
+    teratogen" as an effect, a typo ("cyclosposphamide") as the drug string.
+
+## 200-document batch (2026-09-21)
+
+53. **Batch load changes the failure modes.** 4 documents × 4 agents on one 27B endpoint made
+    every call 2-3× slower: 22 of the first 107 documents lost their MeasurementProcess agent to
+    the 90 s worker timeout (5 retries against the same wall, 10 min wasted each). Under batch
+    load the worker timeout must match the orchestrator's (`run_all.sh` exports 600 s); 0
+    timeouts in the next 100 documents.
+54. **A truncated merge reply was written as the result.** Endpoints cap output tokens; a big
+    document's merged graph is >8k tokens, the reply stops mid-statement and 43 of 150 outputs
+    were unparsable Turtle (scored 0). Two fixes: `_final` now keeps the union when the merge
+    output does not parse, and orchestrator calls send `LLM_BIG_MAX_TOKENS` (16000 in the
+    batch runner). `examples/chr/repair_truncated.py` rebuilds the union from a trace for
+    outputs produced before the fix. Documents with ~43 segments still overflow the 32k
+    context at merge time (2 of 200) and keep the union, by design.

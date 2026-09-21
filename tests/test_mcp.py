@@ -60,3 +60,21 @@ def test_gate_and_shacl():
         assert "ex:mp" in c.call("export")
     finally:
         c.close()
+
+
+def test_single_target_task_rewrites_foreign_subject():
+    """Workers rename a lone target (ex:clinicalvisit/visit_1); the server lands the triple on the target instead of rejecting it."""
+    c = Client()
+    try:
+        m = c.call("mint", items=[{"class": "chr:ClinicalVisit", "label": "clinical visit"}, {"class": "chr:Person", "label": "Ann"}])
+        ns = "http://example.org/data/"
+        visit, ann = (ns + x["uri"].split(":", 1)[1] for x in m)
+        t = c.call("create_task", targets=[visit], related=[ann], text="Ann was seen")
+        r = c.call("add_triples", task_id=t["id"], lines=[f"<{ns}clinicalvisit/visit_1> chr:hasPatient <{ann}> ."])
+        assert r["accepted"] == 1 and r["rejected"] == [], r
+        out = c.call("export")
+        assert "hasPatient" in out and "visit_1" not in out
+        r = c.call("add_triples", task_id=t["id"], lines=[f"<{ns}clinicalvisit/visit_1> a chr:MedicalProcedure ."])
+        assert "not one of this task's targets" in r["rejected"][0], "rdf:type of an invented node is never moved onto the target"
+    finally:
+        c.close()

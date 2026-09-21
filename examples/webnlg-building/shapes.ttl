@@ -1,0 +1,29 @@
+@prefix bd:   <https://example.org/webnlg/building#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+bd:BuildingShape a sh:NodeShape ; sh:targetClass bd:Building ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ; sh:message "every building needs its name as rdfs:label" ] ;
+  sh:property [ sh:path bd:architect ; sh:class bd:Person ] ;
+  sh:property [ sh:path bd:architecturalStyle ; sh:class bd:ArchitecturalStyle ] ;
+  sh:property [ sh:path bd:owner ; sh:class bd:Organisation ] ;
+  sh:property [ sh:path bd:currentTenants ; sh:class bd:Organisation ] ;
+  sh:property [ sh:path bd:tenant ; sh:class bd:Organisation ] ;
+  sh:property [ sh:path bd:location ; sh:class bd:Place ] ;
+  sh:property [ sh:path bd:address ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path bd:buildingStartDate ; sh:datatype xsd:string ; sh:maxCount 1 ] ;
+  sh:property [ sh:path bd:completionDate ; sh:datatype xsd:string ; sh:maxCount 1 ] .
+
+bd:OrganisationShape a sh:NodeShape ; sh:targetClass bd:Organisation ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ] ;
+  sh:property [ sh:path bd:country ; sh:class bd:Country ] ;
+  sh:property [ sh:path bd:chancellor ; sh:class bd:Person ] .
+
+bd:PlaceShape a sh:NodeShape ; sh:targetClass bd:Place ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ] ;
+  sh:property [ sh:path bd:country ; sh:class bd:Country ] .
+
+bd:CountryShape a sh:NodeShape ; sh:targetClass bd:Country ; sh:property [ sh:path rdfs:label ; sh:minCount 1 ] .
+bd:PersonShape a sh:NodeShape ; sh:targetClass bd:Person ; sh:property [ sh:path rdfs:label ; sh:minCount 1 ] .
+bd:StyleShape a sh:NodeShape ; sh:targetClass bd:ArchitecturalStyle ; sh:property [ sh:path rdfs:label ; sh:minCount 1 ] .

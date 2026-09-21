@@ -1,0 +1,12 @@
+@prefix ade:  <https://example.org/ade#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+ade:DrugShape a sh:NodeShape ; sh:targetClass ade:Drug ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ; sh:message "every drug needs its name as rdfs:label" ] ;
+  sh:property [ sh:path ade:causes ; sh:class ade:AdverseEffect ] ;
+  sh:property [ sh:path ade:dosage ; sh:datatype xsd:string ] .
+
+ade:AdverseEffectShape a sh:NodeShape ; sh:targetClass ade:AdverseEffect ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ; sh:message "every adverse effect needs its name as rdfs:label" ] .
