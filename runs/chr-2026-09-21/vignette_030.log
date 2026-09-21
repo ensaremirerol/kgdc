@@ -1,0 +1,48 @@
+[   0.1s] segmenting (orchestrator) ...
+[  91.2s] 37 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[MeasurementProcess,Measurement], s11[MeasurementProcess,Measurement], s12[MeasurementProcess,Measurement], s13[MeasurementProcess,Measurement], s14[MeasurementProcess,Measurement], s15[MeasurementProcess,Measurement], s16[MeasurementProcess,Measurement], s17[MeasurementProcess,Measurement], s18[MeasurementProcess,Measurement], s19[MeasurementProcess,Measurement], s20[MeasurementProcess,Measurement], s21[MeasurementProcess,Measurement], s22[MeasurementProcess,Measurement], s23[MeasurementProcess,Measurement], s24[MeasurementProcess,Measurement], s25[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s26[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s27[CarePlan,MedicationAdministration,PharmaceuticalProduct,PharmaceuticalDose], s28[CarePlan,MedicationAdministration,PharmaceuticalProduct,PharmaceuticalDose], s29[CarePlan,MedicationAdministration,PharmaceuticalProduct,PharmaceuticalDose], s30[CarePlan,MedicationAdministration,PharmaceuticalProduct,PharmaceuticalDose], s31[CarePlan,MedicationAdministration,PharmaceuticalProduct,PharmaceuticalDose], s32[CarePlan,MedicationAdministration,PharmaceuticalProduct,PharmaceuticalDose], s33[CarePlan,MedicationAdministration,PharmaceuticalProduct,PharmaceuticalDose], s34[CarePlan,MedicationAdministration,PharmaceuticalProduct,PharmaceuticalDose], s35[CarePlan,MedicationAdministration,PharmaceuticalProduct,PharmaceuticalDose], s36[CarePlan,MedicationAdministration,PharmaceuticalProduct,PharmaceuticalDose], s37[CarePlan]
+[  91.3s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, PharmaceuticalDose] -> [EvaluationProcess, MeasurementProcess, PharmaceuticalProduct] -> [MedicationAdministration] -> [CarePlan, ClinicalVisit]
+[  91.3s] level 0: 6 agent(s), 0 known entities
+[  91.3s]   CareUnit: extracting (235 chars, 1 classes in view)
+[  91.3s]   ClinicalCondition: extracting (472 chars, 3 classes in view)
+[  91.3s]   DiagnosticStatement: extracting (472 chars, 1 classes in view)
+[  91.3s]   Measurement: extracting (5886 chars, 2 classes in view)
+[  96.3s]   CareUnit: cycle 0 -> conforms
+[  96.3s]   Person: extracting (235 chars, 1 classes in view)
+[  98.0s]   DiagnosticStatement: cycle 0 -> conforms
+[  98.0s]   PharmaceuticalDose: extracting (1838 chars, 1 classes in view)
+[ 100.0s]   ClinicalCondition: cycle 0 -> conforms
+[ 102.2s]   Person: cycle 0 -> conforms
+[ 110.3s]   PharmaceuticalDose: cycle 0 -> conforms
+[ 166.5s]   Measurement: cycle 0 -> conforms
+[ 166.5s] level 1: 3 agent(s), 49 known entities
+[ 166.5s]   EvaluationProcess: extracting (472 chars, 7 classes in view)
+[ 166.5s]   MeasurementProcess: extracting (5886 chars, 6 classes in view)
+[ 166.5s]   PharmaceuticalProduct: extracting (1838 chars, 3 classes in view)
+[ 178.3s]   EvaluationProcess: cycle 0 -> conforms
+[ 186.0s]   PharmaceuticalProduct: cycle 0 -> conforms
+[ 306.9s]   MeasurementProcess: cycle 0 -> conforms
+[ 306.9s] level 2: 1 agent(s), 108 known entities
+[ 306.9s]   MedicationAdministration: extracting (1838 chars, 6 classes in view)
+[ 341.8s]   MedicationAdministration: cycle 0 -> conforms
+[ 341.8s] level 3: 2 agent(s), 118 known entities
+[ 341.8s]   CarePlan: extracting (8658 chars, 4 classes in view)
+[ 341.8s]   ClinicalVisit: extracting (8658 chars, 5 classes in view)
+[ 388.9s]   CarePlan: cycle 0 -> 1 violation(s)
+[ 388.9s]   CarePlan: fixing ...
+[ 434.7s]   CarePlan: cycle 1 -> 1 violation(s)
+[ 434.7s]   CarePlan: stopping (plateau)
+[ 434.7s]   CarePlan: 1 unresolved (honest gaps)
+[ 460.6s]   ClinicalVisit: cycle 0 -> conforms
+[ 460.8s] merging (orchestrator): 0 violation(s), 1 unresolved, 1 unparsed
+[ 652.6s] final: 1 violation(s)
+conforms=False segments=12 llm_calls=15 unresolved=1
+  orchestrator   2 calls    27534 in   15160 out  cost n/a  gemma4-g1
+  total         15 calls   100513 in   41488 out  cost n/a  
+  worker        13 calls    72979 in   26328 out  cost n/a  gemma4-g1
+  UNRESOLVED: chr:hasMedicalProcedure — not stated in the text
+Constraint Violation in TurtleSyntax:
+	Severity: sh:Violation
+	Message: not valid Turtle: at line 320 of <>:
+	Offending line: ex:Measurement_Alanine_1742-6 a chr:Measurement ;
+	Hint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs.
+exit=1

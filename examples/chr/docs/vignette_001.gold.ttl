@@ -1,0 +1,59 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/clinical/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:visit_5e117ba0_820d_777a_6f36_fd808fb45dbb a chr:ClinicalVisit ;
+    chr:hasCareProvider ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasCareUnit ex:unit_github_com_syntheti ;
+    chr:hasDate "2016-08-07T06:24:27+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:patient_5e117ba0_820d_777a_7d5f_eb972d065bfa ;
+    chr:hasProcedure ex:evalProc_5e117ba0_820d_777a_5e3e_80e530f5f852,
+        ex:measProc_5e117ba0_820d_777a_b192_b7a4a85cbe1c .
+
+ex:cond_5e117ba0_820d_777a_5e3e_80e530f5f852 a chr:ClinicalCondition ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> ;
+    chr:hasRecordDate "2016-08-07T06:24:27+02:00"^^xsd:dateTime .
+
+ex:diag_5e117ba0_820d_777a_5e3e_80e530f5f852 a chr:DiagnosticStatement ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> .
+
+ex:evalProc_5e117ba0_820d_777a_5e3e_80e530f5f852 a chr:EvaluationProcess ;
+    chr:hasCondition ex:cond_5e117ba0_820d_777a_5e3e_80e530f5f852 ;
+    chr:hasObservation ex:diag_5e117ba0_820d_777a_5e3e_80e530f5f852 ;
+    chr:hasPatient ex:patient_5e117ba0_820d_777a_7d5f_eb972d065bfa ;
+    chr:hasPerformedDate "2016-08-07T06:24:27+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 .
+
+ex:measProc_5e117ba0_820d_777a_b192_b7a4a85cbe1c a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_5e117ba0_820d_777a_7d5f_eb972d065bfa ;
+    chr:hasPerformedDate "2016-08-07T06:24:27+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_5e117ba0_820d_777a_b192_b7a4a85cbe1c ;
+    chr:hasStatus ex:status_completed .
+
+ex:meas_5e117ba0_820d_777a_b192_b7a4a85cbe1c a chr:Measurement ;
+    rdfs:label "Body temperature" ;
+    chr:hasCode <https://loinc.org/8310-5> ;
+    chr:hasMeasuredDate "2016-08-07T06:24:27+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "37.816"^^xsd:float ;
+    chr:hasUnit ex:unit_Cel .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_Cel a chr:Unit ;
+    rdfs:label "Cel" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .
+
+ex:unit_github_com_syntheti a chr:CareUnit ;
+    rdfs:label "BOSTON MEDICAL CENTER CORPORATION-" .
+
+ex:patient_5e117ba0_820d_777a_7d5f_eb972d065bfa a chr:Person ;
+    rdfs:label "Ms. Angelic427 Callie226 Schaden604" .
+
+ex:provider_hl7_org_fhir_sid_us_npi_99999 a chr:Person ;
+    rdfs:label "Dr. Willian804 Batz141" .
+

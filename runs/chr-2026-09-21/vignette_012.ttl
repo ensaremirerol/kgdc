@@ -1,0 +1,368 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:care_plan_followup a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluation_20180430T023422, ex:evaluation_20180430T040426 .
+
+ex:evaluation_20180430T023422 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:condition_Medication_review_due_20180430T023422 ;
+    chr:hasObservation ex:diagnostic_statement_Medication_review_due_situation ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 .
+
+ex:evaluation_20180430T040426 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:condition_Gingivitis_20180430T040426 ;
+    chr:hasObservation ex:diagnostic_statement_Gingivitis_disorder ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T04:04:26+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 .
+
+ex:visit_20180430T023422 a chr:ClinicalVisit ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCareProvider ex:Dr_Alan320_Keeling57 ;
+    chr:hasCareUnit ex:PRIMARY_CARE_NORTH_PC ;
+    chr:hasDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasProcedure ex:evaluation_20180430T023422,
+        ex:process_BMI_39156_5,
+        ex:process_Body_Height_8302_2,
+        ex:process_Body_Weight_29463_7,
+        ex:process_Calcium_49765_1,
+        ex:process_Carbon_dioxide_20565_8,
+        ex:process_Chloride_2069_3,
+        ex:process_Creatinine_38483_4,
+        ex:process_GAD7_70274_6,
+        ex:process_Glucose_2339_0,
+        ex:process_Heart_rate_8867_4,
+        ex:process_Hemoglobin_A1c_4548_4,
+        ex:process_PHQ2_55758_7,
+        ex:process_Pain_severity_72514_3,
+        ex:process_Potassium_6298_4,
+        ex:process_Respiratory_rate_9279_1,
+        ex:process_Sodium_2947_0,
+        ex:process_Urea_nitrogen_6299_2 .
+
+ex:PRIMARY_CARE_NORTH_PC a chr:CareUnit ;
+    rdfs:label "PRIMARY CARE NORTH PC" .
+
+ex:condition_Gingivitis_20180430T040426 a chr:ClinicalCondition ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> ;
+    chr:hasRecordDate "2018-04-30T04:04:26+02:00"^^xsd:dateTime .
+
+ex:condition_Medication_review_due_20180430T023422 a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_Gingivitis_disorder a chr:DiagnosticStatement ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> .
+
+ex:diagnostic_statement_Medication_review_due_situation a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:measurement_BMI_39156-5 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.47"^^xsd:float ;
+    chr:hasUnit ex:unit_kgperm2 .
+
+ex:measurement_Body_Height_8302-2 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "181.4"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:measurement_Body_Weight_29463-7 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "90.4"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:measurement_Calcium_49765-1 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/49765-1> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "8.87"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_Carbon_dioxide_20565-8 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "22.6"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Chloride_2069-3 a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "104.57"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Creatinine_38483-4 a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/38483-4> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_GAD7_70274-6 a chr:Measurement ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasMeasuredDate "2018-04-30T03:29:12+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Glucose_2339-0 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "99.22"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_Heart_rate_8867-4 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "60.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_Hemoglobin_A1c_4548-4 a chr:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.1"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:measurement_PHQ2_55758-7 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2018-04-30T04:04:26+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Pain_severity_72514-3 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Potassium_6298-4 a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6298-4> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.5"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Respiratory_rate_9279-1 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "14.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_Sodium_2947-0 a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2947-0> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "142.93"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Urea_nitrogen_6299-2 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6299-2> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "17.68"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:process_BMI_39156_5 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_BMI_39156-5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Body_Height_8302_2 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Body_Height_8302-2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Body_Weight_29463_7 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Body_Weight_29463-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Calcium_49765_1 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Calcium_49765-1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Carbon_dioxide_20565_8 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Carbon_dioxide_20565-8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Chloride_2069_3 a chr:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Chloride_2069-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Creatinine_38483_4 a chr:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Creatinine_38483-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_GAD7_70274_6 a chr:MeasurementProcess ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T03:29:12+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_GAD7_70274-6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Glucose_2339_0 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Glucose_2339-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Heart_rate_8867_4 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Heart_rate_8867-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Hemoglobin_A1c_4548_4 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Hemoglobin_A1c_4548-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_PHQ2_55758_7 a chr:MeasurementProcess ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T04:04:26+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_PHQ2_55758-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Pain_severity_72514_3 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Pain_severity_72514-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Potassium_6298_4 a chr:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Potassium_6298-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Respiratory_rate_9279_1 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Respiratory_rate_9279-1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Sodium_2947_0 a chr:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Sodium_2947-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Urea_nitrogen_6299_2 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Alan320_Keeling57 ;
+    chr:hasResult ex:measurement_Urea_nitrogen_6299-2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kgperm2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_cblscorecbr a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:unit_mgperdL a chr:Unit ;
+    rdfs:label "mg/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
+
+ex:unit_mmolperL a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Arturo47_Lauren941_Heidenreich818 a chr:Person ;
+    rdfs:label "Arturo47 Lauren941 Heidenreich818" .
+
+ex:Dr_Alan320_Keeling57 a chr:Person ;
+    rdfs:label "Dr. Alan320 Keeling57" .

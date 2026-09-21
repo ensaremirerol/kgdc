@@ -1,0 +1,29 @@
+[   0.1s] segmenting (orchestrator) ...
+[  26.4s] 11 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[EvaluationProcess,DiagnosticStatement], s11[CarePlan]
+[  26.4s] build order: [CareUnit, DiagnosticStatement, Measurement, Person] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  26.4s] level 0: 4 agent(s), 0 known entities
+[  26.4s]   CareUnit: extracting (221 chars, 1 classes in view)
+[  26.4s]   DiagnosticStatement: extracting (236 chars, 1 classes in view)
+[  26.4s]   Measurement: extracting (1877 chars, 2 classes in view)
+[  26.4s]   Person: extracting (221 chars, 1 classes in view)
+[  30.9s]   CareUnit: cycle 0 -> conforms
+[  31.8s]   DiagnosticStatement: cycle 0 -> conforms
+[  32.1s]   Person: cycle 0 -> conforms
+[  51.4s]   Measurement: cycle 0 -> conforms
+[  51.4s] level 1: 2 agent(s), 17 known entities
+[  51.4s]   EvaluationProcess: extracting (236 chars, 7 classes in view)
+[  51.4s]   MeasurementProcess: extracting (1877 chars, 6 classes in view)
+[  61.5s]   EvaluationProcess: cycle 0 -> conforms
+[ 101.1s]   MeasurementProcess: cycle 0 -> conforms
+[ 101.1s] level 2: 2 agent(s), 28 known entities
+[ 101.1s]   CarePlan: extracting (2553 chars, 4 classes in view)
+[ 101.1s]   ClinicalVisit: extracting (2553 chars, 5 classes in view)
+[ 107.2s]   CarePlan: cycle 0 -> conforms
+[ 112.8s]   ClinicalVisit: cycle 0 -> conforms
+[ 112.8s] merging (orchestrator): 0 violation(s), 0 unresolved, 0 unparsed
+[ 175.8s] final: conforms
+conforms=True segments=8 llm_calls=10 unresolved=0
+  orchestrator   2 calls     9750 in    5466 out  cost n/a  gemma4-g1
+  total         10 calls    36472 in   11820 out  cost n/a  
+  worker         8 calls    26722 in    6354 out  cost n/a  gemma4-g1
+exit=0

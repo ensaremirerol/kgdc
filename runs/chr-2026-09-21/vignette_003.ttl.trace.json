@@ -1,0 +1,593 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_followup_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20170509T182427 .\n\nex:measurement_Pain_severity_Reported_38208_5 a chr:Measurement ;\n    rdfs:label \"Pain severity - Reported\" ;\n    chr:hasCode <https://loinc.org/38208-5> ;\n    chr:hasMeasuredDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue 2.8386 ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_process_Pain_severity_Reported_38208_5 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - Reported measurement process\" ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasPerformedDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141 ;\n    chr:hasResult ex:measurement_Pain_severity_Reported_38208_5 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasDevice ex:device_unspecified .\n\nex:visit_20161213T230153 a chr:ClinicalVisit ;\n    rdfs:label \"Patient encounter procedure (procedure)\" ;\n    chr:hasCareProvider ex:person_Willian804_Batz141 ;\n    chr:hasCareUnit ex:BOSTON_MEDICAL_CENTER_CORPORATION_ ;\n    chr:hasDate \"2016-12-13T23:01:53+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasProcedure ex:measurement_process_Pain_severity_Reported_38208_5 .\n\nex:Acute_infective_cystitis_disorder_307426000 a chr:ClinicalCondition ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> ;\n    chr:hasRecordDate \"2017-05-09T18:24:27+02:00\"^^xsd:dateTime .\n\nex:evaluation_20170509T182427 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Acute_infective_cystitis_disorder_307426000 ;\n    chr:hasObservation ex:diagnostic_statement_307426000 ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasPerformedDate \"2017-05-09T18:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141 .\n\nex:diagnostic_statement_307426000 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:person_Angelic427_Callie226_Schaden604 a chr:Person ;\n    rdfs:label \"Angelic427 Callie226 Schaden604\" .\n\nex:person_Willian804_Batz141 a chr:Person ;\n    rdfs:label \"Dr. Willian804 Batz141\" .\n\nex:BOSTON_MEDICAL_CENTER_CORPORATION_ a chr:CareUnit ;\n    rdfs:label \"BOSTON MEDICAL CENTER CORPORATION-\" .\n\n# UNRESOLVED: ex:device_unspecified must be a chr:Device \u2014 not stated in the text",
+ "conforms": false,
+ "violations": "Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasDeviceRangeShape\n\tFocus Node: ex:device_unspecified\n\tValue Node: ex:device_unspecified\n\tMessage: Object of chr:hasDevice must be a chr:Device.\nConstraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:datatype xsd:float ; sh:message Literal(\"chr:hasQuantityValue must be an xsd:float.\") ; sh:path chr:hasQuantityValue ]\n\tFocus Node: ex:measurement_Pain_severity_Reported_38208_5\n\tValue Node: Literal(\"2.8386\", datatype=xsd:decimal)\n\tResult Path: chr:hasQuantityValue\n\tMessage: chr:hasQuantityValue must be an xsd:float.\n",
+ "unresolved": [
+  "UNRESOLVED: ex:device_unspecified must be a chr:Device \u2014 not stated in the text"
+ ],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:BOSTON_MEDICAL_CENTER_CORPORATION_ a chr:CareUnit ;\n    rdfs:label \"BOSTON MEDICAL CENTER CORPORATION-\" .",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Willian804 Batz141 evaluated the patient on 2017-05-09T18:24:27+02:00. The evaluation produced a diagnostic statement of Acute infective cystitis (disorder) (SNOMED: 307426000). The condition was recorded on 2017-05-09T18:24:27+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_307426000\n\tValue Node: <http://snomed.info/id/307426000>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: chr:DiagnosticStatement\n\tValue Node: chr:DiagnosticStatement\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_307426000\n\tValue Node: <http://snomed.info/id/307426000>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: chr:DiagnosticStatement\n\tValue Node: chr:DiagnosticStatement\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_307426000 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> .",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Angelic427_Callie226_Schaden604 a chr:Person ;\n    rdfs:label \"Angelic427 Callie226 Schaden604\" .\n\nex:person_Willian804_Batz141 a chr:Person ;\n    rdfs:label \"Dr. Willian804 Batz141\" .",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_Pain_severity_Reported\n\tMessage: http://example.org/data/hasStatus is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:measurement_process_Pain_severity_Reported\n\tValue Node: ex:status_completed\n\tResult Path: <http://example.org/data/hasStatus>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in TurtleSyntax:\n\tSeverity: sh:Violation\n\tMessage: not valid Turtle: at line 12 of <>:\n\tOffending line: \n\tHint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusRangeShape\n\tFocus Node: ex:status_completed\n\tValue Node: ex:status_completed\n\tMessage: Object of chr:hasStatus must be a chr:ProcessStatus.\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_Pain_severity_Reported\n\tValue Node: ex:measurement_process_Pain_severity_Reported\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\n"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_Pain_severity_Reported a chr:ProcessStatus ;\n    rdfs:label \"measurement process\" ;\n    chr:hasStatus ex:status_completed .",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Severity",
+   "concepts": [
+    "chr:Severity"
+   ],
+   "text": "On 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Pain_severity_38208-5\n\tValue Node: <https://loinc.org/38208-5>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:Severity\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: chr:Severity\n\tValue Node: chr:Severity\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Pain_severity_38208-5\n\tValue Node: <https://loinc.org/38208-5>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:Severity\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: chr:Severity\n\tValue Node: chr:Severity\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Pain_severity_38208-5 a chr:Severity ;\n    rdfs:label \"Pain severity - Reported\" ;\n    chr:hasCode <https://loinc.org/38208-5> .",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Willian804 Batz141 evaluated the patient on 2017-05-09T18:24:27+02:00. The evaluation produced a diagnostic statement of Acute infective cystitis (disorder) (SNOMED: 307426000). The condition was recorded on 2017-05-09T18:24:27+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusRangeShape\n\tFocus Node: ex:status_completed\n\tValue Node: ex:status_completed\n\tMessage: Object of chr:hasStatus must be a chr:ProcessStatus.\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Pain_severity_38208-5\n\tValue Node: <https://loinc.org/38208-5>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Vio"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusRangeShape\n\tFocus Node: ex:status_completed\n\tValue Node: ex:status_completed\n\tMessage: Object of chr:hasStatus must be a chr:ProcessStatus.\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Pain_severity_38208-5\n\tValue Node: <https://loinc.org/38208-5>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Vio"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusRangeShape\n\tFocus Node: ex:status_completed\n\tValue Node: ex:status_completed\n\tMessage: Object of chr:hasStatus must be a chr:ProcessStatus.\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Pain_severity_38208-5\n\tValue Node: <https://loinc.org/38208-5>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Vio"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [
+    "UNRESOLVED: ex:diagnostic_statement_307426000 must be a DiagnosticStatement (not in allowed classes) \u2014 not stated in the text",
+    "UNRESOLVED: ex:Pain_severity_38208-5 must be a Severity (not in allowed classes) \u2014 not stated in the text",
+    "UNRESOLVED: ex:Pain_severity_38208-5 must have chr:hasCode (not in allowed properties) \u2014 not stated in the text",
+    "UNRESOLVED: ex:diagnostic_statement_307426000 must have chr:hasCode (not in allowed properties) \u2014 not stated in the text",
+    "UNRESOLVED: ex:measurement_process_Pain_severity_Reported must be a MedicalProcedure (not in allowed classes) \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Acute_infective_cystitis_disorder_307426000 a chr:ClinicalCondition ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> ;\n    chr:hasRecordDate \"2017-05-09T18:24:27+02:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_307426000 a chr:ClinicalCondition ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> .\n\n# UNRESOLVED: ex:diagnostic_statement_307426000 must be a DiagnosticStatement (not in allowed classes) \u2014 not stated in the text\n# UNRESOLVED: ex:Pain_severity_38208-5 must be a Severity (not in allowed classes) \u2014 not stated in the text\n# UNRESOLVED: ex:Pain_severity_38208-5 must have chr:hasCode (not in allowed properties) \u2014 not stated in the text\n# UNRESOLVED: ex:diagnostic_statement_307426000 must have chr:hasCode (not in allowed properties) \u2014 not stated in the text\n# UNRESOLVED: ex:measurement_process_Pain_severity_Reported must be a MedicalProcedure (not in allowed classes) \u2014 not stated in the text",
+   "level": 1,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Pain_severity_Reported_38208-5 a chr:Measurement ;\n    rdfs:label \"Pain severity - Reported\" ;\n    chr:hasCode <https://loinc.org/38208-5> ;\n    chr:hasMeasuredDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.8386\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .",
+   "level": 1,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Willian804 Batz141 evaluated the patient on 2017-05-09T18:24:27+02:00. The evaluation produced a diagnostic statement of Acute infective cystitis (disorder) (SNOMED: 307426000). The condition was recorded on 2017-05-09T18:24:27+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20170509T182427 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Acute_infective_cystitis_disorder_307426000 ;\n    chr:hasObservation ex:diagnostic_statement_307426000 ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasPerformedDate \"2017-05-09T18:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141 .\n\nex:Acute_infective_cystitis_disorder_307426000 a chr:ClinicalCondition ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> ;\n    chr:hasRecordDate \"2017-05-09T18:24:27+02:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_307426000 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> .",
+   "level": 2,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_Pain_severity_Reported_38208_5 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - Reported measurement process\" ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasPerformedDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141 ;\n    chr:hasResult ex:measurement_Pain_severity_Reported_38208_5 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_Pain_severity_Reported_38208_5 a chr:Measurement ;\n    rdfs:label \"Pain severity - Reported\" ;\n    chr:hasCode <https://loinc.org/38208-5> ;\n    chr:hasMeasuredDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.8386\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .",
+   "level": 2,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BOSTON MEDICAL CENTER CORPORATION-\n========================================================\n\nPatient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)\n\nOn 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Willian804 Batz141 evaluated the patient on 2017-05-09T18:24:27+02:00. The evaluation produced a diagnostic statement of Acute infective cystitis (disorder) (SNOMED: 307426000). The condition was recorded on 2017-05-09T18:24:27+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_infective_cystitis_disorder_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/hasDiagnosticStatement is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Viola"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_infective_cystitis_disorder_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/hasDiagnosticStatement is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Viola"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Acute_infective_cystitis_disorder_307426000 a chr:ClinicalCondition ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> ;\n    chr:hasRecordDate \"2017-05-09T18:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasDiagnosticStatement ex:diagnostic_statement_307426000 .\n\nex:diagnostic_statement_307426000 a chr:ClinicalCondition ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> .\n\nex:measurement_Pain_severity_Reported_38208_5 a chr:Measurement ;\n    rdfs:label \"Pain severity - Reported\" ;\n    chr:hasCode <https://loinc.org/38208-5> ;\n    chr:hasMeasuredDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.8386\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:measurement_process_Pain_severity_Reported_38208_5 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - Reported measurement process\" ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasPerformedDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_Pain_severity_Reported_38208_5 .\n\nex:CarePlan_followup_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20170509T182427 .",
+   "level": 3,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BOSTON MEDICAL CENTER CORPORATION-\n========================================================\n\nPatient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)\n\nOn 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Willian804 Batz141 evaluated the patient on 2017-05-09T18:24:27+02:00. The evaluation produced a diagnostic statement of Acute infective cystitis (disorder) (SNOMED: 307426000). The condition was recorded on 2017-05-09T18:24:27+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Pain_severity_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_307426000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Pain_severity_Reported_38208-5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20161213T230153 a chr:ClinicalVisit ;\n    rdfs:label \"Patient encounter procedure (procedure)\" ;\n    chr:hasCareProvider ex:person_Willian804_Batz141 ;\n    chr:hasCareUnit ex:BOSTON_MEDICAL_CENTER_CORPORATION_ ;\n    chr:hasDate \"2016-12-13T23:01:53+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasProcedure ex:measurement_process_Pain_severity_Reported_38208_5 .\n\nex:measurement_process_Pain_severity_Reported_38208_5 a chr:MedicalProcedure ;\n    rdfs:label \"Pain severity - Reported measurement process\" ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasPerformedDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_Pain_severity_Reported_38208_5 .\n\nex:measurement_Pain_severity_Reported_38208_5 a chr:Measurement ;\n    rdfs:label \"Pain severity - Reported\" ;\n    chr:hasCode <https://loinc.org/38208-5> ;\n    chr:hasMeasuredDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.8386\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:unit_cblscorecbr a chr:CareUnit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:Acute_infective_cystitis_disorder_307426000 a chr:ClinicalCondition ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> ;\n    chr:hasRecordDate \"2017-05-09T18:24:27+02:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_307426000 a chr:ClinicalCondition ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> .",
+   "level": 3,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 26,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 10406,
+   "completion_tokens": 1959,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 26,
+   "prompt_tokens": 93591,
+   "completion_tokens": 11515,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 24,
+   "prompt_tokens": 83185,
+   "completion_tokens": 9556,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

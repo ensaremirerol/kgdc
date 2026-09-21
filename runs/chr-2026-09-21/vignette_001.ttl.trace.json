@@ -1,0 +1,423 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_followup_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20160807T062427 .\n\nex:visit_20160807T062427 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 BOSTON MEDICAL CENTER CORPORATION-\" ;\n    chr:hasCareProvider ex:person_Willian804_Batz141 ;\n    chr:hasCareUnit ex:BOSTON_MEDICAL_CENTER_CORPORATION_ ;\n    chr:hasDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasProcedure ex:evaluation_20160807T062427,\n        ex:measurement_process_20160807T062427 .\n\nex:Acute_viral_pharyngitis_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime .\n\nex:BOSTON_MEDICAL_CENTER_CORPORATION_ a chr:CareUnit ;\n    rdfs:label \"BOSTON MEDICAL CENTER CORPORATION-\" .\n\nex:Body_temperature_8310_5 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.816\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel .\n\nex:diagnostic_statement_Acute_viral_pharyngitis a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .\n\nex:measurement_process_20160807T062427 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasPerformedDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141 ;\n    chr:hasResult ex:Body_temperature_8310_5 ;\n    chr:hasStatus ex:status_completed .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:unit_Cel a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n\nex:evaluation_20160807T062427 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Acute_viral_pharyngitis_disorder ;\n    chr:hasObservation ex:diagnostic_statement_Acute_viral_pharyngitis ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasPerformedDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141 .\n\nex:person_Angelic427_Callie226_Schaden604 a chr:Person ;\n    rdfs:label \"Angelic427 Callie226 Schaden604\" .\n\nex:person_Willian804_Batz141 a chr:Person ;\n    rdfs:label \"Dr. Willian804 Batz141\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BOSTON MEDICAL CENTER CORPORATION-\n========================================================\n\nPatient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:BOSTON_MEDICAL_CENTER_CORPORATION_ a chr:CareUnit ;\n    rdfs:label \"BOSTON MEDICAL CENTER CORPORATION-\" .",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Willian804 Batz141 evaluated the patient on 2016-08-07T06:24:27+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2016-08-07T06:24:27+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Acute_viral_pharyngitis_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime .",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Willian804 Batz141 evaluated the patient on 2016-08-07T06:24:27+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2016-08-07T06:24:27+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_Acute_viral_pharyngitis a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BOSTON MEDICAL CENTER CORPORATION-\n========================================================\n\nPatient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Angelic427_Callie226_Schaden604 a chr:Person ;\n    rdfs:label \"Angelic427 Callie226 Schaden604\" .\n\nex:person_Willian804_Batz141 a chr:Person ;\n    rdfs:label \"Dr. Willian804 Batz141\" .",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2016-08-07T06:24:27+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 37.816 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_Cel a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Willian804 Batz141 evaluated the patient on 2016-08-07T06:24:27+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2016-08-07T06:24:27+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20160807T062427 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Acute_viral_pharyngitis_disorder ;\n    chr:hasObservation ex:diagnostic_statement_Acute_viral_pharyngitis ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasPerformedDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141 .\n\nex:diagnostic_statement_Acute_viral_pharyngitis a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .\n\nex:Acute_viral_pharyngitis_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime .",
+   "level": 1,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2016-08-07T06:24:27+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 37.816 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Body_temperature_8310_5 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.816\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel .\n\nex:unit_Cel a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .",
+   "level": 1,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2016-08-07T06:24:27+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 37.816 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_20160807T062427 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasPerformedDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141 ;\n    chr:hasResult ex:Body_temperature_8310_5 ;\n    chr:hasStatus ex:status_completed .\n\nex:Body_temperature_8310_5 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.816\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .",
+   "level": 2,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BOSTON MEDICAL CENTER CORPORATION-\n========================================================\n\nPatient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Encounter for symptom (procedure)\n\nOn 2016-08-07T06:24:27+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 37.816 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Willian804 Batz141 evaluated the patient on 2016-08-07T06:24:27+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2016-08-07T06:24:27+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_followup_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20160807T062427 .",
+   "level": 3,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BOSTON MEDICAL CENTER CORPORATION-\n========================================================\n\nPatient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Encounter for symptom (procedure)\n\nOn 2016-08-07T06:24:27+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 37.816 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Willian804 Batz141 evaluated the patient on 2016-08-07T06:24:27+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2016-08-07T06:24:27+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20160807T062427 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 BOSTON MEDICAL CENTER CORPORATION-\" ;\n    chr:hasCareProvider ex:person_Willian804_Batz141 ;\n    chr:hasCareUnit ex:BOSTON_MEDICAL_CENTER_CORPORATION_ ;\n    chr:hasDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasProcedure ex:measurement_process_20160807T062427, ex:evaluation_20160807T062427 .\n\nex:measurement_process_20160807T062427 a chr:MedicalProcedure ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasPerformedDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141 ;\n    chr:hasStatus ex:status_completed .\n\nex:evaluation_20160807T062427 a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;\n    chr:hasPerformedDate \"2016-08-07T06:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141 .",
+   "level": 3,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-08-07T06:24:27+02:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 12,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 5830,
+   "completion_tokens": 1894,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 12,
+   "prompt_tokens": 32632,
+   "completion_tokens": 5336,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 10,
+   "prompt_tokens": 26802,
+   "completion_tokens": 3442,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

@@ -1,0 +1,515 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_process_1 .\n\nex:measurement_process_38265_5 a chr:MeasurementProcess ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2022-07-21T20:00:00+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_38265_5 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasPerformer ex:Dr_Jacque955_Streich926 .\n\nex:visit_20220721T192120 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 ACCLAIM HOME HEALTH CARE, INC\" ;\n    chr:hasCareProvider ex:Dr_Jacque955_Streich926 ;\n    chr:hasCareUnit ex:ACCLAIM_HOME_HEALTH_CARE_INC ;\n    chr:hasDate \"2022-07-21T19:21:20+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasProcedure ex:evaluation_process_1,\n        ex:evaluation_process_2,\n        ex:measurement_process_38265_5 .\n\nex:ACCLAIM_HOME_HEALTH_CARE_INC a chr:CareUnit ;\n    rdfs:label \"ACCLAIM HOME HEALTH CARE, INC\" .\n\nex:Fracture_of_bone_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> ;\n    chr:hasRecordDate \"2022-07-21T19:21:20+02:00\"^^xsd:dateTime .\n\nex:Fracture_subluxation_of_wrist_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Fracture subluxation of wrist (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/263102004> ;\n    chr:hasRecordDate \"2022-07-21T19:21:20+02:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_125605004 a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> .\n\nex:diagnostic_statement_263102004 a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture subluxation of wrist (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/263102004> .\n\nex:evaluation_process_2 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Fracture_subluxation_of_wrist_disorder ;\n    chr:hasObservation ex:diagnostic_statement_263102004 ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2022-07-21T19:21:20+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Jacque955_Streich926 .\n\nex:measurement_38265_5 a chr:Measurement ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density\" ;\n    chr:hasCode <https://loinc.org/38265-5> ;\n    chr:hasMeasuredDate \"2022-07-21T20:00:00+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.086642\"^^xsd:float ;\n    chr:hasUnit ex:T-score_cblscorecbr .\n\nex:T-score_cblscorecbr a chr:Unit ;\n    rdfs:label \"{T-score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:evaluation_process_1 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Fracture_of_bone_disorder ;\n    chr:hasObservation ex:diagnostic_statement_125605004 ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2022-07-21T19:21:20+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Jacque955_Streich926 .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:Dr_Jacque955_Streich926 a chr:Person ;\n    rdfs:label \"Dr. Jacque955 Streich926\" .\n\nex:Casey401_Elijah719_Parker433 a chr:Person ;\n    rdfs:label \"Casey401 Elijah719 Parker433\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ACCLAIM HOME HEALTH CARE, INC\n===================================================\n\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926\nEncounter type: Emergency room admission (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:ACCLAIM_HOME_HEALTH_CARE_INC a chr:CareUnit ;\n    rdfs:label \"ACCLAIM HOME HEALTH CARE, INC\" .",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Jacque955 Streich926 evaluated the patient on 2022-07-21T19:21:20+02:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2022-07-21T19:21:20+02:00.\n\nDr. Jacque955 Streich926 evaluated the patient on 2022-07-21T19:21:20+02:00. The evaluation produced a diagnostic statement of Fracture subluxation of wrist (disorder) (SNOMED: 263102004). The condition was recorded on 2022-07-21T19:21:20+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Fracture_of_bone_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> ;\n    chr:hasRecordDate \"2022-07-21T19:21:20+02:00\"^^xsd:dateTime .\n\nex:Fracture_subluxation_of_wrist_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Fracture subluxation of wrist (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/263102004> ;\n    chr:hasRecordDate \"2022-07-21T19:21:20+02:00\"^^xsd:dateTime .",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Jacque955 Streich926 evaluated the patient on 2022-07-21T19:21:20+02:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2022-07-21T19:21:20+02:00.\n\nDr. Jacque955 Streich926 evaluated the patient on 2022-07-21T19:21:20+02:00. The evaluation produced a diagnostic statement of Fracture subluxation of wrist (disorder) (SNOMED: 263102004). The condition was recorded on 2022-07-21T19:21:20+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_125605004 a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> .\n\nex:diagnostic_statement_263102004 a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture subluxation of wrist (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/263102004> .",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ACCLAIM HOME HEALTH CARE, INC\n===================================================\n\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926\nEncounter type: Emergency room admission (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Casey401_Elijah719_Parker433 a chr:Person ;\n    rdfs:label \"Casey401 Elijah719 Parker433\" .\n\nex:Dr_Jacque955_Streich926 a chr:Person ;\n    rdfs:label \"Dr. Jacque955 Streich926\" .",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2022-07-21T20:00:00+02:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0.086642 {T-score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in TurtleSyntax:\n\tSeverity: sh:Violation\n\tMessage: not valid Turtle: at line 11 of <>:\n\tOffending line: ex:measurement_process_1 a owl:Thing ;\n\tHint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/2002/07/owl#Thing is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: owl:Thing\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: owl:Thing\n\tValue Node: owl:Thing\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [
+    "UNRESOLVED: ex:measurement_process_1 must be a MedicalProcedure (or subclass) \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:measurement_process_1 a <http://www.w3.org/2002/07/owl#Thing> ;\n    rdfs:label \"measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\n# UNRESOLVED: ex:measurement_process_1 must be a MedicalProcedure (or subclass) \u2014 not stated in the text",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2022-07-21T20:00:00+02:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0.086642 {T-score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:T-score_cblscorecbr a chr:Unit ;\n    rdfs:label \"{T-score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Jacque955 Streich926 evaluated the patient on 2022-07-21T19:21:20+02:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2022-07-21T19:21:20+02:00.\n\nDr. Jacque955 Streich926 evaluated the patient on 2022-07-21T19:21:20+02:00. The evaluation produced a diagnostic statement of Fracture subluxation of wrist (disorder) (SNOMED: 263102004). The condition was recorded on 2022-07-21T19:21:20+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/2002/07/owl#Thing is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: owl:Thing\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: owl:Thing\n\tValue Node: owl:Thing\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/2002/07/owl#Thing is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: owl:Thing\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: owl:Thing\n\tValue Node: owl:Thing\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_process_1 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Fracture_of_bone_disorder ;\n    chr:hasObservation ex:diagnostic_statement_125605004 ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2022-07-21T19:21:20+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Jacque955_Streich926 .\n\nex:Fracture_of_bone_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> ;\n    chr:hasRecordDate \"2022-07-21T19:21:20+02:00\"^^xsd:dateTime .\n\nex:evaluation_process_2 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Fracture_subluxation_of_wrist_disorder ;\n    chr:hasObservation ex:diagnostic_statement_263102004 ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2022-07-21T19:21:20+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Jacque955_Streich926 .\n\nex:Fracture_subluxation_of_wrist_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Fracture subluxation of wrist (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/263102004> ;\n    chr:hasRecordDate \"2022-07-21T19:21:20+02:00\"^^xsd:dateTime .",
+   "level": 1,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2022-07-21T20:00:00+02:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0.086642 {T-score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/2002/07/owl#Thing is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: owl:Thing\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: owl:Thing\n\tValue Node: owl:Thing\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/2002/07/owl#Thing is not a class of the vocabulary\nConstraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasResultDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasResult must be a chr:MeasurementProcess.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: owl:Thing\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasPatientVisitShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasPatient must be a ClinicalVisit or a MedicalProcedure (MeasurementProcess, EvaluationProcess, MedicationAdministration).\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasPerformedDateShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasPerformedDate must be a MedicalProcedure (or a subclass).\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\t"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/2002/07/owl#Thing is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: owl:Thing\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: owl:Thing\n\tValue Node: owl:Thing\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_1 a chr:MeasurementProcess ;\n    rdfs:label \"measurement process\" ;\n    chr:hasPerformedDate \"2022-07-21T20:00:00+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_DXA_Radius_and_Ulna_38265_5 .\n\nex:measurement_DXA_Radius_and_Ulna_38265_5 a chr:Measurement ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density\" ;\n    chr:hasCode <https://loinc.org/38265-5> ;\n    chr:hasMeasuredDate \"2022-07-21T20:00:00+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.086642\"^^xsd:float ;\n    chr:hasUnit ex:T-score_cblscorecbr .\n\nex:T-score_cblscorecbr a chr:Unit ;\n    rdfs:label \"{T-score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .",
+   "level": 1,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2022-07-21T20:00:00+02:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0.086642 {T-score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/2002/07/owl#Thing is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: owl:Thing\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: owl:Thing\n\tValue Node: owl:Thing\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/2002/07/owl#Thing is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: owl:Thing\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: owl:Thing\n\tValue Node: owl:Thing\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_38265_5 a chr:MeasurementProcess ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2022-07-21T20:00:00+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Jacque955_Streich926 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_38265_5 .\n\nex:measurement_38265_5 a chr:Measurement ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density\" ;\n    chr:hasCode <https://loinc.org/38265-5> ;\n    chr:hasMeasuredDate \"2022-07-21T20:00:00+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.086642\"^^xsd:float ;\n    chr:hasUnit ex:T-score_cblscorecbr .",
+   "level": 2,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ACCLAIM HOME HEALTH CARE, INC\n===================================================\n\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926\nEncounter type: Emergency room admission (procedure)\n\nOn 2022-07-21T20:00:00+02:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0.086642 {T-score}. The measurement process was recorded with status \"completed\".\n\nDr. Jacque955 Streich926 evaluated the patient on 2022-07-21T19:21:20+02:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2022-07-21T19:21:20+02:00.\n\nDr. Jacque955 Streich926 evaluated the patient on 2022-07-21T19:21:20+02:00. The evaluation produced a diagnostic statement of Fracture subluxation of wrist (disorder) (SNOMED: 263102004). The condition was recorded on 2022-07-21T19:21:20+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/2002/07/owl#Thing is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: owl:Thing\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: owl:Thing\n\tValue Node: owl:Thing\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/2002/07/owl#Thing is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: owl:Thing\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: owl:Thing\n\tValue Node: owl:Thing\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_process_1 .",
+   "level": 3,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ACCLAIM HOME HEALTH CARE, INC\n===================================================\n\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926\nEncounter type: Emergency room admission (procedure)\n\nOn 2022-07-21T20:00:00+02:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0.086642 {T-score}. The measurement process was recorded with status \"completed\".\n\nDr. Jacque955 Streich926 evaluated the patient on 2022-07-21T19:21:20+02:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2022-07-21T19:21:20+02:00.\n\nDr. Jacque955 Streich926 evaluated the patient on 2022-07-21T19:21:20+02:00. The evaluation produced a diagnostic statement of Fracture subluxation of wrist (disorder) (SNOMED: 263102004). The condition was recorded on 2022-07-21T19:21:20+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/2002/07/owl#Thing is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: owl:Thing\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: owl:Thing\n\tValue Node: owl:Thing\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/2002/07/owl#Thing is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: owl:Thing\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: owl:Thing\n\tValue Node: owl:Thing\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20220721T192120 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 ACCLAIM HOME HEALTH CARE, INC\" ;\n    chr:hasCareProvider ex:Dr_Jacque955_Streich926 ;\n    chr:hasCareUnit ex:ACCLAIM_HOME_HEALTH_CARE_INC ;\n    chr:hasDate \"2022-07-21T19:21:20+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasProcedure ex:measurement_process_38265_5 ;\n    chr:hasProcedure ex:evaluation_process_1 ;\n    chr:hasProcedure ex:evaluation_process_2 .",
+   "level": 3,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2022-07-21T19:21:20+02:00\nCare unit: ACCLAIM HOME HEALTH CARE, INC\nAttending physician: Dr. Jacque955 Streich926",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 21,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 7055,
+   "completion_tokens": 2408,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 21,
+   "prompt_tokens": 56640,
+   "completion_tokens": 9540,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 19,
+   "prompt_tokens": 49585,
+   "completion_tokens": 7132,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

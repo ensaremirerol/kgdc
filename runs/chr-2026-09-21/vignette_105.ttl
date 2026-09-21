@@ -1,0 +1,377 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_follow_up a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluation_20200626T150438 .
+
+ex:measurement_HbA1c_4548-4 a chr:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.01"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:visit_20200626T150438 a chr:ClinicalVisit ;
+    rdfs:label "CLINICAL VISIT NOTE" ;
+    chr:hasCareProvider ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasCareUnit ex:FATHER_BILL_S_PLACE ;
+    chr:hasDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasProcedure ex:evaluation_20200626T150438,
+        ex:evaluation_20200626T155112_1,
+        ex:evaluation_20200626T155112_2,
+        ex:process_BMI_20200626T150438,
+        ex:process_CO2_20200626T150438,
+        ex:process_Calcium_20200626T150438,
+        ex:process_Chloride_20200626T150438,
+        ex:process_Creatinine_20200626T150438,
+        ex:process_FallRisk_20200626T161444,
+        ex:process_Glucose_20200626T150438,
+        ex:process_HbA1c_20200626T150438,
+        ex:process_HeartRate_20200626T150438,
+        ex:process_Height_20200626T150438,
+        ex:process_Pain_20200626T150438,
+        ex:process_Potassium_20200626T150438,
+        ex:process_RespRate_20200626T150438,
+        ex:process_Sodium_20200626T150438,
+        ex:process_Urea_20200626T150438,
+        ex:process_Weight_20200626T150438 .
+
+ex:FATHER_BILL_S_PLACE a chr:CareUnit ;
+    rdfs:label "FATHER BILL'S PLACE" .
+
+ex:Medication_review_due_situation a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime .
+
+ex:Part-time_employment_finding a chr:ClinicalCondition ;
+    rdfs:label "Part-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160904001> ;
+    chr:hasRecordDate "2020-06-26T15:51:12+02:00"^^xsd:dateTime .
+
+ex:Stress_finding a chr:ClinicalCondition ;
+    rdfs:label "Stress (finding)" ;
+    chr:hasCode <http://snomed.info/id/73595000> ;
+    chr:hasRecordDate "2020-06-26T15:51:12+02:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_Medication_review_due_situation a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:diagnostic_statement_Part-time_employment_finding a chr:DiagnosticStatement ;
+    rdfs:label "Part-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160904001> .
+
+ex:diagnostic_statement_Stress_finding a chr:DiagnosticStatement ;
+    rdfs:label "Stress (finding)" ;
+    chr:hasCode <http://snomed.info/id/73595000> .
+
+ex:evaluation_20200626T155112_1 a chr:EvaluationProcess ;
+    rdfs:label "Dr. Edmundo94 Eichmann909 evaluated the patient" ;
+    chr:hasCondition ex:Part-time_employment_finding ;
+    chr:hasObservation ex:diagnostic_statement_Part-time_employment_finding ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:51:12+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 .
+
+ex:evaluation_20200626T155112_2 a chr:EvaluationProcess ;
+    rdfs:label "Dr. Edmundo94 Eichmann909 evaluated the patient" ;
+    chr:hasCondition ex:Stress_finding ;
+    chr:hasObservation ex:diagnostic_statement_Stress_finding ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:51:12+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 .
+
+ex:measurement_BMI_39156-5 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.79"^^xsd:float ;
+    chr:hasUnit ex:unit_kgperm2 .
+
+ex:measurement_Body_Height_8302-2 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "172.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:measurement_Body_Weight_29463-7 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "82.2"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:measurement_Calcium_49765-1 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/49765-1> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "9.27"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_Carbon_dioxide_20565-8 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "28.31"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Chloride_2069-3 a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "102.04"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Creatinine_38483-4 a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/38483-4> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.65"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_Fall_risk_59460-6 a chr:Measurement ;
+    rdfs:label "Fall risk total [Morse Fall Scale]" ;
+    chr:hasCode <https://loinc.org/59460-6> ;
+    chr:hasMeasuredDate "2020-06-26T16:14:44+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "20.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Glucose_2339-0 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "66.95"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_Heart_rate_8867-4 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "91.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_Hemoglobin_A1c_4548-4 a chr:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.01"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:measurement_Pain_severity_72514-3 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Potassium_6298-4 a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6298-4> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.58"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Respiratory_rate_9279-1 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "13.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_Sodium_2947-0 a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2947-0> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "141.61"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Urea_nitrogen_6299-2 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6299-2> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "12.82"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_Weight_29463-7 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "82.2"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:process_BMI_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_BMI_39156-5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_CO2_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Carbon_dioxide_20565-8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Calcium_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Calcium_49765-1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Chloride_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Chloride_2069-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Creatinine_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Creatinine_38483-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_FallRisk_20200626T161444 a chr:MeasurementProcess ;
+    rdfs:label "Fall risk total [Morse Fall Scale] measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T16:14:44+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Fall_risk_59460-6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Glucose_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Glucose_2339-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_HbA1c_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Hemoglobin_A1c_4548-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_HeartRate_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Heart_rate_8867-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Height_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Body_Height_8302-2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Pain_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Pain_severity_72514-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Potassium_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Potassium_6298-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_RespRate_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Respiratory_rate_9279-1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Sodium_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Sodium_2947-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Urea_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Urea_nitrogen_6299-2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Weight_20200626T150438 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2020-06-26T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Edmundo94_Eichmann909 ;
+    chr:hasResult ex:measurement_Body_Weight_29463-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kgperm2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_cblscorecbr a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_mgperdL a chr:Unit ;
+    rdfs:label "mg/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
+
+ex:unit_mmolperL a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+
+ex:Aracely711_Devon268_Collins926 a chr:Person ;
+    rdfs:label "Aracely711 Devon268 Collins926" .
+
+ex:Dr_Edmundo94_Eichmann909 a chr:Person ;
+    rdfs:label "Dr. Edmundo94 Eichmann909" .

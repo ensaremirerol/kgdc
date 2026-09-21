@@ -1,0 +1,75 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 113.5s] 42 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit], s3[MeasurementProcess,Measurement,Unit], s4[MeasurementProcess,Measurement,Unit], s5[MeasurementProcess,Measurement,Unit], s6[MeasurementProcess,Measurement,Unit], s7[MeasurementProcess,Measurement,Unit], s8[MeasurementProcess,Measurement,Unit], s9[MeasurementProcess,Measurement,Unit], s10[MeasurementProcess,Measurement,Unit], s11[MeasurementProcess,Measurement,Unit], s12[MeasurementProcess,Measurement,Unit], s13[MeasurementProcess,Measurement,Unit], s14[MeasurementProcess,Measurement,Unit], s15[MeasurementProcess,Measurement,Unit], s16[MeasurementProcess,Measurement,Unit], s17[MeasurementProcess,Measurement,Unit], s18[MeasurementProcess,Measurement,Unit], s19[MeasurementProcess,Measurement,Severity,Unit], s20[MeasurementProcess,Measurement,Unit], s21[MeasurementProcess,Measurement,Unit], s22[MeasurementProcess,Measurement,Unit], s23[MeasurementProcess,Measurement,Unit], s24[MeasurementProcess,Measurement,Unit], s25[MeasurementProcess,Measurement,Unit], s26[MeasurementProcess,Measurement,Unit], s27[MeasurementProcess,Measurement,Unit], s28[MeasurementProcess,Measurement,Unit], s29[MeasurementProcess,Measurement,Unit], s30[MeasurementProcess,Measurement,Unit], s31[MeasurementProcess,Measurement,Unit], s32[MeasurementProcess,Measurement,Unit], s33[MeasurementProcess,Measurement,Unit], s34[MeasurementProcess,Measurement,Unit], s35[MeasurementProcess,Measurement,Unit], s36[MeasurementProcess,Measurement,Unit], s37[MeasurementProcess,Measurement,Unit], s38[MeasurementProcess,Measurement,Unit], s39[MeasurementProcess,Measurement,Unit], s40[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s41[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s42[CarePlan]
+[ 113.5s] build order: [CareUnit, DiagnosticStatement, Person, Severity, Unit] -> [ClinicalCondition, Measurement] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 113.5s] level 0: 5 agent(s), 0 known entities
+[ 113.5s]   CareUnit: extracting (238 chars, 1 classes in view)
+[ 113.5s]   DiagnosticStatement: extracting (473 chars, 1 classes in view)
+[ 113.5s]   Person: extracting (238 chars, 1 classes in view)
+[ 113.5s]   Severity: extracting (257 chars, 1 classes in view)
+[ 119.4s]   CareUnit: cycle 0 -> conforms
+[ 119.4s]   Unit: extracting (9179 chars, 1 classes in view)
+[ 120.5s]   Severity: cycle 0 -> 5 violation(s)
+[ 120.5s]   Severity: fixing ...
+[ 120.6s]   Person: cycle 0 -> conforms
+[ 121.9s]   DiagnosticStatement: cycle 0 -> 8 violation(s)
+[ 121.9s]   DiagnosticStatement: fixing ...
+[ 126.2s]   Severity: cycle 1 -> 5 violation(s)
+[ 126.2s]   Severity: stopping (plateau)
+[ 128.5s]   DiagnosticStatement: cycle 1 -> 8 violation(s)
+[ 128.5s]   DiagnosticStatement: stopping (plateau)
+[ 133.8s]   Unit: cycle 0 -> 1 violation(s)
+[ 133.8s]   Unit: fixing ...
+[ 146.8s]   Unit: cycle 1 -> conforms
+[ 146.8s] level 1: 2 agent(s), 15 known entities
+[ 146.8s]   ClinicalCondition: extracting (473 chars, 3 classes in view)
+[ 146.8s]   Measurement: extracting (9179 chars, 2 classes in view)
+[ 157.3s]   ClinicalCondition: cycle 0 -> 13 violation(s)
+[ 157.3s]   ClinicalCondition: fixing ...
+[ 165.4s]   ClinicalCondition: cycle 1 -> 13 violation(s)
+[ 165.4s]   ClinicalCondition: stopping (plateau)
+[ 242.7s]   Measurement: cycle 0 -> 1 violation(s)
+[ 242.7s]   Measurement: fixing ...
+[ 345.3s]   Measurement: cycle 1 -> 1 violation(s)
+[ 345.3s]   Measurement: stopping (plateau)
+[ 345.3s]   Measurement: 4 unresolved (honest gaps)
+[ 345.3s] level 2: 2 agent(s), 17 known entities
+[ 345.3s]   EvaluationProcess: extracting (473 chars, 7 classes in view)
+[ 345.3s]   MeasurementProcess: extracting (9179 chars, 6 classes in view)
+[ 362.5s]   EvaluationProcess: cycle 0 -> 13 violation(s)
+[ 362.5s]   EvaluationProcess: fixing ...
+[ 379.4s]   EvaluationProcess: cycle 1 -> 13 violation(s)
+[ 379.4s]   EvaluationProcess: stopping (plateau)
+[ 585.1s]   MeasurementProcess: cycle 0 -> 1 violation(s)
+[ 585.1s]   MeasurementProcess: fixing ...
+[ 815.9s]   MeasurementProcess: cycle 1 -> 1 violation(s)
+[ 815.9s]   MeasurementProcess: fixing ...
+[1047.5s]   MeasurementProcess: cycle 2 -> 1 violation(s)
+[1047.5s]   MeasurementProcess: stopping (fix budget spent)
+[1047.5s]   MeasurementProcess: 3 unresolved (honest gaps)
+[1047.5s] level 3: 2 agent(s), 21 known entities
+[1047.5s]   CarePlan: extracting (10151 chars, 4 classes in view)
+[1047.5s]   ClinicalVisit: extracting (10151 chars, 5 classes in view)
+[1058.7s]   CarePlan: cycle 0 -> 13 violation(s)
+[1058.7s]   CarePlan: fixing ...
+[1064.4s]   CarePlan: cycle 1 -> 13 violation(s)
+[1064.4s]   CarePlan: stopping (plateau)
+[1188.9s]   ClinicalVisit: cycle 0 -> 13 violation(s)
+[1188.9s]   ClinicalVisit: fixing ...
+[1322.2s]   ClinicalVisit: cycle 1 -> 13 violation(s)
+[1322.2s]   ClinicalVisit: stopping (plateau)
+[1322.4s] merging (orchestrator): 13 violation(s), 7 unresolved, 2 unparsed
+[1529.1s] final: 1 violation(s)
+conforms=False segments=11 llm_calls=23 unresolved=4
+  orchestrator   2 calls    26945 in   17103 out  cost n/a  gemma4-g1
+  total         23 calls   161815 in   85335 out  cost n/a  
+  worker        21 calls   134870 in   68232 out  cost n/a  gemma4-g1
+  UNRESOLVED: chr:hasUnit — not stated in the text
+  UNRESOLVED: chr:hasCode (pattern mismatch for {nominal}) — not stated in the text
+  UNRESOLVED: chr:hasUnit — not stated in the text
+  UNRESOLVED: chr:hasUnit — not stated in the text
+Constraint Violation in TurtleSyntax:
+	Severity: sh:Violation
+	Message: not valid Turtle: at line 478 of <>:
+	Offending line: ex:measurement_pH_5803_2 a chr:Measurement ;
+	Hint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs.
+exit=1

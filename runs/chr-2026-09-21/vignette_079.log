@@ -1,0 +1,65 @@
+[   0.1s] segmenting (orchestrator) ...
+[  65.3s] 25 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[MeasurementProcess,Measurement], s11[MeasurementProcess,Measurement], s12[MeasurementProcess,Measurement], s13[MeasurementProcess,Measurement], s14[MeasurementProcess,Measurement], s15[MeasurementProcess,Measurement], s16[MeasurementProcess,Measurement], s17[MeasurementProcess,Measurement], s18[MeasurementProcess,Measurement], s19[MeasurementProcess,Measurement], s20[MeasurementProcess,Measurement], s21[MeasurementProcess,Measurement], s22[MeasurementProcess,Measurement], s23[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s24[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s25[CarePlan]
+[  65.3s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  65.3s] level 0: 5 agent(s), 0 known entities
+[  65.3s]   CareUnit: extracting (251 chars, 1 classes in view)
+[  65.4s]   ClinicalCondition: extracting (490 chars, 3 classes in view)
+[  65.4s]   DiagnosticStatement: extracting (490 chars, 1 classes in view)
+[  65.4s]   Measurement: extracting (5140 chars, 2 classes in view)
+[  71.5s]   CareUnit: cycle 0 -> conforms
+[  71.5s]   Person: extracting (251 chars, 1 classes in view)
+[  73.6s]   DiagnosticStatement: cycle 0 -> conforms
+[  75.3s]   ClinicalCondition: cycle 0 -> conforms
+[  77.5s]   Person: cycle 0 -> conforms
+[ 125.8s]   Measurement: cycle 0 -> conforms
+[ 125.8s] level 1: 2 agent(s), 36 known entities
+[ 125.8s]   EvaluationProcess: extracting (490 chars, 7 classes in view)
+[ 125.8s]   MeasurementProcess: extracting (5140 chars, 6 classes in view)
+[ 144.1s]   EvaluationProcess: cycle 0 -> conforms
+[ 235.9s]   MeasurementProcess: cycle 0 -> conforms
+[ 235.9s] level 2: 2 agent(s), 61 known entities
+[ 235.9s]   CarePlan: extracting (6144 chars, 4 classes in view)
+[ 235.9s]   ClinicalVisit: extracting (6144 chars, 5 classes in view)
+[ 243.0s]   CarePlan: cycle 0 -> conforms
+[ 314.3s]   ClinicalVisit: cycle 0 -> 6 violation(s)
+[ 314.3s]   ClinicalVisit: fixing ...
+[ 388.1s]   ClinicalVisit: cycle 1 -> 6 violation(s)
+[ 388.1s]   ClinicalVisit: stopping (plateau)
+[ 388.2s] merging (orchestrator): 6 violation(s), 0 unresolved, 0 unparsed
+[ 537.5s] final: 5 violation(s)
+conforms=False segments=9 llm_calls=12 unresolved=0
+  orchestrator   2 calls    17590 in   11902 out  cost n/a  gemma4-g1
+  total         12 calls    66280 in   31879 out  cost n/a  
+  worker        10 calls    48690 in   19977 out  cost n/a  gemma4-g1
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasCareProviderDomainShape
+	Focus Node: ex:visit_20060327T213554
+	Value Node: ex:visit_20060327T213554
+	Message: Subject of chr:hasCareProvider must be a chr:ClinicalVisit.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasCareUnitDomainShape
+	Focus Node: ex:visit_20060327T213554
+	Value Node: ex:visit_20060327T213554
+	Message: Subject of chr:hasCareUnit must be a chr:ClinicalVisit.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasDateDomainShape
+	Focus Node: ex:visit_20060327T213554
+	Value Node: ex:visit_20060327T213554
+	Message: Subject of chr:hasDate must be a chr:ClinicalVisit.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureDomainShape
+	Focus Node: ex:visit_20060327T213554
+	Value Node: ex:visit_20060327T213554
+	Message: Subject of chr:hasProcedure must be a chr:ClinicalVisit.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasPatientVisitShape
+	Focus Node: ex:visit_20060327T213554
+	Value Node: ex:visit_20060327T213554
+	Message: Subject of chr:hasPatient must be a ClinicalVisit or a MedicalProcedure (MeasurementProcess, EvaluationProcess, MedicationAdministration).
+
+exit=1

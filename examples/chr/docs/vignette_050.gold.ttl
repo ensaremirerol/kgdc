@@ -1,0 +1,59 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/clinical/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:visit_c101372f_0d85_bd39_c4b9_828c828cef64 a chr:ClinicalVisit ;
+    chr:hasCareProvider ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasCareUnit ex:unit_github_com_syntheti ;
+    chr:hasDate "2019-03-16T17:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:patient_c101372f_0d85_bd39_ff3f_b3f055fdf5a1 ;
+    chr:hasProcedure ex:evalProc_c101372f_0d85_bd39_05a0_1e049947cfa1,
+        ex:measProc_c101372f_0d85_bd39_ec35_b60e2e6ee6c4 .
+
+ex:cond_c101372f_0d85_bd39_05a0_1e049947cfa1 a chr:ClinicalCondition ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> ;
+    chr:hasRecordDate "2019-03-16T17:01:15+01:00"^^xsd:dateTime .
+
+ex:diag_c101372f_0d85_bd39_05a0_1e049947cfa1 a chr:DiagnosticStatement ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> .
+
+ex:evalProc_c101372f_0d85_bd39_05a0_1e049947cfa1 a chr:EvaluationProcess ;
+    chr:hasCondition ex:cond_c101372f_0d85_bd39_05a0_1e049947cfa1 ;
+    chr:hasObservation ex:diag_c101372f_0d85_bd39_05a0_1e049947cfa1 ;
+    chr:hasPatient ex:patient_c101372f_0d85_bd39_ff3f_b3f055fdf5a1 ;
+    chr:hasPerformedDate "2019-03-16T17:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 .
+
+ex:measProc_c101372f_0d85_bd39_ec35_b60e2e6ee6c4 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_c101372f_0d85_bd39_ff3f_b3f055fdf5a1 ;
+    chr:hasPerformedDate "2019-03-16T17:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_c101372f_0d85_bd39_ec35_b60e2e6ee6c4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:meas_c101372f_0d85_bd39_ec35_b60e2e6ee6c4 a chr:Measurement ;
+    rdfs:label "Body temperature" ;
+    chr:hasCode <https://loinc.org/8310-5> ;
+    chr:hasMeasuredDate "2019-03-16T17:01:15+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "37.277"^^xsd:float ;
+    chr:hasUnit ex:unit_Cel .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_Cel a chr:Unit ;
+    rdfs:label "Cel" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .
+
+ex:unit_github_com_syntheti a chr:CareUnit ;
+    rdfs:label "BERKSHIRE MEDICAL CENTER INC" .
+
+ex:patient_c101372f_0d85_bd39_ff3f_b3f055fdf5a1 a chr:Person ;
+    rdfs:label "Mr. Daren950 Ed239 Strosin214" .
+
+ex:provider_hl7_org_fhir_sid_us_npi_99999 a chr:Person ;
+    rdfs:label "Dr. Carroll471 Eichmann909" .
+

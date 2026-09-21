@@ -1,0 +1,432 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_follow_up a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluation_Medication_review_314529007 .
+
+ex:visit_20231201T172427 a chr:ClinicalVisit ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCareProvider ex:Dr_Sherita708_Hudson301 ;
+    chr:hasCareUnit ex:SOUTH_BOSTON_COMMUNITY_HEALTH_CENTER_INC ;
+    chr:hasDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasProcedure ex:evaluation_Anemia_271737000,
+        ex:evaluation_Medication_review_314529007,
+        ex:evaluation_Part-time_employment_160904001,
+        ex:evaluation_Prediabetes_714628002,
+        ex:process_BMI_39156_5,
+        ex:process_Body_Height_8302_2,
+        ex:process_Body_Weight_29463_7,
+        ex:process_Calcium_49765_1,
+        ex:process_Carbon_dioxide_20565_8,
+        ex:process_Chloride_2069_3,
+        ex:process_Creatinine_38483_4,
+        ex:process_DAST10_82667_7,
+        ex:process_GAD7_70274_6,
+        ex:process_Glucose_2339_0,
+        ex:process_Heart_rate_8867_4,
+        ex:process_Hemoglobin_A1c_4548_4,
+        ex:process_PHQ2_55758_7,
+        ex:process_Pain_severity_72514_3,
+        ex:process_Potassium_6298_4,
+        ex:process_Respiratory_rate_9279_1,
+        ex:process_Sodium_2947_0,
+        ex:process_Urea_nitrogen_6299_2 .
+
+ex:Anemia_disorder a chr:ClinicalCondition ;
+    rdfs:label "Anemia (disorder)" ;
+    chr:hasCode <http://snomed.info/id/271737000> ;
+    chr:hasRecordDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime .
+
+ex:Medication_review_due_situation a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime .
+
+ex:Part-time_employment_finding a chr:ClinicalCondition ;
+    rdfs:label "Part-time employment (finding)" ;
+    chr:hasRecordDate "2023-12-01T18:04:38+01:00"^^xsd:dateTime .
+
+ex:Prediabetes_finding a chr:ClinicalCondition ;
+    rdfs:label "Prediabetes (finding)" ;
+    chr:hasCode <http://snomed.info/id/714628002> ;
+    chr:hasRecordDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime .
+
+ex:SOUTH_BOSTON_COMMUNITY_HEALTH_CENTER_INC a chr:CareUnit ;
+    rdfs:label "SOUTH BOSTON COMMUNITY HEALTH CENTER INC" .
+
+ex:evaluation_Anemia_271737000 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Anemia_disorder ;
+    chr:hasObservation ex:diagnostic_statement_Anemia_271737000 ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:diagnostic_statement_Anemia_271737000 ;
+    chr:hasStatus ex:status_completed .
+
+ex:evaluation_Part-time_employment_160904001 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Part-time_employment_finding ;
+    chr:hasObservation ex:diagnostic_statement_Part-time_employment_160904001 ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T18:04:38+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:diagnostic_statement_Part-time_employment_160904001 ;
+    chr:hasStatus ex:status_completed .
+
+ex:evaluation_Prediabetes_714628002 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Prediabetes_finding ;
+    chr:hasObservation ex:diagnostic_statement_Prediabetes_714628002 ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:diagnostic_statement_Prediabetes_714628002 ;
+    chr:hasStatus ex:status_completed .
+
+ex:evaluation_Medication_review_314529007 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Medication_review_due_situation ;
+    chr:hasObservation ex:diagnostic_statement_Medication_review_314529007 ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:diagnostic_statement_Medication_review_314529007 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_BMI_39156_5 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_BMI_39156_5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Body_Height_8302_2 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Body_Height_8302_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Body_Weight_29463_7 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Body_Weight_29463_7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Calcium_49765_1 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Calcium_49765_1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Carbon_dioxide_20565_8 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Carbon_dioxide_20565_8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Chloride_2069_3 a chr:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Chloride_2069_3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Creatinine_38483_4 a chr:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Creatinine_38483_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_DAST10_82667_7 a chr:MeasurementProcess ;
+    rdfs:label "Total score [DAST-10] measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T19:44:03+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_DAST10_82667_7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_GAD7_70274_6 a chr:MeasurementProcess ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T18:31:58+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_GAD7_70274_6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Glucose_2339_0 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Glucose_2339_0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Heart_rate_8867_4 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Heart_rate_8867_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Hemoglobin_A1c_4548_4 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Hemoglobin_A1c_4548_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_PHQ2_55758_7 a chr:MeasurementProcess ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T19:06:50+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_PHQ2_55758_7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Pain_severity_72514_3 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Pain_severity_72514_3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Potassium_6298_4 a chr:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Potassium_6298_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Respiratory_rate_9279_1 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Respiratory_rate_9279_1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Sodium_2947_0 a chr:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Sodium_2947_0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Urea_nitrogen_6299_2 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Sherita708_Hudson301 ;
+    chr:hasResult ex:measurement_Urea_nitrogen_6299_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:diagnostic_statement_Anemia_271737000 a chr:DiagnosticStatement ;
+    rdfs:label "Anemia (disorder)" ;
+    chr:hasCode <http://snomed.info/id/271737000> ;
+    chr:hasDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_Medication_review_314529007 a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_Part-time_employment_160904001 a chr:DiagnosticStatement ;
+    rdfs:label "Part-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160904001> ;
+    chr:hasDate "2023-12-01T18:04:38+01:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_Prediabetes_714628002 a chr:DiagnosticStatement ;
+    rdfs:label "Prediabetes (finding)" ;
+    chr:hasCode <http://snomed.info/id/714628002> ;
+    chr:hasDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime .
+
+ex:measurement_BMI_39156_5 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "22.68"^^xsd:float ;
+    chr:hasUnit ex:unit_kgperm2 .
+
+ex:measurement_Body_Height_8302_2 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "161.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:measurement_Body_Weight_29463_7 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "58.8"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:measurement_Calcium_49765_1 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/49765-1> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "8.97"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_Carbon_dioxide_20565_8 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "26.37"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Chloride_2069_3 a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "109.03"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Creatinine_38483_4 a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/38483-4> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.81"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_DAST10_82667_7 a chr:Measurement ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasCode <https://loinc.org/82667-7> ;
+    chr:hasMeasuredDate "2023-12-01T19:44:03+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_GAD7_70274_6 a chr:Measurement ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasMeasuredDate "2023-12-01T18:31:58+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Glucose_2339_0 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "64.73"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_Heart_rate_8867_4 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "93.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_Hemoglobin_A1c_4548_4 a chr:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.27"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:measurement_PHQ2_55758_7 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2023-12-01T19:06:50+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Pain_severity_72514_3 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Potassium_6298_4 a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6298-4> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.48"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Respiratory_rate_9279_1 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "14.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_Sodium_2947_0 a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2947-0> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "136.93"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Urea_nitrogen_6299_2 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6299-2> ;
+    chr:hasMeasuredDate "2023-12-01T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "7.89"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kgperm2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_cblscorecbr a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:unit_mgperdL a chr:Unit ;
+    rdfs:label "mg/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
+
+ex:unit_mmolperL a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Angelic427_Callie226_Schaden604 a chr:Person ;
+    rdfs:label "Angelic427 Callie226 Schaden604" .
+
+ex:Dr_Sherita708_Hudson301 a chr:Person ;
+    rdfs:label "Dr. Sherita708 Hudson301" .

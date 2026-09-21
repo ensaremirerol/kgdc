@@ -1,0 +1,51 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 104.8s] 41 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[MeasurementProcess,Measurement,ProcessStatus], s23[MeasurementProcess,Measurement,ProcessStatus], s24[MeasurementProcess,Measurement,ProcessStatus], s25[MeasurementProcess,Measurement,ProcessStatus], s26[MeasurementProcess,Measurement,ProcessStatus], s27[MeasurementProcess,Measurement,ProcessStatus], s28[MeasurementProcess,Measurement,ProcessStatus], s29[MeasurementProcess,Measurement,ProcessStatus], s30[MeasurementProcess,Measurement,ProcessStatus], s31[MeasurementProcess,Measurement,ProcessStatus], s32[MeasurementProcess,Measurement,ProcessStatus], s33[MeasurementProcess,Measurement,ProcessStatus], s34[MeasurementProcess,Measurement,ProcessStatus], s35[MeasurementProcess,Measurement,ProcessStatus], s36[MeasurementProcess,Measurement,ProcessStatus], s37[MeasurementProcess,Measurement,ProcessStatus], s38[MeasurementProcess,Measurement,ProcessStatus], s39[MeasurementProcess,Measurement,ProcessStatus], s40[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s41[CarePlan]
+[ 104.8s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 104.8s] level 0: 6 agent(s), 0 known entities
+[ 104.8s]   CareUnit: extracting (215 chars, 1 classes in view)
+[ 104.8s]   ClinicalCondition: extracting (236 chars, 3 classes in view)
+[ 104.8s]   DiagnosticStatement: extracting (236 chars, 1 classes in view)
+[ 104.8s]   Measurement: extracting (9152 chars, 2 classes in view)
+[ 110.0s]   CareUnit: cycle 0 -> conforms
+[ 110.0s]   Person: extracting (215 chars, 1 classes in view)
+[ 110.5s]   DiagnosticStatement: cycle 0 -> conforms
+[ 110.5s]   ProcessStatus: extracting (9152 chars, 1 classes in view)
+[ 111.7s]   ClinicalCondition: cycle 0 -> conforms
+[ 115.3s]   ProcessStatus: cycle 0 -> conforms
+[ 115.7s]   Person: cycle 0 -> conforms
+[ 229.4s]   Measurement: cycle 0 -> 1 violation(s)
+[ 229.4s]   Measurement: fixing ...
+[ 353.2s]   Measurement: cycle 1 -> 1 violation(s)
+[ 353.2s]   Measurement: stopping (plateau)
+[ 353.2s]   Measurement: 3 unresolved (honest gaps)
+[ 353.2s] level 1: 2 agent(s), 6 known entities
+[ 353.2s]   EvaluationProcess: extracting (236 chars, 7 classes in view)
+[ 353.2s]   MeasurementProcess: extracting (9152 chars, 6 classes in view)
+[ 371.7s]   EvaluationProcess: cycle 0 -> conforms
+[ 615.5s]   MeasurementProcess: dropped 50 individual(s) of other classes (already built by earlier levels)
+[ 615.6s]   MeasurementProcess: cycle 0 -> 38 violation(s)
+[ 615.6s]   MeasurementProcess: fixing ...
+https://biomedit.ch/rdf/sphn-resource/ucum/{score}cbr does not look like a valid URI, trying to serialize this will break.
+https://biomedit.ch/rdf/sphn-resource/ucum/{score}cbr does not look like a valid URI, trying to serialize this will break.
+https://biomedit.ch/rdf/sphn-resource/ucum/{score}cbr does not look like a valid URI, trying to serialize this will break.
+https://biomedit.ch/rdf/sphn-resource/ucum/{nominal}cbr does not look like a valid URI, trying to serialize this will break.
+https://biomedit.ch/rdf/sphn-resource/ucum/{nominal}cbr does not look like a valid URI, trying to serialize this will break.
+https://biomedit.ch/rdf/sphn-resource/ucum/{score}cbr does not look like a valid URI, trying to serialize this will break.
+[ 823.8s]   MeasurementProcess: cycle 1 -> 52 violation(s)
+[ 823.8s]   MeasurementProcess: fixing ...
+[1047.8s]   MeasurementProcess: cycle 2 -> 11 violation(s)
+[1047.8s]   MeasurementProcess: stopping (fix budget spent)
+[1047.8s] level 2: 2 agent(s), 83 known entities
+[1047.8s]   CarePlan: extracting (9820 chars, 4 classes in view)
+[1047.8s]   ClinicalVisit: extracting (9820 chars, 5 classes in view)
+[1055.5s]   CarePlan: cycle 0 -> 12 violation(s)
+[1055.5s]   CarePlan: fixing ...
+[1223.3s]   ClinicalVisit: cycle 0 -> 11 violation(s)
+[1223.3s]   ClinicalVisit: fixing ...
+[1328.4s]   CarePlan: cycle 1 -> 126 violation(s)
+[1328.4s]   CarePlan: fixing ...
+[1526.8s]   CarePlan: cycle 2 -> 1 violation(s)
+[1526.8s]   CarePlan: stopping (fix budget spent)
+[1536.7s]   ClinicalVisit: cycle 1 -> 11 violation(s)
+[1536.7s]   ClinicalVisit: stopping (plateau)
+[1537.0s] merging (orchestrator): 11 violation(s), 3 unresolved, 2 unparsed

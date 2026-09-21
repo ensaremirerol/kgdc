@@ -1,0 +1,72 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 114.3s] 41 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[MeasurementProcess,Measurement,Unit,ProcessStatus], s4[MeasurementProcess,Measurement,Unit,ProcessStatus], s5[MeasurementProcess,Measurement,Unit,ProcessStatus], s6[MeasurementProcess,Measurement,Unit,ProcessStatus], s7[MeasurementProcess,Measurement,Unit,ProcessStatus], s8[MeasurementProcess,Measurement,Unit,ProcessStatus], s9[MeasurementProcess,Measurement,Unit,ProcessStatus], s10[MeasurementProcess,Measurement,Unit,ProcessStatus], s11[MeasurementProcess,Measurement,Unit,ProcessStatus], s12[MeasurementProcess,Measurement,Unit,ProcessStatus], s13[MeasurementProcess,Measurement,Unit,ProcessStatus], s14[MeasurementProcess,Measurement,Unit,ProcessStatus], s15[MeasurementProcess,Measurement,Unit,ProcessStatus], s16[MeasurementProcess,Measurement,Unit,ProcessStatus], s17[MeasurementProcess,Measurement,Unit,ProcessStatus], s18[MeasurementProcess,Measurement,Unit,ProcessStatus], s19[MeasurementProcess,Measurement,Unit,ProcessStatus], s20[MeasurementProcess,Measurement,Unit,ProcessStatus], s21[MeasurementProcess,Measurement,Unit,ProcessStatus], s22[MeasurementProcess,Measurement,Unit,ProcessStatus], s23[MeasurementProcess,Measurement,Unit,ProcessStatus], s24[MeasurementProcess,Measurement,Unit,ProcessStatus], s25[MeasurementProcess,Measurement,Unit,ProcessStatus], s26[MeasurementProcess,Measurement,Unit,ProcessStatus], s27[MeasurementProcess,Measurement,Unit,ProcessStatus], s28[MeasurementProcess,Measurement,Unit,ProcessStatus], s29[MeasurementProcess,Measurement,Unit,ProcessStatus], s30[MeasurementProcess,Measurement,Unit,ProcessStatus], s31[MeasurementProcess,Measurement,Unit,ProcessStatus], s32[MeasurementProcess,Measurement,Unit,ProcessStatus], s33[MeasurementProcess,Measurement,Unit,ProcessStatus], s34[MeasurementProcess,Measurement,Unit,ProcessStatus], s35[MeasurementProcess,Measurement,Unit,ProcessStatus], s36[MeasurementProcess,Measurement,Unit,ProcessStatus], s37[MeasurementProcess,Measurement,Unit,ProcessStatus], s38[MeasurementProcess,Measurement,Unit,ProcessStatus], s39[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s40[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s41[CarePlan]
+[ 114.3s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, ProcessStatus, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 114.3s] level 0: 6 agent(s), 0 known entities
+[ 114.3s]   CareUnit: extracting (238 chars, 1 classes in view)
+[ 114.3s]   ClinicalCondition: extracting (453 chars, 3 classes in view)
+[ 114.3s]   DiagnosticStatement: extracting (453 chars, 1 classes in view)
+[ 114.3s]   Person: extracting (238 chars, 1 classes in view)
+[ 120.2s]   CareUnit: cycle 0 -> conforms
+[ 120.2s]   ProcessStatus: extracting (8934 chars, 1 classes in view)
+[ 121.4s]   Person: cycle 0 -> conforms
+[ 121.4s]   Unit: extracting (8934 chars, 1 classes in view)
+[ 122.8s]   DiagnosticStatement: cycle 0 -> 8 violation(s)
+[ 122.8s]   DiagnosticStatement: fixing ...
+[ 126.3s]   ClinicalCondition: cycle 0 -> conforms
+[ 131.2s]   DiagnosticStatement: cycle 1 -> conforms
+[ 137.1s]   Unit: cycle 0 -> conforms
+[ 163.2s]   ProcessStatus: cycle 0 -> 114 violation(s)
+[ 163.2s]   ProcessStatus: fixing ...
+[ 198.0s]   ProcessStatus: cycle 1 -> 114 violation(s)
+[ 198.0s]   ProcessStatus: stopping (plateau)
+[ 198.0s] level 1: 2 agent(s), 53 known entities
+[ 198.0s]   EvaluationProcess: extracting (453 chars, 7 classes in view)
+[ 198.0s]   Measurement: extracting (8934 chars, 2 classes in view)
+[ 209.8s]   EvaluationProcess: cycle 0 -> 138 violation(s)
+[ 209.8s]   EvaluationProcess: fixing ...
+[ 220.8s]   EvaluationProcess: cycle 1 -> 138 violation(s)
+[ 220.8s]   EvaluationProcess: stopping (plateau)
+[ 311.2s]   Measurement: cycle 0 -> 1 violation(s)
+[ 311.2s]   Measurement: fixing ...
+[ 427.6s]   Measurement: cycle 1 -> 1 violation(s)
+[ 427.6s]   Measurement: fixing ...
+[ 537.0s]   Measurement: cycle 2 -> 1 violation(s)
+[ 537.0s]   Measurement: stopping (fix budget spent)
+[ 537.0s]   Measurement: 5 unresolved (honest gaps)
+[ 537.0s] level 2: 1 agent(s), 55 known entities
+[ 537.0s]   MeasurementProcess: extracting (8934 chars, 6 classes in view)
+[ 762.5s]   MeasurementProcess: cycle 0 -> 1 violation(s)
+[ 762.5s]   MeasurementProcess: fixing ...
+[1005.8s]   MeasurementProcess: cycle 1 -> 1 violation(s)
+[1005.8s]   MeasurementProcess: fixing ...
+[1253.3s]   MeasurementProcess: cycle 2 -> 1 violation(s)
+[1253.3s]   MeasurementProcess: stopping (fix budget spent)
+[1253.3s]   MeasurementProcess: 3 unresolved (honest gaps)
+[1253.3s] level 3: 2 agent(s), 55 known entities
+[1253.3s]   CarePlan: extracting (9886 chars, 4 classes in view)
+[1253.3s]   ClinicalVisit: extracting (9886 chars, 5 classes in view)
+[1260.4s]   CarePlan: cycle 0 -> 139 violation(s)
+[1260.4s]   CarePlan: fixing ...
+[1267.0s]   CarePlan: cycle 1 -> 139 violation(s)
+[1267.0s]   CarePlan: stopping (plateau)
+[1267.0s]   CarePlan: 1 unresolved (honest gaps)
+[1384.4s]   ClinicalVisit: cycle 0 -> 139 violation(s)
+[1384.4s]   ClinicalVisit: fixing ...
+[1518.3s]   ClinicalVisit: cycle 1 -> 139 violation(s)
+[1518.3s]   ClinicalVisit: stopping (plateau)
+[1518.5s] merging (orchestrator): 140 violation(s), 9 unresolved, 2 unparsed
+[1646.0s] final: 1 violation(s)
+conforms=False segments=11 llm_calls=22 unresolved=4
+  orchestrator   2 calls    31135 in   12973 out  cost n/a  gemma4-g1
+  total         22 calls   204895 in   88389 out  cost n/a  
+  worker        20 calls   173760 in   75416 out  cost n/a  gemma4-g1
+  UNRESOLVED: chr:hasUnit — not stated in the text
+  UNRESOLVED: chr:hasUnit — not stated in the text
+  UNRESOLVED: chr:hasUnit — not stated in the text
+  UNRESOLVED: chr:hasUnit — not stated in the text
+Constraint Violation in TurtleSyntax:
+	Severity: sh:Violation
+	Message: not valid Turtle: at line 122 of <>:
+	Offending line: ex:measurement_ph_urine_5803_2 a chr:Measurement ;
+	Hint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs.
+exit=1

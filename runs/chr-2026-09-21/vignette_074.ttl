@@ -1,0 +1,67 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_1 a chr:CarePlan ;
+    rdfs:label "care plan" ;
+    chr:hasMedicalProcedure ex:evaluation_20000213T113554 .
+
+ex:visit_20000213T113554 a chr:ClinicalVisit ;
+    rdfs:label "CLINICAL VISIT NOTE — ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE" ;
+    chr:hasCareProvider ex:person_Nickolas58_Schumm995 ;
+    chr:hasCareUnit ex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE ;
+    chr:hasDate "2000-02-13T11:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;
+    chr:hasProcedure ex:evaluation_20000213T113554,
+        ex:measurement_process_20000213T113554 .
+
+ex:Acute_viral_pharyngitis_disorder a chr:ClinicalCondition ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> ;
+    chr:hasRecordDate "2000-02-13T11:35:54+01:00"^^xsd:dateTime .
+
+ex:Body_temperature_8310_5 a chr:Measurement ;
+    rdfs:label "Body temperature" ;
+    chr:hasCode <https://loinc.org/8310-5> ;
+    chr:hasMeasuredDate "2000-02-13T11:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "37.436"^^xsd:float ;
+    chr:hasUnit ex:Cel .
+
+ex:Cel a chr:Unit ;
+    rdfs:label "Cel" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .
+
+ex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE a chr:CareUnit ;
+    rdfs:label "ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE" .
+
+ex:diagnostic_statement_Acute_viral_pharyngitis a chr:DiagnosticStatement ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> .
+
+ex:measurement_process_20000213T113554 a chr:MeasurementProcess ;
+    rdfs:label "Body temperature measurement" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2000-02-13T11:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Nickolas58_Schumm995 ;
+    chr:hasResult ex:Body_temperature_8310_5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:evaluation_20000213T113554 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Acute_viral_pharyngitis_disorder ;
+    chr:hasObservation ex:diagnostic_statement_Acute_viral_pharyngitis ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2000-02-13T11:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Nickolas58_Schumm995 .
+
+ex:person_Estela596_Yetta429_Grant908 a chr:Person ;
+    rdfs:label "Estela596 Yetta429 Grant908" .
+
+ex:person_Nickolas58_Schumm995 a chr:Person ;
+    rdfs:label "Dr. Nickolas58 Schumm995" .

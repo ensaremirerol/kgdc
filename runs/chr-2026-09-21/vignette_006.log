@@ -1,0 +1,70 @@
+[   0.1s] segmenting (orchestrator) ...
+[  32.8s] 11 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[MeasurementProcess,Measurement,Unit,ProcessStatus], s4[MeasurementProcess,Measurement,Unit,ProcessStatus], s5[MeasurementProcess,Measurement,Unit,ProcessStatus], s6[MeasurementProcess,Measurement,Unit,ProcessStatus], s7[MeasurementProcess,Measurement,Unit,ProcessStatus], s8[MeasurementProcess,Measurement,Unit,ProcessStatus], s9[MeasurementProcess,Measurement,Unit,ProcessStatus], s10[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s11[CarePlan]
+[  32.8s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, ProcessStatus, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  32.8s] level 0: 6 agent(s), 0 known entities
+[  32.8s]   CareUnit: extracting (349 chars, 1 classes in view)
+[  32.8s]   ClinicalCondition: extracting (219 chars, 3 classes in view)
+[  32.8s]   DiagnosticStatement: extracting (219 chars, 1 classes in view)
+[  32.8s]   Person: extracting (349 chars, 1 classes in view)
+[  38.9s]   CareUnit: cycle 0 -> conforms
+[  38.9s]   ProcessStatus: extracting (1877 chars, 1 classes in view)
+[  39.6s]   DiagnosticStatement: cycle 0 -> 5 violation(s)
+[  39.6s]   DiagnosticStatement: fixing ...
+[  40.5s]   ClinicalCondition: cycle 0 -> conforms
+[  40.5s]   Unit: extracting (1877 chars, 1 classes in view)
+[  40.6s]   Person: cycle 0 -> conforms
+[  44.7s]   DiagnosticStatement: cycle 1 -> 5 violation(s)
+[  44.7s]   DiagnosticStatement: stopping (plateau)
+[  46.9s]   ProcessStatus: cycle 0 -> conforms
+[  48.8s]   Unit: cycle 0 -> conforms
+[  48.8s] level 1: 2 agent(s), 19 known entities
+[  48.8s]   EvaluationProcess: extracting (219 chars, 7 classes in view)
+[  48.8s]   Measurement: extracting (1877 chars, 2 classes in view)
+[  59.6s]   EvaluationProcess: cycle 0 -> 25 violation(s)
+[  59.6s]   EvaluationProcess: fixing ...
+[  69.9s]   EvaluationProcess: cycle 1 -> 25 violation(s)
+[  69.9s]   EvaluationProcess: stopping (plateau)
+[  74.8s]   Measurement: cycle 0 -> 5 violation(s)
+[  74.8s]   Measurement: fixing ...
+[ 100.0s]   Measurement: cycle 1 -> 5 violation(s)
+[ 100.0s]   Measurement: stopping (plateau)
+[ 100.0s] level 2: 1 agent(s), 29 known entities
+[ 100.0s]   MeasurementProcess: extracting (1877 chars, 6 classes in view)
+[ 143.1s]   MeasurementProcess: cycle 0 -> 25 violation(s)
+[ 143.1s]   MeasurementProcess: fixing ...
+[ 189.8s]   MeasurementProcess: cycle 1 -> 26 violation(s)
+[ 189.8s]   MeasurementProcess: fixing ...
+[ 233.2s]   MeasurementProcess: cycle 2 -> 25 violation(s)
+[ 233.2s]   MeasurementProcess: stopping (fix budget spent)
+[ 233.2s] level 3: 2 agent(s), 37 known entities
+[ 233.2s]   CarePlan: extracting (2565 chars, 4 classes in view)
+[ 233.2s]   ClinicalVisit: extracting (2565 chars, 5 classes in view)
+[ 240.4s]   CarePlan: cycle 0 -> 25 violation(s)
+[ 240.4s]   CarePlan: fixing ...
+[ 251.0s]   CarePlan: cycle 1 -> 25 violation(s)
+[ 251.0s]   CarePlan: stopping (plateau)
+[ 251.0s]   CarePlan: 1 unresolved (honest gaps)
+[ 274.8s]   ClinicalVisit: cycle 0 -> 25 violation(s)
+[ 274.8s]   ClinicalVisit: fixing ...
+[ 311.8s]   ClinicalVisit: cycle 1 -> 25 violation(s)
+[ 311.8s]   ClinicalVisit: stopping (plateau)
+[ 311.9s] merging (orchestrator): 25 violation(s), 1 unresolved, 0 unparsed
+[ 378.6s] final: 2 violation(s)
+conforms=False segments=11 llm_calls=20 unresolved=0
+  orchestrator   2 calls    14041 in    5772 out  cost n/a  gemma4-g1
+  total         20 calls    96321 in   24514 out  cost n/a  
+  worker        18 calls    82280 in   18742 out  cost n/a  gemma4-g1
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultRangeShape
+	Focus Node: ex:measurement_HeartRate_201903141314
+	Value Node: ex:measurement_HeartRate_201903141314
+	Message: Object of chr:hasResult must be a chr:Measurement.
+Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
+	Focus Node: ex:process_HeartRate_20190315T141314
+	Result Path: chr:hasResult
+	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
+
+exit=1

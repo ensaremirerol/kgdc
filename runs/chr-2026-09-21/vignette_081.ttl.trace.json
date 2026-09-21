@@ -1,0 +1,534 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20070507T033554 .\n\nex:diagnostic_statement_Streptococcal_sore_throat a chr:DiagnosticStatement ;\n    rdfs:label \"Streptococcal sore throat (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/43878008> .\n\nex:measurement_process_body_temperature_20070507T033554 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement process\" ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Nickolas58_Schumm995 ;\n    chr:hasResult ex:measurement_Body_temperature_8310_5 ;\n    chr:hasStatus ex:status_completed .\n\nex:visit_20070507T033554 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" ;\n    chr:hasCareProvider ex:person_Nickolas58_Schumm995 ;\n    chr:hasCareUnit ex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE ;\n    chr:hasDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasProcedure ex:measurement_process_body_temperature_20070507T033554 ;\n    chr:hasProcedure ex:evaluation_20070507T033554 .\n\nex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE a chr:CareUnit ;\n    rdfs:label \"ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" .\n\nex:Streptococcal_sore_throat_43878008 a chr:ClinicalCondition ;\n    rdfs:label \"Streptococcal sore throat (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/43878008> ;\n    chr:hasRecordDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime .\n\nex:evaluation_20070507T033554 a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Streptococcal_sore_throat_43878008 ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Nickolas58_Schumm995 ;\n    chr:hasObservation ex:diagnostic_statement_Streptococcal_sore_throat .\n\nex:measurement_Body_temperature_8310_5 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue 38.234 ;\n    chr:hasUnit ex:unit_Cel .\n\nex:unit_Cel a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:person_Estela596_Yetta429_Grant908 a chr:Person ;\n    rdfs:label \"Estela596 Yetta429 Grant908\" .\n\nex:person_Nickolas58_Schumm995 a chr:Person ;\n    rdfs:label \"Dr. Nickolas58 Schumm995\" .",
+ "conforms": false,
+ "violations": "Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasConditionDomainShape\n\tFocus Node: ex:evaluation_20070507T033554\n\tValue Node: ex:evaluation_20070507T033554\n\tMessage: Subject of chr:hasCondition must be a chr:EvaluationProcess.\nConstraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasObservationDomainShape\n\tFocus Node: ex:evaluation_20070507T033554\n\tValue Node: ex:evaluation_20070507T033554\n\tMessage: Subject of chr:hasObservation must be a chr:EvaluationProcess.\nConstraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:datatype xsd:float ; sh:message Literal(\"chr:hasQuantityValue must be an xsd:float.\") ; sh:path chr:hasQuantityValue ]\n\tFocus Node: ex:measurement_Body_temperature_8310_5\n\tValue Node: Literal(\"38.234\", datatype=xsd:decimal)\n\tResult Path: chr:hasQuantityValue\n\tMessage: chr:hasQuantityValue must be an xsd:float.\n",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\n======================================================================\n\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE a chr:CareUnit ;\n    rdfs:label \"ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" .",
+   "level": 0,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Nickolas58 Schumm995 evaluated the patient on 2007-05-07T03:35:54+02:00. The evaluation produced a diagnostic statement of Streptococcal sore throat (disorder) (SNOMED: 43878008). The condition was recorded on 2007-05-07T03:35:54+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Streptococcal_sore_throat_43878008 a chr:ClinicalCondition ;\n    rdfs:label \"Streptococcal sore throat (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/43878008> ;\n    chr:hasRecordDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime .",
+   "level": 0,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Nickolas58 Schumm995 evaluated the patient on 2007-05-07T03:35:54+02:00. The evaluation produced a diagnostic statement of Streptococcal sore throat (disorder) (SNOMED: 43878008). The condition was recorded on 2007-05-07T03:35:54+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_Streptococcal_sore_throat a chr:DiagnosticStatement ;\n    rdfs:label \"Streptococcal sore throat (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/43878008> .",
+   "level": 0,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\n======================================================================\n\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Estela596_Yetta429_Grant908 a chr:Person ;\n    rdfs:label \"Estela596 Yetta429 Grant908\" .\n\nex:person_Nickolas58_Schumm995 a chr:Person ;\n    rdfs:label \"Dr. Nickolas58 Schumm995\" .",
+   "level": 0,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2007-05-07T03:35:54+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 38.234 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasStatus is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:measurement_process_body_temperature\n\tValue Node: ex:status_completed\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasStatus>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:ProcessStatus\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConst"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasStatus is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:measurement_process_body_temperature\n\tValue Node: ex:status_completed\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasStatus>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:ProcessStatus\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConst"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [
+    "UNRESOLVED: ex:measurement_process_body_temperature must be a chr:MeasurementProcess (not stated in text)",
+    "UNRESOLVED: chr:hasStatus is not a property of the vocabulary"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\n# UNRESOLVED: ex:measurement_process_body_temperature must be a chr:MeasurementProcess (not stated in text)\nex:measurement_process_body_temperature a chr:ProcessStatus ;\n    rdfs:label \"measurement process\" ;\n    # UNRESOLVED: chr:hasStatus is not a property of the vocabulary\n    chr:hasStatus ex:status_completed .",
+   "level": 0,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2007-05-07T03:35:54+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 38.234 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Cel a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .",
+   "level": 0,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Nickolas58 Schumm995 evaluated the patient on 2007-05-07T03:35:54+02:00. The evaluation produced a diagnostic statement of Streptococcal sore throat (disorder) (SNOMED: 43878008). The condition was recorded on 2007-05-07T03:35:54+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Streptococcal_sore_throat\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20070507T033554\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in U"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Streptococcal_sore_throat\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20070507T033554\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in U"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Streptococcal_sore_throat\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20070507T033554\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in U"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20070507T033554 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Streptococcal_sore_throat_43878008 ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Nickolas58_Schumm995 .\n\nex:Streptococcal_sore_throat_43878008 a chr:ClinicalCondition ;\n    rdfs:label \"Streptococcal sore throat (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/43878008> ;\n    chr:hasRecordDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Streptococcal_sore_throat a chr:DiagnosticStatement ;\n    rdfs:label \"Streptococcal sore throat (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/43878008> .",
+   "level": 1,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2007-05-07T03:35:54+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 38.234 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Unit_Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Unit_Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/d"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measur"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measur"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Body_temperature_8310_5 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"38.234\"^^xsd:float ;\n    chr:hasUnit ex:Cel .\n\nex:Cel a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .",
+   "level": 1,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2007-05-07T03:35:54+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 38.234 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Streptococcal_sore_throat\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20070507T033554\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFoc"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Streptococcal_sore_throat\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20070507T033554\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFoc"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Streptococcal_sore_throat\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20070507T033554\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFoc"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [
+    "UNRESOLVED: chr:hasDevice \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_body_temperature_20070507T033554 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement process\" ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Nickolas58_Schumm995 ;\n    chr:hasResult ex:measurement_Body_temperature_8310_5 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_Body_temperature_8310_5 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"38.234\"^^xsd:float ;\n    chr:hasUnit ex:Cel .\n\n# UNRESOLVED: chr:hasDevice \u2014 not stated in the text",
+   "level": 2,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\n======================================================================\n\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)\n\nOn 2007-05-07T03:35:54+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 38.234 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Nickolas58 Schumm995 evaluated the patient on 2007-05-07T03:35:54+02:00. The evaluation produced a diagnostic statement of Streptococcal sore throat (disorder) (SNOMED: 43878008). The condition was recorded on 2007-05-07T03:35:54+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Streptococcal_sore_throat\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20070507T033554\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFoc"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Streptococcal_sore_throat\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20070507T033554\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFoc"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20070507T033554 .\n\nex:evaluation_20070507T033554 a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Nickolas58_Schumm995 .",
+   "level": 3,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\n======================================================================\n\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)\n\nOn 2007-05-07T03:35:54+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 38.234 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Nickolas58 Schumm995 evaluated the patient on 2007-05-07T03:35:54+02:00. The evaluation produced a diagnostic statement of Streptococcal sore throat (disorder) (SNOMED: 43878008). The condition was recorded on 2007-05-07T03:35:54+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Streptococcal_sore_throat\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20070507T033554\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFoc"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Streptococcal_sore_throat\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20070507T033554\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFoc"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Cel\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Streptococcal_sore_throat_43878008\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Streptococcal_sore_throat\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20070507T033554\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFoc"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [
+    "UNRESOLVED: chr:hasMeasuredDate, chr:hasQuantityValue, chr:hasUnit, chr:hasCode are not allowed properties for chr:MedicalProcedure in the provided schema.",
+    "UNRESOLVED: ex:measurement_Body_temperature_8310_5 is a measurement, but chr:Measurement is not an allowed class.",
+    "UNRESOLVED: ex:evaluation_20070507T033554 is an evaluation, but chr:EvaluationProcess is not an allowed class.",
+    "UNRESOLVED: ex:Streptococcal_sore_throat_43878008 is a condition, but chr:ClinicalCondition is not an allowed class.",
+    "UNRESOLVED: ex:diagnostic_statement_Streptococcal_sore_throat is a statement, but chr:DiagnosticStatement is not an allowed class."
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20070507T033554 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" ;\n    chr:hasCareProvider ex:person_Nickolas58_Schumm995 ;\n    chr:hasCareUnit ex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE ;\n    chr:hasDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasProcedure ex:measurement_process_body_temperature_20070507T033554 .\n\nex:measurement_process_body_temperature_20070507T033554 a chr:MedicalProcedure ;\n    rdfs:label \"Body temperature measurement process\" ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Nickolas58_Schumm995 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_Body_temperature_8310_5 a chr:MedicalProcedure ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\n# UNRESOLVED: chr:hasMeasuredDate, chr:hasQuantityValue, chr:hasUnit, chr:hasCode are not allowed properties for chr:MedicalProcedure in the provided schema.\n# UNRESOLVED: ex:measurement_Body_temperature_8310_5 is a measurement, but chr:Measurement is not an allowed class.\n# UNRESOLVED: ex:evaluation_20070507T033554 is an evaluation, but chr:EvaluationProcess is not an allowed class.\n# UNRESOLVED: ex:Streptococcal_sore_throat_43878008 is a condition, but chr:ClinicalCondition is not an allowed class.\n# UNRESOLVED: ex:diagnostic_statement_Streptococcal_sore_throat is a statement, but chr:DiagnosticStatement is not an allowed class.",
+   "level": 3,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 23,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 10986,
+   "completion_tokens": 1968,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 23,
+   "prompt_tokens": 99574,
+   "completion_tokens": 10631,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 21,
+   "prompt_tokens": 88588,
+   "completion_tokens": 8663,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

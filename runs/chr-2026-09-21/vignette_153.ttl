@@ -1,0 +1,75 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Arlen68_Olson653 a chr:Person ;
+    rdfs:label "Arlen68 Olson653" .
+
+ex:Dr._Domenic627_Blick895 a chr:Person ;
+    rdfs:label "Dr. Domenic627 Blick895" .
+
+ex:unit_mlper_1.73_m2 a chr:Unit ;
+    rdfs:label "mL/min/{1.73_m2}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mLpermin/cbl1.73m2cbr> .
+
+ex:unit_mmolperL a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+
+ex:unit_mgperdL a chr:Unit ;
+    rdfs:label "mg/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:condition_Full-time_employment_20220706T174554 a chr:ClinicalCondition ;
+    rdfs:label "Full-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160903007> ;
+    chr:hasRecordDate "2022-07-06T17:45:54+02:00"^^xsd:dateTime .
+
+ex:condition_Gingivitis_20220706T184317 a chr:ClinicalCondition ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> ;
+    chr:hasRecordDate "2022-07-06T18:43:17+02:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_Full-time_employment_20220706T174554 a chr:DiagnosticStatement ;
+    rdfs:label "Full-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160903007> .
+
+ex:diagnostic_statement_Gingivitis_20220706T184317 a chr:DiagnosticStatement ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> .
+
+ex:evaluation_Full-time_employment_20220706T174554 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2022-07-06T17:45:54+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Domenic627_Blick895 ;
+    chr:hasCondition ex:condition_Full-time_employment_20220706T174554 ;
+    chr:hasObservation ex:diagnostic_statement_Full-time_employment_20220706T174554 .
+
+ex:evaluation_Gingivitis_20220706T184317 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2022-07-06T18:43:17+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Domenic627_Blick895 ;
+    chr:hasCondition ex:condition_Gingivitis_20220706T184317 ;
+    chr:hasObservation ex:diagnostic_statement_Gingivitis_20220706T184317 .
+
+ex:visit_20220706T164723a0200 a chr:ClinicalVisit ;
+    rdfs:label "Encounter for check up (procedure)" ;
+    chr:hasCareProvider ex:Dr._Domenic627_Blick895 ;
+    chr:hasCareUnit ex:VIBRA_HOSPITAL_OF_WESTERN_MASS_-_CENTRAL_CAMPUS ;
+    chr:hasDate "2022-07-06T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasProcedure ex:proc_auditc_20220706T184317,
+        ex:proc_bilirubin_urine_20220706T164723,
+        ex:proc_bmi_20220706T164723,
+        ex:proc_calcium_blood_20220706T164723,
+        ex:proc_calcium_serum_20220706T164723,
+        ex:proc_chloride_blood_20220706T164723,
+        ex:proc_chloride_serum_20

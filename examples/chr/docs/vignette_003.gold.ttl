@@ -1,0 +1,59 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/clinical/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:visit_5e117ba0_820d_777a_6b6b_b676e1d34591 a chr:ClinicalVisit ;
+    chr:hasCareProvider ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasCareUnit ex:unit_github_com_syntheti ;
+    chr:hasDate "2016-12-13T23:01:53+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:patient_5e117ba0_820d_777a_7d5f_eb972d065bfa ;
+    chr:hasProcedure ex:evalProc_5e117ba0_820d_777a_acf9_2509a05a917b,
+        ex:measProc_5e117ba0_820d_777a_3eac_bc91c5310d9d .
+
+ex:cond_5e117ba0_820d_777a_acf9_2509a05a917b a chr:ClinicalCondition ;
+    rdfs:label "Acute infective cystitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/307426000> ;
+    chr:hasRecordDate "2017-05-09T18:24:27+02:00"^^xsd:dateTime .
+
+ex:diag_5e117ba0_820d_777a_acf9_2509a05a917b a chr:DiagnosticStatement ;
+    rdfs:label "Acute infective cystitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/307426000> .
+
+ex:evalProc_5e117ba0_820d_777a_acf9_2509a05a917b a chr:EvaluationProcess ;
+    chr:hasCondition ex:cond_5e117ba0_820d_777a_acf9_2509a05a917b ;
+    chr:hasObservation ex:diag_5e117ba0_820d_777a_acf9_2509a05a917b ;
+    chr:hasPatient ex:patient_5e117ba0_820d_777a_7d5f_eb972d065bfa ;
+    chr:hasPerformedDate "2016-12-13T23:01:53+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 .
+
+ex:measProc_5e117ba0_820d_777a_3eac_bc91c5310d9d a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_5e117ba0_820d_777a_7d5f_eb972d065bfa ;
+    chr:hasPerformedDate "2016-12-13T23:46:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_5e117ba0_820d_777a_3eac_bc91c5310d9d ;
+    chr:hasStatus ex:status_completed .
+
+ex:meas_5e117ba0_820d_777a_3eac_bc91c5310d9d a chr:Measurement ;
+    rdfs:label "Pain severity - Reported" ;
+    chr:hasCode <https://loinc.org/38208-5> ;
+    chr:hasMeasuredDate "2016-12-13T23:46:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.8386"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_github_com_syntheti a chr:CareUnit ;
+    rdfs:label "BOSTON MEDICAL CENTER CORPORATION-" .
+
+ex:unit_score a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:patient_5e117ba0_820d_777a_7d5f_eb972d065bfa a chr:Person ;
+    rdfs:label "Ms. Angelic427 Callie226 Schaden604" .
+
+ex:provider_hl7_org_fhir_sid_us_npi_99999 a chr:Person ;
+    rdfs:label "Dr. Willian804 Batz141" .
+

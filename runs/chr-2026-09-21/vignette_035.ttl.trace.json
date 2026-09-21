@@ -1,0 +1,357 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_followup_monitoring a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluation_Medication_review_20231102T175956 .\n\nex:process_FallRisk_20231102T192409 a chr:MeasurementProcess ;\n    rdfs:label \"Fall risk total [Morse Fall Scale] measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T19:24:09+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_FallRisk_20231102T192409 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_TotalScoreDAST10_20231102T203957 a chr:MeasurementProcess ;\n    rdfs:label \"Total score [DAST-10] measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T20:39:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_TotalScoreDAST10_20231102T203957 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_TotalScoreHARK_20231102T200546 a chr:MeasurementProcess ;\n    rdfs:label \"Total score [HARK] measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T20:05:46+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_TotalScoreHARK_20231102T200546 ;\n    chr:hasStatus ex:status_completed .\n\nex:visit_20231102T175956 a chr:ClinicalVisit ;\n    rdfs:label \"General examination of patient (procedure)\" ;\n    chr:hasCareProvider ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasCareUnit ex:JEWISH_FAMILY___CHILDRENS_SERVICE ;\n    chr:hasDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasProcedure ex:evaluation_Medication_review_20231102T175956,\n        ex:evaluation_Part-time_employment_20231102T185654,\n        ex:process_BMI_20231102T175956,\n        ex:process_BodyHeight_20231102T175956,\n        ex:process_BodyWeight_20231102T175956,\n        ex:process_HeartRate_20231102T175956,\n        ex:process_PainSeverity_20231102T175956,\n        ex:process_RespiratoryRate_20231102T175956 .\n\nex:JEWISH_FAMILY___CHILDRENS_SERVICE a chr:CareUnit ;\n    rdfs:label \"JEWISH FAMILY & CHILDREN'S SERVICE\" .\n\nex:Medication_review_due_situation a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime .\n\nex:Part-time_employment_finding a chr:ClinicalCondition ;\n    rdfs:label \"Part-time employment (finding)\" ;\n    chr:hasCode <http://snomed.info/id/160904001> ;\n    chr:hasRecordDate \"2023-11-02T18:56:54+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Medication_review_due_situation a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n\nex:diagnostic_statement_Part-time_employment_finding a chr:DiagnosticStatement ;\n    rdfs:label \"Part-time employment (finding)\" ;\n    chr:hasCode <http://snomed.info/id/160904001> .\n\nex:evaluation_Part-time_employment_20231102T185654 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Part-time_employment_finding ;\n    chr:hasObservation ex:diagnostic_statement_Part-time_employment_finding ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T18:56:54+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BMI_20231102T175956 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"27.56\"^^xsd:float ;\n    chr:hasUnit ex:unit_kgperm2 .\n\nex:measurement_BodyHeight_20231102T175956 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"172.7\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_BodyWeight_20231102T175956 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"82.2\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_FallRisk_20231102T192409 a chr:Measurement ;\n    rdfs:label \"Fall risk total [Morse Fall Scale]\" ;\n    chr:hasCode <https://loinc.org/59460-6> ;\n    chr:hasMeasuredDate \"2023-11-02T19:24:09+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblpercentcbr .\n\nex:measurement_HeartRate_20231102T175956 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"69.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_PainSeverity_20231102T175956 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"3.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_RespiratoryRate_20231102T175956 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"13.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_TotalScoreDAST10_20231102T203957 a chr:Measurement ;\n    rdfs:label \"Total score [DAST-10]\" ;\n    chr:hasCode <https://loinc.org/82667-7> ;\n    chr:hasMeasuredDate \"2023-11-02T20:39:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_TotalScoreHARK_20231102T200546 a chr:Measurement ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasCode <https://loinc.org/76504-0> ;\n    chr:hasMeasuredDate \"2023-11-02T20:05:46+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:process_BMI_20231102T175956 a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_BMI_20231102T175956 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BodyHeight_20231102T175956 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_BodyHeight_20231102T175956 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BodyWeight_20231102T175956 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_BodyWeight_20231102T175956 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_HeartRate_20231102T175956 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_HeartRate_20231102T175956 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_PainSeverity_20231102T175956 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_PainSeverity_20231102T175956 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_RespiratoryRate_20231102T175956 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_RespiratoryRate_20231102T175956 ;\n    chr:hasStatus ex:status_completed .\n\nex:evaluation_Medication_review_20231102T175956 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Medication_review_due_situation ;\n    chr:hasObservation ex:diagnostic_statement_Medication_review_due_situation ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .\n\nex:unit_cblpercentcbr a chr:Unit ;\n    rdfs:label \"{%}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblpercentcbr> .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kgperm2 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:Casey401_Elijah719_Parker433 a chr:Person ;\n    rdfs:label \"Casey401 Elijah719 Parker433\" .\n\nex:Dr_Eldridge510_Marquardt819 a chr:Person ;\n    rdfs:label \"Dr. Eldridge510 Marquardt819\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:JEWISH_FAMILY___CHILDRENS_SERVICE a chr:CareUnit ;\n    rdfs:label \"JEWISH FAMILY & CHILDREN'S SERVICE\" .",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Eldridge510 Marquardt819 evaluated the patient on 2023-11-02T17:59:56+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2023-11-02T17:59:56+01:00.\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2023-11-02T18:56:54+01:00. The evaluation produced a diagnostic statement of Part-time employment (finding) (SNOMED: 160904001). The condition was recorded on 2023-11-02T18:56:54+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Medication_review_due_situation a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime .\n\nex:Part-time_employment_finding a chr:ClinicalCondition ;\n    rdfs:label \"Part-time employment (finding)\" ;\n    chr:hasCode <http://snomed.info/id/160904001> ;\n    chr:hasRecordDate \"2023-11-02T18:56:54+01:00\"^^xsd:dateTime .",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Eldridge510 Marquardt819 evaluated the patient on 2023-11-02T17:59:56+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2023-11-02T17:59:56+01:00.\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2023-11-02T18:56:54+01:00. The evaluation produced a diagnostic statement of Part-time employment (finding) (SNOMED: 160904001). The condition was recorded on 2023-11-02T18:56:54+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_Medication_review_due_situation a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n\nex:diagnostic_statement_Part-time_employment_finding a chr:DiagnosticStatement ;\n    rdfs:label \"Part-time employment (finding)\" ;\n    chr:hasCode <http://snomed.info/id/160904001> .",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2023-11-02T17:59:56+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 172.7 cm. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 82.2 kg. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 27.56 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 69 /min. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T19:24:09+01:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 1 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T20:05:46+01:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T20:39:57+01:00, a Total score [DAST-10] (LOINC: 82667-7) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_BodyHeight_20231102T175956 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"172.7\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:measurement_PainSeverity_20231102T175956 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"3.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:measurement_BodyWeight_20231102T175956 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"82.2\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:measurement_BMI_20231102T175956 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"27.56\"^^xsd:float ;\n    chr:hasUnit ex:unit_kgperm2 .\n\nex:unit_kgperm2 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:measurement_HeartRate_20231102T175956 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"69.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:measurement_RespiratoryRate_20231102T175956 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"13.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_FallRisk_20231102T192409 a chr:Measurement ;\n    rdfs:label \"Fall risk total [Morse Fall Scale]\" ;\n    chr:hasCode <https://loinc.org/59460-6> ;\n    chr:hasMeasuredDate \"2023-11-02T19:24:09+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblpercentcbr .\n\nex:unit_cblpercentcbr a chr:Unit ;\n    rdfs:label \"{%}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblpercentcbr> .\n\nex:measurement_TotalScoreHARK_20231102T200546 a chr:Measurement ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasCode <https://loinc.org/76504-0> ;\n    chr:hasMeasuredDate \"2023-11-02T20:05:46+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_TotalScoreDAST10_20231102T203957 a chr:Measurement ;\n    rdfs:label \"Total score [DAST-10]\" ;\n    chr:hasCode <https://loinc.org/82667-7> ;\n    chr:hasMeasuredDate \"2023-11-02T20:39:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Casey401_Elijah719_Parker433 a chr:Person ;\n    rdfs:label \"Casey401 Elijah719 Parker433\" .\n\nex:Dr_Eldridge510_Marquardt819 a chr:Person ;\n    rdfs:label \"Dr. Eldridge510 Marquardt819\" .",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Eldridge510 Marquardt819 evaluated the patient on 2023-11-02T17:59:56+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2023-11-02T17:59:56+01:00.\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2023-11-02T18:56:54+01:00. The evaluation produced a diagnostic statement of Part-time employment (finding) (SNOMED: 160904001). The condition was recorded on 2023-11-02T18:56:54+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_Medication_review_20231102T175956 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Medication_review_due_situation ;\n    chr:hasObservation ex:diagnostic_statement_Medication_review_due_situation ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 .\n\nex:evaluation_Part-time_employment_20231102T185654 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Part-time_employment_finding ;\n    chr:hasObservation ex:diagnostic_statement_Part-time_employment_finding ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T18:56:54+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 .",
+   "level": 1,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2023-11-02T17:59:56+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 172.7 cm. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 82.2 kg. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 27.56 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 69 /min. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T19:24:09+01:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 1 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T20:05:46+01:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T20:39:57+01:00, a Total score [DAST-10] (LOINC: 82667-7) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:process_BodyHeight_20231102T175956 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_BodyHeight_20231102T175956 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_PainSeverity_20231102T175956 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_PainSeverity_20231102T175956 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BodyWeight_20231102T175956 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_BodyWeight_20231102T175956 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BMI_20231102T175956 a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_BMI_20231102T175956 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_HeartRate_20231102T175956 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_HeartRate_20231102T175956 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_RespiratoryRate_20231102T175956 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_RespiratoryRate_20231102T175956 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_FallRisk_20231102T192409 a chr:MeasurementProcess ;\n    rdfs:label \"Fall risk total [Morse Fall Scale] measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T19:24:09+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_FallRisk_20231102T192409 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_TotalScoreHARK_20231102T200546 a chr:MeasurementProcess ;\n    rdfs:label \"Total score [HARK] measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T20:05:46+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_TotalScoreHARK_20231102T200546 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_TotalScoreDAST10_20231102T203957 a chr:MeasurementProcess ;\n    rdfs:label \"Total score [DAST-10] measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T20:39:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_TotalScoreDAST10_20231102T203957 ;\n    chr:hasStatus ex:status_completed .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .",
+   "level": 1,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 JEWISH FAMILY & CHILDREN'S SERVICE\n========================================================\n\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)\n\nOn 2023-11-02T17:59:56+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 172.7 cm. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 82.2 kg. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 27.56 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 69 /min. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T19:24:09+01:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 1 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T20:05:46+01:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T20:39:57+01:00, a Total score [DAST-10] (LOINC: 82667-7) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2023-11-02T17:59:56+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2023-11-02T17:59:56+01:00.\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2023-11-02T18:56:54+01:00. The evaluation produced a diagnostic statement of Part-time employment (finding) (SNOMED: 160904001). The condition was recorded on 2023-11-02T18:56:54+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_followup_monitoring a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluation_Medication_review_20231102T175956 .",
+   "level": 2,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 JEWISH FAMILY & CHILDREN'S SERVICE\n========================================================\n\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)\n\nOn 2023-11-02T17:59:56+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 172.7 cm. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 82.2 kg. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 27.56 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 69 /min. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T17:59:56+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T19:24:09+01:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 1 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T20:05:46+01:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2023-11-02T20:39:57+01:00, a Total score [DAST-10] (LOINC: 82667-7) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2023-11-02T17:59:56+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2023-11-02T17:59:56+01:00.\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2023-11-02T18:56:54+01:00. The evaluation produced a diagnostic statement of Part-time employment (finding) (SNOMED: 160904001). The condition was recorded on 2023-11-02T18:56:54+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20231102T175956 a chr:ClinicalVisit ;\n    rdfs:label \"General examination of patient (procedure)\" ;\n    chr:hasCareProvider ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasCareUnit ex:JEWISH_FAMILY___CHILDRENS_SERVICE ;\n    chr:hasDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasProcedure ex:process_BMI_20231102T175956 ;\n    chr:hasProcedure ex:process_BodyHeight_20231102T175956 ;\n    chr:hasProcedure ex:process_BodyWeight_20231102T175956 ;\n    chr:hasProcedure ex:process_PainSeverity_20231102T175956 ;\n    chr:hasProcedure ex:process_RespiratoryRate_20231102T175956 ;\n    chr:hasProcedure ex:process_HeartRate_20231102T175956 ;\n    chr:hasProcedure ex:evaluation_Medication_review_20231102T175956 ;\n    chr:hasProcedure ex:evaluation_Part-time_employment_20231102T185654 .\n\nex:process_BMI_20231102T175956 a chr:MedicalProcedure ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BodyHeight_20231102T175956 a chr:MedicalProcedure ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BodyWeight_20231102T175956 a chr:MedicalProcedure ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_PainSeverity_20231102T175956 a chr:MedicalProcedure ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_RespiratoryRate_20231102T175956 a chr:MedicalProcedure ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_HeartRate_20231102T175956 a chr:MedicalProcedure ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_FallRisk_20231102T192409 a chr:MedicalProcedure ;\n    rdfs:label \"Fall risk total [Morse Fall Scale] measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T19:24:09+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_TotalScoreHARK_20231102T200546 a chr:MedicalProcedure ;\n    rdfs:label \"Total score [HARK] measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T20:05:46+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_TotalScoreDAST10_20231102T203957 a chr:MedicalProcedure ;\n    rdfs:label \"Total score [DAST-10] measurement\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T20:39:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .\n\nex:evaluation_Medication_review_20231102T175956 a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T17:59:56+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .\n\nex:evaluation_Part-time_employment_20231102T185654 a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2023-11-02T18:56:54+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;\n    chr:hasStatus ex:status_completed .",
+   "level": 2,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2023-11-02T17:59:56+01:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 11,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 10747,
+   "completion_tokens": 6389,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 11,
+   "prompt_tokens": 41455,
+   "completion_tokens": 13965,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 9,
+   "prompt_tokens": 30708,
+   "completion_tokens": 7576,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

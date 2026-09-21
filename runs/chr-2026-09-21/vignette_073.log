@@ -1,0 +1,39 @@
+[   0.1s] segmenting (orchestrator) ...
+[  28.8s] 12 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s11[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s12[CarePlan]
+[  28.8s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  28.8s] level 0: 5 agent(s), 0 known entities
+[  28.8s]   CareUnit: extracting (235 chars, 1 classes in view)
+[  28.8s]   ClinicalCondition: extracting (459 chars, 3 classes in view)
+[  28.8s]   DiagnosticStatement: extracting (459 chars, 1 classes in view)
+[  28.8s]   Measurement: extracting (1971 chars, 2 classes in view)
+[  35.1s]   CareUnit: cycle 0 -> conforms
+[  35.1s]   Person: extracting (235 chars, 1 classes in view)
+[  36.7s]   DiagnosticStatement: cycle 0 -> conforms
+[  38.1s]   ClinicalCondition: cycle 0 -> conforms
+[  40.4s]   Person: cycle 0 -> conforms
+[  60.0s]   Measurement: cycle 0 -> conforms
+[  60.0s] level 1: 2 agent(s), 21 known entities
+[  60.0s]   EvaluationProcess: extracting (459 chars, 7 classes in view)
+[  60.0s]   MeasurementProcess: extracting (1971 chars, 6 classes in view)
+[  70.0s]   EvaluationProcess: cycle 0 -> conforms
+[ 108.4s]   MeasurementProcess: cycle 0 -> conforms
+[ 108.4s] level 2: 2 agent(s), 32 known entities
+[ 108.4s]   CarePlan: extracting (2904 chars, 4 classes in view)
+[ 108.4s]   ClinicalVisit: extracting (2904 chars, 5 classes in view)
+[ 114.2s]   CarePlan: cycle 0 -> conforms
+[ 114.2s]   CarePlan: 1 unresolved (honest gaps)
+[ 145.0s]   ClinicalVisit: cycle 0 -> conforms
+[ 145.1s] merging (orchestrator): 0 violation(s), 1 unresolved, 0 unparsed
+[ 221.1s] final: 1 violation(s)
+conforms=False segments=9 llm_calls=11 unresolved=0
+  orchestrator   2 calls    10378 in    5880 out  cost n/a  gemma4-g1
+  total         11 calls    40870 in   14016 out  cost n/a  
+  worker         9 calls    30492 in    8136 out  cost n/a  gemma4-g1
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultRangeShape
+	Focus Node: ex:measurement_RespiratoryRate_20251125T042029
+	Value Node: ex:measurement_RespiratoryRate_20251125T042029
+	Message: Object of chr:hasResult must be a chr:Measurement.
+
+exit=1

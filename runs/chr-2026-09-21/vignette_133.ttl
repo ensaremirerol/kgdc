@@ -1,0 +1,768 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_follow_up_monitoring a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review" ;
+    chr:hasMedicalProcedure ex:EvaluationProcess_1 .
+
+ex:ClinicalVisit_20190123T154723_01 a chr:ClinicalVisit ;
+    rdfs:label "Urgent care clinic visit" ;
+    chr:hasCareProvider ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasCareUnit ex:URGENT_CARE_PHYSICIANS_PC ;
+    chr:hasDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasProcedure ex:EvaluationProcess_1,
+        ex:EvaluationProcess_2,
+        ex:EvaluationProcess_3,
+        ex:MP_BMI_39156-5_20190123T154723,
+        ex:MP_Bilirubin_20505-4_20190123T154723,
+        ex:MP_CO2_2028-9_20190123T154723,
+        ex:MP_CO2_blood_20565-8_20190123T154723,
+        ex:MP_Calcium_17861-6_20190123T154723,
+        ex:MP_Calcium_blood_49765-1_20190123T154723,
+        ex:MP_Chloride_2075-0_20190123T154723,
+        ex:MP_Chloride_blood_2069-3_20190123T154723,
+        ex:MP_Cholesterol_2093-3_20190123T154723,
+        ex:MP_Cholesterol_HDL_2085-9_20190123T154723,
+        ex:MP_Cholesterol_LDL_18262-6_20190123T154723,
+        ex:MP_Creatinine_2160-0_20190123T154723,
+        ex:MP_Creatinine_blood_38483-4_20190123T154723,
+        ex:MP_GFR_33914-3_20190123T154723_a,
+        ex:MP_GFR_33914-3_20190123T154723_b,
+        ex:MP_Glucose_2345-7_20190123T154723,
+        ex:MP_Glucose_Blood_2339-0_20190123T154723,
+        ex:MP_Glucose_Urine_5792-7_20190123T154723,
+        ex:MP_HR_8867-4_20190123T154723,
+        ex:MP_HbA1c_4548-4_20190123T154723,
+        ex:MP_Height_8302-2_20190123T154723,
+        ex:MP_Ketones_5797-6_20190123T154723,
+        ex:MP_Microalbumin_14959-1_20190123T154723,
+        ex:MP_Pain_72514-3_20190123T154723,
+        ex:MP_Potassium_2823-3_20190123T154723,
+        ex:MP_Potassium_blood_6298-4_20190123T154723,
+        ex:MP_Protein_5804-0_20190123T154723,
+        ex:MP_RR_9279-1_20190123T154723,
+        ex:MP_Sodium_2951-2_20190123T154723,
+        ex:MP_Sodium_blood_2947-0_20190123T154723,
+        ex:MP_SpecGrav_5811-5_20190123T154723,
+        ex:MP_Triglyceride_2571-8_20190123T154723,
+        ex:MP_Urea_blood_6299-2_20190123T154723,
+        ex:MP_Urea_nitrogen_3094-0_20190123T154723,
+        ex:MP_Weight_29463-7_20190123T154723,
+        ex:MP_pH_5803-2_20190123T154723 .
+
+ex:GFR_33914-3_20190123T154723 a chr:Measurement ;
+    rdfs:label "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M (LOINC: 33914-3)" ;
+    chr:hasCode <https://loinc.org/33914-3> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "49.928"^^xsd:float ;
+    chr:hasUnit ex:Unit_mLpercblscorecbrsbr .
+
+ex:MP_FallRisk_59460-6_20190123T172227 a chr:MeasurementProcess ;
+    rdfs:label "Fall risk total [Morse Fall Scale] measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T17:22:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Fall_risk_59460-6_20190123T172227 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_GAD7_70274-6_20190123T165726 a chr:MeasurementProcess ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T16:57:26+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:GAD7_70274-6_20190123T165726 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_PHQ2_55758-7_20190123T175739 a chr:MeasurementProcess ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T17:57:39+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:PHQ2_55758-7_20190123T175739 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Medication_review_due_situation a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime .
+
+ex:BMI_39156-5_20190123T154723 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio] (LOINC: 39156-5)" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.45"^^xsd:float ;
+    chr:hasUnit ex:Unit_kgperm2 .
+
+ex:Bilirubin_total_20505-4_20190123T154723 a chr:Measurement ;
+    rdfs:label "Bilirubin.total [Mass/volume] in Urine by Test strip (LOINC: 20505-4)" ;
+    chr:hasCode <https://loinc.org/20505-4> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.97774"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Body_Height_8302-2_20190123T154723 a chr:Measurement ;
+    rdfs:label "Body Height (LOINC: 8302-2)" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "177.0"^^xsd:float ;
+    chr:hasUnit ex:Unit_cm .
+
+ex:Body_Weight_29463-7_20190123T154723 a chr:Measurement ;
+    rdfs:label "Body Weight (LOINC: 29463-7)" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "86.0"^^xsd:float ;
+    chr:hasUnit ex:Unit_kg .
+
+ex:Calcium_17861-6_20190123T154723 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Serum or Plasma (LOINC: 17861-6)" ;
+    chr:hasCode <https://loinc.org/17861-6> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "9.55"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Calcium_49765-1_20190123T154723 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Blood (LOINC: 49765-1)" ;
+    chr:hasCode <https://loinc.org/49765-1> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "9.55"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Carbon_dioxide_total_2028-9_20190123T154723 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Serum or Plasma (LOINC: 2028-9)" ;
+    chr:hasCode <https://loinc.org/2028-9> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "25.33"^^xsd:float ;
+    chr:hasUnit ex:Unit_mmolperL .
+
+ex:Carbon_dioxide_total_20565-8_20190123T154723 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood (LOINC: 20565-8)" ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "25.33"^^xsd:float ;
+    chr:hasUnit ex:Unit_mmolperL .
+
+ex:Chloride_2069-3_20190123T154723 a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Blood (LOINC: 2069-3)" ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "110.43"^^xsd:float ;
+    chr:hasUnit ex:Unit_mmolperL .
+
+ex:Chloride_2075-0_20190123T154723 a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Serum or Plasma (LOINC: 2075-0)" ;
+    chr:hasCode <https://loinc.org/2075-0> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "110.43"^^xsd:float ;
+    chr:hasUnit ex:Unit_mmolperL .
+
+ex:Cholesterol_2093-3_20190123T154723 a chr:Measurement ;
+    rdfs:label "Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3)" ;
+    chr:hasCode <https://loinc.org/2093-3> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "248.41"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Cholesterol_HDL_2085-9_20190123T154723 a chr:Measurement ;
+    rdfs:label "Cholesterol in HDL [Mass/volume] in Serum or Plasma (LOINC: 2085-9)" ;
+    chr:hasCode <https://loinc.org/2085-9> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "20.48"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Cholesterol_LDL_18262-6_20190123T154723 a chr:Measurement ;
+    rdfs:label "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay (LOINC: 18262-6)" ;
+    chr:hasCode <https://loinc.org/18262-6> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "131.23"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Creatinine_2160-0_20190123T154723 a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Serum or Plasma (LOINC: 2160-0)" ;
+    chr:hasCode <https://loinc.org/2160-0> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.9609"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Creatinine_38483-4_20190123T154723 a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Blood (LOINC: 38483-4)" ;
+    chr:hasCode <https://loinc.org/38483-4> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.24"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:EvaluationProcess_2 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Stress_finding ;
+    chr:hasObservation ex:diagnostic_statement_Stress ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T16:35:59+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 .
+
+ex:EvaluationProcess_3 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Victim_of_intimate_partner_abuse_finding ;
+    chr:hasObservation ex:diagnostic_statement_Victim_of_intimate_partner_abuse ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T16:35:59+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 .
+
+ex:Fall_risk_59460-6_20190123T172227 a chr:Measurement ;
+    rdfs:label "Fall risk total [Morse Fall Scale] (LOINC: 59460-6)" ;
+    chr:hasCode <https://loinc.org/59460-6> ;
+    chr:hasMeasuredDate "2019-01-23T17:22:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "15.0"^^xsd:float ;
+    chr:hasUnit ex:Unit_hash .
+
+ex:GAD7_70274-6_20190123T165726 a chr:Measurement ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] (LOINC: 70274-6)" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasMeasuredDate "2019-01-23T16:57:26+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:Unit_cblscorecbr .
+
+ex:GFR_33914-3_20190123T154723_2 a chr:Measurement ;
+    rdfs:label "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M (LOINC: 33914-3)" ;
+    chr:hasCode <https://loinc.org/33914-3> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.61"^^xsd:float,
+        "49.928"^^xsd:float ;
+    chr:hasUnit ex:Unit_mLpercblscorecbrsbr .
+
+ex:GFR_33914-3_20190123T154723_2_b a chr:Measurement ;
+    rdfs:label "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M (LOINC: 33914-3)" ;
+    chr:hasCode <https://loinc.org/33914-3> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.61"^^xsd:float ;
+    chr:hasUnit ex:Unit_mLpercblscorecbrsbr .
+
+ex:Glucose_2339-0_20190123T154723 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Blood (LOINC: 2339-0)" ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "173.91"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Glucose_2345-7_20190123T154723 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Serum or Plasma (LOINC: 2345-7)" ;
+    chr:hasCode <https://loinc.org/2345-7> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "173.91"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Glucose_5792-7_20190123T154723 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Urine by Test strip (LOINC: 5792-7)" ;
+    chr:hasCode <https://loinc.org/5792-7> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.86169"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Heart_rate_8867-4_20190123T154723 a chr:Measurement ;
+    rdfs:label "Heart rate (LOINC: 8867-4)" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "80.0"^^xsd:float ;
+    chr:hasUnit ex:Unit_permin .
+
+ex:Hemoglobin_A1c_4548-4_20190123T154723 a chr:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4)" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "5.36"^^xsd:float ;
+    chr:hasUnit ex:Unit_percent .
+
+ex:Ketones_5797-6_20190123T154723 a chr:Measurement ;
+    rdfs:label "Ketones [Mass/volume] in Urine by Test strip (LOINC: 5797-6)" ;
+    chr:hasCode <https://loinc.org/5797-6> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.2558"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:MP_BMI_39156-5_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:BMI_39156-5_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Bilirubin_20505-4_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Bilirubin.total [Mass/volume] in Urine by Test strip measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Bilirubin_total_20505-4_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_CO2_2028-9_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Carbon_dioxide_total_2028-9_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_CO2_blood_20565-8_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Carbon_dioxide_total_20565-8_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Calcium_17861-6_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Calcium_17861-6_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Calcium_blood_49765-1_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Calcium_49765-1_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Chloride_2075-0_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Chloride_2075-0_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Chloride_blood_2069-3_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Chloride_2069-3_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Cholesterol_2093-3_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Cholesterol [Mass/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Cholesterol_2093-3_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Cholesterol_HDL_2085-9_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Cholesterol in HDL [Mass/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Cholesterol_HDL_2085-9_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Cholesterol_LDL_18262-6_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Cholesterol_LDL_18262-6_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Creatinine_2160-0_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Creatinine_2160-0_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Creatinine_blood_38483-4_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Creatinine_38483-4_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_GFR_33914-3_20190123T154723_a a chr:MeasurementProcess ;
+    rdfs:label "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:GFR_33914-3_20190123T154723_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_GFR_33914-3_20190123T154723_b a chr:MeasurementProcess ;
+    rdfs:label "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:GFR_33914-3_20190123T154723_2_b ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Glucose_2345-7_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Glucose_2345-7_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Glucose_Blood_2339-0_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Glucose_2339-0_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Glucose_Urine_5792-7_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Urine by Test strip measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Glucose_5792-7_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_HR_8867-4_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Heart_rate_8867-4_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_HbA1c_4548-4_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Hemoglobin_A1c_4548-4_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Height_8302-2_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Body_Height_8302-2_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Ketones_5797-6_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Ketones [Mass/volume] in Urine by Test strip measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Ketones_5797-6_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Microalbumin_14959-1_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Microalbumin/Creatinine [Mass Ratio] in Urine measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Microalbumin_Creatinine_14959-1_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Pain_72514-3_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Pain_severity_72514-3_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Potassium_2823-3_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Potassium_2823-3_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Potassium_blood_6298-4_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Potassium_6298-4_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Protein_5804-0_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Protein [Mass/volume] in Urine by Test strip measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Protein_5804-0_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_RR_9279-1_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Respiratory_rate_9279-1_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Sodium_2951-2_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Sodium_2951-2_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Sodium_blood_2947-0_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Sodium_2947-0_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_SpecGrav_5811-5_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Specific gravity of Urine by Test strip measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Specific_gravity_5811-5_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Triglyceride_2571-8_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Triglyceride [Mass/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Triglyceride_2571-8_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Urea_blood_6299-2_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Urea_nitrogen_6299-2_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Urea_nitrogen_3094-0_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Urea_nitrogen_3094-0_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_Weight_29463-7_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Body_Weight_29463-7_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MP_pH_5803-2_20190123T154723 a chr:MeasurementProcess ;
+    rdfs:label "pH of Urine by Test strip measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:pH_5803-2_20190123T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Medication_review_due a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime .
+
+ex:Microalbumin_Creatinine_14959-1_20190123T154723 a chr:Measurement ;
+    rdfs:label "Microalbumin/Creatinine [Mass Ratio] in Urine (LOINC: 14959-1)" ;
+    chr:hasCode <https://loinc.org/14959-1> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "72.5"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperg .
+
+ex:PHQ2_55758-7_20190123T175739 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7)" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2019-01-23T17:57:39+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:Unit_cblscorecbr .
+
+ex:Pain_severity_72514-3_20190123T154723 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3)" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:Unit_cblscorecbr .
+
+ex:Potassium_2823-3_20190123T154723 a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Serum or Plasma (LOINC: 2823-3)" ;
+    chr:hasCode <https://loinc.org/2823-3> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "5.2"^^xsd:float ;
+    chr:hasUnit ex:Unit_mmolperL .
+
+ex:Potassium_6298-4_20190123T154723 a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Blood (LOINC: 6298-4)" ;
+    chr:hasCode <https://loinc.org/6298-4> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "5.2"^^xsd:float ;
+    chr:hasUnit ex:Unit_mmolperL .
+
+ex:Protein_5804-0_20190123T154723 a chr:Measurement ;
+    rdfs:label "Protein [Mass/volume] in Urine by Test strip (LOINC: 5804-0)" ;
+    chr:hasCode <https://loinc.org/5804-0> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "337.33"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Respiratory_rate_9279-1_20190123T154723 a chr:Measurement ;
+    rdfs:label "Respiratory rate (LOINC: 9279-1)" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "15.0"^^xsd:float ;
+    chr:hasUnit ex:Unit_permin .
+
+ex:Sodium_2947-0_20190123T154723 a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Blood (LOINC: 2947-0)" ;
+    chr:hasCode <https://loinc.org/2947-0> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "137.72"^^xsd:float ;
+    chr:hasUnit ex:Unit_mmolperL .
+
+ex:Sodium_2951-2_20190123T154723 a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Serum or Plasma (LOINC: 2951-2)" ;
+    chr:hasCode <https://loinc.org/2951-2> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "137.72"^^xsd:float ;
+    chr:hasUnit ex:Unit_mmolperL .
+
+ex:Specific_gravity_5811-5_20190123T154723 a chr:Measurement ;
+    rdfs:label "Specific gravity of Urine by Test strip (LOINC: 5811-5)" ;
+    chr:hasCode <https://loinc.org/5811-5> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0029"^^xsd:float ;
+    chr:hasUnit ex:Unit_nominal .
+
+ex:Stress_finding a chr:ClinicalCondition ;
+    rdfs:label "Stress (finding)" ;
+    chr:hasCode <http://snomed.info/id/73595000> ;
+    chr:hasRecordDate "2019-01-23T16:35:59+01:00"^^xsd:dateTime .
+
+ex:Triglyceride_2571-8_20190123T154723 a chr:Measurement ;
+    rdfs:label "Triglyceride [Mass/volume] in Serum or Plasma (LOINC: 2571-8)" ;
+    chr:hasCode <https://loinc.org/2571-8> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "483.54"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:URGENT_CARE_PHYSICIANS_PC a chr:CareUnit ;
+    rdfs:label "URGENT CARE PHYSICIANS PC" .
+
+ex:Unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:Unit_hash a chr:Unit ;
+    rdfs:label "{#}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblhashcbr> .
+
+ex:Unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:Unit_kgperm2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:Unit_mgperg a chr:Unit ;
+    rdfs:label "mg/g" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperg> .
+
+ex:Unit_nominal a chr:Unit ;
+    rdfs:label "{nominal}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblnominalcbr> .
+
+ex:Unit_pH a chr:Unit ;
+    rdfs:label "pH" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/pH> .
+
+ex:Unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:Urea_nitrogen_3094-0_20190123T154723 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Serum or Plasma (LOINC: 3094-0)" ;
+    chr:hasCode <https://loinc.org/3094-0> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "9.9"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Urea_nitrogen_6299-2_20190123T154723 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood (LOINC: 6299-2)" ;
+    chr:hasCode <https://loinc.org/6299-2> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "9.9"^^xsd:float ;
+    chr:hasUnit ex:Unit_mgperdL .
+
+ex:Victim_of_intimate_partner_abuse_finding a chr:ClinicalCondition ;
+    rdfs:label "Victim of intimate partner abuse (finding)" ;
+    chr:hasCode <http://snomed.info/id/706893006> ;
+    chr:hasRecordDate "2019-01-23T16:35:59+01:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_Medication_review_due a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:diagnostic_statement_Stress a chr:DiagnosticStatement ;
+    rdfs:label "Stress (finding)" ;
+    chr:hasCode <http://snomed.info/id/73595000> .
+
+ex:diagnostic_statement_Victim_of_intimate_partner_abuse a chr:DiagnosticStatement ;
+    rdfs:label "Victim of intimate partner abuse (finding)" ;
+    chr:hasCode <http://snomed.info/id/706893006> .
+
+ex:pH_5803-2_20190123T154723 a chr:Measurement ;
+    rdfs:label "pH of Urine by Test strip (LOINC: 5803-2)" ;
+    chr:hasCode <https://loinc.org/5803-2> ;
+    chr:hasMeasuredDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.7643"^^xsd:float ;
+    chr:hasUnit ex:Unit_pH .
+
+ex:EvaluationProcess_1 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Medication_review_due ;
+    chr:hasObservation ex:diagnostic_statement_Medication_review_due ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-01-23T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 .
+
+ex:Unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:Unit_cblscorecbr a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:Unit_mLpercblscorecbrsbr a chr:Unit ;
+    rdfs:label "mL/min/{1.73_m2}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mLpermin/cbl1dot73m2cbrsbr> .
+
+ex:Unit_mmolperL a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+
+ex:Unit_mgperdL a chr:Unit ;
+    rdfs:label "mg/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Arlen68_Olson653 a chr:Person ;
+    rdfs:label "Arlen68 Olson653" .
+
+ex:Dr._Dana512_Wilkinson796 a chr:Person ;
+    rdfs:label "Dr. Dana512 Wilkinson796" .
+

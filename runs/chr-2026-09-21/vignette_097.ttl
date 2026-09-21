@@ -1,0 +1,91 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:care_plan_follow_up_monitoring a chr:CarePlan ;
+    rdfs:label "care plan" ;
+    chr:hasMedicalProcedure ex:evaluation_20190425T214947 .
+
+ex:measurement_process_hemoglobin_57905_2 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement" ;
+    chr:hasPatient ex:Harvey63_Napoleon578_Homenick806 ;
+    chr:hasPerformedDate "2019-04-25T21:49:47+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Víctor493_Chávez927 ;
+    chr:hasResult ex:measurement_Hemoglobin_gastrointestinal_lower_57905_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_process_polyp_33756_8 a chr:MeasurementProcess ;
+    rdfs:label "Polyp size greatest dimension (LOINC: 33756-8) measurement" ;
+    chr:hasPatient ex:Harvey63_Napoleon578_Homenick806 ;
+    chr:hasPerformedDate "2019-04-25T21:49:47+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Víctor493_Chávez927 ;
+    chr:hasResult ex:measurement_Polyp_size_33756_8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:visit_20190425T211155 a chr:ClinicalVisit ;
+    rdfs:label "CLINICAL VISIT NOTE" ;
+    chr:hasCareProvider ex:Dr._Víctor493_Chávez927 ;
+    chr:hasCareUnit ex:4499_ACUSHNET_AVENUE_OPERATING_COMPANY_LLC ;
+    chr:hasDate "2019-04-25T21:11:55+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Harvey63_Napoleon578_Homenick806 ;
+    chr:hasProcedure ex:evaluation_20190425T214947,
+        ex:measurement_process_hemoglobin_57905_2,
+        ex:measurement_process_polyp_33756_8 .
+
+ex:4499_ACUSHNET_AVENUE_OPERATING_COMPANY_LLC a chr:CareUnit ;
+    rdfs:label "4499 ACUSHNET AVENUE OPERATING COMPANY, LLC" .
+
+ex:Polyp_of_colon_68496003 a chr:ClinicalCondition ;
+    rdfs:label "Polyp of colon (disorder)" ;
+    chr:hasCode <http://snomed.info/id/68496003> ;
+    chr:hasLocatedIn ex:colon ;
+    chr:hasRecordDate "2019-04-25T21:49:47+02:00"^^xsd:dateTime .
+
+ex:colon a chr:AnatomicalStructure ;
+    rdfs:label "colon" .
+
+ex:diagnostic_statement_68496003 a chr:DiagnosticStatement ;
+    rdfs:label "Polyp of colon (disorder)" ;
+    chr:hasCode <http://snomed.info/id/68496003> .
+
+ex:measurement_Hemoglobin_gastrointestinal_lower_57905_2 a chr:Measurement ;
+    rdfs:label "Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen" ;
+    chr:hasCode <https://loinc.org/57905-2> ;
+    chr:hasMeasuredDate "2019-04-25T21:49:47+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "20.354"^^xsd:float ;
+    chr:hasUnit ex:unit_ngpermL .
+
+ex:measurement_Polyp_size_33756_8 a chr:Measurement ;
+    rdfs:label "Polyp size greatest dimension" ;
+    chr:hasCode <https://loinc.org/33756-8> ;
+    chr:hasMeasuredDate "2019-04-25T21:49:47+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "5.8247"^^xsd:float ;
+    chr:hasUnit ex:unit_mm .
+
+ex:unit_mm a chr:Unit ;
+    rdfs:label "mm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mm> .
+
+ex:unit_ngpermL a chr:Unit ;
+    rdfs:label "ng/mL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ngpermL> .
+
+ex:evaluation_20190425T214947 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Polyp_of_colon_68496003 ;
+    chr:hasObservation ex:diagnostic_statement_68496003 ;
+    chr:hasPatient ex:Harvey63_Napoleon578_Homenick806 ;
+    chr:hasPerformedDate "2019-04-25T21:49:47+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Víctor493_Chávez927 .
+
+ex:Dr._Víctor493_Chávez927 a chr:Person ;
+    rdfs:label "Dr. Víctor493 Chávez927" .
+
+ex:Harvey63_Napoleon578_Homenick806 a chr:Person ;
+    rdfs:label "Harvey63 Napoleon578 Homenick806" .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .

@@ -1,0 +1,357 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review\" ;\n    chr:hasMedicalProcedure ex:evaluation_20170909T100115 .\n\nex:process_PHQ9_20170909T103712 a chr:MeasurementProcess ;\n    rdfs:label \"Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:37:12+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_PHQ9_20170909T103712 ;\n    chr:hasStatus ex:status_completed .\n\nex:visit_20170909T100115 a chr:ClinicalVisit ;\n    rdfs:label \"Well child visit (procedure)\" ;\n    chr:hasCareProvider ex:Dr_Ping698_Weissnat378 ;\n    chr:hasCareUnit ex:COMMUNITY_HEALTH_PROGRAMS_INC ;\n    chr:hasDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasProcedure ex:evaluation_20170909T100115,\n        ex:process_BMIPercentile_20170909T100115,\n        ex:process_BMIRatio_20170909T100115,\n        ex:process_BodyHeight_20170909T100115,\n        ex:process_BodyWeight_20170909T100115,\n        ex:process_HeartRate_20170909T100115,\n        ex:process_PainSeverity_20170909T100115,\n        ex:process_RespiratoryRate_20170909T100115 .\n\nex:COMMUNITY_HEALTH_PROGRAMS_INC a chr:CareUnit ;\n    rdfs:label \"COMMUNITY HEALTH PROGRAMS INC\" .\n\nex:DiagnosticStatement_Medication_review_due_situation a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n\nex:Medication_review_due_situation a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime .\n\nex:measurement_BMI_Percentile_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Percentile] Per age and sex\" ;\n    chr:hasCode <https://loinc.org/59576-9> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"7.4534\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_BMI_Ratio_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"15.74\"^^xsd:float ;\n    chr:hasUnit ex:unit_kgperm2 .\n\nex:measurement_BodyHeight_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"157.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_BodyWeight_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"38.8\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_HeartRate_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"76.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_PHQ9_20170909T103712 a chr:Measurement ;\n    rdfs:label \"Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen]\" ;\n    chr:hasCode <https://loinc.org/89204-2> ;\n    chr:hasMeasuredDate \"2017-09-09T10:37:12+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_PainSeverity_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"4.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_RespiratoryRate_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"14.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:process_BMIPercentile_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Percentile] Per age and sex measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_BMI_Percentile_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BMIRatio_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_BMI_Ratio_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BodyHeight_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_BodyHeight_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BodyWeight_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_BodyWeight_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_HeartRate_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_HeartRate_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_PainSeverity_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_PainSeverity_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_RespiratoryRate_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_RespiratoryRate_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kgperm2 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:evaluation_20170909T100115 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Medication_review_due_situation ;\n    chr:hasObservation ex:DiagnosticStatement_Medication_review_due_situation ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"[Score]\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:Daren950_Ed239_Strosin214 a chr:Person ;\n    rdfs:label \"Daren950 Ed239 Strosin214\" .\n\nex:Dr_Ping698_Weissnat378 a chr:Person ;\n    rdfs:label \"Dr. Ping698 Weissnat378\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:COMMUNITY_HEALTH_PROGRAMS_INC a chr:CareUnit ;\n    rdfs:label \"COMMUNITY HEALTH PROGRAMS INC\" .",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Ping698 Weissnat378 evaluated the patient on 2017-09-09T10:01:15+02:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2017-09-09T10:01:15+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Medication_review_due_situation a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime .",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Ping698 Weissnat378 evaluated the patient on 2017-09-09T10:01:15+02:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2017-09-09T10:01:15+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:DiagnosticStatement_Medication_review_due_situation a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2017-09-09T10:01:15+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 157 cm. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 4 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 38.8 kg. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 15.74 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Body mass index (BMI) [Percentile] Per age and sex (LOINC: 59576-9) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 7.4534 %. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 76 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 14 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:37:12+02:00, a Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] (LOINC: 89204-2) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_BodyHeight_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"157.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:measurement_PainSeverity_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"4.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"[Score]\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:measurement_BodyWeight_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"38.8\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:measurement_BMI_Ratio_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"15.74\"^^xsd:float ;\n    chr:hasUnit ex:unit_kgperm2 .\n\nex:unit_kgperm2 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:measurement_BMI_Percentile_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Percentile] Per age and sex\" ;\n    chr:hasCode <https://loinc.org/59576-9> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"7.4534\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:unit_percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:measurement_HeartRate_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"76.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:measurement_RespiratoryRate_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"14.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_PHQ9_20170909T103712 a chr:Measurement ;\n    rdfs:label \"Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen]\" ;\n    chr:hasCode <https://loinc.org/89204-2> ;\n    chr:hasMeasuredDate \"2017-09-09T10:37:12+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Daren950_Ed239_Strosin214 a chr:Person ;\n    rdfs:label \"Daren950 Ed239 Strosin214\" .\n\nex:Dr_Ping698_Weissnat378 a chr:Person ;\n    rdfs:label \"Dr. Ping698 Weissnat378\" .",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Ping698 Weissnat378 evaluated the patient on 2017-09-09T10:01:15+02:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2017-09-09T10:01:15+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20170909T100115 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Medication_review_due_situation ;\n    chr:hasObservation ex:DiagnosticStatement_Medication_review_due_situation ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 .\n\nex:Medication_review_due_situation a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime .\n\nex:DiagnosticStatement_Medication_review_due_situation a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .",
+   "level": 1,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2017-09-09T10:01:15+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 157 cm. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 4 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 38.8 kg. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 15.74 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Body mass index (BMI) [Percentile] Per age and sex (LOINC: 59576-9) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 7.4534 %. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 76 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 14 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:37:12+02:00, a Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] (LOINC: 89204-2) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:process_BodyHeight_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_BodyHeight_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyHeight_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"157.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:process_PainSeverity_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_PainSeverity_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_PainSeverity_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"4.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:process_BodyWeight_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_BodyWeight_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyWeight_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"38.8\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:process_BMIRatio_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_BMI_Ratio_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BMI_Ratio_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"15.74\"^^xsd:float ;\n    chr:hasUnit ex:unit_kgperm2 .\n\nex:process_BMIPercentile_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Percentile] Per age and sex measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_BMI_Percentile_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BMI_Percentile_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Percentile] Per age and sex\" ;\n    chr:hasCode <https://loinc.org/59576-9> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"7.4534\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:process_HeartRate_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_HeartRate_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeartRate_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"76.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:process_RespiratoryRate_20170909T100115 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_RespiratoryRate_20170909T100115 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_RespiratoryRate_20170909T100115 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"14.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:process_PHQ9_20170909T103712 a chr:MeasurementProcess ;\n    rdfs:label \"Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:37:12+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasResult ex:measurement_PHQ9_20170909T103712 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_PHQ9_20170909T103712 a chr:Measurement ;\n    rdfs:label \"Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen]\" ;\n    chr:hasCode <https://loinc.org/89204-2> ;\n    chr:hasMeasuredDate \"2017-09-09T10:37:12+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .",
+   "level": 1,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 COMMUNITY HEALTH PROGRAMS INC\n===================================================\n\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)\n\nOn 2017-09-09T10:01:15+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 157 cm. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 4 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 38.8 kg. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 15.74 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Body mass index (BMI) [Percentile] Per age and sex (LOINC: 59576-9) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 7.4534 %. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 76 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 14 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:37:12+02:00, a Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] (LOINC: 89204-2) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Ping698 Weissnat378 evaluated the patient on 2017-09-09T10:01:15+02:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2017-09-09T10:01:15+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review\" ;\n    chr:hasMedicalProcedure ex:evaluation_20170909T100115 .",
+   "level": 2,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 COMMUNITY HEALTH PROGRAMS INC\n===================================================\n\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)\n\nOn 2017-09-09T10:01:15+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 157 cm. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 4 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 38.8 kg. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 15.74 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Body mass index (BMI) [Percentile] Per age and sex (LOINC: 59576-9) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 7.4534 %. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 76 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:01:15+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 14 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-09-09T10:37:12+02:00, a Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] (LOINC: 89204-2) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Ping698 Weissnat378 evaluated the patient on 2017-09-09T10:01:15+02:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2017-09-09T10:01:15+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20170909T100115 a chr:ClinicalVisit ;\n    rdfs:label \"Well child visit (procedure)\" ;\n    chr:hasCareProvider ex:Dr_Ping698_Weissnat378 ;\n    chr:hasCareUnit ex:COMMUNITY_HEALTH_PROGRAMS_INC ;\n    chr:hasDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasProcedure ex:process_BodyHeight_20170909T100115 ;\n    chr:hasProcedure ex:process_PainSeverity_20170909T100115 ;\n    chr:hasProcedure ex:process_BodyWeight_20170909T100115 ;\n    chr:hasProcedure ex:process_BMIRatio_20170909T100115 ;\n    chr:hasProcedure ex:process_BMIPercentile_20170909T100115 ;\n    chr:hasProcedure ex:process_HeartRate_20170909T100115 ;\n    chr:hasProcedure ex:process_RespiratoryRate_20170909T100115 ;\n    chr:hasProcedure ex:evaluation_20170909T100115 .\n\nex:process_BodyHeight_20170909T100115 a chr:MedicalProcedure ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_PainSeverity_20170909T100115 a chr:MedicalProcedure ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BodyWeight_20170909T100115 a chr:MedicalProcedure ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BMIRatio_20170909T100115 a chr:MedicalProcedure ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BMIPercentile_20170909T100115 a chr:MedicalProcedure ;\n    rdfs:label \"Body mass index (BMI) [Percentile] Per age and sex measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_HeartRate_20170909T100115 a chr:MedicalProcedure ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_RespiratoryRate_20170909T100115 a chr:MedicalProcedure ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:01:15+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_PHQ9_20170909T103712 a chr:MedicalProcedure ;\n    rdfs:label \"Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2017-09-09T10:37:12+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Ping698_Weissnat378 ;\n    chr:hasStatus ex:status_completed .",
+   "level": 2,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2017-09-09T10:01:15+02:00\nCare unit: COMMUNITY HEALTH PROGRAMS INC\nAttending physician: Dr. Ping698 Weissnat378\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 11,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 9759,
+   "completion_tokens": 5484,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 11,
+   "prompt_tokens": 39297,
+   "completion_tokens": 13263,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 9,
+   "prompt_tokens": 29538,
+   "completion_tokens": 7779,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

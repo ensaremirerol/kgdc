@@ -1,0 +1,242 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Arlen68_Olson653 a chr:Person ;
+    rdfs:label "Arlen68 Olson653" .
+
+ex:Dr_Domenic627_Blick895 a chr:Person ;
+    rdfs:label "Dr. Domenic627 Blick895" .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:VIBRA_HOSPITAL_OF_WESTERN_MASS_-_CENTRAL_CAMPUS a chr:CareUnit ;
+    rdfs:label "VIBRA HOSPITAL OF WESTERN MASS - CENTRAL CAMPUS" .
+
+ex:ClinicalVisit_1 a chr:ClinicalVisit ;
+    rdfs:label "Encounter for check up" ;
+    chr:hasCareProvider ex:Dr_Domenic627_Blick895 ;
+    chr:hasCareUnit ex:VIBRA_HOSPITAL_OF_WESTERN_MASS_-_CENTRAL_CAMPUS ;
+    chr:hasDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasProcedure ex:process_glucose_serum_plasma_2345_7 ;
+    chr:hasProcedure ex:process_urea_nitrogen_serum_plasma_3094_0 ;
+    chr:hasProcedure ex:process_creatinine_serum_plasma_2160_0 ;
+    chr:hasProcedure ex:process_calcium_serum_plasma_17861_6 ;
+    chr:hasProcedure ex:process_sodium_serum_plasma_2951_2 ;
+    chr:hasProcedure ex:process_potassium_serum_plasma_2823_3 ;
+    chr:hasProcedure ex:process_chloride_serum_plasma_2075_0 ;
+    chr:hasProcedure ex:process_carbon_dioxide_total_serum_plasma_2028_9 ;
+    chr:hasProcedure ex:process_gfr_serum_plasma_33914_3 ;
+    chr:hasProcedure ex:process_glucose_urine_5792_7 ;
+    chr:hasProcedure ex:process_bilirubin_total_urine_20505_4 ;
+    chr:hasProcedure ex:process_ketones_urine_5797_6 ;
+    chr:hasProcedure ex:process_protein_urine_5804_0 ;
+    chr:hasProcedure ex:process_hemoglobin_a1c_4548_4 ;
+    chr:hasProcedure ex:process_body_height_8302_2 ;
+    chr:hasProcedure ex:process_pain_severity_72514_3 ;
+    chr:hasProcedure ex:process_body_weight_29463_7 ;
+    chr:hasProcedure ex:process_bmi_39156_5 ;
+    chr:hasProcedure ex:process_heart_rate_8867_4 ;
+    chr:hasProcedure ex:process_respiratory_rate_9279_1 ;
+    chr:hasProcedure ex:process_glucose_blood_2339_0 ;
+    chr:hasProcedure ex:process_urea_nitrogen_blood_6299_2 ;
+    chr:hasProcedure ex:process_creatinine_blood_38483_4 ;
+    chr:hasProcedure ex:process_calcium_blood_49765_1 ;
+    chr:hasProcedure ex:process_sodium_blood_2947_0 ;
+    chr:hasProcedure ex:process_potassium_blood_6298_4 ;
+    chr:hasProcedure ex:process_chloride_blood_2069_3 ;
+    chr:hasProcedure ex:process_carbon_dioxide_total_blood_20565_8 ;
+    chr:hasProcedure ex:process_cholesterol_serum_plasma_2093_3 ;
+    chr:hasProcedure ex:process_triglyceride_serum_plasma_2571_8 ;
+    chr:hasProcedure ex:process_cholesterol_ldl_serum_plasma_18262_6 ;
+    chr:hasProcedure ex:process_cholesterol_hdl_serum_plasma_2085_9 ;
+    chr:hasProcedure ex:process_microalbumin_creatinine_urine_14959_1 ;
+    chr:hasProcedure ex:process_fall_risk_59460_6 ;
+    chr:hasProcedure ex:process_total_score_hark_76504_0 ;
+    chr:hasProcedure ex:process_phq2_55758_7 ;
+    chr:hasProcedure ex:eval_1 ;
+    chr:hasProcedure ex:eval_2 .
+
+ex:eval_1 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Medication_review_due_situation_314529007 ;
+    chr:hasObservation ex:diagnostic_statement_Medication_review_due_situation ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed .
+
+ex:eval_2 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Victim_of_intimate_partner_abuse_finding_706893006 ;
+    chr:hasObservation ex:diagnostic_statement_Victim_of_intimate_partner_abuse_finding ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-02-27T16:30:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed .
+
+ex:diagnostic_statement_Medication_review_due_situation a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasCondition ex:Medication_review_due_situation_314529007 ;
+    chr:hasPatient ex:Arlen68_Olson653 .
+
+ex:diagnostic_statement_Victim_of_intimate_partner_abuse_finding a chr:DiagnosticStatement ;
+    rdfs:label "Victim of intimate partner abuse (finding)" ;
+    chr:hasCode <http://snomed.info/id/706893006> ;
+    chr:hasCondition ex:Victim_of_intimate_partner_abuse_finding_706893006 ;
+    chr:hasPatient ex:Arlen68_Olson653 .
+
+ex:Medication_review_due_situation_314529007 a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime .
+
+ex:Victim_of_intimate_partner_abuse_finding_706893006 a chr:ClinicalCondition ;
+    rdfs:label "Victim of intimate partner abuse (finding)" ;
+    chr:hasCode <http://snomed.info/id/706893006> ;
+    chr:hasRecordDate "2019-02-27T16:30:23+01:00"^^xsd:dateTime .
+
+ex:CarePlan_1 a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:eval_1 .
+
+ex:process_glucose_serum_plasma_2345_7 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Serum or Plasma (LOINC: 2345-7) measurement process" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasResult ex:measurement_glucose_serum_plasma_2345_7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_glucose_serum_plasma_2345_7 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Serum or Plasma (LOINC: 2345-7) measurement" ;
+    chr:hasCode <https://loinc.org/2345-7> ;
+    chr:hasMeasuredDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "188.63"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:process_urea_nitrogen_serum_plasma_3094_0 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Serum or Plasma (LOINC: 3094-0) measurement process" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasResult ex:measurement_urea_nitrogen_serum_plasma_3094_0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_urea_nitrogen_serum_plasma_3094_0 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Serum or Plasma (LOINC: 3094-0) measurement" ;
+    chr:hasCode <https://loinc.org/3094-0> ;
+    chr:hasMeasuredDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "19.12"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:process_creatinine_serum_plasma_2160_0 a chr:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Serum or Plasma (LOINC: 2160-0) measurement process" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasResult ex:measurement_creatinine_serum_plasma_2160_0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_creatinine_serum_plasma_2160_0 a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Serum or Plasma (LOINC: 2160-0) measurement" ;
+    chr:hasCode <https://loinc.org/2160-0> ;
+    chr:hasMeasuredDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.9552"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:process_calcium_serum_plasma_17861_6 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Serum or Plasma (LOINC: 17861-6) measurement process" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasResult ex:measurement_calcium_serum_plasma_17861_6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_calcium_serum_plasma_17861_6 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Serum or Plasma (LOINC: 17861-6) measurement" ;
+    chr:hasCode <https://loinc.org/17861-6> ;
+    chr:hasMeasuredDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "8.86"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:process_sodium_serum_plasma_2951_2 a chr:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Serum or Plasma (LOINC: 2951-2) measurement process" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasResult ex:measurement_sodium_serum_plasma_2951_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_sodium_serum_plasma_2951_2 a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Serum or Plasma (LOINC: 2951-2) measurement" ;
+    chr:hasCode <https://loinc.org/2951-2> ;
+    chr:hasMeasuredDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "139.05"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L .
+
+ex:process_potassium_serum_plasma_2823_3 a chr:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Serum or Plasma (LOINC: 2823-3) measurement process" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasResult ex:measurement_potassium_serum_plasma_2823_3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_potassium_serum_plasma_2823_3 a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Serum or Plasma (LOINC: 2823-3) measurement" ;
+    chr:hasCode <https://loinc.org/2823-3> ;
+    chr:hasMeasuredDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.73"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L .
+
+ex:process_chloride_serum_plasma_2075_0 a chr:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Serum or Plasma (LOINC: 2075-0) measurement process" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasResult ex:measurement_chloride_serum_plasma_2075_0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_chloride_serum_plasma_2075_0 a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Serum or Plasma (LOINC: 2075-0) measurement" ;
+    chr:hasCode <https://loinc.org/2075-0> ;
+    chr:hasMeasuredDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "108.95"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L .
+
+ex:process_carbon_dioxide_total_serum_plasma_2028_9 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Serum or Plasma (LOINC: 2028-9) measurement process" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasResult ex:measurement_carbon_dioxide_total_serum_plasma_2028_9 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_carbon_dioxide_total_serum_plasma_2028_9 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Serum or Plasma (LOINC: 2028-9) measurement" ;
+    chr:hasCode <https://loinc.org/2028-9> ;
+    chr:hasMeasuredDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.63"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L .
+
+ex:process_gfr_serum_plasma_33914_3 a chr:MeasurementProcess ;
+    rdfs:label "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M (LOINC: 33914-3) measurement process" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasResult ex:measurement_gfr_serum_plasma_33914_3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_gfr_serum_plasma_33914_3 a chr:Measurement ;
+    rdfs:label "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M (LOINC: 33914-3) measurement" ;
+    chr:hasCode <https://loinc.org/33914-3> ;
+    chr:hasMeasuredDate "2019-02-27T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "36.241"^^xsd:float ;
+    chr:hasUnit ex:unit_

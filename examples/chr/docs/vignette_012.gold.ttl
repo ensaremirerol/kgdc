@@ -1,0 +1,344 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/clinical/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:visit_622122bd_d882_040e_229e_644c7c52dbe5 a chr:ClinicalVisit ;
+    chr:hasCareProvider ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasCareUnit ex:unit_github_com_syntheti ;
+    chr:hasDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasProcedure ex:evalProc_622122bd_d882_040e_392d_6ee5b448385c,
+        ex:evalProc_622122bd_d882_040e_4a8a_4b3c41f96dd1,
+        ex:measProc_622122bd_d882_040e_0fa7_7a5d72623bf3,
+        ex:measProc_622122bd_d882_040e_167f_4817f9067551,
+        ex:measProc_622122bd_d882_040e_255f_9d02e4bdac62,
+        ex:measProc_622122bd_d882_040e_3204_5682c4217dac,
+        ex:measProc_622122bd_d882_040e_423d_903bccd09c08,
+        ex:measProc_622122bd_d882_040e_7390_094772d84abf,
+        ex:measProc_622122bd_d882_040e_7414_c118033d18b7,
+        ex:measProc_622122bd_d882_040e_75cf_c97b37f7a240,
+        ex:measProc_622122bd_d882_040e_9128_a5a81565eaa2,
+        ex:measProc_622122bd_d882_040e_99af_029f820a60e2,
+        ex:measProc_622122bd_d882_040e_b79d_393a306ea9ea,
+        ex:measProc_622122bd_d882_040e_bcab_02ba6725d65b,
+        ex:measProc_622122bd_d882_040e_c73f_558fe05b2eab,
+        ex:measProc_622122bd_d882_040e_c74b_af89b66ee617,
+        ex:measProc_622122bd_d882_040e_dcfa_2b704cbaa856,
+        ex:measProc_622122bd_d882_040e_f2ef_b55971a4aaf6,
+        ex:measProc_622122bd_d882_040e_f3b9_3fab69560d04 .
+
+ex:cond_622122bd_d882_040e_392d_6ee5b448385c a chr:ClinicalCondition ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> ;
+    chr:hasRecordDate "2018-04-30T04:04:26+02:00"^^xsd:dateTime .
+
+ex:cond_622122bd_d882_040e_4a8a_4b3c41f96dd1 a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime .
+
+ex:diag_622122bd_d882_040e_392d_6ee5b448385c a chr:DiagnosticStatement ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> .
+
+ex:diag_622122bd_d882_040e_4a8a_4b3c41f96dd1 a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:evalProc_622122bd_d882_040e_392d_6ee5b448385c a chr:EvaluationProcess ;
+    chr:hasCondition ex:cond_622122bd_d882_040e_392d_6ee5b448385c ;
+    chr:hasObservation ex:diag_622122bd_d882_040e_392d_6ee5b448385c ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 .
+
+ex:evalProc_622122bd_d882_040e_4a8a_4b3c41f96dd1 a chr:EvaluationProcess ;
+    chr:hasCondition ex:cond_622122bd_d882_040e_4a8a_4b3c41f96dd1 ;
+    chr:hasObservation ex:diag_622122bd_d882_040e_4a8a_4b3c41f96dd1 ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 .
+
+ex:measProc_622122bd_d882_040e_0fa7_7a5d72623bf3 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_0fa7_7a5d72623bf3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_167f_4817f9067551 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_167f_4817f9067551 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_255f_9d02e4bdac62 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_255f_9d02e4bdac62 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_3204_5682c4217dac a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_3204_5682c4217dac ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_423d_903bccd09c08 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T03:29:12+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_423d_903bccd09c08 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_7390_094772d84abf a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_7390_094772d84abf ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_7414_c118033d18b7 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_7414_c118033d18b7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_75cf_c97b37f7a240 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_75cf_c97b37f7a240 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_9128_a5a81565eaa2 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_9128_a5a81565eaa2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_99af_029f820a60e2 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T04:04:26+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_99af_029f820a60e2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_b79d_393a306ea9ea a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_b79d_393a306ea9ea ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_bcab_02ba6725d65b a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_bcab_02ba6725d65b ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_c73f_558fe05b2eab a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_c73f_558fe05b2eab ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_c74b_af89b66ee617 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_c74b_af89b66ee617 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_dcfa_2b704cbaa856 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_dcfa_2b704cbaa856 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_f2ef_b55971a4aaf6 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_f2ef_b55971a4aaf6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_622122bd_d882_040e_f3b9_3fab69560d04 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 ;
+    chr:hasPerformedDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_622122bd_d882_040e_f3b9_3fab69560d04 ;
+    chr:hasStatus ex:status_completed .
+
+ex:meas_622122bd_d882_040e_0fa7_7a5d72623bf3 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "99.22"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:meas_622122bd_d882_040e_167f_4817f9067551 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.47"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_m2 .
+
+ex:meas_622122bd_d882_040e_255f_9d02e4bdac62 a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6298-4> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.5"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L .
+
+ex:meas_622122bd_d882_040e_3204_5682c4217dac a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "14.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min .
+
+ex:meas_622122bd_d882_040e_423d_903bccd09c08 a chr:Measurement ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasMeasuredDate "2018-04-30T03:29:12+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:meas_622122bd_d882_040e_7390_094772d84abf a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/38483-4> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:meas_622122bd_d882_040e_7414_c118033d18b7 a chr:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.1"^^xsd:float ;
+    chr:hasUnit ex:unit_ .
+
+ex:meas_622122bd_d882_040e_75cf_c97b37f7a240 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "90.4"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:meas_622122bd_d882_040e_9128_a5a81565eaa2 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "22.6"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L .
+
+ex:meas_622122bd_d882_040e_99af_029f820a60e2 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2018-04-30T04:04:26+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:meas_622122bd_d882_040e_b79d_393a306ea9ea a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "181.4"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:meas_622122bd_d882_040e_bcab_02ba6725d65b a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "104.57"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L .
+
+ex:meas_622122bd_d882_040e_c73f_558fe05b2eab a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/49765-1> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "8.87"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:meas_622122bd_d882_040e_c74b_af89b66ee617 a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2947-0> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "142.93"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L .
+
+ex:meas_622122bd_d882_040e_dcfa_2b704cbaa856 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:meas_622122bd_d882_040e_f2ef_b55971a4aaf6 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "60.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min .
+
+ex:meas_622122bd_d882_040e_f3b9_3fab69560d04 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6299-2> ;
+    chr:hasMeasuredDate "2018-04-30T02:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "17.68"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:unit_ a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_github_com_syntheti a chr:CareUnit ;
+    rdfs:label "PRIMARY CARE NORTH PC" .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kg_m2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_min a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_score a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:unit_mg_dL a chr:Unit ;
+    rdfs:label "mg/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
+
+ex:unit_mmol_L a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:patient_622122bd_d882_040e_1f73_8704485e0ab4 a chr:Person ;
+    rdfs:label "Mr. Arturo47 Lauren941 Heidenreich818" .
+
+ex:provider_hl7_org_fhir_sid_us_npi_99999 a chr:Person ;
+    rdfs:label "Dr. Alan320 Keeling57" .
+

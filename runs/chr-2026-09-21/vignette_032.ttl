@@ -1,0 +1,91 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:care_plan_follow_up_monitoring a chr:CarePlan ;
+    rdfs:label "care plan" ;
+    chr:hasMedicalProcedure ex:evaluation_process_20211112T224807 .
+
+ex:measurement_process_33756_8 a chr:MeasurementProcess ;
+    rdfs:label "Polyp size greatest dimension measurement process" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2021-11-12T22:48:07+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Rhett759_Padberg411 ;
+    chr:hasResult ex:measurement_33756_8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_process_57905_2 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen measurement process" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2021-11-12T22:48:07+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Rhett759_Padberg411 ;
+    chr:hasResult ex:measurement_57905_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:visit_20211112T220318 a chr:ClinicalVisit ;
+    rdfs:label "CLINICAL VISIT NOTE — VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC" ;
+    chr:hasCareProvider ex:Dr_Rhett759_Padberg411 ;
+    chr:hasCareUnit ex:VIBRA_HOSPITAL_OF_WESTERN_MASSACHUSETTS_LLC ;
+    chr:hasDate "2021-11-12T22:03:18+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasProcedure ex:evaluation_process_20211112T224807,
+        ex:measurement_process_33756_8,
+        ex:measurement_process_57905_2 .
+
+ex:Polyp_of_colon_68496003 a chr:ClinicalCondition ;
+    rdfs:label "Polyp of colon (disorder)" ;
+    chr:hasCode <http://snomed.info/id/68496003> ;
+    chr:hasLocatedIn ex:colon ;
+    chr:hasRecordDate "2021-11-12T22:48:07+01:00"^^xsd:dateTime .
+
+ex:VIBRA_HOSPITAL_OF_WESTERN_MASSACHUSETTS_LLC a chr:CareUnit ;
+    rdfs:label "VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC" .
+
+ex:colon a chr:AnatomicalStructure ;
+    rdfs:label "colon" .
+
+ex:diagnostic_statement_68496003 a chr:DiagnosticStatement ;
+    rdfs:label "Polyp of colon (disorder)" ;
+    chr:hasCode <http://snomed.info/id/68496003> .
+
+ex:measurement_33756_8 a chr:Measurement ;
+    rdfs:label "Polyp size greatest dimension" ;
+    chr:hasCode <https://loinc.org/33756-8> ;
+    chr:hasMeasuredDate "2021-11-12T22:48:07+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.4093"^^xsd:float ;
+    chr:hasUnit ex:mm .
+
+ex:measurement_57905_2 a chr:Measurement ;
+    rdfs:label "Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen" ;
+    chr:hasCode <https://loinc.org/57905-2> ;
+    chr:hasMeasuredDate "2021-11-12T22:48:07+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "24.389"^^xsd:float ;
+    chr:hasUnit ex:ngpermL .
+
+ex:mm a chr:Unit ;
+    rdfs:label "mm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mm> .
+
+ex:ngpermL a chr:Unit ;
+    rdfs:label "ng/mL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ngpermL> .
+
+ex:evaluation_process_20211112T224807 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Polyp_of_colon_68496003 ;
+    chr:hasObservation ex:diagnostic_statement_68496003 ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2021-11-12T22:48:07+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Rhett759_Padberg411 .
+
+ex:Casey401_Elijah719_Parker433 a chr:Person ;
+    rdfs:label "Casey401 Elijah719 Parker433" .
+
+ex:Dr_Rhett759_Padberg411 a chr:Person ;
+    rdfs:label "Dr. Rhett759 Padberg411" .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .

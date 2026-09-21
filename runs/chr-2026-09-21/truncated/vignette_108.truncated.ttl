@@ -1,0 +1,177 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd8-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_followup a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluation_Full-time_employment_20220401T154218 .
+
+ex:Full_time_employment_finding a chr:ClinicalCondition ;
+    rdfs:label "Full-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160903007> ;
+    chr:hasRecordDate "2022-04-01T15:42:18+02:00"^^xsd:dateTime .
+
+ex:Gingivitis_disorder a chr:ClinicalCondition ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> ;
+    chr:hasRecordDate "2022-04-01T17:14:51+02:00"^^xsd:dateTime .
+
+ex:evaluation_Full-time_employment_20220401T154218 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2022-04-01T15:42:18+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margaret865_Reinger292 ;
+    chr:hasResult ex:diagnostic_statement_Full-time_employment_20220401T154218 ;
+    chr:hasStatus ex:status_completed ;
+    chr:hasCondition ex:Full_time_employment_finding ;
+    chr:hasObservation ex:diagnostic_statement_Full-time_employment_20220401T154218 .
+
+ex:diagnostic_statement_Full-time_employment_20220401T154218 a chr:DiagnosticStatement ;
+    rdfs:label "Full-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160903007> ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 .
+
+ex:evaluation_Gingivitis_20220401T171451 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2022-04-01T17:14:51+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margaret865_Reinger292 ;
+    chr:hasResult ex:diagnostic_statement_Gingivitis_20220401T171451 ;
+    chr:hasStatus ex:status_completed ;
+    chr:hasCondition ex:Gingivitis_disorder ;
+    chr:hasObservation ex:diagnostic_statement_Gingivitis_20220401T171451 .
+
+ex:diagnostic_statement_Gingivitis_20220401T171451 a chr:DiagnosticStatement ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 .
+
+ex:process_auditc_75626_2 a chr:MedicalProcedure ;
+    rdfs:label "Total score [AUDIT-C] measurement process" ;
+    chr:hasCode <https://loinc.org/75626-2> ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2022-04-01T17:14:51+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margaret865_Reinger292 ;
+    chr:hasResult ex:measurement_auditc_75626_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_gad7_70274_6 a chr:MedicalProcedure ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] measurement process" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2022-04-01T16:04:57+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margaret865_Reinger292 ;
+    chr:hasResult ex:measurement_gad7_70274_6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_phq2_55758_7 a chr:MedicalProcedure ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] measurement process" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasPatient ex:Aracely711_Devon268_Collins926 ;
+    chr:hasPerformedDate "2022-04-01T16:40:00+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margaret865_Reinger292 ;
+    chr:hasResult ex:measurement_phq2_55758_7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_auditc_75626_2 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/75626-2> ;
+    chr:hasMeasuredDate "2022-04-01T17:14:51+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:measurement_bilirubin_urine_20505_4 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/20505-4> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.25034"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:measurement_bmi_39156_5 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.79"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_m2 .
+
+ex:measurement_body_height_8302_2 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "172.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:measurement_body_weight_29463_7 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "82.2"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:measurement_calcium_blood_49765_1 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/49765-1> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "8.63"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:measurement_calcium_serum_17861_6 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/17861-6> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "8.63"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:measurement_carbon_dioxide_blood_20565_8 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "21.5"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L .
+
+ex:measurement_carbon_dioxide_serum_2028_9 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/2028-9> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "21.5"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L .
+
+ex:measurement_chloride_blood_2069_3 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "109.49"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L .
+
+ex:measurement_chloride_serum_2075_0 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/2075-0> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "109.49"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L .
+
+ex:measurement_creatinine_blood_38483_4 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/38483-4> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.83"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:measurement_creatinine_serum_2160_0 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/2160-0> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.4309"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:measurement_gad7_70274_6 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasMeasuredDate "2022-04-01T16:04:57+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:measurement_gfr_serum_33914_3 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/33914-3> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "126.74"^^xsd:float ;
+    chr:hasUnit ex:unit_mL_min_1_73_m2 .
+
+ex:measurement_glucose_blood_2339_0 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "82.74"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL .
+
+ex:measurement_glucose_serum_2345_7 a chr:Measurement ;
+    chr:hasCode <https://loinc.org/2345-7> ;
+    chr:hasMeasuredDate "2022-04-01T15:04:38+02:00"^^xsd:

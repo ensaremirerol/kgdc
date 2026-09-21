@@ -1,0 +1,46 @@
+[   0.1s] segmenting (orchestrator) ...
+[  94.5s] 37 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit], s3[MeasurementProcess,Measurement,Unit], s4[MeasurementProcess,Measurement,Unit], s5[MeasurementProcess,Measurement,Unit], s6[MeasurementProcess,Measurement,Unit], s7[MeasurementProcess,Measurement,Unit], s8[MeasurementProcess,Measurement,Unit], s9[MeasurementProcess,Measurement,Unit], s10[MeasurementProcess,Measurement,Unit], s11[MeasurementProcess,Measurement,Unit], s12[MeasurementProcess,Measurement,Unit], s13[MeasurementProcess,Measurement,Unit], s14[MeasurementProcess,Measurement,Unit], s15[MeasurementProcess,Measurement,Unit], s16[MeasurementProcess,Measurement,Unit], s17[MeasurementProcess,Measurement,Unit], s18[MeasurementProcess,Measurement,Unit], s19[MeasurementProcess,Measurement,Severity,Unit], s20[MeasurementProcess,Measurement,Unit], s21[MeasurementProcess,Measurement,Unit], s22[MeasurementProcess,Measurement,Unit], s23[MeasurementProcess,Measurement,Unit], s24[MeasurementProcess,Measurement,Unit], s25[MeasurementProcess,Measurement,Unit], s26[MeasurementProcess,Measurement,Unit], s27[MeasurementProcess,Measurement,Unit], s28[MeasurementProcess,Measurement,Unit], s29[MeasurementProcess,Measurement,Unit], s30[MeasurementProcess,Measurement,Unit], s31[MeasurementProcess,Measurement,Unit], s32[MeasurementProcess,Measurement,Unit], s33[MeasurementProcess,Measurement,Unit], s34[MeasurementProcess,Measurement,Unit], s35[MeasurementProcess,Measurement,Unit], s36[EvaluationProcess,DiagnosticStatement,ClinicalCondition,Person], s37[CarePlan]
+[  94.6s] build order: [CareUnit, DiagnosticStatement, Person, Severity, Unit] -> [ClinicalCondition, Measurement] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  94.6s] level 0: 5 agent(s), 0 known entities
+[  94.6s]   CareUnit: extracting (223 chars, 1 classes in view)
+[  94.6s]   DiagnosticStatement: extracting (240 chars, 1 classes in view)
+[  94.6s]   Person: extracting (465 chars, 1 classes in view)
+[  94.6s]   Severity: extracting (271 chars, 1 classes in view)
+[  99.8s]   CareUnit: cycle 0 -> conforms
+[  99.8s]   Unit: extracting (8578 chars, 1 classes in view)
+[ 101.3s]   Severity: cycle 0 -> conforms
+[ 101.4s]   DiagnosticStatement: cycle 0 -> conforms
+[ 101.7s]   Person: cycle 0 -> conforms
+[ 115.6s]   Unit: cycle 0 -> conforms
+[ 115.6s] level 1: 2 agent(s), 18 known entities
+[ 115.6s]   ClinicalCondition: extracting (240 chars, 3 classes in view)
+[ 115.6s]   Measurement: extracting (8578 chars, 2 classes in view)
+[ 122.4s]   ClinicalCondition: cycle 0 -> conforms
+[ 215.0s]   Measurement: cycle 0 -> 1 violation(s)
+[ 215.0s]   Measurement: fixing ...
+[ 307.5s]   Measurement: cycle 1 -> 1 violation(s)
+[ 307.5s]   Measurement: stopping (plateau)
+[ 307.5s]   Measurement: 3 unresolved (honest gaps)
+[ 307.5s] level 2: 2 agent(s), 19 known entities
+[ 307.5s]   EvaluationProcess: extracting (240 chars, 7 classes in view)
+[ 307.5s]   MeasurementProcess: extracting (8578 chars, 6 classes in view)
+[ 319.5s]   EvaluationProcess: cycle 0 -> conforms
+[ 503.1s]   MeasurementProcess: cycle 0 -> conforms
+[ 503.1s]   MeasurementProcess: 2 unresolved (honest gaps)
+[ 503.1s] level 3: 2 agent(s), 93 known entities
+[ 503.1s]   CarePlan: extracting (9238 chars, 4 classes in view)
+[ 503.1s]   ClinicalVisit: extracting (9238 chars, 5 classes in view)
+[ 510.9s]   CarePlan: cycle 0 -> conforms
+[ 621.4s]   ClinicalVisit: cycle 0 -> conforms
+[ 621.6s] merging (orchestrator): 0 violation(s), 5 unresolved, 1 unparsed
+[ 780.5s] final: 1 violation(s)
+conforms=False segments=11 llm_calls=14 unresolved=0
+  orchestrator   2 calls    28957 in   14146 out  cost n/a  gemma4-g1
+  total         14 calls    91429 in   44732 out  cost n/a  
+  worker        12 calls    62472 in   30586 out  cost n/a  gemma4-g1
+Constraint Violation in TurtleSyntax:
+	Severity: sh:Violation
+	Message: not valid Turtle: string index out of range
+	Offending line: 
+	Hint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs.
+exit=1

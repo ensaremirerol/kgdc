@@ -1,0 +1,87 @@
+[   0.1s] segmenting (orchestrator) ...
+[   9.8s] 4 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Severity,Unit,ProcessStatus], s3[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s4[CarePlan]
+[   9.8s] build order: [CareUnit, DiagnosticStatement, Person, ProcessStatus, Severity, Unit] -> [ClinicalCondition, Measurement] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[   9.8s] level 0: 6 agent(s), 0 known entities
+[   9.8s]   CareUnit: extracting (244 chars, 1 classes in view)
+[   9.8s]   DiagnosticStatement: extracting (238 chars, 1 classes in view)
+[   9.8s]   Person: extracting (244 chars, 1 classes in view)
+[   9.8s]   ProcessStatus: extracting (240 chars, 1 classes in view)
+[  15.2s]   CareUnit: cycle 0 -> conforms
+[  15.2s]   Severity: extracting (240 chars, 1 classes in view)
+[  16.4s]   ProcessStatus: cycle 0 -> 2 violation(s)
+[  16.4s]   ProcessStatus: fixing ...
+[  16.4s]   DiagnosticStatement: cycle 0 -> 5 violation(s)
+[  16.4s]   DiagnosticStatement: fixing ...
+[  17.1s]   Person: cycle 0 -> conforms
+[  17.1s]   Unit: extracting (240 chars, 1 classes in view)
+[  20.4s]   Severity: cycle 0 -> 5 violation(s)
+[  20.4s]   Severity: fixing ...
+[  22.1s]   ProcessStatus: cycle 1 -> 1 violation(s)
+[  22.1s]   ProcessStatus: fixing ...
+[  22.5s]   DiagnosticStatement: cycle 1 -> 5 violation(s)
+[  22.5s]   DiagnosticStatement: stopping (plateau)
+[  22.6s]   Unit: cycle 0 -> conforms
+[  25.8s]   Severity: cycle 1 -> 5 violation(s)
+[  25.8s]   Severity: stopping (plateau)
+[  26.2s]   ProcessStatus: cycle 2 -> 2 violation(s)
+[  26.2s]   ProcessStatus: stopping (fix budget spent)
+[  26.2s] level 1: 2 agent(s), 7 known entities
+[  26.2s]   ClinicalCondition: extracting (238 chars, 3 classes in view)
+[  26.2s]   Measurement: extracting (240 chars, 2 classes in view)
+[  31.8s]   ClinicalCondition: cycle 0 -> 12 violation(s)
+[  31.8s]   ClinicalCondition: fixing ...
+[  33.8s]   Measurement: cycle 0 -> 28 violation(s)
+[  33.8s]   Measurement: fixing ...
+[  40.5s]   ClinicalCondition: cycle 1 -> 13 violation(s)
+[  40.5s]   ClinicalCondition: fixing ...
+[  42.6s]   Measurement: cycle 1 -> 28 violation(s)
+[  42.6s]   Measurement: stopping (plateau)
+[  52.5s]   ClinicalCondition: cycle 2 -> 13 violation(s)
+[  52.5s]   ClinicalCondition: stopping (fix budget spent)
+[  52.5s]   ClinicalCondition: 5 unresolved (honest gaps)
+[  52.5s] level 2: 2 agent(s), 11 known entities
+[  52.5s]   EvaluationProcess: extracting (238 chars, 7 classes in view)
+[  52.5s]   MeasurementProcess: extracting (240 chars, 6 classes in view)
+[  63.9s]   MeasurementProcess: cycle 0 -> 28 violation(s)
+[  63.9s]   MeasurementProcess: fixing ...
+[  65.1s]   EvaluationProcess: cycle 0 -> 29 violation(s)
+[  65.1s]   EvaluationProcess: fixing ...
+[  75.3s]   MeasurementProcess: cycle 1 -> 28 violation(s)
+[  75.3s]   MeasurementProcess: stopping (plateau)
+[  76.4s]   EvaluationProcess: cycle 1 -> 29 violation(s)
+[  76.4s]   EvaluationProcess: stopping (plateau)
+[  76.4s] level 3: 2 agent(s), 16 known entities
+[  76.4s]   CarePlan: extracting (957 chars, 4 classes in view)
+[  76.4s]   ClinicalVisit: extracting (957 chars, 5 classes in view)
+[  82.2s]   CarePlan: cycle 0 -> 28 violation(s)
+[  82.2s]   CarePlan: fixing ...
+[  88.0s]   ClinicalVisit: cycle 0 -> 28 violation(s)
+[  88.0s]   ClinicalVisit: fixing ...
+[  99.8s]   CarePlan: cycle 1 -> 30 violation(s)
+[  99.8s]   CarePlan: fixing ...
+[ 107.8s]   ClinicalVisit: cycle 1 -> 28 violation(s)
+[ 107.8s]   ClinicalVisit: stopping (plateau)
+[ 114.7s]   CarePlan: cycle 2 -> 30 violation(s)
+[ 114.7s]   CarePlan: stopping (fix budget spent)
+[ 114.7s] merging (orchestrator): 30 violation(s), 5 unresolved, 0 unparsed
+[ 136.3s] final: 2 violation(s)
+conforms=False segments=12 llm_calls=26 unresolved=1
+  orchestrator   2 calls    10406 in    1959 out  cost n/a  gemma4-g1
+  total         26 calls    93591 in   11515 out  cost n/a  
+  worker        24 calls    83185 in    9556 out  cost n/a  gemma4-g1
+  UNRESOLVED: ex:device_unspecified must be a chr:Device — not stated in the text
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasDeviceRangeShape
+	Focus Node: ex:device_unspecified
+	Value Node: ex:device_unspecified
+	Message: Object of chr:hasDevice must be a chr:Device.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:measurement_Pain_severity_Reported_38208_5
+	Value Node: Literal("2.8386", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+
+exit=1

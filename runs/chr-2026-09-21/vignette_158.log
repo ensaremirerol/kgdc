@@ -1,0 +1,420 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 116.3s] 42 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,Severity,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[MeasurementProcess,Measurement,ProcessStatus], s23[MeasurementProcess,Measurement,ProcessStatus], s24[MeasurementProcess,Measurement,ProcessStatus], s25[MeasurementProcess,Measurement,ProcessStatus], s26[MeasurementProcess,Measurement,ProcessStatus], s27[MeasurementProcess,Measurement,ProcessStatus], s28[MeasurementProcess,Measurement,ProcessStatus], s29[MeasurementProcess,Measurement,ProcessStatus], s30[MeasurementProcess,Measurement,ProcessStatus], s31[MeasurementProcess,Measurement,ProcessStatus], s32[MeasurementProcess,Measurement,ProcessStatus], s33[MeasurementProcess,Measurement,ProcessStatus], s34[MeasurementProcess,Measurement,ProcessStatus], s35[MeasurementProcess,Measurement,ProcessStatus], s36[MeasurementProcess,Measurement,ProcessStatus], s37[MeasurementProcess,Measurement,ProcessStatus], s38[MeasurementProcess,Measurement,ProcessStatus], s39[MeasurementProcess,Measurement,ProcessStatus], s40[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s41[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s42[CarePlan]
+[ 116.3s] build order: [CareUnit, DiagnosticStatement, Measurement, Person, ProcessStatus, Severity] -> [ClinicalCondition, MeasurementProcess] -> [EvaluationProcess] -> [CarePlan, ClinicalVisit]
+[ 116.3s] level 0: 6 agent(s), 0 known entities
+[ 116.3s]   CareUnit: extracting (238 chars, 1 classes in view)
+[ 116.3s]   DiagnosticStatement: extracting (491 chars, 1 classes in view)
+[ 116.3s]   Measurement: extracting (9189 chars, 2 classes in view)
+[ 116.3s]   Person: extracting (238 chars, 1 classes in view)
+[ 122.4s]   CareUnit: cycle 0 -> conforms
+[ 122.4s]   ProcessStatus: extracting (9189 chars, 1 classes in view)
+[ 123.5s]   Person: cycle 0 -> conforms
+[ 123.5s]   Severity: extracting (257 chars, 1 classes in view)
+[ 125.2s]   DiagnosticStatement: cycle 0 -> conforms
+[ 128.7s]   Severity: cycle 0 -> conforms
+[ 181.0s]   ProcessStatus: cycle 0 -> 76 violation(s)
+[ 181.0s]   ProcessStatus: fixing ...
+[ 240.6s]   ProcessStatus: cycle 1 -> conforms
+[ 240.9s]   Measurement: cycle 0 -> 1 violation(s)
+[ 240.9s]   Measurement: fixing ...
+[ 350.6s]   Measurement: cycle 1 -> 1 violation(s)
+[ 350.6s]   Measurement: fixing ...
+[ 458.6s]   Measurement: cycle 2 -> 1 violation(s)
+[ 458.6s]   Measurement: stopping (fix budget spent)
+[ 458.6s]   Measurement: 1 unresolved (honest gaps)
+[ 458.6s] level 1: 2 agent(s), 45 known entities
+[ 458.6s]   ClinicalCondition: extracting (491 chars, 3 classes in view)
+[ 458.6s]   MeasurementProcess: extracting (9189 chars, 6 classes in view)
+[ 468.1s]   ClinicalCondition: cycle 0 -> conforms
+[ 696.9s]   MeasurementProcess: dropped 48 individual(s) of other classes (already built by earlier levels)
+[ 697.0s]   MeasurementProcess: cycle 0 -> 38 violation(s)
+[ 697.0s]   MeasurementProcess: fixing ...
+[ 913.1s]   MeasurementProcess: cycle 1 -> 38 violation(s)
+[ 913.1s]   MeasurementProcess: fixing ...
+[1121.8s]   MeasurementProcess: cycle 2 -> 1 violation(s)
+[1121.8s]   MeasurementProcess: stopping (fix budget spent)
+[1121.8s] level 2: 1 agent(s), 47 known entities
+[1121.8s]   EvaluationProcess: extracting (491 chars, 7 classes in view)
+[1132.0s]   EvaluationProcess: cycle 0 -> conforms
+[1132.0s] level 3: 2 agent(s), 49 known entities
+[1132.0s]   CarePlan: extracting (10179 chars, 4 classes in view)
+[1132.0s]   ClinicalVisit: extracting (10179 chars, 5 classes in view)
+[1139.5s]   CarePlan: cycle 0 -> conforms
+[1274.7s]   ClinicalVisit: dropped 40 individual(s) of other classes (already built by earlier levels)
+[1274.8s]   ClinicalVisit: cycle 0 -> 40 violation(s)
+[1274.8s]   ClinicalVisit: fixing ...
+[1470.5s]   ClinicalVisit: cycle 1 -> 92 violation(s)
+[1470.5s]   ClinicalVisit: fixing ...
+[1698.5s]   ClinicalVisit: cycle 2 -> 54 violation(s)
+[1698.5s]   ClinicalVisit: stopping (fix budget spent)
+[1698.7s] merging (orchestrator): 54 violation(s), 1 unresolved, 2 unparsed
+[1775.1s] merge output rejected (string index out of range) - returning the un-merged union
+[1775.3s] final: 54 violation(s)
+conforms=False segments=11 llm_calls=20 unresolved=0
+  orchestrator   2 calls    34565 in    9543 out  cost n/a  gemma4-g1
+  total         20 calls   193068 in  100023 out  cost n/a  
+  worker        18 calls   158503 in   90480 out  cost n/a  gemma4-g1
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:proc_eval_med_review
+	Value Node: ex:proc_eval_med_review
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:proc_eval_violence
+	Value Node: ex:proc_eval_violence
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultRangeShape
+	Focus Node: ex:res_eval_med_review
+	Value Node: ex:res_eval_med_review
+	Message: Object of chr:hasResult must be a chr:Measurement.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultRangeShape
+	Focus Node: ex:res_eval_violence
+	Value Node: ex:res_eval_violence
+	Message: Object of chr:hasResult must be a chr:Measurement.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr>
+	Value Node: <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr>
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: <https://biomedit.ch/rdf/sphn-resource/ucum/cm>
+	Value Node: <https://biomedit.ch/rdf/sphn-resource/ucum/cm>
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: <https://biomedit.ch/rdf/sphn-resource/ucum/kg>
+	Value Node: <https://biomedit.ch/rdf/sphn-resource/ucum/kg>
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2>
+	Value Node: <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2>
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: <https://biomedit.ch/rdf/sphn-resource/ucum/mLperminper1.73m2>
+	Value Node: <https://biomedit.ch/rdf/sphn-resource/ucum/mLperminper1.73m2>
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL>
+	Value Node: <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL>
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: <https://biomedit.ch/rdf/sphn-resource/ucum/mgperg>
+	Value Node: <https://biomedit.ch/rdf/sphn-resource/ucum/mgperg>
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL>
+	Value Node: <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL>
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: <https://biomedit.ch/rdf/sphn-resource/ucum/nominal>
+	Value Node: <https://biomedit.ch/rdf/sphn-resource/ucum/nominal>
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: <https://biomedit.ch/rdf/sphn-resource/ucum/pH>
+	Value Node: <https://biomedit.ch/rdf/sphn-resource/ucum/pH>
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: <https://biomedit.ch/rdf/sphn-resource/ucum/percent>
+	Value Node: <https://biomedit.ch/rdf/sphn-resource/ucum/percent>
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: <https://biomedit.ch/rdf/sphn-resource/ucum/permin>
+	Value Node: <https://biomedit.ch/rdf/sphn-resource/ucum/permin>
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_auditc_75626_2
+	Value Node: Literal("2.0", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_bilirubin_urine_20505_4
+	Value Node: Literal("1.497", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_bmi_39156_5
+	Value Node: Literal("27.45", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_calcium_blood_49765_1
+	Value Node: Literal("10.09", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_calcium_serum_17861_6
+	Value Node: Literal("10.09", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_chloride_blood_2069_3
+	Value Node: Literal("107.16", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_chloride_serum_2075_0
+	Value Node: Literal("107.16", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_cholesterol_hdl_2085_9
+	Value Node: Literal("25.85", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_cholesterol_ldl_18262_6
+	Value Node: Literal("162.15", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_cholesterol_serum_2093_3
+	Value Node: Literal("248.31", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_co2_blood_20565_8
+	Value Node: Literal("23.93", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_co2_serum_2028_9
+	Value Node: Literal("23.93", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_creatinine_blood_38483_4
+	Value Node: Literal("3.13", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_creatinine_serum_2160_0
+	Value Node: Literal("1.9579", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_gfr_serum_33914_3
+	Value Node: Literal("35.527", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_gfr_serum_33914_3_2
+	Value Node: Literal("27.13", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_glucose_blood_2339_0
+	Value Node: Literal("144.68", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_glucose_serum_2345_7
+	Value Node: Literal("144.68", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_glucose_urine_5792_7
+	Value Node: Literal("1.0438", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_hba1c_blood_4548_4
+	Value Node: Literal("5.36", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_heart_rate_8867_4
+	Value Node: Literal("64.0", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_height_8302_2
+	Value Node: Literal("177.0", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_ketones_urine_5797_6
+	Value Node: Literal("6.6477", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_microalbumin_14959_1
+	Value Node: Literal("297.59", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_pain_72514_3
+	Value Node: Literal("3.0", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_ph_urine_5803_2
+	Value Node: Literal("6.4338", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_phq2_55758_7
+	Value Node: Literal("1.0", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_potassium_blood_6298_4
+	Value Node: Literal("4.92", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_potassium_serum_2823_3
+	Value Node: Literal("4.92", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_protein_urine_5804_0
+	Value Node: Literal("371.33", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_resp_rate_9279_1
+	Value Node: Literal("16.0", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_sodium_blood_2947_0
+	Value Node: Literal("143.26", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_sodium_serum_2951_2
+	Value Node: Literal("143.26", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_spec_gravity_urine_5811_5
+	Value Node: Literal("1.0266", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_triglyceride_serum_2571_8
+	Value Node: Literal("301.55", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_urea_nitrogen_blood_6299_2
+	Value Node: Literal("19.81", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_urea_nitrogen_serum_3094_0
+	Value Node: Literal("19.81", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:res_weight_29463_7
+	Value Node: Literal("86.0", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+
+exit=1

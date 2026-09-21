@@ -1,0 +1,44 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 116.9s] 44 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit], s3[MeasurementProcess,Measurement,Unit], s4[MeasurementProcess,Measurement,Unit], s5[MeasurementProcess,Measurement,Unit], s6[MeasurementProcess,Measurement,Unit], s7[MeasurementProcess,Measurement,Unit], s8[MeasurementProcess,Measurement,Unit], s9[MeasurementProcess,Measurement,Unit], s10[MeasurementProcess,Measurement,Unit], s11[MeasurementProcess,Measurement,Unit], s12[MeasurementProcess,Measurement,Unit], s13[MeasurementProcess,Measurement,Unit], s14[MeasurementProcess,Measurement,Unit], s15[MeasurementProcess,Measurement,Unit], s16[MeasurementProcess,Measurement,Unit], s17[MeasurementProcess,Measurement,Unit], s18[MeasurementProcess,Measurement,Unit], s19[MeasurementProcess,Measurement,Unit], s20[MeasurementProcess,Measurement,Unit], s21[MeasurementProcess,Measurement,Unit], s22[MeasurementProcess,Measurement,Unit], s23[MeasurementProcess,Measurement,Unit], s24[MeasurementProcess,Measurement,Unit], s25[MeasurementProcess,Measurement,Unit], s26[MeasurementProcess,Measurement,Unit], s27[MeasurementProcess,Measurement,Unit], s28[MeasurementProcess,Measurement,Unit], s29[MeasurementProcess,Measurement,Unit], s30[MeasurementProcess,Measurement,Unit], s31[MeasurementProcess,Measurement,Unit], s32[MeasurementProcess,Measurement,Unit], s33[MeasurementProcess,Measurement,Unit], s34[MeasurementProcess,Measurement,Unit], s35[MeasurementProcess,Measurement,Unit], s36[MeasurementProcess,Measurement,Unit], s37[MeasurementProcess,Measurement,Unit], s38[MeasurementProcess,Measurement,Unit], s39[MeasurementProcess,Measurement,Unit], s40[MeasurementProcess,Measurement,Unit], s41[MeasurementProcess,Measurement,Unit], s42[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s43[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s44[CarePlan]
+[ 116.9s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 116.9s] level 0: 5 agent(s), 0 known entities
+[ 116.9s]   CareUnit: extracting (238 chars, 1 classes in view)
+[ 116.9s]   ClinicalCondition: extracting (473 chars, 3 classes in view)
+[ 116.9s]   DiagnosticStatement: extracting (473 chars, 1 classes in view)
+[ 116.9s]   Person: extracting (238 chars, 1 classes in view)
+[ 122.8s]   CareUnit: cycle 0 -> conforms
+[ 122.8s]   Unit: extracting (9683 chars, 1 classes in view)
+[ 124.0s]   Person: cycle 0 -> conforms
+[ 125.0s]   DiagnosticStatement: cycle 0 -> conforms
+[ 126.4s]   ClinicalCondition: cycle 0 -> conforms
+[ 136.4s]   Unit: cycle 0 -> conforms
+[ 136.4s] level 1: 2 agent(s), 17 known entities
+[ 136.4s]   EvaluationProcess: extracting (473 chars, 7 classes in view)
+[ 136.4s]   Measurement: extracting (9683 chars, 2 classes in view)
+[ 147.8s]   EvaluationProcess: cycle 0 -> conforms
+[ 253.3s]   Measurement: cycle 0 -> 1 violation(s)
+[ 253.3s]   Measurement: fixing ...
+[ 368.3s]   Measurement: cycle 1 -> 1 violation(s)
+[ 368.3s]   Measurement: fixing ...
+[ 482.3s]   Measurement: cycle 2 -> 1 violation(s)
+[ 482.3s]   Measurement: stopping (fix budget spent)
+[ 482.3s]   Measurement: 8 unresolved (honest gaps)
+[ 482.3s] level 2: 1 agent(s), 19 known entities
+[ 482.3s]   MeasurementProcess: extracting (9683 chars, 6 classes in view)
+[ 740.5s]   MeasurementProcess: cycle 0 -> conforms
+[ 740.5s]   MeasurementProcess: 9 unresolved (honest gaps)
+[ 740.5s] level 3: 2 agent(s), 100 known entities
+[ 740.5s]   CarePlan: extracting (10655 chars, 4 classes in view)
+[ 740.5s]   ClinicalVisit: extracting (10655 chars, 5 classes in view)
+[ 749.3s]   CarePlan: cycle 0 -> 1 violation(s)
+[ 749.3s]   CarePlan: fixing ...
+[ 756.2s]   CarePlan: cycle 1 -> conforms
+[ 903.7s]   ClinicalVisit: cycle 0 -> conforms
+[ 903.9s] merging (orchestrator): 0 violation(s), 17 unresolved, 1 unparsed
+[ 967.1s] merge output not parseable (truncated?) - returning the un-merged union
+[ 967.3s] final: conforms
+conforms=True segments=10 llm_calls=15 unresolved=0
+  orchestrator   2 calls    34996 in    9521 out  cost n/a  gemma4-g1
+  total         15 calls   125433 in   53424 out  cost n/a  
+  worker        13 calls    90437 in   43903 out  cost n/a  gemma4-g1
+exit=0

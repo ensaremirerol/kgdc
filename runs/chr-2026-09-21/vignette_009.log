@@ -1,0 +1,32 @@
+[   0.1s] segmenting (orchestrator) ...
+[  53.8s] 22 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[MeasurementProcess,Measurement], s11[MeasurementProcess,Measurement], s12[MeasurementProcess,Measurement], s13[MeasurementProcess,Measurement], s14[MeasurementProcess,Measurement], s15[MeasurementProcess,Measurement], s16[MeasurementProcess,Measurement], s17[MeasurementProcess,Measurement], s18[MeasurementProcess,Measurement], s19[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s20[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s21[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s22[CarePlan]
+[  53.8s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  53.8s] level 0: 5 agent(s), 0 known entities
+[  53.8s]   CareUnit: extracting (228 chars, 1 classes in view)
+[  53.8s]   ClinicalCondition: extracting (705 chars, 3 classes in view)
+[  53.8s]   DiagnosticStatement: extracting (705 chars, 1 classes in view)
+[  53.8s]   Measurement: extracting (4237 chars, 2 classes in view)
+[  58.3s]   CareUnit: cycle 0 -> conforms
+[  58.3s]   Person: extracting (228 chars, 1 classes in view)
+[  61.2s]   DiagnosticStatement: cycle 0 -> conforms
+[  62.9s]   ClinicalCondition: cycle 0 -> conforms
+[  63.2s]   Person: cycle 0 -> conforms
+[ 100.2s]   Measurement: cycle 0 -> conforms
+[ 100.2s] level 1: 2 agent(s), 34 known entities
+[ 100.2s]   EvaluationProcess: extracting (705 chars, 7 classes in view)
+[ 100.2s]   MeasurementProcess: extracting (4237 chars, 6 classes in view)
+[ 122.6s]   EvaluationProcess: cycle 0 -> conforms
+[ 184.8s]   MeasurementProcess: cycle 0 -> conforms
+[ 184.8s] level 2: 2 agent(s), 55 known entities
+[ 184.8s]   CarePlan: extracting (5377 chars, 4 classes in view)
+[ 184.8s]   ClinicalVisit: extracting (5377 chars, 5 classes in view)
+[ 190.8s]   CarePlan: cycle 0 -> conforms
+[ 190.8s]   CarePlan: 1 unresolved (honest gaps)
+[ 248.7s]   ClinicalVisit: cycle 0 -> conforms
+[ 248.8s] merging (orchestrator): 0 violation(s), 1 unresolved, 0 unparsed
+[ 384.0s] final: conforms
+conforms=True segments=9 llm_calls=11 unresolved=0
+  orchestrator   2 calls    15634 in   10785 out  cost n/a  gemma4-g1
+  total         11 calls    51873 in   25352 out  cost n/a  
+  worker         9 calls    36239 in   14567 out  cost n/a  gemma4-g1
+exit=0

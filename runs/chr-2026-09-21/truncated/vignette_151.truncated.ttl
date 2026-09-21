@@ -1,0 +1,50 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix ns1: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_follow_up_monitoring a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:eval_medication_review_20220112T154723 .
+
+ex:Pain_severity_0-10_verbal_numeric_rating_Score a chr:Severity ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score]" ;
+    chr:hasCode <https://loinc.org/72514-3> .
+
+ex:VIBRA_HOSPITAL_OF_WESTERN_MASS_-_CENTRAL_CAMPUS a chr:CareUnit ;
+    rdfs:label "VIBRA HOSPITAL OF WESTERN MASS - CENTRAL CAMPUS" .
+
+ex:eval_victim_abuse_20220112T163251 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Victim_of_intimate_partner_abuse_finding ;
+    chr:hasObservation ex:diagnostic_statement_Victim_of_intimate_partner_abuse_finding ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2022-01-12T16:32:51+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 .
+
+ex:proc_bilirubin_urine_20505_4 a chr:MeasurementProcess ;
+    rdfs:label "Bilirubin.total [Mass/volume] in Urine by Test strip (LOINC: 20505-4) measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2022-01-12T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasResult ex:meas_bilirubin_urine_20505_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_bmi_39156_5 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2022-01-12T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasResult ex:meas_bmi_39156_5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_calcium_blood_49765_1 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Blood (LOINC: 49765-1) measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2022-01-12T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasResult ex:meas_calcium_blood_49765_1 ;
+    chr:hasStatus ex:status_completed .

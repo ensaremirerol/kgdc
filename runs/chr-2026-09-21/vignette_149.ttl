@@ -1,0 +1,876 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix ns1: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd8-83f3-df21defa8821/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_follow_up_monitoring a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluation_20210317T162410_1 .
+
+ex:unit_Mass_Ratio a chr:Unit ;
+    rdfs:label "Mass Ratio" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/MassRatio> .
+
+ex:unit_Morse_Fall_Scale a chr:Unit ;
+    rdfs:label "Morse Fall Scale" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/MorseFallScale> .
+
+ex:unit_Reported_PHQ a chr:Unit ;
+    rdfs:label "Reported.PHQ" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ReporteddotPHQ> .
+
+ex:visit_20210317T154723 a chr:ClinicalVisit ;
+    rdfs:label "Encounter for check up (procedure)" ;
+    chr:hasCareProvider ex:Dr_Domenic627_Blick895 ;
+    chr:hasCareUnit ex:VIBRA_HOSPITAL_OF_WESTERN_MASS_-_CENTRAL_CAMPUS ;
+    chr:hasDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasProcedure ex:evaluation_20210317T154723,
+        ex:evaluation_20210317T162410_1,
+        ex:evaluation_20210317T162410_2,
+        ex:proc_bilirubin_urine_20505_4,
+        ex:proc_bmi_39156_5,
+        ex:proc_calcium_blood_49765_1,
+        ex:proc_calcium_serum_17861_6,
+        ex:proc_chloride_blood_2069_3,
+        ex:proc_chloride_serum_2075_0,
+        ex:proc_cholesterol_hdl_2085_9,
+        ex:proc_cholesterol_ldl_18262_6,
+        ex:proc_cholesterol_serum_2093_3,
+        ex:proc_co2_blood_20565_8,
+        ex:proc_co2_serum_2028_9,
+        ex:proc_creatinine_blood_38483_4,
+        ex:proc_creatinine_serum_2160_0,
+        ex:proc_fall_risk_59460_6,
+        ex:proc_gad7_70274_6,
+        ex:proc_gfr_serum_33914_3,
+        ex:proc_gfr_serum_33914_3_2,
+        ex:proc_glucose_blood_2339_0,
+        ex:proc_glucose_serum_2345_7,
+        ex:proc_glucose_urine_5792_7,
+        ex:proc_hba1c_blood_4548_4,
+        ex:proc_heart_rate_8867_4,
+        ex:proc_height_8302_2,
+        ex:proc_ketones_urine_5797_6,
+        ex:proc_microalbumin_creatinine_14959_1,
+        ex:proc_pain_72514_3,
+        ex:proc_ph_urine_5803_2,
+        ex:proc_potassium_blood_6298_4,
+        ex:proc_potassium_serum_2823_3,
+        ex:proc_protein_urine_5804_0,
+        ex:proc_resp_rate_9279_1,
+        ex:proc_sodium_blood_2947_0,
+        ex:proc_sodium_serum_2951_2,
+        ex:proc_spec_gravity_urine_5811_5,
+        ex:proc_triglyceride_serum_2571_8,
+        ex:proc_urea_nitrogen_blood_6299_2,
+        ex:proc_urea_nitrogen_serum_3094_0,
+        ex:proc_weight_29463_7 .
+
+ex:Medication_review_due_situation a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime .
+
+ex:Not_in_labor_force_finding a chr:ClinicalCondition ;
+    rdfs:label "Not in labor force (finding)" ;
+    chr:hasCode <http://snomed.info/id/741062008> ;
+    chr:hasRecordDate "2021-03-17T16:24:10+01:00"^^xsd:dateTime .
+
+ex:Stress_finding a chr:ClinicalCondition ;
+    rdfs:label "Stress (finding)" ;
+    chr:hasCode <http://snomed.info/id/73595000> ;
+    chr:hasRecordDate "2021-03-17T16:24:10+01:00"^^xsd:dateTime .
+
+ex:VIBRA_HOSPITAL_OF_WESTERN_MASS_-_CENTRAL_CAMPUS a chr:CareUnit ;
+    rdfs:label "VIBRA HOSPITAL OF WESTERN MASS - CENTRAL CAMPUS" .
+
+ex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:diagnostic_statement_Not_in_labor_force_741062008 a chr:DiagnosticStatement ;
+    rdfs:label "Not in labor force (finding)" ;
+    chr:hasCode <http://snomed.info/id/741062008> .
+
+ex:diagnostic_statement_Stress_73595000 a chr:DiagnosticStatement ;
+    rdfs:label "Stress (finding)" ;
+    chr:hasCode <http://snomed.info/id/73595000> .
+
+ex:evaluation_20210317T154723 a chr:MedicalProcedure,
+        ns1:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasCondition ex:Medication_review_due_situation ;
+    ns1:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 .
+
+ex:evaluation_20210317T162410_2 a chr:MedicalProcedure,
+        ns1:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T16:24:10+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasCondition ex:Stress_finding ;
+    ns1:hasObservation ex:diagnostic_statement_Stress_73595000 ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T16:24:10+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 .
+
+ex:meas_bilirubin_urine_20505_4 a ns1:Measurement ;
+    rdfs:label "Bilirubin.total [Mass/volume] in Urine by Test strip (LOINC: 20505-4) measurement result" ;
+    ns1:hasCode <https://loinc.org/20505-4> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "1.2283"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_bmi_39156_5 a ns1:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement result" ;
+    ns1:hasCode <https://loinc.org/39156-5> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "27.45"^^xsd:float ;
+    ns1:hasUnit ex:unit_Ratio .
+
+ex:meas_calcium_blood_49765_1 a ns1:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Blood (LOINC: 49765-1) measurement result" ;
+    ns1:hasCode <https://loinc.org/49765-1> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "10.17"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_calcium_serum_17861_6 a ns1:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Serum or Plasma (LOINC: 17861-6) measurement result" ;
+    ns1:hasCode <https://loinc.org/17861-6> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "10.17"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_chloride_blood_2069_3 a ns1:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Blood (LOINC: 2069-3) measurement result" ;
+    ns1:hasCode <https://loinc.org/2069-3> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "110.88"^^xsd:float ;
+    ns1:hasUnit ex:unit_Moles_volume .
+
+ex:meas_chloride_serum_2075_0 a ns1:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Serum or Plasma (LOINC: 2075-0) measurement result" ;
+    ns1:hasCode <https://loinc.org/2075-0> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "110.88"^^xsd:float ;
+    ns1:hasUnit ex:unit_Moles_volume .
+
+ex:meas_cholesterol_serum_2093_3 a ns1:Measurement ;
+    rdfs:label "Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3) measurement result" ;
+    ns1:hasCode <https://loinc.org/2093-3> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "247.51"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_co2_blood_20565_8 a ns1:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood (LOINC: 20565-8) measurement result" ;
+    ns1:hasCode <https://loinc.org/20565-8> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "24.67"^^xsd:float ;
+    ns1:hasUnit ex:unit_Moles_volume .
+
+ex:meas_co2_serum_2028_9 a ns1:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Serum or Plasma (LOINC: 2028-9) measurement result" ;
+    ns1:hasCode <https://loinc.org/2028-9> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "24.67"^^xsd:float ;
+    ns1:hasUnit ex:unit_Moles_volume .
+
+ex:meas_creatinine_blood_38483_4 a ns1:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Blood (LOINC: 38483-4) measurement result" ;
+    ns1:hasCode <https://loinc.org/38483-4> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "3.85"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_creatinine_serum_2160_0 a ns1:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Serum or Plasma (LOINC: 2160-0) measurement result" ;
+    ns1:hasCode <https://loinc.org/2160-0> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "2.0106"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_gfr_serum_33914_3 a ns1:Measurement ;
+    rdfs:label "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M (LOINC: 33914-3) measurement result" ;
+    ns1:hasCode <https://loinc.org/33914-3> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "47.503"^^xsd:float ;
+    ns1:hasUnit ex:unit_Volume_Rate_Area .
+
+ex:meas_glucose_blood_2339_0 a ns1:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Blood (LOINC: 2339-0) measurement result" ;
+    ns1:hasCode <https://loinc.org/2339-0> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "149.19"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_glucose_serum_2345_7 a ns1:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Serum or Plasma (LOINC: 2345-7) measurement result" ;
+    ns1:hasCode <https://loinc.org/2345-7> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "149.19"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_glucose_urine_5792_7 a ns1:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Urine by Test strip (LOINC: 5792-7) measurement result" ;
+    ns1:hasCode <https://loinc.org/5792-7> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "1.3838"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_hba1c_blood_4548_4 a ns1:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement result" ;
+    ns1:hasCode <https://loinc.org/4548-4> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "5.36"^^xsd:float ;
+    ns1:hasUnit ex:unit_percent .
+
+ex:meas_heart_rate_8867_4 a ns1:Measurement ;
+    rdfs:label "Heart rate (LOINC: 8867-4) measurement result" ;
+    ns1:hasCode <https://loinc.org/8867-4> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "62.0"^^xsd:float .
+
+ex:meas_height_8302_2 a ns1:Measurement ;
+    rdfs:label "Body Height (LOINC: 8302-2) measurement result" ;
+    ns1:hasCode <https://loinc.org/8302-2> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "177.0"^^xsd:float ;
+    ns1:hasUnit ex:unit_cm .
+
+ex:meas_ketones_urine_5797_6 a ns1:Measurement ;
+    rdfs:label "Ketones [Mass/volume] in Urine by Test strip (LOINC: 5797-6) measurement result" ;
+    ns1:hasCode <https://loinc.org/5797-6> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "1.6656"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_pain_72514_3 a ns1:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement result" ;
+    ns1:hasCode <https://loinc.org/72514-3> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "3.0"^^xsd:float ;
+    ns1:hasUnit ex:unit_Score .
+
+ex:meas_ph_urine_5803_2 a ns1:Measurement ;
+    rdfs:label "pH of Urine by Test strip (LOINC: 5803-2) measurement result" ;
+    ns1:hasCode <https://loinc.org/5803-2> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "6.1306"^^xsd:float .
+
+ex:meas_potassium_blood_6298_4 a ns1:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Blood (LOINC: 6298-4) measurement result" ;
+    ns1:hasCode <https://loinc.org/6298-4> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "4.12"^^xsd:float ;
+    ns1:hasUnit ex:unit_Moles_volume .
+
+ex:meas_potassium_serum_2823_3 a ns1:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Serum or Plasma (LOINC: 2823-3) measurement result" ;
+    ns1:hasCode <https://loinc.org/2823-3> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "4.12"^^xsd:float ;
+    ns1:hasUnit ex:unit_Moles_volume .
+
+ex:meas_protein_urine_5804_0 a ns1:Measurement ;
+    rdfs:label "Protein [Mass/volume] in Urine by Test strip (LOINC: 5804-0) measurement result" ;
+    ns1:hasCode <https://loinc.org/5804-0> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "282.38"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_resp_rate_9279_1 a ns1:Measurement ;
+    rdfs:label "Respiratory rate (LOINC: 9279-1) measurement result" ;
+    ns1:hasCode <https://loinc.org/9279-1> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "13.0"^^xsd:float .
+
+ex:meas_sodium_blood_2947_0 a ns1:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Blood (LOINC: 2947-0) measurement result" ;
+    ns1:hasCode <https://loinc.org/2947-0> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "139.01"^^xsd:float ;
+    ns1:hasUnit ex:unit_Moles_volume .
+
+ex:meas_sodium_serum_2951_2 a ns1:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Serum or Plasma (LOINC: 2951-2) measurement result" ;
+    ns1:hasCode <https://loinc.org/2951-2> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "139.01"^^xsd:float ;
+    ns1:hasUnit ex:unit_Moles_volume .
+
+ex:meas_spec_gravity_urine_5811_5 a ns1:Measurement ;
+    rdfs:label "Specific gravity of Urine by Test strip (LOINC: 5811-5) measurement result" ;
+    ns1:hasCode <https://loinc.org/5811-5> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "1.0281"^^xsd:float .
+
+ex:meas_urea_nitrogen_blood_6299_2 a ns1:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood (LOINC: 6299-2) measurement result" ;
+    ns1:hasCode <https://loinc.org/6299-2> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "13.75"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_urea_nitrogen_serum_3094_0 a ns1:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Serum or Plasma (LOINC: 3094-0) measurement result" ;
+    ns1:hasCode <https://loinc.org/3094-0> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "13.75"^^xsd:float ;
+    ns1:hasUnit ex:unit_Mass_volume .
+
+ex:meas_weight_29463_7 a ns1:Measurement ;
+    rdfs:label "Body Weight (LOINC: 29463-7) measurement result" ;
+    ns1:hasCode <https://loinc.org/29463-7> ;
+    ns1:hasMeasuredDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasQuantityValue "86.0"^^xsd:float .
+
+ex:proc_bilirubin_urine_20505_4 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Bilirubin.total [Mass/volume] in Urine by Test strip (LOINC: 20505-4) measurement" ;
+    chr:hasCode <https://loinc.org/20505-4> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_bilirubin_urine_20505_4 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_bmi_39156_5 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_bmi_39156_5 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_calcium_blood_49765_1 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Blood (LOINC: 49765-1) measurement" ;
+    chr:hasCode <https://loinc.org/49765-1> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_calcium_blood_49765_1 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_calcium_serum_17861_6 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Serum or Plasma (LOINC: 17861-6) measurement" ;
+    chr:hasCode <https://loinc.org/17861-6> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_calcium_serum_17861_6 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_chloride_blood_2069_3 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Blood (LOINC: 2069-3) measurement" ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_chloride_blood_2069_3 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_chloride_serum_2075_0 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Serum or Plasma (LOINC: 2075-0) measurement" ;
+    chr:hasCode <https://loinc.org/2075-0> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_chloride_serum_2075_0 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_cholesterol_hdl_2085_9 a chr:MedicalProcedure ;
+    rdfs:label "Cholesterol in HDL [Mass/volume] in Serum or Plasma (LOINC: 2085-9) measurement" ;
+    chr:hasCode <https://loinc.org/2085-9> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_cholesterol_ldl_18262_6 a chr:MedicalProcedure ;
+    rdfs:label "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay (LOINC: 18262-6) measurement" ;
+    chr:hasCode <https://loinc.org/18262-6> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_cholesterol_serum_2093_3 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3) measurement" ;
+    chr:hasCode <https://loinc.org/2093-3> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_cholesterol_serum_2093_3 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_co2_blood_20565_8 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood (LOINC: 20565-8) measurement" ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_co2_blood_20565_8 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_co2_serum_2028_9 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Serum or Plasma (LOINC: 2028-9) measurement" ;
+    chr:hasCode <https://loinc.org/2028-9> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_co2_serum_2028_9 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_creatinine_blood_38483_4 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Blood (LOINC: 38483-4) measurement" ;
+    chr:hasCode <https://loinc.org/38483-4> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_creatinine_blood_38483_4 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_creatinine_serum_2160_0 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Serum or Plasma (LOINC: 2160-0) measurement" ;
+    chr:hasCode <https://loinc.org/2160-0> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_creatinine_serum_2160_0 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_fall_risk_59460_6 a chr:MedicalProcedure ;
+    rdfs:label "Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement" ;
+    chr:hasCode <https://loinc.org/59460-6> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T17:17:00+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_gad7_70274_6 a chr:MedicalProcedure ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] (LOINC: 70274-6) measurement" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T16:49:29+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_gfr_serum_33914_3 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M (LOINC: 33914-3) measurement" ;
+    chr:hasCode <https://loinc.org/33914-3> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_gfr_serum_33914_3 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_gfr_serum_33914_3_2 a chr:MedicalProcedure ;
+    rdfs:label "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M (LOINC: 33914-3) measurement" ;
+    chr:hasCode <https://loinc.org/33914-3> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_glucose_blood_2339_0 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Blood (LOINC: 2339-0) measurement" ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_glucose_blood_2339_0 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_glucose_serum_2345_7 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Serum or Plasma (LOINC: 2345-7) measurement" ;
+    chr:hasCode <https://loinc.org/2345-7> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_glucose_serum_2345_7 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_glucose_urine_5792_7 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Urine by Test strip (LOINC: 5792-7) measurement" ;
+    chr:hasCode <https://loinc.org/5792-7> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_glucose_urine_5792_7 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_hba1c_blood_4548_4 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_hba1c_blood_4548_4 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_heart_rate_8867_4 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Heart rate (LOINC: 8867-4) measurement" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_heart_rate_8867_4 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_height_8302_2 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Body Height (LOINC: 8302-2) measurement" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_height_8302_2 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_ketones_urine_5797_6 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Ketones [Mass/volume] in Urine by Test strip (LOINC: 5797-6) measurement" ;
+    chr:hasCode <https://loinc.org/5797-6> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_ketones_urine_5797_6 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_microalbumin_creatinine_14959_1 a chr:MedicalProcedure ;
+    rdfs:label "Microalbumin/Creatinine [Mass Ratio] in Urine (LOINC: 14959-1) measurement" ;
+    chr:hasCode <https://loinc.org/14959-1> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_pain_72514_3 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_pain_72514_3 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_ph_urine_5803_2 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "pH of Urine by Test strip (LOINC: 5803-2) measurement" ;
+    chr:hasCode <https://loinc.org/5803-2> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_ph_urine_5803_2 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_potassium_blood_6298_4 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Blood (LOINC: 6298-4) measurement" ;
+    chr:hasCode <https://loinc.org/6298-4> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_potassium_blood_6298_4 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_potassium_serum_2823_3 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Serum or Plasma (LOINC: 2823-3) measurement" ;
+    chr:hasCode <https://loinc.org/2823-3> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_potassium_serum_2823_3 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_protein_urine_5804_0 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Protein [Mass/volume] in Urine by Test strip (LOINC: 5804-0) measurement" ;
+    chr:hasCode <https://loinc.org/5804-0> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_protein_urine_5804_0 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_resp_rate_9279_1 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Respiratory rate (LOINC: 9279-1) measurement" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_resp_rate_9279_1 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_sodium_blood_2947_0 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Blood (LOINC: 2947-0) measurement" ;
+    chr:hasCode <https://loinc.org/2947-0> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_sodium_blood_2947_0 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_sodium_serum_2951_2 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Serum or Plasma (LOINC: 2951-2) measurement" ;
+    chr:hasCode <https://loinc.org/2951-2> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_sodium_serum_2951_2 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_spec_gravity_urine_5811_5 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Specific gravity of Urine by Test strip (LOINC: 5811-5) measurement" ;
+    chr:hasCode <https://loinc.org/5811-5> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_spec_gravity_urine_5811_5 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_triglyceride_serum_2571_8 a chr:MedicalProcedure ;
+    rdfs:label "Triglyceride [Mass/volume] in Serum or Plasma (LOINC: 2571-8) measurement" ;
+    chr:hasCode <https://loinc.org/2571-8> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_urea_nitrogen_blood_6299_2 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood (LOINC: 6299-2) measurement" ;
+    chr:hasCode <https://loinc.org/6299-2> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_urea_nitrogen_blood_6299_2 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_urea_nitrogen_serum_3094_0 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Serum or Plasma (LOINC: 3094-0) measurement" ;
+    chr:hasCode <https://loinc.org/3094-0> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_urea_nitrogen_serum_3094_0 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:proc_weight_29463_7 a chr:MedicalProcedure,
+        ns1:MeasurementProcess ;
+    rdfs:label "Body Weight (LOINC: 29463-7) measurement" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    chr:hasStatus ex:status_completed ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T15:47:23+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasResult ex:meas_weight_29463_7 ;
+    ns1:hasStatus ex:status_completed .
+
+ex:unit_Ratio a chr:Unit ;
+    rdfs:label "Ratio" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Ratio> .
+
+ex:unit_Score a chr:Unit ;
+    rdfs:label "Score" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Score> .
+
+ex:unit_Volume_Rate_Area a chr:Unit ;
+    rdfs:label "Volume Rate/Area" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/VolumerateperArea> .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:evaluation_20210317T162410_1 a chr:MedicalProcedure,
+        ns1:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-03-17T16:24:10+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Domenic627_Blick895 ;
+    ns1:hasCondition ex:Not_in_labor_force_finding ;
+    ns1:hasObservation ex:diagnostic_statement_Not_in_labor_force_741062008 ;
+    ns1:hasPatient ex:Arlen68_Olson653 ;
+    ns1:hasPerformedDate "2021-03-17T16:24:10+01:00"^^xsd:dateTime ;
+    ns1:hasPerformer ex:Dr_Domenic627_Blick895 .
+
+ex:unit_Moles_volume a chr:Unit ;
+    rdfs:label "Moles/volume" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Molespervolume> .
+
+ex:unit_Mass_volume a chr:Unit ;
+    rdfs:label "Mass/volume" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Masspervolume> .
+
+ex:status_completed a chr:ProcessStatus,
+        ns1:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Arlen68_Olson653 a chr:Person ;
+    rdfs:label "Arlen68 Olson653" .
+
+ex:Dr_Domenic627_Blick895 a chr:Person ;
+    rdfs:label "Dr. Domenic627 Blick895" .
+

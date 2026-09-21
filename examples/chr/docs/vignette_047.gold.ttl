@@ -1,0 +1,401 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/clinical/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:visit_0c9a1821_7628_e5ae_0112_018fc1fdeeda a chr:ClinicalVisit ;
+    chr:hasCareProvider ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasCareUnit ex:unit_github_com_syntheti ;
+    chr:hasDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasProcedure ex:evalProc_0c9a1821_7628_e5ae_e1db_7b3a4b6dca1d,
+        ex:evalProc_0c9a1821_7628_e5ae_f480_726e857482cc,
+        ex:measProc_0c9a1821_7628_e5ae_039a_3400232333aa,
+        ex:measProc_0c9a1821_7628_e5ae_0470_a0fac8218ede,
+        ex:measProc_0c9a1821_7628_e5ae_0fa9_a6d2976d99dd,
+        ex:measProc_0c9a1821_7628_e5ae_147d_458ffc7cf6a7,
+        ex:measProc_0c9a1821_7628_e5ae_14c7_b2802cebe803,
+        ex:measProc_0c9a1821_7628_e5ae_2430_7fbc332534cd,
+        ex:measProc_0c9a1821_7628_e5ae_6101_e93e13865275,
+        ex:measProc_0c9a1821_7628_e5ae_6a77_5eb330a2db1e,
+        ex:measProc_0c9a1821_7628_e5ae_7165_d471b4a8076e,
+        ex:measProc_0c9a1821_7628_e5ae_7ec6_1b112f6ec246,
+        ex:measProc_0c9a1821_7628_e5ae_a6ee_2ecfaf241fef,
+        ex:measProc_0c9a1821_7628_e5ae_bb14_0882c2e8b07a,
+        ex:measProc_0c9a1821_7628_e5ae_c3cb_fb2422b8d40e,
+        ex:measProc_0c9a1821_7628_e5ae_cac4_69c92b48c055,
+        ex:measProc_0c9a1821_7628_e5ae_dda4_22e4e669f4f3,
+        ex:measProc_0c9a1821_7628_e5ae_e095_2d683106b5e6,
+        ex:measProc_0c9a1821_7628_e5ae_e941_14e0d2c5b39b,
+        ex:measProc_0c9a1821_7628_e5ae_ea6e_732094edad3c,
+        ex:measProc_0c9a1821_7628_e5ae_ec46_3171a0173c45,
+        ex:measProc_0c9a1821_7628_e5ae_f125_604aab7aa6f3 .
+
+ex:cond_0c9a1821_7628_e5ae_e1db_7b3a4b6dca1d a chr:ClinicalCondition ;
+    rdfs:label "Part-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160904001> ;
+    chr:hasRecordDate "2025-05-25T12:29:34+02:00"^^xsd:dateTime .
+
+ex:cond_0c9a1821_7628_e5ae_f480_726e857482cc a chr:ClinicalCondition ;
+    rdfs:label "Social isolation (finding)" ;
+    chr:hasCode <http://snomed.info/id/422650009> ;
+    chr:hasRecordDate "2025-05-25T12:29:34+02:00"^^xsd:dateTime .
+
+ex:diag_0c9a1821_7628_e5ae_e1db_7b3a4b6dca1d a chr:DiagnosticStatement ;
+    rdfs:label "Part-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160904001> .
+
+ex:diag_0c9a1821_7628_e5ae_f480_726e857482cc a chr:DiagnosticStatement ;
+    rdfs:label "Social isolation (finding)" ;
+    chr:hasCode <http://snomed.info/id/422650009> .
+
+ex:evalProc_0c9a1821_7628_e5ae_e1db_7b3a4b6dca1d a chr:EvaluationProcess ;
+    chr:hasCondition ex:cond_0c9a1821_7628_e5ae_e1db_7b3a4b6dca1d ;
+    chr:hasObservation ex:diag_0c9a1821_7628_e5ae_e1db_7b3a4b6dca1d ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 .
+
+ex:evalProc_0c9a1821_7628_e5ae_f480_726e857482cc a chr:EvaluationProcess ;
+    chr:hasCondition ex:cond_0c9a1821_7628_e5ae_f480_726e857482cc ;
+    chr:hasObservation ex:diag_0c9a1821_7628_e5ae_f480_726e857482cc ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 .
+
+ex:measProc_0c9a1821_7628_e5ae_039a_3400232333aa a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_039a_3400232333aa ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_0470_a0fac8218ede a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_0470_a0fac8218ede ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_0fa9_a6d2976d99dd a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_0fa9_a6d2976d99dd ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_147d_458ffc7cf6a7 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_147d_458ffc7cf6a7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_14c7_b2802cebe803 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_14c7_b2802cebe803 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_2430_7fbc332534cd a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_2430_7fbc332534cd ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_6101_e93e13865275 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T13:01:32+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_6101_e93e13865275 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_6a77_5eb330a2db1e a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_6a77_5eb330a2db1e ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_7165_d471b4a8076e a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_7165_d471b4a8076e ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_7ec6_1b112f6ec246 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_7ec6_1b112f6ec246 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_a6ee_2ecfaf241fef a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_a6ee_2ecfaf241fef ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_bb14_0882c2e8b07a a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_bb14_0882c2e8b07a ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_c3cb_fb2422b8d40e a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_c3cb_fb2422b8d40e ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_cac4_69c92b48c055 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_cac4_69c92b48c055 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_dda4_22e4e669f4f3 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_dda4_22e4e669f4f3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_e095_2d683106b5e6 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T13:36:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_e095_2d683106b5e6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_e941_14e0d2c5b39b a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_e941_14e0d2c5b39b ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_ea6e_732094edad3c a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_ea6e_732094edad3c ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_ec46_3171a0173c45 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_ec46_3171a0173c45 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_f125_604aab7aa6f3 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_f125_604aab7aa6f3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:meas_0c9a1821_7628_e5ae_039a_3400232333aa a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "164.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:meas_0c9a1821_7628_e5ae_0470_a0fac8218ede a chr:Measurement ;
+    rdfs:label "Platelet [Entitic mean volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/32623-1> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "10.746"^^xsd:float ;
+    chr:hasUnit ex:unit_fL .
+
+ex:meas_0c9a1821_7628_e5ae_0fa9_a6d2976d99dd a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:meas_0c9a1821_7628_e5ae_147d_458ffc7cf6a7 a chr:Measurement ;
+    rdfs:label "Platelet distribution width [Entitic volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/32207-3> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "483.05"^^xsd:float ;
+    chr:hasUnit ex:unit_fL .
+
+ex:meas_0c9a1821_7628_e5ae_14c7_b2802cebe803 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "70.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min .
+
+ex:meas_0c9a1821_7628_e5ae_2430_7fbc332534cd a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "14.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min .
+
+ex:meas_0c9a1821_7628_e5ae_6101_e93e13865275 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2025-05-25T13:01:32+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:meas_0c9a1821_7628_e5ae_6a77_5eb330a2db1e a chr:Measurement ;
+    rdfs:label "Hematocrit [Volume Fraction] of Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/4544-3> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "36.652"^^xsd:float ;
+    chr:hasUnit ex:unit_ .
+
+ex:meas_0c9a1821_7628_e5ae_7165_d471b4a8076e a chr:Measurement ;
+    rdfs:label "Erythrocytes [#/volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/789-8> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.4587"^^xsd:float ;
+    chr:hasUnit ex:unit_10_6_uL .
+
+ex:meas_0c9a1821_7628_e5ae_7ec6_1b112f6ec246 a chr:Measurement ;
+    rdfs:label "Erythrocyte [DistWidth] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/788-0> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "42.265"^^xsd:float ;
+    chr:hasUnit ex:unit_fL .
+
+ex:meas_0c9a1821_7628_e5ae_a6ee_2ecfaf241fef a chr:Measurement ;
+    rdfs:label "Leukocytes [#/volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/6690-2> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.556"^^xsd:float ;
+    chr:hasUnit ex:unit_10_3_uL .
+
+ex:meas_0c9a1821_7628_e5ae_bb14_0882c2e8b07a a chr:Measurement ;
+    rdfs:label "FEV1/FVC" ;
+    chr:hasCode <https://loinc.org/19926-5> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "35.308"^^xsd:float ;
+    chr:hasUnit ex:unit_ .
+
+ex:meas_0c9a1821_7628_e5ae_c3cb_fb2422b8d40e a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "30.26"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_m2 .
+
+ex:meas_0c9a1821_7628_e5ae_cac4_69c92b48c055 a chr:Measurement ;
+    rdfs:label "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count" ;
+    chr:hasCode <https://loinc.org/786-4> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "35.55"^^xsd:float ;
+    chr:hasUnit ex:unit_g_dL .
+
+ex:meas_0c9a1821_7628_e5ae_dda4_22e4e669f4f3 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "81.4"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:meas_0c9a1821_7628_e5ae_e095_2d683106b5e6 a chr:Measurement ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasCode <https://loinc.org/82667-7> ;
+    chr:hasMeasuredDate "2025-05-25T13:36:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:meas_0c9a1821_7628_e5ae_e941_14e0d2c5b39b a chr:Measurement ;
+    rdfs:label "MCH [Entitic mass] by Automated count" ;
+    chr:hasCode <https://loinc.org/785-6> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.464"^^xsd:float ;
+    chr:hasUnit ex:unit_pg .
+
+ex:meas_0c9a1821_7628_e5ae_ea6e_732094edad3c a chr:Measurement ;
+    rdfs:label "MCV [Entitic mean volume] in Red Blood Cells by Automated count" ;
+    chr:hasCode <https://loinc.org/787-2> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "81.548"^^xsd:float ;
+    chr:hasUnit ex:unit_fL .
+
+ex:meas_0c9a1821_7628_e5ae_ec46_3171a0173c45 a chr:Measurement ;
+    rdfs:label "Hemoglobin [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/718-7> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "16.739"^^xsd:float ;
+    chr:hasUnit ex:unit_g_dL .
+
+ex:meas_0c9a1821_7628_e5ae_f125_604aab7aa6f3 a chr:Measurement ;
+    rdfs:label "Platelets [#/volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/777-3> ;
+    chr:hasMeasuredDate "2025-05-25T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "193.27"^^xsd:float ;
+    chr:hasUnit ex:unit_10_3_uL .
+
+ex:unit_10_6_uL a chr:Unit ;
+    rdfs:label "10*6/uL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/10exp6peruL> .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_github_com_syntheti a chr:CareUnit ;
+    rdfs:label "LOWELL FAMILY MEDICAL CARE PC" .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kg_m2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_pg a chr:Unit ;
+    rdfs:label "pg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/pg> .
+
+ex:unit_ a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_10_3_uL a chr:Unit ;
+    rdfs:label "10*3/uL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/10exp3peruL> .
+
+ex:unit_g_dL a chr:Unit ;
+    rdfs:label "g/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/gperdL> .
+
+ex:unit_min a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_score a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:unit_fL a chr:Unit ;
+    rdfs:label "fL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/fL> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d a chr:Person ;
+    rdfs:label "Ms. Cory323 Frank378 Heller342" .
+
+ex:provider_hl7_org_fhir_sid_us_npi_99999 a chr:Person ;
+    rdfs:label "Dr. Hank686 Schneider199" .
+

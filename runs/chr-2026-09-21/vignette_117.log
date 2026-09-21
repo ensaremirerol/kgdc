@@ -1,0 +1,58 @@
+[   0.1s] segmenting (orchestrator) ...
+[  98.5s] 37 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[MeasurementProcess,Measurement,Unit,ProcessStatus], s4[MeasurementProcess,Measurement,Unit,ProcessStatus], s5[MeasurementProcess,Measurement,Unit,ProcessStatus], s6[MeasurementProcess,Measurement,Unit,ProcessStatus], s7[MeasurementProcess,Measurement,Unit,ProcessStatus], s8[MeasurementProcess,Measurement,Unit,ProcessStatus], s9[MeasurementProcess,Measurement,Unit,ProcessStatus], s10[MeasurementProcess,Measurement,Unit,ProcessStatus], s11[MeasurementProcess,Measurement,Unit,ProcessStatus], s12[MeasurementProcess,Measurement,Unit,ProcessStatus], s13[MeasurementProcess,Measurement,Unit,ProcessStatus], s14[MeasurementProcess,Measurement,Unit,ProcessStatus], s15[MeasurementProcess,Measurement,Unit,ProcessStatus], s16[MeasurementProcess,Measurement,Unit,ProcessStatus], s17[MeasurementProcess,Measurement,Unit,ProcessStatus], s18[MeasurementProcess,Measurement,Unit,ProcessStatus], s19[MeasurementProcess,Measurement,Unit,ProcessStatus], s20[MeasurementProcess,Measurement,Unit,ProcessStatus], s21[MeasurementProcess,Measurement,Unit,ProcessStatus], s22[MeasurementProcess,Measurement,Unit,ProcessStatus], s23[MeasurementProcess,Measurement,Unit,ProcessStatus], s24[MeasurementProcess,Measurement,Unit,ProcessStatus], s25[MeasurementProcess,Measurement,Unit,ProcessStatus], s26[MeasurementProcess,Measurement,Unit,ProcessStatus], s27[MeasurementProcess,Measurement,Unit,ProcessStatus], s28[MeasurementProcess,Measurement,Unit,ProcessStatus], s29[MeasurementProcess,Measurement,Unit,ProcessStatus], s30[MeasurementProcess,Measurement,Unit,ProcessStatus], s31[MeasurementProcess,Measurement,Unit,ProcessStatus], s32[MeasurementProcess,Measurement,Unit,ProcessStatus], s33[MeasurementProcess,Measurement,Unit,ProcessStatus], s34[MeasurementProcess,Measurement,Unit,ProcessStatus], s35[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s36[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s37[CarePlan]
+[  98.5s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, ProcessStatus, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  98.5s] level 0: 6 agent(s), 0 known entities
+[  98.5s]   CareUnit: extracting (223 chars, 1 classes in view)
+[  98.5s]   ClinicalCondition: extracting (468 chars, 3 classes in view)
+[  98.5s]   DiagnosticStatement: extracting (468 chars, 1 classes in view)
+[  98.5s]   Person: extracting (223 chars, 1 classes in view)
+[ 104.0s]   CareUnit: cycle 0 -> conforms
+[ 104.0s]   ProcessStatus: extracting (8308 chars, 1 classes in view)
+[ 105.9s]   Person: cycle 0 -> conforms
+[ 105.9s]   Unit: extracting (8308 chars, 1 classes in view)
+[ 107.4s]   DiagnosticStatement: cycle 0 -> conforms
+[ 108.6s]   ClinicalCondition: cycle 0 -> conforms
+[ 109.5s]   ProcessStatus: cycle 0 -> conforms
+https://biomedit.ch/rdf/sphn-resource/ucum/cblMorse Fall Scalecbr does not look like a valid URI, trying to serialize this will break.
+[ 121.1s]   Unit: cycle 0 -> 8 violation(s)
+[ 121.1s]   Unit: fixing ...
+[ 138.7s]   Unit: cycle 1 -> 7 violation(s)
+[ 138.7s]   Unit: fixing ...
+[ 157.6s]   Unit: cycle 2 -> 7 violation(s)
+[ 157.6s]   Unit: stopping (fix budget spent)
+[ 157.6s]   Unit: 7 unresolved (honest gaps)
+[ 157.7s] level 1: 2 agent(s), 23 known entities
+[ 157.7s]   EvaluationProcess: extracting (468 chars, 7 classes in view)
+[ 157.7s]   Measurement: extracting (8308 chars, 2 classes in view)
+[ 173.0s]   EvaluationProcess: cycle 0 -> 7 violation(s)
+[ 173.0s]   EvaluationProcess: fixing ...
+[ 191.8s]   EvaluationProcess: cycle 1 -> 7 violation(s)
+[ 191.8s]   EvaluationProcess: stopping (plateau)
+https://biomedit.ch/rdf/sphn-resource/ucum/cblMorse Fall Scalecbr does not look like a valid URI, trying to serialize this will break.
+[ 251.5s]   Measurement: cycle 0 -> 8 violation(s)
+[ 251.5s]   Measurement: fixing ...
+[ 345.0s]   Measurement: cycle 1 -> 7 violation(s)
+[ 345.0s]   Measurement: fixing ...
+[ 439.3s]   Measurement: cycle 2 -> conforms
+[ 439.3s] level 2: 1 agent(s), 58 known entities
+[ 439.3s]   MeasurementProcess: extracting (8308 chars, 6 classes in view)
+[ 629.7s]   MeasurementProcess: cycle 0 -> conforms
+[ 629.7s] level 3: 2 agent(s), 126 known entities
+[ 629.7s]   CarePlan: extracting (9196 chars, 4 classes in view)
+[ 629.7s]   ClinicalVisit: extracting (9196 chars, 5 classes in view)
+[ 637.6s]   CarePlan: cycle 0 -> 1 violation(s)
+[ 637.6s]   CarePlan: fixing ...
+[ 644.1s]   CarePlan: cycle 1 -> conforms
+[ 740.9s]   ClinicalVisit: cycle 0 -> conforms
+[ 741.2s] merging (orchestrator): 0 violation(s), 7 unresolved, 0 unparsed
+[ 918.8s] final: 1 violation(s)
+conforms=False segments=11 llm_calls=19 unresolved=0
+  orchestrator   2 calls    27993 in   15363 out  cost n/a  gemma4-g1
+  total         19 calls   135645 in   53902 out  cost n/a  
+  worker        17 calls   107652 in   38539 out  cost n/a  gemma4-g1
+Constraint Violation in TurtleSyntax:
+	Severity: sh:Violation
+	Message: not valid Turtle: Quote expected in string at ^ in r:hasPerformedDate "^2025-10-17
+	Offending line: 
+	Hint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs.
+exit=1

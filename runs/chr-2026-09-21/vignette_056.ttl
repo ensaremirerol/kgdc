@@ -1,0 +1,415 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_followup a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:EvaluationProcess_20251025T131956 .
+
+ex:ClinicalVisit_20251025T100115 a chr:ClinicalVisit ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCareProvider ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasCareUnit ex:COMMUNITY_HEALTH_PROGRAMS_INC ;
+    chr:hasDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasProcedure ex:EvaluationProcess_20251025T100115,
+        ex:EvaluationProcess_20251025T131956,
+        ex:MeasurementProcess_BMI_20251025T100115,
+        ex:MeasurementProcess_BodyHeight_20251025T100115,
+        ex:MeasurementProcess_BodyWeight_20251025T100115,
+        ex:MeasurementProcess_DAST10_20251025T131956,
+        ex:MeasurementProcess_ErythrocyteDistWidth_20251025T100115,
+        ex:MeasurementProcess_Erythrocytes_20251025T100115,
+        ex:MeasurementProcess_GAD7_20251025T112340,
+        ex:MeasurementProcess_HARK_20251025T120259,
+        ex:MeasurementProcess_Heartrate_20251025T100115,
+        ex:MeasurementProcess_Hematocrit_20251025T100115,
+        ex:MeasurementProcess_Hemoglobin_20251025T100115,
+        ex:MeasurementProcess_Leukocytes_20251025T100115,
+        ex:MeasurementProcess_MCHC_20251025T100115,
+        ex:MeasurementProcess_MCH_20251025T100115,
+        ex:MeasurementProcess_MCV_20251025T100115,
+        ex:MeasurementProcess_PHQ2_20251025T124224,
+        ex:MeasurementProcess_Painseverity_20251025T100115,
+        ex:MeasurementProcess_PlateletVolume_20251025T100115,
+        ex:MeasurementProcess_Platelets_20251025T100115,
+        ex:MeasurementProcess_Respiratoryrate_20251025T100115 .
+
+ex:COMMUNITY_HEALTH_PROGRAMS_INC a chr:CareUnit ;
+    rdfs:label "COMMUNITY HEALTH PROGRAMS INC" .
+
+ex:EvaluationProcess_20251025T100115 a chr:MedicalProcedure ;
+    rdfs:label "Evaluation" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasStatus ex:status_completed .
+
+ex:EvaluationProcess_20251025T131956 a chr:MedicalProcedure ;
+    rdfs:label "Evaluation" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T13:19:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MeasurementProcess_BMI_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_BMI_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_BMI_20251025T100115 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "22.02"^^xsd:float ;
+    chr:hasUnit ex:unit_kgperm2 .
+
+ex:MeasurementProcess_BodyHeight_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_BodyHeight_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_BodyHeight_20251025T100115 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "177.4"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:MeasurementProcess_BodyWeight_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_BodyWeight_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_BodyWeight_20251025T100115 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "69.3"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:MeasurementProcess_DAST10_20251025T131956 a chr:MeasurementProcess ;
+    rdfs:label "DAST-10 measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T13:19:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_TotalScoreDAST10_20251025T131956 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_TotalScoreDAST10_20251025T131956 a chr:Measurement ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasCode <https://loinc.org/82667-7> ;
+    chr:hasMeasuredDate "2025-10-25T13:19:56+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:MeasurementProcess_ErythrocyteDistWidth_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Erythrocyte [DistWidth] measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_ErythrocyteDistWidth_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_ErythrocyteDistWidth_20251025T100115 a chr:Measurement ;
+    rdfs:label "Erythrocyte [DistWidth] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/788-0> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "41.776"^^xsd:float ;
+    chr:hasUnit ex:unit_fL .
+
+ex:MeasurementProcess_Erythrocytes_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Erythrocytes measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Erythrocytes_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_Erythrocytes_20251025T100115 a chr:Measurement ;
+    rdfs:label "Erythrocytes [#/volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/789-8> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4008.5"^^xsd:float ;
+    chr:hasUnit ex:unit_per_uL .
+
+ex:MeasurementProcess_GAD7_20251025T112340 a chr:MeasurementProcess ;
+    rdfs:label "GAD-7 measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T11:23:40+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_GAD7_20251025T112340 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_GAD7_20251025T112340 a chr:Measurement ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasMeasuredDate "2025-10-25T11:23:40+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:MeasurementProcess_HARK_20251025T120259 a chr:MeasurementProcess ;
+    rdfs:label "HARK measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T12:02:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_TotalScoreHARK_20251025T120259 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_TotalScoreHARK_20251025T120259 a chr:Measurement ;
+    rdfs:label "Total score [HARK]" ;
+    chr:hasCode <https://loinc.org/76504-0> ;
+    chr:hasMeasuredDate "2025-10-25T12:02:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:MeasurementProcess_Heartrate_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Heartrate_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_Heartrate_20251025T100115 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "72.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:MeasurementProcess_Hematocrit_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Hematocrit measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Hematocrit_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_Hematocrit_20251025T100115 a chr:Measurement ;
+    rdfs:label "Hematocrit [Volume Fraction] of Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/4544-3> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "45.3"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:MeasurementProcess_Hemoglobin_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Hemoglobin_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_Hemoglobin_20251025T100115 a chr:Measurement ;
+    rdfs:label "Hemoglobin [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/718-7> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "16.569"^^xsd:float ;
+    chr:hasUnit ex:unit_gperdL .
+
+ex:MeasurementProcess_Leukocytes_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Leukocytes measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Leukocytes_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_Leukocytes_20251025T100115 a chr:Measurement ;
+    rdfs:label "Leukocytes [#/volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/6690-2> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6858.4"^^xsd:float ;
+    chr:hasUnit ex:unit_per_uL .
+
+ex:MeasurementProcess_MCHC_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "MCHC measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_MCHC_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_MCHC_20251025T100115 a chr:Measurement ;
+    rdfs:label "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count" ;
+    chr:hasCode <https://loinc.org/786-4> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "33.04"^^xsd:float ;
+    chr:hasUnit ex:unit_gperdL .
+
+ex:MeasurementProcess_MCH_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "MCH measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_MCH_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_MCH_20251025T100115 a chr:Measurement ;
+    rdfs:label "MCH [Entitic mass] by Automated count" ;
+    chr:hasCode <https://loinc.org/785-6> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "32.865"^^xsd:float ;
+    chr:hasUnit ex:unit_pg .
+
+ex:MeasurementProcess_MCV_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "MCV measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_MCV_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_MCV_20251025T100115 a chr:Measurement ;
+    rdfs:label "MCV [Entitic mean volume] in Red Blood Cells by Automated count" ;
+    chr:hasCode <https://loinc.org/787-2> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "84.47"^^xsd:float ;
+    chr:hasUnit ex:unit_fL .
+
+ex:MeasurementProcess_PHQ2_20251025T124224 a chr:MeasurementProcess ;
+    rdfs:label "PHQ-2 measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T12:42:24+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_PHQ2_20251025T124224 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_PHQ2_20251025T124224 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2025-10-25T12:42:24+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:MeasurementProcess_Painseverity_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Painseverity_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_Painseverity_20251025T100115 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:MeasurementProcess_PlateletVolume_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Platelet [Entitic mean volume] measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_PlateletMeanVolume_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_PlateletMeanVolume_20251025T100115 a chr:Measurement ;
+    rdfs:label "Platelet [Entitic mean volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/32623-1> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "9.4204"^^xsd:float ;
+    chr:hasUnit ex:unit_fL .
+
+ex:MeasurementProcess_Platelets_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Platelets measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Platelets_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_Platelets_20251025T100115 a chr:Measurement ;
+    rdfs:label "Platelets [#/volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/777-3> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "188.09"^^xsd:float ;
+    chr:hasUnit ex:unit_per_uL .
+
+ex:MeasurementProcess_Respiratoryrate_20251025T100115 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement process" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Respiratoryrate_20251025T100115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_Respiratoryrate_20251025T100115 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "14.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:Medication_review_due_situation a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime .
+
+ex:Gingivitis_disorder a chr:ClinicalCondition ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> ;
+    chr:hasRecordDate "2025-10-25T13:19:56+02:00"^^xsd:dateTime .
+
+ex:person_Daren950_Ed239_Strosin214 a chr:Person ;
+    rdfs:label "Daren950 Ed239 Strosin214" .
+
+ex:person_Dr_Ping698_Weissnat378 a chr:Person ;
+    rdfs:label "Dr. Ping698 Weissnat378" .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kgperm2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_pg a chr:Unit ;
+    rdfs:label "pg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/pg> .
+
+ex:unit_gperdL a chr:Unit ;
+    rdfs:label "g/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/gperdL> .
+
+ex:unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_per_uL a chr:Unit ;
+    rdfs:label "/uL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/peruL> .
+
+ex:unit_fL a chr:Unit ;
+    rdfs:label "fL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/fL> .
+
+ex:unit_score a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .

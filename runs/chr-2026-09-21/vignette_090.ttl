@@ -1,0 +1,231 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:care_plan_follow_up_monitoring a chr:CarePlan ;
+    rdfs:label "care plan" ;
+    chr:hasMedicalProcedure ex:evaluation_20230830T163002 .
+
+ex:visit_20230830T163002 a chr:ClinicalVisit ;
+    rdfs:label "Encounter for check up (procedure)" ;
+    chr:hasCareProvider ex:Dr_Clara183_Reynolds644 ;
+    chr:hasCareUnit ex:BAYSTATE_WING_HOSPITAL_CORPORATION ;
+    chr:hasDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Hallie315_Tasha327_Grant908 ;
+    chr:hasProcedure ex:evaluation_20230830T163002,
+        ex:process_29463_7,
+        ex:process_39156_5,
+        ex:process_59576_9,
+        ex:process_72514_3,
+        ex:process_77606_2,
+        ex:process_8289_1,
+        ex:process_8302_2,
+        ex:process_8867_4,
+        ex:process_9279_1,
+        ex:process_9843_4 .
+
+ex:BAYSTATE_WING_HOSPITAL_CORPORATION a chr:CareUnit ;
+    rdfs:label "BAYSTATE WING HOSPITAL CORPORATION" .
+
+ex:Body_Height_8302_2 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "87.6"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:Body_Weight_29463_7 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "14.5"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:Body_mass_index_BMI_Percentile_59576_9 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Percentile] Per age and sex" ;
+    chr:hasCode <https://loinc.org/59576-9> ;
+    chr:hasMeasuredDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "95.384"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:Body_mass_index_BMI_Ratio_39156_5 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "18.95"^^xsd:float ;
+    chr:hasUnit ex:unit_kgm2 .
+
+ex:Head_Occipital_frontal_circumference_9843_4 a chr:Measurement ;
+    rdfs:label "Head Occipital-frontal circumference" ;
+    chr:hasCode <https://loinc.org/9843-4> ;
+    chr:hasMeasuredDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "48.06"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:Head_Occipital_frontal_circumference_Percentile_8289_1 a chr:Measurement ;
+    rdfs:label "Head Occipital-frontal circumference Percentile" ;
+    chr:hasCode <https://loinc.org/8289-1> ;
+    chr:hasMeasuredDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "57.73"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:Heart_rate_8867_4 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "98.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:Medication_review_due_situation a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime .
+
+ex:Pain_severity_72514_3 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:Respiratory_rate_9279_1 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "15.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:Weight_for_length_77606_2 a chr:Measurement ;
+    rdfs:label "Weight-for-length Per age and sex" ;
+    chr:hasCode <https://loinc.org/77606-2> ;
+    chr:hasMeasuredDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "96.345"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:process_29463_7 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement process" ;
+    chr:hasPatient ex:Hallie315_Tasha327_Grant908 ;
+    chr:hasPerformedDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Clara183_Reynolds644 ;
+    chr:hasResult ex:Body_Weight_29463_7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_39156_5 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement process" ;
+    chr:hasPatient ex:Hallie315_Tasha327_Grant908 ;
+    chr:hasPerformedDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Clara183_Reynolds644 ;
+    chr:hasResult ex:Body_mass_index_BMI_Ratio_39156_5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_59576_9 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Percentile] Per age and sex measurement process" ;
+    chr:hasPatient ex:Hallie315_Tasha327_Grant908 ;
+    chr:hasPerformedDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Clara183_Reynolds644 ;
+    chr:hasResult ex:Body_mass_index_BMI_Percentile_59576_9 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_72514_3 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement process" ;
+    chr:hasPatient ex:Hallie315_Tasha327_Grant908 ;
+    chr:hasPerformedDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Clara183_Reynolds644 ;
+    chr:hasResult ex:Pain_severity_72514_3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_77606_2 a chr:MeasurementProcess ;
+    rdfs:label "Weight-for-length Per age and sex measurement process" ;
+    chr:hasPatient ex:Hallie315_Tasha327_Grant908 ;
+    chr:hasPerformedDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Clara183_Reynolds644 ;
+    chr:hasResult ex:Weight_for_length_77606_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_8289_1 a chr:MeasurementProcess ;
+    rdfs:label "Head Occipital-frontal circumference Percentile measurement process" ;
+    chr:hasPatient ex:Hallie315_Tasha327_Grant908 ;
+    chr:hasPerformedDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Clara183_Reynolds644 ;
+    chr:hasResult ex:Head_Occipital_frontal_circumference_Percentile_8289_1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_8302_2 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement process" ;
+    chr:hasPatient ex:Hallie315_Tasha327_Grant908 ;
+    chr:hasPerformedDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Clara183_Reynolds644 ;
+    chr:hasResult ex:Body_Height_8302_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_8867_4 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement process" ;
+    chr:hasPatient ex:Hallie315_Tasha327_Grant908 ;
+    chr:hasPerformedDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Clara183_Reynolds644 ;
+    chr:hasResult ex:Heart_rate_8867_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_9279_1 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement process" ;
+    chr:hasPatient ex:Hallie315_Tasha327_Grant908 ;
+    chr:hasPerformedDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Clara183_Reynolds644 ;
+    chr:hasResult ex:Respiratory_rate_9279_1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_9843_4 a chr:MeasurementProcess ;
+    rdfs:label "Head Occipital-frontal circumference measurement process" ;
+    chr:hasPatient ex:Hallie315_Tasha327_Grant908 ;
+    chr:hasPerformedDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Clara183_Reynolds644 ;
+    chr:hasResult ex:Head_Occipital_frontal_circumference_9843_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kgm2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_score a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:evaluation_20230830T163002 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Medication_review_due_situation ;
+    chr:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;
+    chr:hasPatient ex:Hallie315_Tasha327_Grant908 ;
+    chr:hasPerformedDate "2023-08-30T16:30:02+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Clara183_Reynolds644 .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Dr_Clara183_Reynolds644 a chr:Person ;
+    rdfs:label "Dr. Clara183 Reynolds644" .
+
+ex:Hallie315_Tasha327_Grant908 a chr:Person ;
+    rdfs:label "Hallie315 Tasha327 Grant908" .

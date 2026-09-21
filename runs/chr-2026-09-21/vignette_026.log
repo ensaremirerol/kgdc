@@ -1,0 +1,41 @@
+[   0.1s] segmenting (orchestrator) ...
+[  34.3s] 13 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit], s3[MeasurementProcess,Measurement,Unit], s4[MeasurementProcess,Measurement,Unit], s5[MeasurementProcess,Measurement,Unit], s6[MeasurementProcess,Measurement,Unit], s7[MeasurementProcess,Measurement,Unit], s8[MeasurementProcess,Measurement,Unit], s9[MeasurementProcess,Measurement,Unit], s10[MeasurementProcess,Measurement,Unit], s11[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s12[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s13[CarePlan]
+[  34.3s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  34.3s] level 0: 5 agent(s), 0 known entities
+[  34.3s]   CareUnit: extracting (250 chars, 1 classes in view)
+[  34.3s]   ClinicalCondition: extracting (470 chars, 3 classes in view)
+[  34.3s]   DiagnosticStatement: extracting (470 chars, 1 classes in view)
+[  34.3s]   Person: extracting (250 chars, 1 classes in view)
+[  38.9s]   CareUnit: cycle 0 -> conforms
+[  38.9s]   Unit: extracting (2185 chars, 1 classes in view)
+[  40.1s]   Person: cycle 0 -> conforms
+[  41.1s]   DiagnosticStatement: cycle 0 -> conforms
+[  42.1s]   ClinicalCondition: cycle 0 -> conforms
+[  47.7s]   Unit: cycle 0 -> conforms
+[  47.7s] level 1: 2 agent(s), 13 known entities
+[  47.7s]   EvaluationProcess: extracting (470 chars, 7 classes in view)
+[  47.7s]   Measurement: extracting (2185 chars, 2 classes in view)
+[  58.4s]   EvaluationProcess: cycle 0 -> conforms
+[  72.6s]   Measurement: cycle 0 -> conforms
+[  72.6s] level 2: 1 agent(s), 24 known entities
+[  72.6s]   MeasurementProcess: extracting (2185 chars, 6 classes in view)
+[ 124.5s]   MeasurementProcess: cycle 0 -> conforms
+[ 124.5s] level 3: 2 agent(s), 34 known entities
+[ 124.5s]   CarePlan: extracting (3140 chars, 4 classes in view)
+[ 124.5s]   ClinicalVisit: extracting (3140 chars, 5 classes in view)
+[ 131.4s]   CarePlan: cycle 0 -> conforms
+[ 164.4s]   ClinicalVisit: cycle 0 -> conforms
+[ 164.4s] merging (orchestrator): 0 violation(s), 0 unresolved, 0 unparsed
+[ 239.3s] final: 1 violation(s)
+conforms=False segments=10 llm_calls=12 unresolved=0
+  orchestrator   2 calls    10956 in    6531 out  cost n/a  gemma4-g1
+  total         12 calls    44909 in   15713 out  cost n/a  
+  worker        10 calls    33953 in    9182 out  cost n/a  gemma4-g1
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultRangeShape
+	Focus Node: ex:measurement_RespiratoryRate_20181004T185956
+	Value Node: ex:measurement_RespiratoryRate_20181004T185956
+	Message: Object of chr:hasResult must be a chr:Measurement.
+
+exit=1

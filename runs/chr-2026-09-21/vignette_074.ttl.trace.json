@@ -1,0 +1,489 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_1 a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20000213T113554 .\n\nex:visit_20000213T113554 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" ;\n    chr:hasCareProvider ex:person_Nickolas58_Schumm995 ;\n    chr:hasCareUnit ex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE ;\n    chr:hasDate \"2000-02-13T11:35:54+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasProcedure ex:evaluation_20000213T113554,\n        ex:measurement_process_20000213T113554 .\n\nex:Acute_viral_pharyngitis_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2000-02-13T11:35:54+01:00\"^^xsd:dateTime .\n\nex:Body_temperature_8310_5 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2000-02-13T11:35:54+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.436\"^^xsd:float ;\n    chr:hasUnit ex:Cel .\n\nex:Cel a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n\nex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE a chr:CareUnit ;\n    rdfs:label \"ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" .\n\nex:diagnostic_statement_Acute_viral_pharyngitis a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .\n\nex:measurement_process_20000213T113554 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2000-02-13T11:35:54+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Nickolas58_Schumm995 ;\n    chr:hasResult ex:Body_temperature_8310_5 ;\n    chr:hasStatus ex:status_completed .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:evaluation_20000213T113554 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Acute_viral_pharyngitis_disorder ;\n    chr:hasObservation ex:diagnostic_statement_Acute_viral_pharyngitis ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2000-02-13T11:35:54+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Nickolas58_Schumm995 .\n\nex:person_Estela596_Yetta429_Grant908 a chr:Person ;\n    rdfs:label \"Estela596 Yetta429 Grant908\" .\n\nex:person_Nickolas58_Schumm995 a chr:Person ;\n    rdfs:label \"Dr. Nickolas58 Schumm995\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\n\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE a chr:CareUnit ;\n    rdfs:label \"ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" .",
+   "level": 0,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Nickolas58 Schumm995 evaluated the patient on 2000-02-13T11:35:54+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2000-02-13T11:35:54+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Acute_viral_pharyngitis_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2000-02-13T11:35:54+01:00\"^^xsd:dateTime .",
+   "level": 0,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Nickolas58 Schumm995 evaluated the patient on 2000-02-13T11:35:54+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2000-02-13T11:35:54+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_Acute_viral_pharyngitis a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .",
+   "level": 0,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\n\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Estela596_Yetta429_Grant908 a chr:Person ;\n    rdfs:label \"Estela596 Yetta429 Grant908\" .\n\nex:person_Nickolas58_Schumm995 a chr:Person ;\n    rdfs:label \"Dr. Nickolas58 Schumm995\" .",
+   "level": 0,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2000-02-13T11:35:54+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 37.436 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_body_temperature\n\tValue Node: ex:measurement_process_body_temperature\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in TurtleSyntax:\n\tSeverity: sh:Violation\n\tMessage: not valid Turtle: at line 12 of <>:\n\tOffending line: rdfs:label \"measurement process\" ;\n\tHint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in TurtleSyntax:\n\tSeverity: sh:Violation\n\tMessage: not valid Turtle: at line 12 of <>:\n\tOffending line: rdfs:label \"measurement process\" ;\n\tHint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs."
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:measurement_process_body_temperature a # UNRESOLVED: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass) \u2014 not stated in the text\n    rdfs:label \"measurement process\" ;\n    chr:hasStatus ex:status_completed .",
+   "level": 0,
+   "unparsed": true,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2000-02-13T11:35:54+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 37.436 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Cel a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .",
+   "level": 0,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Nickolas58 Schumm995 evaluated the patient on 2000-02-13T11:35:54+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2000-02-13T11:35:54+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20000213T113554 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Acute_viral_pharyngitis_disorder ;\n    chr:hasObservation ex:diagnostic_statement_Acute_viral_pharyngitis ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2000-02-13T11:35:54+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Nickolas58_Schumm995 .\n\nex:Acute_viral_pharyngitis_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2000-02-13T11:35:54+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Acute_viral_pharyngitis a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .",
+   "level": 1,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2000-02-13T11:35:54+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 37.436 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Body_temperature_8310_5 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2000-02-13T11:35:54+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.436\"^^xsd:float ;\n    chr:hasUnit ex:Cel .",
+   "level": 1,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2000-02-13T11:35:54+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 37.436 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_20000213T113554\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Body_temperature_8310_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http"
+    },
+    {
+     "cycle": 1,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_20000213T113554 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2000-02-13T11:35:54+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Nickolas58_Schumm995 ;\n    chr:hasResult ex:Body_temperature_8310_5 ;\n    chr:hasStatus ex:status_completed .\n\nex:Body_temperature_8310_5 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2000-02-13T11:35:54+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.436\"^^xsd:float ;\n    chr:hasUnit ex:Cel .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .",
+   "level": 2,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\n======================================================================\n\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)\n\nOn 2000-02-13T11:35:54+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 37.436 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Nickolas58 Schumm995 evaluated the patient on 2000-02-13T11:35:54+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2000-02-13T11:35:54+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_1 a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20000213T113554 .",
+   "level": 3,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\n======================================================================\n\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)\n\nOn 2000-02-13T11:35:54+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 37.436 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Nickolas58 Schumm995 evaluated the patient on 2000-02-13T11:35:54+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2000-02-13T11:35:54+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20000213T113554 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" ;\n    chr:hasCareProvider ex:person_Nickolas58_Schumm995 ;\n    chr:hasCareUnit ex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE ;\n    chr:hasDate \"2000-02-13T11:35:54+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908 ;\n    chr:hasProcedure ex:measurement_process_20000213T113554, ex:evaluation_20000213T113554 .",
+   "level": 3,
+   "shared_context": "Patient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2000-02-13T11:35:54+01:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 16,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 6132,
+   "completion_tokens": 1935,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 16,
+   "prompt_tokens": 44326,
+   "completion_tokens": 6314,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 14,
+   "prompt_tokens": 38194,
+   "completion_tokens": 4379,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

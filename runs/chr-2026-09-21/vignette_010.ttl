@@ -1,0 +1,66 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:care_plan_follow_up_monitoring a chr:CarePlan ;
+    rdfs:label "care plan" ;
+    chr:hasMedicalProcedure ex:evaluation_20161226T013422 .
+
+ex:measurement_process_20161226T013422 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-26T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Louis204_Hauck852 ;
+    chr:hasResult ex:measurement_20161226T013422 ;
+    chr:hasStatus ex:status_completed .
+
+ex:visit_20161226T013422 a chr:ClinicalVisit ;
+    rdfs:label "Encounter for check up (procedure)" ;
+    chr:hasCareProvider ex:Dr_Louis204_Hauck852 ;
+    chr:hasCareUnit ex:WHITTIER_REHABILTATION_HOSPITAL ;
+    chr:hasDate "2016-12-26T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasProcedure ex:evaluation_20161226T013422,
+        ex:measurement_process_20161226T013422 .
+
+ex:measurement_20161226T013422 a chr:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasMeasuredDate "2016-12-26T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.31"^^xsd:float ;
+    chr:hasUnit ex:percent .
+
+ex:WHITTIER_REHABILTATION_HOSPITAL a chr:CareUnit ;
+    rdfs:label "WHITTIER REHABILTATION HOSPITAL" .
+
+ex:condition_314529007 a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2016-12-26T01:34:22+01:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:evaluation_20161226T013422 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:condition_314529007 ;
+    chr:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-26T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Louis204_Hauck852 .
+
+ex:percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Dr_Louis204_Hauck852 a chr:Person ;
+    rdfs:label "Dr. Louis204 Hauck852" .
+
+ex:Arturo47_Lauren941_Heidenreich818 a chr:Person ;
+    rdfs:label "Arturo47 Lauren941 Heidenreich818" .

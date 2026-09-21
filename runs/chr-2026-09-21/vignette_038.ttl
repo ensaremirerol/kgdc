@@ -1,0 +1,266 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_1 a chr:CarePlan ;
+    rdfs:label "A care plan" ;
+    chr:hasMedicalProcedure ex:evaluation_Full-time_employment_20161009T123547,
+        ex:evaluation_Limited_social_contact_20161009T123547 .
+
+ex:ClinicalVisit_20161009T114405 a chr:ClinicalVisit ;
+    rdfs:label "Encounter for check up (procedure)" ;
+    chr:hasCareProvider ex:Dr_Margene509_Schamberger479 ;
+    chr:hasCareUnit ex:THE_LOWELL_GENERAL_HOSPITAL ;
+    chr:hasDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasProcedure ex:MeasurementProcess_BMI_20161009T114405,
+        ex:MeasurementProcess_BodyHeight_20161009T114405,
+        ex:MeasurementProcess_BodyWeight_20161009T114405,
+        ex:MeasurementProcess_DAST10_20161009T144726,
+        ex:MeasurementProcess_FEV1FVC_20161009T114405,
+        ex:MeasurementProcess_GAD7_20161009T130318,
+        ex:MeasurementProcess_HARK_20161009T133228,
+        ex:MeasurementProcess_HeartRate_20161009T114405,
+        ex:MeasurementProcess_PHQ2_20161009T141010,
+        ex:MeasurementProcess_PainSeverity_20161009T114405,
+        ex:MeasurementProcess_RespiratoryRate_20161009T114405,
+        ex:evaluation_Full-time_employment_20161009T123547,
+        ex:evaluation_Limited_social_contact_20161009T123547 .
+
+ex:Full_time_employment_finding a chr:ClinicalCondition ;
+    rdfs:label "Full-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160903007> ;
+    chr:hasRecordDate "2016-10-09T12:35:47+02:00"^^xsd:dateTime .
+
+ex:Limited_social_contact_finding a chr:ClinicalCondition ;
+    rdfs:label "Limited social contact (finding)" ;
+    chr:hasCode <http://snomed.info/id/423315002> ;
+    chr:hasRecordDate "2016-10-09T12:35:47+02:00"^^xsd:dateTime .
+
+ex:MeasurementProcess_BMI_20161009T114405 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement" ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;
+    chr:hasResult ex:measurement_BMI_20161009T114405 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MeasurementProcess_BodyHeight_20161009T114405 a chr:MeasurementProcess ;
+    rdfs:label "Body Height (LOINC: 8302-2) measurement" ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;
+    chr:hasResult ex:measurement_BodyHeight_20161009T114405 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MeasurementProcess_BodyWeight_20161009T114405 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight (LOINC: 29463-7) measurement" ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;
+    chr:hasResult ex:measurement_BodyWeight_20161009T114405 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MeasurementProcess_DAST10_20161009T144726 a chr:MeasurementProcess ;
+    rdfs:label "Total score [DAST-10] (LOINC: 82667-7) measurement" ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T14:47:26+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;
+    chr:hasResult ex:measurement_DAST10_20161009T144726 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MeasurementProcess_FEV1FVC_20161009T114405 a chr:MeasurementProcess ;
+    rdfs:label "FEV1/FVC (LOINC: 19926-5) measurement" ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;
+    chr:hasResult ex:measurement_FEV1FVC_20161009T114405 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MeasurementProcess_GAD7_20161009T130318 a chr:MeasurementProcess ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] (LOINC: 70274-6) measurement" ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T13:03:18+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;
+    chr:hasResult ex:measurement_GAD7_20161009T130318 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MeasurementProcess_HARK_20161009T133228 a chr:MeasurementProcess ;
+    rdfs:label "Total score [HARK] (LOINC: 76504-0) measurement" ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T13:32:28+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;
+    chr:hasResult ex:measurement_HARK_20161009T133228 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MeasurementProcess_HeartRate_20161009T114405 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate (LOINC: 8867-4) measurement" ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;
+    chr:hasResult ex:measurement_HeartRate_20161009T114405 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MeasurementProcess_PHQ2_20161009T141010 a chr:MeasurementProcess ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement" ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T14:10:10+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;
+    chr:hasResult ex:measurement_PHQ2_20161009T141010 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MeasurementProcess_PainSeverity_20161009T114405 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement" ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;
+    chr:hasResult ex:measurement_PainSeverity_20161009T114405 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MeasurementProcess_RespiratoryRate_20161009T114405 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate (LOINC: 9279-1) measurement" ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;
+    chr:hasResult ex:measurement_RespiratoryRate_20161009T114405 ;
+    chr:hasStatus ex:status_completed .
+
+ex:THE_LOWELL_GENERAL_HOSPITAL a chr:CareUnit ;
+    rdfs:label "THE LOWELL GENERAL HOSPITAL" .
+
+ex:diagnostic_statement_Full-time_employment_160903007 a chr:DiagnosticStatement ;
+    rdfs:label "Full-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160903007> .
+
+ex:diagnostic_statement_Limited_social_contact_423315002 a chr:DiagnosticStatement ;
+    rdfs:label "Limited social contact (finding)" ;
+    chr:hasCode <http://snomed.info/id/423315002> .
+
+ex:evaluation_Limited_social_contact_20161009T123547 a chr:EvaluationProcess ;
+    rdfs:label "Dr. Margene509 Schamberger479 evaluated the patient" ;
+    chr:hasCondition ex:Limited_social_contact_finding ;
+    chr:hasObservation ex:diagnostic_statement_Limited_social_contact_423315002 ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T12:35:47+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 .
+
+ex:evaluation_Full-time_employment_20161009T123547 a chr:EvaluationProcess ;
+    rdfs:label "Dr. Margene509 Schamberger479 evaluated the patient" ;
+    chr:hasCondition ex:Full_time_employment_finding ;
+    chr:hasObservation ex:diagnostic_statement_Full-time_employment_160903007 ;
+    chr:hasPatient ex:Cory323_Frank378_Heller342 ;
+    chr:hasPerformedDate "2016-10-09T12:35:47+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Margene509_Schamberger479 .
+
+ex:measurement_BMI_20161009T114405 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "30.26"^^xsd:float ;
+    chr:hasUnit ex:unit_kgperm2 .
+
+ex:measurement_BodyHeight_20161009T114405 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "164.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:measurement_BodyWeight_20161009T114405 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "81.4"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:measurement_DAST10_20161009T144726 a chr:Measurement ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasCode <https://loinc.org/82667-7> ;
+    chr:hasMeasuredDate "2016-10-09T14:47:26+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:measurement_FEV1FVC_20161009T114405 a chr:Measurement ;
+    rdfs:label "FEV1/FVC" ;
+    chr:hasCode <https://loinc.org/19926-5> ;
+    chr:hasMeasuredDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "72.195"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:measurement_GAD7_20161009T130318 a chr:Measurement ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasMeasuredDate "2016-10-09T13:03:18+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:measurement_HARK_20161009T133228 a chr:Measurement ;
+    rdfs:label "Total score [HARK]" ;
+    chr:hasCode <https://loinc.org/76504-0> ;
+    chr:hasMeasuredDate "2016-10-09T13:32:28+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:measurement_HeartRate_20161009T114405 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "68.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_PHQ2_20161009T141010 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2016-10-09T14:10:10+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:measurement_PainSeverity_20161009T114405 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:measurement_RespiratoryRate_20161009T114405 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2016-10-09T11:44:05+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "14.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kgperm2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_score a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Cory323_Frank378_Heller342 a chr:Person ;
+    rdfs:label "Cory323 Frank378 Heller342" .
+
+ex:Dr_Margene509_Schamberger479 a chr:Person ;
+    rdfs:label "Dr. Margene509 Schamberger479" .

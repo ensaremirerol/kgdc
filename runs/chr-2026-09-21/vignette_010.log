@@ -1,0 +1,59 @@
+[   0.1s] segmenting (orchestrator) ...
+[  10.6s] 4 segments: s1[ClinicalVisit,Person,CareUnit], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[EvaluationProcess,DiagnosticStatement], s4[CarePlan]
+[  10.6s] build order: [CareUnit, DiagnosticStatement, Person, ProcessStatus, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  10.6s] level 0: 5 agent(s), 0 known entities
+[  10.6s]   CareUnit: extracting (291 chars, 1 classes in view)
+[  10.6s]   DiagnosticStatement: extracting (235 chars, 1 classes in view)
+[  10.6s]   Person: extracting (291 chars, 1 classes in view)
+[  10.7s]   ProcessStatus: extracting (249 chars, 1 classes in view)
+[  15.7s]   CareUnit: cycle 0 -> conforms
+[  15.7s]   Unit: extracting (249 chars, 1 classes in view)
+[  16.2s]   ProcessStatus: cycle 0 -> 1 violation(s)
+[  16.2s]   ProcessStatus: fixing ...
+[  16.7s]   DiagnosticStatement: cycle 0 -> conforms
+[  17.0s]   Person: cycle 0 -> conforms
+[  20.1s]   Unit: cycle 0 -> conforms
+[  21.1s]   ProcessStatus: cycle 1 -> 4 violation(s)
+[  21.1s]   ProcessStatus: fixing ...
+[  25.7s]   ProcessStatus: cycle 2 -> 4 violation(s)
+[  25.7s]   ProcessStatus: stopping (fix budget spent)
+[  25.7s]   ProcessStatus: 1 unresolved (honest gaps)
+[  25.7s] level 1: 2 agent(s), 7 known entities
+[  25.7s]   EvaluationProcess: extracting (235 chars, 7 classes in view)
+[  25.7s]   Measurement: extracting (249 chars, 2 classes in view)
+[  33.3s]   Measurement: cycle 0 -> 4 violation(s)
+[  33.3s]   Measurement: fixing ...
+[  37.1s]   EvaluationProcess: cycle 0 -> 4 violation(s)
+[  37.1s]   EvaluationProcess: fixing ...
+[  41.7s]   Measurement: cycle 1 -> 3 violation(s)
+[  41.7s]   Measurement: fixing ...
+[  46.9s]   EvaluationProcess: cycle 1 -> 4 violation(s)
+[  46.9s]   EvaluationProcess: stopping (plateau)
+[  49.7s]   Measurement: cycle 2 -> 3 violation(s)
+[  49.7s]   Measurement: stopping (fix budget spent)
+[  49.7s] level 2: 1 agent(s), 11 known entities
+[  49.7s]   MeasurementProcess: extracting (249 chars, 6 classes in view)
+[  57.7s]   MeasurementProcess: cycle 0 -> 3 violation(s)
+[  57.7s]   MeasurementProcess: fixing ...
+[  65.6s]   MeasurementProcess: cycle 1 -> 3 violation(s)
+[  65.6s]   MeasurementProcess: stopping (plateau)
+[  65.6s] level 3: 2 agent(s), 13 known entities
+[  65.6s]   CarePlan: extracting (950 chars, 4 classes in view)
+[  65.6s]   ClinicalVisit: extracting (950 chars, 5 classes in view)
+[  70.3s]   CarePlan: cycle 0 -> 3 violation(s)
+[  70.3s]   CarePlan: fixing ...
+[  73.0s]   ClinicalVisit: cycle 0 -> 3 violation(s)
+[  73.0s]   ClinicalVisit: fixing ...
+[  79.7s]   CarePlan: cycle 1 -> 4 violation(s)
+[  79.7s]   CarePlan: fixing ...
+[  80.4s]   ClinicalVisit: cycle 1 -> 3 violation(s)
+[  80.4s]   ClinicalVisit: stopping (plateau)
+[  88.0s]   CarePlan: cycle 2 -> 4 violation(s)
+[  88.0s]   CarePlan: stopping (fix budget spent)
+[  88.1s] merging (orchestrator): 4 violation(s), 1 unresolved, 0 unparsed
+[ 113.1s] final: conforms
+conforms=True segments=10 llm_calls=21 unresolved=0
+  orchestrator   2 calls     6710 in    1938 out  cost n/a  gemma4-g1
+  total         21 calls    55007 in    8880 out  cost n/a  
+  worker        19 calls    48297 in    6942 out  cost n/a  gemma4-g1
+exit=0

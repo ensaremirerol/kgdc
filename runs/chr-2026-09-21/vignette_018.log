@@ -1,0 +1,35 @@
+[   0.1s] segmenting (orchestrator) ...
+[  12.8s] 4 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s4[CarePlan]
+[  12.8s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  12.8s] level 0: 6 agent(s), 0 known entities
+[  12.8s]   CareUnit: extracting (290 chars, 1 classes in view)
+[  12.8s]   ClinicalCondition: extracting (236 chars, 3 classes in view)
+[  12.8s]   DiagnosticStatement: extracting (236 chars, 1 classes in view)
+[  12.8s]   Measurement: extracting (229 chars, 2 classes in view)
+[  18.3s]   CareUnit: cycle 0 -> conforms
+[  18.3s]   Person: extracting (290 chars, 1 classes in view)
+[  19.4s]   DiagnosticStatement: cycle 0 -> conforms
+[  19.4s]   ProcessStatus: extracting (229 chars, 1 classes in view)
+[  19.9s]   ClinicalCondition: cycle 0 -> conforms
+[  21.3s]   Measurement: cycle 0 -> conforms
+[  23.4s]   ProcessStatus: cycle 0 -> conforms
+[  23.7s]   Person: cycle 0 -> conforms
+[  23.7s] level 1: 2 agent(s), 8 known entities
+[  23.7s]   EvaluationProcess: extracting (236 chars, 7 classes in view)
+[  23.7s]   MeasurementProcess: extracting (229 chars, 6 classes in view)
+[  33.4s]   MeasurementProcess: cycle 0 -> 1 violation(s)
+[  33.4s]   MeasurementProcess: fixing ...
+[  35.1s]   EvaluationProcess: cycle 0 -> conforms
+[  42.1s]   MeasurementProcess: cycle 1 -> conforms
+[  42.1s] level 2: 2 agent(s), 10 known entities
+[  42.1s]   CarePlan: extracting (930 chars, 4 classes in view)
+[  42.1s]   ClinicalVisit: extracting (930 chars, 5 classes in view)
+[  47.3s]   CarePlan: cycle 0 -> conforms
+[  49.7s]   ClinicalVisit: cycle 0 -> conforms
+[  49.8s] merging (orchestrator): 0 violation(s), 0 unresolved, 0 unparsed
+[  70.1s] final: conforms
+conforms=True segments=10 llm_calls=13 unresolved=0
+  orchestrator   2 calls     5875 in    1961 out  cost n/a  gemma4-g1
+  total         13 calls    34857 in    5605 out  cost n/a  
+  worker        11 calls    28982 in    3644 out  cost n/a  gemma4-g1
+exit=0

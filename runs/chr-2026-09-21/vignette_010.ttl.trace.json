@@ -1,0 +1,470 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20161226T013422 .\n\nex:measurement_process_20161226T013422 a chr:MeasurementProcess ;\n    rdfs:label \"Hemoglobin A1c/Hemoglobin.total in Blood measurement\" ;\n    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;\n    chr:hasPerformedDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Louis204_Hauck852 ;\n    chr:hasResult ex:measurement_20161226T013422 ;\n    chr:hasStatus ex:status_completed .\n\nex:visit_20161226T013422 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for check up (procedure)\" ;\n    chr:hasCareProvider ex:Dr_Louis204_Hauck852 ;\n    chr:hasCareUnit ex:WHITTIER_REHABILTATION_HOSPITAL ;\n    chr:hasDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;\n    chr:hasProcedure ex:evaluation_20161226T013422,\n        ex:measurement_process_20161226T013422 .\n\nex:measurement_20161226T013422 a chr:Measurement ;\n    rdfs:label \"Hemoglobin A1c/Hemoglobin.total in Blood\" ;\n    chr:hasCode <https://loinc.org/4548-4> ;\n    chr:hasMeasuredDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.31\"^^xsd:float ;\n    chr:hasUnit ex:percent .\n\nex:WHITTIER_REHABILTATION_HOSPITAL a chr:CareUnit ;\n    rdfs:label \"WHITTIER REHABILTATION HOSPITAL\" .\n\nex:condition_314529007 a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n\nex:evaluation_20161226T013422 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:condition_314529007 ;\n    chr:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;\n    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;\n    chr:hasPerformedDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Louis204_Hauck852 .\n\nex:percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:Dr_Louis204_Hauck852 a chr:Person ;\n    rdfs:label \"Dr. Louis204 Hauck852\" .\n\nex:Arturo47_Lauren941_Heidenreich818 a chr:Person ;\n    rdfs:label \"Arturo47 Lauren941 Heidenreich818\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:WHITTIER_REHABILTATION_HOSPITAL a chr:CareUnit ;\n    rdfs:label \"WHITTIER REHABILTATION HOSPITAL\" .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Louis204 Hauck852 evaluated the patient on 2016-12-26T01:34:22+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2016-12-26T01:34:22+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Arturo47_Lauren941_Heidenreich818 a chr:Person ;\n    rdfs:label \"Arturo47 Lauren941 Heidenreich818\" .\n\nex:Dr_Louis204_Hauck852 a chr:Person ;\n    rdfs:label \"Dr. Louis204 Hauck852\" .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2016-12-26T01:34:22+01:00, a Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 6.31 %. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [
+    "UNRESOLVED: ex:measurement_process_1 must be a MedicalProcedure (or subclass) to satisfy chr:hasStatus domain constraint \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:measurement_process_1 a \n    # UNRESOLVED: ex:measurement_process_1 must be a MedicalProcedure (or subclass) to satisfy chr:hasStatus domain constraint \u2014 not stated in the text\n    rdf:Description ;\n    rdfs:label \"measurement process\" ;\n    chr:hasStatus ex:status_completed .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2016-12-26T01:34:22+01:00, a Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 6.31 %. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Louis204 Hauck852 evaluated the patient on 2016-12-26T01:34:22+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2016-12-26T01:34:22+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20161226T013422 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:condition_314529007 ;\n    chr:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;\n    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;\n    chr:hasPerformedDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Louis204_Hauck852 .\n\nex:condition_314529007 a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .",
+   "level": 1,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2016-12-26T01:34:22+01:00, a Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 6.31 %. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_1 a chr:MeasurementProcess ;\n    rdfs:label \"measurement process\" ;\n    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;\n    chr:hasPerformedDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:Hemoglobin_A1c_Hemoglobin_total_in_Blood_4548_4 .\n\nex:Hemoglobin_A1c_Hemoglobin_total_in_Blood_4548_4 a chr:Measurement ;\n    rdfs:label \"Hemoglobin A1c/Hemoglobin.total in Blood\" ;\n    chr:hasCode <https://loinc.org/4548-4> ;\n    chr:hasMeasuredDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.31\"^^xsd:float ;\n    chr:hasUnit ex:percent .",
+   "level": 1,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2016-12-26T01:34:22+01:00, a Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 6.31 %. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_20161226T013422 a chr:MeasurementProcess ;\n    rdfs:label \"Hemoglobin A1c/Hemoglobin.total in Blood measurement\" ;\n    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;\n    chr:hasPerformedDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Louis204_Hauck852 ;\n    chr:hasResult ex:measurement_20161226T013422 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_20161226T013422 a chr:Measurement ;\n    rdfs:label \"Hemoglobin A1c/Hemoglobin.total in Blood\" ;\n    chr:hasCode <https://loinc.org/4548-4> ;\n    chr:hasMeasuredDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.31\"^^xsd:float ;\n    chr:hasUnit ex:percent .",
+   "level": 2,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\n=====================================================\n\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)\n\nOn 2016-12-26T01:34:22+01:00, a Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 6.31 %. The measurement process was recorded with status \"completed\".\n\nDr. Louis204 Hauck852 evaluated the patient on 2016-12-26T01:34:22+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2016-12-26T01:34:22+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasResult ]\n\tFocus Node: ex:measurement_process_1\n\tResult Path: chr:hasResult\n\tMessage: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasResult ]\n\tFocus Node: ex:measurement_process_1\n\tResult Path: chr:hasResult\n\tMessage: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20161226T013422 .\n\nex:measurement_process_1 a chr:MeasurementProcess ;\n    rdfs:label \"measurement process\" ;\n    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;\n    chr:hasPerformedDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_20161226T013422 .\n\nex:measurement_20161226T013422 a chr:Measurement ;\n    rdfs:label \"Hemoglobin A1c/Hemoglobin.total in Blood\" ;\n    chr:hasCode <https://loinc.org/4548-4> ;\n    chr:hasMeasuredDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.31\"^^xsd:float ;\n    chr:hasUnit ex:percent .",
+   "level": 3,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\n=====================================================\n\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)\n\nOn 2016-12-26T01:34:22+01:00, a Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 6.31 %. The measurement process was recorded with status \"completed\".\n\nDr. Louis204 Hauck852 evaluated the patient on 2016-12-26T01:34:22+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2016-12-26T01:34:22+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20161226T013422 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for check up (procedure)\" ;\n    chr:hasCareProvider ex:Dr_Louis204_Hauck852 ;\n    chr:hasCareUnit ex:WHITTIER_REHABILTATION_HOSPITAL ;\n    chr:hasDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;\n    chr:hasProcedure ex:measurement_process_20161226T013422, ex:evaluation_20161226T013422 .",
+   "level": 3,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 21,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 6710,
+   "completion_tokens": 1938,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 21,
+   "prompt_tokens": 55007,
+   "completion_tokens": 8880,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 19,
+   "prompt_tokens": 48297,
+   "completion_tokens": 6942,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

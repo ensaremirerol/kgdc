@@ -1,0 +1,87 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Malignant_neoplasm_of_breast_254837009 a chr:ClinicalCondition ;
+    rdfs:label "Malignant neoplasm of breast (disorder)" ;
+    chr:hasCode <http://snomed.info/id/254837009> ;
+    chr:hasRecordDate "2008-10-18T21:35:54+02:00"^^xsd:dateTime .
+
+ex:care_plan_follow_up a chr:CarePlan ;
+    rdfs:label "care plan" ;
+    chr:hasMedicalProcedure ex:measurement_process_size_20081018T225333 .
+
+ex:diagnostic_statement_254837009 a chr:DiagnosticStatement ;
+    rdfs:label "Malignant neoplasm of breast (disorder)" ;
+    chr:hasCode <http://snomed.info/id/254837009> .
+
+ex:evaluation_20081018T213554 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Malignant_neoplasm_of_breast_254837009 ;
+    chr:hasObservation ex:diagnostic_statement_254837009 ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2008-10-18T21:35:54+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Nickolas58_Schumm995 .
+
+ex:measurement_process_size_20081018T225333 a chr:MeasurementProcess ;
+    rdfs:label "Size.maximum dimension in Tumor (LOINC: 33728-7) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2008-10-18T22:53:33+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Nickolas58_Schumm995 ;
+    chr:hasResult ex:measurement_Size_maximum_33728_7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_Size_maximum_33728_7 a chr:Measurement ;
+    rdfs:label "Size.maximum dimension in Tumor (LOINC: 33728-7)" ;
+    chr:hasCode <https://loinc.org/33728-7> ;
+    chr:hasMeasuredDate "2008-10-18T22:53:33+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.5292"^^xsd:float ;
+    chr:hasUnit ex:cm .
+
+ex:measurement_process_lymph_20081018T225333 a chr:MeasurementProcess ;
+    rdfs:label "Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2008-10-18T22:53:33+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Nickolas58_Schumm995 ;
+    chr:hasResult ex:measurement_Lymph_nodes_85352_3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_Lymph_nodes_85352_3 a chr:Measurement ;
+    rdfs:label "Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3)" ;
+    chr:hasCode <https://loinc.org/85352-3> ;
+    chr:hasMeasuredDate "2008-10-18T22:53:33+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:cblscorecbr .
+
+ex:visit_20081018T213554 a chr:ClinicalVisit ;
+    rdfs:label "CLINICAL VISIT NOTE — ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE" ;
+    chr:hasCareProvider ex:Dr._Nickolas58_Schumm995 ;
+    chr:hasCareUnit ex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE ;
+    chr:hasDate "2008-10-18T21:35:54+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasProcedure ex:evaluation_20081018T213554,
+        ex:measurement_process_size_20081018T225333,
+        ex:measurement_process_lymph_20081018T225333 .
+
+ex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE a chr:CareUnit ;
+    rdfs:label "ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE" .
+
+ex:cblscorecbr a chr:Unit ;
+    rdfs:label "{#}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:Dr._Nickolas58_Schumm995 a chr:Person ;
+    rdfs:label "Dr. Nickolas58 Schumm995" .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Estela596_Yetta429_Grant908 a chr:Person ;
+    rdfs:label "Estela596 Yetta429 Grant908" .

@@ -1,0 +1,404 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_1 a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluation_Medication_review_due_situation_20161219T013422 .
+
+ex:visit_20161219T013422 a chr:ClinicalVisit ;
+    rdfs:label "CLINICAL VISIT NOTE — LYNN URGENT CARE LLC" ;
+    chr:hasCareProvider ex:Dr_Brian582_Cummerata161 ;
+    chr:hasCareUnit ex:LYNN_URGENT_CARE_LLC ;
+    chr:hasDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasProcedure ex:evaluation_Gingivitis_disorder_20161219T032802,
+        ex:evaluation_Medication_review_due_situation_20161219T013422,
+        ex:evaluation_Part-time_employment_finding_20161219T023115,
+        ex:proc_BMI_39156-5,
+        ex:proc_Body_Height_8302-2,
+        ex:proc_Body_Weight_29463-7,
+        ex:proc_Calcium_49765-1,
+        ex:proc_Carbon_dioxide_20565-8,
+        ex:proc_Chloride_2069-3,
+        ex:proc_Creatinine_38483-4,
+        ex:proc_GAD7_70274-6,
+        ex:proc_Glucose_2339-0,
+        ex:proc_Heart_rate_8867-4,
+        ex:proc_Hemoglobin_A1c_4548-4,
+        ex:proc_PHQ2_55758-7,
+        ex:proc_Pain_severity_72514-3,
+        ex:proc_Potassium_6298-4,
+        ex:proc_Respiratory_rate_9279-1,
+        ex:proc_Sodium_2947-0,
+        ex:proc_Urea_nitrogen_6299-2 .
+
+ex:Gingivitis_disorder a chr:ClinicalCondition ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> ;
+    chr:hasRecordDate "2016-12-19T03:28:02+01:00"^^xsd:dateTime .
+
+ex:Medication_review_due_situation a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime .
+
+ex:Part-time_employment_finding a chr:ClinicalCondition ;
+    rdfs:label "Part-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160904001> ;
+    chr:hasRecordDate "2016-12-19T02:31:15+01:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_Gingivitis_disorder a chr:DiagnosticStatement ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> .
+
+ex:diagnostic_statement_Medication_review_due_situation a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:diagnostic_statement_Part-time_employment_finding a chr:DiagnosticStatement ;
+    rdfs:label "Part-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160904001> .
+
+ex:evaluation_Gingivitis_disorder_20161219T032802 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Gingivitis_disorder ;
+    chr:hasObservation ex:diagnostic_statement_Gingivitis_disorder ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T03:28:02+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 .
+
+ex:evaluation_Part-time_employment_finding_20161219T023115 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Part-time_employment_finding ;
+    chr:hasObservation ex:diagnostic_statement_Part-time_employment_finding ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T02:31:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 .
+
+ex:evaluation_Medication_review_due_situation_20161219T013422 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Medication_review_due_situation ;
+    chr:hasObservation ex:diagnostic_statement_Medication_review_due_situation ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 .
+
+ex:measurement_BMI_39156-5 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.47"^^xsd:float ;
+    chr:hasUnit ex:unit_kgperm2 .
+
+ex:measurement_Body_Height_8302-2 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "181.4"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:measurement_Body_Weight_29463-7 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "90.4"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:measurement_Calcium_49765-1 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/49765-1> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "9.43"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_Carbon_dioxide_20565-8 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "24.27"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Chloride_2069-3 a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "103.05"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Creatinine_38483-4 a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/38483-4> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.03"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_GAD7_70274-6 a chr:Measurement ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasMeasuredDate "2016-12-19T02:51:42+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "7.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Glucose_2339-0 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "78.27"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_Heart_rate_8867-4 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "67.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_Hemoglobin_A1c_4548-4 a chr:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "5.9"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:measurement_PHQ2_55758-7 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2016-12-19T03:28:02+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Pain_severity_72514-3 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Potassium_6298-4 a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6298-4> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.05"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Respiratory_rate_9279-1 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "12.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_Sodium_2947-0 a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2947-0> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "138.24"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Urea_nitrogen_6299-2 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6299-2> ;
+    chr:hasMeasuredDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "17.89"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:proc_BMI_39156-5 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_BMI_39156-5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Body_Height_8302-2 a chr:MeasurementProcess ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Body_Height_8302-2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Body_Weight_29463-7 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Body_Weight_29463-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Calcium_49765-1 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/49765-1> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Calcium_49765-1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Carbon_dioxide_20565-8 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Carbon_dioxide_20565-8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Chloride_2069-3 a chr:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Chloride_2069-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Creatinine_38483-4 a chr:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/38483-4> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Creatinine_38483-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_GAD7_70274-6 a chr:MeasurementProcess ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T02:51:42+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_GAD7_70274-6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Glucose_2339-0 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Glucose_2339-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Heart_rate_8867-4 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Heart_rate_8867-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Hemoglobin_A1c_4548-4 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Hemoglobin_A1c_4548-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_PHQ2_55758-7 a chr:MeasurementProcess ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T03:28:02+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_PHQ2_55758-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Pain_severity_72514-3 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Pain_severity_72514-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Potassium_6298-4 a chr:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6298-4> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Potassium_6298-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Respiratory_rate_9279-1 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Respiratory_rate_9279-1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Sodium_2947-0 a chr:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2947-0> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Sodium_2947-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Urea_nitrogen_6299-2 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6299-2> ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2016-12-19T01:34:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Brian582_Cummerata161 ;
+    chr:hasResult ex:measurement_Urea_nitrogen_6299-2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kgperm2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_cblscorecbr a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:unit_mgperdL a chr:Unit ;
+    rdfs:label "mg/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
+
+ex:unit_mmolperL a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Arturo47_Lauren941_Heidenreich818 a chr:Person ;
+    rdfs:label "Arturo47 Lauren941 Heidenreich818" .
+
+ex:Dr_Brian582_Cummerata161 a chr:Person ;
+    rdfs:label "Dr. Brian582 Cummerata161" .
+
+ex:LYNN_URGENT_CARE_LLC a chr:CareUnit ;
+    rdfs:label "LYNN URGENT CARE LLC" .

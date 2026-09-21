@@ -1,0 +1,354 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_followup a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review" ;
+    chr:hasMedicalProcedure ex:eval_20191010T194000_1 .
+
+ex:Pain_severity_0-10_verbal_numeric_rating_Score a chr:Severity ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score]" ;
+    chr:hasCode <https://loinc.org/72514-3> .
+
+ex:eval_20191010T194000_1 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Not_in_labor_force_741062008 ;
+    chr:hasObservation ex:diagnostic_statement_Not_in_labor_force_741062008 ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T19:40:00+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 .
+
+ex:eval_20191010T194000_2 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Stress_73595000 ;
+    chr:hasObservation ex:diagnostic_statement_Stress_73595000 ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T19:40:00+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 .
+
+ex:eval_20191010T194000_3 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Victim_of_intimate_partner_abuse_706893006 ;
+    chr:hasObservation ex:diagnostic_statement_Victim_of_intimate_partner_abuse_706893006 ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T19:40:00+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 .
+
+ex:eval_20191010T185956 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Medication_review_due_314529007 ;
+    chr:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 .
+
+ex:visit_20191010T185956 a chr:ClinicalVisit ;
+    rdfs:label "General examination of patient (procedure)" ;
+    chr:hasCareProvider ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasCareUnit ex:JEWISH_FAMILY___CHILDRENS_SERVICE ;
+    chr:hasDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasProcedure ex:eval_20191010T185956,
+        ex:proc_AUDITC_20191010T213857,
+        ex:proc_BMI_20191010T185956,
+        ex:proc_BodyHeight_20191010T185956,
+        ex:proc_BodyWeight_20191010T185956,
+        ex:proc_CholesterolHDL_20191010T185956,
+        ex:proc_CholesterolLDL_20191010T185956,
+        ex:proc_CholesterolSerum_20191010T185956,
+        ex:proc_FallRisk_20191010T202220,
+        ex:proc_GAD7_20191010T195514,
+        ex:proc_HeartRate_20191010T185956,
+        ex:proc_PHQ2_20191010T210038,
+        ex:proc_PainSeverity_20191010T185956,
+        ex:proc_RespiratoryRate_20191010T185956,
+        ex:proc_TriglycerideSerum_20191010T185956 .
+
+ex:JEWISH_FAMILY___CHILDRENS_SERVICE a chr:CareUnit ;
+    rdfs:label "JEWISH FAMILY & CHILDREN'S SERVICE" .
+
+ex:Medication_review_due_314529007 a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime .
+
+ex:Not_in_labor_force_741062008 a chr:ClinicalCondition ;
+    rdfs:label "Not in labor force (finding)" ;
+    chr:hasCode <http://snomed.info/id/741062008> ;
+    chr:hasRecordDate "2019-10-10T19:40:00+02:00"^^xsd:dateTime .
+
+ex:Stress_73595000 a chr:ClinicalCondition ;
+    rdfs:label "Stress (finding)" ;
+    chr:hasCode <http://snomed.info/id/73595000> ;
+    chr:hasRecordDate "2019-10-10T19:40:00+02:00"^^xsd:dateTime .
+
+ex:Victim_of_intimate_partner_abuse_706893006 a chr:ClinicalCondition ;
+    rdfs:label "Victim of intimate partner abuse (finding)" ;
+    chr:hasCode <http://snomed.info/id/706893006> ;
+    chr:hasRecordDate "2019-10-10T19:40:00+02:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:diagnostic_statement_Not_in_labor_force_741062008 a chr:DiagnosticStatement ;
+    rdfs:label "Not in labor force (finding)" ;
+    chr:hasCode <http://snomed.info/id/741062008> .
+
+ex:diagnostic_statement_Stress_73595000 a chr:DiagnosticStatement ;
+    rdfs:label "Stress (finding)" ;
+    chr:hasCode <http://snomed.info/id/73595000> .
+
+ex:diagnostic_statement_Victim_of_intimate_partner_abuse_706893006 a chr:DiagnosticStatement ;
+    rdfs:label "Victim of intimate partner abuse (finding)" ;
+    chr:hasCode <http://snomed.info/id/706893006> .
+
+ex:measurement_AUDITC_20191010T213857 a chr:Measurement ;
+    rdfs:label "Total score [AUDIT-C]" ;
+    chr:hasCode <https://loinc.org/75626-2> ;
+    chr:hasMeasuredDate "2019-10-10T21:38:57+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:measurement_BMI_20191010T185956 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.56"^^xsd:float ;
+    chr:hasUnit ex:unit_kgperm2 .
+
+ex:measurement_BodyHeight_20191010T185956 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "172.7"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:measurement_BodyWeight_20191010T185956 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "82.2"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:measurement_CholesterolHDL_20191010T185956 a chr:Measurement ;
+    rdfs:label "Cholesterol in HDL [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2085-9> ;
+    chr:hasMeasuredDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "51.85"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_CholesterolLDL_20191010T185956 a chr:Measurement ;
+    rdfs:label "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay" ;
+    chr:hasCode <https://loinc.org/18262-6> ;
+    chr:hasMeasuredDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "84.75"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_CholesterolSerum_20191010T185956 a chr:Measurement ;
+    rdfs:label "Cholesterol [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2093-3> ;
+    chr:hasMeasuredDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "159.79"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_FallRisk_20191010T202220 a chr:Measurement ;
+    rdfs:label "Fall risk total [Morse Fall Scale]" ;
+    chr:hasCode <https://loinc.org/59460-6> ;
+    chr:hasMeasuredDate "2019-10-10T20:22:20+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "34.0"^^xsd:float ;
+    chr:hasUnit ex:unit_hash .
+
+ex:measurement_GAD7_20191010T195514 a chr:Measurement ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasMeasuredDate "2019-10-10T19:55:14+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:measurement_HeartRate_20191010T185956 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "83.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_PHQ2_20191010T210038 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2019-10-10T21:00:38+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:measurement_PainSeverity_20191010T185956 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:measurement_RespiratoryRate_20191010T185956 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "14.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_TriglycerideSerum_20191010T185956 a chr:Measurement ;
+    rdfs:label "Triglyceride [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2571-8> ;
+    chr:hasMeasuredDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "115.95"^^xsd:float ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:proc_AUDITC_20191010T213857 a chr:MeasurementProcess ;
+    rdfs:label "Total score [AUDIT-C] measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T21:38:57+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_AUDITC_20191010T213857 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_BMI_20191010T185956 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_BMI_20191010T185956 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_BodyHeight_20191010T185956 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_BodyHeight_20191010T185956 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_BodyWeight_20191010T185956 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_BodyWeight_20191010T185956 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_CholesterolHDL_20191010T185956 a chr:MeasurementProcess ;
+    rdfs:label "Cholesterol in HDL [Mass/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_CholesterolHDL_20191010T185956 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_CholesterolLDL_20191010T185956 a chr:MeasurementProcess ;
+    rdfs:label "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_CholesterolLDL_20191010T185956 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_CholesterolSerum_20191010T185956 a chr:MeasurementProcess ;
+    rdfs:label "Cholesterol [Mass/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_CholesterolSerum_20191010T185956 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_FallRisk_20191010T202220 a chr:MeasurementProcess ;
+    rdfs:label "Fall risk total [Morse Fall Scale] measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T20:22:20+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_FallRisk_20191010T202220 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_GAD7_20191010T195514 a chr:MeasurementProcess ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T19:55:14+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_GAD7_20191010T195514 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_HeartRate_20191010T185956 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_HeartRate_20191010T185956 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_PHQ2_20191010T210038 a chr:MeasurementProcess ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T21:00:38+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_PHQ2_20191010T210038 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_PainSeverity_20191010T185956 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_PainSeverity_20191010T185956 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_RespiratoryRate_20191010T185956 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_RespiratoryRate_20191010T185956 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_TriglycerideSerum_20191010T185956 a chr:MeasurementProcess ;
+    rdfs:label "Triglyceride [Mass/volume] in Serum or Plasma measurement" ;
+    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;
+    chr:hasPerformedDate "2019-10-10T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Eldridge510_Marquardt819 ;
+    chr:hasResult ex:measurement_TriglycerideSerum_20191010T185956 ;
+    chr:hasStatus ex:status_completed .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_hash a chr:Unit ;
+    rdfs:label "{#}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblhashcbr> .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kgperm2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_mgperdL a chr:Unit ;
+    rdfs:label "mg/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
+
+ex:unit_score a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Casey401_Elijah719_Parker433 a chr:Person ;
+    rdfs:label "Casey401 Elijah719 Parker433" .
+
+ex:Dr_Eldridge510_Marquardt819 a chr:Person ;
+    rdfs:label "Dr. Eldridge510 Marquardt819" .

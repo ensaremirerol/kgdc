@@ -1,0 +1,93 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 104.9s] 43 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[MeasurementProcess,Measurement], s11[MeasurementProcess,Measurement], s12[MeasurementProcess,Measurement], s13[MeasurementProcess,Measurement], s14[MeasurementProcess,Measurement], s15[MeasurementProcess,Measurement], s16[MeasurementProcess,Measurement], s17[MeasurementProcess,Measurement], s18[MeasurementProcess,Measurement], s19[MeasurementProcess,Measurement,Severity], s20[MeasurementProcess,Measurement], s21[MeasurementProcess,Measurement], s22[MeasurementProcess,Measurement], s23[MeasurementProcess,Measurement], s24[MeasurementProcess,Measurement], s25[MeasurementProcess,Measurement], s26[MeasurementProcess,Measurement], s27[MeasurementProcess,Measurement], s28[MeasurementProcess,Measurement], s29[MeasurementProcess,Measurement], s30[MeasurementProcess,Measurement], s31[MeasurementProcess,Measurement], s32[MeasurementProcess,Measurement], s33[MeasurementProcess,Measurement], s34[MeasurementProcess,Measurement], s35[MeasurementProcess,Measurement], s36[MeasurementProcess,Measurement], s37[MeasurementProcess,Measurement], s38[MeasurementProcess,Measurement], s39[MeasurementProcess,Measurement], s40[MeasurementProcess,Measurement], s41[MeasurementProcess,Measurement], s42[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s43[CarePlan]
+[ 104.9s] build order: [CareUnit, DiagnosticStatement, Measurement, Person, Severity] -> [ClinicalCondition, MeasurementProcess] -> [EvaluationProcess] -> [CarePlan, ClinicalVisit]
+[ 104.9s] level 0: 5 agent(s), 0 known entities
+[ 104.9s]   CareUnit: extracting (379 chars, 1 classes in view)
+[ 104.9s]   DiagnosticStatement: extracting (224 chars, 1 classes in view)
+[ 104.9s]   Measurement: extracting (9720 chars, 2 classes in view)
+[ 104.9s]   Person: extracting (379 chars, 1 classes in view)
+[ 110.3s]   CareUnit: cycle 0 -> conforms
+[ 110.3s]   Severity: extracting (257 chars, 1 classes in view)
+[ 110.5s]   DiagnosticStatement: cycle 0 -> conforms
+[ 111.1s]   Person: cycle 0 -> conforms
+[ 115.4s]   Severity: cycle 0 -> 5 violation(s)
+[ 115.4s]   Severity: fixing ...
+[ 120.4s]   Severity: cycle 1 -> 5 violation(s)
+[ 120.4s]   Severity: stopping (plateau)
+[ 244.0s]   Measurement: cycle 0 -> 1 violation(s)
+[ 244.0s]   Measurement: fixing ...
+[ 383.3s]   Measurement: cycle 1 -> 1 violation(s)
+[ 383.3s]   Measurement: stopping (plateau)
+[ 383.3s]   Measurement: 2 unresolved (honest gaps)
+[ 383.3s] level 1: 2 agent(s), 5 known entities
+[ 383.3s]   ClinicalCondition: extracting (224 chars, 3 classes in view)
+[ 383.3s]   MeasurementProcess: extracting (9720 chars, 6 classes in view)
+[ 390.2s]   ClinicalCondition: cycle 0 -> 5 violation(s)
+[ 390.2s]   ClinicalCondition: fixing ...
+[ 396.1s]   ClinicalCondition: cycle 1 -> 5 violation(s)
+[ 396.1s]   ClinicalCondition: stopping (plateau)
+[ 641.5s]   MeasurementProcess: cycle 0 -> 800 violation(s)
+[ 641.5s]   MeasurementProcess: fixing ...
+[ 823.6s]   MeasurementProcess: cycle 1 -> 1 violation(s)
+[ 823.6s]   MeasurementProcess: fixing ...
+[ 987.7s]   MeasurementProcess: cycle 2 -> 5 violation(s)
+[ 987.7s]   MeasurementProcess: stopping (fix budget spent)
+[ 987.7s]   MeasurementProcess: 8 unresolved (honest gaps)
+[ 987.7s] level 2: 1 agent(s), 69 known entities
+[ 987.7s]   EvaluationProcess: extracting (224 chars, 7 classes in view)
+[ 997.0s]   EvaluationProcess: cycle 0 -> 5 violation(s)
+[ 997.0s]   EvaluationProcess: fixing ...
+[1006.1s]   EvaluationProcess: cycle 1 -> 5 violation(s)
+[1006.1s]   EvaluationProcess: stopping (plateau)
+[1006.1s] level 3: 2 agent(s), 70 known entities
+[1006.1s]   CarePlan: extracting (10443 chars, 4 classes in view)
+[1006.1s]   ClinicalVisit: extracting (10443 chars, 5 classes in view)
+[1013.9s]   CarePlan: cycle 0 -> 5 violation(s)
+[1013.9s]   CarePlan: fixing ...
+[1024.5s]   CarePlan: cycle 1 -> 5 violation(s)
+[1024.5s]   CarePlan: stopping (plateau)
+[1149.5s]   ClinicalVisit: dropped 11 individual(s) of other classes (already built by earlier levels)
+[1149.7s]   ClinicalVisit: cycle 0 -> 16 violation(s)
+[1149.7s]   ClinicalVisit: fixing ...
+[1285.5s]   ClinicalVisit: cycle 1 -> 5 violation(s)
+[1285.5s]   ClinicalVisit: fixing ...
+[1425.0s]   ClinicalVisit: cycle 2 -> 5 violation(s)
+[1425.0s]   ClinicalVisit: stopping (fix budget spent)
+[1425.0s]   ClinicalVisit: 1 unresolved (honest gaps)
+[1425.1s] merging (orchestrator): 5 violation(s), 11 unresolved, 1 unparsed
+[1558.6s] merge output rejected (at line 337 of <>:
+Bad syntax (expected '.' or '}' or ']' at) - returning the un-merged union
+[1558.7s] final: 5 violation(s)
+conforms=False segments=10 llm_calls=21 unresolved=0
+  orchestrator   2 calls    31058 in   12971 out  cost n/a  gemma4-g1
+  total         21 calls   183625 in   85305 out  cost n/a  
+  worker        19 calls   152567 in   72334 out  cost n/a  gemma4-g1
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Pain_severity_0-10_verbal_numeric_rating_Score
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Pain_severity_0-10_verbal_numeric_rating_Score
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:Pain_severity_0-10_verbal_numeric_rating_Score
+	Value Node: <https://loinc.org/72514-3>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal("rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]
+	Focus Node: ns1:Severity
+	Result Path: [ sh:zeroOrMorePath rdfs:subClassOf ]
+	Message: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.
+Constraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaClassVocabularyShape
+	Focus Node: ns1:Severity
+	Value Node: ns1:Severity
+	Message: rdf:type must be a class declared in the CHR schema; this class is not in the schema.
+
+exit=1

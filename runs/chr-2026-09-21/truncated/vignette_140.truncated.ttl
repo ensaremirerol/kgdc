@@ -1,0 +1,683 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Arlen68_Olson653 a chr:Person ;
+    rdfs:label "Arlen68 Olson653" .
+
+ex:Dr_Irvin970_Emard19 a chr:Person ;
+    rdfs:label "Dr. Irvin970 Emard19" .
+
+ex:SPECTRUM_HOME_HEALTH_AND_HOSPICE_CARE a chr:CareUnit ;
+    rdfs:label "SPECTRUM HOME HEALTH AND HOSPICE CARE" .
+
+ex:visit_20200108T154723 a chr:ClinicalVisit ;
+    rdfs:label "CLINICAL VISIT NOTE" ;
+    chr:hasCareProvider ex:Dr_Irvin970_Emard19 ;
+    chr:hasCareUnit ex:SPECTRUM_HOME_HEALTH_AND_HOSPICE_CARE ;
+    chr:hasDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasProcedure ex:med_admin_heparin_20200108T154723,
+        ex:med_admin_midazolam_20200108T192542,
+        ex:med_admin_morphine_20200108T155311,
+        ex:med_admin_ondansetron_1_20200108T154723,
+        ex:med_admin_ondansetron_2_20200108T192542,
+        ex:med_admin_piperacillin_20200108T181011,
+        ex:med_admin_propofol_20200108T192542,
+        ex:med_admin_remifentanil_20200108T192542,
+        ex:med_admin_rocuronium_20200108T192542,
+        ex:med_admin_sevoflurane_20200108T192542,
+        ex:process_Alanine_aminotransferase_1742-6,
+        ex:process_Albumin_1751-7,
+        ex:process_Alkaline_phosphatase_6768-6,
+        ex:process_Anion_gap_33037-3,
+        ex:process_Aspartate_aminotransferase_1920-8,
+        ex:process_Bilirubin_42719-5,
+        ex:process_Calcium_17861-6,
+        ex:process_Carbon_dioxide_2028-9,
+        ex:process_Chloride_2075-0,
+        ex:process_Creatinine_2160-0,
+        ex:process_Erythrocyte_30385-9,
+        ex:process_Erythrocytes_26453-1,
+        ex:process_Globulin_10834-0,
+        ex:process_Glucose_2345-7,
+        ex:process_Hematocrit_20570-8,
+        ex:process_Hemoglobin_718-7,
+        ex:process_Leukocytes_26464-8,
+        ex:process_MCV_30428-7,
+        ex:process_Platelets_26515-7,
+        ex:process_Potassium_2823-3,
+        ex:process_Protein_2885-2,
+        ex:process_Sodium_2951-2,
+        ex:process_Urea_nitrogen_3094-0,
+        ex:evaluation_acute_cholecystitis,
+        ex:evaluation_gallbladder_calculus .
+
+ex:evaluation_acute_cholecystitis a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Acute_cholecystitis_disorder ;
+    chr:hasObservation ex:diagnostic_statement_acute_cholecystitis ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 .
+
+ex:evaluation_gallbladder_calculus a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Gallbladder_calculus_disorder ;
+    chr:hasObservation ex:diagnostic_statement_gallbladder_calculus ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 .
+
+ex:Acute_cholecystitis_disorder a chr:ClinicalCondition ;
+    rdfs:label "Acute cholecystitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/65275009> ;
+    chr:hasRecordDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_acute_cholecystitis a chr:DiagnosticStatement ;
+    rdfs:label "Acute cholecystitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/65275009> .
+
+ex:Gallbladder_calculus_disorder a chr:ClinicalCondition ;
+    rdfs:label "Gallbladder calculus (disorder)" ;
+    chr:hasCode <http://snomed.info/id/235919008> ;
+    chr:hasRecordDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_gallbladder_calculus a chr:DiagnosticStatement ;
+    rdfs:label "Gallbladder calculus (disorder)" ;
+    chr:hasCode <http://snomed.info/id/235919008> .
+
+ex:process_Alanine_aminotransferase_1742-6 a chr:MeasurementProcess ;
+    rdfs:label "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/1742-6> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Alanine_aminotransferase_1742-6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Alanine_aminotransferase_1742-6 a chr:Measurement ;
+    rdfs:label "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/1742-6> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "131.28"^^xsd:float ;
+    chr:hasUnit ex:Unit_iU_per_L .
+
+ex:process_Albumin_1751-7 a chr:MeasurementProcess ;
+    rdfs:label "Albumin [Mass/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/1751-7> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Albumin_1751-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Albumin_1751-7 a chr:Measurement ;
+    rdfs:label "Albumin [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/1751-7> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.3798"^^xsd:float ;
+    chr:hasUnit ex:Unit_Mass_per_volume .
+
+ex:process_Alkaline_phosphatase_6768-6 a chr:MeasurementProcess ;
+    rdfs:label "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/6768-6> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Alkaline_phosphatase_6768-6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Alkaline_phosphatase_6768-6 a chr:Measurement ;
+    rdfs:label "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/6768-6> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "82.639"^^xsd:float ;
+    chr:hasUnit ex:Unit_iU_per_L .
+
+ex:process_Anion_gap_33037-3 a chr:MeasurementProcess ;
+    rdfs:label "Anion gap in Serum or Plasma by calculation measurement process" ;
+    chr:hasCode <https://loinc.org/33037-3> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Anion_gap_33037-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Anion_gap_33037-3 a chr:Measurement ;
+    rdfs:label "Anion gap in Serum or Plasma by calculation" ;
+    chr:hasCode <https://loinc.org/33037-3> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.4993"^^xsd:float ;
+    chr:hasUnit ex:Unit_Moles_per_volume .
+
+ex:process_Aspartate_aminotransferase_1920-8 a chr:MeasurementProcess ;
+    rdfs:label "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/1920-8> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Aspartate_aminotransferase_1920-8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Aspartate_aminotransferase_1920-8 a chr:Measurement ;
+    rdfs:label "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/1920-8> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "167.38"^^xsd:float ;
+    chr:hasUnit ex:Unit_iU_per_L .
+
+ex:process_Bilirubin_42719-5 a chr:MeasurementProcess ;
+    rdfs:label "Bilirubin.total [Mass/volume] in Blood measurement process" ;
+    chr:hasCode <https://loinc.org/42719-5> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Bilirubin_42719-5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Bilirubin_42719-5 a chr:Measurement ;
+    rdfs:label "Bilirubin.total [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/42719-5> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.4657"^^xsd:float ;
+    chr:hasUnit ex:Unit_Mass_per_volume .
+
+ex:process_Calcium_17861-6 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/17861-6> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Calcium_17861-6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Calcium_17861-6 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/17861-6> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "9.65"^^xsd:float ;
+    chr:hasUnit ex:Unit_Mass_per_volume .
+
+ex:process_Carbon_dioxide_2028-9 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/2028-9> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Carbon_dioxide_2028-9 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Carbon_dioxide_2028-9 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2028-9> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "28.86"^^xsd:float ;
+    chr:hasUnit ex:Unit_Moles_per_volume .
+
+ex:process_Chloride_2075-0 a chr:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/2075-0> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Chloride_2075-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Chloride_2075-0 a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2075-0> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "109.16"^^xsd:float ;
+    chr:hasUnit ex:Unit_Moles_per_volume .
+
+ex:process_Creatinine_2160-0 a chr:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/2160-0> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Creatinine_2160-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Creatinine_2160-0 a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2160-0> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "5.08"^^xsd:float ;
+    chr:hasUnit ex:Unit_Mass_per_volume .
+
+ex:process_Erythrocyte_30385-9 a chr:MeasurementProcess ;
+    rdfs:label "Erythrocyte [DistWidth] in Blood measurement process" ;
+    chr:hasCode <https://loinc.org/30385-9> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Erythrocyte_30385-9 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Erythrocyte_30385-9 a chr:Measurement ;
+    rdfs:label "Erythrocyte [DistWidth] in Blood" ;
+    chr:hasCode <https://loinc.org/30385-9> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "12.213"^^xsd:float ;
+    chr:hasUnit ex:Unit_percent .
+
+ex:process_Erythrocytes_26453-1 a chr:MeasurementProcess ;
+    rdfs:label "Erythrocytes [#/volume] in Blood measurement process" ;
+    chr:hasCode <https://loinc.org/26453-1> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Erythrocytes_26453-1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Erythrocytes_26453-1 a chr:Measurement ;
+    rdfs:label "Erythrocytes [#/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/26453-1> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "50975.0"^^xsd:float ;
+    chr:hasUnit ex:Unit_sharp_per_volume .
+
+ex:process_Globulin_10834-0 a chr:MeasurementProcess ;
+    rdfs:label "Globulin [Mass/volume] in Serum by calculation measurement process" ;
+    chr:hasCode <https://loinc.org/10834-0> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Globulin_10834-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Globulin_10834-0 a chr:Measurement ;
+    rdfs:label "Globulin [Mass/volume] in Serum by calculation" ;
+    chr:hasCode <https://loinc.org/10834-0> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.9734"^^xsd:float ;
+    chr:hasUnit ex:Unit_Mass_per_volume .
+
+ex:process_Glucose_2345-7 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/2345-7> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Glucose_2345-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Glucose_2345-7 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2345-7> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "146.16"^^xsd:float ;
+    chr:hasUnit ex:Unit_Mass_per_volume .
+
+ex:process_Hematocrit_20570-8 a chr:MeasurementProcess ;
+    rdfs:label "Hematocrit [Volume Fraction] of Blood by calculation measurement process" ;
+    chr:hasCode <https://loinc.org/20570-8> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Hematocrit_20570-8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Hematocrit_20570-8 a chr:Measurement ;
+    rdfs:label "Hematocrit [Volume Fraction] of Blood by calculation" ;
+    chr:hasCode <https://loinc.org/20570-8> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "44.812"^^xsd:float ;
+    chr:hasUnit ex:Unit_percent .
+
+ex:process_Hemoglobin_718-7 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin [Mass/volume] in Blood measurement process" ;
+    chr:hasCode <https://loinc.org/718-7> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Hemoglobin_718-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Hemoglobin_718-7 a chr:Measurement ;
+    rdfs:label "Hemoglobin [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/718-7> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "13.944"^^xsd:float ;
+    chr:hasUnit ex:Unit_Mass_per_volume .
+
+ex:process_Leukocytes_26464-8 a chr:MeasurementProcess ;
+    rdfs:label "Leukocytes [#/volume] in Blood measurement process" ;
+    chr:hasCode <https://loinc.org/26464-8> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Leukocytes_26464-8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Leukocytes_26464-8 a chr:Measurement ;
+    rdfs:label "Leukocytes [#/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/26464-8> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "11030.0"^^xsd:float ;
+    chr:hasUnit ex:Unit_sharp_per_volume .
+
+ex:process_MCV_30428-7 a chr:MeasurementProcess ;
+    rdfs:label "MCV [Entitic mean volume] in Red Blood Cells measurement process" ;
+    chr:hasCode <https://loinc.org/30428-7> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:MCV_30428-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:MCV_30428-7 a chr:Measurement ;
+    rdfs:label "MCV [Entitic mean volume] in Red Blood Cells" ;
+    chr:hasCode <https://loinc.org/30428-7> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "90.938"^^xsd:float ;
+    chr:hasUnit ex:Unit_fL .
+
+ex:process_Platelets_26515-7 a chr:MeasurementProcess ;
+    rdfs:label "Platelets [#/volume] in Blood measurement process" ;
+    chr:hasCode <https://loinc.org/26515-7> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Platelets_26515-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Platelets_26515-7 a chr:Measurement ;
+    rdfs:label "Platelets [#/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/26515-7> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "408.58"^^xsd:float ;
+    chr:hasUnit ex:Unit_K_per_uL .
+
+ex:process_Potassium_2823-3 a chr:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/2823-3> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Potassium_2823-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Potassium_2823-3 a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2823-3> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.84"^^xsd:float ;
+    chr:hasUnit ex:Unit_Moles_per_volume .
+
+ex:process_Protein_2885-2 a chr:MeasurementProcess ;
+    rdfs:label "Protein [Mass/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/2885-2> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Protein_2885-2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Protein_2885-2 a chr:Measurement ;
+    rdfs:label "Protein [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2885-2> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "7.0635"^^xsd:float ;
+    chr:hasUnit ex:Unit_Mass_per_volume .
+
+ex:process_Sodium_2951-2 a chr:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/2951-2> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Sodium_2951-2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Sodium_2951-2 a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2951-2> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "137.21"^^xsd:float ;
+    chr:hasUnit ex:Unit_Moles_per_volume .
+
+ex:process_Urea_nitrogen_3094-0 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Serum or Plasma measurement process" ;
+    chr:hasCode <https://loinc.org/3094-0> ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:Urea_nitrogen_3094-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:Urea_nitrogen_3094-0 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/3094-0> ;
+    chr:hasMeasuredDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "12.0"^^xsd:float ;
+    chr:hasUnit ex:Unit_Mass_per_volume .
+
+ex:care_plan_heparin a chr:CarePlan ;
+    rdfs:label "treatment plan with 1 ML heparin sodium, porcine 5000 UNT/ML Injection" ;
+    chr:hasMedicalProcedure ex:med_admin_heparin_20200108T154723 .
+
+ex:care_plan_midazolam a chr:CarePlan ;
+    rdfs:label "treatment plan with Midazolam 1 MG/ML Injectable Solution" ;
+    chr:hasMedicalProcedure ex:med_admin_midazolam_20200108T192542 .
+
+ex:care_plan_morphine a chr:CarePlan ;
+    rdfs:label "treatment plan with 1 ML Morphine Sulfate 5 MG/ML Injection" ;
+    chr:hasMedicalProcedure ex:med_admin_morphine_20200108T155311 .
+
+ex:care_plan_ondansetron_1 a chr:CarePlan ;
+    rdfs:label "treatment plan with 2 ML Ondansetron 2 MG/ML Injection" ;
+    chr:hasMedicalProcedure ex:med_admin_ondansetron_1_20200108T154723 .
+
+ex:care_plan_ondansetron_2 a chr:CarePlan ;
+    rdfs:label "treatment plan with 2 ML Ondansetron 2 MG/ML Injection" ;
+    chr:hasMedicalProcedure ex:med_admin_ondansetron_2_20200108T192542 .
+
+ex:care_plan_piperacillin a chr:CarePlan ;
+    rdfs:label "treatment plan with Piperacillin 4000 MG / tazobactam 500 MG Injection" ;
+    chr:hasMedicalProcedure ex:med_admin_piperacillin_20200108T181011 .
+
+ex:care_plan_propofol a chr:CarePlan ;
+    rdfs:label "treatment plan with 100 ML Propofol 10 MG/ML Injection" ;
+    chr:hasMedicalProcedure ex:med_admin_propofol_20200108T192542 .
+
+ex:care_plan_remifentanil a chr:CarePlan ;
+    rdfs:label "treatment plan with remifentanil 2 MG Injection" ;
+    chr:hasMedicalProcedure ex:med_admin_remifentanil_20200108T192542 .
+
+ex:care_plan_rocuronium a chr:CarePlan ;
+    rdfs:label "treatment plan with Rocuronium bromide 10 MG/ML Injectable Solution" ;
+    chr:hasMedicalProcedure ex:med_admin_rocuronium_20200108T192542 .
+
+ex:care_plan_sevoflurane a chr:CarePlan ;
+    rdfs:label "treatment plan with sevoflurane 1000 MG/ML Inhalation Solution" ;
+    chr:hasMedicalProcedure ex:med_admin_sevoflurane_20200108T192542 .
+
+ex:heparin_sodium_product a chr:PharmaceuticalProduct ;
+    rdfs:label "heparin sodium, porcine 5000 UNT/ML Injection" ;
+    chr:hasDoseForm ex:heparin_sodium_1ml_5000untml_injection ;
+    chr:hasDoseQuantity ex:heparin_sodium_1ml_5000untml_injection .
+
+ex:midazolam_product a chr:PharmaceuticalProduct ;
+    rdfs:label "Midazolam 1 MG/ML Injectable Solution" ;
+    chr:hasDoseForm ex:midazolam_1mgml_injectable_solution ;
+    chr:hasDoseQuantity ex:midazolam_1mgml_injectable_solution .
+
+ex:morphine_sulfate_product a chr:PharmaceuticalProduct ;
+    rdfs:label "Morphine Sulfate 5 MG/ML Injection" ;
+    chr:hasDoseForm ex:morphine_sulfate_1ml_5mgml_injection ;
+    chr:hasDoseQuantity ex:morphine_sulfate_1ml_5mgml_injection .
+
+ex:ondansetron_product_1 a chr:PharmaceuticalProduct ;
+    rdfs:label "Ondansetron 2 MG/ML Injection" ;
+    chr:hasDoseForm ex:ondansetron_2ml_2mgml_injection_1 ;
+    chr:hasDoseQuantity ex:ondansetron_2ml_2mgml_injection_1 .
+
+ex:ondansetron_product_2 a chr:PharmaceuticalProduct ;
+    rdfs:label "Ondansetron 2 MG/ML Injection" ;
+    chr:hasDoseForm ex:ondansetron_2ml_2mgml_injection_2 ;
+    chr:hasDoseQuantity ex:ondansetron_2ml_2mgml_injection_2 .
+
+ex:piperacillin_tazobactam_product a chr:PharmaceuticalProduct ;
+    rdfs:label "Piperacillin 4000 MG / tazobactam 500 MG Injection" ;
+    chr:hasDoseForm ex:piperacillin_tazobactam_injection ;
+    chr:hasDoseQuantity ex:piperacillin_tazobactam_injection .
+
+ex:propofol_product a chr:PharmaceuticalProduct ;
+    rdfs:label "Propofol 10 MG/ML Injection" ;
+    chr:hasDoseForm ex:propofol_100ml_10mgml_injection ;
+    chr:hasDoseQuantity ex:propofol_100ml_10mgml_injection .
+
+ex:remifentanil_product a chr:PharmaceuticalProduct ;
+    rdfs:label "remifentanil 2 MG Injection" ;
+    chr:hasDoseForm ex:remifentanil_2mg_injection ;
+    chr:hasDoseQuantity ex:remifentanil_2mg_injection .
+
+ex:rocuronium_bromide_product a chr:PharmaceuticalProduct ;
+    rdfs:label "Rocuronium bromide 10 MG/ML Injectable Solution" ;
+    chr:hasDoseForm ex:rocuronium_bromide_10mgml_injectable_solution ;
+    chr:hasDoseQuantity ex:rocuronium_bromide_10mgml_injectable_solution .
+
+ex:sevoflurane_product a chr:PharmaceuticalProduct ;
+    rdfs:label "sevoflurane 1000 MG/ML Inhalation Solution" ;
+    chr:hasDoseForm ex:sevoflurane_1000mgml_inhalation_solution ;
+    chr:hasDoseQuantity ex:sevoflurane_1000mgml_inhalation_solution .
+
+ex:med_admin_heparin_20200108T154723 a chr:MedicationAdministration ;
+    rdfs:label "first dose of heparin sodium, porcine 5000 UNT/ML Injection" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasPharmaceuticalProduct ex:heparin_sodium_product ;
+    chr:hasStatus ex:status_completed .
+
+ex:med_admin_midazolam_20200108T192542 a chr:MedicationAdministration ;
+    rdfs:label "first dose of Midazolam 1 MG/ML Injectable Solution" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T19:25:42+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasPharmaceuticalProduct ex:midazolam_product ;
+    chr:hasStatus ex:status_completed .
+
+ex:med_admin_morphine_20200108T155311 a chr:MedicationAdministration ;
+    rdfs:label "first dose of Morphine Sulfate 5 MG/ML Injection" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:53:11+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasPharmaceuticalProduct ex:morphine_sulfate_product ;
+    chr:hasStatus ex:status_completed .
+
+ex:med_admin_ondansetron_1_20200108T154723 a chr:MedicationAdministration ;
+    rdfs:label "first dose of Ondansetron 2 MG/ML Injection" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasPharmaceuticalProduct ex:ondansetron_product_1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:med_admin_ondansetron_2_20200108T192542 a chr:MedicationAdministration ;
+    rdfs:label "first dose of Ondansetron 2 MG/ML Injection" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T19:25:42+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasPharmaceuticalProduct ex:ondansetron_product_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:med_admin_piperacillin_20200108T181011 a chr:MedicationAdministration ;
+    rdfs:label "first dose of Piperacillin 4000 MG / tazobactam 500 MG Injection" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T18:10:11+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasPharmaceuticalProduct ex:piperacillin_tazobactam_product ;
+    chr:hasStatus ex:status_completed .
+
+ex:med_admin_propofol_20200108T192542 a chr:MedicationAdministration ;
+    rdfs:label "first dose of Propofol 10 MG/ML Injection" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T19:25:42+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasPharmaceuticalProduct ex:propofol_product ;
+    chr:hasStatus ex:status_completed .
+
+ex:med_admin_remifentanil_20200108T192542 a chr:MedicationAdministration ;
+    rdfs:label "first dose of remifentanil 2 MG Injection" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T19:25:42+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasPharmaceuticalProduct ex:remifentanil_product ;
+    chr:hasStatus ex:status_completed .
+
+ex:med_admin_rocuronium_20200108T192542 a chr:MedicationAdministration ;
+    rdfs:label "first dose of Rocuronium bromide 10 MG/ML Injectable Solution" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T19:25:42+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasPharmaceuticalProduct ex:rocuronium_bromide_product ;
+    chr:hasStatus ex:status_completed .
+
+ex:med_admin_sevoflurane_20200108T192542 a chr:MedicationAdministration ;
+    rdfs:label "first dose of sevoflurane 1000 MG/ML Inhalation Solution" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2020-01-08T19:25:42+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasPharmaceuticalProduct ex:sevoflurane_product ;
+    chr:hasStatus ex:status_completed .
+
+ex:heparin_sodium_1ml_5000untml_injection a chr:PharmaceuticalDose,
+        chr:PharmaceuticalDoseForm ;
+    rdfs:label "1 ML heparin sodium, porcine 5000 UNT/ML Injection" .
+
+ex:midazolam_1mgml_injectable_solution a chr:PharmaceuticalDose,
+        chr:PharmaceuticalDoseForm ;
+    rdfs:label "Midazolam 1 MG/ML Injectable Solution" .
+
+ex:morphine_sulfate_1ml_5mgml_injection a chr:PharmaceuticalDose,
+        chr:PharmaceuticalDoseForm ;
+    rdfs:label "1 ML Morphine Sulfate 5 MG/ML Injection" .
+
+ex:ondansetron_2ml_2mgml_injection_1 a chr:PharmaceuticalDose,
+        chr:PharmaceuticalDoseForm ;
+    rdfs:label "2 ML Ondansetron 2 MG/ML Injection" .
+
+ex:ondansetron_2ml_2mgml_injection_2 a chr:PharmaceuticalDose,
+        chr:PharmaceuticalDoseForm ;
+    rdfs:label "2 ML Ondansetron 2 MG/ML Injection" .
+
+ex:piperacillin_tazobactam_injection a chr:PharmaceuticalDose,
+        chr:PharmaceuticalDoseForm ;
+    rdfs:label "Piperacillin 4000 MG / tazobactam 500 MG Injection" .
+
+ex:propofol_100ml_10mgml_injection a chr:PharmaceuticalDose,
+        chr:PharmaceuticalDoseForm ;
+    rdfs:label "100 ML Propofol 10 MG/ML Injection" .
+
+ex:remifentanil_2mg_injection a chr:PharmaceuticalDose,
+        chr:PharmaceuticalDoseForm ;
+    rdfs:label "remifentanil 2 MG Injection" .
+
+ex:rocuronium_bromide_10mgml_injectable_solution a chr:PharmaceuticalDose,
+        chr:PharmaceuticalDoseForm ;
+    rdfs:label "Rocuronium bromide 10 MG/ML Injectable Solution" .
+
+ex:sevoflurane_1000mgml_inhalation_solution a chr:PharmaceuticalDose,
+        chr:PharmaceuticalDoseForm ;
+    rdfs:label "sevoflurane 1000 MG/ML Inhalation Solution" .
+
+ex:Unit_K_per_uL a chr:Unit ;
+    rdfs:label "K/uL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/KperuL> .
+
+ex:Unit_fL a chr:Unit ;
+    rdfs:label "fL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/fL> .
+
+ex:Unit_percent a chr:Unit ;
+    rdfs:label "Volume Fraction" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:Unit

@@ -1,0 +1,78 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/clinical/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:visit_dd0bda6a_c541_dd46_6f29_45c6a60568d5 a chr:ClinicalVisit ;
+    chr:hasCareProvider ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasCareUnit ex:unit_github_com_syntheti ;
+    chr:hasDate "2008-10-18T21:35:54+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:patient_dd0bda6a_c541_dd46_4b78_15221e9aef86 ;
+    chr:hasProcedure ex:evalProc_dd0bda6a_c541_dd46_36d9_97aad4e12a1f,
+        ex:measProc_dd0bda6a_c541_dd46_551f_c7285d25106d,
+        ex:measProc_dd0bda6a_c541_dd46_bb9a_c466699ec1b7 .
+
+ex:cond_dd0bda6a_c541_dd46_36d9_97aad4e12a1f a chr:ClinicalCondition ;
+    rdfs:label "Malignant neoplasm of breast (disorder)" ;
+    chr:hasCode <http://snomed.info/id/254837009> ;
+    chr:hasRecordDate "2008-10-18T21:35:54+02:00"^^xsd:dateTime .
+
+ex:diag_dd0bda6a_c541_dd46_36d9_97aad4e12a1f a chr:DiagnosticStatement ;
+    rdfs:label "Malignant neoplasm of breast (disorder)" ;
+    chr:hasCode <http://snomed.info/id/254837009> .
+
+ex:evalProc_dd0bda6a_c541_dd46_36d9_97aad4e12a1f a chr:EvaluationProcess ;
+    chr:hasCondition ex:cond_dd0bda6a_c541_dd46_36d9_97aad4e12a1f ;
+    chr:hasObservation ex:diag_dd0bda6a_c541_dd46_36d9_97aad4e12a1f ;
+    chr:hasPatient ex:patient_dd0bda6a_c541_dd46_4b78_15221e9aef86 ;
+    chr:hasPerformedDate "2008-10-18T21:35:54+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 .
+
+ex:measProc_dd0bda6a_c541_dd46_551f_c7285d25106d a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_dd0bda6a_c541_dd46_4b78_15221e9aef86 ;
+    chr:hasPerformedDate "2008-10-18T22:53:33+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_dd0bda6a_c541_dd46_551f_c7285d25106d ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_dd0bda6a_c541_dd46_bb9a_c466699ec1b7 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_dd0bda6a_c541_dd46_4b78_15221e9aef86 ;
+    chr:hasPerformedDate "2008-10-18T22:53:33+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_dd0bda6a_c541_dd46_bb9a_c466699ec1b7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:meas_dd0bda6a_c541_dd46_551f_c7285d25106d a chr:Measurement ;
+    rdfs:label "Size.maximum dimension in Tumor" ;
+    chr:hasCode <https://loinc.org/33728-7> ;
+    chr:hasMeasuredDate "2008-10-18T22:53:33+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.5292"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:meas_dd0bda6a_c541_dd46_bb9a_c466699ec1b7 a chr:Measurement ;
+    rdfs:label "Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy" ;
+    chr:hasCode <https://loinc.org/85352-3> ;
+    chr:hasMeasuredDate "2008-10-18T22:53:33+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_ .
+
+ex:unit_ a chr:Unit ;
+    rdfs:label "{#}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblnbcbr> .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_github_com_syntheti a chr:CareUnit ;
+    rdfs:label "ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE" .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:patient_dd0bda6a_c541_dd46_4b78_15221e9aef86 a chr:Person ;
+    rdfs:label "Ms. Estela596 Yetta429 Grant908" .
+
+ex:provider_hl7_org_fhir_sid_us_npi_99999 a chr:Person ;
+    rdfs:label "Dr. Nickolas58 Schumm995" .
+

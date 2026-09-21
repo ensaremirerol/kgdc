@@ -1,0 +1,464 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_cefazolin a chr:CarePlan ;
+    rdfs:label "treatment plan with cefazolin 2000 MG Injection" ;
+    chr:hasMedicalProcedure ex:MedicationAdministration_cefazolin_20250817T173935 .
+
+ex:CarePlan_followup a chr:CarePlan ;
+    rdfs:label "care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis" .
+
+ex:CarePlan_heparin a chr:CarePlan ;
+    rdfs:label "treatment plan with 1 ML heparin sodium, porcine 5000 UNT/ML Injection" ;
+    chr:hasMedicalProcedure ex:MedicationAdministration_heparin_20250817T173935 .
+
+ex:CarePlan_insulin a chr:CarePlan ;
+    rdfs:label "treatment plan with insulin, regular, human 100 UNT/ML Injectable Solution" ;
+    chr:hasMedicalProcedure ex:MedicationAdministration_insulin_20250817T174235 .
+
+ex:CarePlan_isoflurane a chr:CarePlan ;
+    rdfs:label "treatment plan with isoflurane 999 MG/ML Inhalation Solution" ;
+    chr:hasMedicalProcedure ex:MedicationAdministration_isoflurane_20250817T184214 .
+
+ex:CarePlan_midazolam a chr:CarePlan ;
+    rdfs:label "treatment plan with Midazolam 1 MG/ML Injectable Solution" ;
+    chr:hasMedicalProcedure ex:MedicationAdministration_midazolam_20250817T184214 .
+
+ex:CarePlan_ondansetron a chr:CarePlan ;
+    rdfs:label "treatment plan with 2 ML Ondansetron 2 MG/ML Injection" ;
+    chr:hasMedicalProcedure ex:MedicationAdministration_ondansetron_20250817T184214 .
+
+ex:CarePlan_propofol a chr:CarePlan ;
+    rdfs:label "treatment plan with 100 ML Propofol 10 MG/ML Injection" ;
+    chr:hasMedicalProcedure ex:MedicationAdministration_propofol_20250817T184214 .
+
+ex:CarePlan_protamine a chr:CarePlan ;
+    rdfs:label "treatment plan with 25 ML protamine sulfate (USP) 10 MG/ML Injection" ;
+    chr:hasMedicalProcedure ex:MedicationAdministration_protamine_20250817T173935 .
+
+ex:CarePlan_remifentanil a chr:CarePlan ;
+    rdfs:label "treatment plan with remifentanil 2 MG Injection" ;
+    chr:hasMedicalProcedure ex:MedicationAdministration_remifentanil_20250817T184214 .
+
+ex:CarePlan_rocuronium a chr:CarePlan ;
+    rdfs:label "treatment plan with Rocuronium bromide 10 MG/ML Injectable Solution" ;
+    chr:hasMedicalProcedure ex:MedicationAdministration_rocuronium_20250817T184214 .
+
+ex:ClinicalVisit_20250817T173935 a chr:ClinicalVisit ;
+    rdfs:label "Hospital admission (procedure)" ;
+    chr:hasCareProvider ex:Dr_Manuela585_Rendón540 ;
+    chr:hasCareUnit ex:Fitchburg_Outpatient_Clinic ;
+    chr:hasDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasProcedure ex:MedicationAdministration_cefazolin_20250817T173935,
+        ex:MedicationAdministration_heparin_20250817T173935,
+        ex:MedicationAdministration_protamine_20250817T173935,
+        ex:proc_14627_4,
+        ex:proc_19123_9,
+        ex:proc_1960_4,
+        ex:proc_2019_8,
+        ex:proc_2021_4,
+        ex:proc_2027_1,
+        ex:proc_2703_7,
+        ex:proc_2705_2,
+        ex:proc_2708_6,
+        ex:proc_2744_1,
+        ex:proc_2746_6,
+        ex:proc_3184_9 .
+
+ex:evaluation_20250817T235349 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:History_of_coronary_artery_bypass_grafting ;
+    chr:hasObservation ex:diagnostic_statement_399261000 ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T23:53:49+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 .
+
+ex:Fitchburg_Outpatient_Clinic a chr:CareUnit ;
+    rdfs:label "Fitchburg Outpatient Clinic" .
+
+ex:History_of_coronary_artery_bypass_grafting a chr:ClinicalCondition ;
+    rdfs:label "History of coronary artery bypass grafting (situation)" ;
+    chr:hasCode <http://snomed.info/id/399261000> ;
+    chr:hasRecordDate "2025-08-17T23:53:49+02:00"^^xsd:dateTime .
+
+ex:MedicationAdministration_insulin_20250817T174235 a chr:MedicationAdministration ;
+    rdfs:label "first dose of insulin, regular, human 100 UNT/ML Injectable Solution" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:42:35+02:00"^^xsd:dateTime ;
+    chr:hasPharmaceuticalProduct ex:insulin_regular_human_100_UNT_ML_Injectable_Solution .
+
+ex:MedicationAdministration_isoflurane_20250817T184214 a chr:MedicationAdministration ;
+    rdfs:label "first dose of isoflurane 999 MG/ML Inhalation Solution" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T18:42:14+02:00"^^xsd:dateTime ;
+    chr:hasPharmaceuticalProduct ex:isoflurane_999_MG_ML_Inhalation_Solution .
+
+ex:MedicationAdministration_midazolam_20250817T184214 a chr:MedicationAdministration ;
+    rdfs:label "first dose of Midazolam 1 MG/ML Injectable Solution" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T18:42:14+02:00"^^xsd:dateTime ;
+    chr:hasPharmaceuticalProduct ex:Midazolam_1_MG_ML_Injectable_Solution .
+
+ex:MedicationAdministration_ondansetron_20250817T184214 a chr:MedicationAdministration ;
+    rdfs:label "first dose of 2 ML Ondansetron 2 MG/ML Injection" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T18:42:14+02:00"^^xsd:dateTime ;
+    chr:hasPharmaceuticalProduct ex:Ondansetron_2_MG_ML_Injection .
+
+ex:MedicationAdministration_propofol_20250817T184214 a chr:MedicationAdministration ;
+    rdfs:label "first dose of 100 ML Propofol 10 MG/ML Injection" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T18:42:14+02:00"^^xsd:dateTime ;
+    chr:hasPharmaceuticalProduct ex:Propofol_10_MG_ML_Injection .
+
+ex:MedicationAdministration_remifentanil_20250817T184214 a chr:MedicationAdministration ;
+    rdfs:label "first dose of remifentanil 2 MG Injection" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T18:42:14+02:00"^^xsd:dateTime ;
+    chr:hasPharmaceuticalProduct ex:remifentanil_2_MG_Injection .
+
+ex:MedicationAdministration_rocuronium_20250817T184214 a chr:MedicationAdministration ;
+    rdfs:label "first dose of Rocuronium bromide 10 MG/ML Injectable Solution" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T18:42:14+02:00"^^xsd:dateTime ;
+    chr:hasPharmaceuticalProduct ex:Rocuronium_bromide_10_MG_ML_Injectable_Solution .
+
+ex:MedicationAdministration_cefazolin_20250817T173935 a chr:MedicationAdministration ;
+    rdfs:label "first dose of cefazolin 2000 MG Injection" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPharmaceuticalProduct ex:cefazolin_2000_MG_Injection .
+
+ex:MedicationAdministration_heparin_20250817T173935 a chr:MedicationAdministration ;
+    rdfs:label "first dose of 1 ML heparin sodium, porcine 5000 UNT/ML Injection" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPharmaceuticalProduct ex:heparin_sodium_porcine_5000_UNT_ML_Injection .
+
+ex:MedicationAdministration_protamine_20250817T173935 a chr:MedicationAdministration ;
+    rdfs:label "first dose of 25 ML protamine sulfate (USP) 10 MG/ML Injection" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPharmaceuticalProduct ex:protamine_sulfate_USP_10_MG_ML_Injection .
+
+ex:diagnostic_statement_399261000 a chr:DiagnosticStatement ;
+    rdfs:label "History of coronary artery bypass grafting (situation)" ;
+    chr:hasCode <http://snomed.info/id/399261000> .
+
+ex:proc_14627_4 a chr:MeasurementProcess ;
+    rdfs:label "Bicarbonate [Moles/volume] in Venous blood" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 ;
+    chr:hasResult ex:measurement_14627_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_19123_9 a chr:MeasurementProcess ;
+    rdfs:label "Magnesium [Mass/volume] in Serum or Plasma" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 ;
+    chr:hasResult ex:measurement_19123_9 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_1960_4 a chr:MeasurementProcess ;
+    rdfs:label "Bicarbonate [Moles/volume] in Arterial blood" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 ;
+    chr:hasResult ex:measurement_1960_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_2019_8 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide [Partial pressure] in Arterial blood" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 ;
+    chr:hasResult ex:measurement_2019_8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_2021_4 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide [Partial pressure] in Venous blood" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 ;
+    chr:hasResult ex:measurement_2021_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_2027_1 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Venous blood" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 ;
+    chr:hasResult ex:measurement_2027_1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_2703_7 a chr:MeasurementProcess ;
+    rdfs:label "Oxygen [Partial pressure] in Arterial blood" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 ;
+    chr:hasResult ex:measurement_2703_7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_2705_2 a chr:MeasurementProcess ;
+    rdfs:label "Oxygen [Partial pressure] in Venous blood" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 ;
+    chr:hasResult ex:measurement_2705_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_2708_6 a chr:MeasurementProcess ;
+    rdfs:label "Oxygen saturation in Arterial blood" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 ;
+    chr:hasResult ex:measurement_2708_6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_2744_1 a chr:MeasurementProcess ;
+    rdfs:label "pH of Arterial blood" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 ;
+    chr:hasResult ex:measurement_2744_1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_2746_6 a chr:MeasurementProcess ;
+    rdfs:label "pH of Venous blood" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 ;
+    chr:hasResult ex:measurement_2746_6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_3184_9 a chr:MeasurementProcess ;
+    rdfs:label "Activated clotting time (ACT) of Blood by Coagulation assay" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Manuela585_Rendón540 ;
+    chr:hasResult ex:measurement_3184_9 ;
+    chr:hasStatus ex:status_completed .
+
+ex:heparin_sodium_porcine_5000_UNT_ML_Injection a chr:PharmaceuticalProduct ;
+    rdfs:label "heparin sodium, porcine 5000 UNT/ML Injection" ;
+    chr:hasDoseForm ex:heparin_sodium_porcine_5000_UNT_ML_Injection_dose ;
+    chr:hasDoseQuantity ex:heparin_sodium_porcine_5000_UNT_ML_Injection_dose_qty .
+
+ex:heparin_sodium_porcine_5000_UNT_ML_Injection_dose a chr:PharmaceuticalDoseForm ;
+    rdfs:label "1 ML" .
+
+ex:heparin_sodium_porcine_5000_UNT_ML_Injection_dose_qty a chr:PharmaceuticalDose .
+
+ex:insulin_regular_human_100_UNT_ML_Injectable_Solution a chr:PharmaceuticalProduct ;
+    rdfs:label "insulin, regular, human 100 UNT/ML Injectable Solution" ;
+    chr:hasDoseForm ex:insulin_regular_human_100_UNT_ML_Injectable_Solution_dose ;
+    chr:hasDoseQuantity ex:insulin_regular_human_100_UNT_ML_Injectable_Solution_dose_qty .
+
+ex:insulin_regular_human_100_UNT_ML_Injectable_Solution_dose a chr:PharmaceuticalDoseForm ;
+    rdfs:label "100 UNT/ML" .
+
+ex:insulin_regular_human_100_UNT_ML_Injectable_Solution_dose_qty a chr:PharmaceuticalDose .
+
+ex:isoflurane_999_MG_ML_Inhalation_Solution a chr:PharmaceuticalProduct ;
+    rdfs:label "isoflurane 999 MG/ML Inhalation Solution" ;
+    chr:hasDoseForm ex:isoflurane_999_MG_ML_Inhalation_Solution_dose ;
+    chr:hasDoseQuantity ex:isoflurane_999_MG_ML_Inhalation_Solution_dose_qty .
+
+ex:isoflurane_999_MG_ML_Inhalation_Solution_dose a chr:PharmaceuticalDoseForm ;
+    rdfs:label "999 MG/ML" .
+
+ex:isoflurane_999_MG_ML_Inhalation_Solution_dose_qty a chr:PharmaceuticalDose .
+
+ex:Midazolam_1_MG_ML_Injectable_Solution a chr:PharmaceuticalProduct ;
+    rdfs:label "Midazolam 1 MG/ML Injectable Solution" ;
+    chr:hasDoseForm ex:Midazolam_1_MG_ML_Injectable_Solution_dose ;
+    chr:hasDoseQuantity ex:Midazolam_1_MG_MG_ML_Injectable_Solution_dose_qty .
+
+ex:Midazolam_1_MG_ML_Injectable_Solution_dose a chr:PharmaceuticalDoseForm ;
+    rdfs:label "1 MG/ML" .
+
+ex:Midazolam_1_MG_MG_ML_Injectable_Solution_dose_qty a chr:PharmaceuticalDose .
+
+ex:Ondansetron_2_MG_ML_Injection a chr:PharmaceuticalProduct ;
+    rdfs:label "2 ML Ondansetron 2 MG/ML Injection" ;
+    chr:hasDoseForm ex:Ondansetron_2_MG_ML_Injection_dose ;
+    chr:hasDoseQuantity ex:Ondansetron_2_MG_ML_Injection_dose_qty .
+
+ex:Ondansetron_2_MG_ML_Injection_dose a chr:PharmaceuticalDoseForm ;
+    rdfs:label "2 ML" .
+
+ex:Ondansetron_2_MG_ML_Injection_dose_qty a chr:PharmaceuticalDose .
+
+ex:Propofol_10_MG_ML_Injection a chr:PharmaceuticalProduct ;
+    rdfs:label "100 ML Propofol 10 MG/ML Injection" ;
+    chr:hasDoseForm ex:Propofol_10_MG_ML_Injection_dose ;
+    chr:hasDoseQuantity ex:Propofol_10_MG_ML_Injection_dose_qty .
+
+ex:Propofol_10_MG_ML_Injection_dose a chr:PharmaceuticalDoseForm ;
+    rdfs:label "100 ML" .
+
+ex:Propofol_10_MG_ML_Injection_dose_qty a chr:PharmaceuticalDose .
+
+ex:remifentanil_2_MG_Injection a chr:PharmaceuticalProduct ;
+    rdfs:label "remifentanil 2 MG Injection" ;
+    chr:hasDoseForm ex:remifentanil_2_MG_Injection_dose ;
+    chr:hasDoseQuantity ex:remifentanil_2_MG_Injection_dose_qty .
+
+ex:remifentanil_2_MG_Injection_dose a chr:PharmaceuticalDoseForm ;
+    rdfs:label "2 MG" .
+
+ex:remifentanil_2_MG_Injection_dose_qty a chr:PharmaceuticalDose .
+
+ex:Rocuronium_bromide_10_MG_ML_Injectable_Solution a chr:PharmaceuticalProduct ;
+    rdfs:label "Rocuronium bromide 10 MG/ML Injectable Solution" ;
+    chr:hasDoseForm ex:Rocuronium_bromide_10_MG_ML_Injectable_Solution_dose ;
+    chr:hasDoseQuantity ex:Rocuronium_bromide_10_MG_ML_Injectable_Solution_dose_qty .
+
+ex:Rocuronium_bromide_10_MG_ML_Injectable_Solution_dose a chr:PharmaceuticalDoseForm ;
+    rdfs:label "10 MG/ML" .
+
+ex:Rocuronium_bromide_10_MG_ML_Injectable_Solution_dose_qty a chr:PharmaceuticalDose .
+
+ex:cefazolin_2000_MG_Injection a chr:PharmaceuticalProduct ;
+    rdfs:label "cefazolin 2000 MG Injection" ;
+    chr:hasDoseForm ex:cefazolin_2000_MG_Injection_dose ;
+    chr:hasDoseQuantity ex:cefazolin_2000_MG_Injection_dose_qty .
+
+ex:cefazolin_2000_MG_Injection_dose a chr:PharmaceuticalDoseForm ;
+    rdfs:label "2000 MG" .
+
+ex:cefazolin_2000_MG_Injection_dose_qty a chr:PharmaceuticalDose .
+
+ex:protamine_sulfate_USP_10_MG_ML_Injection a chr:PharmaceuticalProduct ;
+    rdfs:label "25 ML protamine sulfate (USP) 10 MG/ML Injection" ;
+    chr:hasDoseForm ex:protamine_sulfate_USP_10_MG_ML_Injection_dose ;
+    chr:hasDoseQuantity ex:protamine_sulfate_USP_10_MG_ML_Injection_dose_qty .
+
+ex:protamine_sulfate_USP_10_MG_ML_Injection_dose a chr:PharmaceuticalDoseForm ;
+    rdfs:label "25 ML" .
+
+ex:protamine_sulfate_USP_10_MG_ML_Injection_dose_qty a chr:PharmaceuticalDose .
+
+ex:measurement_14627_4 a chr:Measurement ;
+    rdfs:label "Bicarbonate [Moles/volume] in Venous blood" ;
+    chr:hasCode <https://loinc.org/14627-4> ;
+    chr:hasMeasuredDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "25.262"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_l .
+
+ex:measurement_19123_9 a chr:Measurement ;
+    rdfs:label "Magnesium [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/19123-9> ;
+    chr:hasMeasuredDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.7766"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dl .
+
+ex:measurement_1960_4 a chr:Measurement ;
+    rdfs:label "Bicarbonate [Moles/volume] in Arterial blood" ;
+    chr:hasCode <https://loinc.org/1960-4> ;
+    chr:hasMeasuredDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "22.439"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_l .
+
+ex:measurement_2019_8 a chr:Measurement ;
+    rdfs:label "Carbon dioxide [Partial pressure] in Arterial blood" ;
+    chr:hasCode <https://loinc.org/2019-8> ;
+    chr:hasMeasuredDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "39.262"^^xsd:float ;
+    chr:hasUnit ex:unit_mmhg .
+
+ex:measurement_2021_4 a chr:Measurement ;
+    rdfs:label "Carbon dioxide [Partial pressure] in Venous blood" ;
+    chr:hasCode <https://loinc.org/2021-4> ;
+    chr:hasMeasuredDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "38.413"^^xsd:float ;
+    chr:hasUnit ex:unit_mmhg .
+
+ex:measurement_2027_1 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Venous blood" ;
+    chr:hasCode <https://loinc.org/2027-1> ;
+    chr:hasMeasuredDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.4797"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_l .
+
+ex:measurement_2703_7 a chr:Measurement ;
+    rdfs:label "Oxygen [Partial pressure] in Arterial blood" ;
+    chr:hasCode <https://loinc.org/2703-7> ;
+    chr:hasMeasuredDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "99.919"^^xsd:float ;
+    chr:hasUnit ex:unit_mmhg .
+
+ex:measurement_2705_2 a chr:Measurement ;
+    rdfs:label "Oxygen [Partial pressure] in Venous blood" ;
+    chr:hasCode <https://loinc.org/2705-2> ;
+    chr:hasMeasuredDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "46.003"^^xsd:float ;
+    chr:hasUnit ex:unit_mmhg .
+
+ex:measurement_2708_6 a chr:Measurement ;
+    rdfs:label "Oxygen saturation in Arterial blood" ;
+    chr:hasCode <https://loinc.org/2708-6> ;
+    chr:hasMeasuredDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "95.0"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:measurement_2744_1 a chr:Measurement ;
+    rdfs:label "pH of Arterial blood" ;
+    chr:hasCode <https://loinc.org/2744-1> ;
+    chr:hasMeasuredDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.9551"^^xsd:float ;
+    chr:hasUnit ex:unit_ph .
+
+ex:measurement_2746_6 a chr:Measurement ;
+    rdfs:label "pH of Venous blood" ;
+    chr:hasCode <https://loinc.org/2746-6> ;
+    chr:hasMeasuredDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "7.3848"^^xsd:float ;
+    chr:hasUnit ex:unit_ph .
+
+ex:measurement_3184_9 a chr:Measurement ;
+    rdfs:label "Activated clotting time (ACT) of Blood by Coagulation assay" ;
+    chr:hasCode <https://loinc.org/3184-9> ;
+    chr:hasMeasuredDate "2025-08-17T17:39:35+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "111.83"^^xsd:float ;
+    chr:hasUnit ex:unit_s .
+
+ex:unit_mg_dl a chr:Unit ;
+    rdfs:label "mg/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
+
+ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_s a chr:Unit ;
+    rdfs:label "s" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/s> .
+
+ex:unit_ph a chr:Unit ;
+    rdfs:label "[pH]" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblphcbr> .
+
+ex:unit_mmol_l a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+
+ex:unit_mmhg a chr:Unit ;
+    rdfs:label "mm[Hg]" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmperL> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Dr_Manuela585_Rendón540 a chr:Person ;
+    rdfs:label "Dr. Manuela585 Rendón540" .
+
+ex:Arturo47_Lauren941_Heidenreich818 a chr:Person ;
+    rdfs:label "Arturo47 Lauren941 Heidenreich818" .

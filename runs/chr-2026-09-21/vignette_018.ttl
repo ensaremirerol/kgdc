@@ -1,0 +1,67 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_follow_up_monitoring a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review" ;
+    chr:hasMedicalProcedure ex:evaluation_20230426T003422 .
+
+ex:visit_20230426T003422 a chr:ClinicalVisit ;
+    rdfs:label "CLINICAL VISIT NOTE — WHITTIER REHABILTATION HOSPITAL" ;
+    chr:hasCareProvider ex:Dr_Louis204_Hauck852 ;
+    chr:hasCareUnit ex:WHITTIER_REHABILTATION_HOSPITAL ;
+    chr:hasDate "2023-04-26T00:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasProcedure ex:evaluation_20230426T003422,
+        ex:measurement_process_Body_temperature_20230426T003422 .
+
+ex:Acute_viral_pharyngitis a chr:ClinicalCondition ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> ;
+    chr:hasRecordDate "2023-04-26T00:34:22+02:00"^^xsd:dateTime .
+
+ex:Body_temperature_8310_5 a chr:Measurement ;
+    rdfs:label "Body temperature" ;
+    chr:hasCode <https://loinc.org/8310-5> ;
+    chr:hasMeasuredDate "2023-04-26T00:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "37.632"^^xsd:float ;
+    chr:hasUnit ex:Cel_unit .
+
+ex:Cel_unit a chr:Unit ;
+    rdfs:label "Cel" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .
+
+ex:WHITTIER_REHABILTATION_HOSPITAL a chr:CareUnit ;
+    rdfs:label "WHITTIER REHABILTATION HOSPITAL" .
+
+ex:diagnostic_statement_Acute_viral_pharyngitis_20230426T003422 a chr:DiagnosticStatement ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> .
+
+ex:measurement_process_Body_temperature_20230426T003422 a chr:MeasurementProcess ;
+    rdfs:label "Body temperature measurement" ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2023-04-26T00:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Louis204_Hauck852 ;
+    chr:hasResult ex:Body_temperature_8310_5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:evaluation_20230426T003422 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Acute_viral_pharyngitis ;
+    chr:hasObservation ex:diagnostic_statement_Acute_viral_pharyngitis_20230426T003422 ;
+    chr:hasPatient ex:Arturo47_Lauren941_Heidenreich818 ;
+    chr:hasPerformedDate "2023-04-26T00:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Louis204_Hauck852 .
+
+ex:Arturo47_Lauren941_Heidenreich818 a chr:Person ;
+    rdfs:label "Arturo47 Lauren941 Heidenreich818" .
+
+ex:Dr_Louis204_Hauck852 a chr:Person ;
+    rdfs:label "Dr. Louis204 Hauck852" .

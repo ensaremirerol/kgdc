@@ -1,0 +1,513 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Arlen68_Olson653 a chr:Person ;\n    rdfs:label \"Arlen68 Olson653\" .\n\nex:Dr_Irvin970_Emard19 a chr:Person ;\n    rdfs:label \"Dr. Irvin970 Emard19\" .\n\nex:SPECTRUM_HOME_HEALTH_AND_HOSPICE_CARE a chr:CareUnit ;\n    rdfs:label \"SPECTRUM HOME HEALTH AND HOSPICE CARE\" .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:unit_T-score a chr:Unit ;\n    rdfs:label \"{T-score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:measurement_38265_5 a chr:Measurement ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density\" ;\n    chr:hasCode <https://loinc.org/38265-5> ;\n    chr:hasMeasuredDate \"2021-01-09T17:33:31+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue -0.028448 ;\n    chr:hasUnit ex:unit_T-score .\n\nex:measurement_process_38265_5 a chr:MeasurementProcess ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density measurement\" ;\n    chr:hasPatient ex:Arlen68_Olson653 ;\n    chr:hasPerformedDate \"2021-01-09T17:33:31+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;\n    chr:hasResult ex:measurement_38265_5 ;\n    chr:hasStatus ex:status_completed .\n\nex:diagnostic_statement_fracture_of_ankle a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture of ankle (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/16114001> .\n\nex:Fracture_of_ankle_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Fracture of ankle (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/16114001> ;\n    chr:hasRecordDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_fracture_of_bone a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> .\n\nex:Fracture_of_bone_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> ;\n    chr:hasRecordDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime .\n\nex:evaluation_process_ankle a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:Arlen68_Olson653 ;\n    chr:hasPerformedDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Irvin970_Emard19 .\n\nex:evaluation_process_bone a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:Arlen68_Olson653 ;\n    chr:hasPerformedDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Irvin970_Emard19 .\n\nex:care_plan_follow_up a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_process_bone .\n\nex:visit_20210109T165633 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 SPECTRUM HOME HEALTH AND HOSPICE CARE\" ;\n    chr:hasCareProvider ex:Dr_Irvin970_Emard19 ;\n    chr:hasCareUnit ex:SPECTRUM_HOME_HEALTH_AND_HOSPICE_CARE ;\n    chr:hasDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Arlen68_Olson653 ;\n    chr:hasProcedure ex:evaluation_process_ankle,\n        ex:evaluation_process_bone,\n        ex:measurement_process_38265_5 .",
+ "conforms": false,
+ "violations": "Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:datatype xsd:float ; sh:message Literal(\"chr:hasQuantityValue must be an xsd:float.\") ; sh:path chr:hasQuantityValue ]\n\tFocus Node: ex:measurement_38265_5\n\tValue Node: Literal(\"-0.028448\", datatype=xsd:decimal)\n\tResult Path: chr:hasQuantityValue\n\tMessage: chr:hasQuantityValue must be an xsd:float.\n",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 SPECTRUM HOME HEALTH AND HOSPICE CARE\n===========================================================\n\nPatient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19\nEncounter type: Emergency room admission (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:SPECTRUM_HOME_HEALTH_AND_HOSPICE_CARE a chr:CareUnit ;\n    rdfs:label \"SPECTRUM HOME HEALTH AND HOSPICE CARE\" .",
+   "level": 0,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of ankle (disorder) (SNOMED: 16114001). The condition was recorded on 2021-01-09T16:56:33+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Fracture_of_bone_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> ;\n    chr:hasRecordDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime .\n\nex:Fracture_of_ankle_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Fracture of ankle (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/16114001> ;\n    chr:hasRecordDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime .",
+   "level": 0,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of ankle (disorder) (SNOMED: 16114001). The condition was recorded on 2021-01-09T16:56:33+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_fracture_of_bone a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> .\n\nex:diagnostic_statement_fracture_of_ankle a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture of ankle (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/16114001> .",
+   "level": 0,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 SPECTRUM HOME HEALTH AND HOSPICE CARE\n===========================================================\n\nPatient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19\nEncounter type: Emergency room admission (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Arlen68_Olson653 a chr:Person ;\n    rdfs:label \"Arlen68 Olson653\" .\n\nex:Dr_Irvin970_Emard19 a chr:Person ;\n    rdfs:label \"Dr. Irvin970 Emard19\" .",
+   "level": 0,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2021-01-09T17:33:31+01:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Arlen68 Olson653. The measurement result was -0.028448 {T-score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in TurtleSyntax:\n\tSeverity: sh:Violation\n\tMessage: not valid Turtle: at line 11 of <>:\n\tOffending line: ex:measurement_process_1 a owl:Thing ;\n\tHint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in TurtleSyntax:\n\tSeverity: sh:Violation\n\tMessage: not valid Turtle: at line 11 of <>:\n\tOffending line: ex:measurement_process_1 a owl:Thing ;\n\tHint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs."
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [
+    "UNRESOLVED: ex:measurement_process_1 must be a MedicalProcedure (or subclass) to satisfy chr:hasStatus constraint \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:measurement_process_1 a owl:Thing ;\n    rdfs:label \"measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\n# UNRESOLVED: ex:measurement_process_1 must be a MedicalProcedure (or subclass) to satisfy chr:hasStatus constraint \u2014 not stated in the text",
+   "level": 0,
+   "unparsed": true,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2021-01-09T17:33:31+01:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Arlen68 Olson653. The measurement result was -0.028448 {T-score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:T-score a chr:Unit ;\n    rdfs:label \"{T-score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblT-scorecbr> .",
+   "level": 0,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of ankle (disorder) (SNOMED: 16114001). The condition was recorded on 2021-01-09T16:56:33+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasObservation is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeve"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasObservation is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeve"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [
+    "UNRESOLVED: chr:hasStatus \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_process_bone a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Fracture_of_bone_disorder ;\n    chr:hasObservation ex:diagnostic_statement_fracture_of_bone ;\n    chr:hasPatient ex:Arlen68_Olson653 ;\n    chr:hasPerformedDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Irvin970_Emard19 .\n\nex:diagnostic_statement_fracture_of_bone a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> .\n\nex:evaluation_process_ankle a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Fracture_of_ankle_disorder ;\n    chr:hasObservation ex:diagnostic_statement_fracture_of_ankle ;\n    chr:hasPatient ex:Arlen68_Olson653 ;\n    chr:hasPerformedDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Irvin970_Emard19 .\n\n# UNRESOLVED: chr:hasStatus \u2014 not stated in the text",
+   "level": 1,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2021-01-09T17:33:31+01:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Arlen68 Olson653. The measurement result was -0.028448 {T-score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_38265_5 a chr:Measurement ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density\" ;\n    chr:hasCode <https://loinc.org/38265-5> ;\n    chr:hasMeasuredDate \"2021-01-09T17:33:31+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"-0.028448\"^^xsd:float ;\n    chr:hasUnit ex:unit_T-score .\n\nex:unit_T-score a chr:Unit ;\n    rdfs:label \"{T-score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .",
+   "level": 1,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2021-01-09T17:33:31+01:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Arlen68 Olson653. The measurement result was -0.028448 {T-score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_38265_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_38265_5\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFo"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasObservation is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeve"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasObservation is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeve"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_38265_5 a chr:MeasurementProcess ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density measurement\" ;\n    chr:hasPatient ex:Arlen68_Olson653 ;\n    chr:hasPerformedDate \"2021-01-09T17:33:31+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;\n    chr:hasResult ex:measurement_38265_5 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_38265_5 a chr:Measurement ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density\" ;\n    chr:hasCode <https://loinc.org/38265-5> ;\n    chr:hasMeasuredDate \"2021-01-09T17:33:31+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"-0.028448\"^^xsd:float ;\n    chr:hasUnit ex:unit_T-score .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .",
+   "level": 2,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 SPECTRUM HOME HEALTH AND HOSPICE CARE\n===========================================================\n\nPatient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19\nEncounter type: Emergency room admission (procedure)\n\nOn 2021-01-09T17:33:31+01:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Arlen68 Olson653. The measurement result was -0.028448 {T-score}. The measurement process was recorded with status \"completed\".\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of ankle (disorder) (SNOMED: 16114001). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasObservation is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeve"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasObservation is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeve"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_process_bone .",
+   "level": 3,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 SPECTRUM HOME HEALTH AND HOSPICE CARE\n===========================================================\n\nPatient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19\nEncounter type: Emergency room admission (procedure)\n\nOn 2021-01-09T17:33:31+01:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Arlen68 Olson653. The measurement result was -0.028448 {T-score}. The measurement process was recorded with status \"completed\".\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of ankle (disorder) (SNOMED: 16114001). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasObservation is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeve"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_fracture_of_bone\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasObservation is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_ankle\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeve"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20210109T165633 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 SPECTRUM HOME HEALTH AND HOSPICE CARE\" ;\n    chr:hasCareProvider ex:Dr_Irvin970_Emard19 ;\n    chr:hasCareUnit ex:SPECTRUM_HOME_HEALTH_AND_HOSPICE_CARE ;\n    chr:hasDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Arlen68_Olson653 ;\n    chr:hasProcedure ex:measurement_process_38265_5 ;\n    chr:hasProcedure ex:evaluation_process_bone ;\n    chr:hasProcedure ex:evaluation_process_ankle .\n\nex:measurement_process_38265_5 a chr:MedicalProcedure ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density measurement\" ;\n    chr:hasPatient ex:Arlen68_Olson653 ;\n    chr:hasPerformedDate \"2021-01-09T17:33:31+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;\n    chr:hasStatus ex:status_completed .\n\nex:evaluation_process_bone a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:Arlen68_Olson653 ;\n    chr:hasPerformedDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Irvin970_Emard19 .\n\nex:evaluation_process_ankle a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:Arlen68_Olson653 ;\n    chr:hasPerformedDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Irvin970_Emard19 .",
+   "level": 3,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 20,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 10802,
+   "completion_tokens": 2241,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 20,
+   "prompt_tokens": 75989,
+   "completion_tokens": 9198,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 18,
+   "prompt_tokens": 65187,
+   "completion_tokens": 6957,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

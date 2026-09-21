@@ -1,0 +1,465 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Pain_severity_72514-3 a chr:Severity ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluation_20211110T153002 .\n\nex:visit_20211110T153002 a chr:ClinicalVisit ;\n    rdfs:label \"Well child visit\" ;\n    chr:hasCareProvider ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasCareUnit ex:CARING_HEALTH_CENTER_INC ;\n    chr:hasDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasProcedure ex:evaluation_20211110T153002,\n        ex:measurement_process_BodyHeight_20211110T153002,\n        ex:measurement_process_BodyWeight_20211110T153002,\n        ex:measurement_process_HeadOccipitalFrontalCircumferencePercentile_20211110T153002,\n        ex:measurement_process_HeadOccipitalFrontalCircumference_20211110T153002,\n        ex:measurement_process_HeartRate_20211110T153002,\n        ex:measurement_process_PainSeverity_20211110T153002,\n        ex:measurement_process_RespiratoryRate_20211110T153002,\n        ex:measurement_process_WeightForLength_20211110T153002 .\n\nex:CARING_HEALTH_CENTER_INC a chr:CareUnit ;\n    rdfs:label \"CARING HEALTH CENTER, INC\" .\n\nex:Medication_review_due_314529007 a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n\nex:measurement_BodyHeight_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"64.7\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_BodyWeight_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"8.1\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_HeadOccipitalFrontalCircumferencePercentile_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile\" ;\n    chr:hasCode <https://loinc.org/8289-1> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"57.73\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_HeadOccipitalFrontalCircumference_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference\" ;\n    chr:hasCode <https://loinc.org/9843-4> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"42.34\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_HeartRate_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"61.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_PainSeverity_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"4.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_RespiratoryRate_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"12.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_WeightForLength_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Weight-for-length Per age and sex\" ;\n    chr:hasCode <https://loinc.org/77606-2> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"88.875\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_process_BodyHeight_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_BodyHeight_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_BodyWeight_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_BodyWeight_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeadOccipitalFrontalCircumferencePercentile_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_HeadOccipitalFrontalCircumferencePercentile_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeadOccipitalFrontalCircumference_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Head Occipital-frontal circumference measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_HeadOccipitalFrontalCircumference_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeartRate_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_HeartRate_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_PainSeverity_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_PainSeverity_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_RespiratoryRate_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_RespiratoryRate_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_WeightForLength_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Weight-for-length Per age and sex measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_WeightForLength_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"[Score]\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:evaluation_20211110T153002 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Medication_review_due_314529007 ;\n    chr:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:person_Dr_Teresa94_Tapia475 a chr:Person ;\n    rdfs:label \"Dr. Teresa94 Tapia475\" .\n\nex:person_Hallie315_Tasha327_Grant908 a chr:Person ;\n    rdfs:label \"Hallie315 Tasha327 Grant908\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 CARING HEALTH CENTER, INC\n==============================================\n\nPatient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475\nEncounter type: Well child visit (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CARING_HEALTH_CENTER_INC a chr:CareUnit ;\n    rdfs:label \"CARING HEALTH CENTER, INC\" .",
+   "level": 0,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Teresa94 Tapia475 evaluated the patient on 2021-11-10T15:30:02+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2021-11-10T15:30:02+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: chr:DiagnosticStatement\n\tValue Node: chr:DiagnosticStatement\n\tMessage: rdf:type must be a cla"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: chr:DiagnosticStatement\n\tValue Node: chr:DiagnosticStatement\n\tMessage: rdf:type must be a cla"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .",
+   "level": 0,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2021-11-10T15:30:02+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 64.7 cm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 4 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 8.1 kg. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Weight-for-length Per age and sex (LOINC: 77606-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 88.875 %. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Head Occipital-frontal circumference Percentile (LOINC: 8289-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 57.73 %. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Head Occipital-frontal circumference (LOINC: 9843-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 42.34 cm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 61 /min. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 12 /min. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_BodyHeight_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"64.7\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:measurement_PainSeverity_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"4.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"[Score]\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:measurement_BodyWeight_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"8.1\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:measurement_WeightForLength_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Weight-for-length Per age and sex\" ;\n    chr:hasCode <https://loinc.org/77606-2> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"88.875\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:unit_percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:measurement_HeadOccipitalFrontalCircumferencePercentile_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile\" ;\n    chr:hasCode <https://loinc.org/8289-1> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"57.73\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_HeadOccipitalFrontalCircumference_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference\" ;\n    chr:hasCode <https://loinc.org/9843-4> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"42.34\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_HeartRate_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"61.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:measurement_RespiratoryRate_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"12.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .",
+   "level": 0,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 CARING HEALTH CENTER, INC\n==============================================\n\nPatient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475\nEncounter type: Well child visit (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Hallie315_Tasha327_Grant908 a chr:Person ;\n    rdfs:label \"Hallie315 Tasha327 Grant908\" .\n\nex:person_Dr_Teresa94_Tapia475 a chr:Person ;\n    rdfs:label \"Dr. Teresa94 Tapia475\" .",
+   "level": 0,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Severity",
+   "concepts": [
+    "chr:Severity"
+   ],
+   "text": "On 2021-11-10T15:30:02+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 4 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Pain_severity_72514-3 a chr:Severity ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> .",
+   "level": 0,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Teresa94 Tapia475 evaluated the patient on 2021-11-10T15:30:02+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2021-11-10T15:30:02+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in ClosedConstraintCompon"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in ClosedConstraintCompon"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Medication_review_due_314529007 a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .",
+   "level": 1,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2021-11-10T15:30:02+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 64.7 cm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 4 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 8.1 kg. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Weight-for-length Per age and sex (LOINC: 77606-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 88.875 %. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Head Occipital-frontal circumference Percentile (LOINC: 8289-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 57.73 %. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Head Occipital-frontal circumference (LOINC: 9843-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 42.34 cm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 61 /min. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 12 /min. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: ns1:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: ns1:DiagnosticStatement\n\tValue Node: ns1:DiagnosticStatement\n\tMessage: rdf:type must be a cla"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: ns1:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: ns1:DiagnosticStatement\n\tValue Node: ns1:DiagnosticStatement\n\tMessage: rdf:type must be a cla"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [
+    "UNRESOLVED: ex:diagnostic_statement_Medication_review_due_314529007 \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_BodyHeight_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_BodyHeight_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyHeight_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"64.7\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_process_PainSeverity_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_PainSeverity_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_PainSeverity_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"4.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_process_BodyWeight_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_BodyWeight_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyWeight_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"8.1\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_process_WeightForLength_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Weight-for-length Per age and sex measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_WeightForLength_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_WeightForLength_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Weight-for-length Per age and sex\" ;\n    chr:hasCode <https://loinc.org/77606-2> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"88.875\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_process_HeadOccipitalFrontalCircumferencePercentile_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_HeadOccipitalFrontalCircumferencePercentile_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeadOccipitalFrontalCircumferencePercentile_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile\" ;\n    chr:hasCode <https://loinc.org/8289-1> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"57.73\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_process_HeadOccipitalFrontalCircumference_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Head Occipital-frontal circumference measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_HeadOccipitalFrontalCircumference_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeadOccipitalFrontalCircumference_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference\" ;\n    chr:hasCode <https://loinc.org/9843-4> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"42.34\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_process_HeartRate_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_HeartRate_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeartRate_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"61.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_process_RespiratoryRate_20211110T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_RespiratoryRate_20211110T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_RespiratoryRate_20211110T153002 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"12.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\n# UNRESOLVED: ex:diagnostic_statement_Medication_review_due_314529007 \u2014 not stated in the text",
+   "level": 1,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Teresa94 Tapia475 evaluated the patient on 2021-11-10T15:30:02+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2021-11-10T15:30:02+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in ClosedConstraintCompon"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in ClosedConstraintCompon"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in ClosedConstraintCompon"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20211110T153002 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Medication_review_due_314529007 ;\n    chr:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 .\n\nex:Medication_review_due_314529007 a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .",
+   "level": 2,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 CARING HEALTH CENTER, INC\n===============================================\n\nPatient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475\nEncounter type: Well child visit (procedure)\n\nOn 2021-11-10T15:30:02+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 64.7 cm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 4 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 8.1 kg. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Weight-for-length Per age and sex (LOINC: 77606-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 88.875 %. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Head Occipital-frontal circumference Percentile (LOINC: 8289-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 57.73 %. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Head Occipital-frontal circumference (LOINC: 9843-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 42.34 cm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 61 /min. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 12 /min. The measurement process was recorded with status \"completed\".\n\nDr. Teresa94 Tapia475 evaluated the patient on 2021-11-10T15:30:02+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2021-11-10T15:30:02+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in ClosedConstraintCompon"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in ClosedConstraintCompon"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluation_20211110T153002 .",
+   "level": 3,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 CARING HEALTH CENTER, INC\n===============================================\n\nPatient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475\nEncounter type: Well child visit (procedure)\n\nOn 2021-11-10T15:30:02+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 64.7 cm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 4 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 8.1 kg. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Weight-for-length Per age and sex (LOINC: 77606-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 88.875 %. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Head Occipital-frontal circumference Percentile (LOINC: 8289-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 57.73 %. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Head Occipital-frontal circumference (LOINC: 9843-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 42.34 cm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 61 /min. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-10T15:30:02+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 12 /min. The measurement process was recorded with status \"completed\".\n\nDr. Teresa94 Tapia475 evaluated the patient on 2021-11-10T15:30:02+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2021-11-10T15:30:02+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in ClosedConstraintCompon"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasDateDomainShape\n\tFocus Node: ex:Medication_review_due_314529007\n\tValue Node: ex:Medication_review_due_314529007\n\tMessage: Subject of chr:hasDate must be a chr:ClinicalVisit.\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Medication_review_due_314529007\n\t"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Medication_review_due_314529007\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:Medication_review_due_314529007\n\tValue Node: <http://snomed.info/id/314529007>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in ClosedConstraintCompon"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20211110T153002 a chr:ClinicalVisit ;\n    rdfs:label \"Well child visit\" ;\n    chr:hasCareProvider ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasCareUnit ex:CARING_HEALTH_CENTER_INC ;\n    chr:hasDate \"2021-11-10T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasProcedure ex:measurement_process_BodyHeight_20211110T153002 ;\n    chr:hasProcedure ex:measurement_process_PainSeverity_20211110T153002 ;\n    chr:hasProcedure ex:measurement_process_BodyWeight_20211110T153002 ;\n    chr:hasProcedure ex:measurement_process_WeightForLength_20211110T153002 ;\n    chr:hasProcedure ex:measurement_process_HeadOccipitalFrontalCircumferencePercentile_20211110T153002 ;\n    chr:hasProcedure ex:measurement_process_HeadOccipitalFrontalCircumference_20211110T153002 ;\n    chr:hasProcedure ex:measurement_process_HeartRate_20211110T153002 ;\n    chr:hasProcedure ex:measurement_process_RespiratoryRate_20211110T153002 ;\n    chr:hasProcedure ex:evaluation_20211110T153002 .\n\nex:Medication_review_due_314529007 a chr:MedicalProcedure ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:MedicalProcedure ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .",
+   "level": 3,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2021-11-10T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 20,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 11733,
+   "completion_tokens": 5614,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 20,
+   "prompt_tokens": 82835,
+   "completion_tokens": 18780,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 18,
+   "prompt_tokens": 71102,
+   "completion_tokens": 13166,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

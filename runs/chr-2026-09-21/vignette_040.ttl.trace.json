@@ -1,0 +1,526 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_followup a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20170411T150014 .\n\nex:Polyp_of_colon_68496003 a chr:ClinicalCondition ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> ;\n    chr:hasRecordDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasLocatedIn ex:colon .\n\nex:diagnostic_statement_68496003 a chr:DiagnosticStatement ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:visit_20170411T143219 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 THE LOWELL GENERAL HOSPITAL\" ;\n    chr:hasCareProvider ex:Dr_Margene509_Schamberger479 ;\n    chr:hasCareUnit ex:THE_LOWELL_GENERAL_HOSPITAL ;\n    chr:hasDate \"2017-04-11T14:32:19+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasProcedure ex:evaluation_20170411T150014,\n        ex:process_Hemoglobin_20170411T150014,\n        ex:process_Polyp_size_20170411T150014 .\n\nex:THE_LOWELL_GENERAL_HOSPITAL a chr:CareUnit ;\n    rdfs:label \"THE LOWELL GENERAL HOSPITAL\" .\n\nex:colon a chr:AnatomicalStructure ;\n    rdfs:label \"colon\" .\n\nex:measurement_Hemoglobin_gastrointestinal_lower_Presence_in_Stool_by_Immunoassay_1st_specimen_20170411T150014 a chr:Measurement ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" ;\n    chr:hasCode <https://loinc.org/57905-2> ;\n    chr:hasMeasuredDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"242.07\"^^xsd:float ;\n    chr:hasUnit ex:unit_ngpermL .\n\nex:measurement_Polyp_size_greatest_dimension_20170411T150014 a chr:Measurement ;\n    rdfs:label \"Polyp size greatest dimension\" ;\n    chr:hasCode <https://loinc.org/33756-8> ;\n    chr:hasMeasuredDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"11.962\"^^xsd:float ;\n    chr:hasUnit ex:unit_mm .\n\nex:process_Hemoglobin_20170411T150014 a chr:MeasurementProcess ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;\n    chr:hasResult ex:measurement_Hemoglobin_gastrointestinal_lower_Presence_in_Stool_by_Immunoassay_1st_specimen_20170411T150014 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_Polyp_size_20170411T150014 a chr:MeasurementProcess ;\n    rdfs:label \"Polyp size greatest dimension measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;\n    chr:hasResult ex:measurement_Polyp_size_greatest_dimension_20170411T150014 ;\n    chr:hasStatus ex:status_completed .\n\nex:unit_mm a chr:Unit ;\n    rdfs:label \"mm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mm> .\n\nex:unit_ngpermL a chr:Unit ;\n    rdfs:label \"ng/mL\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ngpermL> .\n\nex:evaluation_20170411T150014 a chr:MedicalProcedure ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Margene509_Schamberger479 .\n\n# UNRESOLVED: chr:hasObservation on ex:evaluation_20170411T150014 \u2014 not stated in the text (the text says the evaluation produced a statement, but doesn't explicitly link the process to the statement via chr:hasObservation)\n# UNRESOLVED: chr:hasCondition on ex:evaluation_20170411T150014 \u2014 not stated in the text\n\nex:Cory323_Frank378_Heller342 a chr:Person ;\n    rdfs:label \"Cory323 Frank378 Heller342\" .\n\nex:Dr_Margene509_Schamberger479 a chr:Person ;\n    rdfs:label \"Dr. Margene509 Schamberger479\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [
+  "UNRESOLVED: chr:hasObservation on ex:evaluation_20170411T150014 \u2014 not stated in the text (the text says the evaluation produced a statement, but doesn't explicitly link the process to the statement via chr:hasObservation)",
+  "UNRESOLVED: chr:hasCondition on ex:evaluation_20170411T150014 \u2014 not stated in the text"
+ ],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 THE LOWELL GENERAL HOSPITAL\n=================================================\n\nPatient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479\nEncounter type: Encounter for check up (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:THE_LOWELL_GENERAL_HOSPITAL a chr:CareUnit ;\n    rdfs:label \"THE LOWELL GENERAL HOSPITAL\" .",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Margene509 Schamberger479 evaluated the patient on 2017-04-11T15:00:14+02:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2017-04-11T15:00:14+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Polyp_of_colon_68496003 a chr:ClinicalCondition ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> ;\n    chr:hasLocatedIn ex:colon ;\n    chr:hasRecordDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime .\n\nex:colon a chr:AnatomicalStructure ;\n    rdfs:label \"colon\" .",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Margene509 Schamberger479 evaluated the patient on 2017-04-11T15:00:14+02:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2017-04-11T15:00:14+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_68496003\n\tValue Node: <http://snomed.info/id/68496003>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: chr:DiagnosticStatement\n\tValue Node: chr:DiagnosticStatement\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_68496003\n\tValue Node: <http://snomed.info/id/68496003>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: chr:DiagnosticStatement\n\tValue Node: chr:DiagnosticStatement\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_68496003 a chr:DiagnosticStatement ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> .",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 THE LOWELL GENERAL HOSPITAL\n=================================================\n\nPatient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479\nEncounter type: Encounter for check up (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Cory323_Frank378_Heller342 a chr:Person ;\n    rdfs:label \"Cory323 Frank378 Heller342\" .\n\nex:Dr_Margene509_Schamberger479 a chr:Person ;\n    rdfs:label \"Dr. Margene509 Schamberger479\" .",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2017-04-11T15:00:14+02:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 11.962 mm. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-11T15:00:14+02:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 242.07 ng/mL. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:process_status_1 a chr:ProcessStatus ;\n    rdfs:label \"completed\" ;\n    chr:hasCode <https://loinc.org/33756-8> .\n\nex:process_status_2 a chr:ProcessStatus ;\n    rdfs:label \"completed\" ;\n    chr:hasCode <https://loinc.org/57905-2> .",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2017-04-11T15:00:14+02:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 11.962 mm. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-11T15:00:14+02:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 242.07 ng/mL. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_mm a chr:Unit ;\n    rdfs:label \"mm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mm> .\n\nex:unit_ngpermL a chr:Unit ;\n    rdfs:label \"ng/mL\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ngpermL> .",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Margene509 Schamberger479 evaluated the patient on 2017-04-11T15:00:14+02:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2017-04-11T15:00:14+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformedDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Viola"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformedDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Viola"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20170411T150014 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Margene509_Schamberger479 .\n\nex:Polyp_of_colon_68496003 a chr:ClinicalCondition ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> .\n\nex:diagnostic_statement_68496003 a chr:DiagnosticStatement ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> .",
+   "level": 1,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2017-04-11T15:00:14+02:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 11.962 mm. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-11T15:00:14+02:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 242.07 ng/mL. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Hemoglobin_gastrointestinal_lower_Presence_in_Stool_by_Immunoassay_1st_specimen_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Polyp_size_greatest_dimension_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Hemoglobin_gastrointestinal_lower_Presence_in_Stool_by_Immunoassay_1st_specimen_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_Hemoglobin_gastrointestinal_lower_Presence_in_Stool_by_Immunoassay_1st_specimen_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFoc"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_68496003\n\tValue Node: <http://snomed.info/id/68496003>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: ns1:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: ns1:DiagnosticStatement\n\tValue Node: ns1:DiagnosticStatement\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_68496003\n\tValue Node: <http://snomed.info/id/68496003>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: ns1:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: ns1:DiagnosticStatement\n\tValue Node: ns1:DiagnosticStatement\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Polyp_size_greatest_dimension_20170411T150014 a chr:Measurement ;\n    rdfs:label \"Polyp size greatest dimension\" ;\n    chr:hasCode <https://loinc.org/33756-8> ;\n    chr:hasMeasuredDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"11.962\"^^xsd:float ;\n    chr:hasUnit ex:unit_mm .\n\nex:measurement_Hemoglobin_gastrointestinal_lower_Presence_in_Stool_by_Immunoassay_1st_specimen_20170411T150014 a chr:Measurement ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" ;\n    chr:hasCode <https://loinc.org/57905-2> ;\n    chr:hasMeasuredDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"242.07\"^^xsd:float ;\n    chr:hasUnit ex:unit_ngpermL .",
+   "level": 1,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2017-04-11T15:00:14+02:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 11.962 mm. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-11T15:00:14+02:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 242.07 ng/mL. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformedDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Viola"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformedDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Viola"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:process_Polyp_size_20170411T150014 a chr:MeasurementProcess ;\n    rdfs:label \"Polyp size greatest dimension measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;\n    chr:hasResult ex:measurement_Polyp_size_greatest_dimension_20170411T150014 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_Polyp_size_greatest_dimension_20170411T150014 a chr:Measurement ;\n    rdfs:label \"Polyp size greatest dimension\" ;\n    chr:hasCode <https://loinc.org/33756-8> ;\n    chr:hasMeasuredDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"11.962\"^^xsd:float ;\n    chr:hasUnit ex:unit_mm .\n\nex:process_Hemoglobin_20170411T150014 a chr:MeasurementProcess ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Margene509_Schamberger479 ;\n    chr:hasResult ex:measurement_Hemoglobin_gastrointestinal_lower_Presence_in_Stool_by_Immunoassay_1st_specimen_20170411T150014 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_Hemoglobin_gastrointestinal_lower_Presence_in_Stool_by_Immunoassay_1st_specimen_20170411T150014 a chr:Measurement ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" ;\n    chr:hasCode <https://loinc.org/57905-2> ;\n    chr:hasMeasuredDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"242.07\"^^xsd:float ;\n    chr:hasUnit ex:unit_ngpermL .",
+   "level": 2,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 THE LOWELL GENERAL HOSPITAL\n=================================================\n\nPatient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479\nEncounter type: Encounter for check up (procedure)\n\nOn 2017-04-11T15:00:14+02:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 11.962 mm. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-11T15:00:14+02:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 242.07 ng/mL. The measurement process was recorded with status \"completed\".\n\nDr. Margene509 Schamberger479 evaluated the patient on 2017-04-11T15:00:14+02:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2017-04-11T15:00:14+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformedDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Viola"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformedDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Viola"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformedDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Viola"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Polyp_of_colon_68496003 a chr:MedicalProcedure ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> .\n\nex:diagnostic_statement_68496003 a chr:MedicalProcedure ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> .\n\nex:evaluation_20170411T150014 a chr:MedicalProcedure ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Margene509_Schamberger479 .\n\nex:measurement_Hemoglobin_gastrointestinal_lower_Presence_in_Stool_by_Immunoassay_1st_specimen_20170411T150014 a chr:Measurement ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" ;\n    chr:hasCode <https://loinc.org/57905-2> .\n\nex:measurement_Polyp_size_greatest_dimension_20170411T150014 a chr:Measurement ;\n    rdfs:label \"Polyp size greatest dimension\" ;\n    chr:hasCode <https://loinc.org/33756-8> .\n\nex:process_Hemoglobin_20170411T150014 a chr:MedicalProcedure ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:process_Polyp_size_20170411T150014 a chr:MedicalProcedure ;\n    rdfs:label \"Polyp size greatest dimension measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:CarePlan_followup a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20170411T150014 .",
+   "level": 3,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 THE LOWELL GENERAL HOSPITAL\n=================================================\n\nPatient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479\nEncounter type: Encounter for check up (procedure)\n\nOn 2017-04-11T15:00:14+02:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 11.962 mm. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-11T15:00:14+02:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 242.07 ng/mL. The measurement process was recorded with status \"completed\".\n\nDr. Margene509 Schamberger479 evaluated the patient on 2017-04-11T15:00:14+02:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2017-04-11T15:00:14+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformedDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Viola"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformedDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Viola"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Polyp_of_colon_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_68496003\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20170411T150014\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformedDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Viola"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20170411T143219 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 THE LOWELL GENERAL HOSPITAL\" ;\n    chr:hasCareProvider ex:Dr_Margene509_Schamberger479 ;\n    chr:hasCareUnit ex:THE_LOWELL_GENERAL_HOSPITAL ;\n    chr:hasDate \"2017-04-11T14:32:19+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasProcedure ex:process_Polyp_size_20170411T150014 ;\n    chr:hasProcedure ex:process_Hemoglobin_20170411T150014 ;\n    chr:hasProcedure ex:evaluation_20170411T150014 .\n\nex:Polyp_of_colon_68496003 a chr:ClinicalCondition ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> ;\n    chr:hasDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_68496003 a chr:ClinicalCondition ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> .\n\nex:evaluation_20170411T150014 a chr:MedicalProcedure ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-11T15:00:14+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Margene509_Schamberger479 .\n\nex:measurement_Hemoglobin_gastrointestinal_lower_Presence_in_Stool_by_Immunoassay_1st_specimen_20170411T150014 a chr:Measurement ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" ;\n    chr:hasCode <https://loinc.org/57905-2> .\n\nex:measurement_Polyp_size_greatest_dimension_20170411T150014 a chr:Measurement ;\n    rdfs:label \"Polyp size greatest dimension\" ;\n    chr:hasCode <https://loinc.org/33756-8> .\n\nex:process_Hemoglobin_20170411T150014 a chr:MeasurementProcess ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:process_Polyp_size_20170411T150014 a chr:MeasurementProcess ;\n    rdfs:label \"Polyp size greatest dimension measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .",
+   "level": 3,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-11T14:32:19+02:00\nCare unit: THE LOWELL GENERAL HOSPITAL\nAttending physician: Dr. Margene509 Schamberger479",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 23,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 9752,
+   "completion_tokens": 2675,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 23,
+   "prompt_tokens": 89392,
+   "completion_tokens": 13433,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 21,
+   "prompt_tokens": 79640,
+   "completion_tokens": 10758,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

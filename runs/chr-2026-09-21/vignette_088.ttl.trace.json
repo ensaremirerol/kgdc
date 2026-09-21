@@ -1,0 +1,359 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20221109T153002 .\n\nex:visit_20221109T153002 a chr:ClinicalVisit ;\n    rdfs:label \"Well child visit (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasCareUnit ex:CARING_HEALTH_CENTER_INC ;\n    chr:hasDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasProcedure ex:evaluation_20221109T153002,\n        ex:measurement_process_BodyHeight_20221109T153002,\n        ex:measurement_process_BodyWeight_20221109T153002,\n        ex:measurement_process_HeadOccipitalFrontalPercentile_20221109T153002,\n        ex:measurement_process_HeadOccipitalFrontal_20221109T153002,\n        ex:measurement_process_HeartRate_20221109T153002,\n        ex:measurement_process_PainSeverity_20221109T153002,\n        ex:measurement_process_RespiratoryRate_20221109T153002,\n        ex:measurement_process_WeightForLength_20221109T153002 .\n\nex:CARING_HEALTH_CENTER_INC a chr:CareUnit ;\n    rdfs:label \"CARING HEALTH CENTER, INC\" .\n\nex:Medication_review_due_situation a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n\nex:measurement_BodyHeight_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"80.2\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_BodyWeight_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"12.6\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_HeadOccipitalFrontalPercentile_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile\" ;\n    chr:hasCode <https://loinc.org/8289-1> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"57.73\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_HeadOccipitalFrontal_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference\" ;\n    chr:hasCode <https://loinc.org/9843-4> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"46.67\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_HeartRate_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"92.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_PainSeverity_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_RespiratoryRate_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"13.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_WeightForLength_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Weight-for-length Per age and sex\" ;\n    chr:hasCode <https://loinc.org/77606-2> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"97.225\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_process_BodyHeight_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_BodyHeight_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_BodyWeight_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_BodyWeight_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeadOccipitalFrontalPercentile_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_HeadOccipitalFrontalPercentile_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeadOccipitalFrontal_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Head Occipital-frontal circumference\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_HeadOccipitalFrontal_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeartRate_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_HeartRate_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_PainSeverity_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_PainSeverity_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_RespiratoryRate_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_RespiratoryRate_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_WeightForLength_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Weight-for-length Per age and sex\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_WeightForLength_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:evaluation_20221109T153002 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Medication_review_due_situation ;\n    chr:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:person_Dr_Teresa94_Tapia475 a chr:Person ;\n    rdfs:label \"Dr. Teresa94 Tapia475\" .\n\nex:person_Hallie315_Tasha327_Grant908 a chr:Person ;\n    rdfs:label \"Hallie315 Tasha327 Grant908\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 CARING HEALTH CENTER, INC\n===============================================\n\nPatient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475\nEncounter type: Well child visit (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CARING_HEALTH_CENTER_INC a chr:CareUnit ;\n    rdfs:label \"CARING HEALTH CENTER, INC\" .",
+   "level": 0,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Teresa94 Tapia475 evaluated the patient on 2022-11-09T15:30:02+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2022-11-09T15:30:02+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Medication_review_due_situation a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime .",
+   "level": 0,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Teresa94 Tapia475 evaluated the patient on 2022-11-09T15:30:02+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2022-11-09T15:30:02+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .",
+   "level": 0,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2022-11-09T15:30:02+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 80.2 cm. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 12.6 kg. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Weight-for-length Per age and sex (LOINC: 77606-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 97.225 %. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Head Occipital-frontal circumference Percentile (LOINC: 8289-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 57.73 %. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Head Occipital-frontal circumference (LOINC: 9843-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 46.67 cm. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 92 /min. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_BodyHeight_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"80.2\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:measurement_PainSeverity_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:measurement_BodyWeight_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"12.6\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:measurement_WeightForLength_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Weight-for-length Per age and sex\" ;\n    chr:hasCode <https://loinc.org/77606-2> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"97.225\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:unit_percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:measurement_HeadOccipitalFrontalPercentile_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile\" ;\n    chr:hasCode <https://loinc.org/8289-1> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"57.73\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_HeadOccipitalFrontal_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference\" ;\n    chr:hasCode <https://loinc.org/9843-4> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"46.67\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_HeartRate_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"92.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:measurement_RespiratoryRate_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"13.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .",
+   "level": 0,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 CARING HEALTH CENTER, INC\n===============================================\n\nPatient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475\nEncounter type: Well child visit (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Hallie315_Tasha327_Grant908 a chr:Person ;\n    rdfs:label \"Hallie315 Tasha327 Grant908\" .\n\nex:person_Dr_Teresa94_Tapia475 a chr:Person ;\n    rdfs:label \"Dr. Teresa94 Tapia475\" .",
+   "level": 0,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Teresa94 Tapia475 evaluated the patient on 2022-11-09T15:30:02+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2022-11-09T15:30:02+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [
+    "UNRESOLVED: chr:hasStatus \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20221109T153002 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Medication_review_due_situation ;\n    chr:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 .\n\n# UNRESOLVED: chr:hasStatus \u2014 not stated in the text",
+   "level": 1,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2022-11-09T15:30:02+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 80.2 cm. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 12.6 kg. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Weight-for-length Per age and sex (LOINC: 77606-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 97.225 %. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Head Occipital-frontal circumference Percentile (LOINC: 8289-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 57.73 %. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Head Occipital-frontal circumference (LOINC: 9843-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 46.67 cm. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 92 /min. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:measurement_process_BodyHeight_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_BodyHeight_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyHeight_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"80.2\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_process_PainSeverity_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_PainSeverity_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_PainSeverity_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_process_BodyWeight_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_BodyWeight_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyWeight_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"12.6\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_process_WeightForLength_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Weight-for-length Per age and sex\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_WeightForLength_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_WeightForLength_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Weight-for-length Per age and sex\" ;\n    chr:hasCode <https://loinc.org/77606-2> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"97.225\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_process_HeadOccipitalFrontalPercentile_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_HeadOccipitalFrontalPercentile_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeadOccipitalFrontalPercentile_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile\" ;\n    chr:hasCode <https://loinc.org/8289-1> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"57.73\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_process_HeadOccipitalFrontal_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Head Occipital-frontal circumference\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_HeadOccipitalFrontal_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeadOccipitalFrontal_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference\" ;\n    chr:hasCode <https://loinc.org/9843-4> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"46.67\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_process_HeartRate_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_HeartRate_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeartRate_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"92.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_process_RespiratoryRate_20221109T153002 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasResult ex:measurement_RespiratoryRate_20221109T153002 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_RespiratoryRate_20221109T153002 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"13.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .",
+   "level": 1,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 CARING HEALTH CENTER, INC\n===============================================\n\nPatient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475\nEncounter type: Well child visit (procedure)\n\nOn 2022-11-09T15:30:02+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 80.2 cm. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 12.6 kg. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Weight-for-length Per age and sex (LOINC: 77606-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 97.225 %. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Head Occipital-frontal circumference Percentile (LOINC: 8289-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 57.73 %. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Head Occipital-frontal circumference (LOINC: 9843-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 46.67 cm. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 92 /min. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nDr. Teresa94 Tapia475 evaluated the patient on 2022-11-09T15:30:02+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2022-11-09T15:30:02+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20221109T153002 .",
+   "level": 2,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 CARING HEALTH CENTER, INC\n===============================================\n\nPatient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475\nEncounter type: Well child visit (procedure)\n\nOn 2022-11-09T15:30:02+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 80.2 cm. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 12.6 kg. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Weight-for-length Per age and sex (LOINC: 77606-2) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 97.225 %. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Head Occipital-frontal circumference Percentile (LOINC: 8289-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 57.73 %. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Head Occipital-frontal circumference (LOINC: 9843-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 46.67 cm. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 92 /min. The measurement process was recorded with status \"completed\".\n\nOn 2022-11-09T15:30:02+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Hallie315 Tasha327 Grant908. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nDr. Teresa94 Tapia475 evaluated the patient on 2022-11-09T15:30:02+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2022-11-09T15:30:02+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20221109T153002 a chr:ClinicalVisit ;\n    rdfs:label \"Well child visit (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasCareUnit ex:CARING_HEALTH_CENTER_INC ;\n    chr:hasDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasProcedure ex:measurement_process_BodyHeight_20221109T153002,\n                      ex:measurement_process_PainSeverity_20221109T153002,\n                      ex:measurement_process_BodyWeight_20221109T153002,\n                      ex:measurement_process_WeightForLength_20221109T153002,\n                      ex:measurement_process_HeadOccipitalFrontalPercentile_20221109T153002,\n                      ex:measurement_process_HeadOccipitalFrontal_20221109T153002,\n                      ex:measurement_process_HeartRate_20221109T153002,\n                      ex:measurement_process_RespiratoryRate_20221109T153002,\n                      ex:evaluation_20221109T153002 .\n\nex:measurement_process_BodyHeight_20221109T153002 a chr:MedicalProcedure ;\n    rdfs:label \"Body Height\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_PainSeverity_20221109T153002 a chr:MedicalProcedure ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_BodyWeight_20221109T153002 a chr:MedicalProcedure ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_WeightForLength_20221109T153002 a chr:MedicalProcedure ;\n    rdfs:label \"Weight-for-length Per age and sex\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeadOccipitalFrontalPercentile_20221109T153002 a chr:MedicalProcedure ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeadOccipitalFrontal_20221109T153002 a chr:MedicalProcedure ;\n    rdfs:label \"Head Occipital-frontal circumference\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeartRate_20221109T153002 a chr:MedicalProcedure ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_RespiratoryRate_20221109T153002 a chr:MedicalProcedure ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 ;\n    chr:hasStatus ex:status_completed .\n\nex:evaluation_20221109T153002 a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:person_Hallie315_Tasha327_Grant908 ;\n    chr:hasPerformedDate \"2022-11-09T15:30:02+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Teresa94_Tapia475 .",
+   "level": 2,
+   "shared_context": "Patient: Hallie315 Tasha327 Grant908 (ID: P-e23f3894)\nDate of visit: 2022-11-09T15:30:02+01:00\nCare unit: CARING HEALTH CENTER, INC\nAttending physician: Dr. Teresa94 Tapia475",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 11,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 9738,
+   "completion_tokens": 5476,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 11,
+   "prompt_tokens": 38996,
+   "completion_tokens": 13235,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 9,
+   "prompt_tokens": 29258,
+   "completion_tokens": 7759,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

@@ -1,0 +1,510 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluation_20190315T145637 .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:visit_20190315T141314 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 NASHOBA VALLEY MEDICAL CENTER\" ;\n    chr:hasCareProvider ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasCareUnit ex:NASHOBA_VALLEY_MEDICAL_CENTER ;\n    chr:hasDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasProcedure ex:evaluation_20190315T145637,\n        ex:process_BMI_20190315T141314,\n        ex:process_BodyHeight_20190315T141314,\n        ex:process_BodyWeight_20190315T141314,\n        ex:process_HeartRate_20190315T141314,\n        ex:process_PainSeverity_20190315T141314,\n        ex:process_RespiratoryRate_20190315T141314,\n        ex:process_TotalScoreDAST10_20190315T160818,\n        ex:process_TotalScoreHARK_20190315T152916 .\n\nex:NASHOBA_VALLEY_MEDICAL_CENTER a chr:CareUnit ;\n    rdfs:label \"NASHOBA VALLEY MEDICAL CENTER\" .\n\nex:Stress_73595000 a chr:ClinicalCondition ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> ;\n    chr:hasRecordDate \"2019-03-15T14:56:37+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Stress_73595000 a chr:DiagnosticStatement ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> .\n\nex:measurement_BMI_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"23.11\"^^xsd:float ;\n    chr:hasUnit ex:unit_kgperm2 .\n\nex:measurement_BodyHeight_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"159.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_BodyWeight_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"58.4\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_HeartRate_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"63.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_PainSeverity_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score .\n\nex:measurement_RespiratoryRate_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"13.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_TotalScoreDAST10_20190315T160818 a chr:Measurement ;\n    rdfs:label \"Total score [DAST-10]\" ;\n    chr:hasCode <https://loinc.org/82667-7> ;\n    chr:hasMeasuredDate \"2019-03-15T16:08:18+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score .\n\nex:measurement_TotalScoreHARK_20190315T152916 a chr:Measurement ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasCode <https://loinc.org/76504-0> ;\n    chr:hasMeasuredDate \"2019-03-15T15:29:16+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score .\n\nex:process_BMI_20190315T141314 a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_BMI_20190315T141314 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BodyHeight_20190315T141314 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_BodyHeight_20190315T141314 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BodyWeight_20190315T141314 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_BodyWeight_20190315T141314 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_HeartRate_20190315T141314 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_HeartRate_201903141314 ;\n    chr:hasStatus ex:status_completed .\n# Note: The above process_HeartRate result link was corrected to match the measurement ID.\nex:process_HeartRate_20190315T141314 chr:hasResult ex:measurement_HeartRate_20190315T141314 .\n\nex:process_PainSeverity_20190315T141314 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity measurement\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_PainSeverity_20190315T141314 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_RespiratoryRate_20190315T141314 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_RespiratoryRate_20190315T141314 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_TotalScoreDAST10_20190315T160818 a chr:MeasurementProcess ;\n    rdfs:label \"Total score [DAST-10] measurement\" ;\n    chr:hasCode <https://loinc.org/82667-7> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T16:08:18+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_TotalScoreDAST10_20190315T160818 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_TotalScoreHARK_20190315T152916 a chr:MeasurementProcess ;\n    rdfs:label \"Total score [HARK] measurement\" ;\n    chr:hasCode <https://loinc.org/76504-0> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T15:29:16+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_TotalScoreHARK_20190315T152916 ;\n    chr:hasStatus ex:status_completed .\n\nex:evaluation_20190315T145637 a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:56:37+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasStatus ex:status_completed .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kgperm2 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:unit_score a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:Arleen939_Marlyn309_Bergstrom287 a chr:Person ;\n    rdfs:label \"Arleen939 Marlyn309 Bergstrom287\" .\n\nex:Dr_Lynwood354_Tromp100 a chr:Person ;\n    rdfs:label \"Dr. Lynwood354 Tromp100\" .",
+ "conforms": false,
+ "violations": "Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasResultRangeShape\n\tFocus Node: ex:measurement_HeartRate_201903141314\n\tValue Node: ex:measurement_HeartRate_201903141314\n\tMessage: Object of chr:hasResult must be a chr:Measurement.\nConstraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasResult ]\n\tFocus Node: ex:process_HeartRate_20190315T141314\n\tResult Path: chr:hasResult\n\tMessage: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\n",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 NASHOBA VALLEY MEDICAL CENTER\n===================================================\n\nPatient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100\nEncounter type: General examination of patient (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:NASHOBA_VALLEY_MEDICAL_CENTER a chr:CareUnit ;\n    rdfs:label \"NASHOBA VALLEY MEDICAL CENTER\" .",
+   "level": 0,
+   "shared_context": "Patient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Lynwood354 Tromp100 evaluated the patient on 2019-03-15T14:56:37+01:00. The evaluation produced a diagnostic statement of Stress (finding) (SNOMED: 73595000). The condition was recorded on 2019-03-15T14:56:37+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Stress_73595000 a chr:ClinicalCondition ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> ;\n    chr:hasRecordDate \"2019-03-15T14:56:37+01:00\"^^xsd:dateTime .",
+   "level": 0,
+   "shared_context": "Patient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Lynwood354 Tromp100 evaluated the patient on 2019-03-15T14:56:37+01:00. The evaluation produced a diagnostic statement of Stress (finding) (SNOMED: 73595000). The condition was recorded on 2019-03-15T14:56:37+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_Stress_73595000\n\tValue Node: <http://snomed.info/id/73595000>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: chr:DiagnosticStatement\n\tValue Node: chr:DiagnosticStatement\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not "
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_Stress_73595000\n\tValue Node: <http://snomed.info/id/73595000>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: chr:DiagnosticStatement\n\tValue Node: chr:DiagnosticStatement\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not "
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_Stress_73595000 a chr:DiagnosticStatement ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> .",
+   "level": 0,
+   "shared_context": "Patient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 NASHOBA VALLEY MEDICAL CENTER\n===================================================\n\nPatient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100\nEncounter type: General examination of patient (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Arleen939_Marlyn309_Bergstrom287 a chr:Person ;\n    rdfs:label \"Arleen939 Marlyn309 Bergstrom287\" .\n\nex:Dr_Lynwood354_Tromp100 a chr:Person ;\n    rdfs:label \"Dr. Lynwood354 Tromp100\" .",
+   "level": 0,
+   "shared_context": "Patient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2019-03-15T14:13:14+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 159 cm. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 58.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 23.11 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 63 /min. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T15:29:16+01:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T16:08:18+01:00, a Total score [DAST-10] (LOINC: 82667-7) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:process_status_1 a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:process_status_2 a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:process_status_3 a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:process_status_4 a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:process_status_5 a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:process_status_6 a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:process_status_7 a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:process_status_8 a chr:ProcessStatus ;\n    rdfs:label \"completed\" .",
+   "level": 0,
+   "shared_context": "Patient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2019-03-15T14:13:14+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 159 cm. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 58.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 23.11 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 63 /min. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T15:29:16+01:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T16:08:18+01:00, a Total score [DAST-10] (LOINC: 82667-7) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_score a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kgperm2 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .",
+   "level": 0,
+   "shared_context": "Patient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Lynwood354 Tromp100 evaluated the patient on 2019-03-15T14:56:37+01:00. The evaluation produced a diagnostic statement of Stress (finding) (SNOMED: 73595000). The condition was recorded on 2019-03-15T14:56:37+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus No"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus No"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20190315T145637 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Stress_73595000 ;\n    chr:hasObservation ex:diagnostic_statement_Stress_73595000 ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:56:37+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 .\n\nex:Stress_73595000 a chr:ClinicalCondition ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> ;\n    chr:hasRecordDate \"2019-03-15T14:56:37+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Stress_73595000 a chr:DiagnosticStatement ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> .",
+   "level": 1,
+   "shared_context": "Patient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2019-03-15T14:13:14+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 159 cm. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 58.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 23.11 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 63 /min. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T15:29:16+01:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T16:08:18+01:00, a Total score [DAST-10] (LOINC: 82667-7) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_Stress_73595000\n\tValue Node: <http://snomed.info/id/73595000>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: ns1:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: ns1:DiagnosticStatement\n\tValue Node: ns1:DiagnosticStatement\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not "
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_Stress_73595000\n\tValue Node: <http://snomed.info/id/73595000>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: ns1:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: ns1:DiagnosticStatement\n\tValue Node: ns1:DiagnosticStatement\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not "
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_BodyHeight_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"159.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_PainSeverity_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score .\n\nex:measurement_BodyWeight_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"58.4\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_BMI_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"23.11\"^^xsd:float ;\n    chr:hasUnit ex:unit_kgperm2 .\n\nex:measurement_HeartRate_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"63.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_RespiratoryRate_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"13.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_TotalScoreHARK_20190315T152916 a chr:Measurement ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasCode <https://loinc.org/76504-0> ;\n    chr:hasMeasuredDate \"2019-03-15T15:29:16+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score .\n\nex:measurement_TotalScoreDAST10_20190315T160818 a chr:Measurement ;\n    rdfs:label \"Total score [DAST-10]\" ;\n    chr:hasCode <https://loinc.org/82667-7> ;\n    chr:hasMeasuredDate \"2019-03-15T16:08:18+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score .",
+   "level": 1,
+   "shared_context": "Patient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2019-03-15T14:13:14+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 159 cm. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 58.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 23.11 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 63 /min. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T15:29:16+01:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T16:08:18+01:00, a Total score [DAST-10] (LOINC: 82667-7) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus No"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus No"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus No"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:process_BodyHeight_20190315T141314 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height\" ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_BodyHeight_20190315T141314 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyHeight_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"159.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:process_PainSeverity_20190315T141314 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_PainSeverity_20190315T141314 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_PainSeverity_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score .\n\nex:process_BodyWeight_20190315T141314 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_BodyWeight_20190315T141314 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyWeight_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"58.4\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:process_BMI_20190315T141314 a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_BMI_20190315T141314 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BMI_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"23.11\"^^xsd:float ;\n    chr:hasUnit ex:unit_kgperm2 .\n\nex:process_HeartRate_20190315T141314 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_HeartRate_20190315T141314 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeartRate_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"63.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:process_RespiratoryRate_20190315T141314 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_RespiratoryRate_20190315T141314 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_RespiratoryRate_20190315T141314 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"13.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:process_TotalScoreHARK_20190315T152916 a chr:MeasurementProcess ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T15:29:16+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_TotalScoreHARK_20190315T152916 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_TotalScoreHARK_20190315T152916 a chr:Measurement ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasCode <https://loinc.org/76504-0> ;\n    chr:hasMeasuredDate \"2019-03-15T15:29:16+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score .\n\nex:process_TotalScoreDAST10_20190315T160818 a chr:MeasurementProcess ;\n    rdfs:label \"Total score [DAST-10]\" ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T16:08:18+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasResult ex:measurement_TotalScoreDAST10_20190315T160818 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_TotalScoreDAST10_20190315T160818 a chr:Measurement ;\n    rdfs:label \"Total score [DAST-10]\" ;\n    chr:hasCode <https://loinc.org/82667-7> ;\n    chr:hasMeasuredDate \"2019-03-15T16:08:18+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score .",
+   "level": 2,
+   "shared_context": "Patient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 NASHOBA VALLEY MEDICAL CENTER\n===================================================\n\nPatient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100\nEncounter type: General examination of patient (procedure)\n\nOn 2019-03-15T14:13:14+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 159 cm. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 58.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 23.11 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 63 /min. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T15:29:16+01:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T16:08:18+01:00, a Total score [DAST-10] (LOINC: 82667-7) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Lynwood354 Tromp100 evaluated the patient on 2019-03-15T14:56:37+01:00. The evaluation produced a diagnostic statement of Stress (finding) (SNOMED: 73595000). The condition was recorded on 2019-03-15T14:56:37+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus No"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus No"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [
+    "UNRESOLVED: DiagnosticStatement and ClinicalCondition classes are not in the allowed vocabulary \u2014 text only provides the diagnosis \"Stress (finding)\" and its SNOMED code."
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluation_20190315T145637 .\n\nex:evaluation_20190315T145637 a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:56:37+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 .\n\nex:Stress_73595000 a chr:MedicalProcedure ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> .\n\n# UNRESOLVED: DiagnosticStatement and ClinicalCondition classes are not in the allowed vocabulary \u2014 text only provides the diagnosis \"Stress (finding)\" and its SNOMED code.",
+   "level": 3,
+   "shared_context": "Patient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 NASHOBA VALLEY MEDICAL CENTER\n===================================================\n\nPatient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100\nEncounter type: General examination of patient (procedure)\n\nOn 2019-03-15T14:13:14+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 159 cm. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 58.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 23.11 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 63 /min. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T14:13:14+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T15:29:16+01:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2019-03-15T16:08:18+01:00, a Total score [DAST-10] (LOINC: 82667-7) measurement was performed on Arleen939 Marlyn309 Bergstrom287. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Lynwood354 Tromp100 evaluated the patient on 2019-03-15T14:56:37+01:00. The evaluation produced a diagnostic statement of Stress (finding) (SNOMED: 73595000). The condition was recorded on 2019-03-15T14:56:37+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus No"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190315T145637\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCondition is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus No"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20190315T141314 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 NASHOBA VALLEY MEDICAL CENTER\" ;\n    chr:hasCareProvider ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasCareUnit ex:NASHOBA_VALLEY_MEDICAL_CENTER ;\n    chr:hasDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasProcedure ex:process_BodyHeight_20190315T141314,\n                     ex:process_PainSeverity_20190315T141314,\n                     ex:process_BodyWeight_20190315T141314,\n                     ex:process_BMI_20190315T141314,\n                     ex:process_HeartRate_20190315T141314,\n                     ex:process_RespiratoryRate_20190315T141314,\n                     ex:process_TotalScoreHARK_20190315T152916,\n                     ex:process_TotalScoreDAST10_20190315T160818,\n                     ex:evaluation_20190315T145637 .\n\nex:process_BodyHeight_20190315T141314 a chr:MedicalProcedure ;\n    rdfs:label \"Body Height (LOINC: 8302-2) measurement\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_PainSeverity_20190315T141314 a chr:MedicalProcedure ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BodyWeight_20190315T141314 a chr:MedicalProcedure ;\n    rdfs:label \"Body Weight (LOINC: 29463-7) measurement\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_BMI_20190315T141314 a chr:MedicalProcedure ;\n    rdfs:label \"Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_HeartRate_20190315T141314 a chr:MedicalProcedure ;\n    rdfs:label \"Heart rate (LOINC: 8867-4) measurement\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_RespiratoryRate_20190315T141314 a chr:MedicalProcedure ;\n    rdfs:label \"Respiratory rate (LOINC: 9279-1) measurement\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:13:14+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_TotalScoreHARK_20190315T152916 a chr:MedicalProcedure ;\n    rdfs:label \"Total score [HARK] (LOINC: 76504-0) measurement\" ;\n    chr:hasCode <https://loinc.org/76504-0> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T15:29:16+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasStatus ex:status_completed .\n\nex:process_TotalScoreDAST10_20190315T160818 a chr:MedicalProcedure ;\n    rdfs:label \"Total score [DAST-10] (LOINC: 82667-7) measurement\" ;\n    chr:hasCode <https://loinc.org/82667-7> ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T16:08:18+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasStatus ex:status_completed .\n\nex:evaluation_20190315T145637 a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:Arleen939_Marlyn309_Bergstrom287 ;\n    chr:hasPerformedDate \"2019-03-15T14:56:37+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Lynwood354_Tromp100 ;\n    chr:hasStatus ex:status_completed .",
+   "level": 3,
+   "shared_context": "Patient: Arleen939 Marlyn309 Bergstrom287 (ID: P-2ffa299a)\nDate of visit: 2019-03-15T14:13:14+01:00\nCare unit: NASHOBA VALLEY MEDICAL CENTER\nAttending physician: Dr. Lynwood354 Tromp100",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 20,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 14041,
+   "completion_tokens": 5772,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 20,
+   "prompt_tokens": 96321,
+   "completion_tokens": 24514,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 18,
+   "prompt_tokens": 82280,
+   "completion_tokens": 18742,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

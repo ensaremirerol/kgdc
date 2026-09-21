@@ -1,0 +1,69 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 108.9s] 43 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,Severity,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[MeasurementProcess,Measurement,ProcessStatus], s23[MeasurementProcess,Measurement,ProcessStatus], s24[MeasurementProcess,Measurement,ProcessStatus], s25[MeasurementProcess,Measurement,ProcessStatus], s26[MeasurementProcess,Measurement,ProcessStatus], s27[MeasurementProcess,Measurement,ProcessStatus], s28[MeasurementProcess,Measurement,ProcessStatus], s29[MeasurementProcess,Measurement,ProcessStatus], s30[MeasurementProcess,Measurement,ProcessStatus], s31[MeasurementProcess,Measurement,ProcessStatus], s32[MeasurementProcess,Measurement,ProcessStatus], s33[MeasurementProcess,Measurement,ProcessStatus], s34[MeasurementProcess,Measurement,ProcessStatus], s35[MeasurementProcess,Measurement,ProcessStatus], s36[MeasurementProcess,Measurement,ProcessStatus], s37[MeasurementProcess,Measurement,ProcessStatus], s38[MeasurementProcess,Measurement,ProcessStatus], s39[MeasurementProcess,Measurement,ProcessStatus], s40[MeasurementProcess,Measurement,ProcessStatus], s41[EvaluationProcess,DiagnosticStatement,ClinicalCondition,Person], s42[EvaluationProcess,DiagnosticStatement,ClinicalCondition,Person], s43[CarePlan]
+[ 108.9s] build order: [CareUnit, DiagnosticStatement, Measurement, Person, ProcessStatus, Severity] -> [ClinicalCondition, MeasurementProcess] -> [EvaluationProcess] -> [CarePlan, ClinicalVisit]
+[ 108.9s] level 0: 6 agent(s), 0 known entities
+[ 108.9s]   CareUnit: extracting (238 chars, 1 classes in view)
+[ 108.9s]   DiagnosticStatement: extracting (485 chars, 1 classes in view)
+[ 108.9s]   Measurement: extracting (9414 chars, 2 classes in view)
+[ 108.9s]   Person: extracting (725 chars, 1 classes in view)
+[ 115.3s]   CareUnit: cycle 0 -> conforms
+[ 115.3s]   ProcessStatus: extracting (9414 chars, 1 classes in view)
+[ 116.5s]   Person: cycle 0 -> conforms
+[ 116.5s]   Severity: extracting (257 chars, 1 classes in view)
+[ 117.9s]   DiagnosticStatement: cycle 0 -> conforms
+[ 121.8s]   Severity: cycle 0 -> conforms
+[ 179.8s]   ProcessStatus: cycle 0 -> 39 violation(s)
+[ 179.8s]   ProcessStatus: fixing ...
+[ 242.9s]   Measurement: cycle 0 -> 1 violation(s)
+[ 242.9s]   Measurement: fixing ...
+[ 245.6s]   ProcessStatus: cycle 1 -> conforms
+[ 352.5s]   Measurement: cycle 1 -> 1 violation(s)
+[ 352.5s]   Measurement: stopping (plateau)
+[ 352.5s]   Measurement: 4 unresolved (honest gaps)
+[ 352.5s] level 1: 2 agent(s), 46 known entities
+[ 352.5s]   ClinicalCondition: extracting (485 chars, 3 classes in view)
+[ 352.5s]   MeasurementProcess: extracting (9414 chars, 6 classes in view)
+[ 362.8s]   ClinicalCondition: cycle 0 -> conforms
+[ 606.9s]   MeasurementProcess: cycle 0 -> 1 violation(s)
+[ 606.9s]   MeasurementProcess: fixing ...
+[ 833.5s]   MeasurementProcess: cycle 1 -> 1 violation(s)
+[ 833.5s]   MeasurementProcess: fixing ...
+[1069.4s]   MeasurementProcess: cycle 2 -> 12 violation(s)
+[1069.4s]   MeasurementProcess: stopping (fix budget spent)
+[1069.5s] level 2: 1 agent(s), 126 known entities
+[1069.5s]   EvaluationProcess: extracting (485 chars, 7 classes in view)
+[1079.8s]   EvaluationProcess: cycle 0 -> 12 violation(s)
+[1079.8s]   EvaluationProcess: fixing ...
+[1094.7s]   EvaluationProcess: cycle 1 -> 18 violation(s)
+[1094.7s]   EvaluationProcess: fixing ...
+[1109.9s]   EvaluationProcess: cycle 2 -> 18 violation(s)
+[1109.9s]   EvaluationProcess: stopping (fix budget spent)
+[1109.9s] level 3: 2 agent(s), 128 known entities
+[1109.9s]   CarePlan: extracting (10398 chars, 4 classes in view)
+[1109.9s]   ClinicalVisit: extracting (10398 chars, 5 classes in view)
+[1119.3s]   CarePlan: cycle 0 -> 19 violation(s)
+[1119.3s]   CarePlan: fixing ...
+https://biomedit.ch/rdf/sphn-resource/ucum/kgper m2 does not look like a valid URI, trying to serialize this will break.
+[1248.4s]   CarePlan: cycle 1 -> 12 violation(s)
+[1248.4s]   CarePlan: fixing ...
+[1278.4s]   ClinicalVisit: cycle 0 -> 18 violation(s)
+[1278.4s]   ClinicalVisit: fixing ...
+[1379.0s]   CarePlan: cycle 2 -> 11 violation(s)
+[1379.0s]   CarePlan: stopping (fix budget spent)
+[1379.0s]   CarePlan: 1 unresolved (honest gaps)
+[1513.2s]   ClinicalVisit: cycle 1 -> 1 violation(s)
+[1513.2s]   ClinicalVisit: fixing ...
+[1683.8s]   ClinicalVisit: cycle 2 -> 1 violation(s)
+[1683.8s]   ClinicalVisit: stopping (fix budget spent)
+[1684.0s] merging (orchestrator): 11 violation(s), 5 unresolved, 2 unparsed
+[1787.7s] final: 1 violation(s)
+conforms=False segments=11 llm_calls=23 unresolved=0
+  orchestrator   2 calls    32845 in   11489 out  cost n/a  gemma4-g1
+  total         23 calls   264244 in  111670 out  cost n/a  
+  worker        21 calls   231399 in  100181 out  cost n/a  gemma4-g1
+Constraint Violation in TurtleSyntax:
+	Severity: sh:Violation
+	Message: not valid Turtle: string index out of range
+	Offending line: 
+	Hint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs.
+exit=1

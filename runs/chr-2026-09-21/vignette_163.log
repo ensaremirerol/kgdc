@@ -1,0 +1,31 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 122.9s] 44 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[MeasurementProcess,Measurement,ProcessStatus], s23[MeasurementProcess,Measurement,ProcessStatus], s24[MeasurementProcess,Measurement,ProcessStatus], s25[MeasurementProcess,Measurement,ProcessStatus], s26[MeasurementProcess,Measurement,ProcessStatus], s27[MeasurementProcess,Measurement,ProcessStatus], s28[MeasurementProcess,Measurement,ProcessStatus], s29[MeasurementProcess,Measurement,ProcessStatus], s30[MeasurementProcess,Measurement,ProcessStatus], s31[MeasurementProcess,Measurement,ProcessStatus], s32[MeasurementProcess,Measurement,ProcessStatus], s33[MeasurementProcess,Measurement,ProcessStatus], s34[MeasurementProcess,Measurement,ProcessStatus], s35[MeasurementProcess,Measurement,ProcessStatus], s36[MeasurementProcess,Measurement,ProcessStatus], s37[MeasurementProcess,Measurement,ProcessStatus], s38[MeasurementProcess,Measurement,ProcessStatus], s39[MeasurementProcess,Measurement,ProcessStatus], s40[MeasurementProcess,Measurement,ProcessStatus], s41[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s42[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s43[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s44[CarePlan]
+[ 122.9s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 122.9s] level 0: 6 agent(s), 0 known entities
+[ 122.9s]   CareUnit: extracting (215 chars, 1 classes in view)
+[ 122.9s]   ClinicalCondition: extracting (682 chars, 3 classes in view)
+[ 122.9s]   DiagnosticStatement: extracting (682 chars, 1 classes in view)
+[ 122.9s]   Measurement: extracting (9367 chars, 2 classes in view)
+[ 129.1s]   CareUnit: cycle 0 -> conforms
+[ 129.1s]   Person: extracting (215 chars, 1 classes in view)
+[ 132.7s]   DiagnosticStatement: cycle 0 -> conforms
+[ 132.7s]   ProcessStatus: extracting (9367 chars, 1 classes in view)
+[ 135.0s]   ClinicalCondition: cycle 0 -> conforms
+[ 135.3s]   Person: cycle 0 -> conforms
+[ 156.8s]   ProcessStatus: cycle 0 -> conforms
+[ 237.1s]   Measurement: cycle 0 -> 1 violation(s)
+[ 237.1s]   Measurement: fixing ...
+[ 344.9s]   Measurement: cycle 1 -> 1 violation(s)
+[ 344.9s]   Measurement: fixing ...
+[ 460.9s]   Measurement: cycle 2 -> 1 violation(s)
+[ 460.9s]   Measurement: stopping (fix budget spent)
+[ 460.9s]   Measurement: 2 unresolved (honest gaps)
+[ 460.9s] level 1: 2 agent(s), 50 known entities
+[ 460.9s]   EvaluationProcess: extracting (682 chars, 7 classes in view)
+[ 460.9s]   MeasurementProcess: extracting (9367 chars, 6 classes in view)
+[ 475.4s]   EvaluationProcess: cycle 0 -> conforms
+[ 721.6s]   MeasurementProcess: dropped 49 individual(s) of other classes (already built by earlier levels)
+[ 721.8s]   MeasurementProcess: cycle 0 -> 39 violation(s)
+[ 721.8s]   MeasurementProcess: fixing ...
+[ 965.1s]   MeasurementProcess: cycle 1 -> 39 violation(s)
+[ 965.1s]   MeasurementProcess: fixing ...

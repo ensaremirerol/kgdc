@@ -1,0 +1,156 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Arlen68_Olson653 a chr:Person ;
+    rdfs:label "Arlen68 Olson653" .
+
+ex:Dr._Dana512_Wilkinson796 a chr:Person ;
+    rdfs:label "Dr. Dana512 Wilkinson796" .
+
+ex:URGENT_CARE_PHYSICIANS_PC a chr:CareUnit ;
+    rdfs:label "URGENT CARE PHYSICIANS PC" .
+
+ex:ClinicalVisit_20181212T154723 a chr:ClinicalVisit ;
+    rdfs:label "Urgent care clinic" ;
+    chr:hasCareProvider ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasCareUnit ex:URGENT_CARE_PHYSICIANS_PC ;
+    chr:hasDate "2018-12-12T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasProcedure ex:evaluation_Medication_review_due_20181212T154723,
+        ex:evaluation_Part-time_employment_20181212T164122,
+        ex:evaluation_Unhealthy_alcohol_drinking_behavior_20181212T171821,
+        ex:proc_BMI_39156-5_20181212T154723,
+        ex:proc_Bilirubin_20505-4_20181212T154723,
+        ex:proc_Calcium_17861-6_20181212T154723,
+        ex:proc_Calcium_49765-1_20181212T154723,
+        ex:proc_Carbon_dioxide_2028-9_20181212T154723,
+        ex:proc_Carbon_dioxide_20565-8_20181212T154723,
+        ex:proc_Chloride_2069-3_20181212T154723,
+        ex:proc_Chloride_2075-0_20181212T154723,
+        ex:proc_Cholesterol_2093-3_20181212T154723,
+        ex:proc_Cholesterol_HDL_2085-9_20181212T154723,
+        ex:proc_Cholesterol_LDL_18262-6_20181212T154723,
+        ex:proc_Creatinine_2160-0_20181212T154723,
+        ex:proc_Creatinine_38483-4_20181212T154723,
+        ex:proc_GFR_33914-3_20181212T154723,
+        ex:proc_GFR_33914-3_2_20181212T154723,
+        ex:proc_Glucose_2339-0_20181212T154723,
+        ex:proc_Glucose_2345-7_20181212T154723,
+        ex:proc_Glucose_5792-7_20181212T154723,
+        ex:proc_HR_8867-4_20181212T154723,
+        ex:proc_HbA1c_4548-4_20181212T154723,
+        ex:proc_Height_8302-2_20181212T154723,
+        ex:proc_Ketones_5797-6_20181212T154723,
+        ex:proc_Microalbumin_14959-1_20181212T154723,
+        ex:proc_Pain_72514-3_20181212T154723,
+        ex:proc_Potassium_2823-3_20181212T154723,
+        ex:proc_Potassium_6298-4_20181212T154723,
+        ex:proc_Protein_5804-0_20181212T154723,
+        ex:proc_RR_9279-1_20181212T154723,
+        ex:proc_Sodium_2947-0_20181212T154723,
+        ex:proc_Sodium_2951-2_20181212T154723,
+        ex:proc_Specific_gravity_5811-5_20181212T154723,
+        ex:proc_TotalScore_75626-2_20181212T171821,
+        ex:proc_Triglyceride_2571-8_20181212T154723,
+        ex:proc_Urea_nitrogen_3094-0_20181212T154723,
+        ex:proc_Urea_nitrogen_6299-2_20181212T154723,
+        ex:proc_Weight_29463-7_20181212T154723,
+        ex:proc_pH_5803-2_20181212T154723 .
+
+ex:CarePlan_followup a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review" ;
+    chr:hasMedicalProcedure ex:evaluation_Medication_review_due_20181212T154723 .
+
+ex:evaluation_Medication_review_due_20181212T154723 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Medication_review_due ;
+    chr:hasObservation ex:diagnostic_statement_Medication_review_due ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2018-12-12T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 .
+
+ex:evaluation_Part-time_employment_20181212T164122 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Part-time_employment_finding ;
+    chr:hasObservation ex:diagnostic_statement_Part-time_employment ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2018-12-12T16:41:22+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 .
+
+ex:evaluation_Unhealthy_alcohol_drinking_behavior_20181212T171821 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Unhealthy_alcohol_drinking_behavior_finding ;
+    chr:hasObservation ex:diagnostic_statement_Unhealthy_alcohol_drinking_behavior ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2018-12-12T17:18:21+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 .
+
+ex:Medication_review_due a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2018-12-12T15:47:23+01:00"^^xsd:dateTime .
+
+ex:Part-time_employment_finding a chr:ClinicalCondition ;
+    rdfs:label "Part-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160904001> ;
+    chr:hasRecordDate "2018-12-12T16:41:22+01:00"^^xsd:dateTime .
+
+ex:Unhealthy_alcohol_drinking_behavior_finding a chr:ClinicalCondition ;
+    rdfs:label "Unhealthy alcohol drinking behavior (finding)" ;
+    chr:hasCode <http://snomed.info/id/10939881000119105> ;
+    chr:hasRecordDate "2018-12-12T17:18:21+01:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_Medication_review_due a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:diagnostic_statement_Part-time_employment a chr:DiagnosticStatement ;
+    rdfs:label "Part-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160904001> .
+
+ex:diagnostic_statement_Unhealthy_alcohol_drinking_behavior a chr:DiagnosticStatement ;
+    rdfs:label "Unhealthy alcohol drinking behavior (finding)" ;
+    chr:hasCode <http://snomed.info/id/10939881000119105> .
+
+ex:proc_BMI_39156-5_20181212T154723 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2018-12-12T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Measurement_BMI_39156-5_20181212T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Bilirubin_20505-4_20181212T154723 a chr:MeasurementProcess ;
+    rdfs:label "Bilirubin.total [Mass/volume] in Urine by Test strip (LOINC: 20505-4) measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2018-12-12T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Measurement_Bilirubin_20505-4_20181212T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Calcium_17861-6_20181212T154723 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Serum or Plasma (LOINC: 17861-6) measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2018-12-12T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Measurement_Calcium_17861-6_20181212T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Calcium_49765-1_20181212T154723 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Blood (LOINC: 49765-1) measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2018-12-12T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Measurement_Calcium_49765-1_20181212T154723 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Carbon_dioxide_2028-9_20181212T154723 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Serum or Plasma (LOINC: 2028-9) measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2018-12-12T15:47:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Dana512_Wilkinson796 ;
+    chr:hasResult ex:Measurement_Carbon_dioxide_2028-9_20181

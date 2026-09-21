@@ -1,0 +1,80 @@
+[   0.1s] segmenting (orchestrator) ...
+[  61.7s] 21 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[MeasurementProcess,Measurement,Severity,Unit,ProcessStatus], s4[MeasurementProcess,Measurement,Unit,ProcessStatus], s5[MeasurementProcess,Measurement,Unit,ProcessStatus], s6[MeasurementProcess,Measurement,Unit,ProcessStatus], s7[MeasurementProcess,Measurement,Unit,ProcessStatus], s8[MeasurementProcess,Measurement,Unit,ProcessStatus], s9[MeasurementProcess,Measurement,Unit,ProcessStatus], s10[MeasurementProcess,Measurement,Unit,ProcessStatus], s11[MeasurementProcess,Measurement,Unit,ProcessStatus], s12[MeasurementProcess,Measurement,Unit,ProcessStatus], s13[MeasurementProcess,Measurement,Unit,ProcessStatus], s14[MeasurementProcess,Measurement,Unit,ProcessStatus], s15[MeasurementProcess,Measurement,Unit,ProcessStatus], s16[MeasurementProcess,Measurement,Unit,ProcessStatus], s17[MeasurementProcess,Measurement,Unit,ProcessStatus], s18[MeasurementProcess,Measurement,Unit,ProcessStatus], s19[MeasurementProcess,Measurement,Unit,ProcessStatus], s20[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s21[CarePlan]
+[  61.7s] build order: [CareUnit, DiagnosticStatement, Person, ProcessStatus, Severity, Unit] -> [ClinicalCondition, Measurement] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  61.7s] level 0: 6 agent(s), 0 known entities
+[  61.7s]   CareUnit: extracting (221 chars, 1 classes in view)
+[  61.7s]   DiagnosticStatement: extracting (236 chars, 1 classes in view)
+[  61.7s]   Person: extracting (221 chars, 1 classes in view)
+[  61.7s]   ProcessStatus: extracting (4523 chars, 1 classes in view)
+[  66.4s]   CareUnit: cycle 0 -> conforms
+[  66.4s]   Severity: extracting (268 chars, 1 classes in view)
+[  67.3s]   DiagnosticStatement: cycle 0 -> 5 violation(s)
+[  67.3s]   DiagnosticStatement: fixing ...
+[  68.1s]   Person: cycle 0 -> conforms
+[  68.1s]   Unit: extracting (4523 chars, 1 classes in view)
+[  72.4s]   Severity: cycle 0 -> conforms
+[  72.8s]   DiagnosticStatement: cycle 1 -> 5 violation(s)
+[  72.8s]   DiagnosticStatement: stopping (plateau)
+[  85.1s]   ProcessStatus: cycle 0 -> conforms
+[  85.3s]   Unit: cycle 0 -> conforms
+[  85.3s] level 1: 2 agent(s), 35 known entities
+[  85.3s]   ClinicalCondition: extracting (236 chars, 3 classes in view)
+[  85.3s]   Measurement: extracting (4523 chars, 2 classes in view)
+[  91.4s]   ClinicalCondition: cycle 0 -> 5 violation(s)
+[  91.4s]   ClinicalCondition: fixing ...
+[  97.2s]   ClinicalCondition: cycle 1 -> 5 violation(s)
+[  97.2s]   ClinicalCondition: stopping (plateau)
+[ 137.3s]   Measurement: cycle 0 -> 169 violation(s)
+[ 137.3s]   Measurement: fixing ...
+[ 184.8s]   Measurement: cycle 1 -> 169 violation(s)
+[ 184.8s]   Measurement: stopping (plateau)
+[ 184.8s] level 2: 2 agent(s), 54 known entities
+[ 184.8s]   EvaluationProcess: extracting (236 chars, 7 classes in view)
+[ 184.8s]   MeasurementProcess: extracting (4523 chars, 6 classes in view)
+[ 193.9s]   EvaluationProcess: cycle 0 -> 169 violation(s)
+[ 193.9s]   EvaluationProcess: fixing ...
+[ 204.1s]   EvaluationProcess: cycle 1 -> 169 violation(s)
+[ 204.1s]   EvaluationProcess: stopping (plateau)
+[ 299.3s]   MeasurementProcess: cycle 0 -> 169 violation(s)
+[ 299.3s]   MeasurementProcess: fixing ...
+[ 416.2s]   MeasurementProcess: cycle 1 -> 169 violation(s)
+[ 416.2s]   MeasurementProcess: stopping (plateau)
+[ 416.2s] level 3: 2 agent(s), 92 known entities
+[ 416.2s]   CarePlan: extracting (5199 chars, 4 classes in view)
+[ 416.2s]   ClinicalVisit: extracting (5199 chars, 5 classes in view)
+[ 423.2s]   CarePlan: cycle 0 -> 169 violation(s)
+[ 423.2s]   CarePlan: fixing ...
+[ 430.3s]   CarePlan: cycle 1 -> 169 violation(s)
+[ 430.3s]   CarePlan: stopping (plateau)
+[ 437.6s]   ClinicalVisit: cycle 0 -> 169 violation(s)
+[ 437.6s]   ClinicalVisit: fixing ...
+[ 543.6s]   ClinicalVisit: cycle 1 -> 172 violation(s)
+[ 543.6s]   ClinicalVisit: fixing ...
+[ 653.2s]   ClinicalVisit: cycle 2 -> 172 violation(s)
+[ 653.2s]   ClinicalVisit: stopping (fix budget spent)
+[ 653.4s] merging (orchestrator): 172 violation(s), 0 unresolved, 0 unparsed
+[ 805.2s] final: 3 violation(s)
+conforms=False segments=12 llm_calls=22 unresolved=0
+  orchestrator   2 calls    23403 in   11170 out  cost n/a  gemma4-g1
+  total         22 calls   155945 in   46172 out  cost n/a  
+  worker        20 calls   132542 in   35002 out  cost n/a  gemma4-g1
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasDateDomainShape
+	Focus Node: ex:DiagnosticStatement_Medication_review_due_situation
+	Value Node: ex:DiagnosticStatement_Medication_review_due_situation
+	Message: Subject of chr:hasDate must be a chr:ClinicalVisit.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureDomainShape
+	Focus Node: ex:evaluation_20251002T081257
+	Value Node: ex:evaluation_20251002T081257
+	Message: Subject of chr:hasProcedure must be a chr:ClinicalVisit.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:DiagnosticStatement_Medication_review_due_situation
+	Value Node: ex:DiagnosticStatement_Medication_review_due_situation
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+
+exit=1

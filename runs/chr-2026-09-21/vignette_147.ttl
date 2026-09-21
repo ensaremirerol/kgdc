@@ -1,0 +1,81 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Arlen68_Olson653 a chr:Person ;
+    rdfs:label "Arlen68 Olson653" .
+
+ex:Dr_Irvin970_Emard19 a chr:Person ;
+    rdfs:label "Dr. Irvin970 Emard19" .
+
+ex:SPECTRUM_HOME_HEALTH_AND_HOSPICE_CARE a chr:CareUnit ;
+    rdfs:label "SPECTRUM HOME HEALTH AND HOSPICE CARE" .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_T-score a chr:Unit ;
+    rdfs:label "{T-score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:measurement_38265_5 a chr:Measurement ;
+    rdfs:label "DXA Radius and Ulna [T-score] Bone density" ;
+    chr:hasCode <https://loinc.org/38265-5> ;
+    chr:hasMeasuredDate "2021-01-09T17:33:31+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue -0.028448 ;
+    chr:hasUnit ex:unit_T-score .
+
+ex:measurement_process_38265_5 a chr:MeasurementProcess ;
+    rdfs:label "DXA Radius and Ulna [T-score] Bone density measurement" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-01-09T17:33:31+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 ;
+    chr:hasResult ex:measurement_38265_5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:diagnostic_statement_fracture_of_ankle a chr:DiagnosticStatement ;
+    rdfs:label "Fracture of ankle (disorder)" ;
+    chr:hasCode <http://snomed.info/id/16114001> .
+
+ex:Fracture_of_ankle_disorder a chr:ClinicalCondition ;
+    rdfs:label "Fracture of ankle (disorder)" ;
+    chr:hasCode <http://snomed.info/id/16114001> ;
+    chr:hasRecordDate "2021-01-09T16:56:33+01:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_fracture_of_bone a chr:DiagnosticStatement ;
+    rdfs:label "Fracture of bone (disorder)" ;
+    chr:hasCode <http://snomed.info/id/125605004> .
+
+ex:Fracture_of_bone_disorder a chr:ClinicalCondition ;
+    rdfs:label "Fracture of bone (disorder)" ;
+    chr:hasCode <http://snomed.info/id/125605004> ;
+    chr:hasRecordDate "2021-01-09T16:56:33+01:00"^^xsd:dateTime .
+
+ex:evaluation_process_ankle a chr:MedicalProcedure ;
+    rdfs:label "evaluation" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-01-09T16:56:33+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 .
+
+ex:evaluation_process_bone a chr:MedicalProcedure ;
+    rdfs:label "evaluation" ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasPerformedDate "2021-01-09T16:56:33+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Irvin970_Emard19 .
+
+ex:care_plan_follow_up a chr:CarePlan ;
+    rdfs:label "care plan" ;
+    chr:hasMedicalProcedure ex:evaluation_process_bone .
+
+ex:visit_20210109T165633 a chr:ClinicalVisit ;
+    rdfs:label "CLINICAL VISIT NOTE — SPECTRUM HOME HEALTH AND HOSPICE CARE" ;
+    chr:hasCareProvider ex:Dr_Irvin970_Emard19 ;
+    chr:hasCareUnit ex:SPECTRUM_HOME_HEALTH_AND_HOSPICE_CARE ;
+    chr:hasDate "2021-01-09T16:56:33+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Arlen68_Olson653 ;
+    chr:hasProcedure ex:evaluation_process_ankle,
+        ex:evaluation_process_bone,
+        ex:measurement_process_38265_5 .

@@ -1,0 +1,36 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 107.6s] 42 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[MeasurementProcess,Measurement], s11[MeasurementProcess,Measurement], s12[MeasurementProcess,Measurement], s13[MeasurementProcess,Measurement], s14[MeasurementProcess,Measurement], s15[MeasurementProcess,Measurement], s16[MeasurementProcess,Measurement], s17[MeasurementProcess,Measurement], s18[MeasurementProcess,Measurement], s19[MeasurementProcess,Measurement], s20[MeasurementProcess,Measurement], s21[MeasurementProcess,Measurement], s22[MeasurementProcess,Measurement], s23[MeasurementProcess,Measurement], s24[MeasurementProcess,Measurement], s25[MeasurementProcess,Measurement], s26[MeasurementProcess,Measurement], s27[MeasurementProcess,Measurement], s28[MeasurementProcess,Measurement], s29[MeasurementProcess,Measurement], s30[MeasurementProcess,Measurement], s31[MeasurementProcess,Measurement], s32[MeasurementProcess,Measurement], s33[MeasurementProcess,Measurement], s34[MeasurementProcess,Measurement], s35[MeasurementProcess,Measurement], s36[MeasurementProcess,Measurement], s37[MeasurementProcess,Measurement], s38[MeasurementProcess,Measurement], s39[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s40[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s41[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s42[CarePlan]
+[ 107.6s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 107.6s] level 0: 5 agent(s), 0 known entities
+[ 107.6s]   CareUnit: extracting (215 chars, 1 classes in view)
+[ 107.6s]   ClinicalCondition: extracting (735 chars, 3 classes in view)
+[ 107.6s]   DiagnosticStatement: extracting (735 chars, 1 classes in view)
+[ 107.6s]   Measurement: extracting (8925 chars, 2 classes in view)
+[ 112.8s]   CareUnit: cycle 0 -> conforms
+[ 112.8s]   Person: extracting (215 chars, 1 classes in view)
+[ 116.0s]   DiagnosticStatement: cycle 0 -> conforms
+[ 118.1s]   Person: cycle 0 -> conforms
+[ 118.4s]   ClinicalCondition: cycle 0 -> conforms
+[ 237.2s]   Measurement: cycle 0 -> conforms
+[ 237.2s] level 1: 2 agent(s), 58 known entities
+[ 237.2s]   EvaluationProcess: extracting (735 chars, 7 classes in view)
+[ 237.2s]   MeasurementProcess: extracting (8925 chars, 6 classes in view)
+[ 262.0s]   EvaluationProcess: cycle 0 -> conforms
+[ 488.2s]   MeasurementProcess: cycle 0 -> conforms
+[ 488.3s] level 2: 2 agent(s), 137 known entities
+[ 488.3s]   CarePlan: extracting (10092 chars, 4 classes in view)
+[ 488.3s]   ClinicalVisit: extracting (10092 chars, 5 classes in view)
+[ 499.9s]   CarePlan: cycle 0 -> conforms
+[ 641.5s]   ClinicalVisit: cycle 0 -> conforms
+[ 641.7s] merging (orchestrator): 0 violation(s), 0 unresolved, 0 unparsed
+[ 717.7s] final: 1 violation(s)
+conforms=False segments=9 llm_calls=11 unresolved=0
+  orchestrator   2 calls    34244 in    9569 out  cost n/a  gemma4-g1
+  total         11 calls    93537 in   40769 out  cost n/a  
+  worker         9 calls    59293 in   31200 out  cost n/a  gemma4-g1
+Constraint Violation in TurtleSyntax:
+	Severity: sh:Violation
+	Message: not valid Turtle: string index out of range
+	Offending line: 
+	Hint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs.
+exit=1

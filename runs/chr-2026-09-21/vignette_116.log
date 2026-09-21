@@ -1,0 +1,46 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 100.2s] 38 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[MeasurementProcess,Measurement,ProcessStatus], s23[MeasurementProcess,Measurement,ProcessStatus], s24[MeasurementProcess,Measurement,ProcessStatus], s25[MeasurementProcess,Measurement,ProcessStatus], s26[MeasurementProcess,Measurement,ProcessStatus], s27[MeasurementProcess,Measurement,ProcessStatus], s28[MeasurementProcess,Measurement,ProcessStatus], s29[MeasurementProcess,Measurement,ProcessStatus], s30[MeasurementProcess,Measurement,ProcessStatus], s31[MeasurementProcess,Measurement,ProcessStatus], s32[MeasurementProcess,Measurement,ProcessStatus], s33[MeasurementProcess,Measurement,ProcessStatus], s34[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s35[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s36[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s37[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s38[CarePlan]
+[ 100.2s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 100.2s] level 0: 6 agent(s), 0 known entities
+[ 100.3s]   CareUnit: extracting (223 chars, 1 classes in view)
+[ 100.3s]   ClinicalCondition: extracting (982 chars, 3 classes in view)
+[ 100.3s]   DiagnosticStatement: extracting (982 chars, 1 classes in view)
+[ 100.3s]   Measurement: extracting (8079 chars, 2 classes in view)
+[ 106.4s]   CareUnit: cycle 0 -> conforms
+[ 106.4s]   Person: extracting (223 chars, 1 classes in view)
+[ 111.5s]   DiagnosticStatement: cycle 0 -> conforms
+[ 111.5s]   ProcessStatus: extracting (8079 chars, 1 classes in view)
+[ 113.0s]   Person: cycle 0 -> conforms
+[ 115.2s]   ClinicalCondition: cycle 0 -> conforms
+[ 116.4s]   ProcessStatus: cycle 0 -> conforms
+[ 198.3s]   Measurement: cycle 0 -> 1 violation(s)
+[ 198.3s]   Measurement: fixing ...
+[ 291.0s]   Measurement: cycle 1 -> 1 violation(s)
+[ 291.0s]   Measurement: fixing ...
+[ 381.1s]   Measurement: cycle 2 -> 1 violation(s)
+[ 381.1s]   Measurement: stopping (fix budget spent)
+[ 381.1s]   Measurement: 1 unresolved (honest gaps)
+[ 381.1s] level 1: 2 agent(s), 12 known entities
+[ 381.1s]   EvaluationProcess: extracting (982 chars, 7 classes in view)
+[ 381.1s]   MeasurementProcess: extracting (8079 chars, 6 classes in view)
+[ 398.6s]   EvaluationProcess: cycle 0 -> conforms
+[ 398.6s]   EvaluationProcess: 4 unresolved (honest gaps)
+[ 579.5s]   MeasurementProcess: cycle 0 -> conforms
+[ 579.5s]   MeasurementProcess: 1 unresolved (honest gaps)
+[ 579.5s] level 2: 2 agent(s), 91 known entities
+[ 579.5s]   CarePlan: extracting (9481 chars, 4 classes in view)
+[ 579.5s]   ClinicalVisit: extracting (9481 chars, 5 classes in view)
+[ 588.4s]   CarePlan: cycle 0 -> conforms
+[ 691.1s]   ClinicalVisit: cycle 0 -> conforms
+[ 691.3s] merging (orchestrator): 0 violation(s), 6 unresolved, 1 unparsed
+[ 848.9s] final: 1 violation(s)
+conforms=False segments=10 llm_calls=14 unresolved=0
+  orchestrator   2 calls    29543 in   13916 out  cost n/a  gemma4-g1
+  total         14 calls    98638 in   49451 out  cost n/a  
+  worker        12 calls    69095 in   35535 out  cost n/a  gemma4-g1
+Constraint Violation in TurtleSyntax:
+	Severity: sh:Violation
+	Message: not valid Turtle: at line 402 of <>:
+	Offending line: chr
+	Hint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs.
+exit=1

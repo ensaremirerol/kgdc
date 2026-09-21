@@ -1,0 +1,76 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/clinical/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:visit_411ed18e_bba9_df04_26b7_5b26d58df689 a chr:ClinicalVisit ;
+    chr:hasCareProvider ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasCareUnit ex:unit_github_com_syntheti ;
+    chr:hasDate "2019-05-19T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:patient_411ed18e_bba9_df04_13f8_c1ccbb75b1c0 ;
+    chr:hasProcedure ex:evalProc_411ed18e_bba9_df04_2b93_dde5b01a15ab,
+        ex:evalProc_411ed18e_bba9_df04_4287_1d3d6cfd814e,
+        ex:measProc_411ed18e_bba9_df04_d947_bd02126831d1 .
+
+ex:cond_411ed18e_bba9_df04_2b93_dde5b01a15ab a chr:ClinicalCondition ;
+    rdfs:label "Fracture of ankle (disorder)" ;
+    chr:hasCode <http://snomed.info/id/16114001> ;
+    chr:hasRecordDate "2019-05-19T18:59:56+02:00"^^xsd:dateTime .
+
+ex:cond_411ed18e_bba9_df04_4287_1d3d6cfd814e a chr:ClinicalCondition ;
+    rdfs:label "Fracture of bone (disorder)" ;
+    chr:hasCode <http://snomed.info/id/125605004> ;
+    chr:hasRecordDate "2019-05-19T18:59:56+02:00"^^xsd:dateTime .
+
+ex:diag_411ed18e_bba9_df04_2b93_dde5b01a15ab a chr:DiagnosticStatement ;
+    rdfs:label "Fracture of ankle (disorder)" ;
+    chr:hasCode <http://snomed.info/id/16114001> .
+
+ex:diag_411ed18e_bba9_df04_4287_1d3d6cfd814e a chr:DiagnosticStatement ;
+    rdfs:label "Fracture of bone (disorder)" ;
+    chr:hasCode <http://snomed.info/id/125605004> .
+
+ex:evalProc_411ed18e_bba9_df04_2b93_dde5b01a15ab a chr:EvaluationProcess ;
+    chr:hasCondition ex:cond_411ed18e_bba9_df04_2b93_dde5b01a15ab ;
+    chr:hasObservation ex:diag_411ed18e_bba9_df04_2b93_dde5b01a15ab ;
+    chr:hasPatient ex:patient_411ed18e_bba9_df04_13f8_c1ccbb75b1c0 ;
+    chr:hasPerformedDate "2019-05-19T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 .
+
+ex:evalProc_411ed18e_bba9_df04_4287_1d3d6cfd814e a chr:EvaluationProcess ;
+    chr:hasCondition ex:cond_411ed18e_bba9_df04_4287_1d3d6cfd814e ;
+    chr:hasObservation ex:diag_411ed18e_bba9_df04_4287_1d3d6cfd814e ;
+    chr:hasPatient ex:patient_411ed18e_bba9_df04_13f8_c1ccbb75b1c0 ;
+    chr:hasPerformedDate "2019-05-19T18:59:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 .
+
+ex:measProc_411ed18e_bba9_df04_d947_bd02126831d1 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_411ed18e_bba9_df04_13f8_c1ccbb75b1c0 ;
+    chr:hasPerformedDate "2019-05-19T19:21:20+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_411ed18e_bba9_df04_d947_bd02126831d1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:meas_411ed18e_bba9_df04_d947_bd02126831d1 a chr:Measurement ;
+    rdfs:label "DXA Radius and Ulna [T-score] Bone density" ;
+    chr:hasCode <https://loinc.org/38265-5> ;
+    chr:hasMeasuredDate "2019-05-19T19:21:20+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.33092"^^xsd:float ;
+    chr:hasUnit ex:unit_T_score .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_T_score a chr:Unit ;
+    rdfs:label "{T-score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblT-scorecbr> .
+
+ex:unit_github_com_syntheti a chr:CareUnit ;
+    rdfs:label "ACCLAIM HOME HEALTH CARE, INC" .
+
+ex:patient_411ed18e_bba9_df04_13f8_c1ccbb75b1c0 a chr:Person ;
+    rdfs:label "Mr. Casey401 Elijah719 Parker433" .
+
+ex:provider_hl7_org_fhir_sid_us_npi_99999 a chr:Person ;
+    rdfs:label "Dr. Jacque955 Streich926" .
+

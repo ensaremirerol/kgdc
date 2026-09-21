@@ -27,7 +27,8 @@ honest gaps beats a conformant graph with invented values.
 | WebNLG Building | 20 | label triple F1, macro | **0.838** | — |
 | ADE corpus (drug → adverse effect) | 20 | label triple F1, micro, strict / lenient | **0.52 / 0.80** | — |
 
-Per-document scores for every system are in `results/2026-09-21/`.
+Per-document scores for every system are in `results/2026-09-21/`; the extracted graphs, traces and logs of the
+200-document batch are in `runs/chr-2026-09-21/` (`pass1/` and `truncated/` keep the outputs replaced by the second pass and by the repair script).
 
 ---
 
@@ -116,8 +117,9 @@ kgdc/                      the Python package
   progress.py              timestamped stderr log
 kgdc-mcp/                  Rust MCP server: shared graph, per-triple gate, SHACL (shacl-rust)
 examples/
-  chr/                     clinical vignettes: ontology, shapes, context, scorer, batch runner, comparison (docs + gold not published)
+  chr/                     clinical vignettes: ontology, shapes, context, 200 docs + gold, scorer, batch runner, comparison
 results/                   score files and comparison tables per date
+runs/                      full batch outputs: per-document Turtle, trace (segments, agent cycles, violations), log
   webnlg/                  WebNLG downloader/extractor and the generic label-level scorer
   webnlg-airport/          WebNLG "Airport": ontology, shapes, context, 20 docs + gold
   webnlg-building/         WebNLG "Building": same
@@ -469,7 +471,7 @@ Worked examples in the repo:
 
 | example | domain | classes / properties | documents | preparation |
 |---|---|---|---|---|
-| `examples/chr/` | clinical vignettes (Synthea-derived) | 19 / 24 (+8 unlinkable) | 200 + gold ABoxes (not in the repo) | copy `vignette_NNN.txt` and `vignette_NNN.gold.ttl` from the thesis corpus into `examples/chr/docs/` |
+| `examples/chr/` | clinical vignettes (Synthea-derived) | 19 / 24 (+8 unlinkable) | 200 + gold ABoxes | copied from the thesis corpus |
 | `examples/webnlg-airport/` | DBpedia airports | 7 / 16 | 20 + gold triples | `examples/webnlg/prepare.py Airport examples/webnlg-airport/docs` |
 | `examples/webnlg-building/` | DBpedia buildings | 6 / 11 | 20 + gold triples | `examples/webnlg/prepare.py Building examples/webnlg-building/docs` |
 | `examples/ade/` | drug → adverse effect, case reports | 2 / 2 | 20 + gold pairs | `examples/ade/prepare.py examples/ade/docs` |
@@ -658,8 +660,8 @@ Common symptoms:
 
 ## Data and licences
 
-- CHR vignettes and gold ABoxes: generated from Synthea FHIR bundles in the companion Thesis
-  repository (`evaluation/corpus/`); not published here, expected under `examples/chr/docs/` (gitignored).
+- CHR vignettes and gold ABoxes: synthetic (Synthea FHIR bundles rendered to text and RDF by the companion
+  Thesis repository, `evaluation/corpus/`), under `examples/chr/docs/`.
 - WebNLG v3.0 (en): CC BY-NC-SA 4.0, https://gitlab.com/shimorina/webnlg-dataset. The 40 sample
   documents are checked in; `examples/webnlg/prepare.py` fetches more.
 - ADE corpus v2: Gurulingappa et al., *J Biomed Inform* 2012;45(5):885-892. `DRUG-AE.rel` and

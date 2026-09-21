@@ -1,0 +1,183 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:care_plan_follow_up_monitoring_and_routine_review a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluation_20181016T052029 .
+
+ex:visit_20181016T052029 a chr:ClinicalVisit ;
+    rdfs:label "Well child visit" ;
+    chr:hasCareProvider ex:Dr_Cari853_Kohler843 ;
+    chr:hasCareUnit ex:DR_HE_S_PRIMARY_CARE_FOR_ADULTS_INC ;
+    chr:hasDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Dolores502_Marisol435_Nevárez403 ;
+    chr:hasProcedure ex:evaluation_20181016T052029,
+        ex:measurement_process_BMI_Percentile_20181016T052029,
+        ex:measurement_process_BMI_Ratio_20181016T052029,
+        ex:measurement_process_BodyHeight_20181016T052029,
+        ex:measurement_process_BodyWeight_20181016T052029,
+        ex:measurement_process_HeartRate_20181016T052029,
+        ex:measurement_process_PainSeverity_20181016T052029,
+        ex:measurement_process_RespiratoryRate_20181016T052029 .
+
+ex:DR_HE_S_PRIMARY_CARE_FOR_ADULTS_INC a chr:CareUnit ;
+    rdfs:label "DR. HE'S PRIMARY CARE FOR ADULTS INC" .
+
+ex:DiagnosticStatement_Medication_review_due_situation a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:Medication_review_due_situation a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime .
+
+ex:measurement_BMI_Percentile_20181016T052029 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Percentile] Per age and sex" ;
+    chr:hasCode <https://loinc.org/59576-9> ;
+    chr:hasMeasuredDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "94.132"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:measurement_BMI_Ratio_20181016T052029 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "18.51"^^xsd:float ;
+    chr:hasUnit ex:unit_kgperm2 .
+
+ex:measurement_BodyHeight_20181016T052029 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "118.7"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:measurement_BodyWeight_20181016T052029 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "26.1"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:measurement_HeartRate_20181016T052029 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "80.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_PainSeverity_20181016T052029 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_RespiratoryRate_20181016T052029 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "15.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_process_BMI_Percentile_20181016T052029 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Percentile] Per age and sex measurement" ;
+    chr:hasPatient ex:Dolores502_Marisol435_Nevárez403 ;
+    chr:hasPerformedDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Cari853_Kohler843 ;
+    chr:hasResult ex:measurement_BMI_Percentile_20181016T052029 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_process_BMI_Ratio_20181016T052029 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:Dolores502_Marisol435_Nevárez403 ;
+    chr:hasPerformedDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Cari853_Kohler843 ;
+    chr:hasResult ex:measurement_BMI_Ratio_20181016T052029 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_process_BodyHeight_20181016T052029 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:Dolores502_Marisol435_Nevárez403 ;
+    chr:hasPerformedDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Cari853_Kohler843 ;
+    chr:hasResult ex:measurement_BodyHeight_20181016T052029 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_process_BodyWeight_20181016T052029 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:Dolores502_Marisol435_Nevárez403 ;
+    chr:hasPerformedDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Cari853_Kohler843 ;
+    chr:hasResult ex:measurement_BodyWeight_20181016T052029 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_process_HeartRate_20181016T052029 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:Dolores502_Marisol435_Nevárez403 ;
+    chr:hasPerformedDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Cari853_Kohler843 ;
+    chr:hasResult ex:measurement_HeartRate_20181016T052029 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_process_PainSeverity_20181016T052029 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:Dolores502_Marisol435_Nevárez403 ;
+    chr:hasPerformedDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Cari853_Kohler843 ;
+    chr:hasResult ex:measurement_PainSeverity_20181016T052029 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measurement_process_RespiratoryRate_20181016T052029 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:Dolores502_Marisol435_Nevárez403 ;
+    chr:hasPerformedDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Cari853_Kohler843 ;
+    chr:hasResult ex:measurement_RespiratoryRate_20181016T052029 ;
+    chr:hasStatus ex:status_completed .
+
+ex:unit_cblscorecbr a chr:Unit ;
+    rdfs:label "[Score]" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kgperm2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:evaluation_20181016T052029 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Medication_review_due_situation ;
+    chr:hasObservation ex:DiagnosticStatement_Medication_review_due_situation ;
+    chr:hasPatient ex:Dolores502_Marisol435_Nevárez403 ;
+    chr:hasPerformedDate "2018-10-16T05:20:29+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Cari853_Kohler843 .
+
+ex:unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Dolores502_Marisol435_Nevárez403 a chr:Person ;
+    rdfs:label "Dolores502 Marisol435 Nevárez403" .
+
+ex:Dr_Cari853_Kohler843 a chr:Person ;
+    rdfs:label "Dr. Cari853 Kohler843" .

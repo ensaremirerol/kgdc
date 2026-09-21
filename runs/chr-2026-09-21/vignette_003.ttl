@@ -1,0 +1,69 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_followup_monitoring a chr:CarePlan ;
+    rdfs:label "care plan" ;
+    chr:hasMedicalProcedure ex:evaluation_20170509T182427 .
+
+ex:measurement_Pain_severity_Reported_38208_5 a chr:Measurement ;
+    rdfs:label "Pain severity - Reported" ;
+    chr:hasCode <https://loinc.org/38208-5> ;
+    chr:hasMeasuredDate "2016-12-13T23:46:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 2.8386 ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_process_Pain_severity_Reported_38208_5 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - Reported measurement process" ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2016-12-13T23:46:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Willian804_Batz141 ;
+    chr:hasResult ex:measurement_Pain_severity_Reported_38208_5 ;
+    chr:hasStatus ex:status_completed ;
+    chr:hasDevice ex:device_unspecified .
+
+ex:visit_20161213T230153 a chr:ClinicalVisit ;
+    rdfs:label "Patient encounter procedure (procedure)" ;
+    chr:hasCareProvider ex:person_Willian804_Batz141 ;
+    chr:hasCareUnit ex:BOSTON_MEDICAL_CENTER_CORPORATION_ ;
+    chr:hasDate "2016-12-13T23:01:53+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;
+    chr:hasProcedure ex:measurement_process_Pain_severity_Reported_38208_5 .
+
+ex:Acute_infective_cystitis_disorder_307426000 a chr:ClinicalCondition ;
+    rdfs:label "Acute infective cystitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/307426000> ;
+    chr:hasRecordDate "2017-05-09T18:24:27+02:00"^^xsd:dateTime .
+
+ex:evaluation_20170509T182427 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Acute_infective_cystitis_disorder_307426000 ;
+    chr:hasObservation ex:diagnostic_statement_307426000 ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604 ;
+    chr:hasPerformedDate "2017-05-09T18:24:27+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Willian804_Batz141 .
+
+ex:diagnostic_statement_307426000 a chr:DiagnosticStatement ;
+    rdfs:label "Acute infective cystitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/307426000> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_cblscorecbr a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:person_Angelic427_Callie226_Schaden604 a chr:Person ;
+    rdfs:label "Angelic427 Callie226 Schaden604" .
+
+ex:person_Willian804_Batz141 a chr:Person ;
+    rdfs:label "Dr. Willian804 Batz141" .
+
+ex:BOSTON_MEDICAL_CENTER_CORPORATION_ a chr:CareUnit ;
+    rdfs:label "BOSTON MEDICAL CENTER CORPORATION-" .
+
+# UNRESOLVED: ex:device_unspecified must be a chr:Device — not stated in the text

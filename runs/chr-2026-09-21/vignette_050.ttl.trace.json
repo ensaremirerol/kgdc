@@ -1,0 +1,495 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_Cel a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20190316T170115 .\n\nex:visit_20190316T170115 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\" ;\n    chr:hasCareProvider ex:person_Dr_Carroll471_Eichmann909 ;\n    chr:hasCareUnit ex:BERKSHIRE_MEDICAL_CENTER_INC ;\n    chr:hasDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;\n    chr:hasProcedure ex:evaluation_20190316T170115, ex:measurement_process_body_temperature_20190316T170115 .\n\nex:Acute_viral_pharyngitis_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime .\n\nex:BERKSHIRE_MEDICAL_CENTER_INC a chr:CareUnit ;\n    rdfs:label \"BERKSHIRE MEDICAL CENTER INC\" .\n\nex:diagnostic_statement_Acute_viral_pharyngitis_20190316T170115 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .\n\nex:measurement_body_temperature_20190316T170115 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.277\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel .\n\nex:measurement_process_body_temperature_20190316T170115 a chr:MeasurementProcess ;\n    rdfs:label \"measurement process\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909 ;\n    chr:hasResult ex:measurement_body_temperature_20190316T170115 ;\n    chr:hasStatus ex:status_completed .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:evaluation_20190316T170115 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909 ;\n    chr:hasCondition ex:Acute_viral_pharyngitis_disorder ;\n    chr:hasObservation ex:diagnostic_statement_Acute_viral_pharyngitis_20190316T170115 .\n\nex:person_Daren950_Ed239_Strosin214 a chr:Person ;\n    rdfs:label \"Daren950 Ed239 Strosin214\" .\n\nex:person_Dr_Carroll471_Eichmann909 a chr:Person ;\n    rdfs:label \"Dr. Carroll471 Eichmann909\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\n==================================================\n\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:BERKSHIRE_MEDICAL_CENTER_INC a chr:CareUnit ;\n    rdfs:label \"BERKSHIRE MEDICAL CENTER INC\" .",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Carroll471 Eichmann909 evaluated the patient on 2019-03-16T17:01:15+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-03-16T17:01:15+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Acute_viral_pharyngitis_disorder a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime .",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Carroll471 Eichmann909 evaluated the patient on 2019-03-16T17:01:15+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-03-16T17:01:15+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_Acute_viral_pharyngitis_20190316T170115 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\n==================================================\n\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Daren950_Ed239_Strosin214 a chr:Person ;\n    rdfs:label \"Daren950 Ed239 Strosin214\" .\n\nex:person_Dr_Carroll471_Eichmann909 a chr:Person ;\n    rdfs:label \"Dr. Carroll471 Eichmann909\" .",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2019-03-16T17:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 37.277 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:measurement_process_body_temperature_20190316T170115 a chr:ProcessStatus ;\n    rdfs:label \"measurement process\" ;\n    chr:hasCode <https://loinc.org/8310-5> .",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2019-03-16T17:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 37.277 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Cel a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Carroll471 Eichmann909 evaluated the patient on 2019-03-16T17:01:15+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-03-16T17:01:15+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [
+    "UNRESOLVED: chr:hasStatus \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20190316T170115 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Acute_viral_pharyngitis_disorder ;\n    chr:hasObservation ex:diagnostic_statement_Acute_viral_pharyngitis_20190316T170115 ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909 .\n\n# UNRESOLVED: chr:hasStatus \u2014 not stated in the text",
+   "level": 1,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2019-03-16T17:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 37.277 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_body_temperature_20190316T170115 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.277\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel .\n\nex:unit_Cel a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .",
+   "level": 1,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2019-03-16T17:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 37.277 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_body_temperature_20190316T170115 a chr:MeasurementProcess ;\n    rdfs:label \"measurement process\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909 ;\n    chr:hasResult ex:measurement_body_temperature_20190316T170115 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_body_temperature_20190316T170115 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.277\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel .",
+   "level": 2,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\n==================================================\n\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)\n\nOn 2019-03-16T17:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 37.277 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2019-03-16T17:01:15+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-03-16T17:01:15+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/care_plan_follow_up_monitoring\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/CarePlan is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/care_plan_follow_up_monitoring\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMedicalProcedure is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuanti"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/care_plan_follow_up_monitoring\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/CarePlan is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/care_plan_follow_up_monitoring\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMedicalProcedure is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuanti"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20190316T170115 .\n\nex:measurement_body_temperature_20190316T170115 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.277\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel .\n\nex:measurement_process_body_temperature_20190316T170115 a chr:MeasurementProcess ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909 ;\n    chr:hasResult ex:measurement_body_temperature_20190316T170115 ;\n    chr:hasStatus ex:status_completed .",
+   "level": 3,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\n==================================================\n\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)\n\nOn 2019-03-16T17:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 37.277 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2019-03-16T17:01:15+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-03-16T17:01:15+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/visit_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalVisit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformedDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformer is not a property of the vocabulary\nConstraint Violation in Un"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MedicalProcedure is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MedicalProcedure is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/visit_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalVisit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocab"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MedicalProcedure is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temperature_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/visit_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalVisit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPatient is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasPerformedDate is not a property of the vocabulary\nConstr"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20190316T170115 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\" ;\n    chr:hasCareProvider ex:person_Dr_Carroll471_Eichmann909 ;\n    chr:hasCareUnit ex:BERKSHIRE_MEDICAL_CENTER_INC ;\n    chr:hasDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;\n    chr:hasProcedure ex:measurement_process_body_temperature_20190316T170115, ex:evaluation_20190316T170115 .\n\nex:measurement_process_body_temperature_20190316T170115 a chr:ProcessStatus ;\n    rdfs:label \"measurement process\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_body_temperature_20190316T170115 .\n\nex:measurement_body_temperature_20190316T170115 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.277\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel .\n\nex:evaluation_20190316T170115 a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909 .",
+   "level": 3,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 17,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 10868,
+   "completion_tokens": 1905,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 17,
+   "prompt_tokens": 67840,
+   "completion_tokens": 8256,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 15,
+   "prompt_tokens": 56972,
+   "completion_tokens": 6351,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

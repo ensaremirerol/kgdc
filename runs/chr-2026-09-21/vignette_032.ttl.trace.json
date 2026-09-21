@@ -1,0 +1,478 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_process_20211112T224807 .\n\nex:measurement_process_33756_8 a chr:MeasurementProcess ;\n    rdfs:label \"Polyp size greatest dimension measurement process\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Rhett759_Padberg411 ;\n    chr:hasResult ex:measurement_33756_8 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_57905_2 a chr:MeasurementProcess ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen measurement process\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Rhett759_Padberg411 ;\n    chr:hasResult ex:measurement_57905_2 ;\n    chr:hasStatus ex:status_completed .\n\nex:visit_20211112T220318 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\" ;\n    chr:hasCareProvider ex:Dr_Rhett759_Padberg411 ;\n    chr:hasCareUnit ex:VIBRA_HOSPITAL_OF_WESTERN_MASSACHUSETTS_LLC ;\n    chr:hasDate \"2021-11-12T22:03:18+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasProcedure ex:evaluation_process_20211112T224807,\n        ex:measurement_process_33756_8,\n        ex:measurement_process_57905_2 .\n\nex:Polyp_of_colon_68496003 a chr:ClinicalCondition ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> ;\n    chr:hasLocatedIn ex:colon ;\n    chr:hasRecordDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime .\n\nex:VIBRA_HOSPITAL_OF_WESTERN_MASSACHUSETTS_LLC a chr:CareUnit ;\n    rdfs:label \"VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\" .\n\nex:colon a chr:AnatomicalStructure ;\n    rdfs:label \"colon\" .\n\nex:diagnostic_statement_68496003 a chr:DiagnosticStatement ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> .\n\nex:measurement_33756_8 a chr:Measurement ;\n    rdfs:label \"Polyp size greatest dimension\" ;\n    chr:hasCode <https://loinc.org/33756-8> ;\n    chr:hasMeasuredDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.4093\"^^xsd:float ;\n    chr:hasUnit ex:mm .\n\nex:measurement_57905_2 a chr:Measurement ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" ;\n    chr:hasCode <https://loinc.org/57905-2> ;\n    chr:hasMeasuredDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"24.389\"^^xsd:float ;\n    chr:hasUnit ex:ngpermL .\n\nex:mm a chr:Unit ;\n    rdfs:label \"mm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mm> .\n\nex:ngpermL a chr:Unit ;\n    rdfs:label \"ng/mL\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ngpermL> .\n\nex:evaluation_process_20211112T224807 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Polyp_of_colon_68496003 ;\n    chr:hasObservation ex:diagnostic_statement_68496003 ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Rhett759_Padberg411 .\n\nex:Casey401_Elijah719_Parker433 a chr:Person ;\n    rdfs:label \"Casey401 Elijah719 Parker433\" .\n\nex:Dr_Rhett759_Padberg411 a chr:Person ;\n    rdfs:label \"Dr. Rhett759 Padberg411\" .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411\nEncounter type: Encounter for check up (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:VIBRA_HOSPITAL_OF_WESTERN_MASSACHUSETTS_LLC a chr:CareUnit ;\n    rdfs:label \"VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\" .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Rhett759 Padberg411 evaluated the patient on 2021-11-12T22:48:07+01:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2021-11-12T22:48:07+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Polyp_of_colon_68496003 a chr:ClinicalCondition ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> ;\n    chr:hasLocatedIn ex:colon ;\n    chr:hasRecordDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime .\n\nex:colon a chr:AnatomicalStructure ;\n    rdfs:label \"colon\" .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Rhett759 Padberg411 evaluated the patient on 2021-11-12T22:48:07+01:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2021-11-12T22:48:07+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_68496003 a chr:DiagnosticStatement ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411\nEncounter type: Encounter for check up (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Casey401_Elijah719_Parker433 a chr:Person ;\n    rdfs:label \"Casey401 Elijah719 Parker433\" .\n\nex:Dr_Rhett759_Padberg411 a chr:Person ;\n    rdfs:label \"Dr. Rhett759 Padberg411\" .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2021-11-12T22:48:07+01:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 2.4093 mm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-12T22:48:07+01:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 24.389 ng/mL. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_2\n\tValue Node: ex:measurement_process_2\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:measurement_process_1 a chr:MedicalProcedure ;\n    rdfs:label \"Polyp size greatest dimension measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_2 a chr:MedicalProcedure ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen measurement process\" ;\n    chr:hasStatus ex:status_completed .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2021-11-12T22:48:07+01:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 2.4093 mm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-12T22:48:07+01:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 24.389 ng/mL. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:mm a chr:Unit ;\n    rdfs:label \"mm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mm> .\n\nex:ngpermL a chr:Unit ;\n    rdfs:label \"ng/mL\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ngpermL> .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Rhett759 Padberg411 evaluated the patient on 2021-11-12T22:48:07+01:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2021-11-12T22:48:07+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_process_20211112T224807 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Polyp_of_colon_68496003 ;\n    chr:hasObservation ex:diagnostic_statement_68496003 ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Rhett759_Padberg411 .\n\nex:Polyp_of_colon_68496003 a chr:ClinicalCondition ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> ;\n    chr:hasRecordDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_68496003 a chr:DiagnosticStatement ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> .",
+   "level": 1,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2021-11-12T22:48:07+01:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 2.4093 mm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-12T22:48:07+01:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 24.389 ng/mL. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_33756_8 a chr:Measurement ;\n    rdfs:label \"Polyp size greatest dimension\" ;\n    chr:hasCode <https://loinc.org/33756-8> ;\n    chr:hasMeasuredDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.4093\"^^xsd:float ;\n    chr:hasUnit ex:mm .\n\nex:measurement_57905_2 a chr:Measurement ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" ;\n    chr:hasCode <https://loinc.org/57905-2> ;\n    chr:hasMeasuredDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"24.389\"^^xsd:float ;\n    chr:hasUnit ex:ngpermL .",
+   "level": 1,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2021-11-12T22:48:07+01:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 2.4093 mm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-12T22:48:07+01:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 24.389 ng/mL. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_33756_8 a chr:MeasurementProcess ;\n    rdfs:label \"Polyp size greatest dimension measurement process\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Rhett759_Padberg411 ;\n    chr:hasResult ex:measurement_33756_8 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_33756_8 a chr:Measurement ;\n    rdfs:label \"Polyp size greatest dimension\" ;\n    chr:hasCode <https://loinc.org/33756-8> ;\n    chr:hasMeasuredDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.4093\"^^xsd:float ;\n    chr:hasUnit ex:mm .\n\nex:measurement_process_57905_2 a chr:MeasurementProcess ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen measurement process\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Rhett759_Padberg411 ;\n    chr:hasResult ex:measurement_57905_2 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_57905_2 a chr:Measurement ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" ;\n    chr:hasCode <https://loinc.org/57905-2> ;\n    chr:hasMeasuredDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"24.389\"^^xsd:float ;\n    chr:hasUnit ex:ngpermL .",
+   "level": 2,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\n=================================================================\n\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411\nEncounter type: Encounter for check up (procedure)\n\nOn 2021-11-12T22:48:07+01:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 2.4093 mm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-12T22:48:07+01:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 24.389 ng/mL. The measurement process was recorded with status \"completed\".\n\nDr. Rhett759 Padberg411 evaluated the patient on 2021-11-12T22:48:07+01:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2021-11-12T22:48:07+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_process_20211112T224807 .",
+   "level": 3,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\n=================================================================\n\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411\nEncounter type: Encounter for check up (procedure)\n\nOn 2021-11-12T22:48:07+01:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 2.4093 mm. The measurement process was recorded with status \"completed\".\n\nOn 2021-11-12T22:48:07+01:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 24.389 ng/mL. The measurement process was recorded with status \"completed\".\n\nDr. Rhett759 Padberg411 evaluated the patient on 2021-11-12T22:48:07+01:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2021-11-12T22:48:07+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20211112T220318 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\" ;\n    chr:hasCareProvider ex:Dr_Rhett759_Padberg411 ;\n    chr:hasCareUnit ex:VIBRA_HOSPITAL_OF_WESTERN_MASSACHUSETTS_LLC ;\n    chr:hasDate \"2021-11-12T22:03:18+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasProcedure ex:measurement_process_33756_8 ;\n    chr:hasProcedure ex:measurement_process_57905_2 ;\n    chr:hasProcedure ex:evaluation_process_20211112T224807 .\n\nex:measurement_process_33756_8 a chr:MedicalProcedure ;\n    rdfs:label \"Polyp size greatest dimension measurement process\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Rhett759_Padberg411 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_57905_2 a chr:MedicalProcedure ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen measurement process\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Rhett759_Padberg411 ;\n    chr:hasStatus ex:status_completed .\n\nex:evaluation_process_20211112T224807 a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:Casey401_Elijah719_Parker433 ;\n    chr:hasPerformedDate \"2021-11-12T22:48:07+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Rhett759_Padberg411 .",
+   "level": 3,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2021-11-12T22:03:18+01:00\nCare unit: VIBRA HOSPITAL OF WESTERN MASSACHUSETTS LLC\nAttending physician: Dr. Rhett759 Padberg411",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 14,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 6607,
+   "completion_tokens": 2540,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 14,
+   "prompt_tokens": 39016,
+   "completion_tokens": 7240,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 12,
+   "prompt_tokens": 32409,
+   "completion_tokens": 4700,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

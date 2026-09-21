@@ -1,0 +1,313 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20200123T071257 .\n\nex:visit_20200123T071257 a chr:ClinicalVisit ;\n    rdfs:label \"Well child visit\" ;\n    chr:hasCareProvider ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasCareUnit ex:HARBOR_HEALTH_SERVICES_INC ;\n    chr:hasDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasProcedure ex:evaluation_20200123T071257,\n        ex:measurement_process_BodyHeight_20200123T071257,\n        ex:measurement_process_BodyWeight_20200123T071257,\n        ex:measurement_process_HeadOccipitalPercentile_20200123T071257,\n        ex:measurement_process_HeadOccipital_20200123T071257,\n        ex:measurement_process_HeartRate_20200123T071257,\n        ex:measurement_process_PainSeverity_20200123T071257,\n        ex:measurement_process_RespiratoryRate_20200123T071257,\n        ex:measurement_process_WeightForLength_20200123T071257 .\n\nex:HARBOR_HEALTH_SERVICES_INC a chr:CareUnit ;\n    rdfs:label \"HARBOR HEALTH SERVICES INC\" .\n\nex:condition_Medication_review_due_314529007 a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n\nex:measurement_BodyHeight_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"58.6\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_BodyWeight_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.2\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_HeadOccipitalPercentile_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile\" ;\n    chr:hasCode <https://loinc.org/8289-1> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"24.46\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_HeadOccipital_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference\" ;\n    chr:hasCode <https://loinc.org/9843-4> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"39.57\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_HeartRate_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_PainSeverity_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_RespiratoryRate_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"15.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_WeightForLength_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Weight-for-length Per age and sex\" ;\n    chr:hasCode <https://loinc.org/77606-2> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.216\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_process_BodyHeight_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_BodyHeight_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_BodyWeight_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_BodyWeight_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeadOccipitalPercentile_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_HeadOccipitalPercentile_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeadOccipital_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Head Occipital-frontal circumference measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_HeadOccipital_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeartRate_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_HeartRate_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_PainSeverity_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_PainSeverity_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_RespiratoryRate_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_RespiratoryRate_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_WeightForLength_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Weight-for-length measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_WeightForLength_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"[Score]\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:evaluation_20200123T071257 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:condition_Medication_review_due_314529007 ;\n    chr:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:person_Delma583_Adriane398_Huel628 a chr:Person ;\n    rdfs:label \"Delma583 Adriane398 Huel628\" .\n\nex:person_Dr_Drew592_Simonis280 a chr:Person ;\n    rdfs:label \"Dr. Drew592 Simonis280\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "Patient: Delma583 Adriane398 Huel628 (ID: P-b4f1da1a)\nDate of visit: 2020-01-23T07:12:57+01:00\nCare unit: HARBOR HEALTH SERVICES INC\nAttending physician: Dr. Drew592 Simonis280\nEncounter type: Well child visit (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:HARBOR_HEALTH_SERVICES_INC a chr:CareUnit ;\n    rdfs:label \"HARBOR HEALTH SERVICES INC\" .",
+   "level": 0,
+   "shared_context": "Patient: Delma583 Adriane398 Huel628 (ID: P-b4f1da1a)\nDate of visit: 2020-01-23T07:12:57+01:00\nCare unit: HARBOR HEALTH SERVICES INC\nAttending physician: Dr. Drew592 Simonis280",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Drew592 Simonis280 evaluated the patient on 2020-01-23T07:12:57+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2020-01-23T07:12:57+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .",
+   "level": 0,
+   "shared_context": "Patient: Delma583 Adriane398 Huel628 (ID: P-b4f1da1a)\nDate of visit: 2020-01-23T07:12:57+01:00\nCare unit: HARBOR HEALTH SERVICES INC\nAttending physician: Dr. Drew592 Simonis280",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2020-01-23T07:12:57+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 58.6 cm. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 6.2 kg. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Weight-for-length Per age and sex (LOINC: 77606-2) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 81.216 %. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Head Occipital-frontal circumference Percentile (LOINC: 8289-1) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 24.46 %. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Head Occipital-frontal circumference (LOINC: 9843-4) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 39.57 cm. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 81 /min. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 15 /min. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_BodyHeight_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"58.6\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:measurement_PainSeverity_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"[Score]\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:measurement_BodyWeight_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.2\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:measurement_WeightForLength_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Weight-for-length Per age and sex\" ;\n    chr:hasCode <https://loinc.org/77606-2> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.216\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:unit_percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:measurement_HeadOccipitalPercentile_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile\" ;\n    chr:hasCode <https://loinc.org/8289-1> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"24.46\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_HeadOccipital_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference\" ;\n    chr:hasCode <https://loinc.org/9843-4> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"39.57\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_HeartRate_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:measurement_RespiratoryRate_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"15.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .",
+   "level": 0,
+   "shared_context": "Patient: Delma583 Adriane398 Huel628 (ID: P-b4f1da1a)\nDate of visit: 2020-01-23T07:12:57+01:00\nCare unit: HARBOR HEALTH SERVICES INC\nAttending physician: Dr. Drew592 Simonis280",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "Patient: Delma583 Adriane398 Huel628 (ID: P-b4f1da1a)\nDate of visit: 2020-01-23T07:12:57+01:00\nCare unit: HARBOR HEALTH SERVICES INC\nAttending physician: Dr. Drew592 Simonis280\nEncounter type: Well child visit (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Delma583_Adriane398_Huel628 a chr:Person ;\n    rdfs:label \"Delma583 Adriane398 Huel628\" .\n\nex:person_Dr_Drew592_Simonis280 a chr:Person ;\n    rdfs:label \"Dr. Drew592 Simonis280\" .",
+   "level": 0,
+   "shared_context": "Patient: Delma583 Adriane398 Huel628 (ID: P-b4f1da1a)\nDate of visit: 2020-01-23T07:12:57+01:00\nCare unit: HARBOR HEALTH SERVICES INC\nAttending physician: Dr. Drew592 Simonis280",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Drew592 Simonis280 evaluated the patient on 2020-01-23T07:12:57+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2020-01-23T07:12:57+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20200123T071257 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:condition_Medication_review_due_314529007 ;\n    chr:hasObservation ex:diagnostic_statement_Medication_review_due_314529007 ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 .\n\nex:condition_Medication_review_due_314529007 a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Medication_review_due_314529007 a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .",
+   "level": 1,
+   "shared_context": "Patient: Delma583 Adriane398 Huel628 (ID: P-b4f1da1a)\nDate of visit: 2020-01-23T07:12:57+01:00\nCare unit: HARBOR HEALTH SERVICES INC\nAttending physician: Dr. Drew592 Simonis280",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2020-01-23T07:12:57+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 58.6 cm. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 6.2 kg. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Weight-for-length Per age and sex (LOINC: 77606-2) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 81.216 %. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Head Occipital-frontal circumference Percentile (LOINC: 8289-1) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 24.46 %. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Head Occipital-frontal circumference (LOINC: 9843-4) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 39.57 cm. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 81 /min. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 15 /min. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_BodyHeight_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_BodyHeight_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyHeight_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"58.6\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_process_PainSeverity_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_PainSeverity_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_PainSeverity_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_process_BodyWeight_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_BodyWeight_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyWeight_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.2\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_process_WeightForLength_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Weight-for-length measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_WeightForLength_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_WeightForLength_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Weight-for-length Per age and sex\" ;\n    chr:hasCode <https://loinc.org/77606-2> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.216\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_process_HeadOccipitalPercentile_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_HeadOccipitalPercentile_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeadOccipitalPercentile_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference Percentile\" ;\n    chr:hasCode <https://loinc.org/8289-1> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"24.46\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_process_HeadOccipital_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Head Occipital-frontal circumference measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_HeadOccipital_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeadOccipital_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Head Occipital-frontal circumference\" ;\n    chr:hasCode <https://loinc.org/9843-4> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"39.57\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_process_HeartRate_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_HeartRate_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeartRate_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_process_RespiratoryRate_20200123T071257 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement process\" ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasPerformedDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasResult ex:measurement_RespiratoryRate_20200123T071257 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_RespiratoryRate_20200123T071257 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"15.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .",
+   "level": 1,
+   "shared_context": "Patient: Delma583 Adriane398 Huel628 (ID: P-b4f1da1a)\nDate of visit: 2020-01-23T07:12:57+01:00\nCare unit: HARBOR HEALTH SERVICES INC\nAttending physician: Dr. Drew592 Simonis280",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 HARBOR HEALTH SERVICES INC\n================================================\n\nPatient: Delma583 Adriane398 Huel628 (ID: P-b4f1da1a)\nDate of visit: 2020-01-23T07:12:57+01:00\nCare unit: HARBOR HEALTH SERVICES INC\nAttending physician: Dr. Drew592 Simonis280\nEncounter type: Well child visit (procedure)\n\nOn 2020-01-23T07:12:57+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 58.6 cm. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 6.2 kg. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Weight-for-length Per age and sex (LOINC: 77606-2) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 81.216 %. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Head Occipital-frontal circumference Percentile (LOINC: 8289-1) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 24.46 %. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Head Occipital-frontal circumference (LOINC: 9843-4) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 39.57 cm. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 81 /min. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 15 /min. The measurement process was recorded with status \"completed\".\n\nDr. Drew592 Simonis280 evaluated the patient on 2020-01-23T07:12:57+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2020-01-23T07:12:57+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up_monitoring a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_20200123T071257 .",
+   "level": 2,
+   "shared_context": "Patient: Delma583 Adriane398 Huel628 (ID: P-b4f1da1a)\nDate of visit: 2020-01-23T07:12:57+01:00\nCare unit: HARBOR HEALTH SERVICES INC\nAttending physician: Dr. Drew592 Simonis280",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 HARBOR HEALTH SERVICES INC\n================================================\n\nPatient: Delma583 Adriane398 Huel628 (ID: P-b4f1da1a)\nDate of visit: 2020-01-23T07:12:57+01:00\nCare unit: HARBOR HEALTH SERVICES INC\nAttending physician: Dr. Drew592 Simonis280\nEncounter type: Well child visit (procedure)\n\nOn 2020-01-23T07:12:57+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 58.6 cm. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 6.2 kg. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Weight-for-length Per age and sex (LOINC: 77606-2) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 81.216 %. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Head Occipital-frontal circumference Percentile (LOINC: 8289-1) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 24.46 %. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Head Occipital-frontal circumference (LOINC: 9843-4) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 39.57 cm. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 81 /min. The measurement process was recorded with status \"completed\".\n\nOn 2020-01-23T07:12:57+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Delma583 Adriane398 Huel628. The measurement result was 15 /min. The measurement process was recorded with status \"completed\".\n\nDr. Drew592 Simonis280 evaluated the patient on 2020-01-23T07:12:57+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2020-01-23T07:12:57+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20200123T071257 a chr:ClinicalVisit ;\n    rdfs:label \"Well child visit\" ;\n    chr:hasCareProvider ex:person_Dr_Drew592_Simonis280 ;\n    chr:hasCareUnit ex:HARBOR_HEALTH_SERVICES_INC ;\n    chr:hasDate \"2020-01-23T07:12:57+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;\n    chr:hasProcedure ex:measurement_process_BodyHeight_20200123T071257 ;\n    chr:hasProcedure ex:measurement_process_PainSeverity_20200123T071257 ;\n    chr:hasProcedure ex:measurement_process_BodyWeight_20200123T071257 ;\n    chr:hasProcedure ex:measurement_process_WeightForLength_20200123T071257 ;\n    chr:hasProcedure ex:measurement_process_HeadOccipitalPercentile_20200123T071257 ;\n    chr:hasProcedure ex:measurement_process_HeadOccipital_20200123T071257 ;\n    chr:hasProcedure ex:measurement_process_HeartRate_20200123T071257 ;\n    chr:hasProcedure ex:measurement_process_RespiratoryRate_20200123T071257 ;\n    chr:hasProcedure ex:evaluation_20200123T071257 .",
+   "level": 2,
+   "shared_context": "Patient: Delma583 Adriane398 Huel628 (ID: P-b4f1da1a)\nDate of visit: 2020-01-23T07:12:57+01:00\nCare unit: HARBOR HEALTH SERVICES INC\nAttending physician: Dr. Drew592 Simonis280",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 10,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 9750,
+   "completion_tokens": 5466,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 10,
+   "prompt_tokens": 36472,
+   "completion_tokens": 11820,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 8,
+   "prompt_tokens": 26722,
+   "completion_tokens": 6354,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

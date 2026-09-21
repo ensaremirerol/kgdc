@@ -1,0 +1,68 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:care_plan_follow_up_monitoring a chr:CarePlan ;
+    rdfs:label "care plan" ;
+    chr:hasMedicalProcedure ex:evaluation_20200529T222208 .
+
+ex:measurement_72514-3_20200529T222208 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2020-05-29T22:22:08+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.0"^^xsd:float ;
+    chr:hasUnit ex:score_cblscorecbr .
+
+ex:measurement_process_72514-3 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement" ;
+    chr:hasPatient ex:Harvey63_Napoleon578_Homenick806 ;
+    chr:hasPerformedDate "2020-05-29T22:22:08+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Víctor493_Chávez927 ;
+    chr:hasResult ex:measurement_72514-3_20200529T222208 ;
+    chr:hasStatus ex:status_completed .
+
+ex:recurrent_rectal_polyp_disorder_713197008 a chr:ClinicalCondition ;
+    rdfs:label "Recurrent rectal polyp (disorder)" ;
+    chr:hasCode <http://snomed.info/id/713197008> ;
+    chr:hasRecordDate "2020-05-29T22:22:08+02:00"^^xsd:dateTime .
+
+ex:diagnostic_statement_713197008 a chr:DiagnosticStatement ;
+    rdfs:label "Recurrent rectal polyp (disorder)" ;
+    chr:hasCode <http://snomed.info/id/713197008> .
+
+ex:evaluation_20200529T222208 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:recurrent_rectal_polyp_disorder_713197008 ;
+    chr:hasObservation ex:diagnostic_statement_713197008 ;
+    chr:hasPatient ex:Harvey63_Napoleon578_Homenick806 ;
+    chr:hasPerformedDate "2020-05-29T22:22:08+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Víctor493_Chávez927 ;
+    chr:hasResult ex:diagnostic_statement_713197008 .
+
+ex:score_cblscorecbr a chr:Unit ;
+    rdfs:label "[Score]" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Dr._Víctor493_Chávez927 a chr:Person ;
+    rdfs:label "Dr. Víctor493 Chávez927" .
+
+ex:Harvey63_Napoleon578_Homenick806 a chr:Person ;
+    rdfs:label "Harvey63 Napoleon578 Homenick806" .
+
+ex:visit_20200529T214947 a chr:ClinicalVisit ;
+    rdfs:label "CLINICAL VISIT NOTE" ;
+    chr:hasCareProvider ex:Dr._Víctor493_Chávez927 ;
+    chr:hasCareUnit ex:4499_ACUSHNET_AVENUE_OPERATING_COMPANY_LLC ;
+    chr:hasDate "2020-05-29T21:49:47+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Harvey63_Napoleon578_Homenick806 ;
+    chr:hasProcedure ex:evaluation_20200529T222208,
+        ex:measurement_process_72514-3 .
+
+ex:4499_ACUSHNET_AVENUE_OPERATING_COMPANY_LLC a chr:CareUnit ;
+    rdfs:label "4499 ACUSHNET AVENUE OPERATING COMPANY, LLC" .

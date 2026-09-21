@@ -1,0 +1,41 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 109.3s] 41 segments: s1[ClinicalVisit,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit], s3[MeasurementProcess,Measurement,Unit], s4[MeasurementProcess,Measurement,Unit], s5[MeasurementProcess,Measurement,Unit], s6[MeasurementProcess,Measurement,Unit], s7[MeasurementProcess,Measurement,Unit], s8[MeasurementProcess,Measurement,Unit], s9[MeasurementProcess,Measurement,Unit], s10[MeasurementProcess,Measurement,Unit], s11[MeasurementProcess,Measurement,Unit], s12[MeasurementProcess,Measurement,Unit], s13[MeasurementProcess,Measurement,Unit], s14[MeasurementProcess,Measurement,Unit], s15[MeasurementProcess,Measurement,Unit], s16[MeasurementProcess,Measurement,Unit], s17[MeasurementProcess,Measurement,Unit], s18[MeasurementProcess,Measurement,Unit], s19[MeasurementProcess,Measurement,Unit], s20[MeasurementProcess,Measurement,Unit], s21[MeasurementProcess,Measurement,Unit], s22[MeasurementProcess,Measurement,Unit], s23[MeasurementProcess,Measurement,Unit], s24[MeasurementProcess,Measurement,Severity,Unit], s25[MeasurementProcess,Measurement,Unit], s26[MeasurementProcess,Measurement,Unit], s27[MeasurementProcess,Measurement,Unit], s28[MeasurementProcess,Measurement,Unit], s29[MeasurementProcess,Measurement,Unit], s30[MeasurementProcess,Measurement,Unit], s31[MeasurementProcess,Measurement,Unit], s32[MeasurementProcess,Measurement,Unit], s33[MeasurementProcess,Measurement,Unit], s34[MeasurementProcess,Measurement,Unit], s35[MeasurementProcess,Measurement,Unit], s36[MeasurementProcess,Measurement,Unit], s37[MeasurementProcess,Measurement,Unit], s38[MeasurementProcess,Measurement,Unit], s39[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s40[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s41[CarePlan]
+[ 109.4s] build order: [CareUnit, DiagnosticStatement, Person, Severity, Unit] -> [ClinicalCondition, Measurement] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 109.4s] level 0: 5 agent(s), 0 known entities
+[ 109.4s]   CareUnit: extracting (324 chars, 1 classes in view)
+[ 109.4s]   DiagnosticStatement: extracting (463 chars, 1 classes in view)
+[ 109.4s]   Person: extracting (324 chars, 1 classes in view)
+[ 109.4s]   Severity: extracting (274 chars, 1 classes in view)
+[ 114.1s]   CareUnit: cycle 0 -> conforms
+[ 114.1s]   Unit: extracting (9538 chars, 1 classes in view)
+[ 115.7s]   Severity: cycle 0 -> conforms
+[ 115.9s]   Person: cycle 0 -> conforms
+[ 116.7s]   DiagnosticStatement: cycle 0 -> conforms
+[ 139.8s]   Unit: cycle 0 -> conforms
+[ 139.8s] level 1: 2 agent(s), 25 known entities
+[ 139.8s]   ClinicalCondition: extracting (463 chars, 3 classes in view)
+[ 139.8s]   Measurement: extracting (9538 chars, 2 classes in view)
+[ 149.0s]   ClinicalCondition: cycle 0 -> conforms
+[ 231.0s]   Measurement: cycle 0 -> conforms
+[ 231.1s] level 2: 2 agent(s), 64 known entities
+[ 231.1s]   EvaluationProcess: extracting (463 chars, 7 classes in view)
+[ 231.1s]   MeasurementProcess: extracting (9538 chars, 6 classes in view)
+[ 245.3s]   EvaluationProcess: cycle 0 -> conforms
+[ 387.4s]   MeasurementProcess: cycle 0 -> conforms
+[ 387.5s] level 3: 2 agent(s), 102 known entities
+[ 387.5s]   CarePlan: extracting (10445 chars, 4 classes in view)
+[ 387.5s]   ClinicalVisit: extracting (10445 chars, 5 classes in view)
+[ 397.9s]   CarePlan: cycle 0 -> conforms
+[ 482.9s]   ClinicalVisit: cycle 0 -> conforms
+[ 483.1s] merging (orchestrator): 0 violation(s), 0 unresolved, 0 unparsed
+[ 729.9s] final: 1 violation(s)
+conforms=False segments=11 llm_calls=13 unresolved=0
+  orchestrator   2 calls    24761 in   19360 out  cost n/a  gemma4-g1
+  total         13 calls    82375 in   41997 out  cost n/a  
+  worker        11 calls    57614 in   22637 out  cost n/a  gemma4-g1
+Constraint Violation in TurtleSyntax:
+	Severity: sh:Violation
+	Message: not valid Turtle: at line 718 of <>:
+	Offending line: chr:hasCode <https://biomedit.ch/rdf/sphn-
+	Hint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs.
+exit=1

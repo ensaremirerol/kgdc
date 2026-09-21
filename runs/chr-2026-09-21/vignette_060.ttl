@@ -1,0 +1,195 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_followup_monitoring a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluation_20201224T071257 .
+
+ex:process_status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:visit_20201224T071257 a chr:ClinicalVisit ;
+    rdfs:label "Well child visit" ;
+    chr:hasCareProvider ex:person_Dr_Drew592_Simonis280 ;
+    chr:hasCareUnit ex:HARBOR_HEALTH_SERVICES_INC ;
+    chr:hasDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;
+    chr:hasProcedure ex:evaluation_20201224T071257,
+        ex:process_Body_Height_20201224T071257,
+        ex:process_Body_Weight_20201224T071257,
+        ex:process_Head_Occipital-frontal_circumference_20201224T071257,
+        ex:process_Head_Occipital-frontal_circumference_Percentile_20201224T071257,
+        ex:process_Heart_rate_20201224T071257,
+        ex:process_Pain_severity_20201224T071257,
+        ex:process_Respiratory_rate_20201224T071257,
+        ex:process_Weight_for_length_20201224T071257 .
+
+ex:DiagnosticStatement_Medication_review_due_situation a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:HARBOR_HEALTH_SERVICES_INC a chr:CareUnit ;
+    rdfs:label "HARBOR HEALTH SERVICES INC" .
+
+ex:Medication_review_due_situation a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime .
+
+ex:measurement_Body_Height_20201224T071257 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "74.3"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:measurement_Body_Weight_20201224T071257 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "10.7"^^xsd:float ;
+    chr:hasUnit ex:unit_kg .
+
+ex:measurement_Head_Occipital-frontal_circumference_20201224T071257 a chr:Measurement ;
+    rdfs:label "Head Occipital-frontal circumference" ;
+    chr:hasCode <https://loinc.org/9843-4> ;
+    chr:hasMeasuredDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "44.85"^^xsd:float ;
+    chr:hasUnit ex:unit_cm .
+
+ex:measurement_Head_Occipital-frontal_circumference_Percentile_20201224T071257 a chr:Measurement ;
+    rdfs:label "Head Occipital-frontal circumference Percentile" ;
+    chr:hasCode <https://loinc.org/8289-1> ;
+    chr:hasMeasuredDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "24.46"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:measurement_Heart_rate_20201224T071257 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "63.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_Pain_severity_20201224T071257 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Respiratory_rate_20201224T071257 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "12.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_Weight-for-length_20201224T071257 a chr:Measurement ;
+    rdfs:label "Weight-for-length Per age and sex" ;
+    chr:hasCode <https://loinc.org/77606-2> ;
+    chr:hasMeasuredDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "93.377"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:process_Body_Height_20201224T071257 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement process" ;
+    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;
+    chr:hasPerformedDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;
+    chr:hasResult ex:measurement_Body_Height_20201224T071257 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Body_Weight_20201224T071257 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement process" ;
+    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;
+    chr:hasPerformedDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;
+    chr:hasResult ex:measurement_Body_Weight_20201224T071257 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Head_Occipital-frontal_circumference_20201224T071257 a chr:MeasurementProcess ;
+    rdfs:label "Head Occipital-frontal circumference measurement process" ;
+    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;
+    chr:hasPerformedDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;
+    chr:hasResult ex:measurement_Head_Occipital-frontal_circumference_20201224T071257 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Head_Occipital-frontal_circumference_Percentile_20201224T071257 a chr:MeasurementProcess ;
+    rdfs:label "Head Occipital-frontal circumference Percentile measurement process" ;
+    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;
+    chr:hasPerformedDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;
+    chr:hasResult ex:measurement_Head_Occipital-frontal_circumference_Percentile_20201224T071257 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Heart_rate_20201224T071257 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement process" ;
+    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;
+    chr:hasPerformedDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;
+    chr:hasResult ex:measurement_Heart_rate_20201224T071257 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Pain_severity_20201224T071257 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement process" ;
+    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;
+    chr:hasPerformedDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;
+    chr:hasResult ex:measurement_Pain_severity_20201224T071257 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Respiratory_rate_20201224T071257 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement process" ;
+    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;
+    chr:hasPerformedDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;
+    chr:hasResult ex:measurement_Respiratory_rate_20201224T071257 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Weight_for_length_20201224T071257 a chr:MeasurementProcess ;
+    rdfs:label "Weight-for-length Per age and sex measurement process" ;
+    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;
+    chr:hasPerformedDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 ;
+    chr:hasResult ex:measurement_Weight-for-length_20201224T071257 ;
+    chr:hasStatus ex:status_completed .
+
+ex:unit_cblscorecbr a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:evaluation_20201224T071257 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Medication_review_due_situation ;
+    chr:hasObservation ex:DiagnosticStatement_Medication_review_due_situation ;
+    chr:hasPatient ex:person_Delma583_Adriane398_Huel628 ;
+    chr:hasPerformedDate "2020-12-24T07:12:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Drew592_Simonis280 .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:person_Delma583_Adriane398_Huel628 a chr:Person ;
+    rdfs:label "Delma583 Adriane398 Huel628" .
+
+ex:person_Dr_Drew592_Simonis280 a chr:Person ;
+    rdfs:label "Dr. Drew592 Simonis280" .

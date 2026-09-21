@@ -1,0 +1,587 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_followup a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluation_20170409T123619 .\n\nex:Cory323_Frank378_Heller342 a chr:Person ;\n    rdfs:label \"Cory323 Frank378 Heller342\" .\n\nex:Dr_Hank686_Schneider199 a chr:Person ;\n    rdfs:label \"Dr. Hank686 Schneider199\" .\n\nex:LOWELL_FAMILY_MEDICAL_CARE_PC a chr:CareUnit ;\n    rdfs:label \"LOWELL FAMILY MEDICAL CARE PC\" .\n\nex:Stress_73595000 a chr:ClinicalCondition ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> ;\n    chr:hasRecordDate \"2017-04-09T12:36:19+02:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Stress_73595000 a chr:DiagnosticStatement ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 .\n\nex:evaluation_20170409T123619 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Stress_73595000 ;\n    chr:hasObservation ex:diagnostic_statement_Stress_73595000 ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T12:36:19+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 .\n\nex:measurement_BMI a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"30.26\"^^xsd:float ;\n    chr:hasUnit ex:unit_kgperm2 .\n\nex:measurement_process_BMI a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_BMI ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyHeight a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"164.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_process_BodyHeight a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_BodyHeight ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyWeight a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.4\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_process_BodyWeight a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_BodyWeight ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_FEV1FVC a chr:Measurement ;\n    rdfs:label \"FEV1/FVC\" ;\n    chr:hasCode <https://loinc.org/19926-5> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"69.86\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_process_FEV1FVC a chr:MeasurementProcess ;\n    rdfs:label \"FEV1/FVC measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_FEV1FVC ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_FallRisk a chr:Measurement ;\n    rdfs:label \"Fall risk total [Morse Fall Scale]\" ;\n    chr:hasCode <https://loinc.org/59460-6> ;\n    chr:hasMeasuredDate \"2017-04-09T12:51:44+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"97.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cbrsbr .\n\nex:measurement_process_FallRisk a chr:MeasurementProcess ;\n    rdfs:label \"Fall risk total [Morse Fall Scale] measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T12:51:44+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_FallRisk ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeartRate a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"83.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_process_HeartRate a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_HeartRate ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_PHQ2 a chr:Measurement ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" ;\n    chr:hasCode <https://loinc.org/55758-7> ;\n    chr:hasMeasuredDate \"2017-04-09T13:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_process_PHQ2 a chr:MeasurementProcess ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T13:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_PHQ2 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_PainSeverity a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"3.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_process_PainSeverity a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_PainSeverity ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_RespiratoryRate a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"15.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_process_RespiratoryRate a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_RespiratoryRate ;\n    chr:hasStatus ex:status_completed .\n\nex:unit_cbrsbr a chr:Unit ;\n    rdfs:label \"{#}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cbrsbr> .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kgperm2 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:visit_20170409T114405 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 LOWELL FAMILY MEDICAL CARE PC\" ;\n    chr:hasCareProvider ex:Dr_Hank686_Schneider199 ;\n    chr:hasCareUnit ex:LOWELL_FAMILY_MEDICAL_CARE_PC ;\n    chr:hasDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasProcedure ex:measurement_process_BMI,\n        ex:measurement_process_BodyHeight,\n        ex:measurement_process_BodyWeight,\n        ex:measurement_process_FEV1FVC,\n        ex:measurement_process_FallRisk,\n        ex:measurement_process_HeartRate,\n        ex:measurement_process_PHQ2,\n        ex:measurement_process_PainSeverity,\n        ex:measurement_process_RespiratoryRate .",
+ "conforms": false,
+ "violations": "Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasPatientVisitShape\n\tFocus Node: ex:diagnostic_statement_Stress_73595000\n\tValue Node: ex:diagnostic_statement_Stress_73595000\n\tMessage: Subject of chr:hasPatient must be a ClinicalVisit or a MedicalProcedure (MeasurementProcess, EvaluationProcess, MedicationAdministration).\n",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199\nEncounter type: General examination of patient (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:LOWELL_FAMILY_MEDICAL_CARE_PC a chr:CareUnit ;\n    rdfs:label \"LOWELL FAMILY MEDICAL CARE PC\" .",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Hank686 Schneider199 evaluated the patient on 2017-04-09T12:36:19+02:00. The evaluation produced a diagnostic statement of Stress (finding) (SNOMED: 73595000). The condition was recorded on 2017-04-09T12:36:19+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_Stress_73595000\n\tValue Node: <http://snomed.info/id/73595000>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: chr:DiagnosticStatement\n\tValue Node: chr:DiagnosticStatement\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not "
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:diagnostic_statement_Stress_73595000\n\tValue Node: <http://snomed.info/id/73595000>\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:DiagnosticStatement\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: chr:DiagnosticStatement\n\tValue Node: chr:DiagnosticStatement\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not "
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_Stress_73595000 a chr:DiagnosticStatement ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> .",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199\nEncounter type: General examination of patient (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Cory323_Frank378_Heller342 a chr:Person ;\n    rdfs:label \"Cory323 Frank378 Heller342\" .\n\nex:Dr_Hank686_Schneider199 a chr:Person ;\n    rdfs:label \"Dr. Hank686 Schneider199\" .",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2017-04-09T11:44:05+02:00, a FEV1/FVC (LOINC: 19926-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 69.86 %. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 164 cm. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 81.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 30.26 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 83 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 15 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T12:51:44+02:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 97 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T13:30:59+02:00, a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_BMI\n\tValue Node: ex:measurement_process_BMI\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_BodyHeight\n\tValue Node: ex:measurement_process_BodyHeight\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_BodyWeight\n\tValue Node: ex:measurement_process_BodyWeight\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_FEV1FVC\n\tValue Node: ex:measurement_process_FEV1FVC\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_FallRisk\n\tValue Node: ex:measurement_process_FallRisk\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_HeartRate\n\tValue Node: ex:measurement_process_HeartRate\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Viola"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_BMI\n\tMessage: http://www.w3.org/2000/01/rdf-schema#Resource is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_BodyHeight\n\tMessage: http://www.w3.org/2000/01/rdf-schema#Resource is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_BodyWeight\n\tMessage: http://www.w3.org/2000/01/rdf-schema#Resource is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_FEV1FVC\n\tMessage: http://www.w3.org/2000/01/rdf-schema#Resource is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_FallRisk\n\tMessage: http://www.w3.org/2000/01/rdf-schema#Resource is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_HeartRate\n\tMessage: http://www.w3.org/2000/01/rdf-schema#Resource is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_PHQ2\n\tMessage: http://www.w3.org/2000/01/rdf-schema#Resource is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_PainSeverity\n\tMessage: http://www.w3.org/2000/01/rdf-schema#Resource is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_RespiratoryRate\n\tMessage: http://www.w3.org/2000/01/rdf-schema#Resource is not a class of the vocabulary\nConstraint Vio"
+    },
+    {
+     "cycle": 2,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:measurement_process_FEV1FVC a chr:MedicalProcedure ;\n    rdfs:label \"FEV1/FVC measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_BodyHeight a chr:MedicalProcedure ;\n    rdfs:label \"Body Height measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_PainSeverity a chr:MedicalProcedure ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_BodyWeight a chr:MedicalProcedure ;\n    rdfs:label \"Body Weight measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_BMI a chr:MedicalProcedure ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_HeartRate a chr:MedicalProcedure ;\n    rdfs:label \"Heart rate measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_RespiratoryRate a chr:MedicalProcedure ;\n    rdfs:label \"Respiratory rate measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_FallRisk a chr:MedicalProcedure ;\n    rdfs:label \"Fall risk total [Morse Fall Scale] measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_PHQ2 a chr:MedicalProcedure ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] measurement process\" ;\n    chr:hasStatus ex:status_completed .",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Severity",
+   "concepts": [
+    "chr:Severity"
+   ],
+   "text": "On 2017-04-09T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Pain_severity_72514-3 a chr:Severity ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> .",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2017-04-09T11:44:05+02:00, a FEV1/FVC (LOINC: 19926-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 69.86 %. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 164 cm. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 81.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 30.26 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 83 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 15 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T12:51:44+02:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 97 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T13:30:59+02:00, a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/hasCode is not a property of the vocabulary\nConstraint Vio"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/hasCode is not a property of the vocabulary\nConstraint Vio"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kgperm2 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Hank686 Schneider199 evaluated the patient on 2017-04-09T12:36:19+02:00. The evaluation produced a diagnostic statement of Stress (finding) (SNOMED: 73595000). The condition was recorded on 2017-04-09T12:36:19+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Stress_73595000 a chr:ClinicalCondition ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> ;\n    chr:hasRecordDate \"2017-04-09T12:36:19+02:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Stress_73595000 a chr:ClinicalCondition ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> ;\n    chr:hasRecordDate \"2017-04-09T12:36:19+02:00\"^^xsd:dateTime .",
+   "level": 1,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2017-04-09T11:44:05+02:00, a FEV1/FVC (LOINC: 19926-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 69.86 %. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 164 cm. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 81.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 30.26 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 83 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 15 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T12:51:44+02:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 97 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T13:30:59+02:00, a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [
+    "UNRESOLVED: chr:hasUnit \u2014 not stated in the text (only {#} provided)"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_FEV1FVC_19926_5 a chr:Measurement ;\n    rdfs:label \"FEV1/FVC\" ;\n    chr:hasCode <https://loinc.org/19926-5> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"69.86\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_BodyHeight_8302_2 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"164.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_PainSeverity_72514_3 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"3.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_BodyWeight_29463_7 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.4\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_BMI_39156_5 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"30.26\"^^xsd:float ;\n    chr:hasUnit ex:unit_kgperm2 .\n\nex:measurement_HeartRate_8867_4 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"83.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_RespiratoryRate_9279_1 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"15.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_FallRisk_59460_6 a chr:Measurement ;\n    rdfs:label \"Fall risk total [Morse Fall Scale]\" ;\n    chr:hasCode <https://loinc.org/59460-6> ;\n    chr:hasMeasuredDate \"2017-04-09T12:51:44+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"97.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cbrsbr .\n# UNRESOLVED: chr:hasUnit \u2014 not stated in the text (only {#} provided)\n\nex:measurement_PHQ2_55758_7 a chr:Measurement ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" ;\n    chr:hasCode <https://loinc.org/55758-7> ;\n    chr:hasMeasuredDate \"2017-04-09T13:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:unit_cbrsbr a chr:Unit ;\n    rdfs:label \"{#}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cbrsbr> .",
+   "level": 1,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Hank686 Schneider199 evaluated the patient on 2017-04-09T12:36:19+02:00. The evaluation produced a diagnostic statement of Stress (finding) (SNOMED: 73595000). The condition was recorded on 2017-04-09T12:36:19+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20170409T123619 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Stress_73595000 ;\n    chr:hasObservation ex:diagnostic_statement_Stress_73595000 ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasPerformedDate \"2017-04-09T12:36:19+02:00\"^^xsd:dateTime .\n\nex:Stress_73595000 a chr:ClinicalCondition ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> ;\n    chr:hasRecordDate \"2017-04-09T12:36:19+02:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Stress_73595000 a chr:DiagnosticStatement ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> .",
+   "level": 2,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2017-04-09T11:44:05+02:00, a FEV1/FVC (LOINC: 19926-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 69.86 %. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 164 cm. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 81.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 30.26 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 83 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 15 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T12:51:44+02:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 97 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T13:30:59+02:00, a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_FEV1FVC a chr:MeasurementProcess ;\n    rdfs:label \"FEV1/FVC measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_FEV1FVC_19926_5 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_FEV1FVC_19926_5 a chr:Measurement ;\n    rdfs:label \"FEV1/FVC\" ;\n    chr:hasCode <https://loinc.org/19926-5> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"69.86\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_process_BodyHeight a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_BodyHeight_8302_2 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyHeight_8302_2 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"164.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_process_PainSeverity a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_PainSeverity_72514_3 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_PainSeverity_72514_3 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"3.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_process_BodyWeight a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_BodyWeight_29463_7 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BodyWeight_29463_7 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.4\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_process_BMI a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_BMI_39156_5 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_BMI_39156_5 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"30.26\"^^xsd:float ;\n    chr:hasUnit ex:unit_kgperm2 .\n\nex:measurement_process_HeartRate a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_HeartRate_8867_4 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_HeartRate_8867_4 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"83.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_process_RespiratoryRate a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_RespiratoryRate_9279_1 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_RespiratoryRate_9279_1 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"15.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_process_FallRisk a chr:MeasurementProcess ;\n    rdfs:label \"Fall risk total [Morse Fall Scale] measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T12:51:44+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_FallRisk_59460_6 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_FallRisk_59460_6 a chr:Measurement ;\n    rdfs:label \"Fall risk total [Morse Fall Scale]\" ;\n    chr:hasCode <https://loinc.org/59460-6> ;\n    chr:hasMeasuredDate \"2017-04-09T12:51:44+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"97.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cbrsbr .\n\nex:measurement_process_PHQ2 a chr:MeasurementProcess ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T13:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasResult ex:measurement_PHQ2_55758_7 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_PHQ2_55758_7 a chr:Measurement ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" ;\n    chr:hasCode <https://loinc.org/55758-7> ;\n    chr:hasMeasuredDate \"2017-04-09T13:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"{score}\" .\n\nex:unit_cbrsbr a chr:Unit ;\n    rdfs:label \"{#}\" .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" .\n\nex:unit_kgperm2 a chr:Unit ;\n    rdfs:label \"kg/m2\" .\n\nex:unit_percent a chr:Unit ;\n    rdfs:label \"%\" .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" .",
+   "level": 2,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 LOWELL FAMILY MEDICAL CARE PC\n===================================================\n\nPatient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199\nEncounter type: General examination of patient (procedure)\n\nOn 2017-04-09T11:44:05+02:00, a FEV1/FVC (LOINC: 19926-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 69.86 %. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 164 cm. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 81.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 30.26 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 83 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 15 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T12:51:44+02:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 97 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T13:30:59+02:00, a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Hank686 Schneider199 evaluated the patient on 2017-04-09T12:36:19+02:00. The evaluation produced a diagnostic statement of Stress (finding) (SNOMED: 73595000). The condition was recorded on 2017-04-09T12:36:19+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_followup a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluation_20170409T123619 .",
+   "level": 3,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 LOWELL FAMILY MEDICAL CARE PC\n===================================================\n\nPatient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199\nEncounter type: General examination of patient (procedure)\n\nOn 2017-04-09T11:44:05+02:00, a FEV1/FVC (LOINC: 19926-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 69.86 %. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 164 cm. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 81.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 30.26 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 83 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T11:44:05+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 15 /min. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T12:51:44+02:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 97 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2017-04-09T13:30:59+02:00, a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Hank686 Schneider199 evaluated the patient on 2017-04-09T12:36:19+02:00. The evaluation produced a diagnostic statement of Stress (finding) (SNOMED: 73595000). The condition was recorded on 2017-04-09T12:36:19+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_BMI\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f599-dc2e-4bd0-83f5df21defa8821/MedicalProcedure is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_BodyHeight\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f599-dc2e-4bd0-83f5df21defa8821/MedicalProcedure is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_BodyWeight\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f599-dc2e-4bd0-83f5df21defa8821/MedicalProcedure is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_FEV1FVC\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f599-dc2e-4bd0-83f5df21defa8821/MedicalProcedure is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_FallRisk\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f599-dc2e-4bd0-83f5df21defa8821/MedicalProcedure is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_HeartRate\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f599-dc2e-4bd0-83f5df21defa882"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cblscorecbr\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_cm\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kg\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_kgperm2\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_percent\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/unit_permin\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd83f3df21defa8821/Unit is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Stress_73595000\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa88"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20170409T114405 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 LOWELL FAMILY MEDICAL CARE PC\" ;\n    chr:hasCareProvider ex:Dr_Hank686_Schneider199 ;\n    chr:hasCareUnit ex:LOWELL_FAMILY_MEDICAL_CARE_PC ;\n    chr:hasDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasProcedure ex:measurement_process_FEV1FVC ;\n    chr:hasProcedure ex:measurement_process_BodyHeight ;\n    chr:hasProcedure ex:measurement_process_PainSeverity ;\n    chr:hasProcedure ex:measurement_process_BodyWeight ;\n    chr:hasProcedure ex:measurement_process_BMI ;\n    chr:hasProcedure ex:measurement_process_HeartRate ;\n    chr:hasProcedure ex:measurement_process_RespiratoryRate ;\n    chr:hasProcedure ex:measurement_process_FallRisk ;\n    chr:hasProcedure ex:measurement_process_PHQ2 .\n\nex:measurement_process_FEV1FVC a chr:MedicalProcedure ;\n    rdfs:label \"FEV1/FVC measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_FEV1FVC .\n\nex:measurement_FEV1FVC a chr:Measurement ;\n    rdfs:label \"FEV1/FVC\" ;\n    chr:hasCode <https://loinc.org/19926-5> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"69.86\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent .\n\nex:measurement_process_BodyHeight a chr:MedicalProcedure ;\n    rdfs:label \"Body Height measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_BodyHeight .\n\nex:measurement_BodyHeight a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"164\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm .\n\nex:measurement_process_PainSeverity a chr:MedicalProcedure ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_PainSeverity .\n\nex:measurement_PainSeverity a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"3\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:measurement_process_BodyWeight a chr:MedicalProcedure ;\n    rdfs:label \"Body Weight measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_BodyWeight .\n\nex:measurement_BodyWeight a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.4\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg .\n\nex:measurement_process_BMI a chr:MedicalProcedure ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_BMI .\n\nex:measurement_BMI a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"30.26\"^^xsd:float ;\n    chr:hasUnit ex:unit_kgperm2 .\n\nex:measurement_process_HeartRate a chr:MedicalProcedure ;\n    rdfs:label \"Heart rate measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_HeartRate .\n\nex:measurement_HeartRate a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"83\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_process_RespiratoryRate a chr:MedicalProcedure ;\n    rdfs:label \"Respiratory rate measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_RespiratoryRate .\n\nex:measurement_RespiratoryRate a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2017-04-09T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"15\"^^xsd:float ;\n    chr:hasUnit ex:unit_permin .\n\nex:measurement_process_FallRisk a chr:MedicalProcedure ;\n    rdfs:label \"Fall risk total [Morse Fall Scale] measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T12:51:44+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_FallRisk .\n\nex:measurement_FallRisk a chr:Measurement ;\n    rdfs:label \"Fall risk total [Morse Fall Scale]\" ;\n    chr:hasCode <https://loinc.org/59460-6> ;\n    chr:hasMeasuredDate \"2017-04-09T12:51:44+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"97\"^^xsd:float ;\n    chr:hasUnit ex:unit_cbrsbr .\n\nex:measurement_process_PHQ2 a chr:MedicalProcedure ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] measurement process\" ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasPerformedDate \"2017-04-09T13:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr_Hank686_Schneider199 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_PHQ2 .\n\nex:measurement_PHQ2 a chr:Measurement ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" ;\n    chr:hasCode <https://loinc.org/55758-7> ;\n    chr:hasMeasuredDate \"2017-04-09T13:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2\"^^xsd:float ;\n    chr:hasUnit ex:unit_cblscorecbr .\n\nex:diagnostic_statement_Stress_73595000 a chr:DiagnosticStatement ;\n    rdfs:label \"Stress (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73595000> ;\n    chr:hasPatient ex:Cory323_Frank378_Heller342 ;\n    chr:hasDate \"2017-04-09T12:36:19+02:00\"^^xsd:dateTime .\n\nex:unit_cblscorecbr a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:unit_cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_kg a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kgperm2 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_percent a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:unit_permin a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:unit_cbrsbr a chr:Unit ;\n    rdfs:label \"{#}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cbrsbr> .",
+   "level": 3,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2017-04-09T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 26,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 15447,
+   "completion_tokens": 5542,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 26,
+   "prompt_tokens": 135879,
+   "completion_tokens": 29697,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 24,
+   "prompt_tokens": 120432,
+   "completion_tokens": 24155,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

@@ -1,0 +1,32 @@
+[   0.1s] segmenting (orchestrator) ...
+[  26.9s] 11 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s11[CarePlan]
+[  26.9s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  26.9s] level 0: 5 agent(s), 0 known entities
+[  26.9s]   CareUnit: extracting (316 chars, 1 classes in view)
+[  26.9s]   ClinicalCondition: extracting (235 chars, 3 classes in view)
+[  26.9s]   DiagnosticStatement: extracting (235 chars, 1 classes in view)
+[  26.9s]   Measurement: extracting (1878 chars, 2 classes in view)
+[  31.5s]   CareUnit: cycle 0 -> conforms
+[  31.5s]   Person: extracting (316 chars, 1 classes in view)
+[  32.3s]   DiagnosticStatement: cycle 0 -> conforms
+[  32.8s]   ClinicalCondition: cycle 0 -> conforms
+[  36.4s]   Person: cycle 0 -> conforms
+[  52.4s]   Measurement: cycle 0 -> conforms
+[  52.4s] level 1: 2 agent(s), 18 known entities
+[  52.4s]   EvaluationProcess: extracting (235 chars, 7 classes in view)
+[  52.4s]   MeasurementProcess: extracting (1878 chars, 6 classes in view)
+[  59.3s]   EvaluationProcess: cycle 0 -> conforms
+[  59.3s]   EvaluationProcess: 1 unresolved (honest gaps)
+[  95.9s]   MeasurementProcess: cycle 0 -> conforms
+[  95.9s] level 2: 2 agent(s), 28 known entities
+[  95.9s]   CarePlan: extracting (2549 chars, 4 classes in view)
+[  95.9s]   ClinicalVisit: extracting (2549 chars, 5 classes in view)
+[ 100.7s]   CarePlan: cycle 0 -> conforms
+[ 128.9s]   ClinicalVisit: cycle 0 -> conforms
+[ 128.9s] merging (orchestrator): 0 violation(s), 1 unresolved, 0 unparsed
+[ 197.6s] final: conforms
+conforms=True segments=9 llm_calls=11 unresolved=0
+  orchestrator   2 calls     9738 in    5476 out  cost n/a  gemma4-g1
+  total         11 calls    38996 in   13235 out  cost n/a  
+  worker         9 calls    29258 in    7759 out  cost n/a  gemma4-g1
+exit=0

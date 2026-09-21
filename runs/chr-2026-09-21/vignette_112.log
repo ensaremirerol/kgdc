@@ -1,0 +1,177 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 110.3s] 36 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[MeasurementProcess,Measurement,Unit,ProcessStatus], s4[MeasurementProcess,Measurement,Unit,ProcessStatus], s5[MeasurementProcess,Measurement,Unit,ProcessStatus], s6[MeasurementProcess,Measurement,Unit,ProcessStatus], s7[MeasurementProcess,Measurement,Unit,ProcessStatus], s8[MeasurementProcess,Measurement,Unit,ProcessStatus], s9[MeasurementProcess,Measurement,Unit,ProcessStatus], s10[MeasurementProcess,Measurement,Unit,ProcessStatus], s11[MeasurementProcess,Measurement,Unit,ProcessStatus], s12[MeasurementProcess,Measurement,Unit,ProcessStatus], s13[MeasurementProcess,Measurement,Unit,ProcessStatus], s14[MeasurementProcess,Measurement,Unit,ProcessStatus], s15[MeasurementProcess,Measurement,Unit,ProcessStatus], s16[MeasurementProcess,Measurement,Unit,ProcessStatus], s17[MeasurementProcess,Measurement,Unit,ProcessStatus], s18[MeasurementProcess,Measurement,Unit,ProcessStatus], s19[MeasurementProcess,Measurement,Unit,ProcessStatus], s20[MeasurementProcess,Measurement,Unit,ProcessStatus], s21[MeasurementProcess,Measurement,Unit,ProcessStatus], s22[MeasurementProcess,Measurement,Unit,ProcessStatus], s23[MeasurementProcess,Measurement,Unit,ProcessStatus], s24[MeasurementProcess,Measurement,Unit,ProcessStatus], s25[MeasurementProcess,Measurement,Unit,ProcessStatus], s26[MeasurementProcess,Measurement,Unit,ProcessStatus], s27[MeasurementProcess,Measurement,Unit,ProcessStatus], s28[MeasurementProcess,Measurement,Unit,ProcessStatus], s29[MeasurementProcess,Measurement,Unit,ProcessStatus], s30[MeasurementProcess,Measurement,Unit,ProcessStatus], s31[MeasurementProcess,Measurement,Unit,ProcessStatus], s32[MeasurementProcess,Measurement,Unit,ProcessStatus], s33[MeasurementProcess,Measurement,Unit,ProcessStatus], s34[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s35[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s36[CarePlan]
+[ 110.3s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, ProcessStatus, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 110.3s] level 0: 6 agent(s), 0 known entities
+[ 110.3s]   CareUnit: extracting (223 chars, 1 classes in view)
+[ 110.3s]   ClinicalCondition: extracting (462 chars, 3 classes in view)
+[ 110.3s]   DiagnosticStatement: extracting (462 chars, 1 classes in view)
+[ 110.3s]   Person: extracting (223 chars, 1 classes in view)
+[ 115.7s]   CareUnit: cycle 0 -> conforms
+[ 115.7s]   ProcessStatus: extracting (8056 chars, 1 classes in view)
+[ 117.6s]   Person: cycle 0 -> conforms
+[ 117.6s]   Unit: extracting (8056 chars, 1 classes in view)
+[ 119.1s]   DiagnosticStatement: cycle 0 -> conforms
+[ 120.3s]   ClinicalCondition: cycle 0 -> conforms
+[ 121.3s]   ProcessStatus: cycle 0 -> conforms
+[ 130.7s]   Unit: cycle 0 -> conforms
+[ 130.7s] level 1: 2 agent(s), 18 known entities
+[ 130.7s]   EvaluationProcess: extracting (462 chars, 7 classes in view)
+[ 130.7s]   Measurement: extracting (8056 chars, 2 classes in view)
+[ 142.2s]   EvaluationProcess: cycle 0 -> conforms
+[ 221.9s]   Measurement: cycle 0 -> 1 violation(s)
+[ 221.9s]   Measurement: fixing ...
+[ 321.6s]   Measurement: cycle 1 -> 1 violation(s)
+[ 321.6s]   Measurement: stopping (plateau)
+[ 321.6s]   Measurement: 2 unresolved (honest gaps)
+[ 321.6s] level 2: 1 agent(s), 20 known entities
+[ 321.6s]   MeasurementProcess: extracting (8056 chars, 6 classes in view)
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+[ 496.7s]   MeasurementProcess: cycle 0 -> 2 violation(s)
+[ 496.7s]   MeasurementProcess: fixing ...
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+[ 667.8s]   MeasurementProcess: cycle 1 -> 2 violation(s)
+[ 667.8s]   MeasurementProcess: stopping (plateau)
+[ 667.8s]   MeasurementProcess: 1 unresolved (honest gaps)
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+[ 667.8s] level 3: 2 agent(s), 84 known entities
+[ 667.8s]   CarePlan: extracting (8944 chars, 4 classes in view)
+[ 667.8s]   ClinicalVisit: extracting (8944 chars, 5 classes in view)
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+[ 680.0s]   CarePlan: cycle 0 -> 2 violation(s)
+[ 680.0s]   CarePlan: fixing ...
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+[ 696.7s]   CarePlan: cycle 1 -> 3 violation(s)
+[ 696.7s]   CarePlan: fixing ...
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+[ 713.7s]   CarePlan: cycle 2 -> 2 violation(s)
+[ 713.7s]   CarePlan: stopping (fix budget spent)
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+[ 779.9s]   ClinicalVisit: cycle 0 -> 2 violation(s)
+[ 779.9s]   ClinicalVisit: fixing ...
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+[ 890.2s]   ClinicalVisit: cycle 1 -> 2 violation(s)
+[ 890.2s]   ClinicalVisit: stopping (plateau)
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x144cb98>
+Traceback (most recent call last):
+  File "/home/ensar/workspace/03_ids/kgdc/.venv/lib/python3.12/site-packages/rdflib/term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+[ 890.3s] merging (orchestrator): 2 violation(s), 3 unresolved, 1 unparsed
+[1072.0s] final: 1 violation(s)
+conforms=False segments=11 llm_calls=18 unresolved=0
+  orchestrator   2 calls    27762 in   15349 out  cost n/a  gemma4-g1
+  total         18 calls   136357 in   60790 out  cost n/a  
+  worker        16 calls   108595 in   45441 out  cost n/a  gemma4-g1
+Constraint Violation in TurtleSyntax:
+	Severity: sh:Violation
+	Message: not valid Turtle: Quote expected in string at ^ in r:hasPerformedDate "^2025-04-1
+	Offending line: 
+	Hint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs.
+exit=1

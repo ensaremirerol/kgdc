@@ -1,0 +1,78 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/clinical/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:visit_0c9a1821_7628_e5ae_d56a_eeae91f6a6a8 a chr:ClinicalVisit ;
+    chr:hasCareProvider ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasCareUnit ex:unit_github_com_syntheti ;
+    chr:hasDate "2017-04-11T14:32:19+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasProcedure ex:evalProc_0c9a1821_7628_e5ae_ba4c_43379f16bfcf,
+        ex:measProc_0c9a1821_7628_e5ae_332f_9530bc29aa39,
+        ex:measProc_0c9a1821_7628_e5ae_f754_26245fbfa77e .
+
+ex:cond_0c9a1821_7628_e5ae_ba4c_43379f16bfcf a chr:ClinicalCondition ;
+    rdfs:label "Polyp of colon (disorder)" ;
+    chr:hasCode <http://snomed.info/id/68496003> ;
+    chr:hasRecordDate "2017-04-11T15:00:14+02:00"^^xsd:dateTime .
+
+ex:diag_0c9a1821_7628_e5ae_ba4c_43379f16bfcf a chr:DiagnosticStatement ;
+    rdfs:label "Polyp of colon (disorder)" ;
+    chr:hasCode <http://snomed.info/id/68496003> .
+
+ex:evalProc_0c9a1821_7628_e5ae_ba4c_43379f16bfcf a chr:EvaluationProcess ;
+    chr:hasCondition ex:cond_0c9a1821_7628_e5ae_ba4c_43379f16bfcf ;
+    chr:hasObservation ex:diag_0c9a1821_7628_e5ae_ba4c_43379f16bfcf ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2017-04-11T14:32:19+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 .
+
+ex:measProc_0c9a1821_7628_e5ae_332f_9530bc29aa39 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2017-04-11T15:00:14+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_332f_9530bc29aa39 ;
+    chr:hasStatus ex:status_completed .
+
+ex:measProc_0c9a1821_7628_e5ae_f754_26245fbfa77e a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d ;
+    chr:hasPerformedDate "2017-04-11T15:00:14+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_0c9a1821_7628_e5ae_f754_26245fbfa77e ;
+    chr:hasStatus ex:status_completed .
+
+ex:meas_0c9a1821_7628_e5ae_332f_9530bc29aa39 a chr:Measurement ;
+    rdfs:label "Polyp size greatest dimension" ;
+    chr:hasCode <https://loinc.org/33756-8> ;
+    chr:hasMeasuredDate "2017-04-11T15:00:14+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "11.962"^^xsd:float ;
+    chr:hasUnit ex:unit_mm .
+
+ex:meas_0c9a1821_7628_e5ae_f754_26245fbfa77e a chr:Measurement ;
+    rdfs:label "Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen" ;
+    chr:hasCode <https://loinc.org/57905-2> ;
+    chr:hasMeasuredDate "2017-04-11T15:00:14+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "242.07"^^xsd:float ;
+    chr:hasUnit ex:unit_ng_mL .
+
+ex:unit_github_com_syntheti a chr:CareUnit ;
+    rdfs:label "THE LOWELL GENERAL HOSPITAL" .
+
+ex:unit_mm a chr:Unit ;
+    rdfs:label "mm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mm> .
+
+ex:unit_ng_mL a chr:Unit ;
+    rdfs:label "ng/mL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ngpermL> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:patient_0c9a1821_7628_e5ae_c2e0_e2185e7a951d a chr:Person ;
+    rdfs:label "Ms. Cory323 Frank378 Heller342" .
+
+ex:provider_hl7_org_fhir_sid_us_npi_99999 a chr:Person ;
+    rdfs:label "Dr. Margene509 Schamberger479" .
+

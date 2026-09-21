@@ -1,0 +1,513 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Malignant_neoplasm_of_breast_254837009 a chr:ClinicalCondition ;\n    rdfs:label \"Malignant neoplasm of breast (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/254837009> ;\n    chr:hasRecordDate \"2008-10-18T21:35:54+02:00\"^^xsd:dateTime .\n\nex:care_plan_follow_up a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:measurement_process_size_20081018T225333 .\n\nex:diagnostic_statement_254837009 a chr:DiagnosticStatement ;\n    rdfs:label \"Malignant neoplasm of breast (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/254837009> .\n\nex:evaluation_20081018T213554 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Malignant_neoplasm_of_breast_254837009 ;\n    chr:hasObservation ex:diagnostic_statement_254837009 ;\n    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2008-10-18T21:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr._Nickolas58_Schumm995 .\n\nex:measurement_process_size_20081018T225333 a chr:MeasurementProcess ;\n    rdfs:label \"Size.maximum dimension in Tumor (LOINC: 33728-7) measurement\" ;\n    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2008-10-18T22:53:33+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr._Nickolas58_Schumm995 ;\n    chr:hasResult ex:measurement_Size_maximum_33728_7 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_Size_maximum_33728_7 a chr:Measurement ;\n    rdfs:label \"Size.maximum dimension in Tumor (LOINC: 33728-7)\" ;\n    chr:hasCode <https://loinc.org/33728-7> ;\n    chr:hasMeasuredDate \"2008-10-18T22:53:33+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"3.5292\"^^xsd:float ;\n    chr:hasUnit ex:cm .\n\nex:measurement_process_lymph_20081018T225333 a chr:MeasurementProcess ;\n    rdfs:label \"Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3) measurement\" ;\n    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2008-10-18T22:53:33+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr._Nickolas58_Schumm995 ;\n    chr:hasResult ex:measurement_Lymph_nodes_85352_3 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_Lymph_nodes_85352_3 a chr:Measurement ;\n    rdfs:label \"Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3)\" ;\n    chr:hasCode <https://loinc.org/85352-3> ;\n    chr:hasMeasuredDate \"2008-10-18T22:53:33+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:cblscorecbr .\n\nex:visit_20081018T213554 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" ;\n    chr:hasCareProvider ex:Dr._Nickolas58_Schumm995 ;\n    chr:hasCareUnit ex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE ;\n    chr:hasDate \"2008-10-18T21:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;\n    chr:hasProcedure ex:evaluation_20081018T213554,\n        ex:measurement_process_size_20081018T225333,\n        ex:measurement_process_lymph_20081018T225333 .\n\nex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE a chr:CareUnit ;\n    rdfs:label \"ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" .\n\nex:cblscorecbr a chr:Unit ;\n    rdfs:label \"{#}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:Dr._Nickolas58_Schumm995 a chr:Person ;\n    rdfs:label \"Dr. Nickolas58 Schumm995\" .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:Estela596_Yetta429_Grant908 a chr:Person ;\n    rdfs:label \"Estela596 Yetta429 Grant908\" .",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE a chr:CareUnit ;\n    rdfs:label \"ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Nickolas58 Schumm995 evaluated the patient on 2008-10-18T21:35:54+02:00. The evaluation produced a diagnostic statement of Malignant neoplasm of breast (disorder) (SNOMED: 254837009). The condition was recorded on 2008-10-18T21:35:54+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Malignant_neoplasm_of_breast_254837009 a chr:ClinicalCondition ;\n    rdfs:label \"Malignant neoplasm of breast (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/254837009> ;\n    chr:hasRecordDate \"2008-10-18T21:35:54+02:00\"^^xsd:dateTime .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Nickolas58 Schumm995 evaluated the patient on 2008-10-18T21:35:54+02:00. The evaluation produced a diagnostic statement of Malignant neoplasm of breast (disorder) (SNOMED: 254837009). The condition was recorded on 2008-10-18T21:35:54+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_254837009 a chr:DiagnosticStatement ;\n    rdfs:label \"Malignant neoplasm of breast (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/254837009> .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Estela596_Yetta429_Grant908 a chr:Person ;\n    rdfs:label \"Estela596 Yetta429 Grant908\" .\n\nex:Dr._Nickolas58_Schumm995 a chr:Person ;\n    rdfs:label \"Dr. Nickolas58 Schumm995\" .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2008-10-18T22:53:33+02:00, a Size.maximum dimension in Tumor (LOINC: 33728-7) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 3.5292 cm. The measurement process was recorded with status \"completed\".\n\nOn 2008-10-18T22:53:33+02:00, a Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 0 {#}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_2\n\tValue Node: ex:measurement_process_2\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_2\n\tMessage: http://www.w3.org/1999/02/22-rdf-syntax-ns#Description is not a class of the vocabulary\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: rdf:Description\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:measurement_process_1\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasStatusDomainShape\n\tFocus Node: ex:measurement_process_2\n\tValue Node: ex:measurement_process_2\n\tMessage: Subject of chr:hasStatus must be a MedicalProcedure (or a subclass).\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaClassVocabularyShape\n\tFocus Node: rdf:Description\n\tValue Node: rdf:Description\n\tMessage: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasResult ]\n\tFocus Node: ex:measurement_process_1\n\tResult Path: chr:hasResult\n\tMessage: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasResult ]\n\tFocus Node: ex:measurement_process_2\n\tResult Path: chr:hasResult\n\tMessage: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Patient via chr:hasPatient.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasPatient ]\n\tFocus Node: ex:measurement_process_1\n\tResult Path: chr:hasPatient\n\tMessage: A MeasurementProcess must link to exactly one Patient via chr:hasPatient.\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Patient via chr:hasPatient.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasPatient ]\n\tFocus Node: ex:measurement_process_2\n\tResult Path:"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:measurement_process_1 a chr:MeasurementProcess ;\n    rdfs:label \"measurement process\" ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_process_2 a chr:MeasurementProcess ;\n    rdfs:label \"measurement process\" ;\n    chr:hasStatus ex:status_completed .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2008-10-18T22:53:33+02:00, a Size.maximum dimension in Tumor (LOINC: 33728-7) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 3.5292 cm. The measurement process was recorded with status \"completed\".\n\nOn 2008-10-18T22:53:33+02:00, a Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 0 {#}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:cblscorecbr a chr:Unit ;\n    rdfs:label \"{#}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Nickolas58 Schumm995 evaluated the patient on 2008-10-18T21:35:54+02:00. The evaluation produced a diagnostic statement of Malignant neoplasm of breast (disorder) (SNOMED: 254837009). The condition was recorded on 2008-10-18T21:35:54+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasResult ]\n\tFocus Node: ex:measurement_process_1\n\tResult Path: chr:hasResult\n\tMessage: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasResult ]\n\tFocus Node: ex:measurement_process_2\n\tResult Path: chr:hasResult\n\tMessage: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Patient via chr:hasPatient.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasPatient ]\n\tFocus Node: ex:measurement_process_1\n\tResult Path: chr:hasPatient\n\tMessage: A MeasurementProcess must link to exactly one Patient via chr:hasPatient.\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Patient via chr:hasPatient.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasPatient ]\n\tFocus Node: ex:measurement_process_2\n\tResult Path:"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in TurtleSyntax:\n\tSeverity: sh:Violation\n\tMessage: not valid Turtle: at line 30 of <>:\n\tOffending line: ex:measurement_process_2 a chr:MeasurementProcess ;\n\tHint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in TurtleSyntax:\n\tSeverity: sh:Violation\n\tMessage: not valid Turtle: at line 30 of <>:\n\tOffending line: ex:measurement_process_2 a chr:MeasurementProcess ;\n\tHint: every statement starts with a subject IRI (ex:name a chr:Class ; ...). IRI local names may only contain letters, digits, '_' and '-'; put dates/codes with other characters in literals, not in IRIs."
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [
+    "UNRESOLVED: chr:hasPatient \u2014 not stated in the text",
+    "UNRESOLVED: chr:hasResult \u2014 not stated in the text",
+    "UNRESOLVED: chr:hasPatient \u2014 not stated in the text",
+    "UNRESOLVED: chr:hasResult \u2014 not stated in the text",
+    "UNRESOLVED: chr:hasStatus \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_20081018T213554 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Malignant_neoplasm_of_breast_254837009 ;\n    chr:hasObservation ex:diagnostic_statement_254837009 ;\n    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2008-10-18T21:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr._Nickolas58_Schumm995 .\n\nex:Malignant_neoplasm_of_breast_254837009 a chr:ClinicalCondition ;\n    rdfs:label \"Malignant neoplasm of breast (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/254837009> ;\n    chr:hasRecordDate \"2008-10-18T21:35:54+02:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_254837009 a chr:DiagnosticStatement ;\n    rdfs:label \"Malignant neoplasm of breast (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/254837009> .\n\nex:measurement_process_1 a chr:MeasurementProcess ;\n    rdfs:label \"measurement process\" ;\n# UNRESOLVED: chr:hasPatient \u2014 not stated in the text\n# UNRESOLVED: chr:hasResult \u2014 not stated in the text\n\nex:measurement_process_2 a chr:MeasurementProcess ;\n    rdfs:label \"measurement process\" ;\n# UNRESOLVED: chr:hasPatient \u2014 not stated in the text\n# UNRESOLVED: chr:hasResult \u2014 not stated in the text\n\n# UNRESOLVED: chr:hasStatus \u2014 not stated in the text",
+   "level": 1,
+   "unparsed": true,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2008-10-18T22:53:33+02:00, a Size.maximum dimension in Tumor (LOINC: 33728-7) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 3.5292 cm. The measurement process was recorded with status \"completed\".\n\nOn 2008-10-18T22:53:33+02:00, a Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 0 {#}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasResult ]\n\tFocus Node: ex:measurement_process_1\n\tResult Path: chr:hasResult\n\tMessage: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasResult ]\n\tFocus Node: ex:measurement_process_2\n\tResult Path: chr:hasResult\n\tMessage: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Patient via chr:hasPatient.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasPatient ]\n\tFocus Node: ex:measurement_process_1\n\tResult Path: chr:hasPatient\n\tMessage: A MeasurementProcess must link to exactly one Patient via chr:hasPatient.\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"A MeasurementProcess must link to exactly one Patient via chr:hasPatient.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path chr:hasPatient ]\n\tFocus Node: ex:measurement_process_2\n\tResult Path:"
+    },
+    {
+     "cycle": 1,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_1 a chr:MeasurementProcess ;\n    rdfs:label \"measurement process\" ;\n    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2008-10-18T22:53:33+02:00\"^^xsd:dateTime ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_Size_maximum_33728_7 .\n\nex:measurement_Size_maximum_33728_7 a chr:Measurement ;\n    rdfs:label \"Size.maximum dimension in Tumor (LOINC: 33728-7)\" ;\n    chr:hasCode <https://loinc.org/33728-7> ;\n    chr:hasMeasuredDate \"2008-10-18T22:53:33+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"3.5292\"^^xsd:float ;\n    chr:hasUnit ex:cm .\n\nex:cm a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:measurement_process_2 a chr:MeasurementProcess ;\n    rdfs:label \"measurement process\" ;\n    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2008-10-18T22:53:33+02:00\"^^xsd:dateTime ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_Lymph_nodes_85352_3 .\n\nex:measurement_Lymph_nodes_85352_3 a chr:Measurement ;\n    rdfs:label \"Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3)\" ;\n    chr:hasCode <https://loinc.org/85352-3> ;\n    chr:hasMeasuredDate \"2008-10-18T22:53:33+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:cblscorecbr .\n\nex:cblscorecbr a chr:Unit ;\n    rdfs:label \"{#}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .",
+   "level": 1,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2008-10-18T22:53:33+02:00, a Size.maximum dimension in Tumor (LOINC: 33728-7) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 3.5292 cm. The measurement process was recorded with status \"completed\".\n\nOn 2008-10-18T22:53:33+02:00, a Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 0 {#}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasDeviceRangeShape\n\tFocus Node: ex:measurement_process_lymph_20081018T225333_device\n\tValue Node: ex:measurement_process_lymph_20081018T225333_device\n\tMessage: Object of chr:hasDevice must be a chr:Device.\nConstraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasDeviceRangeShape\n\tFocus Node: ex:measurement_process_size_20081018T225333_device\n\tValue Node: ex:measurement_process_size_20081018T225333_device\n\tMessage: Object of chr:hasDevice must be a chr:Device.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [
+    "UNRESOLVED: chr:hasDevice \u2014 not stated in the text",
+    "UNRESOLVED: chr:hasDevice \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_size_20081018T225333 a chr:MeasurementProcess ;\n    rdfs:label \"Size.maximum dimension in Tumor (LOINC: 33728-7) measurement\" ;\n    # UNRESOLVED: chr:hasDevice \u2014 not stated in the text\n    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2008-10-18T22:53:33+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr._Nickolas58_Schumm995 ;\n    chr:hasResult ex:measurement_Size_maximum_33728_7 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_Size_maximum_33728_7 a chr:Measurement ;\n    rdfs:label \"Size.maximum dimension in Tumor (LOINC: 33728-7)\" ;\n    chr:hasCode <https://loinc.org/33728-7> ;\n    chr:hasMeasuredDate \"2008-10-18T22:53:33+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"3.5292\"^^xsd:float ;\n    chr:hasUnit ex:cm .\n\nex:measurement_process_lymph_20081018T225333 a chr:MeasurementProcess ;\n    rdfs:label \"Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3) measurement\" ;\n    # UNRESOLVED: chr:hasDevice \u2014 not stated in the text\n    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;\n    chr:hasPerformedDate \"2008-10-18T22:53:33+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr._Nickolas58_Schumm995 ;\n    chr:hasResult ex:measurement_Lymph_nodes_85352_3 ;\n    chr:hasStatus ex:status_completed .\n\nex:measurement_Lymph_nodes_85352_3 a chr:Measurement ;\n    rdfs:label \"Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3)\" ;\n    chr:hasCode <https://loinc.org/85352-3> ;\n    chr:hasMeasuredDate \"2008-10-18T22:53:33+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:cblscorecbr .",
+   "level": 2,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\n======================================================================\n\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)\n\nOn 2008-10-18T22:53:33+02:00, a Size.maximum dimension in Tumor (LOINC: 33728-7) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 3.5292 cm. The measurement process was recorded with status \"completed\".\n\nOn 2008-10-18T22:53:33+02:00, a Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 0 {#}. The measurement process was recorded with status \"completed\".\n\nDr. Nickolas58 Schumm995 evaluated the patient on 2008-10-18T21:35:54+02:00. The evaluation produced a diagnostic statement of Malignant neoplasm of breast (disorder) (SNOMED: 254837009). The condition was recorded on 2008-10-18T21:35:54+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:care_plan_follow_up a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:measurement_process_size_20081018T225333 .",
+   "level": 3,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\n======================================================================\n\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)\n\nOn 2008-10-18T22:53:33+02:00, a Size.maximum dimension in Tumor (LOINC: 33728-7) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 3.5292 cm. The measurement process was recorded with status \"completed\".\n\nOn 2008-10-18T22:53:33+02:00, a Lymph nodes with isolated tumor cells [#] in Cancer specimen by Light microscopy (LOINC: 85352-3) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 0 {#}. The measurement process was recorded with status \"completed\".\n\nDr. Nickolas58 Schumm995 evaluated the patient on 2008-10-18T21:35:54+02:00. The evaluation produced a diagnostic statement of Malignant neoplasm of breast (disorder) (SNOMED: 254837009). The condition was recorded on 2008-10-18T21:35:54+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20081018T213554 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" ;\n    chr:hasCareProvider ex:Dr._Nickolas58_Schumm995 ;\n    chr:hasCareUnit ex:ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_BRAINTREE ;\n    chr:hasDate \"2008-10-18T21:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;\n    chr:hasProcedure ex:measurement_process_size_20081018T225333, ex:measurement_process_lymph_20081018T225333 .",
+   "level": 3,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2008-10-18T21:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 19,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 7378,
+   "completion_tokens": 2612,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 19,
+   "prompt_tokens": 53052,
+   "completion_tokens": 10415,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 17,
+   "prompt_tokens": 45674,
+   "completion_tokens": 7803,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

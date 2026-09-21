@@ -1,0 +1,59 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/clinical/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:visit_4edfbba8_eafe_863a_701f_dbb186f0ab61 a chr:ClinicalVisit ;
+    chr:hasCareProvider ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasCareUnit ex:unit_github_com_syntheti ;
+    chr:hasDate "2019-07-08T15:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:patient_4edfbba8_eafe_863a_7981_d51718618ab5 ;
+    chr:hasProcedure ex:evalProc_4edfbba8_eafe_863a_9d99_69af5cdb8482,
+        ex:measProc_4edfbba8_eafe_863a_a343_bc4cc2366820 .
+
+ex:cond_4edfbba8_eafe_863a_9d99_69af5cdb8482 a chr:ClinicalCondition ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> ;
+    chr:hasRecordDate "2019-07-08T15:30:59+02:00"^^xsd:dateTime .
+
+ex:diag_4edfbba8_eafe_863a_9d99_69af5cdb8482 a chr:DiagnosticStatement ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> .
+
+ex:evalProc_4edfbba8_eafe_863a_9d99_69af5cdb8482 a chr:EvaluationProcess ;
+    chr:hasCondition ex:cond_4edfbba8_eafe_863a_9d99_69af5cdb8482 ;
+    chr:hasObservation ex:diag_4edfbba8_eafe_863a_9d99_69af5cdb8482 ;
+    chr:hasPatient ex:patient_4edfbba8_eafe_863a_7981_d51718618ab5 ;
+    chr:hasPerformedDate "2019-07-08T15:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 .
+
+ex:measProc_4edfbba8_eafe_863a_a343_bc4cc2366820 a chr:MeasurementProcess ;
+    chr:hasPatient ex:patient_4edfbba8_eafe_863a_7981_d51718618ab5 ;
+    chr:hasPerformedDate "2019-07-08T15:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:provider_hl7_org_fhir_sid_us_npi_99999 ;
+    chr:hasResult ex:meas_4edfbba8_eafe_863a_a343_bc4cc2366820 ;
+    chr:hasStatus ex:status_completed .
+
+ex:meas_4edfbba8_eafe_863a_a343_bc4cc2366820 a chr:Measurement ;
+    rdfs:label "Body temperature" ;
+    chr:hasCode <https://loinc.org/8310-5> ;
+    chr:hasMeasuredDate "2019-07-08T15:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "37.063"^^xsd:float ;
+    chr:hasUnit ex:unit_Cel .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_Cel a chr:Unit ;
+    rdfs:label "Cel" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .
+
+ex:unit_github_com_syntheti a chr:CareUnit ;
+    rdfs:label "4499 ACUSHNET AVENUE OPERATING COMPANY, LLC" .
+
+ex:patient_4edfbba8_eafe_863a_7981_d51718618ab5 a chr:Person ;
+    rdfs:label "Mr. Harvey63 Napoleon578 Homenick806" .
+
+ex:provider_hl7_org_fhir_sid_us_npi_99999 a chr:Person ;
+    rdfs:label "Dr. Víctor493 Chávez927" .
+
