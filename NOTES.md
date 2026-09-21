@@ -300,3 +300,9 @@ what happened → what fixed it or would.
     pass 1). `KGDC_MAX_SEGS_PER_AGENT` (12) now splits a class with more segments over several
     agents (`chr:MeasurementProcess#1`, `#2`, …); each reply stays small, and the known-entities
     block gives them the shared individuals. Containers (last level) stay whole.
+58. **Scope filter, first version, was wrong at level 0.** "Drop new individuals of any class but
+    your own" also dropped the Units a Measurement agent must create when no segment names
+    chr:Unit (Unit then has no agent of its own): dangling hasUnit links, fix rounds, duplicated
+    measurements (vignette_078: 0.63 → 0.12). Correct rule: drop only individuals of classes an
+    earlier level actually built, including their super- and subclasses (the visit agent types
+    re-created processes as MedicalProcedure). Third pass re-runs the affected documents.

@@ -1,0 +1,65 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_1 a chr:CarePlan ;
+    rdfs:label "care plan" ;
+    chr:hasMedicalProcedure ex:evaluation_process_1 .
+
+ex:visit_20190316T170115 a chr:ClinicalVisit ;
+    rdfs:label "CLINICAL VISIT NOTE — BERKSHIRE MEDICAL CENTER INC" ;
+    chr:hasCareProvider ex:Dr._Carroll471_Eichmann909 ;
+    chr:hasCareUnit ex:BERKSHIRE_MEDICAL_CENTER_INC ;
+    chr:hasDate "2019-03-16T17:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;
+    chr:hasProcedure ex:evaluation_process_1,
+        ex:measurement_process_body_temp_20190316T170115 .
+
+ex:Acute_viral_pharyngitis a chr:ClinicalCondition ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> ;
+    chr:hasRecordDate "2019-03-16T17:01:15+01:00"^^xsd:dateTime .
+
+ex:BERKSHIRE_MEDICAL_CENTER_INC a chr:CareUnit ;
+    rdfs:label "BERKSHIRE MEDICAL CENTER INC" .
+
+ex:Cel a chr:Unit ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .
+
+ex:diagnostic_statement_Acute_viral_pharyngitis a chr:DiagnosticStatement ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> .
+
+ex:measurement_body_temp_20190316T170115 a chr:Measurement ;
+    rdfs:label "Body temperature" ;
+    chr:hasCode <https://loinc.org/8310-5> ;
+    chr:hasMeasuredDate "2019-03-16T17:01:15+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 37.277 ;
+    chr:hasUnit ex:Cel .
+
+ex:measurement_process_body_temp_20190316T170115 a chr:MeasurementProcess ;
+    rdfs:label "Body temperature measurement" ;
+    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2019-03-16T17:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Carroll471_Eichmann909 ;
+    chr:hasResult ex:measurement_body_temp_20190316T170115 ;
+    chr:hasStatus ex:status_completed .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:evaluation_process_1 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:Acute_viral_pharyngitis ;
+    chr:hasObservation ex:diagnostic_statement_Acute_viral_pharyngitis ;
+    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;
+    chr:hasPerformedDate "2019-03-16T17:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr._Carroll471_Eichmann909 .
+
+ex:Daren950_Ed239_Strosin214 a chr:Person ;
+    rdfs:label "Daren950 Ed239 Strosin214" .
+
+ex:Dr._Carroll471_Eichmann909 a chr:Person ;
+    rdfs:label "Dr. Carroll471 Eichmann909" .
+

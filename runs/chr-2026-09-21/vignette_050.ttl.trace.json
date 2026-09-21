@@ -1,0 +1,454 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:CarePlan_1 a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_process_1 .\n\nex:visit_20190316T170115 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\" ;\n    chr:hasCareProvider ex:Dr._Carroll471_Eichmann909 ;\n    chr:hasCareUnit ex:BERKSHIRE_MEDICAL_CENTER_INC ;\n    chr:hasDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasProcedure ex:evaluation_process_1,\n        ex:measurement_process_body_temp_20190316T170115 .\n\nex:Acute_viral_pharyngitis a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime .\n\nex:BERKSHIRE_MEDICAL_CENTER_INC a chr:CareUnit ;\n    rdfs:label \"BERKSHIRE MEDICAL CENTER INC\" .\n\nex:Cel a chr:Unit ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n\nex:diagnostic_statement_Acute_viral_pharyngitis a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .\n\nex:measurement_body_temp_20190316T170115 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue 37.277 ;\n    chr:hasUnit ex:Cel .\n\nex:measurement_process_body_temp_20190316T170115 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr._Carroll471_Eichmann909 ;\n    chr:hasResult ex:measurement_body_temp_20190316T170115 ;\n    chr:hasStatus ex:status_completed .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:evaluation_process_1 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Acute_viral_pharyngitis ;\n    chr:hasObservation ex:diagnostic_statement_Acute_viral_pharyngitis ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr._Carroll471_Eichmann909 .\n\nex:Daren950_Ed239_Strosin214 a chr:Person ;\n    rdfs:label \"Daren950 Ed239 Strosin214\" .\n\nex:Dr._Carroll471_Eichmann909 a chr:Person ;\n    rdfs:label \"Dr. Carroll471 Eichmann909\" .\n\n",
+ "conforms": false,
+ "violations": "Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:datatype xsd:float ; sh:message Literal(\"chr:hasQuantityValue must be an xsd:float.\") ; sh:path chr:hasQuantityValue ]\n\tFocus Node: ex:measurement_body_temp_20190316T170115\n\tValue Node: Literal(\"37.277\", datatype=xsd:decimal)\n\tResult Path: chr:hasQuantityValue\n\tMessage: chr:hasQuantityValue must be an xsd:float.\n",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:BERKSHIRE_MEDICAL_CENTER_INC a chr:CareUnit ;\n    rdfs:label \"BERKSHIRE MEDICAL CENTER INC\" .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Carroll471 Eichmann909 evaluated the patient on 2019-03-16T17:01:15+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-03-16T17:01:15+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Acute_viral_pharyngitis a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Carroll471 Eichmann909 evaluated the patient on 2019-03-16T17:01:15+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-03-16T17:01:15+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnostic_statement_Acute_viral_pharyngitis a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2019-03-16T17:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 37.277 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:HasUnitRangeShape\n\tFocus Node: ex:Cel\n\tValue Node: ex:Cel\n\tMessage: Object of chr:hasUnit must be a chr:Unit individual.\n"
+    },
+    {
+     "cycle": 1,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 2,
+   "scope_dropped": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Body_temperature_8310_5 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.277\"^^xsd:float ;\n    chr:hasUnit ex:Cel .\n\nex:Cel a chr:Unit ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:Daren950_Ed239_Strosin214 a chr:Person ;\n    rdfs:label \"Daren950 Ed239 Strosin214\" .\n\nex:Dr._Carroll471_Eichmann909 a chr:Person ;\n    rdfs:label \"Dr. Carroll471 Eichmann909\" .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2019-03-16T17:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 37.277 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasStatus is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:status_completed\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasStatus>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:ProcessStatus\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):\n\tSeverity: sh:Violation\n\tSou"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasStatus is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:status_completed\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasStatus>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:MeasurementProcess\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Vi"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasStatus is not a property of the vocabulary\nConstraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: chr:SchemaPropertyVocabularyShape\n\tFocus Node: ex:measurement_process_1\n\tValue Node: ex:status_completed\n\tResult Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasStatus>\n\tMessage: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal(\"rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]\n\tFocus Node: chr:MeasurementProcess\n\tResult Path: [ sh:zeroOrMorePath rdfs:subClassOf ]\n\tMessage: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\nConstraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):\n\tSeverity: sh:Vi"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [
+    "UNRESOLVED: chr:hasStatus \u2014 not a property of the vocabulary"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:measurement_process_1 a chr:MeasurementProcess ;\n    rdfs:label \"measurement process\" ;\n    # UNRESOLVED: chr:hasStatus \u2014 not a property of the vocabulary\n    chr:hasStatus ex:status_completed .",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Carroll471 Eichmann909 evaluated the patient on 2019-03-16T17:01:15+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-03-16T17:01:15+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus N"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus N"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluation_process_1 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:Acute_viral_pharyngitis ;\n    chr:hasObservation ex:diagnostic_statement_Acute_viral_pharyngitis ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr._Carroll471_Eichmann909 .\n\nex:Acute_viral_pharyngitis a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime .\n\nex:diagnostic_statement_Acute_viral_pharyngitis a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .",
+   "level": 1,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2019-03-16T17:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 37.277 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary\nConstraint Viola"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary\nConstraint Violation in UndeclaredProperty:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary\nConstraint Viola"
+    }
+   ],
+   "llm_calls": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_process_body_temp_20190316T170115 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr._Carroll471_Eichmann909 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasResult ex:measurement_body_temp_20190316T170115 .\n\nex:measurement_body_temp_20190316T170115 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.277\"^^xsd:float ;\n    chr:hasUnit ex:Cel .",
+   "level": 1,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\n==================================================\n\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)\n\nOn 2019-03-16T17:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 37.277 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2019-03-16T17:01:15+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-03-16T17:01:15+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [
+    "UNRESOLVED: chr:ClinicalCondition, chr:DiagnosticStatement, chr:EvaluationProcess, chr:Measurement, chr:MeasurementProcess, chr:ProcessStatus \u2014 not in allowed classes list.",
+    "UNRESOLVED: chr:hasCode, chr:hasRecordDate, chr:hasCondition, chr:hasObservation, chr:hasPatient, chr:hasPerformedDate, chr:hasPerformer, chr:hasMeasuredDate, chr:hasQuantityValue, chr:hasUnit, chr:hasStatus, chr:hasResult \u2014 not in allowed properties list."
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n# UNRESOLVED: chr:ClinicalCondition, chr:DiagnosticStatement, chr:EvaluationProcess, chr:Measurement, chr:MeasurementProcess, chr:ProcessStatus \u2014 not in allowed classes list.\n# UNRESOLVED: chr:hasCode, chr:hasRecordDate, chr:hasCondition, chr:hasObservation, chr:hasPatient, chr:hasPerformedDate, chr:hasPerformer, chr:hasMeasuredDate, chr:hasQuantityValue, chr:hasUnit, chr:hasStatus, chr:hasResult \u2014 not in allowed properties list.\n\nex:Acute_viral_pharyngitis a chr:CarePlan ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" .\n\nex:diagnostic_statement_Acute_viral_pharyngitis a chr:CarePlan ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" .\n\nex:evaluation_process_1 a chr:CarePlan ;\n    rdfs:label \"evaluation\" .\n\nex:measurement_body_temp_20190316T170115 a chr:CarePlan ;\n    rdfs:label \"Body temperature\" .\n\nex:measurement_process_body_temp_20190316T170115 a chr:CarePlan ;\n    rdfs:label \"Body temperature measurement\" .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:CarePlan_1 a chr:CarePlan ;\n    rdfs:label \"care plan\" ;\n    chr:hasMedicalProcedure ex:evaluation_process_1 .",
+   "level": 2,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\n==================================================\n\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)\n\nOn 2019-03-16T17:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 37.277 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2019-03-16T17:01:15+01:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-03-16T17:01:15+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "Constraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/diagnostic_statement_Acute_viral_pharyngitis\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/DiagnosticStatement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/evaluation_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/EvaluationProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_1\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/measurement_process_body_temp_20190316T170115\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/MeasurementProcess is not a class of the vocabulary\nConstraint Violation in UndeclaredClass:\n\tSeverity: sh:Violation\n\tFocus Node: http://example.org/data/status_completed\n\tMessage: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ProcessStatus is not a class of the vocabulary\nConstraint Violation in UndeclaredProperty:"
+    }
+   ],
+   "llm_calls": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:visit_20190316T170115 a chr:ClinicalVisit ;\n    rdfs:label \"CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\" ;\n    chr:hasCareProvider ex:Dr._Carroll471_Eichmann909 ;\n    chr:hasCareUnit ex:BERKSHIRE_MEDICAL_CENTER_INC ;\n    chr:hasDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasProcedure ex:measurement_process_body_temp_20190316T170115 ,\n                      ex:evaluation_process_1 .\n\nex:measurement_process_body_temp_20190316T170115 a chr:MedicalProcedure ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr._Carroll471_Eichmann909 ;\n    chr:hasStatus ex:status_completed ;\n    chr:hasProcedure ex:measurement_body_temp_20190316T170115 .\n\nex:measurement_body_temp_20190316T170115 a chr:MedicalProcedure ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.277\"^^xsd:float ;\n    chr:hasUnit ex:Cel .\n\nex:evaluation_process_1 a chr:MedicalProcedure ;\n    rdfs:label \"evaluation\" ;\n    chr:hasPatient ex:Daren950_Ed239_Strosin214 ;\n    chr:hasPerformedDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:Dr._Carroll471_Eichmann909 ;\n    chr:hasProcedure ex:diagnostic_statement_Acute_viral_pharyngitis .\n\nex:diagnostic_statement_Acute_viral_pharyngitis a chr:MedicalProcedure ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasProcedure ex:Acute_viral_pharyngitis .\n\nex:Acute_viral_pharyngitis a chr:MedicalProcedure ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasDate \"2019-03-16T17:01:15+01:00\"^^xsd:dateTime .\n\nex:status_completed a chr:ProcessStatus ;\n    rdfs:label \"completed\" .",
+   "level": 2,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2019-03-16T17:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 21,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 11097,
+   "completion_tokens": 1881,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 21,
+   "prompt_tokens": 85121,
+   "completion_tokens": 10121,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 19,
+   "prompt_tokens": 74024,
+   "completion_tokens": 8240,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

@@ -1,0 +1,67 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 110.3s] 35 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[MeasurementProcess,Measurement,ProcessStatus], s23[MeasurementProcess,Measurement,ProcessStatus], s24[MeasurementProcess,Measurement,ProcessStatus], s25[MeasurementProcess,Measurement,ProcessStatus], s26[MeasurementProcess,Measurement,ProcessStatus], s27[MeasurementProcess,Measurement,ProcessStatus], s28[MeasurementProcess,Measurement,ProcessStatus], s29[MeasurementProcess,Measurement,ProcessStatus], s30[MeasurementProcess,Measurement,ProcessStatus], s31[MeasurementProcess,Measurement,ProcessStatus], s32[MeasurementProcess,Measurement,ProcessStatus], s33[MeasurementProcess,Measurement,ProcessStatus], s34[EvaluationProcess,DiagnosticStatement,ClinicalCondition,Person], s35[CarePlan]
+[ 110.3s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 110.3s] level 0: 6 agent(s), 0 known entities
+[ 110.3s]   CareUnit: extracting (223 chars, 1 classes in view)
+[ 110.3s]   ClinicalCondition: extracting (240 chars, 3 classes in view)
+[ 110.3s]   DiagnosticStatement: extracting (240 chars, 1 classes in view)
+[ 110.3s]   Measurement#1: extracting (3175 chars, 2 classes in view)
+[ 114.8s]   CareUnit: cycle 0 -> conforms
+[ 114.8s]   Measurement#2: extracting (2888 chars, 2 classes in view)
+[ 115.9s]   DiagnosticStatement: cycle 0 -> conforms
+[ 115.9s]   Measurement#3: extracting (1995 chars, 2 classes in view)
+[ 116.5s]   ClinicalCondition: cycle 0 -> conforms
+[ 116.5s]   Person: extracting (465 chars, 1 classes in view)
+[ 122.6s]   Person: cycle 0 -> conforms
+[ 122.6s]   ProcessStatus#1: extracting (3175 chars, 1 classes in view)
+[ 127.1s]   ProcessStatus#1: cycle 0 -> conforms
+[ 127.1s]   ProcessStatus#2: extracting (2888 chars, 1 classes in view)
+[ 131.5s]   ProcessStatus#2: cycle 0 -> conforms
+[ 131.5s]   ProcessStatus#3: extracting (1995 chars, 1 classes in view)
+[ 145.4s]   ProcessStatus#3: cycle 0 -> conforms
+[ 147.2s]   Measurement#3: dropped 3 individual(s) of other classes (already built by earlier levels)
+[ 147.3s]   Measurement#3: cycle 0 -> 3 violation(s)
+[ 147.3s]   Measurement#3: fixing ...
+[ 155.2s]   Measurement#1: dropped 3 individual(s) of other classes (already built by earlier levels)
+[ 155.2s]   Measurement#1: cycle 0 -> 3 violation(s)
+[ 155.2s]   Measurement#1: fixing ...
+[ 167.2s]   Measurement#2: dropped 9 individual(s) of other classes (already built by earlier levels)
+[ 167.2s]   Measurement#2: cycle 0 -> 9 violation(s)
+[ 167.2s]   Measurement#2: fixing ...
+[ 182.8s]   Measurement#3: cycle 1 -> conforms
+[ 207.8s]   Measurement#1: cycle 1 -> conforms
+[ 223.8s]   Measurement#2: cycle 1 -> conforms
+[ 223.8s] level 1: 2 agent(s), 60 known entities
+[ 223.8s]   EvaluationProcess: extracting (240 chars, 7 classes in view)
+[ 223.8s]   MeasurementProcess#1: extracting (3175 chars, 6 classes in view)
+[ 223.8s]   MeasurementProcess#2: extracting (2888 chars, 6 classes in view)
+[ 223.8s]   MeasurementProcess#3: extracting (1995 chars, 6 classes in view)
+[ 238.3s]   EvaluationProcess: cycle 0 -> conforms
+[ 264.3s]   MeasurementProcess#3: cycle 0 -> 1 violation(s)
+[ 264.3s]   MeasurementProcess#3: fixing ...
+[ 305.7s]   MeasurementProcess#3: cycle 1 -> 1 violation(s)
+[ 305.7s]   MeasurementProcess#3: stopping (plateau)
+[ 322.1s]   MeasurementProcess#2: dropped 3 individual(s) of other classes (already built by earlier levels)
+[ 322.2s]   MeasurementProcess#2: cycle 0 -> 3 violation(s)
+[ 322.2s]   MeasurementProcess#2: fixing ...
+[ 324.3s]   MeasurementProcess#1: dropped 2 individual(s) of other classes (already built by earlier levels)
+[ 324.4s]   MeasurementProcess#1: cycle 0 -> 2 violation(s)
+[ 324.4s]   MeasurementProcess#1: fixing ...
+[ 406.5s]   MeasurementProcess#2: cycle 1 -> conforms
+[ 408.3s]   MeasurementProcess#1: cycle 1 -> conforms
+[ 408.4s] level 2: 2 agent(s), 86 known entities
+[ 408.4s]   CarePlan: extracting (8722 chars, 4 classes in view)
+[ 408.4s]   ClinicalVisit: extracting (8722 chars, 5 classes in view)
+[ 416.1s]   CarePlan: cycle 0 -> conforms
+[ 529.3s]   ClinicalVisit: dropped 8 individual(s) of other classes (already built by earlier levels)
+[ 529.5s]   ClinicalVisit: cycle 0 -> 8 violation(s)
+[ 529.5s]   ClinicalVisit: fixing ...
+[ 650.9s]   ClinicalVisit: cycle 1 -> conforms
+[ 651.1s] merging (orchestrator): 0 violation(s), 0 unresolved, 1 unparsed
+[ 651.3s] merge FAILED (Error code: 400 - {'error': {'message': "litellm.ContextWindowExceededError: lit...) - returning the un-merged union
+[ 651.5s] final: conforms
+conforms=True segments=16 llm_calls=25 unresolved=0
+  orchestrator   1 calls     4658 in    5218 out  cost n/a  gemma4-g1
+  total         24 calls   117844 in   48156 out  cost n/a  
+  worker        23 calls   113186 in   42938 out  cost n/a  gemma4-g1
+exit=0

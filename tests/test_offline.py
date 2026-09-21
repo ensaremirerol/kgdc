@@ -161,3 +161,14 @@ def test_big_class_is_split_over_several_agents(monkeypatch):
     assert [s["id"] for s in unit_jobs] == ["chr:Unit#1", "chr:Unit#2", "chr:Unit#3"] and len(seen["chr:Unit"]) == 3
     assert "1 cm" in seen["chr:Unit"][0] and "5 cm" in seen["chr:Unit"][2] and "5 cm" not in seen["chr:Unit"][0]
     assert len([s for s in r.segments if s["id"] == "chr:ClinicalVisit"]) == 1
+
+
+def test_scope_filter_keeps_classes_nobody_built():
+    """Level 0 or a dependency class without its own agent: the agent may create it (a Unit next to its Measurement)."""
+    schema = kgdc.load(EX / "ontology.ttl", EX / "shapes.ttl")
+    out = PFX + 'ex:m a chr:Measurement ; rdfs:label "Body Height" ; chr:hasUnit ex:u .\nex:u a chr:Unit ; rdfs:label "cm" .\n'
+    ttl, dropped = pipeline.scope_filter(out, schema, ["chr:Measurement"], PFX)                       # known graph: prefixes only
+    assert dropped == 0 and "chr:Unit" in ttl
+    known = PFX + 'ex:p a chr:Person ; rdfs:label "Ann" .\n'                                          # Person built, Unit not
+    ttl, dropped = pipeline.scope_filter(out + 'ex:p2 a chr:Person ; rdfs:label "Bob" .\n', schema, ["chr:Measurement"], known)
+    assert dropped == 1 and "chr:Unit" in ttl and "Bob" not in ttl

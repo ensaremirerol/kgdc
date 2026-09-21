@@ -109,19 +109,24 @@ def _whole_sentences(text: str, span: str) -> str:
 
 
 def scope_filter(ttl: str, schema: Schema, concepts: list[str], known_ttl: str) -> tuple[str, int]:
-    """Ordered mode, levels above the first: every class an agent may link to was built by an earlier
-    level, so a *new* individual typed with another class is a duplicate (the visit agent re-creating
-    the processes it should link). Drop such individuals and every triple about them; the links to
-    them stay and surface as SHACL violations for the fix round. Returns (ttl, dropped individuals)."""
+    """Ordered mode: a *new* individual typed with a class that an earlier level already built is a
+    duplicate (the visit agent re-creating the processes it should link). Drop such individuals and
+    every triple about them; the links to them stay and surface as SHACL violations for the fix round.
+    Classes no earlier level built (a Unit no segment named) may still be created. Returns (ttl, dropped)."""
     try:
         g = Graph().parse(data=ttl, format="turtle")
     except Exception:  # noqa: BLE001 — unparsable output is handled downstream
         return ttl, 0
-    known = {s for s in Graph().parse(data=known_ttl, format="turtle").subjects(RDF.type, None)} if known_ttl.strip() else set()
-    mine = {URIRef(next(ns for p, ns in schema.prefixes.items() if c.startswith(p + ":")) + c.split(":", 1)[1]) for c in concepts if ":" in c}
-    mine |= {URIRef(next(ns for p, ns in schema.prefixes.items() if d.startswith(p + ":")) + d.split(":", 1)[1])
-             for c in concepts for d in schema.descendants(c)}
-    bad = {s for s, t in g.subject_objects(RDF.type) if s not in known and t not in mine and str(t) in schema.terms}
+    kg = Graph().parse(data=known_ttl, format="turtle") if known_ttl.strip() else Graph()
+    known = set(kg.subjects(RDF.type, None))
+    iri = lambda q: URIRef(next(ns for p, ns in schema.prefixes.items() if q.startswith(p + ":")) + q.split(":", 1)[1])
+    qn = {iri(q): q for q in schema.classes} | {iri(q): q for q in schema.parents}
+    # off limits: classes an earlier level built, plus their super/subclasses (the visit agent types the
+    # processes it re-creates with the range class MedicalProcedure, not MeasurementProcess)
+    built_q = {qn[t] for t in kg.objects(None, RDF.type) if t in qn}
+    built = {iri(x) for q in built_q for x in schema.ancestors(q) | schema.descendants(q)}
+    mine = {iri(c) for c in concepts if ":" in c} | {iri(d) for c in concepts for d in schema.descendants(c)}
+    bad = {s for s, t in g.subject_objects(RDF.type) if s not in known and t not in mine and t in built}
     if not bad:
         return ttl, 0
     for s in bad:
