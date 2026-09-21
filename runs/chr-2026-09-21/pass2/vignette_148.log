@@ -1,0 +1,1545 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 114.0s] 42 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[MeasurementProcess,Measurement,Unit,ProcessStatus], s4[MeasurementProcess,Measurement,Unit,ProcessStatus], s5[MeasurementProcess,Measurement,Unit,ProcessStatus], s6[MeasurementProcess,Measurement,Unit,ProcessStatus], s7[MeasurementProcess,Measurement,Unit,ProcessStatus], s8[MeasurementProcess,Measurement,Unit,ProcessStatus], s9[MeasurementProcess,Measurement,Unit,ProcessStatus], s10[MeasurementProcess,Measurement,Unit,ProcessStatus], s11[MeasurementProcess,Measurement,Unit,ProcessStatus], s12[MeasurementProcess,Measurement,Unit,ProcessStatus], s13[MeasurementProcess,Measurement,Unit,ProcessStatus], s14[MeasurementProcess,Measurement,Unit,ProcessStatus], s15[MeasurementProcess,Measurement,Unit,ProcessStatus], s16[MeasurementProcess,Measurement,Unit,ProcessStatus], s17[MeasurementProcess,Measurement,Unit,ProcessStatus], s18[MeasurementProcess,Measurement,Unit,ProcessStatus], s19[MeasurementProcess,Measurement,Severity,Unit,ProcessStatus], s20[MeasurementProcess,Measurement,Unit,ProcessStatus], s21[MeasurementProcess,Measurement,Unit,ProcessStatus], s22[MeasurementProcess,Measurement,Unit,ProcessStatus], s23[MeasurementProcess,Measurement,Unit,ProcessStatus], s24[MeasurementProcess,Measurement,Unit,ProcessStatus], s25[MeasurementProcess,Measurement,Unit,ProcessStatus], s26[MeasurementProcess,Measurement,Unit,ProcessStatus], s27[MeasurementProcess,Measurement,Unit,ProcessStatus], s28[MeasurementProcess,Measurement,Unit,ProcessStatus], s29[MeasurementProcess,Measurement,Unit,ProcessStatus], s30[MeasurementProcess,Measurement,Unit,ProcessStatus], s31[MeasurementProcess,Measurement,Unit,ProcessStatus], s32[MeasurementProcess,Measurement,Unit,ProcessStatus], s33[MeasurementProcess,Measurement,Unit,ProcessStatus], s34[MeasurementProcess,Measurement,Unit,ProcessStatus], s35[MeasurementProcess,Measurement,Unit,ProcessStatus], s36[MeasurementProcess,Measurement,Unit,ProcessStatus], s37[MeasurementProcess,Measurement,Unit,ProcessStatus], s38[MeasurementProcess,Measurement,Unit,ProcessStatus], s39[MeasurementProcess,Measurement,Unit,ProcessStatus], s40[EvaluationProcess,DiagnosticStatement,ClinicalCondition,Person], s41[EvaluationProcess,DiagnosticStatement,ClinicalCondition,Person], s42[CarePlan]
+[ 114.0s] build order: [CareUnit, DiagnosticStatement, Person, ProcessStatus, Severity, Unit] -> [ClinicalCondition, Measurement] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 114.0s] level 0: 6 agent(s), 0 known entities
+[ 114.0s]   CareUnit: extracting (238 chars, 1 classes in view)
+[ 114.0s]   DiagnosticStatement: extracting (473 chars, 1 classes in view)
+[ 114.0s]   Person: extracting (713 chars, 1 classes in view)
+[ 114.0s]   ProcessStatus#1: extracting (3007 chars, 1 classes in view)
+[ 120.0s]   CareUnit: cycle 0 -> conforms
+[ 120.0s]   ProcessStatus#2: extracting (2720 chars, 1 classes in view)
+[ 120.5s]   Person: cycle 0 -> conforms
+[ 120.5s]   ProcessStatus#3: extracting (2972 chars, 1 classes in view)
+[ 121.7s]   DiagnosticStatement: cycle 0 -> conforms
+[ 121.7s]   ProcessStatus#4: extracting (446 chars, 1 classes in view)
+[ 124.9s]   ProcessStatus#3: cycle 0 -> conforms
+[ 124.9s]   Severity: extracting (257 chars, 1 classes in view)
+[ 128.1s]   ProcessStatus#4: cycle 0 -> conforms
+[ 128.1s]   Unit#1: extracting (3007 chars, 1 classes in view)
+[ 130.8s]   Severity: cycle 0 -> 5 violation(s)
+[ 130.8s]   Severity: fixing ...
+[ 131.9s]   ProcessStatus#1: cycle 0 -> conforms
+[ 131.9s]   Unit#2: extracting (2720 chars, 1 classes in view)
+[ 136.4s]   Severity: cycle 1 -> 5 violation(s)
+[ 136.4s]   Severity: fixing ...
+[ 139.7s]   Unit#1: cycle 0 -> conforms
+[ 139.7s]   Unit#3: extracting (2972 chars, 1 classes in view)
+[ 140.1s]   ProcessStatus#2: cycle 0 -> conforms
+[ 140.1s]   Unit#4: extracting (446 chars, 1 classes in view)
+[ 145.0s]   Severity: cycle 2 -> 5 violation(s)
+[ 145.0s]   Severity: stopping (fix budget spent)
+[ 146.0s]   Unit#4: cycle 0 -> conforms
+[ 147.4s]   Unit#2: cycle 0 -> conforms
+[ 148.3s]   Unit#3: cycle 0 -> conforms
+[ 148.4s] level 1: 2 agent(s), 33 known entities
+[ 148.4s]   ClinicalCondition: extracting (473 chars, 3 classes in view)
+[ 148.4s]   Measurement#1: extracting (3007 chars, 2 classes in view)
+[ 148.4s]   Measurement#2: extracting (2720 chars, 2 classes in view)
+[ 148.4s]   Measurement#3: extracting (2972 chars, 2 classes in view)
+[ 158.1s]   ClinicalCondition: cycle 0 -> 17 violation(s)
+[ 158.1s]   ClinicalCondition: fixing ...
+[ 166.8s]   ClinicalCondition: cycle 1 -> 17 violation(s)
+[ 166.8s]   ClinicalCondition: stopping (plateau)
+[ 166.8s]   Measurement#4: extracting (446 chars, 2 classes in view)
+[ 176.9s]   Measurement#4: cycle 0 -> 25 violation(s)
+[ 176.9s]   Measurement#4: fixing ...
+[ 188.0s]   Measurement#4: cycle 1 -> 25 violation(s)
+[ 188.0s]   Measurement#4: stopping (plateau)
+[ 189.8s]   Measurement#2: cycle 0 -> 115 violation(s)
+[ 189.8s]   Measurement#2: fixing ...
+[ 189.9s]   Measurement#3: cycle 0 -> 115 violation(s)
+[ 189.9s]   Measurement#3: fixing ...
+[ 190.0s]   Measurement#1: cycle 0 -> 6 violation(s)
+[ 190.0s]   Measurement#1: fixing ...
+[ 231.2s]   Measurement#2: cycle 1 -> 115 violation(s)
+[ 231.2s]   Measurement#2: stopping (plateau)
+[ 231.3s]   Measurement#3: cycle 1 -> 115 violation(s)
+[ 231.3s]   Measurement#3: stopping (plateau)
+[ 231.5s]   Measurement#1: cycle 1 -> 6 violation(s)
+[ 231.5s]   Measurement#1: stopping (plateau)
+[ 231.5s] level 2: 2 agent(s), 73 known entities
+[ 231.5s]   EvaluationProcess: extracting (473 chars, 7 classes in view)
+[ 231.5s]   MeasurementProcess#1: extracting (3007 chars, 6 classes in view)
+[ 231.5s]   MeasurementProcess#2: extracting (2720 chars, 6 classes in view)
+[ 231.5s]   MeasurementProcess#3: extracting (2972 chars, 6 classes in view)
+[ 248.7s]   EvaluationProcess: cycle 0 -> 254 violation(s)
+[ 248.7s]   EvaluationProcess: fixing ...
+[ 265.4s]   EvaluationProcess: cycle 1 -> 254 violation(s)
+[ 265.4s]   EvaluationProcess: stopping (plateau)
+[ 265.4s]   MeasurementProcess#4: extracting (446 chars, 6 classes in view)
+[ 282.4s]   MeasurementProcess#4: cycle 0 -> 254 violation(s)
+[ 282.4s]   MeasurementProcess#4: fixing ...
+[ 300.5s]   MeasurementProcess#4: cycle 1 -> 254 violation(s)
+[ 300.5s]   MeasurementProcess#4: stopping (plateau)
+[ 316.2s]   MeasurementProcess#1: cycle 0 -> 254 violation(s)
+[ 316.2s]   MeasurementProcess#1: fixing ...
+[ 316.4s]   MeasurementProcess#3: cycle 0 -> 255 violation(s)
+[ 316.4s]   MeasurementProcess#3: fixing ...
+[ 321.7s]   MeasurementProcess#2: dropped 12 individual(s) of other classes (already built by earlier levels)
+[ 321.8s]   MeasurementProcess#2: cycle 0 -> 266 violation(s)
+[ 321.8s]   MeasurementProcess#2: fixing ...
+[ 411.2s]   MeasurementProcess#1: cycle 1 -> 254 violation(s)
+[ 411.2s]   MeasurementProcess#1: stopping (plateau)
+[ 411.4s]   MeasurementProcess#3: cycle 1 -> 255 violation(s)
+[ 411.4s]   MeasurementProcess#3: stopping (plateau)
+[ 413.0s]   MeasurementProcess#2: cycle 1 -> 254 violation(s)
+[ 413.0s]   MeasurementProcess#2: fixing ...
+[ 517.7s]   MeasurementProcess#2: cycle 2 -> 254 violation(s)
+[ 517.7s]   MeasurementProcess#2: stopping (fix budget spent)
+[ 517.7s]   MeasurementProcess#2: 1 unresolved (honest gaps)
+[ 517.8s] level 3: 2 agent(s), 140 known entities
+[ 517.8s]   CarePlan: extracting (10123 chars, 4 classes in view)
+[ 517.8s]   ClinicalVisit: extracting (10123 chars, 5 classes in view)
+[ 529.8s]   CarePlan: cycle 0 -> 255 violation(s)
+[ 529.8s]   CarePlan: fixing ...
+[ 540.8s]   CarePlan: cycle 1 -> 255 violation(s)
+[ 540.8s]   CarePlan: stopping (plateau)
+[ 714.9s]   ClinicalVisit: dropped 13 individual(s) of other classes (already built by earlier levels)
+[ 715.1s]   ClinicalVisit: cycle 0 -> 267 violation(s)
+[ 715.1s]   ClinicalVisit: fixing ...
+[ 836.8s]   ClinicalVisit: cycle 1 -> 267 violation(s)
+[ 836.8s]   ClinicalVisit: stopping (plateau)
+[ 837.1s] merging (orchestrator): 267 violation(s), 1 unresolved, 0 unparsed
+[ 837.3s] merge FAILED (Error code: 400 - {'error': {'message': "litellm.ContextWindowExceededError: lit...) - returning the un-merged union
+[ 837.6s] final: 267 violation(s)
+conforms=False segments=24 llm_calls=41 unresolved=0
+  orchestrator   1 calls     5189 in    6401 out  cost n/a  gemma4-g1
+  total         40 calls   254988 in   66386 out  cost n/a  
+  worker        39 calls   249799 in   59985 out  cost n/a  gemma4-g1
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Full-time_employment_finding
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Medication_review_due_situation
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/ClinicalCondition is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Pain_severity_0-10_verbal_numeric_rating_Score
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Severity is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_Height_8302-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_Weight_29463-7
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_mass_index_BMI_Ratio_39156-5
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Calcium_49765_1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Carbon_dioxide_20565_8
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Chloride_2069_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_2093_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_HDL_2085_9
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_LDL_18262_6
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Creatinine_38483_4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Fall_risk_total_Morse_Fall_Scale_20210210T164504
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_GFR_33914_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Glucose_Mass_volume_in_Blood_2339-0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Heart_rate_8867-4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_4548-4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Microalbumin_Creatinine_14959_1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Pain_severity_0-10_verbal_numeric_rating_Score_72514-3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Potassium_6298_4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Protein_Mass_volume_in_Urine_by_Test_strip_5804-0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Respiratory_rate_9279-1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Sodium_2947_0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Specific_gravity_of_Urine_by_Test_strip_5811-5
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Total_score_AUDIT_C_20210210T171843
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Triglyceride_2571_8
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Urea_nitrogen_Mass_volume_in_Blood_6299-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_pH_of_Urine_by_Test_strip_5803-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/Measurement is not a class of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Full-time_employment_finding
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Full-time_employment_finding
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Medication_review_due_situation
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Medication_review_due_situation
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/Pain_severity_0-10_verbal_numeric_rating_Score
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_Height_8302-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_Height_8302-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_Height_8302-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_Height_8302-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_Weight_29463-7
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_Weight_29463-7
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_Weight_29463-7
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_Weight_29463-7
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_mass_index_BMI_Ratio_39156-5
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_mass_index_BMI_Ratio_39156-5
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_mass_index_BMI_Ratio_39156-5
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Body_mass_index_BMI_Ratio_39156-5
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Calcium_49765_1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Calcium_49765_1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Calcium_49765_1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Calcium_49765_1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Carbon_dioxide_20565_8
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Carbon_dioxide_20565_8
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Carbon_dioxide_20565_8
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Carbon_dioxide_20565_8
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Chloride_2069_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Chloride_2069_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Chloride_2069_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Chloride_2069_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_2093_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_2093_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_2093_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_2093_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_HDL_2085_9
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_HDL_2085_9
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_HDL_2085_9
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_HDL_2085_9
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_LDL_18262_6
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_LDL_18262_6
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_LDL_18262_6
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Cholesterol_LDL_18262_6
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Creatinine_38483_4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Creatinine_38483_4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Creatinine_38483_4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Creatinine_38483_4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Fall_risk_total_Morse_Fall_Scale_20210210T164504
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Fall_risk_total_Morse_Fall_Scale_20210210T164504
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Fall_risk_total_Morse_Fall_Scale_20210210T164504
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Fall_risk_total_Morse_Fall_Scale_20210210T164504
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_GFR_33914_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_GFR_33914_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_GFR_33914_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_GFR_33914_3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Glucose_Mass_volume_in_Blood_2339-0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Glucose_Mass_volume_in_Blood_2339-0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Glucose_Mass_volume_in_Blood_2339-0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Glucose_Mass_volume_in_Blood_2339-0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Heart_rate_8867-4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Heart_rate_8867-4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Heart_rate_8867-4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Heart_rate_8867-4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_4548-4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_4548-4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_4548-4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_4548-4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Microalbumin_Creatinine_14959_1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Microalbumin_Creatinine_14959_1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Microalbumin_Creatinine_14959_1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Microalbumin_Creatinine_14959_1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Pain_severity_0-10_verbal_numeric_rating_Score_72514-3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Pain_severity_0-10_verbal_numeric_rating_Score_72514-3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Pain_severity_0-10_verbal_numeric_rating_Score_72514-3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Pain_severity_0-10_verbal_numeric_rating_Score_72514-3
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Potassium_6298_4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Potassium_6298_4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Potassium_6298_4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Potassium_6298_4
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Protein_Mass_volume_in_Urine_by_Test_strip_5804-0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Protein_Mass_volume_in_Urine_by_Test_strip_5804-0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Protein_Mass_volume_in_Urine_by_Test_strip_5804-0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Protein_Mass_volume_in_Urine_by_Test_strip_5804-0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Respiratory_rate_9279-1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Respiratory_rate_9279-1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Respiratory_rate_9279-1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Respiratory_rate_9279-1
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Sodium_2947_0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Sodium_2947_0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Sodium_2947_0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Sodium_2947_0
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Specific_gravity_of_Urine_by_Test_strip_5811-5
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Specific_gravity_of_Urine_by_Test_strip_5811-5
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Specific_gravity_of_Urine_by_Test_strip_5811-5
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Specific_gravity_of_Urine_by_Test_strip_5811-5
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Total_score_AUDIT_C_20210210T171843
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Total_score_AUDIT_C_20210210T171843
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Total_score_AUDIT_C_20210210T171843
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Total_score_AUDIT_C_20210210T171843
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Triglyceride_2571_8
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Triglyceride_2571_8
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Triglyceride_2571_8
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Triglyceride_2571_8
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Urea_nitrogen_Mass_volume_in_Blood_6299-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Urea_nitrogen_Mass_volume_in_Blood_6299-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Urea_nitrogen_Mass_volume_in_Blood_6299-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_Urea_nitrogen_Mass_volume_in_Blood_6299-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_pH_of_Urine_by_Test_strip_5803-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_pH_of_Urine_by_Test_strip_5803-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_pH_of_Urine_by_Test_strip_5803-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue is not a property of the vocabulary
+Constraint Violation in UndeclaredProperty:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/measurement_pH_of_Urine_by_Test_strip_5803-2
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit is not a property of the vocabulary
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: ex:unit_mL_perminpercbr1.73_m2cbr
+	Value Node: ex:unit_mL_perminpercbr1.73_m2cbr
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: ex:unit_mLpermincbl1.73_m2cbr
+	Value Node: ex:unit_mLpermincbl1.73_m2cbr
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:Full-time_employment_finding
+	Value Node: <http://snomed.info/id/160903007>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:Full-time_employment_finding
+	Value Node: Literal("2021-02-10T16:27:56+01:00" = 2021-02-10 16:27:56+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:Medication_review_due_situation
+	Value Node: <http://snomed.info/id/314529007>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:Medication_review_due_situation
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasRecordDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:Pain_severity_0-10_verbal_numeric_rating_Score
+	Value Node: <https://loinc.org/72514-3>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Body_Height_8302-2
+	Value Node: <https://loinc.org/8302-2>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Body_Height_8302-2
+	Value Node: Literal("177.0", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Body_Height_8302-2
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Body_Height_8302-2
+	Value Node: ex:unit_cm
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Body_Weight_29463-7
+	Value Node: <https://loinc.org/29463-7>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Body_Weight_29463-7
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Body_Weight_29463-7
+	Value Node: Literal("86.0", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Body_Weight_29463-7
+	Value Node: ex:unit_kg
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Body_mass_index_BMI_Ratio_39156-5
+	Value Node: <https://loinc.org/39156-5>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Body_mass_index_BMI_Ratio_39156-5
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Body_mass_index_BMI_Ratio_39156-5
+	Value Node: Literal("27.45", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Body_mass_index_BMI_Ratio_39156-5
+	Value Node: ex:unit_kgperm2
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Calcium_49765_1
+	Value Node: <https://loinc.org/49765-1>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Calcium_49765_1
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Calcium_49765_1
+	Value Node: Literal("9.85", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Calcium_49765_1
+	Value Node: ex:unit_mgperdL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Carbon_dioxide_20565_8
+	Value Node: <https://loinc.org/20565-8>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Carbon_dioxide_20565_8
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Carbon_dioxide_20565_8
+	Value Node: Literal("24.68", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Carbon_dioxide_20565_8
+	Value Node: ex:unit_mmolperL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Chloride_2069_3
+	Value Node: <https://loinc.org/2069-3>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Chloride_2069_3
+	Value Node: Literal("104.47", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Chloride_2069_3
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Chloride_2069_3
+	Value Node: ex:unit_mmolperL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Cholesterol_2093_3
+	Value Node: <https://loinc.org/2093-3>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Cholesterol_2093_3
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Cholesterol_2093_3
+	Value Node: Literal("250.05", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Cholesterol_2093_3
+	Value Node: ex:unit_mgperdL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Cholesterol_HDL_2085_9
+	Value Node: <https://loinc.org/2085-9>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Cholesterol_HDL_2085_9
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Cholesterol_HDL_2085_9
+	Value Node: Literal("35.54", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Cholesterol_HDL_2085_9
+	Value Node: ex:unit_mgperdL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Cholesterol_LDL_18262_6
+	Value Node: <https://loinc.org/18262-6>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Cholesterol_LDL_18262_6
+	Value Node: Literal("120.71", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Cholesterol_LDL_18262_6
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Cholesterol_LDL_18262_6
+	Value Node: ex:unit_mgperdL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Creatinine_38483_4
+	Value Node: <https://loinc.org/38483-4>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Creatinine_38483_4
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Creatinine_38483_4
+	Value Node: Literal("4.06", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Creatinine_38483_4
+	Value Node: ex:unit_mgperdL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Fall_risk_total_Morse_Fall_Scale_20210210T164504
+	Value Node: <https://loinc.org/59460-6>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Fall_risk_total_Morse_Fall_Scale_20210210T164504
+	Value Node: Literal("13.0", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Fall_risk_total_Morse_Fall_Scale_20210210T164504
+	Value Node: Literal("2021-02-10T16:45:04+01:00" = 2021-02-10 16:45:04+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Fall_risk_total_Morse_Fall_Scale_20210210T164504
+	Value Node: ex:unit_cblscorecbr
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_GFR_33914_3
+	Value Node: <https://loinc.org/33914-3>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_GFR_33914_3
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_GFR_33914_3
+	Value Node: Literal("21.48", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_GFR_33914_3
+	Value Node: ex:unit_mLperminpercbr1.73_m2cbr
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Glucose_Mass_volume_in_Blood_2339-0
+	Value Node: <https://loinc.org/2339-0>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Glucose_Mass_volume_in_Blood_2339-0
+	Value Node: Literal("195.87", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Glucose_Mass_volume_in_Blood_2339-0
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Glucose_Mass_volume_in_Blood_2339-0
+	Value Node: ex:unit_mgperdL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Heart_rate_8867-4
+	Value Node: <https://loinc.org/8867-4>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Heart_rate_8867-4
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Heart_rate_8867-4
+	Value Node: Literal("69.0", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Heart_rate_8867-4
+	Value Node: ex:unit_permin
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_4548-4
+	Value Node: <https://loinc.org/4548-4>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_4548-4
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_4548-4
+	Value Node: Literal("5.36", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_4548-4
+	Value Node: ex:unit_percent
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Microalbumin_Creatinine_14959_1
+	Value Node: <https://loinc.org/14959-1>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Microalbumin_Creatinine_14959_1
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Microalbumin_Creatinine_14959_1
+	Value Node: Literal("78.68", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Microalbumin_Creatinine_14959_1
+	Value Node: ex:unit_mg_g
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Pain_severity_0-10_verbal_numeric_rating_Score_72514-3
+	Value Node: <https://loinc.org/72514-3>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Pain_severity_0-10_verbal_numeric_rating_Score_72514-3
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Pain_severity_0-10_verbal_numeric_rating_Score_72514-3
+	Value Node: Literal("4.0", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Pain_severity_0-10_verbal_numeric_rating_Score_72514-3
+	Value Node: ex:unit_cblscorecbr
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Potassium_6298_4
+	Value Node: <https://loinc.org/6298-4>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Potassium_6298_4
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Potassium_6298_4
+	Value Node: Literal("4.21", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Potassium_6298_4
+	Value Node: ex:unit_mmolperL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Protein_Mass_volume_in_Urine_by_Test_strip_5804-0
+	Value Node: <https://loinc.org/5804-0>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Protein_Mass_volume_in_Urine_by_Test_strip_5804-0
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Protein_Mass_volume_in_Urine_by_Test_strip_5804-0
+	Value Node: Literal("378.76", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Protein_Mass_volume_in_Urine_by_Test_strip_5804-0
+	Value Node: ex:unit_mgperdL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Respiratory_rate_9279-1
+	Value Node: <https://loinc.org/9279-1>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Respiratory_rate_9279-1
+	Value Node: Literal("15.0", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Respiratory_rate_9279-1
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Respiratory_rate_9279-1
+	Value Node: ex:unit_permin
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Sodium_2947_0
+	Value Node: <https://loinc.org/2947-0>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Sodium_2947_0
+	Value Node: Literal("140.17", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Sodium_2947_0
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Sodium_2947_0
+	Value Node: ex:unit_mmolperL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Specific_gravity_of_Urine_by_Test_strip_5811-5
+	Value Node: <https://loinc.org/5811-5>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Specific_gravity_of_Urine_by_Test_strip_5811-5
+	Value Node: Literal("1.0253", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Specific_gravity_of_Urine_by_Test_strip_5811-5
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Specific_gravity_of_Urine_by_Test_strip_5811-5
+	Value Node: ex:unit_cblscorecbr
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Total_score_AUDIT_C_20210210T171843
+	Value Node: <https://loinc.org/75626-2>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Total_score_AUDIT_C_20210210T171843
+	Value Node: Literal("1.0", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Total_score_AUDIT_C_20210210T171843
+	Value Node: Literal("2021-02-10T17:18:43+01:00" = 2021-02-10 17:18:43+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Total_score_AUDIT_C_20210210T171843
+	Value Node: ex:unit_cblscorecbr
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Triglyceride_2571_8
+	Value Node: <https://loinc.org/2571-8>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Triglyceride_2571_8
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Triglyceride_2571_8
+	Value Node: Literal("469.01", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Triglyceride_2571_8
+	Value Node: ex:unit_mgperdL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Urea_nitrogen_Mass_volume_in_Blood_6299-2
+	Value Node: <https://loinc.org/6299-2>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Urea_nitrogen_Mass_volume_in_Blood_6299-2
+	Value Node: Literal("19.84", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Urea_nitrogen_Mass_volume_in_Blood_6299-2
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_Urea_nitrogen_Mass_volume_in_Blood_6299-2
+	Value Node: ex:unit_mgperdL
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_pH_of_Urine_by_Test_strip_5803-2
+	Value Node: <https://loinc.org/5803-2>
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasCode>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_pH_of_Urine_by_Test_strip_5803-2
+	Value Node: Literal("2021-02-10T15:47:23+01:00" = 2021-02-10 15:47:23+01:00, datatype=xsd:dateTime)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasMeasuredDate>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_pH_of_Urine_by_Test_strip_5803-2
+	Value Node: Literal("5.6015", datatype=xsd:float)
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasQuantityValue>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in ClosedConstraintComponent (http://www.w3.org/ns/shacl#ClosedConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaPropertyVocabularyShape
+	Focus Node: ex:measurement_pH_of_Urine_by_Test_strip_5803-2
+	Value Node: ex:unit_pH
+	Result Path: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/hasUnit>
+	Message: Only the 24 properties declared in the CHR schema (plus rdf:type and rdfs:label) may be used on an individual.
+Constraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal("rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]
+	Focus Node: ns1:ClinicalCondition
+	Result Path: [ sh:zeroOrMorePath rdfs:subClassOf ]
+	Message: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.
+Constraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal("rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]
+	Focus Node: ns1:Measurement
+	Result Path: [ sh:zeroOrMorePath rdfs:subClassOf ]
+	Message: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.
+Constraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal("rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]
+	Focus Node: ns1:Severity
+	Result Path: [ sh:zeroOrMorePath rdfs:subClassOf ]
+	Message: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:process_Calcium_17861-6
+	Value Node: ex:process_Calcium_17861-6
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:process_Carbon_dioxide_2028-9
+	Value Node: ex:process_Carbon_dioxide_2028-9
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:process_Chloride_2075-0
+	Value Node: ex:process_Chloride_2075-0
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:process_Creatinine_2160-0
+	Value Node: ex:process_Creatinine_2160-0
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:process_GFR_33914-3
+	Value Node: ex:process_GFR_33914-3
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:process_Glucose_2345-7
+	Value Node: ex:process_Glucose_2345-7
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:process_Glucose_urine_5792-7
+	Value Node: ex:process_Glucose_urine_5792-7
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:process_Ketones_5797-6
+	Value Node: ex:process_Ketones_5797-6
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:process_Potassium_2823-3
+	Value Node: ex:process_Potassium_2823-3
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:process_Sodium_2951-2
+	Value Node: ex:process_Sodium_2951-2
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:process_Urea_nitrogen_3094-0
+	Value Node: ex:process_Urea_nitrogen_3094-0
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:process_Urea_nitrogen_Blood_6299-2
+	Value Node: ex:process_Urea_nitrogen_Blood_6299-2
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaClassVocabularyShape
+	Focus Node: ns1:ClinicalCondition
+	Value Node: ns1:ClinicalCondition
+	Message: rdf:type must be a class declared in the CHR schema; this class is not in the schema.
+Constraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaClassVocabularyShape
+	Focus Node: ns1:Measurement
+	Value Node: ns1:Measurement
+	Message: rdf:type must be a class declared in the CHR schema; this class is not in the schema.
+Constraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:SchemaClassVocabularyShape
+	Focus Node: ns1:Severity
+	Value Node: ns1:Severity
+	Message: rdf:type must be a class declared in the CHR schema; this class is not in the schema.
+
+exit=1

@@ -1,35 +1,13 @@
 @prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
 @prefix ex: <http://example.org/data/> .
-@prefix ns1: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f1-df21defa8821/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:CarePlan_1 a ns1:CarePlan ;
-    rdfs:label "follow-up monitoring and routine review" ;
-    ns1:hasMedicalProcedure ex:evaluation_medication_review_20041227T203554 .
+ex:CarePlan_1 a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:eval_Medication_review_314529007 .
 
-ex:evaluation_labor_force_20041227T212823 a ns1:EvaluationProcess ;
-    rdfs:label "evaluation" ;
-    ns1:hasObservation ex:diagnostic_statement_not_in_labor_force_741062008 ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T21:28:23+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 .
-
-ex:evaluation_obesity_20041227T203554 a ns1:EvaluationProcess ;
-    rdfs:label "evaluation" ;
-    ns1:hasObservation ex:diagnostic_statement_bmi_obesity_162864005 ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 .
-
-ex:evaluation_stress_20041227T212823 a ns1:EvaluationProcess ;
-    rdfs:label "evaluation" ;
-    ns1:hasObservation ex:diagnostic_statement_stress_73595000 ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T21:28:23+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 .
-
-ex:process_32207_3 a chr:MeasurementProcess ;
+ex:proc_32207_3 a chr:MeasurementProcess ;
     rdfs:label "Platelet distribution width [Entitic volume] in Blood by Automated count (LOINC: 32207-3) measurement process" ;
     chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
     chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
@@ -37,7 +15,7 @@ ex:process_32207_3 a chr:MeasurementProcess ;
     chr:hasResult ex:measurement_Platelet_distribution_width_32207-3 ;
     chr:hasStatus ex:status_completed .
 
-ex:process_32623_1 a chr:MeasurementProcess ;
+ex:proc_32623_1 a chr:MeasurementProcess ;
     rdfs:label "Platelet [Entitic mean volume] in Blood by Automated count (LOINC: 32623-1) measurement process" ;
     chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
     chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
@@ -45,7 +23,7 @@ ex:process_32623_1 a chr:MeasurementProcess ;
     chr:hasResult ex:measurement_Platelet_mean_volume_32623-1 ;
     chr:hasStatus ex:status_completed .
 
-ex:process_55758_7 a chr:MeasurementProcess ;
+ex:proc_55758_7 a chr:MeasurementProcess ;
     rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement process" ;
     chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
     chr:hasPerformedDate "2004-12-27T22:04:28+01:00"^^xsd:dateTime ;
@@ -53,253 +31,205 @@ ex:process_55758_7 a chr:MeasurementProcess ;
     chr:hasResult ex:measurement_PHQ-2_total_score_55758-7 ;
     chr:hasStatus ex:status_completed .
 
-ex:process_75626_2 a chr:MeasurementProcess ;
+ex:proc_75626_2 a chr:MeasurementProcess ;
     rdfs:label "Total score [AUDIT-C] (LOINC: 75626-2) measurement process" ;
     chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
     chr:hasPerformedDate "2004-12-27T22:46:57+01:00"^^xsd:dateTime ;
     chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    chr:hasResult ex:measurement_Total_score_AUDIT-C_75626-2 ;
+    chr:hasResult ex:measurement_AUDIT-C_total_score_75626-2 ;
     chr:hasStatus ex:status_completed .
 
-ex:process_BMI_39156_5 a ns1:MeasurementProcess ;
-    rdfs:label "Body mass index (BMI) [Ratio] measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:measurement_BMI_39156_5 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Carbon_dioxide_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood (LOINC: 20565-8) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Carbon_dioxide_20565-8 ;
+    chr:hasStatus ex:status_completed .
 
-ex:process_Body_Height_8302_2 a ns1:MeasurementProcess ;
+ex:proc_Chloride_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Blood (LOINC: 2069-3) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Chloride_2069-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Erythrocyte_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Erythrocyte [DistWidth] in Blood by Automated count (LOINC: 788-0) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Erythrocyte_788-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Erythrocytes_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Erythrocytes [#/volume] in Blood by Automated count (LOINC: 789-8) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Erythrocytes_789-8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Hematocrit_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Hematocrit [Volume Fraction] of Blood by Automated count (LOINC: 4544-3) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Hematocrit_4544-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Hemoglobin_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin [Mass/volume] in Blood (LOINC: 718-7) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Hemoglobin_718-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Leukocytes_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Leukocytes [#/volume] in Blood by Automated count (LOINC: 6690-2) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Leukocytes_6690-2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_MCHC_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count (LOINC: 786-4) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_MCHC_786-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_MCH_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "MCH [Entitic mass] by Automated count (LOINC: 785-6) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_MCH_785-6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_MCV_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "MCV [Entitic mean volume] in Red Blood Cells by Automated count (LOINC: 787-2) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_MCV_787-2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Platelets_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Platelets [#/volume] in Blood by Automated count (LOINC: 777-3) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Platelets_777-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:proc_Potassium_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Blood (LOINC: 6298-4) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Potassium_6298-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_Body_Height a chr:ProcessStatus ;
     rdfs:label "Body Height measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:measurement_Body_Height_8302_2 ;
-    ns1:hasStatus ex:status_completed .
+    chr:hasCode <https://loinc.org/8302-2> .
 
-ex:process_Body_Weight_29463_7 a ns1:MeasurementProcess ;
+ex:process_Body_Weight a chr:ProcessStatus ;
     rdfs:label "Body Weight measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:measurement_Body_Weight_29463_7 ;
-    ns1:hasStatus ex:status_completed .
+    chr:hasCode <https://loinc.org/29463-7> .
 
-ex:process_Calcium_49765_1 a ns1:MeasurementProcess ;
+ex:process_Body_mass_index_BMI_Ratio a chr:ProcessStatus ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement process" ;
+    chr:hasCode <https://loinc.org/39156-5> .
+
+ex:process_Calcium_Mass_volume_in_Blood a chr:ProcessStatus ;
     rdfs:label "Calcium [Mass/volume] in Blood measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:measurement_Calcium_49765_1 ;
-    ns1:hasStatus ex:status_completed .
+    chr:hasCode <https://loinc.org/49765-1> .
 
 ex:process_Carbon_dioxide_20565-8 a chr:ProcessStatus ;
     rdfs:label "Carbon dioxide, total [Moles/volume] in Blood (LOINC: 20565-8) measurement process" ;
     chr:hasCode <https://loinc.org/20565-8> .
 
-ex:process_Carbon_dioxide_20565_8 a ns1:MeasurementProcess ;
-    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood (LOINC: 20565-8) measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:Carbon_dioxide_20565-8 ;
-    ns1:hasStatus ex:status_completed .
-
 ex:process_Chloride_2069-3 a chr:ProcessStatus ;
     rdfs:label "Chloride [Moles/volume] in Blood (LOINC: 2069-3) measurement process" ;
     chr:hasCode <https://loinc.org/2069-3> .
 
-ex:process_Chloride_2069_3 a ns1:MeasurementProcess ;
-    rdfs:label "Chloride [Moles/volume] in Blood (LOINC: 2069-3) measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:Chloride_2069-3 ;
-    ns1:hasStatus ex:status_completed .
-
-ex:process_Creatinine_38483_4 a ns1:MeasurementProcess ;
+ex:process_Creatinine_Mass_volume_in_Blood a chr:ProcessStatus ;
     rdfs:label "Creatinine [Mass/volume] in Blood measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:measurement_Creatinine_38483_4 ;
-    ns1:hasStatus ex:status_completed .
+    chr:hasCode <https://loinc.org/38483-4> .
 
 ex:process_Erythrocyte_788-0 a chr:ProcessStatus ;
     rdfs:label "Erythrocyte [DistWidth] in Blood by Automated count (LOINC: 788-0) measurement process" ;
     chr:hasCode <https://loinc.org/788-0> .
 
-ex:process_Erythrocyte_788_0 a ns1:MeasurementProcess ;
-    rdfs:label "Erythrocyte [DistWidth] in Blood by Automated count (LOINC: 788-0) measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:Erythrocyte_788-0 ;
-    ns1:hasStatus ex:status_completed .
-
 ex:process_Erythrocytes_789-8 a chr:ProcessStatus ;
     rdfs:label "Erythrocytes [#/volume] in Blood by Automated count (LOINC: 789-8) measurement process" ;
     chr:hasCode <https://loinc.org/789-8> .
 
-ex:process_Erythrocytes_789_8 a ns1:MeasurementProcess ;
-    rdfs:label "Erythrocytes [#/volume] in Blood by Automated count (LOINC: 789-8) measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:Erythrocytes_789-8 ;
-    ns1:hasStatus ex:status_completed .
-
-ex:process_Glucose_2339_0 a ns1:MeasurementProcess ;
+ex:process_Glucose_Mass_volume_in_Blood a chr:ProcessStatus ;
     rdfs:label "Glucose [Mass/volume] in Blood measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:measurement_Glucose_2339_0 ;
-    ns1:hasStatus ex:status_completed .
+    chr:hasCode <https://loinc.org/2339-0> .
 
-ex:process_Heart_rate_8867_4 a ns1:MeasurementProcess ;
+ex:process_Heart_rate a chr:ProcessStatus ;
     rdfs:label "Heart rate measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:measurement_Heart_rate_8867_4 ;
-    ns1:hasStatus ex:status_completed .
+    chr:hasCode <https://loinc.org/8867-4> .
 
 ex:process_Hematocrit_4544-3 a chr:ProcessStatus ;
     rdfs:label "Hematocrit [Volume Fraction] of Blood by Automated count (LOINC: 4544-3) measurement process" ;
     chr:hasCode <https://loinc.org/4544-3> .
 
-ex:process_Hematocrit_4544_3 a ns1:MeasurementProcess ;
-    rdfs:label "Hematocrit [Volume Fraction] of Blood by Automated count (LOINC: 4544-3) measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:Hematocrit_4544-3 ;
-    ns1:hasStatus ex:status_completed .
-
 ex:process_Hemoglobin_718-7 a chr:ProcessStatus ;
     rdfs:label "Hemoglobin [Mass/volume] in Blood (LOINC: 718-7) measurement process" ;
     chr:hasCode <https://loinc.org/718-7> .
 
-ex:process_Hemoglobin_718_7 a ns1:MeasurementProcess ;
-    rdfs:label "Hemoglobin [Mass/volume] in Blood (LOINC: 718-7) measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:Hemoglobin_718-7 ;
-    ns1:hasStatus ex:status_completed .
-
-ex:process_Hemoglobin_A1c_4548_4 a ns1:MeasurementProcess ;
+ex:process_Hemoglobin_A1c_Hemoglobin_total_in_Blood a chr:ProcessStatus ;
     rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:measurement_Hemoglobin_A1c_4548_4 ;
-    ns1:hasStatus ex:status_completed .
+    chr:hasCode <https://loinc.org/4548-4> .
 
 ex:process_Leukocytes_6690-2 a chr:ProcessStatus ;
     rdfs:label "Leukocytes [#/volume] in Blood by Automated count (LOINC: 6690-2) measurement process" ;
     chr:hasCode <https://loinc.org/6690-2> .
 
-ex:process_Leukocytes_6690_2 a ns1:MeasurementProcess ;
-    rdfs:label "Leukocytes [#/volume] in Blood by Automated count (LOINC: 6690-2) measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:Leukocytes_6690-2 ;
-    ns1:hasStatus ex:status_completed .
-
 ex:process_MCHC_786-4 a chr:ProcessStatus ;
     rdfs:label "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count (LOINC: 786-4) measurement process" ;
     chr:hasCode <https://loinc.org/786-4> .
-
-ex:process_MCHC_786_4 a ns1:MeasurementProcess ;
-    rdfs:label "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count (LOINC: 786-4) measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:MCHC_786-4 ;
-    ns1:hasStatus ex:status_completed .
 
 ex:process_MCH_785-6 a chr:ProcessStatus ;
     rdfs:label "MCH [Entitic mass] by Automated count (LOINC: 785-6) measurement process" ;
     chr:hasCode <https://loinc.org/785-6> .
 
-ex:process_MCH_785_6 a ns1:MeasurementProcess ;
-    rdfs:label "MCH [Entitic mass] by Automated count (LOINC: 785-6) measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:MCH_785-6 ;
-    ns1:hasStatus ex:status_completed .
-
 ex:process_MCV_787-2 a chr:ProcessStatus ;
     rdfs:label "MCV [Entitic mean volume] in Red Blood Cells by Automated count (LOINC: 787-2) measurement process" ;
     chr:hasCode <https://loinc.org/787-2> .
 
-ex:process_MCV_787_2 a ns1:MeasurementProcess ;
-    rdfs:label "MCV [Entitic mean volume] in Red Blood Cells by Automated count (LOINC: 787-2) measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:MCV_787-2 ;
-    ns1:hasStatus ex:status_completed .
-
-ex:process_Pain_severity_72514_3 a ns1:MeasurementProcess ;
+ex:process_Pain_severity_0-10_verbal_numeric_rating_Score_Reported a chr:ProcessStatus ;
     rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:measurement_Pain_severity_72514_3 ;
-    ns1:hasStatus ex:status_completed .
+    chr:hasCode <https://loinc.org/72514-3> .
 
 ex:process_Platelets_777-3 a chr:ProcessStatus ;
     rdfs:label "Platelets [#/volume] in Blood by Automated count (LOINC: 777-3) measurement process" ;
     chr:hasCode <https://loinc.org/777-3> .
 
-ex:process_Platelets_777_3 a ns1:MeasurementProcess ;
-    rdfs:label "Platelets [#/volume] in Blood by Automated count (LOINC: 777-3) measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:Platelets_777-3 ;
-    ns1:hasStatus ex:status_completed .
-
 ex:process_Potassium_6298-4 a chr:ProcessStatus ;
     rdfs:label "Potassium [Moles/volume] in Blood (LOINC: 6298-4) measurement process" ;
     chr:hasCode <https://loinc.org/6298-4> .
 
-ex:process_Potassium_6298_4 a ns1:MeasurementProcess ;
-    rdfs:label "Potassium [Moles/volume] in Blood (LOINC: 6298-4) measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:Potassium_6298-4 ;
-    ns1:hasStatus ex:status_completed .
-
-ex:process_Respiratory_rate_9279_1 a ns1:MeasurementProcess ;
+ex:process_Respiratory_rate a chr:ProcessStatus ;
     rdfs:label "Respiratory rate measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:measurement_Respiratory_rate_9279_1 ;
-    ns1:hasStatus ex:status_completed .
+    chr:hasCode <https://loinc.org/9279-1> .
 
-ex:process_Sodium_2947_0 a ns1:MeasurementProcess ;
+ex:process_Sodium_Moles_volume_in_Blood a chr:ProcessStatus ;
     rdfs:label "Sodium [Moles/volume] in Blood measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:measurement_Sodium_2947_0 ;
-    ns1:hasStatus ex:status_completed .
+    chr:hasCode <https://loinc.org/2947-0> .
 
-ex:process_Urea_nitrogen_6299_2 a ns1:MeasurementProcess ;
+ex:process_Urea_nitrogen_Mass_volume_in_Blood a chr:ProcessStatus ;
     rdfs:label "Urea nitrogen [Mass/volume] in Blood measurement process" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasResult ex:measurement_Urea_nitrogen_6299_2 ;
-    ns1:hasStatus ex:status_completed .
+    chr:hasCode <https://loinc.org/6299-2> .
 
 ex:process_status_1 a chr:ProcessStatus ;
     rdfs:label "completed" ;
@@ -317,663 +247,604 @@ ex:process_status_4 a chr:ProcessStatus ;
     rdfs:label "completed" ;
     chr:hasCode <https://loinc.org/75626-2> .
 
-ex:visit_20041227T203554 a ns1:ClinicalVisit ;
-    rdfs:label "General examination of patient" ;
-    ns1:hasCareProvider ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasCareUnit ex:ZION_HEALTH___WELLNESS_LLC ;
-    ns1:hasDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasProcedure ex:proc_AUDIT_C_75626_2,
-        ex:proc_BMI_39156_5,
-        ex:proc_BodyHeight_8302_2,
-        ex:proc_BodyWeight_29463_7,
-        ex:proc_CO2_20565_8,
-        ex:proc_Calcium_49765_1,
-        ex:proc_Chloride_2069_3,
-        ex:proc_Creatinine_38483_4,
-        ex:proc_ErythrocyteDistWidth_788_0,
-        ex:proc_Erythrocytes_789_8,
-        ex:proc_Glucose_2339_0,
-        ex:proc_HbA1c_4548_4,
-        ex:proc_HeartRate_8867_4,
-        ex:proc_Hematocrit_4544_3,
-        ex:proc_Hemoglobin_718_7,
-        ex:proc_LaborForce_741062008,
-        ex:proc_Leukocytes_6690_2,
-        ex:proc_MCHC_786_4,
-        ex:proc_MCH_785_6,
-        ex:proc_MCV_787_2,
-        ex:proc_MedicationReview_314529007,
-        ex:proc_Obesity_162864005,
-        ex:proc_PDW_32207_3,
-        ex:proc_PHQ2_55758_7,
-        ex:proc_PMCV_32623_1,
-        ex:proc_PainSeverity_72514_3,
-        ex:proc_Platelets_777_3,
-        ex:proc_Potassium_6298_4,
-        ex:proc_RespiratoryRate_9279_1,
-        ex:proc_Sodium_2947_0,
-        ex:proc_Stress_73595000,
-        ex:proc_UreaNitrogen_6299_2 .
+ex:unit_ rdfs:label "#/volume" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/#pervolume> .
 
-ex:Carbon_dioxide_20565-8 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
-    ns1:hasCode <https://loinc.org/20565-8> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "23.24"^^xsd:float ;
-    ns1:hasUnit ex:unit_mmolperL ;
-    chr:hasCode <https://loinc.org/20565-8> ;
-    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "23.24"^^xsd:float ;
-    chr:hasUnit ex:Unit_mmolperL .
+ex:unit_Moles_per_volume a chr:Unit ;
+    rdfs:label "Moles/volume" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Molespervolume> .
 
-ex:Chloride_2069-3 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Chloride [Moles/volume] in Blood" ;
-    ns1:hasCode <https://loinc.org/2069-3> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "101.05"^^xsd:float ;
-    ns1:hasUnit ex:unit_mmolperL ;
-    chr:hasCode <https://loinc.org/2069-3> ;
-    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "101.05"^^xsd:float ;
-    chr:hasUnit ex:Unit_mmolperL .
+ex:unit_cblscorecbr a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
 
-ex:Erythrocyte_788-0 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Erythrocyte [DistWidth] in Blood by Automated count" ;
-    ns1:hasCode <https://loinc.org/788-0> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "45.23"^^xsd:float ;
-    ns1:hasUnit ex:unit_fL ;
-    chr:hasCode <https://loinc.org/788-0> ;
-    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "45.23"^^xsd:float ;
-    chr:hasUnit ex:Unit_fL .
+ex:unit_mmol_per_L a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
 
-ex:Erythrocytes_789-8 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Erythrocytes [#/volume] in Blood by Automated count" ;
-    ns1:hasCode <https://loinc.org/789-8> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "5.4967"^^xsd:float ;
-    ns1:hasUnit ex:unit_peruL ;
-    chr:hasCode <https://loinc.org/789-8> ;
-    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "5496.7"^^xsd:float ;
-    chr:hasUnit ex:Unit_peruL .
-
-ex:Hematocrit_4544-3 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Hematocrit [Volume Fraction] of Blood by Automated count" ;
-    ns1:hasCode <https://loinc.org/4544-3> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "46.792"^^xsd:float ;
-    ns1:hasUnit ex:unit_percent ;
-    chr:hasCode <https://loinc.org/4544-3> ;
-    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "46.792"^^xsd:float ;
-    chr:hasUnit ex:Unit_percent .
-
-ex:Hemoglobin_718-7 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Hemoglobin [Mass/volume] in Blood" ;
-    ns1:hasCode <https://loinc.org/718-7> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "12.417"^^xsd:float ;
-    ns1:hasUnit ex:unit_mgperdL ;
-    chr:hasCode <https://loinc.org/718-7> ;
-    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "12.417"^^xsd:float ;
-    chr:hasUnit ex:Unit_gperdL .
-
-ex:Leukocytes_6690-2 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Leukocytes [#/volume] in Blood by Automated count" ;
-    ns1:hasCode <https://loinc.org/6690-2> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "6.9744"^^xsd:float ;
-    ns1:hasUnit ex:unit_peruL ;
-    chr:hasCode <https://loinc.org/6690-2> ;
-    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "6974.0"^^xsd:float ;
-    chr:hasUnit ex:Unit_peruL .
-
-ex:MCHC_786-4 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count" ;
-    ns1:hasCode <https://loinc.org/786-4> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "33.522"^^xsd:float ;
-    ns1:hasUnit ex:unit_mgperdL ;
-    chr:hasCode <https://loinc.org/786-4> ;
-    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "33.522"^^xsd:float ;
-    chr:hasUnit ex:Unit_gperdL .
-
-ex:MCH_785-6 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "MCH [Entitic mass] by Automated count" ;
-    ns1:hasCode <https://loinc.org/785-6> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "28.263"^^xsd:float ;
-    ns1:hasUnit ex:unit_pg ;
-    chr:hasCode <https://loinc.org/785-6> ;
-    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "28.263"^^xsd:float ;
-    chr:hasUnit ex:Unit_pg .
-
-ex:MCV_787-2 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "MCV [Entitic mean volume] in Red Blood Cells by Automated count" ;
-    ns1:hasCode <https://loinc.org/787-2> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "86.692"^^xsd:float ;
-    ns1:hasUnit ex:unit_fL ;
-    chr:hasCode <https://loinc.org/787-2> ;
-    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "86.692"^^xsd:float ;
-    chr:hasUnit ex:Unit_fL .
-
-ex:Platelets_777-3 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Platelets [#/volume] in Blood by Automated count" ;
-    ns1:hasCode <https://loinc.org/777-3> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "213.96"^^xsd:float ;
-    ns1:hasUnit ex:unit_peruL ;
-    chr:hasCode <https://loinc.org/777-3> ;
-    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "21396.0"^^xsd:float ;
-    chr:hasUnit ex:Unit_peruL .
-
-ex:Potassium_6298-4 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Potassium [Moles/volume] in Blood" ;
-    ns1:hasCode <https://loinc.org/6298-4> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "4.2"^^xsd:float ;
-    ns1:hasUnit ex:unit_mmolperL ;
-    chr:hasCode <https://loinc.org/6298-4> ;
-    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "4.2"^^xsd:float ;
-    chr:hasUnit ex:Unit_mmolperL .
-
-ex:Unit_percent a chr:Unit ;
-    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
-
-ex:Unit_pg a chr:Unit ;
-    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/pg> .
+ex:visit_20041227T203554 a chr:ClinicalVisit ;
+    rdfs:label "General examination of patient (procedure)" ;
+    chr:hasCareProvider ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasCareUnit ex:ZION_HEALTH___WELLNESS_LLC ;
+    chr:hasDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasProcedure ex:eval_BMI_obesity_162864005,
+        ex:eval_Medication_review_314529007,
+        ex:eval_Not_in_labor_force_741062008,
+        ex:eval_Stress_73595000,
+        ex:proc_AUDIT-C_total_score_75626_2_20041227T224657,
+        ex:proc_BMI_39156_5_20041227T203554,
+        ex:proc_Body_Height_8302_2_20041227T203554,
+        ex:proc_Body_Weight_29463_7_20041227T203554,
+        ex:proc_Calcium_49765_1_20041227T203554,
+        ex:proc_Carbon_dioxide_20565_8_20041227T203554,
+        ex:proc_Chloride_2069_3_20041227T203554,
+        ex:proc_Creatinine_38483_4_20041227T203554,
+        ex:proc_Erythrocyte_788_0_20041227T203554,
+        ex:proc_Erythrocytes_789_8_20041227T203554,
+        ex:proc_Glucose_2339_0_20041227T203554,
+        ex:proc_Heart_rate_8867_4_20041227T203554,
+        ex:proc_Hematocrit_4544_3_20041227T203554,
+        ex:proc_Hemoglobin_718_7_20041227T203554,
+        ex:proc_Hemoglobin_A1c_4548_4_20041227T203554,
+        ex:proc_Leukocytes_6690_2_20041227T203554,
+        ex:proc_MCHC_786_4_20041227T203554,
+        ex:proc_MCH_785_6_20041227T203554,
+        ex:proc_MCV_787_2_20041227T203554,
+        ex:proc_PHQ-2_total_score_55758_7_20041227T220428,
+        ex:proc_Pain_severity_72514_3_20041227T203554,
+        ex:proc_Platelet_distribution_width_32207_3_20041227T203554,
+        ex:proc_Platelet_mean_volume_32623_1_20041227T203554,
+        ex:proc_Platelets_777_3_20041227T203554,
+        ex:proc_Potassium_6298_4_20041227T203554,
+        ex:proc_Respiratory_rate_9279_1_20041227T203554,
+        ex:proc_Sodium_2947_0_20041227T203554,
+        ex:proc_Urea_nitrogen_6299_2_20041227T203554 .
 
 ex:ZION_HEALTH___WELLNESS_LLC a chr:CareUnit ;
     rdfs:label "ZION HEALTH & WELLNESS LLC" .
 
-ex:diagnostic_statement_bmi_obesity_162864005 a chr:DiagnosticStatement ;
+ex:cond_BMI_obesity_162864005 a chr:ClinicalCondition ;
+    rdfs:label "Body mass index 30+ - obesity (finding)" ;
+    chr:hasCode <http://snomed.info/id/162864005> ;
+    chr:hasRecordDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime .
+
+ex:cond_Medication_review_314529007 a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime .
+
+ex:cond_Not_in_labor_force_741062008 a chr:ClinicalCondition ;
+    rdfs:label "Not in labor force (finding)" ;
+    chr:hasCode <http://snomed.info/id/741062008> ;
+    chr:hasRecordDate "2004-12-27T21:28:23+01:00"^^xsd:dateTime .
+
+ex:cond_Stress_73595000 a chr:ClinicalCondition ;
+    rdfs:label "Stress (finding)" ;
+    chr:hasCode <http://snomed.info/id/73595000> ;
+    chr:hasRecordDate "2004-12-27T21:28:23+01:00"^^xsd:dateTime .
+
+ex:diag_BMI_obesity_162864005 a chr:DiagnosticStatement ;
     rdfs:label "Body mass index 30+ - obesity (finding)" ;
     chr:hasCode <http://snomed.info/id/162864005> .
 
-ex:diagnostic_statement_medication_review_314529007 a chr:DiagnosticStatement ;
+ex:diag_Medication_review_314529007 a chr:DiagnosticStatement ;
     rdfs:label "Medication review due (situation)" ;
     chr:hasCode <http://snomed.info/id/314529007> .
 
-ex:diagnostic_statement_not_in_labor_force_741062008 a chr:DiagnosticStatement ;
+ex:diag_Not_in_labor_force_741062008 a chr:DiagnosticStatement ;
     rdfs:label "Not in labor force (finding)" ;
     chr:hasCode <http://snomed.info/id/741062008> .
 
-ex:diagnostic_statement_stress_73595000 a chr:DiagnosticStatement ;
+ex:diag_Stress_73595000 a chr:DiagnosticStatement ;
     rdfs:label "Stress (finding)" ;
     chr:hasCode <http://snomed.info/id/73595000> .
 
-ex:evaluation_medication_review_20041227T203554 a ns1:EvaluationProcess,
-        ns1:MedicalProcedure ;
-    rdfs:label "evaluation" ;
-    ns1:hasObservation ex:diagnostic_statement_medication_review_314529007 ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:eval_BMI_obesity_162864005 a chr:EvaluationProcess ;
+    rdfs:label "Dr. Ivonne773 Turcotte120 evaluated the patient" ;
+    chr:hasCondition ex:cond_BMI_obesity_162864005 ;
+    chr:hasObservation ex:diag_BMI_obesity_162864005 ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 .
 
-ex:measurement_BMI_39156_5 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Body mass index (BMI) [Ratio]" ;
-    ns1:hasCode <https://loinc.org/39156-5> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "30.05"^^xsd:float ;
-    ns1:hasUnit ex:unit_kgperm2 ;
+ex:eval_Not_in_labor_force_741062008 a chr:EvaluationProcess ;
+    rdfs:label "Dr. Ivonne773 Turcotte120 evaluated the patient" ;
+    chr:hasCondition ex:cond_Not_in_labor_force_741062008 ;
+    chr:hasObservation ex:diag_Not_in_labor_force_741062008 ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T21:28:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 .
+
+ex:eval_Stress_73595000 a chr:EvaluationProcess ;
+    rdfs:label "Dr. Ivonne773 Turcotte120 evaluated the patient" ;
+    chr:hasCondition ex:cond_Stress_73595000 ;
+    chr:hasObservation ex:diag_Stress_73595000 ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T21:28:23+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 .
+
+ex:measurement_AUDIT-C_total_score_75626-2 a chr:Measurement ;
+    rdfs:label "Total score [AUDIT-C] (LOINC: 75626-2)",
+        "Total score [AUDIT-C] (LOINC: 75626-2) measurement" ;
+    chr:hasCode <https://loinc.org/75626-2> ;
+    chr:hasMeasuredDate "2004-12-27T22:46:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score .
+
+ex:measurement_BMI_39156-5 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio] (LOINC: 39156-5)" ;
     chr:hasCode <https://loinc.org/39156-5> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "30.05"^^xsd:float ;
     chr:hasUnit ex:unit_kgperm2 .
 
-ex:measurement_Body_Height_8302_2 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Body Height" ;
-    ns1:hasCode <https://loinc.org/8302-2> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "156.6"^^xsd:float ;
-    ns1:hasUnit ex:unit_cm ;
+ex:measurement_Body_Height_8302-2 a chr:Measurement ;
+    rdfs:label "Body Height (LOINC: 8302-2)" ;
     chr:hasCode <https://loinc.org/8302-2> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "156.6"^^xsd:float ;
     chr:hasUnit ex:unit_cm .
 
-ex:measurement_Body_Weight_29463_7 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Body Weight" ;
-    ns1:hasCode <https://loinc.org/29463-7> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "73.7"^^xsd:float ;
-    ns1:hasUnit ex:unit_kg ;
+ex:measurement_Body_Weight_29463-7 a chr:Measurement ;
+    rdfs:label "Body Weight (LOINC: 29463-7)" ;
     chr:hasCode <https://loinc.org/29463-7> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "73.7"^^xsd:float ;
     chr:hasUnit ex:unit_kg .
 
-ex:measurement_Calcium_49765_1 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Calcium [Mass/volume] in Blood" ;
-    ns1:hasCode <https://loinc.org/49765-1> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "10.1"^^xsd:float ;
-    ns1:hasUnit ex:unit_mgperdL ;
+ex:measurement_Calcium_49765-1 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Blood (LOINC: 49765-1)" ;
     chr:hasCode <https://loinc.org/49765-1> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "10.1"^^xsd:float ;
-    chr:hasUnit ex:unit_mgperdL .
+    chr:hasUnit ex:unit_mgperdl .
 
-ex:measurement_Creatinine_38483_4 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Creatinine [Mass/volume] in Blood" ;
-    ns1:hasCode <https://loinc.org/38483-4> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "0.87"^^xsd:float ;
-    ns1:hasUnit ex:unit_mgperdL ;
+ex:measurement_Carbon_dioxide_20565-8 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood (LOINC: 20565-8)",
+        "Carbon dioxide, total [Moles/volume] in Blood (LOINC: 20565-8) measurement" ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "23.24"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Chloride_2069-3 a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Blood (LOINC: 2069-3)",
+        "Chloride [Moles/volume] in Blood (LOINC: 2069-3) measurement" ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "101.05"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Creatinine_38483-4 a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Blood (LOINC: 38483-4)" ;
     chr:hasCode <https://loinc.org/38483-4> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "0.87"^^xsd:float ;
-    chr:hasUnit ex:unit_mgperdL .
+    chr:hasUnit ex:unit_mgperdl .
 
-ex:measurement_Glucose_2339_0 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Glucose [Mass/volume] in Blood" ;
-    ns1:hasCode <https://loinc.org/2339-0> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "88.87"^^xsd:float ;
-    ns1:hasUnit ex:unit_mgperdL ;
+ex:measurement_Erythrocyte_788-0 a chr:Measurement ;
+    rdfs:label "Erythrocyte [DistWidth] in Blood by Automated count (LOINC: 788-0)",
+        "Erythrocyte [DistWidth] in Blood by Automated count (LOINC: 788-0) measurement" ;
+    chr:hasCode <https://loinc.org/788-0> ;
+    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "45.23"^^xsd:float ;
+    chr:hasUnit ex:unit_fL .
+
+ex:measurement_Erythrocytes_789-8 a chr:Measurement ;
+    rdfs:label "Erythrocytes [#/volume] in Blood by Automated count (LOINC: 789-8)",
+        "Erythrocytes [#/volume] in Blood by Automated count (LOINC: 789-8) measurement" ;
+    chr:hasCode <https://loinc.org/789-8> ;
+    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "5.4967"^^xsd:float ;
+    chr:hasUnit ex:unit_10_exp_6_per_uL .
+
+ex:measurement_Glucose_2339-0 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Blood (LOINC: 2339-0)" ;
     chr:hasCode <https://loinc.org/2339-0> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "88.87"^^xsd:float ;
-    chr:hasUnit ex:unit_mgperdL .
+    chr:hasUnit ex:unit_mgperdl .
 
-ex:measurement_Heart_rate_8867_4 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Heart rate" ;
-    ns1:hasCode <https://loinc.org/8867-4> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "75.0"^^xsd:float ;
-    ns1:hasUnit ex:unit_permin ;
+ex:measurement_Heart_rate_8867-4 a chr:Measurement ;
+    rdfs:label "Heart rate (LOINC: 8867-4)" ;
     chr:hasCode <https://loinc.org/8867-4> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "75.0"^^xsd:float ;
     chr:hasUnit ex:unit_permin .
 
-ex:measurement_Hemoglobin_A1c_4548_4 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
-    ns1:hasCode <https://loinc.org/4548-4> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "6.26"^^xsd:float ;
-    ns1:hasUnit ex:unit_percent ;
+ex:measurement_Hematocrit_4544-3 a chr:Measurement ;
+    rdfs:label "Hematocrit [Volume Fraction] of Blood by Automated count (LOINC: 4544-3)",
+        "Hematocrit [Volume Fraction] of Blood by Automated count (LOINC: 4544-3) measurement" ;
+    chr:hasCode <https://loinc.org/4544-3> ;
+    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "46.792"^^xsd:float ;
+    chr:hasUnit ex:unit_percent .
+
+ex:measurement_Hemoglobin_718-7 a chr:Measurement ;
+    rdfs:label "Hemoglobin [Mass/volume] in Blood (LOINC: 718-7)",
+        "Hemoglobin [Mass/volume] in Blood (LOINC: 718-7) measurement" ;
+    chr:hasCode <https://loinc.org/718-7> ;
+    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "12.417"^^xsd:float ;
+    chr:hasUnit ex:unit_g_per_dL .
+
+ex:measurement_Hemoglobin_A1c_4548-4 a chr:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4)" ;
     chr:hasCode <https://loinc.org/4548-4> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "6.26"^^xsd:float ;
     chr:hasUnit ex:unit_percent .
 
+ex:measurement_Leukocytes_6690-2 a chr:Measurement ;
+    rdfs:label "Leukocytes [#/volume] in Blood by Automated count (LOINC: 6690-2)",
+        "Leukocytes [#/volume] in Blood by Automated count (LOINC: 6690-2) measurement" ;
+    chr:hasCode <https://loinc.org/6690-2> ;
+    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.9744"^^xsd:float ;
+    chr:hasUnit ex:unit_10_exp_3_per_uL .
+
+ex:measurement_MCHC_786-4 a chr:Measurement ;
+    rdfs:label "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count (LOINC: 786-4)",
+        "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count (LOINC: 786-4) measurement" ;
+    chr:hasCode <https://loinc.org/786-4> ;
+    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "33.522"^^xsd:float ;
+    chr:hasUnit ex:unit_g_per_dL .
+
+ex:measurement_MCH_785-6 a chr:Measurement ;
+    rdfs:label "MCH [Entitic mass] by Automated count (LOINC: 785-6)",
+        "MCH [Entitic mass] by Automated count (LOINC: 785-6) measurement" ;
+    chr:hasCode <https://loinc.org/785-6> ;
+    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "28.263"^^xsd:float ;
+    chr:hasUnit ex:unit_pg .
+
+ex:measurement_MCV_787-2 a chr:Measurement ;
+    rdfs:label "MCV [Entitic mean volume] in Red Blood Cells by Automated count (LOINC: 787-2)",
+        "MCV [Entitic mean volume] in Red Blood Cells by Automated count (LOINC: 787-2) measurement" ;
+    chr:hasCode <https://loinc.org/787-2> ;
+    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "86.692"^^xsd:float ;
+    chr:hasUnit ex:unit_fL .
+
 ex:measurement_PHQ-2_total_score_55758-7 a chr:Measurement ;
-    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7)",
+        "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement" ;
     chr:hasCode <https://loinc.org/55758-7> ;
     chr:hasMeasuredDate "2004-12-27T22:04:28+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "1.0"^^xsd:float ;
     chr:hasUnit ex:unit_score .
 
-ex:measurement_Pain_severity_72514_3 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
-    ns1:hasCode <https://loinc.org/72514-3> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "3.0"^^xsd:float ;
-    ns1:hasUnit ex:unit_cblscorecbr ;
+ex:measurement_Pain_severity_72514-3 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3)" ;
     chr:hasCode <https://loinc.org/72514-3> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "3.0"^^xsd:float ;
-    chr:hasUnit ex:unit_cblscorecbr .
+    chr:hasUnit ex:unit_score .
 
 ex:measurement_Platelet_distribution_width_32207-3 a chr:Measurement ;
-    rdfs:label "Platelet distribution width [Entitic volume] in Blood by Automated count" ;
+    rdfs:label "Platelet distribution width [Entitic volume] in Blood by Automated count (LOINC: 32207-3)",
+        "Platelet distribution width [Entitic volume] in Blood by Automated count (LOINC: 32207-3) measurement" ;
     chr:hasCode <https://loinc.org/32207-3> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "384.72"^^xsd:float ;
     chr:hasUnit ex:unit_fL .
 
 ex:measurement_Platelet_mean_volume_32623-1 a chr:Measurement ;
-    rdfs:label "Platelet [Entitic mean volume] in Blood by Automated count" ;
+    rdfs:label "Platelet [Entitic mean volume] in Blood by Automated count (LOINC: 32623-1)",
+        "Platelet [Entitic mean volume] in Blood by Automated count (LOINC: 32623-1) measurement" ;
     chr:hasCode <https://loinc.org/32623-1> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "10.517"^^xsd:float ;
     chr:hasUnit ex:unit_fL .
 
-ex:measurement_Respiratory_rate_9279_1 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Respiratory rate" ;
-    ns1:hasCode <https://loinc.org/9279-1> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "14.0"^^xsd:float ;
-    ns1:hasUnit ex:unit_permin ;
+ex:measurement_Platelets_777-3 a chr:Measurement ;
+    rdfs:label "Platelets [#/volume] in Blood by Automated count (LOINC: 777-3)",
+        "Platelets [#/volume] in Blood by Automated count (LOINC: 777-3) measurement" ;
+    chr:hasCode <https://loinc.org/777-3> ;
+    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "213.96"^^xsd:float ;
+    chr:hasUnit ex:unit_10_exp_3_per_uL .
+
+ex:measurement_Potassium_6298-4 a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Blood (LOINC: 6298-4)",
+        "Potassium [Moles/volume] in Blood (LOINC: 6298-4) measurement" ;
+    chr:hasCode <https://loinc.org/6298-4> ;
+    chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.2"^^xsd:float ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Respiratory_rate_9279-1 a chr:Measurement ;
+    rdfs:label "Respiratory rate (LOINC: 9279-1)" ;
     chr:hasCode <https://loinc.org/9279-1> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "14.0"^^xsd:float ;
     chr:hasUnit ex:unit_permin .
 
-ex:measurement_Sodium_2947_0 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Sodium [Moles/volume] in Blood" ;
-    ns1:hasCode <https://loinc.org/2947-0> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "142.14"^^xsd:float ;
-    ns1:hasUnit ex:unit_mmolperL ;
+ex:measurement_Sodium_2947-0 a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Blood (LOINC: 2947-0)" ;
     chr:hasCode <https://loinc.org/2947-0> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "142.14"^^xsd:float ;
     chr:hasUnit ex:unit_mmolperL .
 
-ex:measurement_Total_score_AUDIT-C_75626-2 a chr:Measurement ;
-    rdfs:label "Total score [AUDIT-C]" ;
-    chr:hasCode <https://loinc.org/75626-2> ;
-    chr:hasMeasuredDate "2004-12-27T22:46:57+01:00"^^xsd:dateTime ;
-    chr:hasQuantityValue "0.0"^^xsd:float ;
-    chr:hasUnit ex:unit_score .
-
-ex:measurement_Urea_nitrogen_6299_2 a ns1:Measurement,
-        chr:Measurement ;
-    rdfs:label "Urea nitrogen [Mass/volume] in Blood" ;
-    ns1:hasCode <https://loinc.org/6299-2> ;
-    ns1:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasQuantityValue "14.44"^^xsd:float ;
-    ns1:hasUnit ex:unit_mgperdL ;
+ex:measurement_Urea_nitrogen_6299-2 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood (LOINC: 6299-2)" ;
     chr:hasCode <https://loinc.org/6299-2> ;
     chr:hasMeasuredDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
     chr:hasQuantityValue "14.44"^^xsd:float ;
-    chr:hasUnit ex:unit_mgperdL .
+    chr:hasUnit ex:unit_mgperdl .
 
-ex:proc_AUDIT_C_75626_2 a ns1:MedicalProcedure ;
-    rdfs:label "Total score [AUDIT-C]" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T22:46:57+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_AUDIT-C_total_score_75626_2_20041227T224657 a chr:MedicalProcedure ;
+    rdfs:label "Total score [AUDIT-C] (LOINC: 75626-2) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T22:46:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_BMI_39156_5 a ns1:MedicalProcedure ;
-    rdfs:label "Body mass index (BMI) [Ratio]" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_BMI_39156_5_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_BMI_39156-5 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_BodyHeight_8302_2 a ns1:MedicalProcedure ;
-    rdfs:label "Body Height" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Body_Height_8302_2_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Body Height (LOINC: 8302-2) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Body_Height_8302-2 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_BodyWeight_29463_7 a ns1:MedicalProcedure ;
-    rdfs:label "Body Weight" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Body_Weight_29463_7_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight (LOINC: 29463-7) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Body_Weight_29463-7 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_CO2_20565_8 a ns1:MedicalProcedure ;
-    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Calcium_49765_1_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Blood (LOINC: 49765-1) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Calcium_49765-1 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_Calcium_49765_1 a ns1:MedicalProcedure ;
-    rdfs:label "Calcium [Mass/volume] in Blood" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Carbon_dioxide_20565_8_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood (LOINC: 20565-8) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_Chloride_2069_3 a ns1:MedicalProcedure ;
-    rdfs:label "Chloride [Moles/volume] in Blood" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Chloride_2069_3_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "Chloride [Moles/volume] in Blood (LOINC: 2069-3) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_Creatinine_38483_4 a ns1:MedicalProcedure ;
-    rdfs:label "Creatinine [Mass/volume] in Blood" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Creatinine_38483_4_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Blood (LOINC: 38483-4) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Creatinine_38483-4 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_ErythrocyteDistWidth_788_0 a ns1:MedicalProcedure ;
-    rdfs:label "Erythrocyte [DistWidth] in Blood by Automated count" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Erythrocyte_788_0_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "Erythrocyte [DistWidth] in Blood by Automated count (LOINC: 788-0) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_Erythrocytes_789_8 a ns1:MedicalProcedure ;
-    rdfs:label "Erythrocytes [#/volume] in Blood by Automated count" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Erythrocytes_789_8_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "Erythrocytes [#/volume] in Blood by Automated count (LOINC: 789-8) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_Glucose_2339_0 a ns1:MedicalProcedure ;
-    rdfs:label "Glucose [Mass/volume] in Blood" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Glucose_2339_0_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Blood (LOINC: 2339-0) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Glucose_2339-0 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_HbA1c_4548_4 a ns1:MedicalProcedure ;
-    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Heart_rate_8867_4_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate (LOINC: 8867-4) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Heart_rate_8867-4 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_HeartRate_8867_4 a ns1:MedicalProcedure ;
-    rdfs:label "Heart rate" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Hematocrit_4544_3_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "Hematocrit [Volume Fraction] of Blood by Automated count (LOINC: 4544-3) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_Hematocrit_4544_3 a ns1:MedicalProcedure ;
-    rdfs:label "Hematocrit [Volume Fraction] of Blood by Automated count" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Hemoglobin_718_7_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "Hemoglobin [Mass/volume] in Blood (LOINC: 718-7) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_Hemoglobin_718_7 a ns1:MedicalProcedure ;
-    rdfs:label "Hemoglobin [Mass/volume] in Blood" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Hemoglobin_A1c_4548_4_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Hemoglobin_A1c_4548-4 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_LaborForce_741062008 a ns1:MedicalProcedure ;
-    rdfs:label "Not in labor force (finding)" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T21:28:23+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Leukocytes_6690_2_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "Leukocytes [#/volume] in Blood by Automated count (LOINC: 6690-2) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_Leukocytes_6690_2 a ns1:MedicalProcedure ;
-    rdfs:label "Leukocytes [#/volume] in Blood by Automated count" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_MCHC_786_4_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count (LOINC: 786-4) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_MCHC_786_4 a ns1:MedicalProcedure ;
-    rdfs:label "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_MCH_785_6_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "MCH [Entitic mass] by Automated count (LOINC: 785-6) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_MCH_785_6 a ns1:MedicalProcedure ;
-    rdfs:label "MCH [Entitic mass] by Automated count" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_MCV_787_2_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "MCV [Entitic mean volume] in Red Blood Cells by Automated count (LOINC: 787-2) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_MCV_787_2 a ns1:MedicalProcedure ;
-    rdfs:label "MCV [Entitic mean volume] in Red Blood Cells by Automated count" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_PHQ-2_total_score_55758_7_20041227T220428 a chr:MedicalProcedure ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T22:04:28+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_MedicationReview_314529007 a ns1:MedicalProcedure ;
-    rdfs:label "Medication review due (situation)" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Pain_severity_72514_3_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Pain_severity_72514-3 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_Obesity_162864005 a ns1:MedicalProcedure ;
-    rdfs:label "Body mass index 30+ - obesity (finding)" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Platelet_distribution_width_32207_3_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "Platelet distribution width [Entitic volume] in Blood by Automated count (LOINC: 32207-3) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_PDW_32207_3 a ns1:MedicalProcedure ;
-    rdfs:label "Platelet distribution width [Entitic volume] in Blood by Automated count" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Platelet_mean_volume_32623_1_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "Platelet [Entitic mean volume] in Blood by Automated count (LOINC: 32623-1) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_PHQ2_55758_7 a ns1:MedicalProcedure ;
-    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T22:04:28+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Platelets_777_3_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "Platelets [#/volume] in Blood by Automated count (LOINC: 777-3) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_PMCV_32623_1 a ns1:MedicalProcedure ;
-    rdfs:label "Platelet [Entitic mean volume] in Blood by Automated count" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Potassium_6298_4_20041227T203554 a chr:MedicalProcedure ;
+    rdfs:label "Potassium [Moles/volume] in Blood (LOINC: 6298-4) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_PainSeverity_72514_3 a ns1:MedicalProcedure ;
-    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Respiratory_rate_9279_1_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate (LOINC: 9279-1) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Respiratory_rate_9279-1 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_Platelets_777_3 a ns1:MedicalProcedure ;
-    rdfs:label "Platelets [#/volume] in Blood by Automated count" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Sodium_2947_0_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Blood (LOINC: 2947-0) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Sodium_2947-0 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_Potassium_6298_4 a ns1:MedicalProcedure ;
-    rdfs:label "Potassium [Moles/volume] in Blood" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
+ex:proc_Urea_nitrogen_6299_2_20041227T203554 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood (LOINC: 6299-2) measurement" ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
+    chr:hasResult ex:measurement_Urea_nitrogen_6299-2 ;
+    chr:hasStatus ex:status_completed .
 
-ex:proc_RespiratoryRate_9279_1 a ns1:MedicalProcedure ;
-    rdfs:label "Respiratory rate" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
-
-ex:proc_Sodium_2947_0 a ns1:MedicalProcedure ;
-    rdfs:label "Sodium [Moles/volume] in Blood" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
-
-ex:proc_Stress_73595000 a ns1:MedicalProcedure ;
-    rdfs:label "Stress (finding)" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T21:28:23+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
-
-ex:proc_UreaNitrogen_6299_2 a ns1:MedicalProcedure ;
-    rdfs:label "Urea nitrogen [Mass/volume] in Blood" ;
-    ns1:hasPatient ex:Estela596_Yetta429_Grant908 ;
-    ns1:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
-    ns1:hasPerformer ex:Dr_Ivonne773_Turcotte120 ;
-    ns1:hasStatus ex:status_completed .
-
-ex:Unit_fL a chr:Unit ;
-    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/fL> .
-
-ex:Unit_gperdL a chr:Unit ;
-    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/gperdL> .
-
-ex:unit_cblscorecbr a chr:Unit ;
-    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+ex:unit_10_exp_6_per_uL a chr:Unit ;
+    rdfs:label "10*6/uL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/10exp6peruL> .
 
 ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
     chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
 
 ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
     chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
 
 ex:unit_kgperm2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
     chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
 
-ex:unit_score a chr:Unit ;
-    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+ex:unit_pg a chr:Unit ;
+    rdfs:label "pg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/pg> .
 
-ex:Unit_mmolperL a chr:Unit ;
-    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+ex:eval_Medication_review_314529007 a chr:EvaluationProcess ;
+    rdfs:label "Dr. Ivonne773 Turcotte120 evaluated the patient" ;
+    chr:hasCondition ex:cond_Medication_review_314529007 ;
+    chr:hasObservation ex:diag_Medication_review_314529007 ;
+    chr:hasPatient ex:Estela596_Yetta429_Grant908 ;
+    chr:hasPerformedDate "2004-12-27T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Ivonne773_Turcotte120 .
 
-ex:Unit_peruL a chr:Unit ;
-    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/peruL> .
+ex:unit_10_exp_3_per_uL a chr:Unit ;
+    rdfs:label "10*3/uL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/10exp3peruL> .
+
+ex:unit_g_per_dL a chr:Unit ;
+    rdfs:label "g/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/gperdL> .
 
 ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
     chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
 
-ex:unit_fL a chr:Unit ;
-    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/fL> .
-
 ex:unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
     chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
 
-ex:unit_mmolperL a chr:Unit ;
-    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+ex:unit_score a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
 
-ex:unit_mgperdL a chr:Unit ;
+ex:unit_fL a chr:Unit ;
+    rdfs:label "fL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/fL> .
+
+ex:unit_mgperdl a chr:Unit ;
+    rdfs:label "mg/dL" ;
     chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
 
-ex:status_completed a ns1:ProcessStatus,
-        chr:ProcessStatus ;
+ex:unit_mmolperL a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+
+ex:status_completed a chr:ProcessStatus ;
     rdfs:label "completed" .
 
 ex:Dr_Ivonne773_Turcotte120 a chr:Person ;

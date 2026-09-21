@@ -1,197 +1,124 @@
 [   0.1s] segmenting (orchestrator) ...
-[  78.3s] 24 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s23[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s24[CarePlan]
-[  78.3s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
-[  78.3s] level 0: 6 agent(s), 0 known entities
-[  78.3s]   CareUnit: extracting (239 chars, 1 classes in view)
-[  78.3s]   ClinicalCondition: extracting (468 chars, 3 classes in view)
-[  78.3s]   DiagnosticStatement: extracting (468 chars, 1 classes in view)
-[  78.3s]   Measurement#1: extracting (2883 chars, 2 classes in view)
-[  84.9s]   CareUnit: cycle 0 -> conforms
-[  84.9s]   Measurement#2: extracting (2077 chars, 2 classes in view)
-[  87.2s]   DiagnosticStatement: cycle 0 -> conforms
-[  87.2s]   Person: extracting (239 chars, 1 classes in view)
-[  88.3s]   ClinicalCondition: cycle 0 -> conforms
-[  88.3s]   ProcessStatus#1: extracting (2883 chars, 1 classes in view)
-[  93.3s]   Person: cycle 0 -> conforms
-[  93.3s]   ProcessStatus#2: extracting (2077 chars, 1 classes in view)
-[ 109.7s]   ProcessStatus#2: cycle 0 -> 16 violation(s)
-[ 109.7s]   ProcessStatus#2: fixing ...
-[ 114.6s]   ProcessStatus#1: cycle 0 -> 24 violation(s)
-[ 114.6s]   ProcessStatus#1: fixing ...
-[ 121.1s]   Measurement#2: dropped 5 individual(s) of other classes (already built by earlier levels)
-[ 121.2s]   Measurement#2: cycle 0 -> 5 violation(s)
-[ 121.2s]   Measurement#2: fixing ...
-[ 131.3s]   Measurement#1: dropped 9 individual(s) of other classes (already built by earlier levels)
-[ 131.3s]   Measurement#1: cycle 0 -> 9 violation(s)
-[ 131.3s]   Measurement#1: fixing ...
-[ 135.6s]   ProcessStatus#2: cycle 1 -> 8 violation(s)
-[ 135.6s]   ProcessStatus#2: fixing ...
-[ 149.8s]   ProcessStatus#1: cycle 1 -> conforms
-[ 149.8s]   ProcessStatus#1: 12 unresolved (honest gaps)
-[ 155.4s]   ProcessStatus#2: cycle 2 -> 8 violation(s)
-[ 155.4s]   ProcessStatus#2: stopping (fix budget spent)
-[ 159.8s]   Measurement#2: cycle 1 -> conforms
-[ 180.3s]   Measurement#1: cycle 1 -> conforms
-[ 180.3s] level 1: 2 agent(s), 62 known entities
-[ 180.3s]   EvaluationProcess: extracting (468 chars, 7 classes in view)
-[ 180.3s]   MeasurementProcess#1: extracting (2883 chars, 6 classes in view)
-[ 180.3s]   MeasurementProcess#2: extracting (2077 chars, 6 classes in view)
-[ 198.5s]   EvaluationProcess: dropped 2 individual(s) of other classes (already built by earlier levels)
-[ 198.6s]   EvaluationProcess: cycle 0 -> 10 violation(s)
-[ 198.6s]   EvaluationProcess: fixing ...
-[ 218.9s]   EvaluationProcess: cycle 1 -> 10 violation(s)
-[ 218.9s]   EvaluationProcess: fixing ...
-[ 240.0s]   EvaluationProcess: cycle 2 -> 12 violation(s)
-[ 240.0s]   EvaluationProcess: stopping (fix budget spent)
-[ 240.0s]   EvaluationProcess: 8 unresolved (honest gaps)
-[ 243.8s]   MeasurementProcess#2: cycle 0 -> 8 violation(s)
-[ 243.8s]   MeasurementProcess#2: fixing ...
-[ 273.4s]   MeasurementProcess#1: cycle 0 -> 8 violation(s)
-[ 273.4s]   MeasurementProcess#1: fixing ...
-[ 314.4s]   MeasurementProcess#2: cycle 1 -> 8 violation(s)
-[ 314.4s]   MeasurementProcess#2: stopping (plateau)
-[ 370.3s]   MeasurementProcess#1: cycle 1 -> 8 violation(s)
-[ 370.3s]   MeasurementProcess#1: stopping (plateau)
-[ 370.4s] level 2: 2 agent(s), 84 known entities
-[ 370.4s]   CarePlan: extracting (5894 chars, 4 classes in view)
-[ 370.4s]   ClinicalVisit: extracting (5894 chars, 5 classes in view)
-[ 383.7s]   CarePlan: cycle 0 -> 12 violation(s)
-[ 383.7s]   CarePlan: fixing ...
-[ 404.8s]   CarePlan: cycle 1 -> 20 violation(s)
-[ 404.8s]   CarePlan: fixing ...
-[ 434.4s]   CarePlan: cycle 2 -> 20 violation(s)
-[ 434.4s]   CarePlan: stopping (fix budget spent)
-[ 468.8s]   ClinicalVisit: dropped 2 individual(s) of other classes (already built by earlier levels)
-[ 469.0s]   ClinicalVisit: cycle 0 -> 12 violation(s)
-[ 469.0s]   ClinicalVisit: fixing ...
-[ 562.8s]   ClinicalVisit: cycle 1 -> 12 violation(s)
-[ 562.8s]   ClinicalVisit: stopping (plateau)
-[ 563.0s] merging (orchestrator): 20 violation(s), 20 unresolved, 0 unparsed
-[ 563.2s] merge FAILED (Error code: 400 - {'error': {'message': "litellm.ContextWindowExceededError: lit...) - returning the un-merged union
-[ 563.4s] final: 20 violation(s)
-conforms=False segments=13 llm_calls=27 unresolved=0
+[  61.1s] 24 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s23[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s24[CarePlan]
+[  61.1s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  61.1s] level 0: 6 agent(s), 0 known entities
+[  61.1s]   CareUnit: extracting (239 chars, 1 classes in view)
+[  61.1s]   ClinicalCondition: extracting (468 chars, 3 classes in view)
+[  61.1s]   DiagnosticStatement: extracting (468 chars, 1 classes in view)
+[  61.1s]   Measurement#1: extracting (2883 chars, 2 classes in view)
+[  66.0s]   CareUnit: cycle 0 -> conforms
+[  66.0s]   Measurement#2: extracting (2077 chars, 2 classes in view)
+[  68.0s]   DiagnosticStatement: cycle 0 -> conforms
+[  68.0s]   Person: extracting (239 chars, 1 classes in view)
+[  69.1s]   ClinicalCondition: cycle 0 -> conforms
+[  69.1s]   ProcessStatus#1: extracting (2883 chars, 1 classes in view)
+[  73.4s]   Person: cycle 0 -> conforms
+[  73.4s]   ProcessStatus#2: extracting (2077 chars, 1 classes in view)
+[  84.7s]   ProcessStatus#2: cycle 0 -> conforms
+[  93.4s]   ProcessStatus#1: cycle 0 -> 24 violation(s)
+[  93.4s]   ProcessStatus#1: fixing ...
+[  97.8s]   Measurement#2: cycle 0 -> conforms
+[ 112.0s]   Measurement#1: cycle 0 -> conforms
+[ 130.1s]   ProcessStatus#1: cycle 1 -> conforms
+[ 130.1s]   ProcessStatus#1: 12 unresolved (honest gaps)
+[ 130.1s] level 1: 2 agent(s), 62 known entities
+[ 130.1s]   EvaluationProcess: extracting (468 chars, 7 classes in view)
+[ 130.1s]   MeasurementProcess#1: extracting (2883 chars, 6 classes in view)
+[ 130.1s]   MeasurementProcess#2: extracting (2077 chars, 6 classes in view)
+[ 148.3s]   EvaluationProcess: cycle 0 -> conforms
+[ 193.7s]   MeasurementProcess#2: cycle 0 -> 1 violation(s)
+[ 193.7s]   MeasurementProcess#2: fixing ...
+[ 233.7s]   MeasurementProcess#1: cycle 0 -> 1 violation(s)
+[ 233.7s]   MeasurementProcess#1: fixing ...
+[ 263.8s]   MeasurementProcess#2: cycle 1 -> 1 violation(s)
+[ 263.8s]   MeasurementProcess#2: stopping (plateau)
+[ 332.0s]   MeasurementProcess#1: cycle 1 -> conforms
+[ 332.0s] level 2: 2 agent(s), 84 known entities
+[ 332.0s]   CarePlan: extracting (5894 chars, 4 classes in view)
+[ 332.0s]   ClinicalVisit: extracting (5894 chars, 5 classes in view)
+[ 338.7s]   CarePlan: cycle 0 -> 2 violation(s)
+[ 338.7s]   CarePlan: fixing ...
+[ 346.6s]   CarePlan: cycle 1 -> 2 violation(s)
+[ 346.6s]   CarePlan: stopping (plateau)
+[ 346.6s]   CarePlan: 1 unresolved (honest gaps)
+[ 422.2s]   ClinicalVisit: cycle 0 -> 1 violation(s)
+[ 422.2s]   ClinicalVisit: fixing ...
+[ 557.8s]   ClinicalVisit: cycle 1 -> 10 violation(s)
+[ 557.8s]   ClinicalVisit: fixing ...
+[ 690.6s]   ClinicalVisit: cycle 2 -> 10 violation(s)
+[ 690.6s]   ClinicalVisit: stopping (fix budget spent)
+[ 690.7s] merging (orchestrator): 11 violation(s), 13 unresolved, 0 unparsed
+[ 691.1s] merge FAILED (Error code: 400 - {'error': {'message': "litellm.ContextWindowExceededError: lit...) - returning the un-merged union
+[ 691.2s] final: 11 violation(s)
+conforms=False segments=13 llm_calls=21 unresolved=0
   orchestrator   1 calls     3616 in    3574 out  cost n/a  gemma4-g1
-  total         26 calls   134824 in   42980 out  cost n/a  
-  worker        25 calls   131208 in   39406 out  cost n/a  gemma4-g1
+  total         20 calls   112612 in   45221 out  cost n/a  
+  worker        19 calls   108996 in   41647 out  cost n/a  gemma4-g1
 Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
 	Severity: sh:Violation
-	Source Shape: chr:HasConditionDomainShape
-	Focus Node: ex:diagnostic_statement_Part-time_employment_160904001
-	Value Node: ex:diagnostic_statement_Part-time_employment_160904001
-	Message: Subject of chr:hasCondition must be a chr:EvaluationProcess.
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: ex:unit_10exp3peruL
+	Value Node: ex:unit_10exp3peruL
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
 Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
 	Severity: sh:Violation
-	Source Shape: chr:HasConditionDomainShape
-	Focus Node: ex:diagnostic_statement_Social_isolation_422650009
-	Value Node: ex:diagnostic_statement_Social_isolation_422650009
-	Message: Subject of chr:hasCondition must be a chr:EvaluationProcess.
-Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: chr:HasConditionRangeShape
-	Focus Node: ex:eval_160904001
-	Value Node: ex:eval_160904001
-	Message: Object of chr:hasCondition must be a chr:ClinicalCondition.
-Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: chr:HasConditionRangeShape
-	Focus Node: ex:eval_422650009
-	Value Node: ex:eval_422650009
-	Message: Object of chr:hasCondition must be a chr:ClinicalCondition.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: ex:unit_pg
+	Value Node: ex:unit_pg
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
 	Severity: sh:Violation
 	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
-	Focus Node: ex:measurement_process_Erythrocyte_788-0
+	Focus Node: ex:process_DAST10_82667-7
+	Result Path: chr:hasResult
+	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
+Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
+	Focus Node: ex:process_Erythrocyte_788-0
+	Result Path: chr:hasResult
+	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
+Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
+	Focus Node: ex:process_MCHC_786-4
+	Result Path: chr:hasResult
+	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
+Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
+	Focus Node: ex:process_MCH_785-6
+	Result Path: chr:hasResult
+	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
+Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
+	Focus Node: ex:process_MPV_32623-1
+	Result Path: chr:hasResult
+	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
+Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
+	Focus Node: ex:process_PDW_32207-3
+	Result Path: chr:hasResult
+	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
+Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
+	Focus Node: ex:process_PHQ2_55758-7
+	Result Path: chr:hasResult
+	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
+Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
+	Focus Node: ex:process_Platelets_777-3
 	Result Path: chr:hasResult
 	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
 Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
 	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
-	Focus Node: ex:measurement_process_MCHC_786-4
-	Result Path: chr:hasResult
-	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
-	Focus Node: ex:measurement_process_MCH_785-6
-	Result Path: chr:hasResult
-	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
-	Focus Node: ex:measurement_process_PHQ-2_55758-7
-	Result Path: chr:hasResult
-	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
-	Focus Node: ex:measurement_process_Platelet_32623-1
-	Result Path: chr:hasResult
-	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
-	Focus Node: ex:measurement_process_Platelet_distribution_width_32207-3
-	Result Path: chr:hasResult
-	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
-	Focus Node: ex:measurement_process_Platelets_777-3
-	Result Path: chr:hasResult
-	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
-	Focus Node: ex:measurement_process_Total_score_DAST-10_82667-7
-	Result Path: chr:hasResult
-	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Patient via chr:hasPatient.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasPatient ]
-	Focus Node: ex:measurement_process_Erythrocyte_788-0
-	Result Path: chr:hasPatient
-	Message: A MeasurementProcess must link to exactly one Patient via chr:hasPatient.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Patient via chr:hasPatient.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasPatient ]
-	Focus Node: ex:measurement_process_MCHC_786-4
-	Result Path: chr:hasPatient
-	Message: A MeasurementProcess must link to exactly one Patient via chr:hasPatient.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Patient via chr:hasPatient.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasPatient ]
-	Focus Node: ex:measurement_process_MCH_785-6
-	Result Path: chr:hasPatient
-	Message: A MeasurementProcess must link to exactly one Patient via chr:hasPatient.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Patient via chr:hasPatient.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasPatient ]
-	Focus Node: ex:measurement_process_PHQ-2_55758-7
-	Result Path: chr:hasPatient
-	Message: A MeasurementProcess must link to exactly one Patient via chr:hasPatient.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Patient via chr:hasPatient.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasPatient ]
-	Focus Node: ex:measurement_process_Platelet_32623-1
-	Result Path: chr:hasPatient
-	Message: A MeasurementProcess must link to exactly one Patient via chr:hasPatient.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Patient via chr:hasPatient.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasPatient ]
-	Focus Node: ex:measurement_process_Platelet_distribution_width_32207-3
-	Result Path: chr:hasPatient
-	Message: A MeasurementProcess must link to exactly one Patient via chr:hasPatient.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Patient via chr:hasPatient.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasPatient ]
-	Focus Node: ex:measurement_process_Platelets_777-3
-	Result Path: chr:hasPatient
-	Message: A MeasurementProcess must link to exactly one Patient via chr:hasPatient.
-Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-	Severity: sh:Violation
-	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Patient via chr:hasPatient.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasPatient ]
-	Focus Node: ex:measurement_process_Total_score_DAST-10_82667-7
-	Result Path: chr:hasPatient
-	Message: A MeasurementProcess must link to exactly one Patient via chr:hasPatient.
+	Source Shape: [ sh:message Literal("A CarePlan should refer to at least one MedicalProcedure.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasMedicalProcedure ]
+	Focus Node: ex:CarePlan_1
+	Result Path: chr:hasMedicalProcedure
+	Message: A CarePlan should refer to at least one MedicalProcedure.
 
 exit=1

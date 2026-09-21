@@ -1,27 +1,126 @@
 [   0.1s] segmenting (orchestrator) ...
-[ 118.7s] 45 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[MeasurementProcess,Measurement,ProcessStatus], s23[MeasurementProcess,Measurement,ProcessStatus], s24[MeasurementProcess,Measurement,ProcessStatus], s25[MeasurementProcess,Measurement,ProcessStatus], s26[MeasurementProcess,Measurement,ProcessStatus], s27[MeasurementProcess,Measurement,ProcessStatus], s28[MeasurementProcess,Measurement,ProcessStatus], s29[MeasurementProcess,Measurement,ProcessStatus], s30[MeasurementProcess,Measurement,ProcessStatus], s31[MeasurementProcess,Measurement,ProcessStatus], s32[MeasurementProcess,Measurement,ProcessStatus], s33[MeasurementProcess,Measurement,ProcessStatus], s34[MeasurementProcess,Measurement,ProcessStatus], s35[MeasurementProcess,Measurement,ProcessStatus], s36[MeasurementProcess,Measurement,ProcessStatus], s37[MeasurementProcess,Measurement,ProcessStatus], s38[MeasurementProcess,Measurement,ProcessStatus], s39[MeasurementProcess,Measurement,ProcessStatus], s40[MeasurementProcess,Measurement,ProcessStatus], s41[MeasurementProcess,Measurement,ProcessStatus], s42[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s43[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s44[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s45[CarePlan]
-[ 118.7s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
-[ 118.7s] level 0: 6 agent(s), 0 known entities
-[ 118.7s]   CareUnit: extracting (227 chars, 1 classes in view)
-[ 118.7s]   ClinicalCondition: extracting (685 chars, 3 classes in view)
-[ 118.7s]   DiagnosticStatement: extracting (685 chars, 1 classes in view)
-[ 118.7s]   Measurement#1: extracting (3008 chars, 2 classes in view)
-[ 124.4s]   CareUnit: cycle 0 -> conforms
-[ 124.4s]   Measurement#2: extracting (2719 chars, 2 classes in view)
-[ 127.9s]   DiagnosticStatement: cycle 0 -> conforms
-[ 127.9s]   Measurement#3: extracting (2971 chars, 2 classes in view)
-[ 129.7s]   ClinicalCondition: cycle 0 -> conforms
-[ 129.7s]   Measurement#4: extracting (1014 chars, 2 classes in view)
-[ 146.2s]   Measurement#4: dropped 1 individual(s) of other classes (already built by earlier levels)
-[ 146.2s]   Measurement#4: cycle 0 -> 1 violation(s)
-[ 146.2s]   Measurement#4: fixing ...
-[ 166.1s]   Measurement#1: dropped 3 individual(s) of other classes (already built by earlier levels)
-[ 166.1s]   Measurement#1: cycle 0 -> 3 violation(s)
-[ 166.1s]   Measurement#1: fixing ...
-[ 167.6s]   Measurement#4: cycle 1 -> conforms
-[ 167.6s]   Person: extracting (227 chars, 1 classes in view)
-[ 173.5s]   Measurement#2: dropped 8 individual(s) of other classes (already built by earlier levels)
-[ 173.6s]   Measurement#2: cycle 0 -> 8 violation(s)
-[ 173.6s]   Measurement#2: fixing ...
-[ 174.4s]   Person: cycle 0 -> conforms
-[ 174.4s]   ProcessStatus#1: extracting (3008 chars, 1 classes in view)
+[ 127.1s] 45 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit], s3[MeasurementProcess,Measurement,Unit], s4[MeasurementProcess,Measurement,Unit], s5[MeasurementProcess,Measurement,Unit], s6[MeasurementProcess,Measurement,Unit], s7[MeasurementProcess,Measurement,Unit], s8[MeasurementProcess,Measurement,Unit], s9[MeasurementProcess,Measurement,Unit], s10[MeasurementProcess,Measurement,Unit], s11[MeasurementProcess,Measurement,Unit], s12[MeasurementProcess,Measurement,Unit], s13[MeasurementProcess,Measurement,Unit], s14[MeasurementProcess,Measurement,Unit], s15[MeasurementProcess,Measurement,Unit], s16[MeasurementProcess,Measurement,Unit], s17[MeasurementProcess,Measurement,Unit], s18[MeasurementProcess,Measurement,Unit], s19[MeasurementProcess,Measurement,Unit], s20[MeasurementProcess,Measurement,Unit], s21[MeasurementProcess,Measurement,Unit], s22[MeasurementProcess,Measurement,Unit], s23[MeasurementProcess,Measurement,Unit], s24[MeasurementProcess,Measurement,Unit], s25[MeasurementProcess,Measurement,Unit], s26[MeasurementProcess,Measurement,Unit], s27[MeasurementProcess,Measurement,Unit], s28[MeasurementProcess,Measurement,Unit], s29[MeasurementProcess,Measurement,Unit], s30[MeasurementProcess,Measurement,Unit], s31[MeasurementProcess,Measurement,Unit], s32[MeasurementProcess,Measurement,Unit], s33[MeasurementProcess,Measurement,Unit], s34[MeasurementProcess,Measurement,Unit], s35[MeasurementProcess,Measurement,Unit], s36[MeasurementProcess,Measurement,Unit], s37[MeasurementProcess,Measurement,Unit], s38[MeasurementProcess,Measurement,Unit], s39[MeasurementProcess,Measurement,Unit], s40[MeasurementProcess,Measurement,Unit], s41[MeasurementProcess,Measurement,Unit], s42[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s43[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s44[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s45[CarePlan]
+[ 127.1s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 127.1s] level 0: 5 agent(s), 0 known entities
+[ 127.1s]   CareUnit: extracting (227 chars, 1 classes in view)
+[ 127.1s]   ClinicalCondition: extracting (685 chars, 3 classes in view)
+[ 127.1s]   DiagnosticStatement: extracting (685 chars, 1 classes in view)
+[ 127.1s]   Person: extracting (227 chars, 1 classes in view)
+[ 132.6s]   CareUnit: cycle 0 -> conforms
+[ 132.6s]   Unit#1: extracting (3008 chars, 1 classes in view)
+[ 133.8s]   Person: cycle 0 -> conforms
+[ 133.8s]   Unit#2: extracting (2719 chars, 1 classes in view)
+[ 137.1s]   DiagnosticStatement: cycle 0 -> conforms
+[ 137.1s]   Unit#3: extracting (2971 chars, 1 classes in view)
+[ 139.2s]   ClinicalCondition: cycle 0 -> conforms
+[ 139.2s]   Unit#4: extracting (1014 chars, 1 classes in view)
+[ 142.4s]   Unit#1: cycle 0 -> conforms
+[ 144.9s]   Unit#4: cycle 0 -> conforms
+[ 148.9s]   Unit#3: cycle 0 -> conforms
+[ 149.6s]   Unit#2: cycle 0 -> conforms
+[ 149.6s] level 1: 2 agent(s), 24 known entities
+[ 149.6s]   EvaluationProcess: extracting (685 chars, 7 classes in view)
+[ 149.6s]   Measurement#1: extracting (3008 chars, 2 classes in view)
+[ 149.6s]   Measurement#2: extracting (2719 chars, 2 classes in view)
+[ 149.6s]   Measurement#3: extracting (2971 chars, 2 classes in view)
+[ 167.0s]   EvaluationProcess: cycle 0 -> 1 violation(s)
+[ 167.0s]   EvaluationProcess: fixing ...
+[ 180.8s]   EvaluationProcess: cycle 1 -> 1 violation(s)
+[ 180.8s]   EvaluationProcess: stopping (plateau)
+[ 180.8s]   Measurement#4: extracting (1014 chars, 2 classes in view)
+[ 190.4s]   Measurement#3: cycle 0 -> conforms
+[ 190.9s]   Measurement#1: cycle 0 -> conforms
+[ 193.1s]   Measurement#2: cycle 0 -> conforms
+[ 195.0s]   Measurement#4: cycle 0 -> conforms
+[ 195.0s] level 2: 1 agent(s), 67 known entities
+[ 195.0s]   MeasurementProcess#1: extracting (3008 chars, 6 classes in view)
+[ 195.0s]   MeasurementProcess#2: extracting (2719 chars, 6 classes in view)
+[ 195.0s]   MeasurementProcess#3: extracting (2971 chars, 6 classes in view)
+[ 195.0s]   MeasurementProcess#4: extracting (1014 chars, 6 classes in view)
+[ 236.9s]   MeasurementProcess#4: dropped 4 individual(s) of other classes (already built by earlier levels)
+[ 237.0s]   MeasurementProcess#4: cycle 0 -> 5 violation(s)
+[ 237.0s]   MeasurementProcess#4: fixing ...
+[ 274.2s]   MeasurementProcess#4: cycle 1 -> 5 violation(s)
+[ 274.2s]   MeasurementProcess#4: fixing ...
+[ 292.7s]   MeasurementProcess#2: cycle 0 -> 1 violation(s)
+[ 292.7s]   MeasurementProcess#2: fixing ...
+[ 294.8s]   MeasurementProcess#3: dropped 12 individual(s) of other classes (already built by earlier levels)
+[ 294.9s]   MeasurementProcess#3: cycle 0 -> 13 violation(s)
+[ 294.9s]   MeasurementProcess#3: fixing ...
+[ 300.7s]   MeasurementProcess#1: cycle 0 -> 1 violation(s)
+[ 300.7s]   MeasurementProcess#1: fixing ...
+[ 314.5s]   MeasurementProcess#4: cycle 2 -> 5 violation(s)
+[ 314.5s]   MeasurementProcess#4: stopping (fix budget spent)
+[ 388.8s]   MeasurementProcess#2: cycle 1 -> 1 violation(s)
+[ 388.8s]   MeasurementProcess#2: stopping (plateau)
+[ 388.8s]   MeasurementProcess#2: 2 unresolved (honest gaps)
+[ 390.8s]   MeasurementProcess#3: cycle 1 -> 1 violation(s)
+[ 390.8s]   MeasurementProcess#3: fixing ...
+[ 398.4s]   MeasurementProcess#1: cycle 1 -> 1 violation(s)
+[ 398.4s]   MeasurementProcess#1: stopping (plateau)
+[ 467.6s]   MeasurementProcess#3: cycle 2 -> 1 violation(s)
+[ 467.6s]   MeasurementProcess#3: stopping (fix budget spent)
+[ 467.7s] level 3: 2 agent(s), 124 known entities
+[ 467.7s]   CarePlan: extracting (10871 chars, 4 classes in view)
+[ 467.7s]   ClinicalVisit: extracting (10871 chars, 5 classes in view)
+[ 478.7s]   CarePlan: cycle 0 -> 6 violation(s)
+[ 478.7s]   CarePlan: fixing ...
+[ 487.4s]   CarePlan: cycle 1 -> 6 violation(s)
+[ 487.4s]   CarePlan: stopping (plateau)
+[ 487.4s]   CarePlan: 1 unresolved (honest gaps)
+[ 562.5s]   ClinicalVisit: dropped 18 individual(s) of other classes (already built by earlier levels)
+[ 562.7s]   ClinicalVisit: cycle 0 -> 23 violation(s)
+[ 562.7s]   ClinicalVisit: fixing ...
+[ 645.8s]   ClinicalVisit: cycle 1 -> 5 violation(s)
+[ 645.8s]   ClinicalVisit: fixing ...
+[ 733.0s]   ClinicalVisit: cycle 2 -> 5 violation(s)
+[ 733.0s]   ClinicalVisit: stopping (fix budget spent)
+[ 733.3s] merging (orchestrator): 6 violation(s), 3 unresolved, 0 unparsed
+[ 733.6s] merge FAILED (Error code: 400 - {'error': {'message': "litellm.ContextWindowExceededError: lit...) - returning the un-merged union
+[ 733.8s] final: 6 violation(s)
+conforms=False segments=19 llm_calls=31 unresolved=0
+  orchestrator   1 calls     5481 in    6528 out  cost n/a  gemma4-g1
+  total         30 calls   184872 in   61472 out  cost n/a  
+  worker        29 calls   179391 in   54944 out  cost n/a  gemma4-g1
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasConditionRangeShape
+	Focus Node: ex:Full-time_employment_finding
+	Value Node: ex:Full-time_employment_finding
+	Message: Object of chr:hasCondition must be a chr:ClinicalCondition.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:measurement_DAST10_20181128T183108
+	Value Node: Literal("0.0", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:measurement_GAD7_20181128T165246
+	Value Node: Literal("2.0", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:measurement_PHQ2_20181128T173438
+	Value Node: Literal("4.0", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:float ; sh:message Literal("chr:hasQuantityValue must be an xsd:float.") ; sh:path chr:hasQuantityValue ]
+	Focus Node: ex:measurement_PHQ9_20181128T175616
+	Value Node: Literal("26.0", datatype=xsd:decimal)
+	Result Path: chr:hasQuantityValue
+	Message: chr:hasQuantityValue must be an xsd:float.
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A CarePlan should refer to at least one MedicalProcedure.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasMedicalProcedure ]
+	Focus Node: ex:care_plan_followup
+	Result Path: chr:hasMedicalProcedure
+	Message: A CarePlan should refer to at least one MedicalProcedure.
+
+exit=1

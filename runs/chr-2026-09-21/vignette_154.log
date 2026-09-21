@@ -1,0 +1,141 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 144.5s] 45 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[MeasurementProcess,Measurement], s11[MeasurementProcess,Measurement], s12[MeasurementProcess,Measurement], s13[MeasurementProcess,Measurement], s14[MeasurementProcess,Measurement], s15[MeasurementProcess,Measurement], s16[MeasurementProcess,Measurement], s17[MeasurementProcess,Measurement], s18[MeasurementProcess,Measurement], s19[MeasurementProcess,Measurement,Severity], s20[MeasurementProcess,Measurement], s21[MeasurementProcess,Measurement], s22[MeasurementProcess,Measurement], s23[MeasurementProcess,Measurement], s24[MeasurementProcess,Measurement], s25[MeasurementProcess,Measurement], s26[MeasurementProcess,Measurement], s27[MeasurementProcess,Measurement], s28[MeasurementProcess,Measurement], s29[MeasurementProcess,Measurement], s30[MeasurementProcess,Measurement], s31[MeasurementProcess,Measurement], s32[MeasurementProcess,Measurement], s33[MeasurementProcess,Measurement], s34[MeasurementProcess,Measurement], s35[MeasurementProcess,Measurement], s36[MeasurementProcess,Measurement], s37[MeasurementProcess,Measurement], s38[MeasurementProcess,Measurement], s39[MeasurementProcess,Measurement], s40[MeasurementProcess,Measurement], s41[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s42[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s43[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s44[EvaluationProcess,DiagnosticStatement,ClinicalCondition,Severity], s45[CarePlan]
+[ 144.6s] build order: [CareUnit, DiagnosticStatement, Measurement, Person, Severity] -> [ClinicalCondition, MeasurementProcess] -> [EvaluationProcess] -> [CarePlan, ClinicalVisit]
+[ 144.6s] level 0: 5 agent(s), 0 known entities
+[ 144.6s]   CareUnit: extracting (249 chars, 1 classes in view)
+[ 144.6s]   DiagnosticStatement: extracting (925 chars, 1 classes in view)
+[ 144.6s]   Measurement#1: extracting (3010 chars, 2 classes in view)
+[ 144.6s]   Measurement#2: extracting (2720 chars, 2 classes in view)
+[ 150.6s]   CareUnit: cycle 0 -> conforms
+[ 150.6s]   Measurement#3: extracting (2973 chars, 2 classes in view)
+[ 155.6s]   DiagnosticStatement: cycle 0 -> conforms
+[ 155.6s]   Measurement#4: extracting (714 chars, 2 classes in view)
+[ 172.5s]   Measurement#4: cycle 0 -> conforms
+[ 172.5s]   Measurement#4: 1 unresolved (honest gaps)
+[ 172.5s]   Person: extracting (249 chars, 1 classes in view)
+[ 178.5s]   Person: cycle 0 -> conforms
+[ 178.5s]   Severity: extracting (493 chars, 1 classes in view)
+[ 185.4s]   Severity: cycle 0 -> conforms
+[ 192.7s]   Measurement#1: cycle 0 -> conforms
+[ 197.7s]   Measurement#2: cycle 0 -> conforms
+[ 198.2s]   Measurement#3: cycle 0 -> conforms
+[ 198.2s] level 1: 2 agent(s), 61 known entities
+[ 198.2s]   ClinicalCondition: extracting (925 chars, 3 classes in view)
+[ 198.2s]   MeasurementProcess#1: extracting (3010 chars, 6 classes in view)
+[ 198.2s]   MeasurementProcess#2: extracting (2720 chars, 6 classes in view)
+[ 198.2s]   MeasurementProcess#3: extracting (2973 chars, 6 classes in view)
+[ 212.4s]   ClinicalCondition: cycle 0 -> conforms
+[ 212.4s]   MeasurementProcess#4: extracting (714 chars, 6 classes in view)
+[ 239.3s]   MeasurementProcess#4: cycle 0 -> conforms
+[ 287.5s]   MeasurementProcess#2: cycle 0 -> conforms
+[ 287.8s]   MeasurementProcess#3: dropped 1 individual(s) of other classes (already built by earlier levels)
+[ 287.9s]   MeasurementProcess#3: cycle 0 -> 1 violation(s)
+[ 287.9s]   MeasurementProcess#3: fixing ...
+[ 289.3s]   MeasurementProcess#1: dropped 1 individual(s) of other classes (already built by earlier levels)
+[ 289.4s]   MeasurementProcess#1: cycle 0 -> 1 violation(s)
+[ 289.4s]   MeasurementProcess#1: fixing ...
+[ 370.3s]   MeasurementProcess#3: cycle 1 -> conforms
+[ 371.5s]   MeasurementProcess#1: cycle 1 -> conforms
+[ 371.6s] level 2: 1 agent(s), 105 known entities
+[ 371.6s]   EvaluationProcess: extracting (925 chars, 7 classes in view)
+[ 393.5s]   EvaluationProcess: cycle 0 -> 1 violation(s)
+[ 393.5s]   EvaluationProcess: fixing ...
+[ 416.4s]   EvaluationProcess: cycle 1 -> 1 violation(s)
+[ 416.4s]   EvaluationProcess: stopping (plateau)
+[ 416.4s] level 3: 2 agent(s), 109 known entities
+[ 416.4s]   CarePlan: extracting (10866 chars, 4 classes in view)
+[ 416.4s]   ClinicalVisit: extracting (10866 chars, 5 classes in view)
+[ 425.0s]   CarePlan: cycle 0 -> 2 violation(s)
+[ 425.0s]   CarePlan: fixing ...
+[ 431.5s]   CarePlan: cycle 1 -> 2 violation(s)
+[ 431.5s]   CarePlan: stopping (plateau)
+[ 431.5s]   CarePlan: 1 unresolved (honest gaps)
+[ 566.8s]   ClinicalVisit: dropped 26 individual(s) of other classes (already built by earlier levels)
+[ 567.0s]   ClinicalVisit: cycle 0 -> 27 violation(s)
+[ 567.0s]   ClinicalVisit: fixing ...
+[ 759.0s]   ClinicalVisit: cycle 1 -> 1 violation(s)
+[ 759.0s]   ClinicalVisit: fixing ...
+[1033.1s]   ClinicalVisit: cycle 2 -> 11 violation(s)
+[1033.1s]   ClinicalVisit: stopping (fix budget spent)
+[1033.1s]   ClinicalVisit: 16 unresolved (honest gaps)
+[1033.4s] merging (orchestrator): 12 violation(s), 18 unresolved, 0 unparsed
+[1033.6s] merge FAILED (Error code: 400 - {'error': {'message': "litellm.ContextWindowExceededError: lit...) - returning the un-merged union
+[1033.9s] final: 12 violation(s)
+conforms=False segments=16 llm_calls=24 unresolved=0
+  orchestrator   1 calls     5495 in    6281 out  cost n/a  gemma4-g1
+  total         23 calls   151877 in   63494 out  cost n/a  
+  worker        22 calls   146382 in   57213 out  cost n/a  gemma4-g1
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:process_2345-7
+	Value Node: ex:process_2345-7
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:process_2571-8
+	Value Node: ex:process_2571-8
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:process_2947-0
+	Value Node: ex:process_2947-0
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:process_2951-2
+	Value Node: ex:process_2951-2
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:process_3094-0
+	Value Node: ex:process_3094-0
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:process_38483-4
+	Value Node: ex:process_38483-4
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:process_49765-1
+	Value Node: ex:process_49765-1
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:process_5792-7
+	Value Node: ex:process_5792-7
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:process_5797-6
+	Value Node: ex:process_5797-6
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasResultDomainShape
+	Focus Node: ex:process_6298-4
+	Value Node: ex:process_6298-4
+	Message: Subject of chr:hasResult must be a chr:MeasurementProcess.
+Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("A MeasurementProcess must link to exactly one Measurement via chr:hasResult.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasResult ]
+	Focus Node: ex:process_GFR_33914-3
+	Result Path: chr:hasResult
+	Message: A MeasurementProcess must link to exactly one Measurement via chr:hasResult.
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A CarePlan should refer to at least one MedicalProcedure.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path chr:hasMedicalProcedure ]
+	Focus Node: ex:CarePlan_follow_up_monitoring
+	Result Path: chr:hasMedicalProcedure
+	Message: A CarePlan should refer to at least one MedicalProcedure.
+
+exit=1

@@ -1,0 +1,113 @@
+[   0.1s] segmenting (orchestrator) ...
+[ 107.2s] 37 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[MeasurementProcess,Measurement,ProcessStatus], s23[MeasurementProcess,Measurement,ProcessStatus], s24[MeasurementProcess,Measurement,ProcessStatus], s25[MeasurementProcess,Measurement,ProcessStatus], s26[MeasurementProcess,Measurement,ProcessStatus], s27[MeasurementProcess,Measurement,ProcessStatus], s28[MeasurementProcess,Measurement,ProcessStatus], s29[MeasurementProcess,Measurement,ProcessStatus], s30[MeasurementProcess,Measurement,ProcessStatus], s31[MeasurementProcess,Measurement,ProcessStatus], s32[MeasurementProcess,Measurement,ProcessStatus], s33[MeasurementProcess,Measurement,ProcessStatus], s34[MeasurementProcess,Measurement,ProcessStatus], s35[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s36[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s37[CarePlan]
+[ 107.2s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 107.2s] level 0: 6 agent(s), 0 known entities
+[ 107.2s]   CareUnit: extracting (223 chars, 1 classes in view)
+[ 107.2s]   ClinicalCondition: extracting (466 chars, 3 classes in view)
+[ 107.2s]   DiagnosticStatement: extracting (466 chars, 1 classes in view)
+[ 107.2s]   Measurement#1: extracting (3174 chars, 2 classes in view)
+[ 112.6s]   CareUnit: cycle 0 -> conforms
+[ 112.6s]   Measurement#2: extracting (2888 chars, 2 classes in view)
+[ 115.1s]   DiagnosticStatement: cycle 0 -> conforms
+[ 115.1s]   Measurement#3: extracting (2277 chars, 2 classes in view)
+[ 116.2s]   ClinicalCondition: cycle 0 -> conforms
+[ 116.2s]   Person: extracting (223 chars, 1 classes in view)
+[ 121.9s]   Person: cycle 0 -> conforms
+[ 121.9s]   ProcessStatus#1: extracting (3174 chars, 1 classes in view)
+[ 142.9s]   ProcessStatus#1: cycle 0 -> conforms
+[ 142.9s]   ProcessStatus#2: extracting (2888 chars, 1 classes in view)
+[ 146.9s]   Measurement#3: dropped 3 individual(s) of other classes (already built by earlier levels)
+[ 146.9s]   Measurement#3: cycle 0 -> 3 violation(s)
+[ 146.9s]   Measurement#3: fixing ...
+[ 147.8s]   ProcessStatus#2: cycle 0 -> conforms
+[ 147.8s]   ProcessStatus#3: extracting (2277 chars, 1 classes in view)
+[ 153.1s]   Measurement#1: dropped 3 individual(s) of other classes (already built by earlier levels)
+[ 153.1s]   Measurement#1: cycle 0 -> 3 violation(s)
+[ 153.1s]   Measurement#1: fixing ...
+[ 161.4s]   Measurement#2: dropped 9 individual(s) of other classes (already built by earlier levels)
+[ 161.4s]   Measurement#2: cycle 0 -> 9 violation(s)
+[ 161.4s]   Measurement#2: fixing ...
+[ 171.5s]   ProcessStatus#3: cycle 0 -> 18 violation(s)
+[ 171.5s]   ProcessStatus#3: fixing ...
+https://biomedit.ch/rdf/sphn-resource/ucum/{score} does not look like a valid URI, trying to serialize this will break.
+[ 181.9s]   Measurement#3: cycle 1 -> 1 violation(s)
+[ 181.9s]   Measurement#3: fixing ...
+[ 194.2s]   ProcessStatus#3: cycle 1 -> conforms
+[ 194.2s]   ProcessStatus#3: 9 unresolved (honest gaps)
+[ 200.3s]   Measurement#1: cycle 1 -> conforms
+https://biomedit.ch/rdf/sphn-resource/ucum/{nominal} does not look like a valid URI, trying to serialize this will break.
+https://biomedit.ch/rdf/sphn-resource/ucum/{score} does not look like a valid URI, trying to serialize this will break.
+[ 210.2s]   Measurement#2: cycle 1 -> 2 violation(s)
+[ 210.2s]   Measurement#2: fixing ...
+[ 213.1s]   Measurement#3: cycle 2 -> conforms
+[ 261.6s]   Measurement#2: cycle 2 -> conforms
+[ 261.6s] level 1: 2 agent(s), 77 known entities
+[ 261.6s]   EvaluationProcess: extracting (466 chars, 7 classes in view)
+[ 261.6s]   MeasurementProcess#1: extracting (3174 chars, 6 classes in view)
+[ 261.6s]   MeasurementProcess#2: extracting (2888 chars, 6 classes in view)
+[ 261.7s]   MeasurementProcess#3: extracting (2277 chars, 6 classes in view)
+[ 287.1s]   EvaluationProcess: dropped 2 individual(s) of other classes (already built by earlier levels)
+[ 287.1s]   EvaluationProcess: cycle 0 -> 2 violation(s)
+[ 287.1s]   EvaluationProcess: fixing ...
+[ 304.6s]   EvaluationProcess: cycle 1 -> 3 violation(s)
+[ 304.6s]   EvaluationProcess: fixing ...
+[ 323.0s]   EvaluationProcess: cycle 2 -> 2 violation(s)
+[ 323.0s]   EvaluationProcess: stopping (fix budget spent)
+[ 341.4s]   MeasurementProcess#3: dropped 9 individual(s) of other classes (already built by earlier levels)
+[ 341.5s]   MeasurementProcess#3: cycle 0 -> 9 violation(s)
+[ 341.5s]   MeasurementProcess#3: fixing ...
+[ 358.8s]   MeasurementProcess#2: dropped 12 individual(s) of other classes (already built by earlier levels)
+[ 358.9s]   MeasurementProcess#2: cycle 0 -> 12 violation(s)
+[ 358.9s]   MeasurementProcess#2: fixing ...
+[ 364.7s]   MeasurementProcess#1: cycle 0 -> 1 violation(s)
+[ 364.7s]   MeasurementProcess#1: fixing ...
+[ 419.6s]   MeasurementProcess#3: cycle 1 -> 9 violation(s)
+[ 419.6s]   MeasurementProcess#3: fixing ...
+[ 450.1s]   MeasurementProcess#2: cycle 1 -> 12 violation(s)
+[ 450.1s]   MeasurementProcess#2: fixing ...
+[ 461.2s]   MeasurementProcess#1: cycle 1 -> 1 violation(s)
+[ 461.2s]   MeasurementProcess#1: stopping (plateau)
+[ 484.3s]   MeasurementProcess#3: cycle 2 -> 1 violation(s)
+[ 484.3s]   MeasurementProcess#3: stopping (fix budget spent)
+[ 532.4s]   MeasurementProcess#2: cycle 2 -> conforms
+[ 532.5s] level 2: 2 agent(s), 115 known entities
+[ 532.5s]   CarePlan: extracting (9229 chars, 4 classes in view)
+[ 532.5s]   ClinicalVisit: extracting (9229 chars, 5 classes in view)
+[ 540.0s]   CarePlan: cycle 0 -> 1 violation(s)
+[ 540.0s]   CarePlan: fixing ...
+[ 546.2s]   CarePlan: cycle 1 -> 1 violation(s)
+[ 546.2s]   CarePlan: stopping (plateau)
+[ 546.2s]   CarePlan: 1 unresolved (honest gaps)
+[ 674.6s]   ClinicalVisit: cycle 0 -> 1 violation(s)
+[ 674.6s]   ClinicalVisit: fixing ...
+[ 806.1s]   ClinicalVisit: cycle 1 -> 3 violation(s)
+[ 806.1s]   ClinicalVisit: fixing ...
+[1192.2s]   ClinicalVisit: cycle 2 -> 1 violation(s)
+[1192.2s]   ClinicalVisit: stopping (fix budget spent)
+[1192.4s] merging (orchestrator): 3 violation(s), 10 unresolved, 3 unparsed
+[1192.8s] merge FAILED (Error code: 400 - {'error': {'message': "litellm.ContextWindowExceededError: lit...) - returning the un-merged union
+[1193.0s] final: 3 violation(s)
+conforms=False segments=16 llm_calls=34 unresolved=0
+  orchestrator   1 calls     4860 in    5521 out  cost n/a  gemma4-g1
+  total         33 calls   201174 in   85597 out  cost n/a  
+  worker        32 calls   196314 in   80076 out  cost n/a  gemma4-g1
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasConditionDomainShape
+	Focus Node: ex:diagnostic_statement_Full-time_employment_20220401T154218
+	Value Node: ex:diagnostic_statement_Full-time_employment_20220401T154218
+	Message: Subject of chr:hasCondition must be a chr:EvaluationProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasConditionDomainShape
+	Focus Node: ex:diagnostic_statement_Gingivitis_20220401T171451
+	Value Node: ex:diagnostic_statement_Gingivitis_20220401T171451
+	Message: Subject of chr:hasCondition must be a chr:EvaluationProcess.
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasUnitRangeShape
+	Focus Node: ex:unit_mmolperL
+	Value Node: ex:unit_mmolperL
+	Message: Object of chr:hasUnit must be a chr:Unit individual.
+
+exit=1

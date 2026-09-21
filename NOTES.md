@@ -306,3 +306,11 @@ what happened → what fixed it or would.
     measurements (vignette_078: 0.63 → 0.12). Correct rule: drop only individuals of classes an
     earlier level actually built, including their super- and subclasses (the visit agent types
     re-created processes as MedicalProcedure). Third pass re-runs the affected documents.
+
+59. **Final 200-document result (2026-09-21, gemma4-g1 both roles, ordered):** macro F1 0.828 /
+    micro 0.795 (quartiles 0.79 / 0.85 / 0.91); thesis systems rescored with the same scorer: A
+    0.318, B 0.314, D 0.336 macro; kgdc wins 198 of 200 paired documents against A (sign test
+    p ≈ 1e-56). Without the 11 development vignettes: 0.825. By size: 0.85 (<50 gold triples),
+    0.91 (50-150), 0.80 (>150). The five documents below 0.5 are the 41-53-segment ones whose
+    merge prompt exceeds the 32k context; the next step for them is a merge that works per
+    class or per chunk instead of on the whole graph.

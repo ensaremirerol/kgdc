@@ -21,8 +21,9 @@ honest gaps beats a conformant graph with invented values.
 
 | corpus | docs | metric | kgdc | original pipeline (gpt-oss-120b, same scorer) |
 |---|---|---|---|---|
-| CHR clinical vignettes (interim, pass 1) | 157 | identity-hash triple F1, macro | **0.804** | A 0.312 · B 0.307 · D 0.339 |
-| CHR clinical vignettes | 157 | same, micro | **0.744** | A 0.304 · B 0.302 · D 0.322 |
+| CHR clinical vignettes (all) | 200 | identity-hash triple F1, macro | **0.828** | A 0.318 · B 0.314 · D 0.336 |
+| CHR clinical vignettes (all) | 200 | same, micro | **0.795** | A 0.317 · B 0.315 · D 0.328 |
+| CHR, without the 11 development vignettes | 189 | identity-hash triple F1, macro | **0.825** | A 0.315 · B 0.310 · D 0.330 |
 | WebNLG Airport | 20 | label triple F1, macro | **0.948** | — |
 | WebNLG Building | 20 | label triple F1, macro | **0.838** | — |
 | ADE corpus (drug → adverse effect) | 20 | label triple F1, micro, strict / lenient | **0.52 / 0.80** | — |
@@ -555,27 +556,40 @@ The original pipeline (the companion Thesis repository, extractor **gpt-oss-120b
 systems: **A**, one extraction call per document; **B**, A plus up to three SHACL-feedback repair
 calls; **D**, A repeated four times without feedback (compute-fair control). Their committed
 outputs for all 200 vignettes were rescored with the identity-hash scorer used for kgdc, so both
-sides are on the same footing. Interim snapshot, pass 1 of the 200-document batch, 157 documents:
+sides are on the same footing. Final run, all 200 documents (`results/2026-09-21/chr_comparison_final.txt`):
 
 | system | micro P | micro R | micro F1 | macro P | macro R | macro F1 | docs F1 ≥ 0.9 | docs F1 < 0.5 |
 |---|---|---|---|---|---|---|---|---|
-| **kgdc** (gemma 27B, ordered) | 0.698 | 0.797 | **0.744** | 0.762 | 0.853 | **0.804** | 54 | 14 |
-| thesis A (gpt-oss-120b, 1 call) | 0.373 | 0.257 | 0.304 | 0.366 | 0.273 | 0.312 | 0 | 149 |
-| thesis B (SHACL loop, ≤ 4 calls) | 0.367 | 0.256 | 0.302 | 0.359 | 0.271 | 0.307 | 0 | 151 |
-| thesis D (4 calls, no feedback) | 0.395 | 0.271 | 0.322 | 0.398 | 0.296 | 0.339 | 0 | 146 |
+| **kgdc** (gemma 27B, ordered) | 0.749 | 0.847 | **0.795** | 0.786 | 0.877 | **0.828** | 58 | 5 |
+| thesis A (gpt-oss-120b, 1 call) | 0.387 | 0.268 | 0.317 | 0.374 | 0.277 | 0.318 | 0 | 188 |
+| thesis B (SHACL loop, ≤ 4 calls) | 0.382 | 0.268 | 0.315 | 0.368 | 0.275 | 0.314 | 0 | 190 |
+| thesis D (4 calls, no feedback) | 0.402 | 0.277 | 0.328 | 0.396 | 0.293 | 0.336 | 0 | 187 |
 
 | paired, kgdc vs | mean ΔF1 | median ΔF1 | wins / ties / losses | sign test p |
 |---|---|---|---|---|
-| A | +0.49 | +0.48 | 147 / 2 / 8 | 3e-34 |
-| B | +0.50 | +0.49 | 147 / 3 / 7 | 3e-35 |
-| D | +0.47 | +0.48 | 147 / 0 / 10 | 2e-32 |
+| A | +0.51 | +0.47 | 198 / 0 / 2 | 3e-56 |
+| B | +0.51 | +0.48 | 198 / 0 / 2 | 3e-56 |
+| D | +0.49 | +0.47 | 196 / 0 / 4 | 8e-53 |
+
+Without the 11 development vignettes (065, 001-010; `chr_comparison_final_no_dev.txt`): kgdc macro
+0.825 / micro 0.792 on 189 documents against A 0.315, B 0.310, D 0.330 macro. Per document, kgdc's
+F1 quartiles are 0.79 / 0.85 / 0.91 (min 0.19, max 0.95); by document size, macro F1 is 0.85 for
+< 50 gold triples, 0.91 for 50-150 and 0.80 for the 143 documents above 150.
+
+How the run went: pass 1 ran all 200 with a 90 s worker timeout, which cost 22 large documents
+their MeasurementProcess agent (fixed: 600 s), and 43 merge replies were cut off by the endpoint's
+output cap and had been written as results (fixed: cut-off replies fall back to the union;
+`LLM_BIG_MAX_TOKENS`). A second pass re-ran 36 documents with the duplication signature after the
+scope filter was added, and a third pass re-ran 15 after the scope filter's level-0 bug was fixed
+and classes with many segments were split over several agents. Every output in `runs/` is from the
+final code except where a pass left it untouched; `pass1/` and `pass2/` keep the replaced files.
+The remaining losses are the largest documents (41-53 segments, 450-600 gold triples), where the
+merge prompt still exceeds the 32k context and the un-merged union is returned (NOTES 53-58).
 
 For reference, under the thesis's own normalizer alignment the thesis reports A 0.528 and B 0.523;
-on the first 8 documents the Thesis evaluator in that mode gives kgdc 0.837 against A 0.591 and
-B 0.581, so the ranking does not depend on the scorer. kgdc's losses are the largest documents
-(35-44 segments, 400-500 gold triples): cut-off or context-overflowing merge replies and a visit
-agent re-creating processes it should only link (NOTES 53-55); the fixes for both are in the code
-and the affected documents are being re-run. The comparison is *pipeline + model* against
+the Thesis evaluator run on the final kgdc outputs next to A and B (`examples/chr/thesis_eval.sh`)
+gives kgdc 0.779 against A 0.528 and B 0.523 in normalizer mode, and kgdc 0.696 against A 0.289 and
+B 0.285 in its identity-hash mode without any label normalisation (all 200 documents, macro F1), so the ranking does not depend on the scorer. The comparison is *pipeline + model* against
 *pipeline + model*: the thesis outputs come from gpt-oss-120b, kgdc's from gemma 27B.
 
 ### Other corpora and modes
