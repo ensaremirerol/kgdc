@@ -314,3 +314,13 @@ what happened → what fixed it or would.
     0.91 (50-150), 0.80 (>150). The five documents below 0.5 are the 41-53-segment ones whose
     merge prompt exceeds the 32k context; the next step for them is a merge that works per
     class or per chunk instead of on the whole graph.
+60. **Agents never see namespace IRIs.** Prompts printed the `@prefix` block and asked agents to
+    copy it; in 15 of 200 documents an agent mistyped one character of the CHR namespace
+    (`…-83f1-…`, `…-4bd83f3-…`) and every triple it wrote became foreign vocabulary: 792
+    UndeclaredProperty + 212 UndeclaredClass + the closed-shape fallout, i.e. most of the
+    corpus-level violations, concentrated in the worst-scoring documents. Now prompts list only
+    prefix *names* (`chr:, ex:, rdf:, rdfs:, xsd:`), graphs shown back to a model lose their
+    prefix lines, and the pipeline strips whatever `@prefix` lines a model writes and prepends
+    the canonical block (`with_prefixes`). The same rule the MCP server always had.
+    Update after the namespace repair (60): macro 0.839 / micro 0.813, min document 0.527, kgdc
+    wins 200 of 200 paired documents against every thesis system.

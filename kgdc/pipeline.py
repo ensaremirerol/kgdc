@@ -137,6 +137,16 @@ def scope_filter(ttl: str, schema: Schema, concepts: list[str], known_ttl: str) 
     return g.serialize(format="turtle") + ("\n" + comments if comments else ""), len(bad)
 
 
+_PREFIX_LINE = re.compile(r"^\s*(@prefix|PREFIX)\s.*$", re.I | re.M)
+
+
+def with_prefixes(ttl: str, schema: Schema) -> str:
+    """Agents never see or write namespace IRIs (one mistyped character turned every term of a
+    document into foreign vocabulary): drop any prefix declaration the model produced and put
+    the canonical block in front."""
+    return schema.prefix_block() + "\n\n" + _PREFIX_LINE.sub("", ttl).strip() + "\n"
+
+
 def _agent(schema: Schema, context: str, seg: dict, task: str, known: str = "", known_ttl: str = "") -> dict:
     """One sub-agent: one-shot extraction, then up to MAX_FIX validator-guided fixes.
 
@@ -148,7 +158,7 @@ def _agent(schema: Schema, context: str, seg: dict, task: str, known: str = "", 
     name = seg["id"].split(":")[-1]
     log(f"  {name}: extracting ({len(seg['text'])} chars, {len(schema.classes)} classes in view)")
     try:
-        ttl = llm.strip_fences(llm.chat(prompts.extract(schema, context, seg["text"], trace["concepts"], task, known)))
+        ttl = with_prefixes(llm.strip_fences(llm.chat(prompts.extract(schema, context, seg["text"], trace["concepts"], task, known))), schema)
     except Exception as e:  # noqa: BLE001 — one dead agent (context window, endpoint) must not take the document down
         log(f"  {name}: extraction FAILED ({str(e)[:100]})")
         trace.update(ttl="", unresolved=[f"UNRESOLVED: agent {name} failed: {str(e)[:200]}"], error=str(e)[:300])
@@ -172,7 +182,7 @@ def _agent(schema: Schema, context: str, seg: dict, task: str, known: str = "", 
         prev = report
         log(f"  {name}: fixing ...")
         try:
-            ttl = llm.strip_fences(llm.chat(prompts.fix(schema, ttl, _cap(report), context, seg["text"], task, known)))   # a verbose SHACL report blew a 32k context
+            ttl = with_prefixes(llm.strip_fences(llm.chat(prompts.fix(schema, ttl, _cap(report), context, seg["text"], task, known))), schema)   # a verbose SHACL report blew a 32k context
         except Exception as e:  # noqa: BLE001 — keep the last graph; the merge pass still sees the violations
             log(f"  {name}: fix FAILED ({str(e)[:100]}), keeping the graph as is")
             trace["error"] = str(e)[:300]
@@ -275,7 +285,7 @@ def _final(schema: Schema, text: str, merged: str, report: str, unres: list[str]
     prompt = prompts.merge(schema.subset(concepts), text, merged,
                            _cap(report), unres[:50], _cap("\n\n".join(unparsed)), task)
     try:
-        final = llm.strip_fences(llm.chat(prompt, model=BIG_MODEL))
+        final = with_prefixes(llm.strip_fences(llm.chat(prompt, model=BIG_MODEL)), schema)
         err = None
     except Exception as e:  # noqa: BLE001 — e.g. context window exceeded: the union is still a result
         final, err = merged, f"merge pass failed: {str(e)[:300]}"

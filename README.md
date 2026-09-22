@@ -21,9 +21,9 @@ honest gaps beats a conformant graph with invented values.
 
 | corpus | docs | metric | kgdc | original pipeline (gpt-oss-120b, same scorer) |
 |---|---|---|---|---|
-| CHR clinical vignettes (all) | 200 | identity-hash triple F1, macro | **0.828** | A 0.318 · B 0.314 · D 0.336 |
-| CHR clinical vignettes (all) | 200 | same, micro | **0.795** | A 0.317 · B 0.315 · D 0.328 |
-| CHR, without the 11 development vignettes | 189 | identity-hash triple F1, macro | **0.825** | A 0.315 · B 0.310 · D 0.330 |
+| CHR clinical vignettes (all) | 200 | identity-hash triple F1, macro | **0.839** | A 0.318 · B 0.314 · D 0.336 |
+| CHR clinical vignettes (all) | 200 | same, micro | **0.813** | A 0.317 · B 0.315 · D 0.328 |
+| CHR, without the 11 development vignettes | 189 | identity-hash triple F1, macro | **0.836** | A 0.315 · B 0.310 · D 0.330 |
 | WebNLG Airport | 20 | label triple F1, macro | **0.948** | — |
 | WebNLG Building | 20 | label triple F1, macro | **0.838** | — |
 | ADE corpus (drug → adverse effect) | 20 | label triple F1, micro, strict / lenient | **0.52 / 0.80** | — |
@@ -294,7 +294,9 @@ sequenceDiagram
 ```
 
 The extract prompt (`prompts.extract`) contains, in order: the scope ("output only individuals of
-type X plus what they link to"), prefixes, classes, properties, SHACL constraints, the Turtle
+type X plus what they link to"), the prefix *names* only (the namespace IRIs never enter a prompt;
+the pipeline strips any `@prefix` line a model writes and prepends the canonical block, NOTES 60),
+classes, properties, SHACL constraints, the Turtle
 templates, seven rules (declared terms only; IRIs named from the text so the same thing gets the
 same IRI; type and label on every individual; literals copied exactly with the datatype the
 constraint names; IRIs where a constraint asks for one; codes through the code property; never
@@ -560,21 +562,20 @@ sides are on the same footing. Final run, all 200 documents (`results/2026-09-21
 
 | system | micro P | micro R | micro F1 | macro P | macro R | macro F1 | docs F1 ≥ 0.9 | docs F1 < 0.5 |
 |---|---|---|---|---|---|---|---|---|
-| **kgdc** (gemma 27B, ordered) | 0.749 | 0.847 | **0.795** | 0.786 | 0.877 | **0.828** | 58 | 5 |
+| **kgdc** (gemma 27B, ordered) | 0.767 | 0.865 | **0.813** | 0.796 | 0.888 | **0.839** | 58 | 0 |
 | thesis A (gpt-oss-120b, 1 call) | 0.387 | 0.268 | 0.317 | 0.374 | 0.277 | 0.318 | 0 | 188 |
 | thesis B (SHACL loop, ≤ 4 calls) | 0.382 | 0.268 | 0.315 | 0.368 | 0.275 | 0.314 | 0 | 190 |
 | thesis D (4 calls, no feedback) | 0.402 | 0.277 | 0.328 | 0.396 | 0.293 | 0.336 | 0 | 187 |
 
 | paired, kgdc vs | mean ΔF1 | median ΔF1 | wins / ties / losses | sign test p |
 |---|---|---|---|---|
-| A | +0.51 | +0.47 | 198 / 0 / 2 | 3e-56 |
-| B | +0.51 | +0.48 | 198 / 0 / 2 | 3e-56 |
-| D | +0.49 | +0.47 | 196 / 0 / 4 | 8e-53 |
+| A | +0.52 | +0.48 | 200 / 0 / 0 | 1e-60 |
+| B | +0.53 | +0.49 | 200 / 0 / 0 | 1e-60 |
+| D | +0.50 | +0.48 | 200 / 0 / 0 | 1e-60 |
 
 Without the 11 development vignettes (065, 001-010; `chr_comparison_final_no_dev.txt`): kgdc macro
-0.825 / micro 0.792 on 189 documents against A 0.315, B 0.310, D 0.330 macro. Per document, kgdc's
-F1 quartiles are 0.79 / 0.85 / 0.91 (min 0.19, max 0.95); by document size, macro F1 is 0.85 for
-< 50 gold triples, 0.91 for 50-150 and 0.80 for the 143 documents above 150.
+0.836 / micro 0.811 on 189 documents against A 0.315, B 0.310, D 0.330 macro. Per document, kgdc's
+F1 quartiles are 0.79 / 0.85 / 0.91 (min 0.53, max 0.95); no document scores below 0.5.
 
 How the run went: pass 1 ran all 200 with a 90 s worker timeout, which cost 22 large documents
 their MeasurementProcess agent (fixed: 600 s), and 43 merge replies were cut off by the endpoint's
@@ -583,8 +584,11 @@ output cap and had been written as results (fixed: cut-off replies fall back to 
 scope filter was added, and a third pass re-ran 15 after the scope filter's level-0 bug was fixed
 and classes with many segments were split over several agents. Every output in `runs/` is from the
 final code except where a pass left it untouched; `pass1/` and `pass2/` keep the replaced files.
-The remaining losses are the largest documents (41-53 segments, 450-600 gold triples), where the
-merge prompt still exceeds the 32k context and the un-merged union is returned (NOTES 53-58).
+After the third pass, 15 outputs still carried a namespace an agent had mistyped by one character
+(every triple foreign vocabulary); the prompts no longer show namespace IRIs at all (NOTES 60) and
+those 15 files were rewritten to the canonical namespace, which is exactly what the new code emits.
+The remaining weakest documents are the largest ones (41-53 segments, 450-600 gold triples), where
+the merge prompt still exceeds the 32k context and the un-merged union is returned (NOTES 53-60).
 
 For reference, under the thesis's own normalizer alignment the thesis reports A 0.528 and B 0.523;
 the Thesis evaluator run on the final kgdc outputs next to A and B (`examples/chr/thesis_eval.sh`)

@@ -151,6 +151,10 @@ class Schema:
     def prefix_block(self) -> str:
         return "\n".join(f"@prefix {p}: <{ns}> ." for p, ns in sorted(self.prefixes.items()))
 
+    def prefix_names(self) -> str:
+        """`chr:, ex:, rdf:, rdfs:, xsd:` — what an agent may use; the IRIs stay out of every prompt."""
+        return ", ".join(f"{p}:" for p in sorted(self.prefixes))
+
     def concept_block(self) -> str:
         return "\n".join(f"- {q}: {d}" for q, d in sorted(self.classes.items()))
 

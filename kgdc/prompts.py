@@ -1,7 +1,16 @@
 """Prompts. Everything vocabulary-specific comes from the Schema object."""
 from __future__ import annotations
 
+import re
+
 from .schema import Schema
+
+_PREFIX_LINE = re.compile(r"^\s*(@prefix|PREFIX)\s.*$", re.I | re.M)
+
+
+def _no_prefix_lines(ttl: str) -> str:
+    """Graphs shown back to a model (fix, merge) lose their @prefix lines: the namespace IRIs never enter a prompt."""
+    return _PREFIX_LINE.sub("", ttl).strip()
 
 NO_FABRICATION = """\
 NEVER invent facts. Every literal, code, date, name and every relation must be
@@ -77,8 +86,10 @@ to directly. Do not describe anything else the text mentions — other agents
 handle the other classes. Do not invent class or property names; if a thing
 has no class in the list, leave it out.
 
-Use exactly these prefixes:
-{schema.prefix_block()}
+PREFIXES: {schema.prefix_names()} — they are declared for you. Write every term as a prefixed
+name (chr:hasCode, ex:person_Ann, xsd:float); never write @prefix lines and never spell out a
+namespace IRI. Full IRIs in angle brackets are only for external identifiers such as
+<https://loinc.org/8302-2>.
 
 CLASSES (rdf:type must be one of these):
 {schema.concept_block()}
@@ -103,7 +114,6 @@ RULES:
    ex:<concept>_<date-or-code>). Reuse one IRI for one thing. Local names use
    only letters, digits, '_' and '-' (write 2016-10-04T05:20:29+02:00 as 20161004T052029).
 3. Every individual gets a type (write it as `a`) and an rdfs:label taken from the text.
-   Copy the prefix block above verbatim; do not declare other prefixes.
 4. Copy literals exactly as written in the text (dates complete, codes digit-for-digit).
    Use exactly the datatype a constraint names (e.g. "104.0"^^xsd:float, not xsd:decimal).
 5. A slot whose constraint says "kind sh:IRI" or gives a pattern takes an IRI in
@@ -147,8 +157,7 @@ required, a missing angle bracket) are always fixable: the value is already
 there, only its form is wrong — rewrite it, e.g. "https://x/y" -> <https://x/y>,
 "104.0"^^xsd:decimal -> "104.0"^^xsd:float.
 
-Use exactly these prefixes:
-{schema.prefix_block()}
+PREFIXES: {schema.prefix_names()} — declared for you; write prefixed names only, no @prefix lines.
 
 Allowed classes: {', '.join(sorted(schema.classes))}
 Allowed properties: {', '.join(sorted(schema.properties))}
@@ -163,7 +172,7 @@ TEXT:
 \"\"\"
 
 GRAPH:
-{ttl}
+{_no_prefix_lines(ttl)}
 
 Return ONLY the corrected Turtle. No prose, no code fences."""
 
@@ -181,8 +190,7 @@ Do:
 
 {NO_FABRICATION}
 
-Use exactly these prefixes:
-{schema.prefix_block()}
+PREFIXES: {schema.prefix_names()} — declared for you; write prefixed names only, no @prefix lines.
 Allowed classes: {', '.join(sorted(schema.classes))}
 Allowed properties: {', '.join(sorted(schema.properties))}
 
@@ -204,7 +212,7 @@ DOCUMENT:
 \"\"\"
 
 MERGED GRAPH:
-{ttl}
+{_no_prefix_lines(ttl)}
 
 Return ONLY the final Turtle. No prose, no code fences."""
 

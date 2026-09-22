@@ -172,3 +172,23 @@ def test_scope_filter_keeps_classes_nobody_built():
     known = PFX + 'ex:p a chr:Person ; rdfs:label "Ann" .\n'                                          # Person built, Unit not
     ttl, dropped = pipeline.scope_filter(out + 'ex:p2 a chr:Person ; rdfs:label "Bob" .\n', schema, ["chr:Measurement"], known)
     assert dropped == 1 and "chr:Unit" in ttl and "Bob" not in ttl
+
+
+def test_agents_never_declare_prefixes(monkeypatch):
+    """A mistyped @prefix from the model is discarded; the canonical block is prepended; prompts carry no namespace IRIs."""
+    schema = kgdc.load(EX / "ontology.ttl", EX / "shapes.ttl")
+    bad = '@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/WRONG/> .\n@prefix ex: <http://example.org/data/> .\nex:p a chr:Person ; rdfs:label "Ann" .\n'
+    fixed = pipeline.with_prefixes(bad, schema)
+    assert "WRONG" not in fixed and fixed.count("@prefix chr:") == 1
+    from rdflib import Graph
+    g = Graph().parse(data=fixed, format="turtle")
+    assert any(str(o).startswith(schema.prefixes["chr"]) for o in g.objects()), "chr:Person resolves to the real namespace"
+    seen = []
+    def fake(prompt, model=None, **kw):
+        if prompt.startswith("You split"):
+            return json.dumps({"shared_context": "", "segments": [{"id": "s1", "concepts": ["chr:Person"], "text": "Ann"}]})
+        seen.append(prompt); return bad
+    monkeypatch.setattr(llm, "chat", fake); monkeypatch.setattr(pipeline, "MAX_FIX", 0)
+    r = kgdc.run(schema, "Ann")
+    assert all("w3id.org" not in p for p in seen), "no namespace IRI in any agent or merge prompt"
+    assert r.conforms and "WRONG" not in r.ttl
