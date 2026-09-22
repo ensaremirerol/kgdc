@@ -324,3 +324,8 @@ what happened → what fixed it or would.
     the canonical block (`with_prefixes`). The same rule the MCP server always had.
     Update after the namespace repair (60): macro 0.839 / micro 0.813, min document 0.527, kgdc
     wins 200 of 200 paired documents against every thesis system.
+61. **Fix rounds must go through the scope filter too.** After the filter dropped the Measurements
+    a MeasurementProcess chunk agent had re-created, the dangling hasResult links became SHACL
+    violations and the fix round re-created the same nodes, unfiltered (vignette_160 fresh run:
+    77 Measurements for 38, F1 0.49). Filtering every fix output as well: 38 Measurements,
+    F1 0.84 on the same document, with the merge still overflowing and the union returned.

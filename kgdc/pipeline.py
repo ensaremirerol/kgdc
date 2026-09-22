@@ -183,6 +183,11 @@ def _agent(schema: Schema, context: str, seg: dict, task: str, known: str = "", 
         log(f"  {name}: fixing ...")
         try:
             ttl = with_prefixes(llm.strip_fences(llm.chat(prompts.fix(schema, ttl, _cap(report), context, seg["text"], task, known))), schema)   # a verbose SHACL report blew a 32k context
+            if known_ttl:   # a fix round re-creates what the scope filter just dropped (dangling link -> "add the node"): filter again
+                ttl, dropped = scope_filter(ttl, schema, trace["concepts"], known_ttl)
+                if dropped:
+                    trace["scope_dropped"] = trace.get("scope_dropped", 0) + dropped
+                    log(f"  {name}: fix round re-created {dropped} individual(s) of other classes, dropped again")
         except Exception as e:  # noqa: BLE001 — keep the last graph; the merge pass still sees the violations
             log(f"  {name}: fix FAILED ({str(e)[:100]}), keeping the graph as is")
             trace["error"] = str(e)[:300]
