@@ -7,7 +7,7 @@ import re
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 
-from rdflib import RDF, Graph, URIRef
+from rdflib import RDF, RDFS, XSD, Graph, Literal, URIRef
 
 from . import llm, prompts
 from .progress import log
@@ -245,6 +245,56 @@ def drop_redundant_types(g: Graph, schema: Schema) -> int:
     return n
 
 
+_NUM = {XSD.float, XSD.double, XSD.decimal, XSD.integer, XSD.int, XSD.long}
+
+
+def _value_key(o):
+    """Literals compare by value (1.0 == "1.0"^^xsd:float, case-insensitive text); IRIs as they are."""
+    if isinstance(o, Literal):
+        if o.datatype in _NUM:
+            try:
+                return ("num", float(o))
+            except ValueError:
+                pass
+        return ("lit", str(o).strip().lower())
+    return o
+
+
+def merge_identical(g: Graph) -> int:
+    """Merge individuals that say the same thing: same rdf:types and the same non-label statements
+    (or, with no statements, the same labels). Agents re-create what another agent built (38
+    Measurements written twice by two chunk agents, one "completed" ProcessStatus per process);
+    the merge pass that should dedupe them is the call that overflows on big documents. The copy
+    others link to survives, every label is kept, a value it already has is not copied twice.
+    Repeats until nothing changes: merging two Units makes their Measurements identical. Returns
+    the number of nodes merged away."""
+    merged = 0
+    while True:
+        groups: dict = {}
+        for s in set(g.subjects(RDF.type, None)):
+            if not isinstance(s, URIRef):
+                continue
+            facts = frozenset((p, _value_key(o)) for p, o in g.predicate_objects(s) if p not in (RDF.type, RDFS.label))
+            ident = facts or frozenset(str(l).strip().lower() for l in g.objects(s, RDFS.label))
+            if ident:   # a bare typed node with no label identifies nothing
+                groups.setdefault((frozenset(g.objects(s, RDF.type)), bool(facts), ident), []).append(s)
+        dups = [v for v in groups.values() if len(v) > 1]
+        if not dups:
+            return merged
+        for v in dups:
+            keep, *rest = sorted(v, key=lambda s: (-len(set(g.subjects(None, s))), str(s)))
+            for d in rest:
+                has = {(p, _value_key(o)) for p, o in g.predicate_objects(keep)}
+                for p, o in list(g.predicate_objects(d)):
+                    g.remove((d, p, o))
+                    if (p, _value_key(o)) not in has:   # a second hasQuantityValue re-keys the node
+                        g.add((keep, p, o))
+                for s, p in list(g.subject_predicates(d)):
+                    g.remove((s, p, d))
+                    g.add((s, p, keep))
+                merged += 1
+
+
 def _union(schema: Schema, ttls: list[str]) -> tuple[str, list[str]]:
     """Union of the parseable sub-graphs, plus the raw text of those that were not."""
     g = Graph()
@@ -257,6 +307,9 @@ def _union(schema: Schema, ttls: list[str]) -> tuple[str, list[str]]:
         except Exception:  # noqa: BLE001 — the merge pass gets it as text; facts must not vanish silently
             unparsed.append(t)
     drop_redundant_types(g, schema)
+    n = merge_identical(g)
+    if n:
+        log(f"union: merged {n} identical individual(s)")
     # rdflib parses IRIs with illegal characters but cannot serialise them; such
     # triples already fail the IRI check in the agent's trace, so drop them here.
     for trip in [t for t in g if any(isinstance(x, URIRef) and _BAD_IRI.search(str(x)) for x in t)]:
@@ -298,6 +351,7 @@ def _final(schema: Schema, text: str, merged: str, report: str, unres: list[str]
     try:
         gf = Graph().parse(data=final, format="turtle")
         drop_redundant_types(gf, schema)
+        merge_identical(gf)
         n_union = len(Graph().parse(data=merged, format="turtle"))
         if len(gf) < MERGE_MIN_KEEP * n_union:   # a merge dedupes, it does not lose half the graph: the reply was cut short
             raise ValueError(f"merge output has {len(gf)} triples, union has {n_union}")

@@ -329,3 +329,19 @@ what happened → what fixed it or would.
     violations and the fix round re-created the same nodes, unfiltered (vignette_160 fresh run:
     77 Measurements for 38, F1 0.49). Filtering every fix output as well: 38 Measurements,
     F1 0.84 on the same document, with the merge still overflowing and the union returned.
+62. **Identical individuals are merged by rule, before and after the merge pass**
+    (`merge_identical`: same rdf:types and the same non-label statements, or, with none, the same
+    labels; repeated until nothing changes, so merged Units make their Measurements identical). The
+    final outputs still carried 541 excess Measurements (46 documents) and 397 copies of the
+    "completed" ProcessStatus: chunk agents re-create each other's nodes, and the merge pass that
+    should dedupe them is the call that overflows on the big documents. Applied offline to the 200
+    final outputs: 935 nodes merged in 73 documents, macro 0.839 -> 0.844, micro 0.813 -> 0.822
+    (P 0.767 -> 0.782, R unchanged), 21 documents better (047 0.59 -> 0.70, 177 0.76 -> 0.85, 193
+    0.79 -> 0.87), none worse. Small because the identity-hash scorer already collapses exact
+    copies; the gain is where copies differed in links or labels. Two traps on the way: copying
+    every statement of the merged-away node doubled a value written as `1.0` and
+    `"1.0"^^xsd:float` (a second value re-keys the node: vignette_151 0.53 -> 0.45), and keeping
+    only the survivor's label dropped the label the gold uses (12 documents -0.017). Values now
+    compare by value and are copied only if new; all labels stay. On the gold ABoxes the rule
+    merges 18 nodes: two indistinguishable repeated Measurements in vignette_017 and one UCUM unit
+    under two labels in 030 and 140.

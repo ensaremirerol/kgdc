@@ -192,3 +192,23 @@ def test_agents_never_declare_prefixes(monkeypatch):
     r = kgdc.run(schema, "Ann")
     assert all("w3id.org" not in p for p in seen), "no namespace IRI in any agent or merge prompt"
     assert r.conforms and "WRONG" not in r.ttl
+
+
+def test_identical_individuals_merged():
+    """Two agents wrote the same Measurement and the same Unit under different IRIs: one of each survives,
+    links move to it, both labels stay, the value is not doubled (1.0 == "1.0"^^xsd:float)."""
+    from rdflib import Graph, URIRef, RDFS
+    g = Graph().parse(data=PFX + """@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+        ex:u1 a chr:Unit ; rdfs:label "cm" ; chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+        ex:u2 a chr:Unit ; rdfs:label "cm" ; chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+        ex:m1 a chr:Measurement ; rdfs:label "Body Height" ; chr:hasQuantityValue "177.0"^^xsd:float ; chr:hasUnit ex:u1 .
+        ex:m2 a chr:Measurement ; rdfs:label "Body height measurement" ; chr:hasQuantityValue 177.0 ; chr:hasUnit ex:u2 .
+        ex:p a chr:MeasurementProcess ; chr:hasResult ex:m2 .
+        ex:s1 a chr:ProcessStatus ; rdfs:label "completed" . ex:s2 a chr:ProcessStatus ; rdfs:label "Completed" .
+        ex:a a chr:Person ; rdfs:label "Ann" . ex:b a chr:Person ; rdfs:label "Bob" .""", format="turtle")
+    assert pipeline.merge_identical(g) == 3, "unit, then (now identical) measurement, then status; Ann and Bob stay apart"
+    m = g.value(URIRef("http://example.org/data/p"), URIRef(PFX.split("<")[1].split(">")[0] + "hasResult"))
+    assert str(m).endswith("/m2"), "the linked copy survives"
+    assert len(list(g.objects(m, URIRef(PFX.split("<")[1].split(">")[0] + "hasQuantityValue")))) == 1
+    assert len(list(g.objects(m, RDFS.label))) == 2
+    assert pipeline.merge_identical(g) == 0

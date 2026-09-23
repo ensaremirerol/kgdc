@@ -32,6 +32,10 @@ kgdc vs thesis_d: mean ΔF1 = +0.503, median = +0.471, wins/ties/losses = 200/0/
 Without the development vignettes (189 documents): kgdc macro 0.836 / micro 0.811; A 0.315, B 0.310, D 0.330 macro.
 After the three passes, 15 outputs with a mistyped vocabulary namespace were rewritten to the canonical one (`runs/.../nsfix/` keeps the originals; NOTES 60).
 
+Identical-individual merge (`merge_identical`, NOTES 62) applied offline to the 200 final outputs: macro 0.839 → 0.844,
+micro 0.813 → 0.822 (P 0.767 → 0.782, R unchanged); 935 nodes merged in 73 documents, 21 documents better, none worse.
+Per document: `chr_kgdc_final_merge_identical_scores.txt`. The outputs in `runs/` are not rewritten.
+
 Cross-check with the Thesis repo's own evaluator (`chr_thesis_evaluator_{normalizer,identity-hash}.json`, all 200
 documents, macro F1): normalizer alignment kgdc 0.779 / A 0.528 / B 0.523; identity-hash without label normalisation
 kgdc 0.696 / A 0.289 / B 0.285.

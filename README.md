@@ -160,7 +160,7 @@ flowchart TD
     end
     AG --> K[known entities<br/>IRI, type, label]
     K --> |next level sees them| AG
-    AG --> U[union of all agent graphs<br/>drop bad IRIs,<br/>drop redundant supertypes]
+    AG --> U[union of all agent graphs<br/>drop bad IRIs,<br/>drop redundant supertypes,<br/>merge identical individuals]
     U --> MERGE[merge pass<br/><i>orchestrator</i>, whole document:<br/>dedupe, cross-links, remaining violations]
     MERGE --> FV{final validate}
     FV --> OUT[(out.ttl +<br/>out.ttl.trace.json)]
@@ -341,6 +341,12 @@ does not hallucinate (NOTES 39); off by default.
 - **Redundant supertypes** (`drop_redundant_types`): `x a MeasurementProcess, MedicalProcedure`
   becomes `x a MeasurementProcess`. Models add the range class next to the real one; it is entailed
   anyway and re-keys the node under identity-hash scoring (NOTES 45).
+- **Identical individuals** (`merge_identical`): two nodes with the same types and the same
+  non-label statements (or, with none, the same labels) become one; links move to the copy others
+  already point at, every label is kept, and literals compare by value. It repeats until nothing
+  changes, so two merged Units make their Measurements identical in the next round. Chunk agents
+  re-create each other's nodes; merging them by rule costs no LLM call and shrinks the merge
+  prompt (NOTES 62).
 - **Merge pass** (`_final`, orchestrator): the whole document, the union graph, the remaining
   violations (capped), the UNRESOLVED notes and any unparsed agent text. It merges duplicates,
   adds cross-segment links the document states, removes what the document does not support and
