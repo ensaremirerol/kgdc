@@ -31,7 +31,7 @@ def prep(g: Graph, exact: bool) -> Graph:
 
 def score(out_path, gold_path, exact=False):
     gold = prep(Graph().parse(str(gold_path)), exact)
-    out = prep(Graph().parse(data=Path(out_path).read_text().replace("http://example.org/data/", "http://example.org/clinical/"), format="turtle"), exact)
+    out = prep(Graph().parse(data=Path(out_path).read_text(encoding="utf-8").replace("http://example.org/data/", "http://example.org/clinical/"), format="turtle"), exact)
     G, O = canonical_triples(gold), canonical_triples(out)
     tp = len(G & O); p = tp / len(O) if O else 0; r = tp / len(G) if G else 0
     return len(G), len(O), tp, p, r, (2 * p * r / (p + r) if p + r else 0)
