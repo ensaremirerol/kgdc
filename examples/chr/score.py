@@ -4,11 +4,11 @@
 
 Default normalises both sides first: honorifics stripped from labels (the gold has "Ms. X", the text
 has "X") and redundant supertypes dropped (`x a MeasurementProcess, MedicalProcedure`). --exact skips
-both. THESIS_DIR points at the Thesis checkout (default ~/workspace/03_ids/Thesis)."""
-import os, re, sys
+both. Self-contained: canonical_iri.py and chr_norm.py sit next to this file."""
+import re, sys
 from pathlib import Path
 from rdflib import Graph, RDFS, Literal
-sys.path.insert(0, str(Path(os.getenv("THESIS_DIR", Path.home() / "workspace/03_ids/Thesis")) / "pipeline"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from canonical_iri import canonical_triples  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import kgdc  # noqa: E402
