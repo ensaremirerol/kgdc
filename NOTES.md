@@ -345,3 +345,35 @@ what happened → what fixed it or would.
     compare by value and are copied only if new; all labels stay. On the gold ABoxes the rule
     merges 18 nodes: two indistinguishable repeated Measurements in vignette_017 and one UCUM unit
     under two labels in 030 and 140.
+
+## Prompt and format ablation (2026-09-24, gemma4-g1 both roles, 30 CHR documents)
+
+63. **The compact graph format is the largest single gain** (examples/chr/ablation.py, results in
+    runs/ablation-2026-09-24*/summary.md). Same 30 documents (spread over the size range), same model,
+    one switch at a time. Macro / micro F1, prompt and output tokens relative to today's pipeline:
+    A Turtle, full prompts 0.769 / 0.681 (100% / 100%, 8.7 min/doc); B without the SHACL block
+    0.787 / 0.699 (92% / 97%); C without the no-fabrication rule 0.791 / 0.754 (80% / 82%);
+    **D compact format 0.861 / 0.845 (65% / 56%, 5.3 min/doc)**; E compact + no SHACL + no
+    no-fabrication + task notes filtered per agent 0.805 / 0.688; F = E + edit-list merge
+    0.819 / 0.720 (merge errors 14 -> 2); G = D + edit-list merge 0.779 / 0.625. In the compact
+    format (kgdc/compact.py) the model writes one line per individual with short handles; IRIs are
+    minted in code from content and datatypes come from the vocabulary, so the reply is half as long
+    and big documents no longer lose agent replies to the output cap - the gap to A is largest there.
+    Dropping the no-fabrication rule costs precision wherever it is dropped (E, F, G); dropping the
+    SHACL block (B) is harmless on Turtle and was not tested with the compact format.
+64. **What the full-graph merge was silently doing, and the rules that now do it.** G's precision
+    (0.497) exposed it: a compact visit agent enumerated invented handles (hasProcedure=m1 ... m100+,
+    2,533 links in vignette_163) that the parser stored as text; D's full-graph rewrite dropped them,
+    the edit list could not. Now: an unknown handle on a link property is a problem sent back to the
+    agent, and links to undeclared individuals are dropped after the union and after the merge
+    (+0.01-0.03 macro F1 offline in every variant). Also added during the ablation: the scope filter
+    tells the agent which node it removed and which known entity to link instead; an agent only sees
+    violations on its own nodes (an earlier agent's dangling link used to cost every later agent its
+    repair rounds); triples with IRIs rdflib cannot write (<.../ucum/{#}>) are dropped instead of
+    crashing the document; the edit-list merge only links or merges existing nodes (on vignette_024
+    it had reused process handles for new nodes and re-typed them, 0.88 -> 0.43). Rerun with these
+    fixes (runs/ablation-2026-09-24-fix): D 0.865 / 0.835 (P 0.824, R 0.846, 13 merge errors),
+    G 0.817 / 0.783 (P 0.769, R 0.797, 2 merge errors). The full-graph rewrite still wins on recall:
+    it can add individuals the agents missed, the edit list only links. Recommended: D. Open: use the
+    edit list only where the rewrite prompt does not fit (13 of 30 documents keep the plain union).
+
