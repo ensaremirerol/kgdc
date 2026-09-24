@@ -15,7 +15,7 @@
   measurement, evaluation and medication administration in that visit, and the
   chr:hasCareProvider of the visit.
 - The status sentence ("recorded with status \"completed\"") -> chr:hasStatus on the process,
-  one shared ex:status_<value> individual.
+  one shared chr:ProcessStatus individual per status value.
 - The visit (chr:ClinicalVisit) links every process of the encounter via chr:hasProcedure.
 - "A care plan was established that refers to follow-up monitoring ..." names no concrete
   procedure: create the chr:CarePlan with its label, link chr:hasMedicalProcedure only to an

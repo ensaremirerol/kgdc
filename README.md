@@ -7,6 +7,12 @@ agent output is validated (closed-world vocabulary check + SHACL) and repaired, 
 unioned, and one orchestrator pass over the whole document merges duplicates and adds the links
 no single agent could see.
 
+Agents do not write Turtle. They write a **compact line format**, one line per individual with short
+handles instead of IRIs (`n2 Measurement "Body temperature" hasQuantityValue=37.436; hasUnit=n4`); the
+pipeline mints the IRIs, takes the datatypes from the ontology and validates the result as RDF. On 30
+clinical vignettes this matched or beat Turtle output at about 80 % of the tokens
+([Graph format](#graph-format-compact-lines-versus-turtle)); `--format turtle` switches back.
+
 Nothing in the prompts is domain-specific: the ontology drives segmentation and build order,
 the shapes drive slot filling, and an optional plain-text *context file* carries the naming
 conventions a schema cannot express. The same code runs on clinical vignettes, WebNLG DBpedia
@@ -33,6 +39,12 @@ honest gaps beats a conformant graph with invented values.
 
 Per-document scores for every system are in `results/2026-09-21/`; the extracted graphs, traces and logs of the
 200-document batch are in `runs/chr-2026-09-21/` (`pass1/` and `truncated/` keep the outputs replaced by the second pass and by the repair script).
+These batch numbers were produced with Turtle output, before the compact format became the default.
+
+| setting (30 CHR vignettes, same model) | macro F1 | micro F1 | prompt / output tokens | min / doc |
+|---|---|---|---|---|
+| **compact format (default)** | **0.859** | **0.834** | 81 % / 77 % | 6.1 |
+| Turtle format (`--format turtle`) | 0.834 | 0.789 | 100 % / 100 % | 8.3 |
 
 ---
 
@@ -112,8 +124,9 @@ result.ttl, result.conforms, result.violations, result.unresolved, result.segmen
 kgdc/                      the Python package
   __main__.py              CLI
   schema.py                ontology + shapes → Schema (classes, properties, constraints, templates, build order)
-  prompts.py               every prompt: segment, extract, fix, merge, verify
-  pipeline.py              run() flat mode, run_ordered() ordered mode, agents, union, merge, cleanup
+  compact.py               the compact line format: writer, tolerant parser, IRI minting, datatypes, templates
+  prompts.py               every prompt: segment, extract, fix, merge, verify (Turtle and compact variants)
+  pipeline.py              run() flat mode, run_ordered() ordered mode, agents, scope filter, union, merge, cleanup
   validate.py              Turtle parse → closed-world vocabulary check → SHACL (pySHACL)
   llm.py                   OpenAI-compatible client, two roles (worker / orchestrator), retries, usage
   mcp_pipeline.py          --mcp mode: plan → mint → fill through kgdc-mcp
@@ -121,7 +134,8 @@ kgdc/                      the Python package
   progress.py              timestamped stderr log
 kgdc-mcp/                  Rust MCP server: shared graph, per-triple gate, SHACL (shacl-rust)
 examples/
-  chr/                     clinical vignettes: ontology, shapes, context, 200 docs + gold, scorer, batch runner, comparison
+  chr/                     clinical vignettes: ontology, shapes, context, 200 docs + gold, identity-hash scorer
+                           (vendored), batch runner, comparison, ablation runner (ablation.py)
 results/                   score files and comparison tables per date
 runs/                      full batch outputs: per-document Turtle, trace (segments, agent cycles, violations), log
   webnlg/                  WebNLG downloader/extractor and the generic label-level scorer
@@ -129,7 +143,7 @@ runs/                      full batch outputs: per-document Turtle, trace (segme
   webnlg-building/         WebNLG "Building": same
   ade/                     ADE corpus (drug → adverse effect): ontology, shapes, context, prepare script, 20 docs + gold
 tests/                     offline tests (stub LLM) and MCP server tests
-NOTES.md                   55 numbered findings from the runs: what failed, what fixed it
+NOTES.md                   66 numbered findings from the runs: what failed, what fixed it
 ```
 
 ---
@@ -279,33 +293,64 @@ sequenceDiagram
     participant W as worker LLM
     participant V as validate()
     P->>W: extract(schema slice, shared context, segment, known entities, task notes)
-    W-->>P: Turtle
+    W-->>P: graph lines (compact format)
+    P-->>P: parse lines → RDF (mint IRIs, datatypes from the ontology), scope filter
     loop up to KGDC_MAX_FIX rounds (default 2)
-        P->>V: Turtle + known graph
-        V-->>P: conforms | violation report
+        P->>V: agent graph + known graph
+        V-->>P: conforms | violation report (only the agent's own nodes)
         alt conforms, or report identical to last round (plateau), or budget spent
             P-->>P: stop
         else
-            P->>W: fix(graph, violations, text, rules)
-            W-->>P: corrected Turtle
+            P->>W: fix(graph lines, violations as handles, text, rules)
+            W-->>P: corrected graph lines
         end
     end
-    P-->>P: collect "# UNRESOLVED" comment lines
+    P-->>P: collect "# UNRESOLVED" note lines
 ```
 
-The extract prompt (`prompts.extract`) contains, in order: the scope ("output only individuals of
-type X plus what they link to"), the prefix *names* only (the namespace IRIs never enter a prompt;
-the pipeline strips any `@prefix` line a model writes and prepends the canonical block, NOTES 60),
-classes, properties, SHACL constraints, the Turtle
-templates, seven rules (declared terms only; IRIs named from the text so the same thing gets the
-same IRI; type and label on every individual; literals copied exactly with the datatype the
-constraint names; IRIs where a constraint asks for one; codes through the code property; never
-fabricate), the task notes, the known entities, the shared context and the segment.
+**The compact format** (`kgdc/compact.py`, NOTES 63-66). The agent writes one line per individual:
 
-The fix prompt shows the violations and insists that **formatting** violations are always fixable
-(the value is already there, only its form is wrong) while **missing facts** are not: keep the graph
-as it is and add an UNRESOLVED note. The loop stops at conformance, when the violation report repeats
-(the agent is honestly stuck) or when the budget is spent.
+```
+<handle> <Class> "<label>" <property>=<value>; <property>=<value>; ...
+m1 Measurement "Body Height" hasCode=<https://loinc.org/8302-2>; hasMeasuredDate=2016-10-04T05:20:29+02:00; hasQuantityValue=104; hasUnit=k3
+# UNRESOLVED: <what> — not stated in the text
+```
+
+Handles (`m1`) are the model's own names; known entities from earlier levels are listed as
+`k3 Unit "cm"` and linked by handle. The pipeline mints every IRI from the node's content (the same node
+written by two agents gets the same IRI), types every literal from the property's range or SHACL
+datatype, and parses line by line: a line it cannot use (unreadable, a link to an undeclared handle, an
+invalid IRI, a malformed name) is reported back to the agent as a violation, never dropped silently, and
+a cut-off reply loses only its last line. After parsing, the graph is plain RDF and follows the same
+path as a Turtle reply.
+
+The extract prompt (`prompts.extract_compact`) contains, in order: the scope ("write only individuals of
+class X plus what they link to"), the format, classes and properties by name with the ontology's
+descriptions, the SHACL constraints, one template line per class (classes an earlier level built get no
+line, and a slot pointing at one reads `<KNOWN ENTITY handle>`), four rules (one individual per thing
+with class and label; values copied exactly; terminology codes as IRIs; never fabricate), the task
+notes, the known entities, the shared context and the segment. The fix prompt lists one line per
+violation with IRIs shown as handles, and the agent's own nodes as lines.
+
+**Turtle format** (`--format turtle` or `KGDC_FORMAT=turtle`, the default before NOTES 66). The agent
+writes Turtle with prefixed names (the namespace IRIs never enter a prompt; the pipeline strips any
+`@prefix` line a model writes and prepends the canonical block, NOTES 60). The extract prompt
+(`prompts.extract`) carries Turtle templates and seven rules, three of them about syntax (minting IRIs
+from the text, datatypes, angle brackets for IRI slots). Its main weakness on large documents: a reply
+that is not valid Turtle contributes nothing, and 10 of 13 such replies in the ablation were an
+UNRESOLVED note written after a `;`, which leaves the statement open.
+
+In both formats the fix prompt insists that **formatting** violations are always fixable (the value is
+already there, only its form is wrong) while **missing facts** are not: keep the graph as it is and add
+an UNRESOLVED note. The loop stops at conformance, when the violation report repeats (the agent is
+honestly stuck) or when the budget is spent.
+
+**Scope** (`scope_filter`, every level, NOTES 58, 65). An agent keeps to its slice of the vocabulary: a
+new individual whose class an earlier level built is dropped (it should link to the known one), as is
+a new individual none of whose classes is in the slice and a statement with a declared property outside
+it. The repair prompt then says what was removed and which known entity to link instead. Validation
+runs on the agent's graph plus the known graph, but the agent is shown only violations on its own
+nodes (NOTES 64).
 
 An exception from the LLM (context window, dead endpoint) finalises **that agent** with a note and an
 `error` field in the trace; the document still gets a graph from the other agents (NOTES 46). The
@@ -347,11 +392,16 @@ does not hallucinate (NOTES 39); off by default.
   changes, so two merged Units make their Measurements identical in the next round. Chunk agents
   re-create each other's nodes; merging them by rule costs no LLM call and shrinks the merge
   prompt (NOTES 62).
+- **Dangling links** (`drop_dangling`): links to individuals the graph never declares are dropped,
+  after the union and again after the merge (NOTES 64).
 - **Merge pass** (`_final`, orchestrator): the whole document, the union graph, the remaining
   violations (capped), the UNRESOLVED notes and any unparsed agent text. It merges duplicates,
   adds cross-segment links the document states, removes what the document does not support and
   resolves violations where it can. If the call fails (context window, timeout), the union is
-  returned as the result with `error` set. The result is cleaned again and validated.
+  returned as the result with `error` set. The result is cleaned again and validated. The merge reads
+  and writes Turtle in both formats. `KGDC_MERGE=edits` replaces the rewrite with an edit list (links
+  and same-as pairs between existing nodes, each edit validated on its own): it avoids failed merges
+  but loses recall, because it cannot add missed individuals (NOTES 64); off by default.
 
 ### 7. Outputs and trace
 
@@ -554,7 +604,8 @@ python examples/chr/repair_truncated.py RUN_DIR      # replace cut-off merge out
 
 ## Results
 
-All kgdc numbers: `gemma4-g1` (27B, via LiteLLM) for both roles, ordered mode, September 2026.
+All kgdc numbers: `gemma4-g1` (27B, via LiteLLM) for both roles, ordered mode, September 2026. The
+200-document batch and the WebNLG/ADE runs used Turtle output; the format comparison below used both.
 Score files and the comparison output are in `results/2026-09-21/`; the misses behind every number
 are in `NOTES.md` 36-55.
 
@@ -601,6 +652,33 @@ the Thesis evaluator run on the final kgdc outputs next to A and B (`examples/ch
 gives kgdc 0.779 against A 0.528 and B 0.523 in normalizer mode, and kgdc 0.696 against A 0.289 and
 B 0.285 in its identity-hash mode without any label normalisation (all 200 documents, macro F1), so the ranking does not depend on the scorer. The comparison is *pipeline + model* against
 *pipeline + model*: the thesis outputs come from gpt-oss-120b, kgdc's from gemma 27B.
+
+### Graph format: compact lines versus Turtle
+
+Same 30 CHR vignettes (spread over the size range), same model, same code, only `KGDC_FORMAT` differs
+(`examples/chr/ablation.py`, `runs/ablation-2026-09-24-fix2/`, NOTES 63-66):
+
+| | Turtle | compact (default) |
+|---|---|---|
+| macro / micro F1 | 0.834 / 0.789 | **0.859 / 0.834** |
+| macro F1, 15 smaller / 15 larger documents | 0.910 / 0.758 | 0.908 / **0.809** |
+| agent replies that were not valid output | 13 | 0 |
+| LLM calls / repair calls | 560 / 103 | 637 / 169 |
+| prompt / output tokens | 100 % / 100 % | 81 % / 77 % |
+| minutes per document | 8.3 | 6.1 |
+
+The formats are equal on the smaller documents; on the larger ones Turtle loses whole agent replies
+to syntax errors, most often an `# UNRESOLVED` note after a `;` that leaves a statement open. The
+compact format needs more repair calls (it also repairs lines the parser could not use) but fewer
+tokens and less time. Two things to keep apart when reading older numbers: pipeline corrections made
+during the ablation (scope filter at every level for classes and properties, dangling links dropped,
+violations limited to the agent's own nodes; NOTES 62-65) raised the Turtle pipeline from 0.769 to 0.834
+on these documents, and only the remaining 0.025 macro / 0.044 micro is the format.
+
+Other switches measured on the same documents (before those corrections; NOTES 63): dropping the SHACL
+block from the prompt was harmless with Turtle (0.787 vs 0.769); dropping the no-fabrication rule cost
+precision in every combination; the edit-list merge removed failed merges but lost recall. The 200-document
+batch above ran before the compact format existed.
 
 ### Other corpora and modes
 
@@ -649,6 +727,14 @@ to disable one).
 | `LLM_PROVIDER_SORT` / `LLM_BIG_PROVIDER_SORT` | unset | OpenRouter only: `throughput` routes to the fastest provider |
 | `LLM_BASIC_AUTH` / `LLM_BIG_BASIC_AUTH` | unset | `user:password` for an endpoint behind HTTP basic auth |
 | `LLM_COST_PER_MTOK` / `LLM_BIG_COST_PER_MTOK` | unset | `<in>,<out>` USD per 1M tokens when the endpoint reports no cost |
+| `KGDC_FORMAT` | compact | graph text agents read and write: `compact` (one line per individual) or `turtle`; `--format` overrides |
+| `KGDC_PROMPT_SHACL` | 1 | `0` drops the SHACL block from the extraction prompt, keeping only required slots and IRI patterns |
+| `KGDC_PROMPT_NOFAB` | 1 | `0` drops the no-fabrication / UNRESOLVED rule (costs precision; for ablation only) |
+| `KGDC_CONTEXT_FILTER` | 0 | `1` gives each agent only the task-note bullets that name its classes or no class at all |
+| `KGDC_SALVAGE` | 0 | `1` keeps the statements of an unparseable Turtle reply that parse on their own |
+| `KGDC_MERGE` | rewrite | `edits`: the merge pass returns links and same-as pairs instead of the whole graph |
+| `KGDC_MERGE_EDIT_MAX_TOKENS` | 3000 | output budget of the edit-list merge |
+| `KGDC_MAX_SEGS_PER_AGENT` | 12 | segments per agent before a class is split over several agents |
 | `KGDC_MAX_FIX` | 2 | validator-guided fix rounds per agent |
 | `KGDC_MERGE_MAX_CHARS` | 12000 | cap per section of the merge prompt and for the SHACL report in fix prompts |
 | `KGDC_VERIFY` | 0 | `1` enables the per-segment verifier pass |
@@ -662,14 +748,18 @@ to disable one).
 ## Tests
 
 ```bash
-pytest                       # 11 tests: offline pipeline mechanics with a stub LLM + the MCP server over stdio
+pytest                       # 29 tests: offline pipeline mechanics with a stub LLM + the MCP server over stdio (2 skipped without the binary)
 pytest tests/test_offline.py # no binary needed
 cd kgdc-mcp && cargo build --release   # needed for tests/test_mcp.py (skipped when the binary is missing)
 ```
 
 The offline tests cover: fix-loop plateau and unresolved notes, vocabulary subsetting, verifier
 drop-by-index, agent-failure containment, whole-document text for the last level, redundant
-supertype removal, truncated and shrunken merge replies falling back to the union, the ordered-mode scope filter. The MCP tests cover the gate (dangling objects, undeclared terms, scope, kind
+supertype removal, truncated and shrunken merge replies falling back to the union, the ordered-mode scope filter.
+`tests/test_compact.py` covers the compact format (round trip, content-addressed IRIs, unreadable lines and
+unknown handles as problems, known entities by handle), the prompt switches, the task-note filter,
+salvage of a cut-off reply, the edit-list merge, dropped dangling links and the scope rules for classes
+and properties at every level. The MCP tests cover the gate (dangling objects, undeclared terms, scope, kind
 mismatch, malformed Turtle) and the single-target subject rewrite.
 
 ---

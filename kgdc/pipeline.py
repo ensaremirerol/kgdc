@@ -254,13 +254,14 @@ def with_prefixes(ttl: str, schema: Schema) -> str:
 def flags() -> dict:
     """Prompt and pipeline switches, read per call so one process can run one variant (examples/chr/ablation.py).
 
-    KGDC_FORMAT         turtle | compact   graph text the model reads and writes (compact: kgdc/compact.py)
+    KGDC_FORMAT         compact | turtle   graph text the model reads and writes; compact (kgdc/compact.py) is the
+                                           default since NOTES 66: equal or better F1 at ~80 % of the tokens
     KGDC_PROMPT_SHACL   1 | 0              SHACL block in the extraction prompt (0: only required slots and patterns)
     KGDC_PROMPT_NOFAB   1 | 0              the no-fabrication / UNRESOLVED rule in extraction and fix prompts
     KGDC_CONTEXT_FILTER 0 | 1              give each agent only the task-note bullets about its classes
     KGDC_SALVAGE        0 | 1              keep the statements of an unparseable Turtle reply that parse on their own
     KGDC_MERGE          rewrite | edits    final pass rewrites the graph, or returns edits (add / same / remove)"""
-    return {"format": os.getenv("KGDC_FORMAT", "turtle"), "shacl": os.getenv("KGDC_PROMPT_SHACL", "1") == "1",
+    return {"format": os.getenv("KGDC_FORMAT", "compact"), "shacl": os.getenv("KGDC_PROMPT_SHACL", "1") == "1",
             "nofab": os.getenv("KGDC_PROMPT_NOFAB", "1") == "1", "task_filter": os.getenv("KGDC_CONTEXT_FILTER", "0") == "1",
             "salvage": os.getenv("KGDC_SALVAGE", "0") == "1", "merge": os.getenv("KGDC_MERGE", "rewrite")}
 

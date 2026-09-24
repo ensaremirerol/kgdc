@@ -1,5 +1,5 @@
 """python -m kgdc ONTOLOGY SHAPES TEXT [-o out.ttl]"""
-import argparse, json, sys
+import argparse, json, os, sys
 from pathlib import Path
 from . import load, run, run_ordered, progress
 
@@ -11,14 +11,18 @@ ap.add_argument("-q", "--quiet", action="store_true", help="no progress output o
 ap.add_argument("--ordered", action="store_true", help="bottom-up: one agent per class per dependency level, later levels reuse earlier entities")
 ap.add_argument("--mcp", action="store_true", help="tool-gated mode via kgdc-mcp (build it first): workers add triples through a vocabulary gate, orchestrator judges notes")
 ap.add_argument("--context", help="text/markdown file with task-specific conventions, injected into every prompt")
+ap.add_argument("--format", choices=["compact", "turtle"], help="graph text the agents read and write (default: KGDC_FORMAT, else compact)")
 a = ap.parse_args()
 progress.enabled = not a.quiet
+if a.format:
+    os.environ["KGDC_FORMAT"] = a.format
 from .mcp_pipeline import run_mcp
-r = (run_mcp if a.mcp else run_ordered if a.ordered else run)(load(a.ontology, a.shapes), Path(a.text).read_text(), workers=a.workers,
-        task=Path(a.context).read_text() if a.context else "")
+# UTF-8 explicitly: Windows defaults to cp1252 and would garble "µ" or "°" before the model sees them
+r = (run_mcp if a.mcp else run_ordered if a.ordered else run)(load(a.ontology, a.shapes), Path(a.text).read_text(encoding="utf-8"), workers=a.workers,
+        task=Path(a.context).read_text(encoding="utf-8") if a.context else "")
 if a.out:
-    Path(a.out).write_text(r.ttl)
-    Path(a.out + ".trace.json").write_text(json.dumps(r.__dict__, indent=1, default=str))
+    Path(a.out).write_text(r.ttl, encoding="utf-8")
+    Path(a.out + ".trace.json").write_text(json.dumps(r.__dict__, indent=1, default=str), encoding="utf-8")
 else:
     print(r.ttl)
 if a.mcp:

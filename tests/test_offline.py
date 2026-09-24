@@ -10,6 +10,20 @@ BAD = PFX + 'ex:u a chr:Unit ; rdfs:label "cm" .\n'                       # viol
 HONEST = BAD + "# UNRESOLVED: chr:hasCode UCUM IRI — not stated in the text\n"
 
 
+import pytest
+
+
+@pytest.fixture(autouse=True)
+def turtle_format(monkeypatch):
+    """These tests drive the agent loop with Turtle replies; the compact format has its own tests (test_compact.py)."""
+    monkeypatch.setenv("KGDC_FORMAT", "turtle")
+
+
+def test_compact_is_the_default_format(monkeypatch):
+    monkeypatch.delenv("KGDC_FORMAT", raising=False)
+    assert pipeline.flags()["format"] == "compact"
+
+
 def test_loop_stops_at_plateau_and_keeps_unresolved(monkeypatch):
     calls = []
     def fake(prompt, model=None, **kw):

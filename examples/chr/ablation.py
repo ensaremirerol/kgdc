@@ -15,9 +15,9 @@ ROOT = HERE.parents[1]
 sys.path.insert(0, str(HERE))
 
 VARIANTS = {   # name: (description, env)
-    "A": ("Turtle, full prompts (today)", {}),
-    "B": ("A without the SHACL block (required slots and patterns kept)", {"KGDC_PROMPT_SHACL": "0"}),
-    "C": ("A without the no-fabrication rule", {"KGDC_PROMPT_NOFAB": "0"}),
+    "A": ("Turtle, full prompts", {"KGDC_FORMAT": "turtle"}),   # set explicitly: compact is the default since NOTES 66
+    "B": ("A without the SHACL block (required slots and patterns kept)", {"KGDC_FORMAT": "turtle", "KGDC_PROMPT_SHACL": "0"}),
+    "C": ("A without the no-fabrication rule", {"KGDC_FORMAT": "turtle", "KGDC_PROMPT_NOFAB": "0"}),
     "D": ("compact graph format, full prompts", {"KGDC_FORMAT": "compact"}),
     "E": ("D without SHACL block and no-fabrication rule, task notes filtered per agent",
           {"KGDC_FORMAT": "compact", "KGDC_PROMPT_SHACL": "0", "KGDC_PROMPT_NOFAB": "0", "KGDC_CONTEXT_FILTER": "1"}),
