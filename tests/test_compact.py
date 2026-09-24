@@ -118,3 +118,18 @@ def test_edit_merge_links_and_merges_but_never_retypes(monkeypatch):
     assert len(set(g.subjects(RDF.type, URIRef(CHR + "ProcessStatus")))) == 1
     assert (None, RDF.type, URIRef(CHR + "DiagnosticStatement")) not in g, "no re-typing, no new individuals"
     assert (None, RDFS.label, Literal("Wrong Clinic")) in g, "removals are not applied"
+
+
+def test_unknown_handle_on_a_link_is_a_problem_not_text():
+    g, _, _, problems = compact.parse('v1 ClinicalVisit "visit" hasProcedure=m100', schema())
+    assert problems and "m100" in problems[0]
+    assert not list(g.objects(None, URIRef(CHR + "hasProcedure"))), "no literal 'm100' where an individual belongs"
+
+
+def test_links_to_undeclared_individuals_are_dropped():
+    s = schema()
+    g = Graph().parse(data=pipeline.with_prefixes("""ex:v a chr:ClinicalVisit ; chr:hasProcedure ex:p, ex:ghost .
+        ex:p a chr:MeasurementProcess ; chr:hasCode <https://loinc.org/1-1> .""", s), format="turtle")
+    assert pipeline.drop_dangling(g, "http://example.org/data/") == 1
+    assert (None, None, URIRef("http://example.org/data/ghost")) not in g
+    assert (None, None, URIRef("https://loinc.org/1-1")) in g, "external code IRIs are not individuals"

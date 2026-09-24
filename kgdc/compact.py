@@ -71,6 +71,11 @@ class Vocab:
                 return f"{p}:{str(iri)[len(ns):]}"
         return f"<{iri}>"
 
+    def links_to_individuals(self, prop: str) -> bool:
+        """The property's range is a class of the vocabulary: its values are individuals, never text."""
+        rng = self.range.get(prop, "")
+        return bool(rng) and not rng.startswith("xsd:") and rng in self.schema.classes
+
     def literal(self, prop: str, value: str) -> Literal:
         rng = self.range.get(prop, "")
         if rng.startswith("xsd:"):
@@ -203,6 +208,9 @@ def parse(text: str, schema: Schema, known: dict | None = None, vocab: Vocab | N
                     o = URIRef(raw_v)
                 elif p == str(RDFS.label):
                     o = Literal(raw_v)
+                elif v.links_to_individuals(p):   # m100 where a link to a declared or known handle belongs
+                    problems.append(f"{h}: {k}={raw_v[:60]} is not a declared or KNOWN ENTITY handle")
+                    continue
                 else:
                     o = v.literal(p, raw_v)
                 triples.append((h, p, o))

@@ -109,6 +109,18 @@ def _whole_sentences(text: str, span: str) -> str:
     return text[start:end].strip()
 
 
+def drop_dangling(g: Graph, ns: str) -> int:
+    """Remove links to individuals (IRIs in the data namespace ``ns``) that the graph never declares.
+    A full-graph merge rewrite used to drop them silently; with the union kept (a failed merge) or an
+    edit-list merge they stayed: 2,533 links to undeclared handles in one ablation output (NOTES 64).
+    Offline on the 210 ablation outputs this raised macro F1 by 0.01-0.03 in every variant."""
+    typed = set(g.subjects(RDF.type, None))
+    bad = [(s, p, o) for s, p, o in g if p != RDF.type and isinstance(o, URIRef) and str(o).startswith(ns) and o not in typed]
+    for t in bad:
+        g.remove(t)
+    return len(bad)
+
+
 def _drop_unwritable(g: Graph) -> int:
     """Remove triples with IRIs rdflib can read but not write (<.../ucum/{#}>): serialising them raises and
     took a whole document down (ablation, variant C, vignette_116). The validator reports them to the agent
@@ -526,6 +538,9 @@ def _union(schema: Schema, ttls: list[str]) -> tuple[str, list[str]]:
     n = merge_identical(g)
     if n:
         log(f"union: merged {n} identical individual(s)")
+    n = drop_dangling(g, schema.prefixes.get("ex", "http://example.org/data/"))
+    if n:
+        log(f"union: dropped {n} link(s) to undeclared individuals")
     # rdflib parses IRIs with illegal characters but cannot serialise them; such
     # triples already fail the IRI check in the agent's trace, so drop them here.
     for trip in [t for t in g if any(isinstance(x, URIRef) and _BAD_IRI.search(str(x)) for x in t)]:
@@ -570,6 +585,7 @@ def _final(schema: Schema, text: str, merged: str, report: str, unres: list[str]
         gf = Graph().parse(data=final, format="turtle")
         drop_redundant_types(gf, schema)
         merge_identical(gf)
+        drop_dangling(gf, schema.prefixes.get("ex", "http://example.org/data/"))
         n_union = len(Graph().parse(data=merged, format="turtle"))
         if len(gf) < MERGE_MIN_KEEP * n_union:   # a merge dedupes, it does not lose half the graph: the reply was cut short
             raise ValueError(f"merge output has {len(gf)} triples, union has {n_union}")
@@ -699,6 +715,7 @@ def _final_edits(schema: Schema, text: str, merged: str, report: str, unres: lis
         cur.bind(p, ns)
     drop_redundant_types(cur, schema)
     merge_identical(cur)
+    drop_dangling(cur, schema.prefixes.get("ex", "http://example.org/data/"))
     final = cur.serialize(format="turtle")
     ok, rep, _ = validate(final, schema)
     log(f"merge edits: kept {dict(kept)}, refused {dict(refused)}; violations {rep0.count('Constraint Violation')} -> {rep.count('Constraint Violation')}")
