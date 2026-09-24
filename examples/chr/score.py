@@ -4,11 +4,11 @@
 
 Default normalises both sides first: honorifics stripped from labels (the gold has "Ms. X", the text
 has "X") and redundant supertypes dropped (`x a MeasurementProcess, MedicalProcedure`). --exact skips
-both. THESIS_DIR points at the Thesis checkout (default ~/workspace/03_ids/Thesis)."""
-import os, re, sys
+both. Self-contained: canonical_iri.py and chr_norm.py sit next to this file."""
+import re, sys
 from pathlib import Path
 from rdflib import Graph, RDFS, Literal
-sys.path.insert(0, str(Path(os.getenv("THESIS_DIR", Path.home() / "workspace/03_ids/Thesis")) / "pipeline"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from canonical_iri import canonical_triples  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import kgdc  # noqa: E402
@@ -31,7 +31,7 @@ def prep(g: Graph, exact: bool) -> Graph:
 
 def score(out_path, gold_path, exact=False):
     gold = prep(Graph().parse(str(gold_path)), exact)
-    out = prep(Graph().parse(data=Path(out_path).read_text().replace("http://example.org/data/", "http://example.org/clinical/"), format="turtle"), exact)
+    out = prep(Graph().parse(data=Path(out_path).read_text(encoding="utf-8").replace("http://example.org/data/", "http://example.org/clinical/"), format="turtle"), exact)
     G, O = canonical_triples(gold), canonical_triples(out)
     tp = len(G & O); p = tp / len(O) if O else 0; r = tp / len(G) if G else 0
     return len(G), len(O), tp, p, r, (2 * p * r / (p + r) if p + r else 0)
