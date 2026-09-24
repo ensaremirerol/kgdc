@@ -188,11 +188,17 @@ def parse(text: str, schema: Schema, known: dict | None = None, vocab: Vocab | N
             problems.append(f"{h}: statements about a handle that is neither known nor declared with a class")
             defined.add(h)
         for c in classes:
+            if _BAD_IRI.search(v.term(c)):
+                problems.append(f"{h}: '{c[:60]}' is not a class name")
+                continue
             triples.append((h, str(RDF.type), URIRef(v.term(c))))
         if label is not None:
             triples.append((h, str(RDFS.label), Literal(label)))
         for k, val in pairs:
             p = v.term(k)
+            if _BAD_IRI.search(p):   # "sulo:p10 hasCode" from a malformed line: a property IRI with a space
+                problems.append(f"{h}: '{k[:60]}' is not a property name (expected property=value)")
+                continue
             items = _split(val, ",") if "," in val and all(_unquote(x) in known or _unquote(x) in defined for x in _split(val, ",")) else [val]
             for it in items:
                 raw_v = _unquote(it) if it.startswith('"') else it
@@ -254,6 +260,9 @@ def to_turtle(text: str, schema: Schema, known: dict | None = None, vocab: Vocab
               frozen: set | None = None) -> tuple[str, dict, list[str]]:
     """Compact reply -> (Turtle with prefixes and '# UNRESOLVED' comments, handle -> IRI, problems)."""
     g, h2i, notes, problems = parse(text, schema, known, vocab, frozen)
+    for t in [t for t in g if any(isinstance(x, URIRef) and _BAD_IRI.search(str(x)) for x in t)]:
+        g.remove(t)   # last line of defence: one unwritable IRI must not cost the whole reply
+        problems.append(f"dropped a statement with an invalid IRI: {' '.join(str(x)[:50] for x in t)}")
     ttl = g.serialize(format="turtle")
     if notes:
         ttl += "\n" + "\n".join("# " + n for n in notes) + "\n"

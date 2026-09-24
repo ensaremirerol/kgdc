@@ -161,3 +161,11 @@ def test_agent_keeps_to_its_properties():
     assert (None, URIRef(CHR + "hasStatus"), None) not in g
     assert (None, URIRef(CHR + "hasStatuss"), None) in g, "undeclared terms go to the validator"
     assert (None, RDFS.label, Literal("completed")) in g
+
+
+def test_malformed_names_are_problems_not_a_lost_reply():
+    """ablation D, vignette_017/143: 'sulo:p10 hasCode=<...>' became a property IRI with a space and the agent lost its reply."""
+    ttl, _, problems = compact.to_turtle('v1 ClinicalVisit "visit" sulo:p10 hasCode=<https://loinc.org/1-1>; hasDate=2020-01-01T00:00:00Z', schema())
+    assert any("not a property name" in p for p in problems)
+    g = Graph().parse(data=ttl, format="turtle")
+    assert (None, RDF.type, URIRef(CHR + "ClinicalVisit")) in g, "the rest of the line survives"
