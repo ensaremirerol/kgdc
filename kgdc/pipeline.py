@@ -132,10 +132,16 @@ def _drop_unwritable(g: Graph) -> int:
 
 
 def scope_filter(ttl: str, schema: Schema, concepts: list[str], known_ttl: str, removed: list | None = None) -> tuple[str, int]:
-    """Ordered mode: a *new* individual typed with a class that an earlier level already built is a
-    duplicate (the visit agent re-creating the processes it should link). Drop such individuals and
-    every triple about them; the links to them stay and surface as SHACL violations for the fix round.
-    Classes no earlier level built (a Unit no segment named) may still be created. Returns (ttl, dropped)."""
+    """Keep an agent to its scope. ``schema`` is the agent's slice of the vocabulary (its classes and the
+    classes its properties point to). A *new* individual is dropped, with every triple about it, when
+      - its class was already built by an earlier level (ordered mode: the visit agent re-creating the
+        processes it should link), including super/subclasses, or
+      - none of its classes is in the agent's slice, at any level: a ProcessStatus agent that wrote the
+        whole note (visit, patient, process, measurement) made later agents' correct nodes look like
+        re-creations (vignette_074, compact format, F1 0.93 -> 0.74; 437 such nodes in the 30-document
+        Turtle ablation, NOTES 65).
+    Links to dropped nodes stay and surface as violations for the repair round. Undeclared classes are left
+    for the validator to report. Returns (ttl, dropped)."""
     try:
         g = Graph().parse(data=ttl, format="turtle")
     except Exception:  # noqa: BLE001 — unparsable output is handled downstream
@@ -149,11 +155,36 @@ def scope_filter(ttl: str, schema: Schema, concepts: list[str], known_ttl: str, 
     built_q = {qn[t] for t in kg.objects(None, RDF.type) if t in qn}
     built = {iri(x) for q in built_q for x in schema.ancestors(q) | schema.descendants(q)}
     mine = {iri(c) for c in concepts if ":" in c} | {iri(d) for c in concepts for d in schema.descendants(c)}
-    bad = {s for s, t in g.subject_objects(RDF.type) if s not in known and t not in mine and t in built}
+    in_slice = lambda t: t in qn and bool(schema.ancestors(qn[t]) & set(schema.classes))
+    reason = {}
+    for s, t in g.subject_objects(RDF.type):
+        if s in known or t in mine:
+            continue
+        if t in built:
+            reason[s] = "built"
+    for s in set(g.subjects(RDF.type, None)) - known - set(reason):
+        types = [t for t in g.objects(s, RDF.type) if t in qn]
+        if types and not any(t in mine or in_slice(t) for t in types):
+            reason[s] = "scope"
+    bad = set(reason)
+    # properties: an agent asserts only the properties of its slice. The ProcessStatus agent wrote
+    # "status hasStatus ..." (hasStatus belongs to the process agent) and spent its repair rounds on the
+    # domain violation. Undeclared properties stay: the validator reports them to the agent.
+    allowed_p = {iri(q) for q in schema.properties} | {RDF.type, RDFS.label}
+    declared = {str(t) for t in schema.terms}
+    stray = [(s, p, o) for s, p, o in g if s not in bad and p not in allowed_p and str(p) in declared]
+    for t in stray:
+        g.remove(t)
     if not bad:
-        return ttl, 0
-    if removed is not None:   # (IRI, classes) of what was dropped, for the agent's next repair prompt
-        removed += [(s, [qn[t] for t in g.objects(s, RDF.type) if t in qn]) for s in sorted(bad, key=str)]
+        if not stray:
+            return ttl, 0
+        _drop_unwritable(g)
+        for p, ns in schema.prefixes.items():
+            g.bind(p, ns)
+        comments = "\n".join(l for l in ttl.splitlines() if l.strip().startswith("# UNRESOLVED"))
+        return g.serialize(format="turtle") + ("\n" + comments if comments else ""), 0
+    if removed is not None:   # (IRI, classes, reason) of what was dropped, for the agent's next repair prompt
+        removed += [(s, [qn[t] for t in g.objects(s, RDF.type) if t in qn], reason[s]) for s in sorted(bad, key=str)]
     for s in bad:
         g.remove((s, None, None))
     _drop_unwritable(g)
@@ -172,11 +203,16 @@ def scope_notes(removed: list, known_ttl: str, schema: Schema, name) -> list[str
     kg = Graph().parse(data=known_ttl, format="turtle") if known_ttl.strip() else Graph()
     iri = lambda q: URIRef(next(ns for p, ns in schema.prefixes.items() if q.startswith(p + ":")) + q.split(":", 1)[1])
     out = []
-    for node, classes in removed:
+    for node, classes, why in removed:
+        cls = ", ".join(c.split(":")[-1] for c in classes)
+        if why == "scope":
+            out.append(f"{name(node)} ({cls}) was removed: other agents build {cls}. Describe only the classes you were asked "
+                       f"for and leave out statements that need anything else.")
+            continue
         family = {iri(x) for c in classes for x in schema.ancestors(c) | schema.descendants(c)}
         cands = sorted({s for s, t in kg.subject_objects(RDF.type) if t in family}, key=str)
         show = ", ".join(f'{name(s)} "{kg.value(s, RDFS.label) or ""}"' for s in cands[:12]) or "none"
-        out.append(f"{name(node)} ({', '.join(c.split(':')[-1] for c in classes)}) was removed: individuals of this class were "
+        out.append(f"{name(node)} ({cls}) was removed: individuals of this class were "
                    f"built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: {show}")
     return out
 
@@ -297,11 +333,10 @@ def _agent(schema: Schema, context: str, seg: dict, task: str, known: str = "", 
     removed: list = []
     qname = lambda s: next((f"{p_}:{str(s)[len(ns):]}" for p_, ns in sorted(schema.prefixes.items(), key=lambda kv: -len(kv[1]))
                             if str(s).startswith(ns)), f"<{s}>")
-    if known_ttl:   # ordered mode, level >= 1: only individuals of this agent's class are new; the rest exist already
-        ttl, dropped = scope_filter(ttl, schema, trace["concepts"], known_ttl, removed)
-        if dropped:
-            trace["scope_dropped"] = dropped
-            log(f"  {name}: dropped {dropped} individual(s) of other classes (already built by earlier levels)")
+    ttl, dropped = scope_filter(ttl, schema, trace["concepts"], known_ttl, removed)   # every level: an agent builds its own classes only
+    if dropped:
+        trace["scope_dropped"] = dropped
+        log(f"  {name}: dropped {dropped} individual(s) outside its scope (built earlier, or another agent's class)")
     prev = None
     for cycle in range(MAX_FIX + 1):
         ok, report, _ = validate(ttl + "\n" + known_ttl if known_ttl else ttl, schema)
@@ -324,11 +359,11 @@ def _agent(schema: Schema, context: str, seg: dict, task: str, known: str = "", 
             ttl = with_prefixes(llm.strip_fences(llm.chat(prompts.fix(schema, ttl, _cap(report), context, seg["text"], task, known,
                                                                       nofab=F["nofab"]))), schema)   # a verbose SHACL report blew a 32k context
             ttl = _readable(ttl, schema, trace, name)
-            if known_ttl:   # a fix round re-creates what the scope filter just dropped (dangling link -> "add the node"): filter again
-                ttl, dropped = scope_filter(ttl, schema, trace["concepts"], known_ttl, removed)
-                if dropped:
-                    trace["scope_dropped"] = trace.get("scope_dropped", 0) + dropped
-                    log(f"  {name}: fix round re-created {dropped} individual(s) of other classes, dropped again")
+            # a fix round re-creates what the scope filter just dropped (dangling link -> "add the node"): filter again
+            ttl, dropped = scope_filter(ttl, schema, trace["concepts"], known_ttl, removed)
+            if dropped:
+                trace["scope_dropped"] = trace.get("scope_dropped", 0) + dropped
+                log(f"  {name}: fix round re-created {dropped} individual(s) outside its scope, dropped again")
         except Exception as e:  # noqa: BLE001 — keep the last graph; the merge pass still sees the violations
             log(f"  {name}: fix FAILED ({str(e)[:100]}), keeping the graph as is")
             trace["error"] = str(e)[:300]
@@ -384,12 +419,10 @@ def _agent_compact(full: Schema, context: str, seg: dict, task: str, known_ttl: 
     removed: list = []
 
     def filtered(ttl_: str) -> str:
-        if not known_ttl:
-            return ttl_
         out, dropped = scope_filter(ttl_, schema, trace["concepts"], known_ttl, removed)
         if dropped:
             trace["scope_dropped"] = trace.get("scope_dropped", 0) + dropped
-            log(f"  {name}: dropped {dropped} individual(s) of other classes (already built by earlier levels)")
+            log(f"  {name}: dropped {dropped} individual(s) outside its scope (built earlier, or another agent's class)")
         return out
 
     ttl, prev = filtered(ttl), None

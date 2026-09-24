@@ -376,4 +376,17 @@ what happened → what fixed it or would.
     G 0.817 / 0.783 (P 0.769, R 0.797, 2 merge errors). The full-graph rewrite still wins on recall:
     it can add individuals the agents missed, the edit list only links. Recommended: D. Open: use the
     edit list only where the rewrite prompt does not fit (13 of 30 documents keep the plain union).
+65. **Every agent keeps to its slice, at every level, for classes and properties.** The scope filter
+    ran only from level 1 on and only knew "already built". On vignette_074 (compact format) the
+    level-0 ProcessStatus agent put hasStatus on the status node (hasStatus is the process agent's
+    property), took the domain violation as a request to build the process, and wrote the whole note:
+    visit, patient, process, measurement. Those nodes then made the real Measurement and
+    MeasurementProcess agents' output look like re-creations: F1 0.93 -> 0.74. Now a new individual
+    none of whose classes is in the agent's slice is dropped at any level (the agent is told another
+    agent builds that class), and so is a statement with a declared property outside the slice
+    (undeclared properties still go to the validator). Across the 30-document ablation, level-0
+    agents had created 437 out-of-slice nodes in Turtle mode (24 of 217 agents) and 31-36 in compact
+    mode. vignette_074 after the fix: ProcessStatus conforms at cycle 0, F1 0.928 in compact (twice)
+    and Turtle mode. Not yet re-measured on the 30 documents: the property rule could drop a
+    legitimate statement if an agent's slice lacks a property it needs.
 

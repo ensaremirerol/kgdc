@@ -133,3 +133,31 @@ def test_links_to_undeclared_individuals_are_dropped():
     assert pipeline.drop_dangling(g, "http://example.org/data/") == 1
     assert (None, None, URIRef("http://example.org/data/ghost")) not in g
     assert (None, None, URIRef("https://loinc.org/1-1")) in g, "external code IRIs are not individuals"
+
+
+def test_level_zero_agent_keeps_to_its_classes():
+    """vignette_074: the ProcessStatus agent wrote the whole note; only the status may stay."""
+    s = schema()
+    sub = s.subset(["chr:ProcessStatus"])
+    out = pipeline.with_prefixes("""ex:st a chr:ProcessStatus ; rdfs:label "completed" .
+        ex:mp a chr:MeasurementProcess ; chr:hasStatus ex:st .
+        ex:m a chr:Measurement ; rdfs:label "Body temperature" .""", s)
+    removed = []
+    ttl, n = pipeline.scope_filter(out, sub, ["chr:ProcessStatus"], "", removed)
+    g = Graph().parse(data=ttl, format="turtle")
+    assert n == 2 and set(g.subjects(RDF.type, None)) == {URIRef("http://example.org/data/st")}
+    assert {why for _, _, why in removed} == {"scope"}
+    notes = pipeline.scope_notes(removed, "", s, str)
+    assert all("other agents build" in n for n in notes)
+
+
+def test_agent_keeps_to_its_properties():
+    """The status agent may not assert hasStatus (the process agent's property); a misspelled property stays for the validator."""
+    s = schema()
+    sub = s.subset(["chr:ProcessStatus"])
+    out = pipeline.with_prefixes('ex:st a chr:ProcessStatus ; rdfs:label "completed" ; chr:hasStatus ex:st ; chr:hasStatuss ex:st .', s)
+    ttl, n = pipeline.scope_filter(out, sub, ["chr:ProcessStatus"], "")
+    g = Graph().parse(data=ttl, format="turtle")
+    assert (None, URIRef(CHR + "hasStatus"), None) not in g
+    assert (None, URIRef(CHR + "hasStatuss"), None) in g, "undeclared terms go to the validator"
+    assert (None, RDFS.label, Literal("completed")) in g
