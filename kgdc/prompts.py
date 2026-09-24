@@ -395,9 +395,9 @@ copies are already merged. You see the whole document. Return the edits the grap
 
 - "add": statements the document supports that the graph lacks, above all links between parts
   of the document that no single agent could see (a visit and its procedures, a plan and what it
-  refers to). Write them as graph lines; a new individual gets a new handle and a class.
+  refers to), as "<handle> <property>=<value>". Only handles that are in the graph: do not create
+  individuals, do not declare a class, do not add labels.
 - "same": pairs of handles that denote the same real-world thing (the first one is kept).
-- "remove": statements the document does not support, as "<handle> <property>=<value>".
 Also fix the remaining violations below where the document allows it. Empty lists if nothing is needed.
 {(chr(10) + NO_FABRICATION + chr(10)) if nofab else ''}
 {FORMAT}
@@ -421,4 +421,4 @@ DOCUMENT:
 GRAPH:
 {graph}
 
-Return ONLY JSON: {{"add": ["<graph line>", ...], "same": [["<keep>", "<drop>"], ...], "remove": ["<handle> <property>=<value>", ...]}}"""
+Return ONLY JSON: {{"add": ["<handle> <property>=<value>", ...], "same": [["<keep>", "<drop>"], ...]}}"""

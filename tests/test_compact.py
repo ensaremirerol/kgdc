@@ -92,7 +92,7 @@ def test_salvage_keeps_complete_statements_of_a_cut_off_reply():
     assert len(set(Graph().parse(data=ttl, format="turtle").subjects(RDF.type, None))) == 2
 
 
-def test_edit_merge_applies_add_same_remove(monkeypatch):
+def test_edit_merge_links_and_merges_but_never_retypes(monkeypatch):
     s = schema()
     merged = pipeline.with_prefixes("""
         ex:v a chr:ClinicalVisit ; rdfs:label "visit" .
@@ -104,7 +104,9 @@ def test_edit_merge_applies_add_same_remove(monkeypatch):
     def fake(prompt, model=None, **kw):
         captured["prompt"], captured["kw"] = prompt, kw
         h = {line.split('"')[1]: line.split()[0] for line in prompt.split("GRAPH:\n", 1)[1].splitlines() if '"' in line}
-        return json.dumps({"add": [f"{h['visit']} hasProcedure={h['height process']}"],
+        return json.dumps({"add": [f"{h['visit']} hasProcedure={h['height process']}",
+                                   f'{h["height process"]} DiagnosticStatement "Body Height"',   # a handle reused for a new node
+                                   'z9 DiagnosticStatement "new thing"'],                         # a new individual
                            "same": [[h["completed"], h["done"]]],
                            "remove": [f'{h["Wrong Clinic"]} label="Wrong Clinic"']})
     monkeypatch.setattr(llm, "chat", fake)
@@ -114,4 +116,5 @@ def test_edit_merge_applies_add_same_remove(monkeypatch):
     assert err is None and captured["kw"].get("max_tokens") == pipeline.MERGE_EDIT_MAX_TOKENS
     assert (URIRef("http://example.org/data/v"), URIRef(CHR + "hasProcedure"), URIRef("http://example.org/data/p")) in g
     assert len(set(g.subjects(RDF.type, URIRef(CHR + "ProcessStatus")))) == 1
-    assert (None, RDFS.label, Literal("Wrong Clinic")) not in g
+    assert (None, RDF.type, URIRef(CHR + "DiagnosticStatement")) not in g, "no re-typing, no new individuals"
+    assert (None, RDFS.label, Literal("Wrong Clinic")) in g, "removals are not applied"

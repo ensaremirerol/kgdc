@@ -645,12 +645,20 @@ def _final_edits(schema: Schema, text: str, merged: str, report: str, unres: lis
     except Exception as e:  # noqa: BLE001 — the graph before the pass is still a result
         log(f"merge edits FAILED ({str(e)[:80]}) - returning the un-merged union")
         return merged, ok0, rep0, f"merge edits failed: {str(e)[:300]}"
-    # new handles in "add" lines are minted once for the whole list, so lines that refer to each other agree
-    add_lines = [str(l) for l in edits.get("add") or [] if str(l).strip()][:MERGE_EDIT_LIMIT]
-    _, minted, _, _ = compact.parse("\n".join(add_lines), schema, known=handles, vocab=V)
-    known_all = handles | minted
-    queue = ([("same", e) for e in (edits.get("same") or [])[:MERGE_EDIT_LIMIT]] +
-             [("remove", e) for e in (edits.get("remove") or [])[:MERGE_EDIT_LIMIT]] + [("add", e) for e in add_lines])
+    # "add" only links or annotates what exists: a line that declares a class, adds a label or brings a
+    # new handle is refused. On vignette_024 the model reused process handles for new DiagnosticStatements,
+    # which re-typed the processes without breaking a single shape (F1 0.88 -> 0.43, NOTES 64).
+    add_lines, refused_lines = [], 0
+    for line in [str(l) for l in edits.get("add") or [] if str(l).strip()][:MERGE_EDIT_LIMIT]:
+        lg, minted, _, problems = compact.parse(line, schema, known=handles, vocab=V)
+        head = line.split()[0] if line.split() else ""
+        if (problems or head not in handles or set(minted) - set(handles) or (None, RDF.type, None) in lg
+                or (None, RDFS.label, None) in lg or not len(lg)):
+            refused_lines += 1
+        else:
+            add_lines.append(line)
+    known_all = handles
+    queue = [("same", e) for e in (edits.get("same") or [])[:MERGE_EDIT_LIMIT]] + [("add", e) for e in add_lines]
     def copy(src: Graph) -> Graph:   # same prefixes as the report of the union: violations compare as strings
         out = Graph()
         for p, ns in schema.prefixes.items():
@@ -661,7 +669,7 @@ def _final_edits(schema: Schema, text: str, merged: str, report: str, unres: lis
 
     cur = copy(g)
     base = _violation_set(validate(cur.serialize(format="turtle"), schema)[1])
-    kept = collections.Counter(); refused = collections.Counter()
+    kept = collections.Counter(); refused = collections.Counter({"add": refused_lines, "remove": len(edits.get("remove") or [])})
     for kind, e in queue:   # one edit at a time: an edit that introduces a violation is refused, the others stay
         trial = copy(cur)
         done = apply_edits(trial, {kind: [e]}, known_all, schema, V)
