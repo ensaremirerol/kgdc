@@ -389,4 +389,15 @@ what happened → what fixed it or would.
     mode. vignette_074 after the fix: ProcessStatus conforms at cycle 0, F1 0.928 in compact (twice)
     and Turtle mode. Not yet re-measured on the 30 documents: the property rule could drop a
     legitimate statement if an agent's slice lacks a property it needs.
+66. **Final A vs D, both with all corrections (runs/ablation-2026-09-24-fix2):** A (Turtle) 0.834 / 0.789
+    macro / micro F1, D (compact) 0.859 / 0.834. Equal on the 15 smaller documents (0.910 / 0.908), D ahead on
+    the 15 larger ones (0.758 / 0.809); per document D is better on 13, worse on 12. A still lost 13 agent
+    replies to invalid Turtle (10 of them an UNRESOLVED note after a ';' leaving the statement open), D none.
+    D used 81 % of A's prompt and 77 % of its output tokens and 6.1 instead of 8.3 min per document, but 14 %
+    more calls (169 vs 103 repair calls: its repair loop also fixes lines the parser could not use). The first
+    ablation's gap (0.769 -> 0.861) was mostly the corrections, not the format: they raised A by 0.065 and left
+    D unchanged. Five runs hit an endpoint outage and two a compact-parser bug (a property IRI with a space
+    cost a whole reply; fixed in c06b97b); all seven were rerun. Open: D with every correction except the
+    scope rules scored 0.877, with them 0.859 - the property rule may cost the compact format a little.
+    Write-up for the paper: docs/a_to_d_changes.md (local).
 
