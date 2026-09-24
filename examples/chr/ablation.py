@@ -23,6 +23,7 @@ VARIANTS = {   # name: (description, env)
           {"KGDC_FORMAT": "compact", "KGDC_PROMPT_SHACL": "0", "KGDC_PROMPT_NOFAB": "0", "KGDC_CONTEXT_FILTER": "1"}),
     "F": ("E with the edit-list merge", {"KGDC_FORMAT": "compact", "KGDC_PROMPT_SHACL": "0", "KGDC_PROMPT_NOFAB": "0",
                                          "KGDC_CONTEXT_FILTER": "1", "KGDC_MERGE": "edits"}),
+    "G": ("D with the edit-list merge", {"KGDC_FORMAT": "compact", "KGDC_MERGE": "edits"}),
 }
 
 

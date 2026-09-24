@@ -18,6 +18,7 @@ import re
 from rdflib import RDF, RDFS, XSD, Graph, Literal, URIRef
 
 from .schema import Schema
+from .validate import _BAD_IRI
 
 _HANDLE = re.compile(r"^[A-Za-z_][\w.:\-]*$")
 
@@ -191,6 +192,9 @@ def parse(text: str, schema: Schema, known: dict | None = None, vocab: Vocab | N
             for it in items:
                 raw_v = _unquote(it) if it.startswith('"') else it
                 if it.startswith("<") and it.endswith(">"):
+                    if _BAD_IRI.search(it[1:-1]):   # rdflib reads it but cannot write it
+                        problems.append(f"{h}: {k}=<{it[1:-1][:80]}> is not a valid IRI")
+                        continue
                     o = URIRef(it[1:-1])
                 elif not it.startswith('"') and (raw_v in known or raw_v in defined):
                     o = raw_v

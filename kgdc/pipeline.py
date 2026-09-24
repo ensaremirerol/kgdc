@@ -109,6 +109,16 @@ def _whole_sentences(text: str, span: str) -> str:
     return text[start:end].strip()
 
 
+def _drop_unwritable(g: Graph) -> int:
+    """Remove triples with IRIs rdflib can read but not write (<.../ucum/{#}>): serialising them raises and
+    took a whole document down (ablation, variant C, vignette_116). The validator reports them to the agent
+    from its reply text before this runs."""
+    bad = [t for t in g if any(isinstance(x, URIRef) and _BAD_IRI.search(str(x)) for x in t)]
+    for t in bad:
+        g.remove(t)
+    return len(bad)
+
+
 def scope_filter(ttl: str, schema: Schema, concepts: list[str], known_ttl: str, removed: list | None = None) -> tuple[str, int]:
     """Ordered mode: a *new* individual typed with a class that an earlier level already built is a
     duplicate (the visit agent re-creating the processes it should link). Drop such individuals and
@@ -134,6 +144,7 @@ def scope_filter(ttl: str, schema: Schema, concepts: list[str], known_ttl: str, 
         removed += [(s, [qn[t] for t in g.objects(s, RDF.type) if t in qn]) for s in sorted(bad, key=str)]
     for s in bad:
         g.remove((s, None, None))
+    _drop_unwritable(g)
     for p, ns in schema.prefixes.items():
         g.bind(p, ns)
     comments = "\n".join(l for l in ttl.splitlines() if l.strip().startswith("# UNRESOLVED"))
@@ -227,6 +238,7 @@ def salvage(ttl: str, schema: Schema) -> tuple[str, int, int]:
         except Exception:  # noqa: BLE001 — the cut-off statement, or a malformed one
             pass
     notes = "\n".join(l for l in ttl.splitlines() if l.strip().startswith("# UNRESOLVED"))
+    _drop_unwritable(g)
     return with_prefixes(g.serialize(format="turtle"), schema) + ("\n" + notes if notes else ""), kept, seen
 
 
