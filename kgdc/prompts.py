@@ -77,7 +77,17 @@ Create a new individual only for something that is not in this list:
 """
 
 
-def extract(schema: Schema, context: str, segment_text: str, concepts: list[str], task: str = "", known: str = "") -> str:
+def _rules_block(schema: Schema, shacl: bool) -> str:
+    """The SHACL block, or (``shacl=False``) only its essentials: the validator reports the rest."""
+    if shacl:
+        return "CONSTRAINTS the graph is validated against (SHACL):\n" + schema.constraint_block()
+    from .compact import hints
+    h = hints(schema)
+    return ("REQUIRED (the graph is validated; anything else wrong is reported back to you):\n" + h) if h else ""
+
+
+def extract(schema: Schema, context: str, segment_text: str, concepts: list[str], task: str = "", known: str = "",
+            shacl: bool = True, nofab: bool = True) -> str:
     scope = ", ".join(concepts) or "the classes listed"
     return f"""Build an RDF graph (Turtle) for the TEXT below, using ONLY the vocabulary given.
 
@@ -97,13 +107,11 @@ CLASSES (rdf:type must be one of these):
 PROPERTIES (domain -> range):
 {schema.property_block()}
 
-CONSTRAINTS the graph is validated against (SHACL):
-{schema.constraint_block()}
+{_rules_block(schema, shacl)}
 
 TEMPLATES — one per class, generated from the vocabulary. Replace every
 `ex:Class_1` with an IRI named from the text (one per real-world thing),
-fill every slot the text supports, and drop the slots it does not (then add
-an UNRESOLVED note if the slot is a MUST). Every statement starts with a
+fill every slot the text supports, and drop the slots it does not{' (then add an UNRESOLVED note if the slot is a MUST)' if nofab else ''}. Every statement starts with a
 subject IRI:
 {schema.skeleton_block()}
 
@@ -123,7 +131,7 @@ RULES:
    a thing (e.g. "(LOINC: 8302-2)", "(SNOMED: 195662009)") and the vocabulary
    has a property for codes, emit it through that property as an IRI in the
    form its description gives — a code only inside the label is lost.
-7. {NO_FABRICATION}
+7. {NO_FABRICATION if nofab else 'Take every fact from the TEXT.'}
    The SHARED CONTEXT below is part of the text: facts stated there (dates,
    identifiers, actors) are stated facts — use them, do not mark them unresolved.
 
@@ -143,15 +151,14 @@ TEXT:
 Return ONLY Turtle. No prose, no code fences."""
 
 
-def fix(schema: Schema, ttl: str, violations: str, context: str, segment_text: str, task: str = "", known: str = "") -> str:
+def fix(schema: Schema, ttl: str, violations: str, context: str, segment_text: str, task: str = "", known: str = "",
+        nofab: bool = True) -> str:
     return f"""The graph below failed validation. Fix it — but only where the TEXT supports the fix.
 
 VIOLATIONS:
 {violations}
 
-{NO_FABRICATION}
-The SHARED CONTEXT counts as text. If a violation cannot be fixed from the
-text, keep the graph as is for that node and add the # UNRESOLVED comment instead.
+{_fix_honesty(nofab)}
 Formatting violations (wrong datatype, a quoted string where an IRI is
 required, a missing angle bracket) are always fixable: the value is already
 there, only its form is wrong — rewrite it, e.g. "https://x/y" -> <https://x/y>,
@@ -175,6 +182,13 @@ GRAPH:
 {_no_prefix_lines(ttl)}
 
 Return ONLY the corrected Turtle. No prose, no code fences."""
+
+
+def _fix_honesty(nofab: bool) -> str:
+    if not nofab:
+        return "The SHARED CONTEXT counts as text."
+    return (NO_FABRICATION + "\nThe SHARED CONTEXT counts as text. If a violation cannot be fixed from the\n"
+            "text, keep the graph as is for that node and add the # UNRESOLVED comment instead.")
 
 
 def merge(schema: Schema, text: str, ttl: str, violations: str, unresolved: list[str], unparsed: str = "", task: str = "") -> str:
@@ -242,3 +256,169 @@ TRIPLES:
 {chr(10).join(lines)}
 
 Return ONLY JSON: {{"drop": [<triple numbers>], "missing": ["<stated fact absent from the graph>"]}}"""
+
+
+# ------------------------------------------------------------------ task notes, filtered per agent
+def filter_task(task: str, schema: Schema, full: Schema) -> str:
+    """Keep the task notes that concern this agent: a bullet that names a class or property of
+    ``schema`` (the agent's slice), or that names no vocabulary term at all (a general rule).
+    Headings and text outside bullets always stay. Nothing is summarised or rewritten."""
+    if not task.strip():
+        return task
+    local = lambda q: q.split(":", 1)[1] if ":" in q else q
+    mine = {local(q) for q in list(schema.classes) + list(schema.properties)}
+    every = {local(q) for q in list(full.classes) + list(full.properties) + list(full.parents)}
+    blocks, cur = [], []
+    for line in task.splitlines():
+        if re.match(r"^\s*[-*]\s", line) and not line.startswith("  "):
+            if cur: blocks.append(cur)
+            cur = [line]
+        elif cur and (line.startswith(" ") or line.startswith("\t")) and line.strip():
+            cur.append(line)
+        else:
+            if cur: blocks.append(cur); cur = []
+            blocks.append([line])
+    if cur: blocks.append(cur)
+    keep = []
+    for b in blocks:
+        text = "\n".join(b)
+        if not re.match(r"^\s*[-*]\s", b[0]):
+            keep.append(text); continue
+        named = {w for w in re.findall(r"[A-Za-z]+", text) if w in every}
+        if not named or named & mine:
+            keep.append(text)
+    return "\n".join(keep)
+
+
+# ------------------------------------------------------------------ compact graph format (KGDC_FORMAT=compact)
+FORMAT = """FORMAT — one line per individual, nothing else:
+  <handle> <Class> "<label>" <property>=<value>; <property>=<value>; ...
+- <handle> is a short name you choose (m1, u1, p2) and reuse whenever you refer to that individual.
+  A KNOWN ENTITY is referred to by its handle (k3) and is not declared again.
+- Class and property names exactly as listed.
+- Values: numbers, dates and codes exactly as written in the text; text containing spaces or ';'
+  in double quotes; an external identifier as a full IRI in angle brackets
+  (<https://loinc.org/8302-2>); another individual by its handle.
+- Several values for one property: repeat it (hasProcedure=p1; hasProcedure=p2).
+- More statements about an individual you declared: a new line starting with its handle, no class."""
+
+
+def _known_compact(known: str) -> str:
+    if not known.strip():
+        return ""
+    return f"""
+KNOWN ENTITIES — already built by earlier agents. Refer to them by handle; do not declare them
+again and do not create a second individual for the same thing:
+{known.strip()}
+"""
+
+
+def extract_compact(schema: Schema, context: str, segment_text: str, concepts: list[str], task: str = "", known: str = "",
+                    shacl: bool = True, nofab: bool = True, built: set | None = None) -> str:
+    from .compact import template, vocab_block
+    scope = ", ".join(c.split(":")[-1] for c in concepts) or "the classes listed"
+    return f"""Describe the TEXT below as a knowledge graph, using ONLY the vocabulary given.
+
+SCOPE: write ONLY individuals of class {scope}, plus the individuals they link to directly.
+Other agents handle the other classes. Do not invent class or property names; if a thing has no
+class in the list, leave it out.
+
+{FORMAT}
+
+{vocab_block(schema)}
+
+{("CONSTRAINTS the graph is validated against (SHACL):" + chr(10) + schema.constraint_block()) if shacl else ""}
+
+TEMPLATES — one line per class. Fill every slot the text supports, drop the others:
+{template(schema, hints=not shacl, built=built)}
+
+RULES:
+1. One individual per real-world thing; every individual gets a class and a label from the text.
+2. Copy values exactly as the text writes them (dates complete, codes digit for digit).
+3. When the text gives a code from a terminology next to a thing (e.g. "(LOINC: 8302-2)") and the
+   vocabulary has a property for codes, write it through that property as the IRI its description gives.
+4. {NO_FABRICATION if nofab else 'Take every fact from the TEXT.'}
+   The SHARED CONTEXT is part of the text: facts stated there are stated facts.
+{_task(task)}{_known_compact(known)}
+Build: {scope} — every instance the text states.
+
+SHARED CONTEXT (applies to this segment):
+\"\"\"
+{context.strip()}
+\"\"\"
+
+TEXT:
+\"\"\"
+{segment_text.strip()}
+\"\"\"
+
+Return ONLY the lines. No prose, no code fences."""
+
+
+def fix_compact(schema: Schema, graph: str, violations: str, context: str, segment_text: str, task: str = "", known: str = "",
+                nofab: bool = True) -> str:
+    from .compact import vocab_block
+    return f"""The graph below failed validation. Fix it, but only where the TEXT supports the fix.
+
+VIOLATIONS:
+{violations}
+
+{_fix_honesty(nofab)}
+A value in the wrong form (a code written as text where an IRI is required) is always fixable:
+the value is there, only its form is wrong.
+
+{FORMAT}
+
+{vocab_block(schema)}
+{_task(task)}{_known_compact(known)}
+SHARED CONTEXT:
+\"\"\"
+{context.strip()}
+\"\"\"
+TEXT:
+\"\"\"
+{segment_text.strip()}
+\"\"\"
+
+GRAPH:
+{graph}
+
+Return ONLY the corrected graph, every line of it. No prose, no code fences."""
+
+
+def merge_edits(schema: Schema, text: str, graph: str, violations: str, unresolved: list[str], unparsed: str = "", task: str = "",
+                nofab: bool = True) -> str:
+    """Link pass (KGDC_MERGE=edits): the model returns edits, not the graph."""
+    from .compact import vocab_block
+    return f"""Several agents built the graph below from one document, one class at a time. Identical
+copies are already merged. You see the whole document. Return the edits the graph needs:
+
+- "add": statements the document supports that the graph lacks, above all links between parts
+  of the document that no single agent could see (a visit and its procedures, a plan and what it
+  refers to). Write them as graph lines; a new individual gets a new handle and a class.
+- "same": pairs of handles that denote the same real-world thing (the first one is kept).
+- "remove": statements the document does not support, as "<handle> <property>=<value>".
+Also fix the remaining violations below where the document allows it. Empty lists if nothing is needed.
+{(chr(10) + NO_FABRICATION + chr(10)) if nofab else ''}
+{FORMAT}
+
+{vocab_block(schema)}
+{_task(task)}
+REMAINING VIOLATIONS:
+{violations or '-'}
+
+UNRESOLVED (reported by the agents):
+{chr(10).join(unresolved) or '-'}
+
+AGENT OUTPUT THAT COULD NOT BE READ (recover what the document supports, as "add" lines):
+{unparsed or '-'}
+
+DOCUMENT:
+\"\"\"
+{text.strip()}
+\"\"\"
+
+GRAPH:
+{graph}
+
+Return ONLY JSON: {{"add": ["<graph line>", ...], "same": [["<keep>", "<drop>"], ...], "remove": ["<handle> <property>=<value>", ...]}}"""

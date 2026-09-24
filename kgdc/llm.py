@@ -51,7 +51,7 @@ def usage_summary() -> dict:
     return dict(out)
 
 
-def chat(prompt: str, model: str | None = None, temperature: float = 0.0, attempts: int = 5) -> str:
+def chat(prompt: str, model: str | None = None, temperature: float = 0.0, attempts: int = 5, max_tokens: int | None = None) -> str:
     # Workers: LLM_*. Orchestrator: LLM_BIG_*, each falling back to the worker
     # setting, so the two roles can live on different endpoints/keys.
     role = "LLM_BIG_" if model == BIG else "LLM_"
@@ -68,6 +68,8 @@ def chat(prompt: str, model: str | None = None, temperature: float = 0.0, attemp
             if os.getenv(role + "PROVIDER_SORT"):   # OpenRouter: e.g. "throughput" to avoid slow providers
                 extra["provider"] = {"sort": os.environ[role + "PROVIDER_SORT"], "allow_fallbacks": True}
             kw = {"max_tokens": int(os.environ[role + "MAX_TOKENS"])} if role == "LLM_BIG_" and os.getenv("LLM_BIG_MAX_TOKENS") else {}   # a merge writes the whole graph: endpoints cap output by default
+            if max_tokens:   # the caller knows the reply is short (edit-list merge): leave the context to the input
+                kw["max_tokens"] = max_tokens
             r = client.chat.completions.create(
                 model=model, temperature=temperature,
                 messages=[{"role": "user", "content": prompt}],

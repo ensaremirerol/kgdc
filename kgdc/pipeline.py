@@ -1,6 +1,7 @@
 """segment -> N sub-agents (extract, validate, fix<=k) -> merge -> big-model pass -> validate."""
 from __future__ import annotations
 
+import collections
 import json
 import os
 import re
@@ -9,7 +10,7 @@ from dataclasses import dataclass, field
 
 from rdflib import RDF, RDFS, XSD, Graph, Literal, URIRef
 
-from . import llm, prompts
+from . import compact, llm, prompts
 from .progress import log
 from .schema import Schema
 from .validate import _BAD_IRI, unresolved, validate
@@ -31,10 +32,10 @@ class Result:
     error: str | None = None                              # set when the merge pass failed (graph = un-merged union)
 
 
-def json_call(prompt: str, model=None, attempts: int = 2):
+def json_call(prompt: str, model=None, attempts: int = 2, max_tokens: int | None = None):
     """chat() that must return JSON: strip fences, tolerate a truncated/degenerate tail, retry once."""
     for i in range(attempts):
-        raw = llm.strip_fences(llm.chat(prompt, model=model))
+        raw = llm.strip_fences(llm.chat(prompt, model=model, max_tokens=max_tokens))
         try:
             return json.loads(raw)
         except json.JSONDecodeError:
@@ -108,7 +109,7 @@ def _whole_sentences(text: str, span: str) -> str:
     return text[start:end].strip()
 
 
-def scope_filter(ttl: str, schema: Schema, concepts: list[str], known_ttl: str) -> tuple[str, int]:
+def scope_filter(ttl: str, schema: Schema, concepts: list[str], known_ttl: str, removed: list | None = None) -> tuple[str, int]:
     """Ordered mode: a *new* individual typed with a class that an earlier level already built is a
     duplicate (the visit agent re-creating the processes it should link). Drop such individuals and
     every triple about them; the links to them stay and surface as SHACL violations for the fix round.
@@ -129,12 +130,56 @@ def scope_filter(ttl: str, schema: Schema, concepts: list[str], known_ttl: str) 
     bad = {s for s, t in g.subject_objects(RDF.type) if s not in known and t not in mine and t in built}
     if not bad:
         return ttl, 0
+    if removed is not None:   # (IRI, classes) of what was dropped, for the agent's next repair prompt
+        removed += [(s, [qn[t] for t in g.objects(s, RDF.type) if t in qn]) for s in sorted(bad, key=str)]
     for s in bad:
         g.remove((s, None, None))
     for p, ns in schema.prefixes.items():
         g.bind(p, ns)
     comments = "\n".join(l for l in ttl.splitlines() if l.strip().startswith("# UNRESOLVED"))
     return g.serialize(format="turtle") + ("\n" + comments if comments else ""), len(bad)
+
+
+def scope_notes(removed: list, known_ttl: str, schema: Schema, name) -> list[str]:
+    """Why the scope filter dropped a node, and what to link to instead: without this the repair prompt
+    only says that a link points at nothing, about a node the model cannot see any more, and the model
+    writes the same node again (NOTES 64). ``name`` renders a known IRI (handle or prefixed name)."""
+    if not removed:
+        return []
+    kg = Graph().parse(data=known_ttl, format="turtle") if known_ttl.strip() else Graph()
+    iri = lambda q: URIRef(next(ns for p, ns in schema.prefixes.items() if q.startswith(p + ":")) + q.split(":", 1)[1])
+    out = []
+    for node, classes in removed:
+        family = {iri(x) for c in classes for x in schema.ancestors(c) | schema.descendants(c)}
+        cands = sorted({s for s, t in kg.subject_objects(RDF.type) if t in family}, key=str)
+        show = ", ".join(f'{name(s)} "{kg.value(s, RDFS.label) or ""}"' for s in cands[:12]) or "none"
+        out.append(f"{name(node)} ({', '.join(c.split(':')[-1] for c in classes)}) was removed: individuals of this class were "
+                   f"built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: {show}")
+    return out
+
+
+def own_violations(report: str, ttl: str, known_ttl: str, schema: Schema) -> str:
+    """Keep the violations this agent can act on. Validation runs on the agent's graph plus the known
+    graph (so links to known IRIs type-check), which also reports what is wrong with an earlier agent's
+    node: every later agent then spends its repair rounds on something outside its scope (NOTES 64).
+    A violation on a known node stays only if this agent wrote statements about that node."""
+    if not report or not known_ttl.strip():
+        return report
+    try:
+        own = set(Graph().parse(data=ttl, format="turtle").subjects())
+    except Exception:  # noqa: BLE001 — a syntax report is the agent's own
+        return report
+    kg = Graph().parse(data=known_ttl, format="turtle")
+    names = set()
+    for n in set(kg.subjects()) - own:
+        names.add(str(n))
+        names |= {f"{p}:{str(n)[len(ns):]}" for p, ns in schema.prefixes.items() if str(n).startswith(ns)}
+    keep = []
+    for blk in re.split(r"\n(?=Constraint )", report):
+        f = re.search(r"Focus Node: (.*)", blk)
+        if not (f and f.group(1).strip() in names):
+            keep.append(blk)
+    return "\n".join(keep).strip()
 
 
 _PREFIX_LINE = re.compile(r"^\s*(@prefix|PREFIX)\s.*$", re.I | re.M)
@@ -147,31 +192,101 @@ def with_prefixes(ttl: str, schema: Schema) -> str:
     return schema.prefix_block() + "\n\n" + _PREFIX_LINE.sub("", ttl).strip() + "\n"
 
 
+def flags() -> dict:
+    """Prompt and pipeline switches, read per call so one process can run one variant (examples/chr/ablation.py).
+
+    KGDC_FORMAT         turtle | compact   graph text the model reads and writes (compact: kgdc/compact.py)
+    KGDC_PROMPT_SHACL   1 | 0              SHACL block in the extraction prompt (0: only required slots and patterns)
+    KGDC_PROMPT_NOFAB   1 | 0              the no-fabrication / UNRESOLVED rule in extraction and fix prompts
+    KGDC_CONTEXT_FILTER 0 | 1              give each agent only the task-note bullets about its classes
+    KGDC_SALVAGE        0 | 1              keep the statements of an unparseable Turtle reply that parse on their own
+    KGDC_MERGE          rewrite | edits    final pass rewrites the graph, or returns edits (add / same / remove)"""
+    return {"format": os.getenv("KGDC_FORMAT", "turtle"), "shacl": os.getenv("KGDC_PROMPT_SHACL", "1") == "1",
+            "nofab": os.getenv("KGDC_PROMPT_NOFAB", "1") == "1", "task_filter": os.getenv("KGDC_CONTEXT_FILTER", "0") == "1",
+            "salvage": os.getenv("KGDC_SALVAGE", "0") == "1", "merge": os.getenv("KGDC_MERGE", "rewrite")}
+
+
+_STATEMENT_END = re.compile(r"(?<=\s\.)[ \t]*\n(?=\s*(?:[A-Za-z_][\w\-]*:|<|#|$))")
+
+
+def salvage(ttl: str, schema: Schema) -> tuple[str, int, int]:
+    """An unparseable reply (usually cut off at the output limit) -> the top-level statements that parse
+    on their own, plus its UNRESOLVED notes. 49 broken Measurement replies of the 200-document batch held
+    1,487 parseable statements out of 1,547 (NOTES 63). Returns (ttl, statements kept, statements seen)."""
+    body = _PREFIX_LINE.sub("", ttl)
+    g, kept, seen = Graph(), 0, 0
+    for p_, ns in schema.prefixes.items():
+        g.bind(p_, ns)
+    for st in _STATEMENT_END.split(body):
+        if not st.strip() or st.strip().startswith("#"):
+            continue
+        seen += 1
+        try:   # parse on its own first: rdflib adds triples as it reads, so a failing statement would leave a fragment behind
+            g += Graph().parse(data=schema.prefix_block() + "\n" + st, format="turtle")
+            kept += 1
+        except Exception:  # noqa: BLE001 — the cut-off statement, or a malformed one
+            pass
+    notes = "\n".join(l for l in ttl.splitlines() if l.strip().startswith("# UNRESOLVED"))
+    return with_prefixes(g.serialize(format="turtle"), schema) + ("\n" + notes if notes else ""), kept, seen
+
+
+def _readable(ttl: str, schema: Schema, trace: dict, name: str) -> str:
+    """KGDC_SALVAGE=1: a reply that does not parse is replaced by what can be salvaged from it."""
+    if not flags()["salvage"]:
+        return ttl
+    try:
+        Graph().parse(data=ttl, format="turtle")
+        return ttl
+    except Exception:  # noqa: BLE001
+        out, kept, seen = salvage(ttl, schema)
+        if not kept:
+            return ttl
+        trace["salvaged"] = trace.get("salvaged", 0) + kept
+        log(f"  {name}: reply did not parse, salvaged {kept} of {seen} statements")
+        return out
+
+
 def _agent(schema: Schema, context: str, seg: dict, task: str, known: str = "", known_ttl: str = "") -> dict:
     """One sub-agent: one-shot extraction, then up to MAX_FIX validator-guided fixes.
 
     ``known`` (prompt block) / ``known_ttl`` (graph) carry entities built by
     earlier levels in ordered mode; validation runs on agent output + known
     graph so links to known IRIs satisfy range/class constraints."""
+    F = flags()
+    if F["format"] == "compact":
+        return _agent_compact(schema, context, seg, task, known_ttl, F)
     trace = {"id": seg["id"], "concepts": seg.get("concepts", []), "text": seg["text"], "cycles": [], "llm_calls": 0}
-    schema = schema.subset(trace["concepts"])   # only the relevant slice of the vocabulary goes in the prompt
+    full, schema = schema, schema.subset(trace["concepts"])   # only the relevant slice of the vocabulary goes in the prompt
+    if F["task_filter"]:
+        task = prompts.filter_task(task, schema, full)
     name = seg["id"].split(":")[-1]
     log(f"  {name}: extracting ({len(seg['text'])} chars, {len(schema.classes)} classes in view)")
     try:
-        ttl = with_prefixes(llm.strip_fences(llm.chat(prompts.extract(schema, context, seg["text"], trace["concepts"], task, known))), schema)
+        ttl = with_prefixes(llm.strip_fences(llm.chat(prompts.extract(schema, context, seg["text"], trace["concepts"], task, known,
+                                                                      shacl=F["shacl"], nofab=F["nofab"]))), schema)
+        ttl = _readable(ttl, schema, trace, name)
     except Exception as e:  # noqa: BLE001 — one dead agent (context window, endpoint) must not take the document down
         log(f"  {name}: extraction FAILED ({str(e)[:100]})")
         trace.update(ttl="", unresolved=[f"UNRESOLVED: agent {name} failed: {str(e)[:200]}"], error=str(e)[:300])
         return trace
     trace["llm_calls"] += 1
+    removed: list = []
+    qname = lambda s: next((f"{p_}:{str(s)[len(ns):]}" for p_, ns in sorted(schema.prefixes.items(), key=lambda kv: -len(kv[1]))
+                            if str(s).startswith(ns)), f"<{s}>")
     if known_ttl:   # ordered mode, level >= 1: only individuals of this agent's class are new; the rest exist already
-        ttl, dropped = scope_filter(ttl, schema, trace["concepts"], known_ttl)
+        ttl, dropped = scope_filter(ttl, schema, trace["concepts"], known_ttl, removed)
         if dropped:
             trace["scope_dropped"] = dropped
             log(f"  {name}: dropped {dropped} individual(s) of other classes (already built by earlier levels)")
     prev = None
     for cycle in range(MAX_FIX + 1):
         ok, report, _ = validate(ttl + "\n" + known_ttl if known_ttl else ttl, schema)
+        report = own_violations(report, ttl, known_ttl, schema)
+        ok = ok or not report
+        notes = scope_notes(removed, known_ttl, schema, qname)
+        removed.clear()
+        if notes and not ok:   # say why a linked node vanished, else the repair writes it again
+            report = "\n".join(f"Constraint Violation in ScopeFilter:\n\tSeverity: sh:Violation\n\tMessage: {n}" for n in notes) + "\n" + report
         trace["cycles"].append({"cycle": cycle, "conforms": ok, "violations": report[:2000]})
         n_viol = report.count("Constraint Violation")
         log(f"  {name}: cycle {cycle} -> {'conforms' if ok else f'{n_viol} violation(s)'}")
@@ -182,9 +297,11 @@ def _agent(schema: Schema, context: str, seg: dict, task: str, known: str = "", 
         prev = report
         log(f"  {name}: fixing ...")
         try:
-            ttl = with_prefixes(llm.strip_fences(llm.chat(prompts.fix(schema, ttl, _cap(report), context, seg["text"], task, known))), schema)   # a verbose SHACL report blew a 32k context
+            ttl = with_prefixes(llm.strip_fences(llm.chat(prompts.fix(schema, ttl, _cap(report), context, seg["text"], task, known,
+                                                                      nofab=F["nofab"]))), schema)   # a verbose SHACL report blew a 32k context
+            ttl = _readable(ttl, schema, trace, name)
             if known_ttl:   # a fix round re-creates what the scope filter just dropped (dangling link -> "add the node"): filter again
-                ttl, dropped = scope_filter(ttl, schema, trace["concepts"], known_ttl)
+                ttl, dropped = scope_filter(ttl, schema, trace["concepts"], known_ttl, removed)
                 if dropped:
                     trace["scope_dropped"] = trace.get("scope_dropped", 0) + dropped
                     log(f"  {name}: fix round re-created {dropped} individual(s) of other classes, dropped again")
@@ -199,6 +316,93 @@ def _agent(schema: Schema, context: str, seg: dict, task: str, known: str = "", 
         trace["llm_calls"] += 1
         trace["unresolved"] += [f"MISSING (verifier): {m}" for m in trace["verifier"].get("missing", [])]
         log(f"  {name}: verifier dropped {len(trace['verifier'].get('dropped', []))}, missing {len(trace['verifier'].get('missing', []))}")
+    trace["ttl"] = ttl
+    if trace["unresolved"]:
+        log(f"  {name}: {len(trace['unresolved'])} unresolved (honest gaps)")
+    return trace
+
+
+def _agent_compact(full: Schema, context: str, seg: dict, task: str, known_ttl: str, F: dict) -> dict:
+    """The agent loop of ``_agent`` with the compact graph format: the model reads and writes one line per
+    individual with short handles (kgdc/compact.py); its reply becomes Turtle here, so validation, the
+    scope filter and the union are the same as in Turtle mode. Lines the parser cannot read count as
+    violations and go back to the model with the SHACL report, in handles instead of IRIs."""
+    trace = {"id": seg["id"], "concepts": seg.get("concepts", []), "text": seg["text"], "cycles": [], "llm_calls": 0}
+    schema = full.subset(trace["concepts"])
+    if F["task_filter"]:
+        task = prompts.filter_task(task, schema, full)
+    V = compact.Vocab(full)
+    name = seg["id"].split(":")[-1]
+    kg = Graph().parse(data=known_ttl, format="turtle") if known_ttl.strip() else Graph()
+    handles = {n: f"k{i + 1}" for i, n in enumerate(sorted(set(kg.subjects(RDF.type, None)), key=str))}   # IRI -> handle
+    known_block = compact.to_compact(kg, full, dict(handles), full=False, vocab=V) if handles else ""
+    known_map = {h: n for n, h in handles.items()} | {V.q(n): n for n in handles}   # also ex:person_Ann, if a model writes an IRI
+    # classes earlier levels built (with super/subclasses, as the scope filter counts them): no template line of their own
+    q = {URIRef(V.iri(c)): c for c in list(full.classes) + list(full.parents)}
+    built = {x for t in kg.objects(None, RDF.type) if t in q for x in full.ancestors(q[t]) | full.descendants(q[t])}
+    built -= set(trace["concepts"]) | {d for c in trace["concepts"] for d in full.descendants(c)}
+    log(f"  {name}: extracting, compact ({len(seg['text'])} chars, {len(schema.classes)} classes in view)")
+
+    def read(reply: str, extra: dict) -> tuple[str, dict, list[str]]:
+        ttl_, h2i, problems = compact.to_turtle(llm.strip_fences(reply), full, known_map | extra, V, frozen=set(known_map))
+        trace["reply"] = reply[:6000]
+        return with_prefixes(ttl_, full), h2i, problems
+
+    try:
+        ttl, h2i, problems = read(llm.chat(prompts.extract_compact(schema, context, seg["text"], trace["concepts"], task, known_block,
+                                                                   shacl=F["shacl"], nofab=F["nofab"], built=built)), {})
+    except Exception as e:  # noqa: BLE001 — one dead agent must not take the document down
+        log(f"  {name}: extraction FAILED ({str(e)[:100]})")
+        trace.update(ttl="", unresolved=[f"UNRESOLVED: agent {name} failed: {str(e)[:200]}"], error=str(e)[:300])
+        return trace
+    trace["llm_calls"] += 1
+
+    removed: list = []
+
+    def filtered(ttl_: str) -> str:
+        if not known_ttl:
+            return ttl_
+        out, dropped = scope_filter(ttl_, schema, trace["concepts"], known_ttl, removed)
+        if dropped:
+            trace["scope_dropped"] = trace.get("scope_dropped", 0) + dropped
+            log(f"  {name}: dropped {dropped} individual(s) of other classes (already built by earlier levels)")
+        return out
+
+    ttl, prev = filtered(ttl), None
+    for cycle in range(MAX_FIX + 1):
+        ok, report, _ = validate(ttl + "\n" + known_ttl if known_ttl else ttl, schema)
+        report = own_violations(report, ttl, known_ttl, full)
+        ok = ok or not report
+        mine = {h: i for h, i in h2i.items() if h not in known_map}
+        shown = {URIRef(i): h for h, i in mine.items()} | handles
+        notes = scope_notes(removed, known_ttl, full, lambda s: shown.get(URIRef(s), V.q(s)))
+        removed.clear()
+        problems = problems + (notes if (notes and (not ok or problems)) else [])
+        short = "\n".join(f"- {p}" for p in problems) + ("\n" if problems and report else "") + (compact.report(report, shown, V) if report else "")
+        ok = ok and not problems
+        trace["cycles"].append({"cycle": cycle, "conforms": ok, "violations": short[:2000]})
+        n_viol = short.count("\n") + 1 if short else 0
+        log(f"  {name}: cycle {cycle} -> {'conforms' if ok else f'{n_viol} violation(s)'}")
+        if ok or cycle == MAX_FIX or short == prev:
+            if not ok:
+                log(f"  {name}: stopping ({'fix budget spent' if cycle == MAX_FIX else 'plateau'})")
+            break
+        prev = short
+        log(f"  {name}: fixing ...")
+        try:
+            g = Graph().parse(data=ttl, format="turtle")
+            own = {s for s in g.subjects(RDF.type, None) if s not in handles}
+            graph_txt = compact.to_compact(g, full, dict(shown), only=own, vocab=V)
+            notes = "\n".join(l.strip() for l in ttl.splitlines() if l.strip().startswith("# UNRESOLVED"))
+            ttl, h2i, problems = read(llm.chat(prompts.fix_compact(schema, graph_txt + ("\n" + notes if notes else ""), _cap(short), context,
+                                                                   seg["text"], task, known_block, nofab=F["nofab"])), mine)
+            ttl = filtered(ttl)
+        except Exception as e:  # noqa: BLE001 — keep the last graph; the merge pass still sees the violations
+            log(f"  {name}: fix FAILED ({str(e)[:100]}), keeping the graph as is")
+            trace["error"] = str(e)[:300]
+            break
+        trace["llm_calls"] += 1
+    trace["unresolved"] = unresolved(ttl)
     trace["ttl"] = ttl
     if trace["unresolved"]:
         log(f"  {name}: {len(trace['unresolved'])} unresolved (honest gaps)")
@@ -340,6 +544,8 @@ def _cap(s: str, n: int = MERGE_MAX_CHARS) -> str:
 def _final(schema: Schema, text: str, merged: str, report: str, unres: list[str], unparsed: list[str],
            task: str, concepts: list[str]) -> tuple[str, bool, str, str | None]:
     """Big-model merge pass with capped inputs; on failure keep the pre-merge graph."""
+    if flags()["merge"] == "edits":
+        return _final_edits(schema, text, merged, report, unres, unparsed, task, concepts)
     prompt = prompts.merge(schema.subset(concepts), text, merged,
                            _cap(report), unres[:50], _cap("\n\n".join(unparsed)), task)
     try:
@@ -363,6 +569,120 @@ def _final(schema: Schema, text: str, merged: str, report: str, unres: list[str]
         log(f"merge output rejected ({str(e)[:60]}) - returning the un-merged union")
     ok, report, _ = validate(final, schema)
     return final, ok, report, err
+
+
+MERGE_EDIT_MAX_TOKENS = int(os.getenv("KGDC_MERGE_EDIT_MAX_TOKENS", "3000"))   # an edit list is short: the context is left to the input
+MERGE_EDIT_LIMIT = 60   # edits per kind; each one is validated on its own
+
+
+def _violation_set(report: str) -> set:
+    """(focus node, message) of every violation in a report: an edit may not add one."""
+    out = set()
+    for blk in re.split(r"\n(?=Constraint )", report or ""):
+        if blk.startswith("Constraint"):
+            f = re.search(r"Focus Node: (.*)", blk); m = re.search(r"Message: (.*)", blk)
+            out.add(((f.group(1).strip() if f else ""), (m.group(1).strip() if m else blk[:120])))
+    return out
+
+
+def apply_edits(g: Graph, edits: dict, handles: dict, schema: Schema, vocab: "compact.Vocab") -> dict:
+    """Apply a merge-pass edit list to ``g`` in place. ``handles`` maps handle -> IRI of the graph the
+    model saw. same: the second node's statements and incoming links move to the first. remove: the
+    statements given as "<handle> <property>=<value>" (values compared as merge_identical compares them).
+    add: graph lines; new handles are minted like any agent's. Returns counts of what was applied."""
+    done = {"same": 0, "remove": 0, "add": 0, "unreadable": 0}
+    for pair in edits.get("same") or []:
+        if not (isinstance(pair, list) and len(pair) == 2 and pair[0] in handles and pair[1] in handles) or pair[0] == pair[1]:
+            done["unreadable"] += 1
+            continue
+        keep, drop = URIRef(handles[pair[0]]), URIRef(handles[pair[1]])
+        has = {(p, _value_key(o)) for p, o in g.predicate_objects(keep)}
+        for p, o in list(g.predicate_objects(drop)):
+            g.remove((drop, p, o))
+            if (p, _value_key(o)) not in has:
+                g.add((keep, p, o))
+        for s, p in list(g.subject_predicates(drop)):
+            g.remove((s, p, drop))
+            g.add((s, p, keep))
+        done["same"] += 1
+    for line in edits.get("remove") or []:
+        rg, _, _, problems = compact.parse(str(line), schema, known=handles, vocab=vocab)
+        for s, p, o in rg:
+            hit = [(s, p, x) for x in g.objects(s, p) if _value_key(x) == _value_key(o)]
+            for t in hit:
+                g.remove(t)
+            done["remove"] += bool(hit)
+        done["unreadable"] += len(problems)
+    add = "\n".join(str(l) for l in edits.get("add") or [])
+    if add.strip():
+        ag, _, _, problems = compact.parse(add, schema, known=handles, vocab=vocab)
+        g += ag
+        done["add"] = len(ag)
+        done["unreadable"] += len(problems)
+    return done
+
+
+def _final_edits(schema: Schema, text: str, merged: str, report: str, unres: list[str], unparsed: list[str],
+                 task: str, concepts: list[str]) -> tuple[str, bool, str, str | None]:
+    """KGDC_MERGE=edits: the model sees the graph in the compact format and returns edits (add / same /
+    remove) instead of rewriting it. The reply is a few hundred tokens instead of the whole graph, so the
+    input keeps most of the context (NOTES 63). The edited graph is kept only if it has no more
+    violations than the unedited one."""
+    V = compact.Vocab(schema)
+    g = Graph().parse(data=merged, format="turtle")
+    for p, ns in schema.prefixes.items():
+        g.bind(p, ns)
+    iri2h: dict = {}
+    graph_txt = compact.to_compact(g, schema, iri2h, vocab=V)
+    handles = {h: i for i, h in iri2h.items()}
+    ok0, rep0, _ = validate(merged, schema)
+    prompt = prompts.merge_edits(schema.subset(concepts), text, graph_txt, _cap(compact.report(rep0, iri2h, V)) if rep0 else "",
+                                 unres[:50], _cap("\n\n".join(unparsed)), task, nofab=flags()["nofab"])
+    try:
+        edits = json_call(prompt, model=BIG_MODEL, max_tokens=MERGE_EDIT_MAX_TOKENS)
+        if not isinstance(edits, dict):
+            raise ValueError("edit list is not a JSON object")
+    except Exception as e:  # noqa: BLE001 — the graph before the pass is still a result
+        log(f"merge edits FAILED ({str(e)[:80]}) - returning the un-merged union")
+        return merged, ok0, rep0, f"merge edits failed: {str(e)[:300]}"
+    # new handles in "add" lines are minted once for the whole list, so lines that refer to each other agree
+    add_lines = [str(l) for l in edits.get("add") or [] if str(l).strip()][:MERGE_EDIT_LIMIT]
+    _, minted, _, _ = compact.parse("\n".join(add_lines), schema, known=handles, vocab=V)
+    known_all = handles | minted
+    queue = ([("same", e) for e in (edits.get("same") or [])[:MERGE_EDIT_LIMIT]] +
+             [("remove", e) for e in (edits.get("remove") or [])[:MERGE_EDIT_LIMIT]] + [("add", e) for e in add_lines])
+    def copy(src: Graph) -> Graph:   # same prefixes as the report of the union: violations compare as strings
+        out = Graph()
+        for p, ns in schema.prefixes.items():
+            out.bind(p, ns)
+        for t in src:
+            out.add(t)
+        return out
+
+    cur = copy(g)
+    base = _violation_set(validate(cur.serialize(format="turtle"), schema)[1])
+    kept = collections.Counter(); refused = collections.Counter()
+    for kind, e in queue:   # one edit at a time: an edit that introduces a violation is refused, the others stay
+        trial = copy(cur)
+        done = apply_edits(trial, {kind: [e]}, known_all, schema, V)
+        if not any(done[k] for k in ("same", "remove", "add")):
+            refused[kind] += 1
+            continue
+        _, rep_t, _ = validate(trial.serialize(format="turtle"), schema)
+        v = _violation_set(rep_t)
+        if v <= base:
+            cur, base = trial, v
+            kept[kind] += 1
+        else:
+            refused[kind] += 1
+    for p, ns in schema.prefixes.items():
+        cur.bind(p, ns)
+    drop_redundant_types(cur, schema)
+    merge_identical(cur)
+    final = cur.serialize(format="turtle")
+    ok, rep, _ = validate(final, schema)
+    log(f"merge edits: kept {dict(kept)}, refused {dict(refused)}; violations {rep0.count('Constraint Violation')} -> {rep.count('Constraint Violation')}")
+    return final, ok, rep, None
 
 
 def run_ordered(schema: Schema, text: str, workers: int = 4, task: str = "") -> Result:

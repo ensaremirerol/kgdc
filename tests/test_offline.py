@@ -159,7 +159,9 @@ def test_big_class_is_split_over_several_agents(monkeypatch):
     r = kgdc.run_ordered(kgdc.load(EX / "ontology.ttl", EX / "shapes.ttl"), "Visit header. 1 cm. 2 cm. 3 cm. 4 cm. 5 cm.")
     unit_jobs = [s for s in r.segments if s["id"].startswith("chr:Unit")]
     assert [s["id"] for s in unit_jobs] == ["chr:Unit#1", "chr:Unit#2", "chr:Unit#3"] and len(seen["chr:Unit"]) == 3
-    assert "1 cm" in seen["chr:Unit"][0] and "5 cm" in seen["chr:Unit"][2] and "5 cm" not in seen["chr:Unit"][0]
+    chunks = seen["chr:Unit"]   # agents run in parallel: the order they reach the model in is not fixed
+    assert any("1 cm" in c and "2 cm" in c for c in chunks) and any("5 cm" in c and "1 cm" not in c for c in chunks)
+    assert not any("1 cm" in c and "5 cm" in c for c in chunks)
     assert len([s for s in r.segments if s["id"] == "chr:ClinicalVisit"]) == 1
 
 
