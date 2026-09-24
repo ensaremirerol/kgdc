@@ -397,7 +397,9 @@ what happened → what fixed it or would.
     more calls (169 vs 103 repair calls: its repair loop also fixes lines the parser could not use). The first
     ablation's gap (0.769 -> 0.861) was mostly the corrections, not the format: they raised A by 0.065 and left
     D unchanged. Five runs hit an endpoint outage and two a compact-parser bug (a property IRI with a space
-    cost a whole reply; fixed in c06b97b); all seven were rerun. Open: D with every correction except the
-    scope rules scored 0.877, with them 0.859 - the property rule may cost the compact format a little.
+    cost a whole reply; fixed in c06b97b); all seven were rerun. The scope rules (65) had no measurable effect on
+    D: 0.865 / 0.835 without them (runs/ablation-2026-09-24-fix), 0.859 / 0.833 with them, per document 11
+    better and 13 worse; three D runs on the same documents range 0.859-0.865. (An earlier 0.877 vs 0.857 came
+    from a 25-document subset that left out the redone runs and was not a fair comparison.)
     Write-up for the paper: docs/a_to_d_changes.md (local).
 
