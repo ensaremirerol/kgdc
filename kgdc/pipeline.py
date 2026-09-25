@@ -452,8 +452,11 @@ def _agent_compact(full: Schema, context: str, seg: dict, task: str, known_ttl: 
             own = {s for s in g.subjects(RDF.type, None) if s not in handles}
             graph_txt = compact.to_compact(g, full, dict(shown), only=own, vocab=V)
             notes = "\n".join(l.strip() for l in ttl.splitlines() if l.strip().startswith("# UNRESOLVED"))
+            # the reply is read on its own: IRIs are minted from content, so an unchanged node keeps its IRI anyway,
+            # while passing the previous handles let a renumbered handle attach new statements to the old node
+            # (a measurement fused with another in 6 of 200 documents, NOTES 67)
             ttl, h2i, problems = read(llm.chat(prompts.fix_compact(schema, graph_txt + ("\n" + notes if notes else ""), _cap(short), context,
-                                                                   seg["text"], task, known_block, nofab=F["nofab"])), mine)
+                                                                   seg["text"], task, known_block, nofab=F["nofab"])), {})
             ttl = filtered(ttl)
         except Exception as e:  # noqa: BLE001 — keep the last graph; the merge pass still sees the violations
             log(f"  {name}: fix FAILED ({str(e)[:100]}), keeping the graph as is")

@@ -224,7 +224,7 @@ def parse(text: str, schema: Schema, known: dict | None = None, vocab: Vocab | N
             key = h
             defined.add(h)
         for c in classes:
-            if _BAD_IRI.search(v.term(c)):
+            if _BAD_IRI.search(v.term(c)) or v.term(c) in v.range:   # a property name where the class belongs
                 problems.append(f"{h}: '{c[:60]}' is not a class name")
                 continue
             triples.append((key, str(RDF.type), URIRef(v.term(c))))

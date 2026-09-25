@@ -190,3 +190,24 @@ def test_reused_handle_is_a_second_individual():
 def test_repeating_a_declaration_is_a_continuation():
     g, _, _, problems = compact.parse('u1 Unit "cm"\nu1 Unit "cm" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/cm>', schema())
     assert not problems and len(set(g.subjects(RDF.type, None))) == 1
+
+
+def test_repair_reply_with_renumbered_handles_fuses_nothing(monkeypatch):
+    """A repair reply that renumbers m1/m2 must not attach m1's new statements to the old m1 node."""
+    s = schema()
+    replies = iter([
+        'm1 Measurement "Body Height" hasCode=<https://loinc.org/8302-2>; hasQuantityValue=104; hasUnit cm',
+        'm1 Measurement "Body Weight" hasCode=<https://loinc.org/29463-7>; hasQuantityValue=19\n'
+        'm2 Measurement "Body Height" hasCode=<https://loinc.org/8302-2>; hasQuantityValue=104',
+    ])
+    monkeypatch.setattr(llm, "chat", lambda prompt, model=None, **kw: next(replies))
+    monkeypatch.setenv("KGDC_FORMAT", "compact")
+    t = pipeline._agent(s, "", {"id": "chr:Measurement", "concepts": ["chr:Measurement"], "text": "Height 104, weight 19"}, "")
+    g = Graph().parse(data=t["ttl"], format="turtle")
+    ms = set(g.subjects(RDF.type, URIRef(CHR + "Measurement")))
+    assert len(ms) == 2 and all(len(set(g.objects(m, URIRef(CHR + "hasCode")))) == 1 for m in ms)
+
+
+def test_property_name_in_the_class_position_is_a_problem():
+    g, _, _, problems = compact.parse('p1 hasCode,hasPatient "2018-02-28"', schema())
+    assert problems and (None, RDF.type, None) not in g
