@@ -169,3 +169,24 @@ def test_malformed_names_are_problems_not_a_lost_reply():
     assert any("not a property name" in p for p in problems)
     g = Graph().parse(data=ttl, format="turtle")
     assert (None, RDF.type, URIRef(CHR + "ClinicalVisit")) in g, "the rest of the line survives"
+
+
+def test_reused_handle_is_a_second_individual():
+    """200-document run: 'm5 Measurement "Respiratory rate"' and later 'm5 Measurement "Bilirubin"' fused into one node."""
+    text = ('m5 Measurement "Respiratory rate" hasCode=<https://loinc.org/9279-1>; hasQuantityValue=15\n'
+            'p5 MeasurementProcess "rr" hasResult=m5\n'
+            'm5 Measurement "Bilirubin" hasCode=<https://loinc.org/20505-4>; hasQuantityValue=1.0994\n'
+            'p6 MeasurementProcess "bili" hasResult=m5\n'
+            'm5 hasMeasuredDate=2021-07-14T16:47:23+02:00')
+    g, h2i, _, problems = compact.parse(text, schema())
+    ms = set(g.subjects(RDF.type, URIRef(CHR + "Measurement")))
+    assert len(ms) == 2 and all(len(set(g.objects(m, URIRef(CHR + "hasCode")))) == 1 for m in ms)
+    assert any("declared twice" in p for p in problems)
+    res = {str(g.value(p, RDFS.label)): g.value(p, URIRef(CHR + "hasResult")) for p in g.subjects(RDF.type, URIRef(CHR + "MeasurementProcess"))}
+    assert str(g.value(res["rr"], RDFS.label)) == "Respiratory rate" and str(g.value(res["bili"], RDFS.label)) == "Bilirubin", "links go to the nearest declaration"
+    assert g.value(res["bili"], URIRef(CHR + "hasMeasuredDate")) is not None, "a later class-less line continues the latest declaration"
+
+
+def test_repeating_a_declaration_is_a_continuation():
+    g, _, _, problems = compact.parse('u1 Unit "cm"\nu1 Unit "cm" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/cm>', schema())
+    assert not problems and len(set(g.subjects(RDF.type, None))) == 1

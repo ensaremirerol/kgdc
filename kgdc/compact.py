@@ -181,25 +181,61 @@ def parse(text: str, schema: Schema, known: dict | None = None, vocab: Vocab | N
             pairs.append((k.strip(), val.strip()))
         rows.append((head, classes, label, pairs))
 
-    defined = {h for h, c, _, _ in rows if c and h not in known}
+    # Handles -> internal keys. Models restart or repeat their numbering in long replies: a handle declared
+    # again with another class or label is another individual, not more statements about the first one
+    # (20 of 200 documents fused a Respiratory rate and a Bilirubin measurement into one node, NOTES 67).
+    # A repeat with the same class and label is a continuation. A reference resolves to the handle's latest
+    # declaration at or before its line, else its first declaration after it.
+    decl_rows: dict = {}   # handle -> [(row index, key)]
+    keys_at: dict = {}     # row index -> key, for declaring rows
+    last: dict = {}        # handle -> (key, classes, label) of its latest declaration
+    for i, (h, classes, label, pairs) in enumerate(rows):
+        if h in known or not classes:
+            continue
+        if h in last:
+            k0, c0, l0 = last[h]
+            if set(c0) == set(classes) and (label is None or l0 is None or label == l0):
+                key, label = k0, label if label is not None else l0
+            else:
+                key = f"{h}_dup{len(decl_rows[h]) + 1}"
+                problems.append(f"{h}: handle declared twice ({','.join(c0)} \"{(l0 or '')[:40]}\" and {','.join(classes)} "
+                                f"\"{(label or '')[:40]}\"); the second is kept as {key}. Give every individual its own handle.")
+        else:
+            key = h
+        keys_at[i] = key
+        decl_rows.setdefault(h, []).append((i, key))
+        last[h] = (key, classes, label)
+
+    def resolve(handle: str, i: int):
+        if handle in known:
+            return handle
+        rs = decl_rows.get(handle)
+        if not rs:
+            return None
+        before = [key for j, key in rs if j <= i]
+        return before[-1] if before else rs[0][1]
+
+    defined = {key for rs in decl_rows.values() for _, key in rs}
     triples, links = [], {}
-    for h, classes, label, pairs in rows:
-        if h not in known and h not in defined:
+    for i, (h, classes, label, pairs) in enumerate(rows):
+        key = keys_at.get(i) or resolve(h, i)
+        if key is None:
             problems.append(f"{h}: statements about a handle that is neither known nor declared with a class")
+            key = h
             defined.add(h)
         for c in classes:
             if _BAD_IRI.search(v.term(c)):
                 problems.append(f"{h}: '{c[:60]}' is not a class name")
                 continue
-            triples.append((h, str(RDF.type), URIRef(v.term(c))))
+            triples.append((key, str(RDF.type), URIRef(v.term(c))))
         if label is not None:
-            triples.append((h, str(RDFS.label), Literal(label)))
+            triples.append((key, str(RDFS.label), Literal(label)))
         for k, val in pairs:
             p = v.term(k)
             if _BAD_IRI.search(p):   # "sulo:p10 hasCode" from a malformed line: a property IRI with a space
                 problems.append(f"{h}: '{k[:60]}' is not a property name (expected property=value)")
                 continue
-            items = _split(val, ",") if "," in val and all(_unquote(x) in known or _unquote(x) in defined for x in _split(val, ",")) else [val]
+            items = _split(val, ",") if "," in val and all(resolve(_unquote(x), i) for x in _split(val, ",")) else [val]
             for it in items:
                 raw_v = _unquote(it) if it.startswith('"') else it
                 if it.startswith("<") and it.endswith(">"):
@@ -207,9 +243,9 @@ def parse(text: str, schema: Schema, known: dict | None = None, vocab: Vocab | N
                         problems.append(f"{h}: {k}=<{it[1:-1][:80]}> is not a valid IRI")
                         continue
                     o = URIRef(it[1:-1])
-                elif not it.startswith('"') and (raw_v in known or raw_v in defined):
-                    o = raw_v
-                    links.setdefault(h, set()).add(raw_v)
+                elif not it.startswith('"') and resolve(raw_v, i):
+                    o = resolve(raw_v, i)
+                    links.setdefault(key, set()).add(o)
                 elif re.match(r"^https?://\S+$", raw_v):
                     o = URIRef(raw_v)
                 elif p == str(RDFS.label):
@@ -219,7 +255,7 @@ def parse(text: str, schema: Schema, known: dict | None = None, vocab: Vocab | N
                     continue
                 else:
                     o = v.literal(p, raw_v)
-                triples.append((h, p, o))
+                triples.append((key, p, o))
 
     # mint IRIs for new handles from their content; a node is minted after the nodes it links to
     iri = {h: URIRef(known[h]) if not isinstance(known[h], URIRef) else known[h] for h in known}
@@ -242,7 +278,9 @@ def parse(text: str, schema: Schema, known: dict | None = None, vocab: Vocab | N
         g.bind(p_, ns)
     for s, p, o in triples:
         g.add((iri[s], URIRef(p), iri[o] if isinstance(o, str) and not isinstance(o, (URIRef, Literal)) else o))
-    return g, {h: iri[h] for h in iri}, notes, problems
+    # every key keeps its IRI (m5, m5_dup2 ...); a handle maps to its latest declaration
+    h2i = {k: iri[k] for k in iri} | {h: iri[rs[-1][1]] for h, rs in decl_rows.items()}
+    return g, h2i, notes, problems
 
 
 def _slug(s: str, n: int = 40) -> str:
