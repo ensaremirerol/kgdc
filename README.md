@@ -27,9 +27,9 @@ honest gaps beats a conformant graph with invented values.
 
 | corpus | docs | metric | kgdc | original pipeline (gpt-oss-120b, same scorer) |
 |---|---|---|---|---|
-| CHR clinical vignettes (all) | 200 | identity-hash triple F1, macro | **0.839** | A 0.318 · B 0.314 · D 0.336 |
-| CHR clinical vignettes (all) | 200 | same, micro | **0.813** | A 0.317 · B 0.315 · D 0.328 |
-| CHR, without the 11 development vignettes | 189 | identity-hash triple F1, macro | **0.836** | A 0.315 · B 0.310 · D 0.330 |
+| CHR clinical vignettes (all) | 200 | identity-hash triple F1, macro | **0.864** | A 0.318 · B 0.314 · D 0.336 |
+| CHR clinical vignettes (all) | 200 | same, micro | **0.850** | A 0.317 · B 0.315 · D 0.328 |
+| CHR, without the 11 development vignettes | 189 | identity-hash triple F1, macro | **0.865** | A 0.315 · B 0.310 · D 0.330 |
 | WebNLG Airport | 20 | label triple F1, macro | **0.948** | — |
 | WebNLG Building | 20 | label triple F1, macro | **0.838** | — |
 | ADE corpus (drug → adverse effect) | 20 | label triple F1, micro, strict / lenient | **0.52 / 0.80** | — |
@@ -605,11 +605,29 @@ python examples/chr/repair_truncated.py RUN_DIR      # replace cut-off merge out
 ## Results
 
 All kgdc numbers: `gemma4-g1` (27B, via LiteLLM) for both roles, ordered mode, September 2026. The
-200-document batch and the WebNLG/ADE runs used Turtle output; the format comparison below used both.
-Score files and the comparison output are in `results/2026-09-21/`; the misses behind every number
-are in `NOTES.md` 36-55.
+CHR numbers at a glance are the compact-format run of 2026-09-25 (`results/2026-09-25/`, NOTES 67); the
+earlier Turtle batch below and the WebNLG/ADE runs used Turtle output. Score files and the comparison
+output of the Turtle batch are in `results/2026-09-21/`; the misses behind every number are in
+`NOTES.md` 36-55.
 
-### CHR vignettes: kgdc versus the original pipeline
+### CHR vignettes, compact format (current default)
+
+All 200 documents with the compact graph format and every correction of NOTES 62-66
+(`results/2026-09-25/chr_compact_comparison.txt`):
+
+| system | micro P | micro R | micro F1 | macro P | macro R | macro F1 | docs F1 ≥ 0.9 | docs F1 < 0.5 |
+|---|---|---|---|---|---|---|---|---|
+| **kgdc, compact** (gemma 27B) | 0.845 | 0.856 | **0.850** | 0.847 | 0.885 | **0.864** | 77 | 0 |
+| kgdc, Turtle batch below | 0.767 | 0.865 | 0.813 | 0.796 | 0.888 | 0.839 | 58 | 0 |
+| thesis D (4 calls, no feedback) | 0.402 | 0.277 | 0.328 | 0.396 | 0.293 | 0.336 | 0 | 187 |
+
+kgdc wins all 200 documents against each Thesis system (sign test p = 1e-60). Without the 11
+development vignettes: macro 0.865 / micro 0.849. Per document F1 quartiles 0.83 / 0.87 / 0.91 (min
+0.61). Against the Turtle batch: better on 117 documents, worse on 58, mean +0.026; the gain is in
+precision. 5.8 min per document, 0 unparsed agent replies; 84 documents still keep the un-merged
+union because the merge prompt exceeds the context.
+
+### CHR vignettes: kgdc (Turtle batch, 2026-09-21) versus the original pipeline
 
 The original pipeline (the companion Thesis repository, extractor **gpt-oss-120b**) has three
 systems: **A**, one extraction call per document; **B**, A plus up to three SHACL-feedback repair

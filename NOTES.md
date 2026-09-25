@@ -403,3 +403,24 @@ what happened → what fixed it or would.
     from a 25-document subset that left out the redone runs and was not a fair comparison.)
     Write-up for the paper: docs/a_to_d_changes.md (local).
 
+
+## Compact format on all 200 CHR documents (2026-09-25, gemma4-g1 both roles)
+
+67. **All 200 vignettes with the compact format (runs/chr-compact-2026-09-25, results/2026-09-25):** macro
+    0.864 / micro 0.850 F1 (P 0.845, R 0.856), 77 documents at F1 >= 0.9, none below 0.5 (min 0.61; quartiles
+    0.83 / 0.87 / 0.91). Without the 11 development vignettes: 0.865 / 0.849 on 189. Against the Thesis
+    systems (0.318 / 0.314 / 0.336 macro) kgdc wins all 200 documents in each pairing (sign test p = 1e-60).
+    Against the earlier Turtle batch (0.839 / 0.813, before the corrections of 62-65) it is better on 117
+    documents, worse on 58, mean +0.026. 4,364 calls, 15.6M prompt / 4.6M output tokens, 5.8 min per
+    document; 0 unparsed agent replies. 84 documents still hit the merge context limit and keep the union.
+    Two parser bugs surfaced on the full batch and were fixed before the final numbers, with the affected
+    documents rerun (bug-hit outputs kept in fused/ and fused2/):
+    - A model reusing a handle within one reply for another individual (`m1 Measurement "weight"` ... `m1
+      Measurement "height"`) fused both into one node with two labels and two codes (20 documents). A handle
+      declared again with another class or label is now a new individual, links resolve to the nearest
+      earlier declaration, and the agent is told (2f1561c).
+    - Repair rounds parsed the reply with the previous reply's handles marked as known, so a repaired line
+      reusing a handle merged into the old node (6 documents). The repair reply is now read on its own; a
+      property name in the class position is reported as a problem (ddcb4c3).
+    After the fixes no output has a node with two classes or two codes. Exit code 1 on 74 documents means
+    the final graph still has SHACL violations, not a failed run.
