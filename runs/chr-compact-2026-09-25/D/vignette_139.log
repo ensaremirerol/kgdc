@@ -1,0 +1,205 @@
+[   0.0s] segmenting (orchestrator) ...
+[ 124.0s] 42 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[MeasurementProcess,Measurement,Unit,ProcessStatus], s4[MeasurementProcess,Measurement,Unit,ProcessStatus], s5[MeasurementProcess,Measurement,Unit,ProcessStatus], s6[MeasurementProcess,Measurement,Unit,ProcessStatus], s7[MeasurementProcess,Measurement,Unit,ProcessStatus], s8[MeasurementProcess,Measurement,Unit,ProcessStatus], s9[MeasurementProcess,Measurement,Unit,ProcessStatus], s10[MeasurementProcess,Measurement,Unit,ProcessStatus], s11[MeasurementProcess,Measurement,Unit,ProcessStatus], s12[MeasurementProcess,Measurement,Unit,ProcessStatus], s13[MeasurementProcess,Measurement,Unit,ProcessStatus], s14[MeasurementProcess,Measurement,Unit,ProcessStatus], s15[MeasurementProcess,Measurement,Unit,ProcessStatus], s16[MeasurementProcess,Measurement,Unit,ProcessStatus], s17[MeasurementProcess,Measurement,Unit,ProcessStatus], s18[MeasurementProcess,Measurement,Unit,ProcessStatus], s19[MeasurementProcess,Measurement,Unit,ProcessStatus], s20[MeasurementProcess,Measurement,Unit,ProcessStatus], s21[MeasurementProcess,Measurement,Unit,ProcessStatus], s22[MeasurementProcess,Measurement,Unit,ProcessStatus], s23[MeasurementProcess,Measurement,Unit,ProcessStatus], s24[MeasurementProcess,Measurement,Unit,ProcessStatus], s25[MeasurementProcess,Measurement,Unit,ProcessStatus], s26[MeasurementProcess,Measurement,Unit,ProcessStatus], s27[MeasurementProcess,Measurement,Unit,ProcessStatus], s28[MeasurementProcess,Measurement,Unit,ProcessStatus], s29[MeasurementProcess,Measurement,Unit,ProcessStatus], s30[MeasurementProcess,Measurement,Unit,ProcessStatus], s31[MeasurementProcess,Measurement,Unit,ProcessStatus], s32[MeasurementProcess,Measurement,Unit,ProcessStatus], s33[MeasurementProcess,Measurement,Unit,ProcessStatus], s34[MeasurementProcess,Measurement,Unit,ProcessStatus], s35[MeasurementProcess,Measurement,Unit,ProcessStatus], s36[MeasurementProcess,Measurement,Unit,ProcessStatus], s37[MeasurementProcess,Measurement,Unit,ProcessStatus], s38[MeasurementProcess,Measurement,Unit,ProcessStatus], s39[MeasurementProcess,Measurement,Unit,ProcessStatus], s40[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s41[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s42[CarePlan]
+[ 124.0s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, ProcessStatus, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 124.0s] level 0: 6 agent(s), 0 known entities
+[ 124.0s]   CareUnit: extracting, compact (238 chars, 1 classes in view)
+[ 124.0s]   ClinicalCondition: extracting, compact (462 chars, 3 classes in view)
+[ 124.0s]   DiagnosticStatement: extracting, compact (462 chars, 1 classes in view)
+[ 124.0s]   Person: extracting, compact (238 chars, 1 classes in view)
+[ 124.6s]   Person: cycle 0 -> conforms
+[ 124.6s]   ProcessStatus#1: extracting, compact (3009 chars, 1 classes in view)
+[ 124.8s]   CareUnit: cycle 0 -> conforms
+[ 124.8s]   ProcessStatus#2: extracting, compact (2719 chars, 1 classes in view)
+[ 125.3s]   ProcessStatus#1: cycle 0 -> conforms
+[ 125.3s]   ProcessStatus#3: extracting, compact (2973 chars, 1 classes in view)
+[ 125.3s]   ProcessStatus#2: cycle 0 -> conforms
+[ 125.3s]   ProcessStatus#4: extracting, compact (481 chars, 1 classes in view)
+[ 125.4s]   DiagnosticStatement: cycle 0 -> conforms
+[ 125.4s]   Unit#1: extracting, compact (3009 chars, 1 classes in view)
+[ 126.6s]   ProcessStatus#3: cycle 0 -> conforms
+[ 126.6s]   Unit#2: extracting, compact (2719 chars, 1 classes in view)
+[ 126.7s]   ProcessStatus#4: cycle 0 -> conforms
+[ 126.7s]   Unit#3: extracting, compact (2973 chars, 1 classes in view)
+[ 128.4s]   Unit#2: cycle 0 -> 8 violation(s)
+[ 128.4s]   Unit#2: fixing ...
+[ 128.5s]   ClinicalCondition: cycle 0 -> conforms
+[ 128.5s]   Unit#4: extracting, compact (481 chars, 1 classes in view)
+[ 129.6s]   Unit#1: cycle 0 -> conforms
+[ 129.6s]   Unit#4: cycle 0 -> conforms
+[ 130.5s]   Unit#3: cycle 0 -> conforms
+[ 133.1s]   Unit#2: cycle 1 -> 8 violation(s)
+[ 133.1s]   Unit#2: stopping (plateau)
+[ 133.1s] level 1: 2 agent(s), 20 known entities
+[ 133.1s]   EvaluationProcess: extracting, compact (462 chars, 7 classes in view)
+[ 133.1s]   Measurement#1: extracting, compact (3009 chars, 2 classes in view)
+[ 133.1s]   Measurement#2: extracting, compact (2719 chars, 2 classes in view)
+[ 133.1s]   Measurement#3: extracting, compact (2973 chars, 2 classes in view)
+[ 138.1s]   EvaluationProcess: dropped 2 individual(s) outside its scope (built earlier, or another agent's class)
+[ 138.2s]   EvaluationProcess: cycle 0 -> 4 violation(s)
+[ 138.2s]   EvaluationProcess: fixing ...
+[ 143.1s]   EvaluationProcess: dropped 2 individual(s) outside its scope (built earlier, or another agent's class)
+[ 143.1s]   EvaluationProcess: cycle 1 -> 4 violation(s)
+[ 143.1s]   EvaluationProcess: fixing ...
+[ 148.2s]   EvaluationProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 148.2s]   EvaluationProcess: cycle 2 -> 3 violation(s)
+[ 148.2s]   EvaluationProcess: stopping (fix budget spent)
+[ 148.2s]   EvaluationProcess: 1 unresolved (honest gaps)
+[ 148.2s]   Measurement#4: extracting, compact (481 chars, 2 classes in view)
+[ 153.1s]   Measurement#4: cycle 0 -> conforms
+[ 157.0s]   Measurement#2: cycle 0 -> conforms
+[ 157.0s]   Measurement#2: 1 unresolved (honest gaps)
+[ 158.5s]   Measurement#3: cycle 0 -> conforms
+[ 158.7s]   Measurement#1: cycle 0 -> conforms
+[ 158.8s] level 2: 1 agent(s), 60 known entities
+[ 158.8s]   MeasurementProcess#1: extracting, compact (3009 chars, 6 classes in view)
+[ 158.8s]   MeasurementProcess#2: extracting, compact (2719 chars, 6 classes in view)
+[ 158.8s]   MeasurementProcess#3: extracting, compact (2973 chars, 6 classes in view)
+[ 158.8s]   MeasurementProcess#4: extracting, compact (481 chars, 6 classes in view)
+[ 168.9s]   MeasurementProcess#4: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 169.0s]   MeasurementProcess#4: cycle 0 -> 3 violation(s)
+[ 169.0s]   MeasurementProcess#4: fixing ...
+[ 175.4s]   MeasurementProcess#4: cycle 1 -> 3 violation(s)
+[ 175.4s]   MeasurementProcess#4: fixing ...
+[ 180.9s]   MeasurementProcess#4: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 181.0s]   MeasurementProcess#4: cycle 2 -> 3 violation(s)
+[ 181.0s]   MeasurementProcess#4: stopping (fix budget spent)
+[ 181.0s]   MeasurementProcess#4: 1 unresolved (honest gaps)
+[ 181.8s]   MeasurementProcess#2: cycle 0 -> 2 violation(s)
+[ 181.8s]   MeasurementProcess#2: fixing ...
+[ 183.8s]   MeasurementProcess#1: cycle 0 -> 2 violation(s)
+[ 183.8s]   MeasurementProcess#1: fixing ...
+[ 205.8s]   MeasurementProcess#3: cycle 0 -> 2 violation(s)
+[ 205.8s]   MeasurementProcess#3: fixing ...
+[ 222.7s]   MeasurementProcess#2: cycle 1 -> 2 violation(s)
+[ 222.7s]   MeasurementProcess#2: stopping (plateau)
+[ 227.8s]   MeasurementProcess#1: cycle 1 -> 2 violation(s)
+[ 227.8s]   MeasurementProcess#1: stopping (plateau)
+[ 250.8s]   MeasurementProcess#3: cycle 1 -> 2 violation(s)
+[ 250.8s]   MeasurementProcess#3: stopping (plateau)
+[ 250.8s] level 3: 2 agent(s), 98 known entities
+[ 250.8s]   CarePlan: extracting, compact (10149 chars, 4 classes in view)
+[ 250.8s]   ClinicalVisit: extracting, compact (10149 chars, 5 classes in view)
+[ 253.3s]   CarePlan: cycle 0 -> 2 violation(s)
+[ 253.3s]   CarePlan: fixing ...
+[ 262.3s]   CarePlan: dropped 4 individual(s) outside its scope (built earlier, or another agent's class)
+[ 262.4s]   CarePlan: cycle 1 -> 7 violation(s)
+[ 262.4s]   CarePlan: fixing ...
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: hour must be in 0..23
+[ 506.5s]   ClinicalVisit: dropped 39 individual(s) outside its scope (built earlier, or another agent's class)
+[ 506.7s]   ClinicalVisit: cycle 0 -> 1080 violation(s)
+[ 506.7s]   ClinicalVisit: fixing ...
+[ 667.8s]   ClinicalVisit: dropped 48 individual(s) outside its scope (built earlier, or another agent's class)
+[ 668.0s]   ClinicalVisit: cycle 1 -> 97 violation(s)
+[ 668.0s]   ClinicalVisit: fixing ...
+[ 768.4s]   ClinicalVisit: dropped 49 individual(s) outside its scope (built earlier, or another agent's class)
+[ 768.6s]   ClinicalVisit: cycle 2 -> 93 violation(s)
+[ 768.6s]   ClinicalVisit: stopping (fix budget spent)
+[ 823.4s]   CarePlan: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 823.6s]   CarePlan: cycle 2 -> 2938 violation(s)
+[ 823.6s]   CarePlan: stopping (fix budget spent)
+[ 823.6s] union: dropped 46 link(s) to undeclared individuals
+[ 823.8s] merging (orchestrator): 8 violation(s), 3 unresolved, 0 unparsed
+[ 824.0s] merge FAILED (Error code: 400 - {'error': {'message': "litellm.ContextWindowExceededError: lit...) - returning the un-merged union
+[ 824.2s] final: 8 violation(s)
+conforms=False segments=23 llm_calls=37 unresolved=0
+  orchestrator   1 calls     5200 in    6390 out  cost n/a  gemma4-g1
+  total         36 calls   142896 in   69092 out  cost n/a  
+  worker        35 calls   137696 in   62702 out  cost n/a  gemma4-g1
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_cblscorecbr_4425f3f2
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_cm_ae8f71e1
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_kg_6c4d2f77
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_kgperm2_db9b0b9e
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_mgperdL_378a66d1
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_nominal_dd67dc15
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_permin_86d8edb8
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_x_ff5797a4
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+
+
+exit=1 seconds=825

@@ -1,0 +1,46 @@
+[   0.0s] segmenting (orchestrator) ...
+[  70.8s] 26 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[MeasurementProcess,Measurement,Unit,ProcessStatus], s4[MeasurementProcess,Measurement,Unit,ProcessStatus], s5[MeasurementProcess,Measurement,Unit,ProcessStatus], s6[MeasurementProcess,Measurement,Unit,ProcessStatus], s7[MeasurementProcess,Measurement,Unit,ProcessStatus], s8[MeasurementProcess,Measurement,Unit,ProcessStatus], s9[MeasurementProcess,Measurement,Unit,ProcessStatus], s10[MeasurementProcess,Measurement,Unit,ProcessStatus], s11[MeasurementProcess,Measurement,Unit,ProcessStatus], s12[MeasurementProcess,Measurement,Unit,ProcessStatus], s13[MeasurementProcess,Measurement,Unit,ProcessStatus], s14[MeasurementProcess,Measurement,Unit,ProcessStatus], s15[MeasurementProcess,Measurement,Unit,ProcessStatus], s16[MeasurementProcess,Measurement,Unit,ProcessStatus], s17[MeasurementProcess,Measurement,Unit,ProcessStatus], s18[MeasurementProcess,Measurement,Unit,ProcessStatus], s19[MeasurementProcess,Measurement,Unit,ProcessStatus], s20[MeasurementProcess,Measurement,Unit,ProcessStatus], s21[MeasurementProcess,Measurement,Unit,ProcessStatus], s22[MeasurementProcess,Measurement,Unit,ProcessStatus], s23[MeasurementProcess,Measurement,Unit,ProcessStatus], s24[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s25[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s26[CarePlan]
+[  70.9s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, ProcessStatus, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  70.9s] level 0: 6 agent(s), 0 known entities
+[  70.9s]   CareUnit: extracting, compact (238 chars, 1 classes in view)
+[  70.9s]   ClinicalCondition: extracting, compact (467 chars, 3 classes in view)
+[  70.9s]   DiagnosticStatement: extracting, compact (467 chars, 1 classes in view)
+[  70.9s]   Person: extracting, compact (238 chars, 1 classes in view)
+[  71.5s]   CareUnit: cycle 0 -> conforms
+[  71.5s]   ProcessStatus#1: extracting, compact (2839 chars, 1 classes in view)
+[  72.1s]   ProcessStatus#1: cycle 0 -> conforms
+[  72.1s]   ProcessStatus#2: extracting, compact (2576 chars, 1 classes in view)
+[  72.2s]   Person: cycle 0 -> conforms
+[  72.2s]   Unit#1: extracting, compact (2839 chars, 1 classes in view)
+[  72.8s]   ProcessStatus#2: cycle 0 -> conforms
+[  72.8s]   Unit#2: extracting, compact (2576 chars, 1 classes in view)
+[  73.5s]   DiagnosticStatement: cycle 0 -> conforms
+[  74.6s]   ClinicalCondition: cycle 0 -> conforms
+[  76.2s]   Unit#2: cycle 0 -> conforms
+[  77.5s]   Unit#1: cycle 0 -> conforms
+[  77.5s] level 1: 2 agent(s), 18 known entities
+[  77.5s]   EvaluationProcess: extracting, compact (467 chars, 7 classes in view)
+[  77.5s]   Measurement#1: extracting, compact (2839 chars, 2 classes in view)
+[  77.5s]   Measurement#2: extracting, compact (2576 chars, 2 classes in view)
+[  80.9s]   EvaluationProcess: cycle 0 -> conforms
+[  94.9s]   Measurement#2: cycle 0 -> conforms
+[  96.6s]   Measurement#1: cycle 0 -> conforms
+[  96.6s] level 2: 1 agent(s), 42 known entities
+[  96.6s]   MeasurementProcess#1: extracting, compact (2839 chars, 6 classes in view)
+[  96.7s]   MeasurementProcess#2: extracting, compact (2576 chars, 6 classes in view)
+[ 111.8s]   MeasurementProcess#2: cycle 0 -> conforms
+[ 113.1s]   MeasurementProcess#1: cycle 0 -> conforms
+[ 113.1s] level 3: 2 agent(s), 64 known entities
+[ 113.1s]   CarePlan: extracting, compact (6341 chars, 4 classes in view)
+[ 113.1s]   ClinicalVisit: extracting, compact (6341 chars, 5 classes in view)
+[ 114.6s]   CarePlan: cycle 0 -> conforms
+[ 114.6s]   CarePlan: 1 unresolved (honest gaps)
+[ 117.8s]   ClinicalVisit: cycle 0 -> conforms
+[ 117.9s] merging (orchestrator): 1 violation(s), 1 unresolved, 0 unparsed
+[ 330.5s] final: conforms
+conforms=True segments=15 llm_calls=17 unresolved=0
+  orchestrator   2 calls    18985 in   14263 out  cost n/a  gemma4-g1
+  total         17 calls    63402 in   18697 out  cost n/a  
+  worker        15 calls    44417 in    4434 out  cost n/a  gemma4-g1
+
+exit=0 seconds=331

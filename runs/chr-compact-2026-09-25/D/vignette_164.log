@@ -1,0 +1,40 @@
+[   0.0s] segmenting (orchestrator) ...
+[  52.8s] 19 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s19[CarePlan]
+[  52.8s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  52.9s] level 0: 6 agent(s), 0 known entities
+[  52.9s]   CareUnit: extracting, compact (215 chars, 1 classes in view)
+[  52.9s]   ClinicalCondition: extracting, compact (238 chars, 3 classes in view)
+[  52.9s]   DiagnosticStatement: extracting, compact (238 chars, 1 classes in view)
+[  52.9s]   Measurement#1: extracting, compact (3007 chars, 2 classes in view)
+[  54.3s]   CareUnit: cycle 0 -> conforms
+[  54.3s]   Measurement#2: extracting, compact (941 chars, 2 classes in view)
+[  54.7s]   DiagnosticStatement: cycle 0 -> conforms
+[  54.7s]   Person: extracting, compact (215 chars, 1 classes in view)
+[  55.5s]   ClinicalCondition: cycle 0 -> conforms
+[  55.5s]   ProcessStatus#1: extracting, compact (3007 chars, 1 classes in view)
+[  55.6s]   Person: cycle 0 -> conforms
+[  55.6s]   ProcessStatus#2: extracting, compact (941 chars, 1 classes in view)
+[  56.2s]   ProcessStatus#2: cycle 0 -> conforms
+[  56.2s]   ProcessStatus#1: cycle 0 -> conforms
+[  63.5s]   Measurement#2: cycle 0 -> conforms
+[  75.2s]   Measurement#1: cycle 0 -> conforms
+[  75.2s] level 1: 2 agent(s), 28 known entities
+[  75.2s]   EvaluationProcess: extracting, compact (238 chars, 7 classes in view)
+[  75.2s]   MeasurementProcess#1: extracting, compact (3007 chars, 6 classes in view)
+[  75.3s]   MeasurementProcess#2: extracting, compact (941 chars, 6 classes in view)
+[  77.7s]   EvaluationProcess: cycle 0 -> conforms
+[  82.2s]   MeasurementProcess#2: cycle 0 -> conforms
+[  94.0s]   MeasurementProcess#1: cycle 0 -> conforms
+[  94.0s] level 2: 2 agent(s), 45 known entities
+[  94.1s]   ClinicalVisit: extracting, compact (4620 chars, 5 classes in view)
+[  94.1s]   CarePlan: extracting, compact (4620 chars, 4 classes in view)
+[  95.9s]   CarePlan: cycle 0 -> conforms
+[  98.9s]   ClinicalVisit: cycle 0 -> conforms
+[  99.0s] merging (orchestrator): 0 violation(s), 0 unresolved, 0 unparsed
+[ 263.5s] final: conforms
+conforms=True segments=13 llm_calls=15 unresolved=0
+  orchestrator   2 calls    14848 in   10419 out  cost n/a  gemma4-g1
+  total         15 calls    49738 in   13626 out  cost n/a  
+  worker        13 calls    34890 in    3207 out  cost n/a  gemma4-g1
+
+exit=0 seconds=264

@@ -1,0 +1,66 @@
+[   0.0s] segmenting (orchestrator) ...
+[  12.6s] 4 segments: s1[ClinicalVisit,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s4[CarePlan]
+[  12.6s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, ProcessStatus, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  12.6s] level 0: 6 agent(s), 0 known entities
+[  12.6s]   CareUnit: extracting, compact (382 chars, 1 classes in view)
+[  12.6s]   ClinicalCondition: extracting, compact (238 chars, 3 classes in view)
+[  12.6s]   DiagnosticStatement: extracting, compact (238 chars, 1 classes in view)
+[  12.6s]   Person: extracting, compact (382 chars, 1 classes in view)
+[  13.3s]   Person: cycle 0 -> conforms
+[  13.4s]   CareUnit: cycle 0 -> conforms
+[  13.4s]   ProcessStatus: extracting, compact (228 chars, 1 classes in view)
+[  13.4s]   Unit: extracting, compact (228 chars, 1 classes in view)
+[  13.8s]   ProcessStatus: cycle 0 -> conforms
+[  13.8s]   DiagnosticStatement: cycle 0 -> conforms
+[  14.1s]   Unit: cycle 0 -> conforms
+[  14.2s]   ClinicalCondition: cycle 0 -> conforms
+[  14.2s] level 1: 2 agent(s), 6 known entities
+[  14.2s]   EvaluationProcess: extracting, compact (238 chars, 7 classes in view)
+[  14.2s]   Measurement: extracting, compact (228 chars, 2 classes in view)
+[  15.8s]   EvaluationProcess: cycle 0 -> 1 violation(s)
+[  15.8s]   EvaluationProcess: fixing ...
+[  16.2s]   Measurement: cycle 0 -> conforms
+[  17.4s]   EvaluationProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  17.4s]   EvaluationProcess: cycle 1 -> 2 violation(s)
+[  17.4s]   EvaluationProcess: fixing ...
+[  19.0s]   EvaluationProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  19.0s]   EvaluationProcess: cycle 2 -> 2 violation(s)
+[  19.0s]   EvaluationProcess: stopping (fix budget spent)
+[  19.0s] level 2: 1 agent(s), 8 known entities
+[  19.0s]   MeasurementProcess: extracting, compact (228 chars, 6 classes in view)
+[  21.4s]   MeasurementProcess: cycle 0 -> 1 violation(s)
+[  21.4s]   MeasurementProcess: fixing ...
+[  24.2s]   MeasurementProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  24.2s]   MeasurementProcess: cycle 1 -> 2 violation(s)
+[  24.2s]   MeasurementProcess: fixing ...
+[  27.0s]   MeasurementProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  27.0s]   MeasurementProcess: cycle 2 -> 2 violation(s)
+[  27.0s]   MeasurementProcess: stopping (fix budget spent)
+[  27.0s] level 3: 2 agent(s), 9 known entities
+[  27.0s]   CarePlan: extracting, compact (968 chars, 4 classes in view)
+[  27.0s]   ClinicalVisit: extracting, compact (968 chars, 5 classes in view)
+[  28.0s]   CarePlan: cycle 0 -> 1 violation(s)
+[  28.0s]   CarePlan: fixing ...
+[  29.2s]   CarePlan: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  29.3s]   CarePlan: cycle 1 -> 2 violation(s)
+[  29.3s]   CarePlan: fixing ...
+[  30.3s]   CarePlan: cycle 2 -> 1 violation(s)
+[  30.3s]   CarePlan: stopping (fix budget spent)
+[  31.4s]   ClinicalVisit: dropped 3 individual(s) outside its scope (built earlier, or another agent's class)
+[  31.4s]   ClinicalVisit: cycle 0 -> 7 violation(s)
+[  31.4s]   ClinicalVisit: fixing ...
+[  33.2s]   ClinicalVisit: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  33.3s]   ClinicalVisit: cycle 1 -> 3 violation(s)
+[  33.3s]   ClinicalVisit: fixing ...
+[  35.1s]   ClinicalVisit: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  35.1s]   ClinicalVisit: cycle 2 -> 3 violation(s)
+[  35.1s]   ClinicalVisit: stopping (fix budget spent)
+[  35.1s] union: dropped 3 link(s) to undeclared individuals
+[  35.2s] merging (orchestrator): 0 violation(s), 0 unresolved, 0 unparsed
+[  56.2s] final: conforms
+conforms=True segments=11 llm_calls=21 unresolved=0
+  orchestrator   2 calls     5653 in    1936 out  cost n/a  gemma4-g1
+  total         21 calls    43631 in    3331 out  cost n/a  
+  worker        19 calls    37978 in    1395 out  cost n/a  gemma4-g1
+
+exit=0 seconds=57

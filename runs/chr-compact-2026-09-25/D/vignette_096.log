@@ -1,0 +1,184 @@
+[   0.0s] segmenting (orchestrator) ...
+[  67.9s] 26 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[MeasurementProcess,Measurement], s11[MeasurementProcess,Measurement], s12[MeasurementProcess,Measurement], s13[MeasurementProcess,Measurement], s14[MeasurementProcess,Measurement], s15[MeasurementProcess,Measurement], s16[MeasurementProcess,Measurement], s17[MeasurementProcess,Measurement], s18[MeasurementProcess,Measurement], s19[MeasurementProcess,Measurement], s20[MeasurementProcess,Measurement], s21[MeasurementProcess,Measurement], s22[MeasurementProcess,Measurement], s23[MeasurementProcess,Measurement], s24[MeasurementProcess,Measurement], s25[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s26[CarePlan]
+[  67.9s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  67.9s] level 0: 5 agent(s), 0 known entities
+[  67.9s]   CareUnit: extracting, compact (244 chars, 1 classes in view)
+[  67.9s]   ClinicalCondition: extracting, compact (230 chars, 3 classes in view)
+[  67.9s]   DiagnosticStatement: extracting, compact (230 chars, 1 classes in view)
+[  67.9s]   Measurement#1: extracting, compact (2898 chars, 2 classes in view)
+[  68.8s]   CareUnit: cycle 0 -> conforms
+[  68.8s]   Measurement#2: extracting, compact (2857 chars, 2 classes in view)
+[  69.7s]   DiagnosticStatement: cycle 0 -> conforms
+[  69.7s]   Person: extracting, compact (244 chars, 1 classes in view)
+[  70.2s]   ClinicalCondition: cycle 0 -> conforms
+[  70.6s]   Person: cycle 0 -> conforms
+[  89.1s]   Measurement#2: cycle 0 -> conforms
+[  91.1s]   Measurement#1: cycle 0 -> 3 violation(s)
+[  91.1s]   Measurement#1: fixing ...
+[ 110.0s]   Measurement#1: cycle 1 -> conforms
+[ 110.0s] level 1: 2 agent(s), 37 known entities
+[ 110.0s]   EvaluationProcess: extracting, compact (230 chars, 7 classes in view)
+[ 110.0s]   MeasurementProcess#1: extracting, compact (2898 chars, 6 classes in view)
+[ 110.0s]   MeasurementProcess#2: extracting, compact (2857 chars, 6 classes in view)
+[ 112.5s]   EvaluationProcess: cycle 0 -> conforms
+[ 128.3s]   MeasurementProcess#2: cycle 0 -> conforms
+[ 128.6s]   MeasurementProcess#1: cycle 0 -> conforms
+[ 128.6s] level 2: 2 agent(s), 62 known entities
+[ 128.7s]   ClinicalVisit: extracting, compact (6456 chars, 5 classes in view)
+[ 128.7s]   CarePlan: extracting, compact (6456 chars, 4 classes in view)
+[ 130.2s]   CarePlan: cycle 0 -> conforms
+[ 130.2s]   CarePlan: 1 unresolved (honest gaps)
+[ 158.8s]   ClinicalVisit: dropped 23 individual(s) outside its scope (built earlier, or another agent's class)
+[ 158.9s]   ClinicalVisit: cycle 0 -> 94 violation(s)
+[ 158.9s]   ClinicalVisit: fixing ...
+[ 212.2s]   ClinicalVisit: dropped 23 individual(s) outside its scope (built earlier, or another agent's class)
+[ 212.3s]   ClinicalVisit: cycle 1 -> conforms
+[ 212.3s] union: merged 1 identical individual(s)
+[ 212.5s] merging (orchestrator): 23 violation(s), 1 unresolved, 0 unparsed
+[ 212.7s] merge FAILED (Error code: 400 - {'error': {'message': "litellm.ContextWindowExceededError: lit...) - returning the un-merged union
+[ 212.9s] final: 23 violation(s)
+conforms=False segments=11 llm_calls=15 unresolved=0
+  orchestrator   1 calls     3787 in    3665 out  cost n/a  gemma4-g1
+  total         14 calls    50241 in   13615 out  cost n/a  
+  worker        13 calls    46454 in    9950 out  cost n/a  gemma4-g1
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Body_Height_4f2ec18f
+	Value Node: ex:measurement_Body_Height_4f2ec18f
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Body_Weight_b255fdac
+	Value Node: ex:measurement_Body_Weight_b255fdac
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Body_mass_index_BMI_Ratio_45938abc
+	Value Node: ex:measurement_Body_mass_index_BMI_Ratio_45938abc
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Calcium_Mass_volume_in_Blood_db1a9a7b
+	Value Node: ex:measurement_Calcium_Mass_volume_in_Blood_db1a9a7b
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Carbon_dioxide_total_Moles_volume_in_Blo_5056a7b6
+	Value Node: ex:measurement_Carbon_dioxide_total_Moles_volume_in_Blo_5056a7b6
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Chloride_Moles_volume_in_Blood_ee155947
+	Value Node: ex:measurement_Chloride_Moles_volume_in_Blood_ee155947
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Cholesterol_Mass_volume_in_Serum_or_Plas_23ff992d
+	Value Node: ex:measurement_Cholesterol_Mass_volume_in_Serum_or_Plas_23ff992d
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Cholesterol_in_HDL_Mass_volume_in_Serum__044ef142
+	Value Node: ex:measurement_Cholesterol_in_HDL_Mass_volume_in_Serum__044ef142
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Cholesterol_in_LDL_Mass_volume_in_Serum__6236f13b
+	Value Node: ex:measurement_Cholesterol_in_LDL_Mass_volume_in_Serum__6236f13b
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Creatinine_Mass_volume_in_Blood_a3c7e714
+	Value Node: ex:measurement_Creatinine_Mass_volume_in_Blood_a3c7e714
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Generalized_anxiety_disorder_7_item_GAD-_ac2d6ad6
+	Value Node: ex:measurement_Generalized_anxiety_disorder_7_item_GAD-_ac2d6ad6
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Glucose_Mass_volume_in_Blood_73252f74
+	Value Node: ex:measurement_Glucose_Mass_volume_in_Blood_73252f74
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Heart_rate_0a74e4cd
+	Value Node: ex:measurement_Heart_rate_0a74e4cd
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_6d45f6a2
+	Value Node: ex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_6d45f6a2
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_ad376260
+	Value Node: ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_ad376260
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_b8cb9e35
+	Value Node: ex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_b8cb9e35
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Potassium_Moles_volume_in_Blood_e3571199
+	Value Node: ex:measurement_Potassium_Moles_volume_in_Blood_e3571199
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Respiratory_rate_36ab6aa0
+	Value Node: ex:measurement_Respiratory_rate_36ab6aa0
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Sodium_Moles_volume_in_Blood_31b86e6a
+	Value Node: ex:measurement_Sodium_Moles_volume_in_Blood_31b86e6a
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Total_score_AUDIT-C_bd655c8e
+	Value Node: ex:measurement_Total_score_AUDIT-C_bd655c8e
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Total_score_HARK_0a98221a
+	Value Node: ex:measurement_Total_score_HARK_0a98221a
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Triglyceride_Mass_volume_in_Serum_or_Pla_6459cc1d
+	Value Node: ex:measurement_Triglyceride_Mass_volume_in_Serum_or_Pla_6459cc1d
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasProcedureRangeShape
+	Focus Node: ex:measurement_Urea_nitrogen_Mass_volume_in_Blood_8f158a16
+	Value Node: ex:measurement_Urea_nitrogen_Mass_volume_in_Blood_8f158a16
+	Message: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.
+
+
+exit=1 seconds=214

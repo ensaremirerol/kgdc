@@ -1,0 +1,267 @@
+[   0.0s] segmenting (orchestrator) ...
+[  96.4s] 41 segments: s1[ClinicalVisit,Person,CareUnit], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[MeasurementProcess,Measurement,ProcessStatus], s23[MeasurementProcess,Measurement,ProcessStatus], s24[MeasurementProcess,Measurement,ProcessStatus], s25[MeasurementProcess,Measurement,ProcessStatus], s26[MeasurementProcess,Measurement,ProcessStatus], s27[MeasurementProcess,Measurement,ProcessStatus], s28[MeasurementProcess,Measurement,ProcessStatus], s29[MeasurementProcess,Measurement,ProcessStatus], s30[MeasurementProcess,Measurement,ProcessStatus], s31[MeasurementProcess,Measurement,ProcessStatus], s32[MeasurementProcess,Measurement,ProcessStatus], s33[MeasurementProcess,Measurement,ProcessStatus], s34[MeasurementProcess,Measurement,ProcessStatus], s35[MeasurementProcess,Measurement,ProcessStatus], s36[MeasurementProcess,Measurement,ProcessStatus], s37[MeasurementProcess,Measurement,ProcessStatus], s38[MeasurementProcess,Measurement,ProcessStatus], s39[MeasurementProcess,Measurement,ProcessStatus], s40[EvaluationProcess,DiagnosticStatement,ClinicalCondition,Severity], s41[CarePlan]
+[  96.4s] build order: [CareUnit, DiagnosticStatement, Measurement, Person, ProcessStatus, Severity] -> [ClinicalCondition, MeasurementProcess] -> [EvaluationProcess] -> [CarePlan, ClinicalVisit]
+[  96.4s] level 0: 6 agent(s), 0 known entities
+[  96.4s]   CareUnit: extracting, compact (238 chars, 1 classes in view)
+[  96.4s]   DiagnosticStatement: extracting, compact (235 chars, 1 classes in view)
+[  96.4s]   Measurement#1: extracting, compact (3009 chars, 2 classes in view)
+[  96.4s]   Measurement#2: extracting, compact (2720 chars, 2 classes in view)
+[  97.6s]   CareUnit: cycle 0 -> conforms
+[  97.6s]   Measurement#3: extracting, compact (2972 chars, 2 classes in view)
+[  98.0s]   DiagnosticStatement: cycle 0 -> conforms
+[  98.0s]   Measurement#4: extracting, compact (531 chars, 2 classes in view)
+[ 103.0s]   Measurement#4: cycle 0 -> conforms
+[ 103.0s]   Person: extracting, compact (238 chars, 1 classes in view)
+[ 103.5s]   Person: cycle 0 -> conforms
+[ 103.5s]   ProcessStatus#1: extracting, compact (3009 chars, 1 classes in view)
+[ 104.1s]   ProcessStatus#1: cycle 0 -> conforms
+[ 104.1s]   ProcessStatus#2: extracting, compact (2720 chars, 1 classes in view)
+[ 104.7s]   ProcessStatus#2: cycle 0 -> conforms
+[ 104.7s]   ProcessStatus#3: extracting, compact (2972 chars, 1 classes in view)
+[ 107.7s]   ProcessStatus#3: cycle 0 -> 12 violation(s)
+[ 107.7s]   ProcessStatus#3: fixing ...
+[ 126.8s]   Measurement#1: cycle 0 -> conforms
+[ 126.8s]   ProcessStatus#4: extracting, compact (531 chars, 1 classes in view)
+[ 127.1s]   ProcessStatus#4: cycle 0 -> conforms
+[ 127.1s]   Severity: extracting, compact (235 chars, 1 classes in view)
+[ 128.3s]   Measurement#3: cycle 0 -> conforms
+[ 128.5s]   Severity: cycle 0 -> conforms
+[ 129.0s]   Measurement#2: cycle 0 -> conforms
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/38483-4> chr:hasQuantityValue=4.61 chr:hasUnit=u1'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/49765-1> chr:hasQuantityValue=10.03 chr:hasUnit=u1'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/2947-0> chr:hasQuantityValue=136.6 chr:hasUnit=u2'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/6298-4> chr:hasQuantityValue=4.73 chr:hasUnit=u2'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/2069-3> chr:hasQuantityValue=110.01 chr:hasUnit=u2'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/20565-8> chr:hasQuantityValue=21.28 chr:hasUnit=u2'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/2093-3> chr:hasQuantityValue=258.6 chr:hasUnit=u1'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/2571-8> chr:hasQuantityValue=356.16 chr:hasUnit=u1'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/18262-6> chr:hasQuantityValue=165.66 chr:hasUnit=u1'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/2085-9> chr:hasQuantityValue=21.71 chr:hasUnit=u1'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/14959-1> chr:hasQuantityValue=194.17 chr:hasUnit=u3'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/33914-3> chr:hasQuantityValue=18.41 chr:hasUnit=u4'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/49765-1> chr:hasQuantityValue=10.03 chr:hasUnit=u1'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/20565-8> chr:hasQuantityValue=21.28 chr:hasUnit=u2'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/2069-3> chr:hasQuantityValue=110.01 chr:hasUnit=u2'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/2093-3> chr:hasQuantityValue=258.6 chr:hasUnit=u1'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/2085-9> chr:hasQuantityValue=21.71 chr:hasUnit=u1'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/18262-6> chr:hasQuantityValue=165.66 chr:hasUnit=u1'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/38483-4> chr:hasQuantityValue=4.61 chr:hasUnit=u1'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/33914-3> chr:hasQuantityValue=18.41 chr:hasUnit=u4'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/14959-1> chr:hasQuantityValue=194.17 chr:hasUnit=u3'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/6298-4> chr:hasQuantityValue=4.73 chr:hasUnit=u2'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/2947-0> chr:hasQuantityValue=136.6 chr:hasUnit=u2'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2022-12-07T15:47:23+01:00" chr:hasCode=<https://loinc.org/2571-8> chr:hasQuantityValue=356.16 chr:hasUnit=u1'
+[ 165.9s]   ProcessStatus#3: dropped 29 individual(s) outside its scope (built earlier, or another agent's class)
+[ 165.9s]   ProcessStatus#3: cycle 1 -> 47 violation(s)
+[ 165.9s]   ProcessStatus#3: fixing ...
+[ 167.1s]   ProcessStatus#3: cycle 2 -> 2 violation(s)
+[ 167.1s]   ProcessStatus#3: stopping (fix budget spent)
+[ 167.1s] level 1: 2 agent(s), 57 known entities
+[ 167.1s]   ClinicalCondition: extracting, compact (235 chars, 3 classes in view)
+[ 167.1s]   MeasurementProcess#1: extracting, compact (3009 chars, 6 classes in view)
+[ 167.2s]   MeasurementProcess#3: extracting, compact (2972 chars, 6 classes in view)
+[ 167.2s]   MeasurementProcess#2: extracting, compact (2720 chars, 6 classes in view)
+[ 169.8s]   ClinicalCondition: cycle 0 -> 1 violation(s)
+[ 169.8s]   ClinicalCondition: fixing ...
+[ 171.9s]   ClinicalCondition: cycle 1 -> 1 violation(s)
+[ 171.9s]   ClinicalCondition: stopping (plateau)
+[ 171.9s]   MeasurementProcess#4: extracting, compact (531 chars, 6 classes in view)
+[ 179.8s]   MeasurementProcess#4: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 179.9s]   MeasurementProcess#4: cycle 0 -> 3 violation(s)
+[ 179.9s]   MeasurementProcess#4: fixing ...
+[ 186.5s]   MeasurementProcess#4: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 186.6s]   MeasurementProcess#4: cycle 1 -> 4 violation(s)
+[ 186.6s]   MeasurementProcess#4: fixing ...
+[ 192.4s]   MeasurementProcess#4: cycle 2 -> 1 violation(s)
+[ 192.4s]   MeasurementProcess#4: stopping (fix budget spent)
+[ 192.4s]   MeasurementProcess#4: 1 unresolved (honest gaps)
+[ 200.3s]   MeasurementProcess#1: cycle 0 -> 13 violation(s)
+[ 200.3s]   MeasurementProcess#1: fixing ...
+[ 215.0s]   MeasurementProcess#2: cycle 0 -> 1 violation(s)
+[ 215.0s]   MeasurementProcess#2: fixing ...
+[ 224.6s]   MeasurementProcess#3: cycle 0 -> 1 violation(s)
+[ 224.6s]   MeasurementProcess#3: fixing ...
+[ 232.8s]   MeasurementProcess#2: cycle 1 -> 1 violation(s)
+[ 232.8s]   MeasurementProcess#2: stopping (plateau)
+[ 244.8s]   MeasurementProcess#3: cycle 1 -> 1 violation(s)
+[ 244.8s]   MeasurementProcess#3: stopping (plateau)
+[ 247.4s]   MeasurementProcess#1: cycle 1 -> 1 violation(s)
+[ 247.4s]   MeasurementProcess#1: fixing ...
+[ 265.7s]   MeasurementProcess#1: cycle 2 -> 1 violation(s)
+[ 265.7s]   MeasurementProcess#1: stopping (fix budget spent)
+[ 265.7s] level 2: 1 agent(s), 95 known entities
+[ 265.8s]   EvaluationProcess: extracting, compact (235 chars, 7 classes in view)
+[ 268.0s]   EvaluationProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 268.1s]   EvaluationProcess: cycle 0 -> 3 violation(s)
+[ 268.1s]   EvaluationProcess: fixing ...
+[ 270.2s]   EvaluationProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 270.4s]   EvaluationProcess: cycle 1 -> 3 violation(s)
+[ 270.4s]   EvaluationProcess: stopping (plateau)
+[ 270.4s] level 3: 2 agent(s), 96 known entities
+[ 270.4s]   CarePlan: extracting, compact (9972 chars, 4 classes in view)
+[ 270.5s]   ClinicalVisit: extracting, compact (9972 chars, 5 classes in view)
+[ 272.9s]   CarePlan: cycle 0 -> 2 violation(s)
+[ 272.9s]   CarePlan: fixing ...
+[ 280.0s]   ClinicalVisit: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 280.2s]   ClinicalVisit: cycle 0 -> 4 violation(s)
+[ 280.2s]   ClinicalVisit: fixing ...
+[ 287.1s]   ClinicalVisit: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 287.3s]   ClinicalVisit: cycle 1 -> 4 violation(s)
+[ 287.3s]   ClinicalVisit: fixing ...
+[ 296.9s]   ClinicalVisit: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 297.1s]   ClinicalVisit: cycle 2 -> 4 violation(s)
+[ 297.1s]   ClinicalVisit: stopping (fix budget spent)
+[ 386.7s]   CarePlan: dropped 3 individual(s) outside its scope (built earlier, or another agent's class)
+[ 386.9s]   CarePlan: cycle 1 -> 6 violation(s)
+[ 386.9s]   CarePlan: fixing ...
+[ 508.0s]   CarePlan: dropped 8 individual(s) outside its scope (built earlier, or another agent's class)
+[ 508.2s]   CarePlan: cycle 2 -> 10 violation(s)
+[ 508.2s]   CarePlan: stopping (fix budget spent)
+[ 508.2s]   CarePlan: 1 unresolved (honest gaps)
+[ 508.2s] union: dropped 2 link(s) to undeclared individuals
+[ 508.4s] merging (orchestrator): 3 violation(s), 2 unresolved, 0 unparsed
+[ 508.6s] merge FAILED (Error code: 400 - {'error': {'message': "litellm.ContextWindowExceededError: lit...) - returning the un-merged union
+[ 508.9s] final: 3 violation(s)
+conforms=False segments=20 llm_calls=36 unresolved=0
+  orchestrator   1 calls     5111 in    5981 out  cost n/a  gemma4-g1
+  total         35 calls   134551 in   34107 out  cost n/a  
+  worker        34 calls   129440 in   28126 out  cost n/a  gemma4-g1
+Constraint Violation in UndeclaredClass:
+	Severity: sh:Violation
+	Focus Node: http://example.org/data/patient_Arlen68_Olson653_9b170aa8
+	Message: https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/Patient is not a class of the vocabulary
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: chr:HasPatientRangeShape
+	Focus Node: ex:patient_Arlen68_Olson653_9b170aa8
+	Value Node: ex:patient_Arlen68_Olson653_9b170aa8
+	Message: Object of chr:hasPatient must be a chr:Person.
+Constraint Violation in HasValueConstraintComponent (http://www.w3.org/ns/shacl#HasValueConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:hasValue chr:CHRConcept ; sh:message Literal("rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.") ; sh:path [ sh:zeroOrMorePath rdfs:subClassOf ] ]
+	Focus Node: :Patient
+	Result Path: [ sh:zeroOrMorePath rdfs:subClassOf ]
+	Message: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.
+
+
+exit=1 seconds=510

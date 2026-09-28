@@ -1,0 +1,51 @@
+[   0.1s] segmenting (orchestrator) ...
+[  30.6s] 12 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[MeasurementProcess,Measurement], s11[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s12[CarePlan]
+[  30.6s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  30.6s] level 0: 5 agent(s), 0 known entities
+[  30.6s]   CareUnit: extracting, compact (223 chars, 1 classes in view)
+[  30.6s]   ClinicalCondition: extracting, compact (237 chars, 3 classes in view)
+[  30.6s]   DiagnosticStatement: extracting, compact (237 chars, 1 classes in view)
+[  30.6s]   Measurement: extracting, compact (2192 chars, 2 classes in view)
+[  31.2s]   CareUnit: cycle 0 -> conforms
+[  31.2s]   Person: extracting, compact (223 chars, 1 classes in view)
+[  31.7s]   DiagnosticStatement: cycle 0 -> conforms
+[  31.9s]   Person: cycle 0 -> conforms
+[  32.3s]   ClinicalCondition: cycle 0 -> conforms
+[  46.2s]   Measurement: cycle 0 -> conforms
+[  46.2s] level 1: 2 agent(s), 19 known entities
+[  46.2s]   EvaluationProcess: extracting, compact (237 chars, 7 classes in view)
+[  46.2s]   MeasurementProcess: extracting, compact (2192 chars, 6 classes in view)
+[  48.0s]   EvaluationProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  48.1s]   EvaluationProcess: cycle 0 -> 2 violation(s)
+[  48.1s]   EvaluationProcess: fixing ...
+[  50.1s]   EvaluationProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  50.1s]   EvaluationProcess: cycle 1 -> 2 violation(s)
+[  50.1s]   EvaluationProcess: stopping (plateau)
+[  69.0s]   MeasurementProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  69.1s]   MeasurementProcess: cycle 0 -> 2 violation(s)
+[  69.1s]   MeasurementProcess: fixing ...
+[  80.7s]   MeasurementProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  80.8s]   MeasurementProcess: cycle 1 -> 2 violation(s)
+[  80.8s]   MeasurementProcess: stopping (plateau)
+[  80.8s] level 2: 2 agent(s), 30 known entities
+[  80.8s]   CarePlan: extracting, compact (2877 chars, 4 classes in view)
+[  80.8s]   ClinicalVisit: extracting, compact (2877 chars, 5 classes in view)
+[  81.8s]   CarePlan: cycle 0 -> 1 violation(s)
+[  81.8s]   CarePlan: fixing ...
+[  82.9s]   CarePlan: cycle 1 -> 1 violation(s)
+[  82.9s]   CarePlan: stopping (plateau)
+[  84.0s]   ClinicalVisit: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  84.1s]   ClinicalVisit: cycle 0 -> 3 violation(s)
+[  84.1s]   ClinicalVisit: fixing ...
+[  86.9s]   ClinicalVisit: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  87.0s]   ClinicalVisit: cycle 1 -> 3 violation(s)
+[  87.0s]   ClinicalVisit: stopping (plateau)
+[  87.0s] union: dropped 11 link(s) to undeclared individuals
+[  87.1s] merging (orchestrator): 0 violation(s), 0 unresolved, 0 unparsed
+[ 168.0s] final: conforms
+conforms=True segments=9 llm_calls=15 unresolved=0
+  orchestrator   2 calls    10140 in    6285 out  cost n/a  gemma4-g1
+  total         15 calls    44598 in    9747 out  cost n/a  
+  worker        13 calls    34458 in    3462 out  cost n/a  gemma4-g1
+
+exit=0 seconds=173

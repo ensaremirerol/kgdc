@@ -1,0 +1,123 @@
+[   0.0s] segmenting (orchestrator) ...
+[ 150.3s] 43 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[MeasurementProcess,Measurement,Unit,ProcessStatus], s4[MeasurementProcess,Measurement,Unit,ProcessStatus], s5[MeasurementProcess,Measurement,Unit,ProcessStatus], s6[MeasurementProcess,Measurement,Unit,ProcessStatus], s7[MeasurementProcess,Measurement,Unit,ProcessStatus], s8[MeasurementProcess,Measurement,Unit,ProcessStatus], s9[MeasurementProcess,Measurement,Unit,ProcessStatus], s10[MeasurementProcess,Measurement,Unit,ProcessStatus], s11[MeasurementProcess,Measurement,Unit,ProcessStatus], s12[MeasurementProcess,Measurement,Unit,ProcessStatus], s13[MeasurementProcess,Measurement,Unit,ProcessStatus], s14[MeasurementProcess,Measurement,Unit,ProcessStatus], s15[MeasurementProcess,Measurement,Unit,ProcessStatus], s16[MeasurementProcess,Measurement,Unit,ProcessStatus], s17[MeasurementProcess,Measurement,Unit,ProcessStatus], s18[MeasurementProcess,Measurement,Unit,ProcessStatus], s19[MeasurementProcess,Measurement,Unit,ProcessStatus], s20[MeasurementProcess,Measurement,Unit,ProcessStatus], s21[MeasurementProcess,Measurement,Unit,ProcessStatus], s22[MeasurementProcess,Measurement,Unit,ProcessStatus], s23[MeasurementProcess,Measurement,Unit,ProcessStatus], s24[MeasurementProcess,Measurement,Unit,ProcessStatus], s25[MeasurementProcess,Measurement,Unit,ProcessStatus], s26[MeasurementProcess,Measurement,Unit,ProcessStatus], s27[MeasurementProcess,Measurement,Unit,ProcessStatus], s28[MeasurementProcess,Measurement,Unit,ProcessStatus], s29[MeasurementProcess,Measurement,Unit,ProcessStatus], s30[MeasurementProcess,Measurement,Unit,ProcessStatus], s31[MeasurementProcess,Measurement,Unit,ProcessStatus], s32[MeasurementProcess,Measurement,Unit,ProcessStatus], s33[MeasurementProcess,Measurement,Unit,ProcessStatus], s34[MeasurementProcess,Measurement,Unit,ProcessStatus], s35[MeasurementProcess,Measurement,Unit,ProcessStatus], s36[MeasurementProcess,Measurement,Unit,ProcessStatus], s37[MeasurementProcess,Measurement,Unit,ProcessStatus], s38[MeasurementProcess,Measurement,Unit,ProcessStatus], s39[MeasurementProcess,Measurement,Unit,ProcessStatus], s40[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s41[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s42[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s43[CarePlan]
+[ 150.4s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, ProcessStatus, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 150.4s] level 0: 6 agent(s), 0 known entities
+[ 150.4s]   CareUnit: extracting, compact (238 chars, 1 classes in view)
+[ 150.4s]   ClinicalCondition: extracting, compact (692 chars, 3 classes in view)
+[ 150.4s]   DiagnosticStatement: extracting, compact (692 chars, 1 classes in view)
+[ 150.4s]   Person: extracting, compact (238 chars, 1 classes in view)
+[ 151.8s]   CareUnit: cycle 0 -> conforms
+[ 151.8s]   ProcessStatus#1: extracting, compact (3009 chars, 1 classes in view)
+[ 152.3s]   Person: cycle 0 -> conforms
+[ 152.3s]   ProcessStatus#2: extracting, compact (2720 chars, 1 classes in view)
+[ 152.4s]   ProcessStatus#1: cycle 0 -> conforms
+[ 152.4s]   ProcessStatus#3: extracting, compact (2973 chars, 1 classes in view)
+[ 152.9s]   ProcessStatus#2: cycle 0 -> conforms
+[ 152.9s]   ProcessStatus#4: extracting, compact (494 chars, 1 classes in view)
+[ 152.9s]   ProcessStatus#3: cycle 0 -> conforms
+[ 152.9s]   Unit#1: extracting, compact (3009 chars, 1 classes in view)
+[ 153.6s]   ProcessStatus#4: cycle 0 -> conforms
+[ 153.6s]   Unit#2: extracting, compact (2720 chars, 1 classes in view)
+[ 154.7s]   DiagnosticStatement: cycle 0 -> conforms
+[ 154.7s]   Unit#3: extracting, compact (2973 chars, 1 classes in view)
+[ 155.6s]   Unit#2: cycle 0 -> 9 violation(s)
+[ 155.6s]   Unit#2: fixing ...
+[ 156.8s]   Unit#1: cycle 0 -> conforms
+[ 156.8s]   Unit#4: extracting, compact (494 chars, 1 classes in view)
+[ 157.2s]   ClinicalCondition: cycle 0 -> conforms
+[ 158.3s]   Unit#4: cycle 0 -> conforms
+[ 161.5s]   Unit#3: cycle 0 -> conforms
+[ 162.7s]   Unit#2: cycle 1 -> 18 violation(s)
+[ 162.7s]   Unit#2: fixing ...
+[ 169.5s]   Unit#2: cycle 2 -> 18 violation(s)
+[ 169.5s]   Unit#2: stopping (fix budget spent)
+[ 169.5s] level 1: 2 agent(s), 30 known entities
+[ 169.5s]   EvaluationProcess: extracting, compact (692 chars, 7 classes in view)
+[ 169.5s]   Measurement#1: extracting, compact (3009 chars, 2 classes in view)
+[ 169.5s]   Measurement#2: extracting, compact (2720 chars, 2 classes in view)
+[ 169.5s]   Measurement#3: extracting, compact (2973 chars, 2 classes in view)
+[ 175.2s]   EvaluationProcess: cycle 0 -> conforms
+[ 175.2s]   Measurement#4: extracting, compact (494 chars, 2 classes in view)
+[ 180.6s]   Measurement#4: cycle 0 -> conforms
+[ 190.8s]   Measurement#2: cycle 0 -> conforms
+[ 192.8s]   Measurement#3: cycle 0 -> conforms
+[ 192.9s]   Measurement#1: cycle 0 -> conforms
+[ 192.9s] level 2: 1 agent(s), 71 known entities
+[ 192.9s]   MeasurementProcess#1: extracting, compact (3009 chars, 6 classes in view)
+[ 193.0s]   MeasurementProcess#2: extracting, compact (2720 chars, 6 classes in view)
+[ 193.0s]   MeasurementProcess#3: extracting, compact (2973 chars, 6 classes in view)
+[ 193.0s]   MeasurementProcess#4: extracting, compact (494 chars, 6 classes in view)
+[ 201.7s]   MeasurementProcess#4: cycle 0 -> conforms
+[ 215.1s]   MeasurementProcess#1: cycle 0 -> conforms
+[ 237.8s]   MeasurementProcess#2: cycle 0 -> conforms
+[ 242.6s]   MeasurementProcess#3: cycle 0 -> conforms
+[ 242.7s] level 3: 2 agent(s), 109 known entities
+[ 242.7s]   CarePlan: extracting, compact (10394 chars, 4 classes in view)
+[ 242.7s]   ClinicalVisit: extracting, compact (10394 chars, 5 classes in view)
+[ 245.6s]   CarePlan: cycle 0 -> conforms
+[ 245.6s]   CarePlan: 1 unresolved (honest gaps)
+[ 251.4s]   ClinicalVisit: cycle 0 -> conforms
+[ 251.7s] merging (orchestrator): 9 violation(s), 1 unresolved, 0 unparsed
+[ 251.9s] merge FAILED (Error code: 400 - {'error': {'message': "litellm.ContextWindowExceededError: lit...) - returning the un-merged union
+[ 252.1s] final: 9 violation(s)
+conforms=False segments=23 llm_calls=27 unresolved=0
+  orchestrator   1 calls     5306 in    6549 out  cost n/a  gemma4-g1
+  total         26 calls    84113 in   16655 out  cost n/a  
+  worker        25 calls    78807 in   10106 out  cost n/a  gemma4-g1
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_Ratio_9938d857
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_cm_ae8f71e1
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_kg_6c4d2f77
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_kgperm2_db9b0b9e
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_mgperdL_378a66d1
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_nominal_dd67dc15
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_percent_2982e641
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_permin_86d8edb8
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal("^https://biomedit\.ch/rdf/sphn-resource/ucum/") ]
+	Focus Node: ex:unit_score_0b2f7a99
+	Result Path: chr:hasCode
+	Message: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).
+
+
+exit=1 seconds=253

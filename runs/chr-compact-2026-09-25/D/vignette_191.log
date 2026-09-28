@@ -1,0 +1,83 @@
+[   0.0s] segmenting (orchestrator) ...
+[ 108.6s] 36 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement,ProcessStatus], s3[MeasurementProcess,Measurement,ProcessStatus], s4[MeasurementProcess,Measurement,ProcessStatus], s5[MeasurementProcess,Measurement,ProcessStatus], s6[MeasurementProcess,Measurement,ProcessStatus], s7[MeasurementProcess,Measurement,ProcessStatus], s8[MeasurementProcess,Measurement,ProcessStatus], s9[MeasurementProcess,Measurement,ProcessStatus], s10[MeasurementProcess,Measurement,ProcessStatus], s11[MeasurementProcess,Measurement,ProcessStatus], s12[MeasurementProcess,Measurement,ProcessStatus], s13[MeasurementProcess,Measurement,ProcessStatus], s14[MeasurementProcess,Measurement,ProcessStatus], s15[MeasurementProcess,Measurement,ProcessStatus], s16[MeasurementProcess,Measurement,ProcessStatus], s17[MeasurementProcess,Measurement,ProcessStatus], s18[MeasurementProcess,Measurement,ProcessStatus], s19[MeasurementProcess,Measurement,ProcessStatus], s20[MeasurementProcess,Measurement,ProcessStatus], s21[MeasurementProcess,Measurement,ProcessStatus], s22[MeasurementProcess,Measurement,ProcessStatus], s23[MeasurementProcess,Measurement,ProcessStatus], s24[MeasurementProcess,Measurement,ProcessStatus], s25[MeasurementProcess,Measurement,ProcessStatus], s26[MeasurementProcess,Measurement,ProcessStatus], s27[MeasurementProcess,Measurement,ProcessStatus], s28[MeasurementProcess,Measurement,ProcessStatus], s29[MeasurementProcess,Measurement,ProcessStatus], s30[MeasurementProcess,Measurement,ProcessStatus], s31[MeasurementProcess,Measurement,ProcessStatus], s32[MeasurementProcess,Measurement,ProcessStatus], s33[MeasurementProcess,Measurement,ProcessStatus], s34[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s35[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s36[CarePlan]
+[ 108.6s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person, ProcessStatus] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[ 108.6s] level 0: 6 agent(s), 0 known entities
+[ 108.6s]   CareUnit: extracting, compact (231 chars, 1 classes in view)
+[ 108.6s]   ClinicalCondition: extracting, compact (454 chars, 3 classes in view)
+[ 108.6s]   DiagnosticStatement: extracting, compact (454 chars, 1 classes in view)
+[ 108.6s]   Measurement#1: extracting, compact (3163 chars, 2 classes in view)
+[ 110.0s]   CareUnit: cycle 0 -> conforms
+[ 110.0s]   Measurement#2: extracting, compact (2880 chars, 2 classes in view)
+[ 111.3s]   DiagnosticStatement: cycle 0 -> conforms
+[ 111.3s]   Measurement#3: extracting, compact (1988 chars, 2 classes in view)
+[ 112.6s]   ClinicalCondition: cycle 0 -> conforms
+[ 112.6s]   Person: extracting, compact (231 chars, 1 classes in view)
+[ 113.3s]   Person: cycle 0 -> conforms
+[ 113.3s]   ProcessStatus#1: extracting, compact (3163 chars, 1 classes in view)
+[ 114.0s]   ProcessStatus#1: cycle 0 -> conforms
+[ 114.0s]   ProcessStatus#2: extracting, compact (2880 chars, 1 classes in view)
+[ 114.5s]   ProcessStatus#2: cycle 0 -> conforms
+[ 114.5s]   ProcessStatus#3: extracting, compact (1988 chars, 1 classes in view)
+[ 114.9s]   ProcessStatus#3: cycle 0 -> conforms
+[ 127.0s]   Measurement#3: cycle 0 -> conforms
+[ 134.1s]   Measurement#1: cycle 0 -> conforms
+[ 137.7s]   Measurement#2: cycle 0 -> conforms
+[ 137.7s] level 1: 2 agent(s), 50 known entities
+[ 137.7s]   EvaluationProcess: extracting, compact (454 chars, 7 classes in view)
+[ 137.7s]   MeasurementProcess#1: extracting, compact (3163 chars, 6 classes in view)
+[ 137.7s]   MeasurementProcess#2: extracting, compact (2880 chars, 6 classes in view)
+[ 137.7s]   MeasurementProcess#3: extracting, compact (1988 chars, 6 classes in view)
+[ 142.1s]   EvaluationProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 142.2s]   EvaluationProcess: cycle 0 -> 2 violation(s)
+[ 142.2s]   EvaluationProcess: fixing ...
+[ 145.7s]   EvaluationProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 145.8s]   EvaluationProcess: cycle 1 -> 2 violation(s)
+[ 145.8s]   EvaluationProcess: fixing ...
+[ 149.4s]   EvaluationProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[ 149.4s]   EvaluationProcess: cycle 2 -> 2 violation(s)
+[ 149.4s]   EvaluationProcess: stopping (fix budget spent)
+[ 151.2s]   MeasurementProcess#3: cycle 0 -> conforms
+[ 155.8s]   MeasurementProcess#2: cycle 0 -> conforms
+[ 157.1s]   MeasurementProcess#1: cycle 0 -> conforms
+[ 157.1s] level 2: 2 agent(s), 84 known entities
+[ 157.1s]   CarePlan: extracting, compact (8943 chars, 4 classes in view)
+[ 157.1s]   ClinicalVisit: extracting, compact (8943 chars, 5 classes in view)
+[ 159.6s]   CarePlan: cycle 0 -> 1 violation(s)
+[ 159.6s]   CarePlan: fixing ...
+[ 178.5s]   ClinicalVisit: dropped 33 individual(s) outside its scope (built earlier, or another agent's class)
+[ 178.7s]   ClinicalVisit: cycle 0 -> 67 violation(s)
+[ 178.7s]   ClinicalVisit: fixing ...
+[ 237.1s]   ClinicalVisit: dropped 37 individual(s) outside its scope (built earlier, or another agent's class)
+[ 237.3s]   ClinicalVisit: cycle 1 -> 71 violation(s)
+[ 237.3s]   ClinicalVisit: fixing ...
+[ 276.2s]   CarePlan: dropped 34 individual(s) outside its scope (built earlier, or another agent's class)
+[ 276.4s]   CarePlan: cycle 1 -> 237 violation(s)
+[ 276.4s]   CarePlan: fixing ...
+[ 298.9s]   ClinicalVisit: dropped 37 individual(s) outside its scope (built earlier, or another agent's class)
+[ 299.1s]   ClinicalVisit: cycle 2 -> 75 violation(s)
+[ 299.1s]   ClinicalVisit: stopping (fix budget spent)
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2014-01-22T15:47:23+01:'
+Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<built-in method fromisoformat of type object at 0x00007FFF0CA97BA0>
+Traceback (most recent call last):
+  File "C:\Users\ensar\AppData\Local\Temp\claude\C--Users-ensar-workspace-kgdc\29717f28-59ee-4f46-a1b4-666cddd4e140\scratchpad\venv\Lib\site-packages\rdflib\term.py", line 2262, in _castLexicalToPython
+    return conv_func(lexical)  # type: ignore[arg-type]
+           ^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '"2014-01-22T15:47:23+01:'
+[ 634.5s]   CarePlan: dropped 33 individual(s) outside its scope (built earlier, or another agent's class)
+[ 634.7s]   CarePlan: cycle 2 -> 34 violation(s)
+[ 634.7s]   CarePlan: stopping (fix budget spent)
+[ 634.7s] union: dropped 39 link(s) to undeclared individuals
+[ 634.9s] merging (orchestrator): 0 violation(s), 0 unresolved, 0 unparsed
+[ 635.1s] merge FAILED (Error code: 400 - {'error': {'message': "litellm.ContextWindowExceededError: lit...) - returning the un-merged union
+[ 635.3s] final: conforms
+conforms=True segments=16 llm_calls=24 unresolved=0
+  orchestrator   1 calls     4670 in    5271 out  cost n/a  gemma4-g1
+  total         23 calls    97867 in   45798 out  cost n/a  
+  worker        22 calls    93197 in   40527 out  cost n/a  gemma4-g1
+
+exit=0 seconds=636

@@ -1,0 +1,62 @@
+[   0.1s] segmenting (orchestrator) ...
+[  12.5s] 4 segments: s1[ClinicalVisit,Person,CareUnit], s2[MeasurementProcess,Measurement,Unit,ProcessStatus], s3[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s4[CarePlan]
+[  12.5s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Person, ProcessStatus, Unit] -> [EvaluationProcess, Measurement] -> [MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  12.5s] level 0: 6 agent(s), 0 known entities
+[  12.5s]   CareUnit: extracting, compact (333 chars, 1 classes in view)
+[  12.5s]   ClinicalCondition: extracting, compact (241 chars, 3 classes in view)
+[  12.5s]   DiagnosticStatement: extracting, compact (241 chars, 1 classes in view)
+[  12.6s]   Person: extracting, compact (333 chars, 1 classes in view)
+[  13.8s]   CareUnit: cycle 0 -> conforms
+[  13.8s]   ProcessStatus: extracting, compact (221 chars, 1 classes in view)
+[  14.0s]   Person: cycle 0 -> conforms
+[  14.0s]   Unit: extracting, compact (221 chars, 1 classes in view)
+[  14.7s]   ProcessStatus: cycle 0 -> conforms
+[  14.7s]   DiagnosticStatement: cycle 0 -> conforms
+[  15.0s]   Unit: cycle 0 -> conforms
+[  15.0s]   ClinicalCondition: cycle 0 -> conforms
+[  15.0s] level 1: 2 agent(s), 6 known entities
+[  15.1s]   EvaluationProcess: extracting, compact (241 chars, 7 classes in view)
+[  15.1s]   Measurement: extracting, compact (221 chars, 2 classes in view)
+[  17.1s]   Measurement: cycle 0 -> conforms
+[  17.1s]   EvaluationProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  17.2s]   EvaluationProcess: cycle 0 -> 2 violation(s)
+[  17.2s]   EvaluationProcess: fixing ...
+[  18.8s]   EvaluationProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  18.8s]   EvaluationProcess: cycle 1 -> 2 violation(s)
+[  18.8s]   EvaluationProcess: stopping (plateau)
+[  18.8s] level 2: 1 agent(s), 8 known entities
+[  18.9s]   MeasurementProcess: extracting, compact (221 chars, 6 classes in view)
+[  21.8s]   MeasurementProcess: cycle 0 -> 1 violation(s)
+[  21.8s]   MeasurementProcess: fixing ...
+[  24.5s]   MeasurementProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  24.5s]   MeasurementProcess: cycle 1 -> 2 violation(s)
+[  24.5s]   MeasurementProcess: fixing ...
+[  27.2s]   MeasurementProcess: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  27.3s]   MeasurementProcess: cycle 2 -> 2 violation(s)
+[  27.3s]   MeasurementProcess: stopping (fix budget spent)
+[  27.3s] level 3: 2 agent(s), 9 known entities
+[  27.4s]   CarePlan: extracting, compact (915 chars, 4 classes in view)
+[  27.4s]   ClinicalVisit: extracting, compact (915 chars, 5 classes in view)
+[  28.2s]   CarePlan: cycle 0 -> 1 violation(s)
+[  28.2s]   CarePlan: fixing ...
+[  32.7s]   ClinicalVisit: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  32.8s]   ClinicalVisit: cycle 0 -> 3 violation(s)
+[  32.8s]   ClinicalVisit: fixing ...
+[  33.5s]   CarePlan: dropped 3 individual(s) outside its scope (built earlier, or another agent's class)
+[  33.6s]   CarePlan: cycle 1 -> 4 violation(s)
+[  33.6s]   CarePlan: fixing ...
+[  34.7s]   CarePlan: cycle 2 -> 1 violation(s)
+[  34.7s]   CarePlan: stopping (fix budget spent)
+[  37.6s]   ClinicalVisit: dropped 1 individual(s) outside its scope (built earlier, or another agent's class)
+[  37.7s]   ClinicalVisit: cycle 1 -> 3 violation(s)
+[  37.7s]   ClinicalVisit: stopping (plateau)
+[  37.7s]   ClinicalVisit: 10 unresolved (honest gaps)
+[  37.7s] union: dropped 3 link(s) to undeclared individuals
+[  37.8s] merging (orchestrator): 0 violation(s), 10 unresolved, 0 unparsed
+[  59.6s] final: conforms
+conforms=True segments=11 llm_calls=19 unresolved=0
+  orchestrator   2 calls     5728 in    1941 out  cost n/a  gemma4-g1
+  total         19 calls    39946 in    3602 out  cost n/a  
+  worker        17 calls    34218 in    1661 out  cost n/a  gemma4-g1
+
+exit=0 seconds=68

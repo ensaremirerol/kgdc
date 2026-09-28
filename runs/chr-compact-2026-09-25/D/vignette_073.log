@@ -1,0 +1,32 @@
+[   0.0s] segmenting (orchestrator) ...
+[  37.2s] 12 segments: s1[ClinicalVisit,Person,CareUnit,Person], s2[MeasurementProcess,Measurement], s3[MeasurementProcess,Measurement], s4[MeasurementProcess,Measurement], s5[MeasurementProcess,Measurement], s6[MeasurementProcess,Measurement], s7[MeasurementProcess,Measurement], s8[MeasurementProcess,Measurement], s9[MeasurementProcess,Measurement], s10[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s11[EvaluationProcess,DiagnosticStatement,ClinicalCondition], s12[CarePlan]
+[  37.2s] build order: [CareUnit, ClinicalCondition, DiagnosticStatement, Measurement, Person] -> [EvaluationProcess, MeasurementProcess] -> [CarePlan, ClinicalVisit]
+[  37.2s] level 0: 5 agent(s), 0 known entities
+[  37.2s]   CareUnit: extracting, compact (235 chars, 1 classes in view)
+[  37.2s]   ClinicalCondition: extracting, compact (459 chars, 3 classes in view)
+[  37.2s]   DiagnosticStatement: extracting, compact (459 chars, 1 classes in view)
+[  37.2s]   Measurement: extracting, compact (1971 chars, 2 classes in view)
+[  38.0s]   CareUnit: cycle 0 -> conforms
+[  38.0s]   Person: extracting, compact (235 chars, 1 classes in view)
+[  38.8s]   Person: cycle 0 -> conforms
+[  39.0s]   DiagnosticStatement: cycle 0 -> conforms
+[  40.0s]   ClinicalCondition: cycle 0 -> conforms
+[  50.1s]   Measurement: cycle 0 -> conforms
+[  50.1s] level 1: 2 agent(s), 21 known entities
+[  50.1s]   EvaluationProcess: extracting, compact (459 chars, 7 classes in view)
+[  50.1s]   MeasurementProcess: extracting, compact (1971 chars, 6 classes in view)
+[  53.4s]   EvaluationProcess: cycle 0 -> conforms
+[  60.7s]   MeasurementProcess: cycle 0 -> conforms
+[  60.7s] level 2: 2 agent(s), 32 known entities
+[  60.7s]   CarePlan: extracting, compact (2904 chars, 4 classes in view)
+[  60.7s]   ClinicalVisit: extracting, compact (2904 chars, 5 classes in view)
+[  61.8s]   CarePlan: cycle 0 -> conforms
+[  63.4s]   ClinicalVisit: cycle 0 -> conforms
+[  63.5s] merging (orchestrator): 0 violation(s), 0 unresolved, 0 unparsed
+[ 141.1s] final: conforms
+conforms=True segments=9 llm_calls=11 unresolved=0
+  orchestrator   2 calls    10589 in    6354 out  cost n/a  gemma4-g1
+  total         11 calls    33451 in    8269 out  cost n/a  
+  worker         9 calls    22862 in    1915 out  cost n/a  gemma4-g1
+
+exit=0 seconds=142
