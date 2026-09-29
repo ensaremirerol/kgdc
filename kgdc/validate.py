@@ -1,10 +1,11 @@
 """Parse -> vocabulary membership -> SHACL. Returns (ok, report, graph|None)."""
 from __future__ import annotations
 
+import os
 import re
 import threading
+from functools import lru_cache
 
-import pyshacl
 from rdflib import Graph, RDF, URIRef
 
 from .schema import Schema, _META
@@ -44,13 +45,51 @@ def validate(ttl: str, schema: Schema) -> tuple[bool, str, Graph | None]:
                        "IRI local names may only contain letters, digits, '_' and '-'; "
                        "put dates/codes with other characters in literals, not in IRIs."), None
     vocab = vocabulary_violations(g, schema)
-    with _LOCK:   # rdflib's SPARQL parser (used for SPARQL targets) is not thread-safe
-        ok, _, report = pyshacl.validate(g, shacl_graph=schema.shapes, ont_graph=schema.ontology,
-                                         inference="none", advanced=True)
-    blocks = vocab + [b for b in re.split(r"\n(?=Constraint )", report) if b.startswith("Constraint") and "sh:Warning" not in b and "sh:Info" not in b]
+    blocks = vocab + (_pyshacl(g, schema) if os.getenv("KGDC_SHACL", "rust") == "pyshacl" else _shacl_rust(ttl, g, schema))
     if not blocks:
         return True, "", g
     return False, "\n".join(blocks), g
+
+
+def _pyshacl(g: Graph, schema: Schema) -> list[str]:
+    import pyshacl   # optional: pip install kgdc[pyshacl]
+    with _LOCK:   # rdflib's SPARQL parser (used for SPARQL targets) is not thread-safe
+        _, _, report = pyshacl.validate(g, shacl_graph=schema.shapes, ont_graph=schema.ontology,
+                                        inference="none", advanced=True)
+    return [b for b in re.split(r"\n(?=Constraint )", report) if b.startswith("Constraint") and "sh:Warning" not in b and "sh:Info" not in b]
+
+
+@lru_cache(maxsize=8)
+def _turtle(g: Graph) -> str:
+    return g.serialize(format="turtle")
+
+
+def _shacl_rust(ttl: str, g: Graph, schema: Schema) -> list[str]:
+    """Same blocks as pySHACL's text report, so the prompts and the Focus Node / Value Node readers are unchanged.
+    The ontology goes into the data graph (pySHACL's ont_graph does the same): the class checks walk rdfs:subClassOf."""
+    import shacl_rust
+    report = shacl_rust.validate(ttl + "\n" + _turtle(schema.ontology), _turtle(schema.shapes))
+    def show(t):   # schema prefixes first, so own_violations() can match "chr:X" (a data graph may bind ":" instead)
+        if not (t and t.startswith("<") and t.endswith(">")):
+            return t
+        iri = t[1:-1]
+        ns = max((n for n in schema.prefixes.values() if iri.startswith(n)), key=len, default=None)
+        return next(f"{k}:{iri[len(ns):]}" for k, v in schema.prefixes.items() if v == ns) if ns else URIRef(iri).n3(g.namespace_manager)
+    out = []
+    for r in report["results"]:
+        if not r.get("severity", "").endswith("#Violation>"):
+            continue
+        comp = r.get("sourceConstraintComponent", "").strip("<>")
+        msgs = r.get("messages") or [""]
+        lines = [f"Constraint Violation in {comp.rsplit('#', 1)[-1]} ({comp}):", "\tSeverity: sh:Violation",
+                 f"\tFocus Node: {show(r.get('focusNode'))}"]
+        if r.get("value"):
+            lines.append(f"\tValue Node: {show(r['value'])}")
+        if r.get("resultPath"):
+            lines.append(f"\tResult Path: {show(r['resultPath'])}")
+        lines.append(f"\tMessage: {' '.join(msgs[1:]) or msgs[0]}")   # the shape's sh:message when it has one, like pySHACL
+        out.append("\n".join(lines))
+    return out
 
 
 def unresolved(ttl: str) -> list[str]:

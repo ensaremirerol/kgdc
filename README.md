@@ -79,7 +79,7 @@ Python 3.11 or newer.
 ```bash
 git clone <this repository> kgdc && cd kgdc
 python -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev]"            # rdflib, pyshacl, openai, python-dotenv (+ pytest)
+pip install -e ".[dev]"            # rdflib, shacl-rust, openai, python-dotenv (+ pytest)
 cp .env.example .env               # then fill in your endpoint, see Configuration reference
 ```
 
@@ -111,6 +111,13 @@ LLM_MODEL=your-model
 # LLM_BIG_MODEL=...
 LLM_BIG_MAX_TOKENS=16000           # recommended: endpoints cap output, and a merge writes the whole graph
 ```
+
+**To reproduce the paper, use one model for both roles.** Set only `LLM_API_KEY`, `LLM_BASE_URL` and
+`LLM_MODEL`; every unset `LLM_BIG_*` falls back to them. If your `.env` also sets `LLM_BIG_*` to another
+endpoint or model, `python -m kgdc` (and the Docker image) runs the class agents on `LLM_*` and only the
+segmentation and merge on `LLM_BIG_*`, so the results are not comparable with the paper's.
+[`examples/chr/run_all.sh`](examples/chr/run_all.sh) avoids this by running both roles on `LLM_BIG_*`
+unless `KGDC_KEEP_ROLES=1`.
 
 Run one clinical note and score it against its gold graph:
 
@@ -192,6 +199,7 @@ python -m kgdc ONTOLOGY.ttl SHAPES.ttl TEXT.txt [-o OUT.ttl] [--ordered | --mcp]
 | `--mcp` | tool-gated mode through the Rust MCP server; experimental, see [below](#experimental-tool-gated-mode---mcp) |
 | `--context F` | text or markdown file with domain conventions, added to every prompt as TASK NOTES |
 | `--format F` | graph text the agents read and write: `compact` (default) or `turtle`; overrides `KGDC_FORMAT` |
+| `--shacl E` | SHACL engine: `rust` (default, shacl-rust) or `pyshacl` (needs the `pyshacl` extra); overrides `KGDC_SHACL` |
 | `--workers N` | agents run in parallel per level (default 4) |
 | `-q`, `--quiet` | no progress output on stderr |
 
@@ -452,9 +460,11 @@ Violation" block format, so the fix prompt sees one consistent report:
    contain characters that are illegal in an IRI (`_BAD_IRI`: whitespace, ``<>"{}|\^` ``, a bare `%`).
    rdflib accepts such IRIs, but OWL tools downstream silently truncate around them and SHACL validators
    refuse the file, so they are rejected here (notes 10).
-3. **SHACL** with pySHACL, with the ontology as `ont_graph` (so `sh:class` sees subclass axioms),
-   `advanced=True`, warnings and infos ignored. pySHACL's SPARQL parser is not thread-safe, so this runs
-   under a lock.
+3. **SHACL** with [shacl-rust](https://pypi.org/project/shacl-rust/), with the ontology appended to the
+   data graph (so `sh:class` sees subclass axioms), SPARQL targets on, warnings and infos ignored. Its
+   results are rendered in pySHACL's text-report format. `--shacl pyshacl` (or `KGDC_SHACL=pyshacl`,
+   after `pip install -e ".[pyshacl]"`) runs pySHACL instead, with the ontology as `ont_graph` and
+   `advanced=True`; the results reported in this README were produced with pySHACL.
 
 ### 6. Union, cleanup and the merge pass
 
@@ -602,6 +612,7 @@ Two details matter:
 | variable | default | meaning |
 |---|---|---|
 | `KGDC_FORMAT` | `compact` | graph text agents read and write: `compact` or `turtle`; `--format` overrides it |
+| `KGDC_SHACL` | `rust` | SHACL engine: `rust` (shacl-rust) or `pyshacl`; `--shacl` overrides it |
 | `KGDC_MAX_FIX` | 2 | validator-guided fix rounds per agent |
 | `KGDC_MAX_SEGS_PER_AGENT` | 12 | passages per agent before a class is split over several agents |
 | `KGDC_MERGE` | `rewrite` | `edits`: the merge returns links and same-as pairs instead of the whole graph |
@@ -973,7 +984,7 @@ kgdc/                        the Python package
   compact.py                 the compact line format: writer, tolerant parser, IRI minting, datatypes, templates
   prompts.py                 every prompt: segment, extract, fix, merge, verify (Turtle and compact variants)
   pipeline.py                run() flat mode, run_ordered() ordered mode, agents, scope filter, union, merge, cleanup
-  validate.py                Turtle parse -> closed-world vocabulary check -> SHACL (pySHACL)
+  validate.py                Turtle parse -> closed-world vocabulary check -> SHACL (shacl-rust, or pySHACL)
   llm.py                     OpenAI-compatible client, two roles (worker / orchestrator), retries, usage
   mcp_pipeline.py            --mcp mode (experimental): plan -> mint -> fill through kgdc-mcp
   mcp_client.py              minimal JSON-RPC/stdio client for kgdc-mcp

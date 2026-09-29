@@ -1,7 +1,8 @@
 #!/bin/bash
 # All CHR vignettes through kgdc (ordered mode), N documents in parallel, resumable, then scored.
 #   examples/chr/run_all.sh OUT_DIR [PARALLEL=4]
-# Roles: both on the LLM_BIG_* endpoint (the 27B setup) unless KGDC_KEEP_ROLES=1.
+# Roles: both on the LLM_BIG_* endpoint (the paper's setup: one model, Gemma 4 26B-A4B-it, for both roles)
+# unless KGDC_KEEP_ROLES=1.
 set -u
 cd "$(dirname "$0")/../.." && source .venv/bin/activate
 set -a; source .env; set +a

@@ -12,8 +12,13 @@ ap.add_argument("--ordered", action="store_true", help="bottom-up: one agent per
 ap.add_argument("--mcp", action="store_true", help="tool-gated mode via kgdc-mcp (build it first): workers add triples through a vocabulary gate, orchestrator judges notes")
 ap.add_argument("--context", help="text/markdown file with task-specific conventions, injected into every prompt")
 ap.add_argument("--format", choices=["compact", "turtle"], help="graph text the agents read and write (default: KGDC_FORMAT, else compact)")
+ap.add_argument("--shacl", choices=["rust", "pyshacl"], help="SHACL engine (default: KGDC_SHACL, else rust; pyshacl needs pip install kgdc[pyshacl])")
 a = ap.parse_args()
 progress.enabled = not a.quiet
+if a.shacl:
+    os.environ["KGDC_SHACL"] = a.shacl
+if a.out:   # before any LLM call: a missing folder or a read-only mount must not cost a whole run
+    Path(a.out).parent.mkdir(parents=True, exist_ok=True)
 if a.format:
     os.environ["KGDC_FORMAT"] = a.format
 from .mcp_pipeline import run_mcp

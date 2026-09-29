@@ -4,7 +4,7 @@ FROM python:3.11-slim-bookworm AS build
 WORKDIR /src
 COPY pyproject.toml README.md ./
 COPY kgdc ./kgdc
-RUN pip install --no-cache-dir --target /deps .
+RUN pip install --no-cache-dir --target /deps ".[pyshacl]"   # pyshacl: --shacl pyshacl
 
 FROM gcr.io/distroless/python3-debian12:nonroot
 COPY --from=build /deps /deps

@@ -4,9 +4,10 @@ version = "0.1.0"
 description = "Divide-and-conquer knowledge-graph extraction: ontology segments, SHACL fills, agents never fabricate"
 requires-python = ">=3.11"
 license = "MIT"
-dependencies = ["rdflib>=7", "pyshacl>=0.30", "openai>=1", "python-dotenv>=1"]
+dependencies = ["rdflib>=7", "shacl-rust>=0.2.12", "openai>=1", "python-dotenv>=1"]
 [project.optional-dependencies]
 dev = ["pytest"]
+pyshacl = ["pyshacl>=0.30"]   # KGDC_SHACL=pyshacl / --shacl pyshacl
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
