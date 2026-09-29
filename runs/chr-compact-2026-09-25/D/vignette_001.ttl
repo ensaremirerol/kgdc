@@ -1,0 +1,65 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_follow-up_monitoring_and_routine_review__640bd976 a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_4f850da6 .
+
+ex:clinicalvisit_Encounter_for_symptom_procedure_5dc70264 a chr:ClinicalVisit ;
+    rdfs:label "Encounter for symptom (procedure)" ;
+    chr:hasCareProvider ex:person_Willian804_Batz141_77882 ;
+    chr:hasCareUnit ex:careunit_BOSTON_MEDICAL_CENTER_CORPORATION-_9cc6e849 ;
+    chr:hasDate "2016-08-07T06:24:27+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasProcedure ex:evaluationprocess_evaluated_the_patient_4f850da6,
+        ex:measurementprocess_Body_temperature_measurement_1bd8491a .
+
+ex:careunit_BOSTON_MEDICAL_CENTER_CORPORATION-_9cc6e849 a chr:CareUnit ;
+    rdfs:label "BOSTON MEDICAL CENTER CORPORATION-" .
+
+ex:clinicalcondition_Acute_viral_pharyngitis_disorder_613faf11 a chr:ClinicalCondition ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> ;
+    chr:hasRecordDate "2016-08-07T06:24:27+02:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 a chr:DiagnosticStatement ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> .
+
+ex:measurement_Body_temperature_e0264ffe a chr:Measurement ;
+    rdfs:label "Body temperature" ;
+    chr:hasCode <https://loinc.org/8310-5> ;
+    chr:hasMeasuredDate "2016-08-07T06:24:27+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "37.816"^^xsd:float ;
+    chr:hasUnit ex:unit_Cel_b876d74d .
+
+ex:measurementprocess_Body_temperature_measurement_1bd8491a a chr:MeasurementProcess ;
+    rdfs:label "Body temperature measurement" ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-08-07T06:24:27+02:00"^^xsd:dateTime ;
+    chr:hasResult ex:measurement_Body_temperature_e0264ffe ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_Cel_b876d74d a chr:Unit ;
+    rdfs:label "Cel" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .
+
+ex:evaluationprocess_evaluated_the_patient_4f850da6 a chr:EvaluationProcess ;
+    rdfs:label "evaluated the patient" ;
+    chr:hasCondition ex:clinicalcondition_Acute_viral_pharyngitis_disorder_613faf11 ;
+    chr:hasObservation ex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-08-07T06:24:27+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Willian804_Batz141_77882 .
+
+ex:person_Willian804_Batz141_77882 a chr:Person ;
+    rdfs:label "Dr. Willian804 Batz141" .
+
+ex:person_Angelic427_Callie226_Schaden604_4b5a499e a chr:Person ;
+    rdfs:label "Angelic427 Callie226 Schaden604" .
+

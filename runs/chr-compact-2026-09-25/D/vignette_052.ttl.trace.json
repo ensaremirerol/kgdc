@@ -1,0 +1,366 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__a0d1a711 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_Evaluation_066b21b6 .\n\nex:clinicalvisit_Encounter_for_symptom_procedure_4c41ec39 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for symptom (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;\n    chr:hasCareUnit ex:careunit_BERKSHIRE_MEDICAL_CENTER_INC_bdb16359 ;\n    chr:hasDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasProcedure ex:evaluationprocess_Evaluation_066b21b6,\n        ex:evaluationprocess_Evaluation_34bccaca,\n        ex:evaluationprocess_Evaluation_4bb577a4,\n        ex:evaluationprocess_Evaluation_c07587ab,\n        ex:measurementprocess_Body_Weight_measurement_b115655b,\n        ex:measurementprocess_Body_temperature_measurement_ea1cdbd0,\n        ex:measurementprocess_Heart_rate_measurement_25af1001,\n        ex:measurementprocess_Oxygen_saturation_in_Arterial_blood_meas_7d824302,\n        ex:measurementprocess_Respiratory_rate_measurement_009c8326 .\n\nex:careunit_BERKSHIRE_MEDICAL_CENTER_INC_bdb16359 a chr:CareUnit ;\n    rdfs:label \"BERKSHIRE MEDICAL CENTER INC\" .\n\nex:clinicalcondition_Cough_finding_c6dc4dab a chr:ClinicalCondition ;\n    rdfs:label \"Cough (finding)\" ;\n    chr:hasCode <http://snomed.info/id/49727002> ;\n    chr:hasRecordDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Disease_caused_by_severe_acute_respirato_aa390e03 a chr:ClinicalCondition ;\n    rdfs:label \"Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/840539006> ;\n    chr:hasRecordDate \"2020-12-04T10:06:43+01:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Fever_finding_e1fc2ad1 a chr:ClinicalCondition ;\n    rdfs:label \"Fever (finding)\" ;\n    chr:hasCode <http://snomed.info/id/386661006> ;\n    chr:hasRecordDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Loss_of_taste_finding_ad4e92b3 a chr:ClinicalCondition ;\n    rdfs:label \"Loss of taste (finding)\" ;\n    chr:hasCode <http://snomed.info/id/36955009> ;\n    chr:hasRecordDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Cough_finding_e476f139 a chr:DiagnosticStatement ;\n    rdfs:label \"Cough (finding)\" ;\n    chr:hasCode <http://snomed.info/id/49727002> .\n\nex:diagnosticstatement_Disease_caused_by_severe_acute_respirato_defe9342 a chr:DiagnosticStatement ;\n    rdfs:label \"Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/840539006> .\n\nex:diagnosticstatement_Fever_finding_68972a76 a chr:DiagnosticStatement ;\n    rdfs:label \"Fever (finding)\" ;\n    chr:hasCode <http://snomed.info/id/386661006> .\n\nex:diagnosticstatement_Loss_of_taste_finding_5b5fd23c a chr:DiagnosticStatement ;\n    rdfs:label \"Loss of taste (finding)\" ;\n    chr:hasCode <http://snomed.info/id/36955009> .\n\nex:evaluationprocess_Evaluation_34bccaca a chr:EvaluationProcess ;\n    rdfs:label \"Evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Disease_caused_by_severe_acute_respirato_aa390e03 ;\n    chr:hasObservation ex:diagnosticstatement_Disease_caused_by_severe_acute_respirato_defe9342 ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T10:06:43+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d .\n\nex:evaluationprocess_Evaluation_4bb577a4 a chr:EvaluationProcess ;\n    rdfs:label \"Evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Loss_of_taste_finding_ad4e92b3 ;\n    chr:hasObservation ex:diagnosticstatement_Loss_of_taste_finding_5b5fd23c ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d .\n\nex:evaluationprocess_Evaluation_c07587ab a chr:EvaluationProcess ;\n    rdfs:label \"Evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Cough_finding_c6dc4dab ;\n    chr:hasObservation ex:diagnosticstatement_Cough_finding_e476f139 ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d .\n\nex:measurement_Body_Weight_9c2b87c9 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"56.1\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_5c233fc2 .\n\nex:measurement_Body_temperature_8c8fcab7 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"38.656\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_b876d74d .\n\nex:measurement_Heart_rate_35908c6f a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"85.723\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Oxygen_saturation_in_Arterial_blood_c4f88113 a chr:Measurement ;\n    rdfs:label \"Oxygen saturation in Arterial blood\" ;\n    chr:hasCode <https://loinc.org/2708-6> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"82.21\"^^xsd:float ;\n    chr:hasUnit ex:unit_x_5f053d39 .\n\nex:measurement_Respiratory_rate_5d0c1b69 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"18.345\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurementprocess_Body_Weight_measurement_b115655b a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;\n    chr:hasResult ex:measurement_Body_Weight_9c2b87c9 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_temperature_measurement_ea1cdbd0 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;\n    chr:hasResult ex:measurement_Body_temperature_8c8fcab7 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Heart_rate_measurement_25af1001 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;\n    chr:hasResult ex:measurement_Heart_rate_35908c6f ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Oxygen_saturation_in_Arterial_blood_meas_7d824302 a chr:MeasurementProcess ;\n    rdfs:label \"Oxygen saturation in Arterial blood measurement\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;\n    chr:hasResult ex:measurement_Oxygen_saturation_in_Arterial_blood_c4f88113 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Respiratory_rate_measurement_009c8326 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;\n    chr:hasResult ex:measurement_Respiratory_rate_5d0c1b69 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:unit_Cel_b876d74d a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n\nex:unit_kg_5c233fc2 a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_x_5f053d39 a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:evaluationprocess_Evaluation_066b21b6 a chr:EvaluationProcess ;\n    rdfs:label \"Evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Fever_finding_e1fc2ad1 ;\n    chr:hasObservation ex:diagnosticstatement_Fever_finding_68972a76 ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d .\n\nex:unit_min_753e4226 a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:person_Daren950_Ed239_Strosin214_6aa3c602 a chr:Person ;\n    rdfs:label \"Daren950 Ed239 Strosin214\" .\n\nex:person_Dr_Carroll471_Eichmann909_7d53bb5d a chr:Person ;\n    rdfs:label \"Dr. Carroll471 Eichmann909\" .\n\n",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"BERKSHIRE MEDICAL CENTER INC\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_BERKSHIRE_MEDICAL_CENTER_INC_bdb16359 a chr:CareUnit ;\n    rdfs:label \"BERKSHIRE MEDICAL CENTER INC\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Cough (finding) (SNOMED: 49727002). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Fever (finding) (SNOMED: 386661006). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Loss of taste (finding) (SNOMED: 36955009). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T10:06:43+01:00. The evaluation produced a diagnostic statement of Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder) (SNOMED: 840539006). The condition was recorded on 2020-12-04T10:06:43+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cc1 ClinicalCondition \"Cough (finding)\" hasCode=<http://snomed.info/id/49727002>; hasRecordDate=2020-12-04T09:01:15+01:00\ncc2 ClinicalCondition \"Fever (finding)\" hasCode=<http://snomed.info/id/386661006>; hasRecordDate=2020-12-04T09:01:15+01:00\ncc3 ClinicalCondition \"Loss of taste (finding)\" hasCode=<http://snomed.info/id/36955009>; hasRecordDate=2020-12-04T09:01:15+01:00\ncc4 ClinicalCondition \"Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)\" hasCode=<http://snomed.info/id/840539006>; hasRecordDate=2020-12-04T10:06:43+01:00",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalcondition_Cough_finding_c6dc4dab a chr:ClinicalCondition ;\n    rdfs:label \"Cough (finding)\" ;\n    chr:hasCode <http://snomed.info/id/49727002> ;\n    chr:hasRecordDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Disease_caused_by_severe_acute_respirato_aa390e03 a chr:ClinicalCondition ;\n    rdfs:label \"Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/840539006> ;\n    chr:hasRecordDate \"2020-12-04T10:06:43+01:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Fever_finding_e1fc2ad1 a chr:ClinicalCondition ;\n    rdfs:label \"Fever (finding)\" ;\n    chr:hasCode <http://snomed.info/id/386661006> ;\n    chr:hasRecordDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Loss_of_taste_finding_ad4e92b3 a chr:ClinicalCondition ;\n    rdfs:label \"Loss of taste (finding)\" ;\n    chr:hasCode <http://snomed.info/id/36955009> ;\n    chr:hasRecordDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime .\n",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Cough (finding) (SNOMED: 49727002). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Fever (finding) (SNOMED: 386661006). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Loss of taste (finding) (SNOMED: 36955009). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T10:06:43+01:00. The evaluation produced a diagnostic statement of Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder) (SNOMED: 840539006). The condition was recorded on 2020-12-04T10:06:43+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Cough (finding)\" hasCode=<http://snomed.info/id/49727002>\nds2 DiagnosticStatement \"Fever (finding)\" hasCode=<http://snomed.info/id/386661006>\nds3 DiagnosticStatement \"Loss of taste (finding)\" hasCode=<http://snomed.info/id/36955009>\nds4 DiagnosticStatement \"Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)\" hasCode=<http://snomed.info/id/840539006>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Cough_finding_e476f139 a chr:DiagnosticStatement ;\n    rdfs:label \"Cough (finding)\" ;\n    chr:hasCode <http://snomed.info/id/49727002> .\n\nex:diagnosticstatement_Disease_caused_by_severe_acute_respirato_defe9342 a chr:DiagnosticStatement ;\n    rdfs:label \"Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/840539006> .\n\nex:diagnosticstatement_Fever_finding_68972a76 a chr:DiagnosticStatement ;\n    rdfs:label \"Fever (finding)\" ;\n    chr:hasCode <http://snomed.info/id/386661006> .\n\nex:diagnosticstatement_Loss_of_taste_finding_5b5fd23c a chr:DiagnosticStatement ;\n    rdfs:label \"Loss of taste (finding)\" ;\n    chr:hasCode <http://snomed.info/id/36955009> .\n",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2020-12-04T09:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 38.656 Cel. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 18.345 /min. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 85.723 /min. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Oxygen saturation in Arterial blood (LOINC: 2708-6) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 82.21 %. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 56.1 kg. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 Measurement \"Body temperature\" hasCode=<https://loinc.org/8310-5>; hasMeasuredDate=2020-12-04T09:01:15+01:00; hasQuantityValue=38.656; hasUnit=u1\nu1 Unit \"Cel\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/Cel>\nm2 Measurement \"Respiratory rate\" hasCode=<https://loinc.org/9279-1>; hasMeasuredDate=2020-12-04T09:01:15+01:00; hasQuantityValue=18.345; hasUnit=u2\nu2 Unit \"/min\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/permin>\nm3 Measurement \"Heart rate\" hasCode=<https://loinc.org/8867-4>; hasMeasuredDate=2020-12-04T09:01:15+01:00; hasQuantityValue=85.723; hasUnit=u2\nm4 Measurement \"Oxygen saturation in Arterial blood\" hasCode=<https://loinc.org/2708-6>; hasMeasuredDate=2020-12-04T09:01:15+01:00; hasQuantityValue=82.21; hasUnit=u3\nu3 Unit \"%\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/percent>\nm5 Measurement \"Body Weight\" hasCode=<https://loinc.org/29463-7>; hasMeasuredDate=2020-12-04T09:01:15+01:00; hasQuantityValue=56.1; hasUnit=u4\nu4 Unit \"kg\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/kg>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Body_Weight_9c2b87c9 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"56.1\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_5c233fc2 .\n\nex:measurement_Body_temperature_8c8fcab7 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"38.656\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_b876d74d .\n\nex:measurement_Heart_rate_35908c6f a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"85.723\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Oxygen_saturation_in_Arterial_blood_c4f88113 a chr:Measurement ;\n    rdfs:label \"Oxygen saturation in Arterial blood\" ;\n    chr:hasCode <https://loinc.org/2708-6> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"82.21\"^^xsd:float ;\n    chr:hasUnit ex:unit_x_5f053d39 .\n\nex:measurement_Respiratory_rate_5d0c1b69 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"18.345\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:unit_Cel_b876d74d a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n\nex:unit_kg_5c233fc2 a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_x_5f053d39 a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:unit_min_753e4226 a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Daren950 Ed239 Strosin214\"\np2 Person \"Dr. Carroll471 Eichmann909\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Daren950_Ed239_Strosin214_6aa3c602 a chr:Person ;\n    rdfs:label \"Daren950 Ed239 Strosin214\" .\n\nex:person_Dr_Carroll471_Eichmann909_7d53bb5d a chr:Person ;\n    rdfs:label \"Dr. Carroll471 Eichmann909\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Cough (finding) (SNOMED: 49727002). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Fever (finding) (SNOMED: 386661006). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Loss of taste (finding) (SNOMED: 36955009). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T10:06:43+01:00. The evaluation produced a diagnostic statement of Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder) (SNOMED: 840539006). The condition was recorded on 2020-12-04T10:06:43+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ep1 EvaluationProcess \"Evaluation\" hasCondition=k2; hasObservation=k6; hasPatient=k15; hasPerformedDate=2020-12-04T09:01:15+01:00; hasPerformer=k16\nep2 EvaluationProcess \"Evaluation\" hasCondition=k4; hasObservation=k8; hasPatient=k15; hasPerformedDate=2020-12-04T09:01:15+01:00; hasPerformer=k16\nep3 EvaluationProcess \"Evaluation\" hasCondition=k5; hasObservation=k9; hasPatient=k15; hasPerformedDate=2020-12-04T09:01:15+01:00; hasPerformer=k16\nep4 EvaluationProcess \"Evaluation\" hasCondition=k3; hasObservation=k7; hasPatient=k15; hasPerformedDate=2020-12-04T10:06:43+01:00; hasPerformer=k16",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_Evaluation_066b21b6 a chr:EvaluationProcess ;\n    rdfs:label \"Evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Fever_finding_e1fc2ad1 ;\n    chr:hasObservation ex:diagnosticstatement_Fever_finding_68972a76 ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d .\n\nex:evaluationprocess_Evaluation_34bccaca a chr:EvaluationProcess ;\n    rdfs:label \"Evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Disease_caused_by_severe_acute_respirato_aa390e03 ;\n    chr:hasObservation ex:diagnosticstatement_Disease_caused_by_severe_acute_respirato_defe9342 ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T10:06:43+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d .\n\nex:evaluationprocess_Evaluation_4bb577a4 a chr:EvaluationProcess ;\n    rdfs:label \"Evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Loss_of_taste_finding_ad4e92b3 ;\n    chr:hasObservation ex:diagnosticstatement_Loss_of_taste_finding_5b5fd23c ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d .\n\nex:evaluationprocess_Evaluation_c07587ab a chr:EvaluationProcess ;\n    rdfs:label \"Evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Cough_finding_c6dc4dab ;\n    chr:hasObservation ex:diagnosticstatement_Cough_finding_e476f139 ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d .\n",
+   "level": 1,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2020-12-04T09:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 38.656 Cel. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 18.345 /min. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 85.723 /min. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Oxygen saturation in Arterial blood (LOINC: 2708-6) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 82.21 %. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 56.1 kg. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 MeasurementProcess \"Body temperature measurement\" hasPatient=k15; hasPerformedDate=2020-12-04T09:01:15+01:00; hasPerformer=k16; hasResult=m2; hasStatus=ps1\nm2 Measurement \"Body temperature\" hasCode=<https://loinc.org/8310-5>; hasMeasuredDate=2020-12-04T09:01:15+01:00; hasQuantityValue=38.656; hasUnit=k17\nm3 MeasurementProcess \"Respiratory rate measurement\" hasPatient=k15; hasPerformedDate=2020-12-04T09:01:15+01:00; hasPerformer=k16; hasResult=m4; hasStatus=ps1\nm4 Measurement \"Respiratory rate\" hasCode=<https://loinc.org/9279-1>; hasMeasuredDate=2020-12-04T09:01:15+01:00; hasQuantityValue=18.345; hasUnit=k19\nm5 MeasurementProcess \"Heart rate measurement\" hasPatient=k15; hasPerformedDate=2020-12-04T09:01:15+01:00; hasPerformer=k16; hasResult=m6; hasStatus=ps1\nm6 Measurement \"Heart rate\" hasCode=<https://loinc.org/8867-4>; hasMeasuredDate=2020-12-04T09:01:15+01:00; hasQuantityValue=85.723; hasUnit=k19\nm7 MeasurementProcess \"Oxygen saturation in Arterial blood measurement\" hasPatient=k15; hasPerformedDate=2020-12-04T09:01:15+01:00; hasPerformer=k16; hasResult=m8; hasStatus=ps1\nm8 Measurement \"Oxygen saturation in Arterial blood\" hasCode=<https://loinc.org/2708-6>; hasMeasuredDate=2020-12-04T09:01:15+01:00; hasQuantityValue=82.21; hasUnit=k20\nm9 MeasurementProcess \"Body Weight measurement\" hasPatient=k15; hasPerformedDate=2020-12-04T09:01:15+01:00; hasPerformer=k16; hasResult=m10; hasStatus=ps1\nm10 Measurement \"Body Weight\" hasCode=<https://loinc.org/29463-7>; hasMeasuredDate=2020-12-04T09:01:15+01:00; hasQuantityValue=56.1; hasUnit=k18\nps1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Body_Weight_measurement_b115655b a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;\n    chr:hasResult ex:measurement_Body_Weight_9c2b87c9 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_temperature_measurement_ea1cdbd0 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;\n    chr:hasResult ex:measurement_Body_temperature_8c8fcab7 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Heart_rate_measurement_25af1001 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;\n    chr:hasResult ex:measurement_Heart_rate_35908c6f ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Oxygen_saturation_in_Arterial_blood_meas_7d824302 a chr:MeasurementProcess ;\n    rdfs:label \"Oxygen saturation in Arterial blood measurement\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;\n    chr:hasResult ex:measurement_Oxygen_saturation_in_Arterial_blood_c4f88113 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Respiratory_rate_measurement_009c8326 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasPerformedDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;\n    chr:hasResult ex:measurement_Respiratory_rate_5d0c1b69 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurement_Body_Weight_9c2b87c9 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"56.1\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_5c233fc2 .\n\nex:measurement_Body_temperature_8c8fcab7 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"38.656\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_b876d74d .\n\nex:measurement_Heart_rate_35908c6f a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"85.723\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Oxygen_saturation_in_Arterial_blood_c4f88113 a chr:Measurement ;\n    rdfs:label \"Oxygen saturation in Arterial blood\" ;\n    chr:hasCode <https://loinc.org/2708-6> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"82.21\"^^xsd:float ;\n    chr:hasUnit ex:unit_x_5f053d39 .\n\nex:measurement_Respiratory_rate_5d0c1b69 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"18.345\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 1,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\n==================================================\n\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)\n\nOn 2020-12-04T09:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 38.656 Cel. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 18.345 /min. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 85.723 /min. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Oxygen saturation in Arterial blood (LOINC: 2708-6) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 82.21 %. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 56.1 kg. The measurement process was recorded with status \"completed\".\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Cough (finding) (SNOMED: 49727002). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Fever (finding) (SNOMED: 386661006). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Loss of taste (finding) (SNOMED: 36955009). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T10:06:43+01:00. The evaluation produced a diagnostic statement of Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder) (SNOMED: 840539006). The condition was recorded on 2020-12-04T10:06:43+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cp1 CarePlan \"follow-up monitoring and routine review consistent with the diagnosis\" hasMedicalProcedure=k10",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__a0d1a711 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_Evaluation_066b21b6 .\n",
+   "level": 2,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BERKSHIRE MEDICAL CENTER INC\n==================================================\n\nPatient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)\n\nOn 2020-12-04T09:01:15+01:00, a Body temperature (LOINC: 8310-5) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 38.656 Cel. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 18.345 /min. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 85.723 /min. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Oxygen saturation in Arterial blood (LOINC: 2708-6) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 82.21 %. The measurement process was recorded with status \"completed\".\n\nOn 2020-12-04T09:01:15+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Daren950 Ed239 Strosin214. The measurement result was 56.1 kg. The measurement process was recorded with status \"completed\".\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Cough (finding) (SNOMED: 49727002). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Fever (finding) (SNOMED: 386661006). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T09:01:15+01:00. The evaluation produced a diagnostic statement of Loss of taste (finding) (SNOMED: 36955009). The condition was recorded on 2020-12-04T09:01:15+01:00.\n\nDr. Carroll471 Eichmann909 evaluated the patient on 2020-12-04T10:06:43+01:00. The evaluation produced a diagnostic statement of Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder) (SNOMED: 840539006). The condition was recorded on 2020-12-04T10:06:43+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "v1 ClinicalVisit \"Encounter for symptom (procedure)\" hasCareProvider=k25; hasCareUnit=k1; hasDate=2020-12-04T09:01:15+01:00; hasPatient=k24; hasProcedure=k20; hasProcedure=k23; hasProcedure=k21; hasProcedure=k22; hasProcedure=k19; hasProcedure=k10; hasProcedure=k11; hasProcedure=k12; hasProcedure=k13",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_Encounter_for_symptom_procedure_4c41ec39 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for symptom (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;\n    chr:hasCareUnit ex:careunit_BERKSHIRE_MEDICAL_CENTER_INC_bdb16359 ;\n    chr:hasDate \"2020-12-04T09:01:15+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;\n    chr:hasProcedure ex:evaluationprocess_Evaluation_066b21b6,\n        ex:evaluationprocess_Evaluation_34bccaca,\n        ex:evaluationprocess_Evaluation_4bb577a4,\n        ex:evaluationprocess_Evaluation_c07587ab,\n        ex:measurementprocess_Body_Weight_measurement_b115655b,\n        ex:measurementprocess_Body_temperature_measurement_ea1cdbd0,\n        ex:measurementprocess_Heart_rate_measurement_25af1001,\n        ex:measurementprocess_Oxygen_saturation_in_Arterial_blood_meas_7d824302,\n        ex:measurementprocess_Respiratory_rate_measurement_009c8326 .\n",
+   "level": 2,
+   "shared_context": "Patient: Daren950 Ed239 Strosin214 (ID: P-c101372f)\nDate of visit: 2020-12-04T09:01:15+01:00\nCare unit: BERKSHIRE MEDICAL CENTER INC\nAttending physician: Dr. Carroll471 Eichmann909\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 11,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 9815,
+   "completion_tokens": 5635,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 11,
+   "prompt_tokens": 32288,
+   "completion_tokens": 7681,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 9,
+   "prompt_tokens": 22473,
+   "completion_tokens": 2046,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

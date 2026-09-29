@@ -1,0 +1,518 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__f876cd84 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_27396fae .\n\nex:clinicalvisit_Emergency_room_admission_272d00e2 a chr:ClinicalVisit ;\n    rdfs:label \"Emergency room admission\" ;\n    chr:hasCareProvider ex:person_Irvin970_Emard19_abc123 ;\n    chr:hasCareUnit ex:careunit_SPECTRUM_HOME_HEALTH_AND_HOSPICE_CARE_5b69ea78 ;\n    chr:hasDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Arlen68_Olson653_55b63b77 ;\n    chr:hasProcedure ex:evaluationprocess_evaluation_27396fae,\n        ex:evaluationprocess_evaluation_be68751f,\n        ex:measurementprocess_DXA_Radius_and_Ulna_T-score_Bone_density_caeddf8c .\n\nex:careunit_SPECTRUM_HOME_HEALTH_AND_HOSPICE_CARE_5b69ea78 a chr:CareUnit ;\n    rdfs:label \"SPECTRUM HOME HEALTH AND HOSPICE CARE\" .\n\nex:clinicalcondition_Fracture_of_ankle_disorder_4c939189 a chr:ClinicalCondition ;\n    rdfs:label \"Fracture of ankle (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/16114001> ;\n    chr:hasRecordDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Fracture_of_bone_disorder_2906fe3b a chr:ClinicalCondition ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> ;\n    chr:hasRecordDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Fracture_of_ankle_disorder_6ab6429a a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture of ankle (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/16114001> .\n\nex:diagnosticstatement_Fracture_of_bone_disorder_20cd8c31 a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> .\n\nex:evaluationprocess_evaluation_be68751f a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Fracture_of_ankle_disorder_4c939189 ;\n    chr:hasObservation ex:diagnosticstatement_Fracture_of_ankle_disorder_6ab6429a ;\n    chr:hasPatient ex:person_Arlen68_Olson653_55b63b77 ;\n    chr:hasPerformedDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Irvin970_Emard19_abc123 .\n\nex:measurement_DXA_Radius_and_Ulna_T-score_Bone_density_533549ef a chr:Measurement ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density\" ;\n    chr:hasCode <https://loinc.org/38265-5> ;\n    chr:hasMeasuredDate \"2021-01-09T17:33:31+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue -0.028448 ;\n    chr:hasUnit ex:unit_T-score_91b511f3 .\n\nex:measurementprocess_DXA_Radius_and_Ulna_T-score_Bone_density_caeddf8c a chr:MeasurementProcess ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density\" ;\n    chr:hasPatient ex:person_Arlen68_Olson653_55b63b77 ;\n    chr:hasPerformedDate \"2021-01-09T17:33:31+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Irvin970_Emard19_abc123 ;\n    chr:hasResult ex:measurement_DXA_Radius_and_Ulna_T-score_Bone_density_533549ef ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:unit_T-score_91b511f3 a chr:Unit ;\n    rdfs:label \"{T-score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblT-scorecbr> .\n\nex:evaluationprocess_evaluation_27396fae a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Fracture_of_bone_disorder_2906fe3b ;\n    chr:hasObservation ex:diagnosticstatement_Fracture_of_bone_disorder_20cd8c31 ;\n    chr:hasPatient ex:person_Arlen68_Olson653_55b63b77 ;\n    chr:hasPerformedDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Irvin970_Emard19_abc123 .\n\nex:person_Arlen68_Olson653_55b63b77 a chr:Person ;\n    rdfs:label \"Arlen68 Olson653\" .\n\nex:person_Irvin970_Emard19_abc123 a chr:Person ;\n    rdfs:label \"Dr. Irvin970 Emard19\" .\n\n",
+ "conforms": false,
+ "violations": "Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:datatype xsd:float ; sh:message Literal(\"chr:hasQuantityValue must be an xsd:float.\") ; sh:path chr:hasQuantityValue ]\n\tFocus Node: ex:measurement_DXA_Radius_and_Ulna_T-score_Bone_density_533549ef\n\tValue Node: Literal(\"-0.028448\", datatype=xsd:decimal)\n\tResult Path: chr:hasQuantityValue\n\tMessage: chr:hasQuantityValue must be an xsd:float.\n",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 SPECTRUM HOME HEALTH AND HOSPICE CARE\n===========================================================\n\nPatient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19\nEncounter type: Emergency room admission (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"SPECTRUM HOME HEALTH AND HOSPICE CARE\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_SPECTRUM_HOME_HEALTH_AND_HOSPICE_CARE_5b69ea78 a chr:CareUnit ;\n    rdfs:label \"SPECTRUM HOME HEALTH AND HOSPICE CARE\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of ankle (disorder) (SNOMED: 16114001). The condition was recorded on 2021-01-09T16:56:33+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "c1 ClinicalCondition \"Fracture of bone (disorder)\" hasCode=<http://snomed.info/id/125605004>; hasRecordDate=2021-01-09T16:56:33+01:00\nc2 ClinicalCondition \"Fracture of ankle (disorder)\" hasCode=<http://snomed.info/id/16114001>; hasRecordDate=2021-01-09T16:56:33+01:00",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalcondition_Fracture_of_ankle_disorder_4c939189 a chr:ClinicalCondition ;\n    rdfs:label \"Fracture of ankle (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/16114001> ;\n    chr:hasRecordDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Fracture_of_bone_disorder_2906fe3b a chr:ClinicalCondition ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> ;\n    chr:hasRecordDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime .\n",
+   "level": 0,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of ankle (disorder) (SNOMED: 16114001). The condition was recorded on 2021-01-09T16:56:33+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Fracture of bone (disorder)\" hasCode=<http://snomed.info/id/125605004>\nds2 DiagnosticStatement \"Fracture of ankle (disorder)\" hasCode=<http://snomed.info/id/16114001>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Fracture_of_ankle_disorder_6ab6429a a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture of ankle (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/16114001> .\n\nex:diagnosticstatement_Fracture_of_bone_disorder_20cd8c31 a chr:DiagnosticStatement ;\n    rdfs:label \"Fracture of bone (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/125605004> .\n",
+   "level": 0,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 SPECTRUM HOME HEALTH AND HOSPICE CARE\n===========================================================\n\nPatient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19\nEncounter type: Emergency room admission (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Arlen68 Olson653\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Arlen68_Olson653_55b63b77 a chr:Person ;\n    rdfs:label \"Arlen68 Olson653\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2021-01-09T17:33:31+01:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Arlen68 Olson653. The measurement result was -0.028448 {T-score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ps1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2021-01-09T17:33:31+01:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Arlen68 Olson653. The measurement result was -0.028448 {T-score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "u1 Unit \"{T-score}\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/cblT-scorecbr>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_T-score_91b511f3 a chr:Unit ;\n    rdfs:label \"{T-score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblT-scorecbr> .\n",
+   "level": 0,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of ankle (disorder) (SNOMED: 16114001). The condition was recorded on 2021-01-09T16:56:33+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"Arlen68 Olson653\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"Arlen68 Olson653\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "ep1 EvaluationProcess \"evaluation\" hasCondition=k3; hasObservation=k5; hasPatient=k6; hasPerformedDate=2021-01-09T16:56:33+01:00; hasPerformer=p1\nep2 EvaluationProcess \"evaluation\" hasCondition=k2; hasObservation=k4; hasPatient=k6; hasPerformedDate=2021-01-09T16:56:33+01:00; hasPerformer=p1\np1 Person \"Dr. Irvin970 Emard19\"",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_evaluation_27396fae a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Fracture_of_bone_disorder_2906fe3b ;\n    chr:hasObservation ex:diagnosticstatement_Fracture_of_bone_disorder_20cd8c31 ;\n    chr:hasPatient ex:person_Arlen68_Olson653_55b63b77 ;\n    chr:hasPerformedDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Irvin970_Emard19_a8939f3f .\n\nex:evaluationprocess_evaluation_be68751f a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Fracture_of_ankle_disorder_4c939189 ;\n    chr:hasObservation ex:diagnosticstatement_Fracture_of_ankle_disorder_6ab6429a ;\n    chr:hasPatient ex:person_Arlen68_Olson653_55b63b77 ;\n    chr:hasPerformedDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Irvin970_Emard19_a8939f3f .\n\n",
+   "level": 1,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2021-01-09T17:33:31+01:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Arlen68 Olson653. The measurement result was -0.028448 {T-score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 Measurement \"DXA Radius and Ulna [T-score] Bone density\" hasCode=<https://loinc.org/38265-5>; hasMeasuredDate=2021-01-09T17:33:31+01:00; hasQuantityValue=-0.028448; hasUnit=k8",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_DXA_Radius_and_Ulna_T-score_Bone_density_533549ef a chr:Measurement ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density\" ;\n    chr:hasCode <https://loinc.org/38265-5> ;\n    chr:hasMeasuredDate \"2021-01-09T17:33:31+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"-0.028448\"^^xsd:float ;\n    chr:hasUnit ex:unit_T-score_91b511f3 .\n",
+   "level": 1,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2021-01-09T17:33:31+01:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Arlen68 Olson653. The measurement result was -0.028448 {T-score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- m2 (Measurement) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k8 \"DXA Radius and Ulna [T-score] Bone density\"\n- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k9 \"Arlen68 Olson653\"\n- u1 (Unit) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k11 \"{T-score}\"\n- p1: Object of chr:hasPerformer must be a chr:Person.\n- m2: Object of chr:hasResult must be a chr:Measurement."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- m2 (Measurement) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k8 \"DXA Radius and Ulna [T-score] Bone density\"\n- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k9 \"Arlen68 Olson653\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k9 \"Arlen68 Olson653\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "m1 MeasurementProcess \"DXA Radius and Ulna [T-score] Bone density\" hasPatient=k9; hasPerformedDate=2021-01-09T17:33:31+01:00; hasPerformer=p1; hasResult=k8; hasStatus=k10\np1 Person \"Dr. Irvin970 Emard19\"\nk8 hasMeasuredDate=2021-01-09T17:33:31+01:00; hasQuantityValue=-0.028448; hasUnit=k11; hasCode=<https://loinc.org/38265-5>",
+   "scope_dropped": 6,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_DXA_Radius_and_Ulna_T-score_Bone_density_caeddf8c a chr:MeasurementProcess ;\n    rdfs:label \"DXA Radius and Ulna [T-score] Bone density\" ;\n    chr:hasPatient ex:person_Arlen68_Olson653_55b63b77 ;\n    chr:hasPerformedDate \"2021-01-09T17:33:31+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Irvin970_Emard19_a8939f3f ;\n    chr:hasResult ex:measurement_DXA_Radius_and_Ulna_T-score_Bone_density_533549ef ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\n",
+   "level": 2,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 SPECTRUM HOME HEALTH AND HOSPICE CARE\n===========================================================\n\nPatient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19\nEncounter type: Emergency room admission (procedure)\n\nOn 2021-01-09T17:33:31+01:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Arlen68 Olson653. The measurement result was -0.028448 {T-score}. The measurement process was recorded with status \"completed\".\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of ankle (disorder) (SNOMED: 16114001). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k10 \"Arlen68 Olson653\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "cp1 CarePlan \"follow-up monitoring and routine review consistent with the diagnosis\" hasMedicalProcedure=k6",
+   "scope_dropped": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__f876cd84 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_27396fae .\n",
+   "level": 3,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 SPECTRUM HOME HEALTH AND HOSPICE CARE\n===========================================================\n\nPatient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19\nEncounter type: Emergency room admission (procedure)\n\nOn 2021-01-09T17:33:31+01:00, a DXA Radius and Ulna [T-score] Bone density (LOINC: 38265-5) measurement was performed on Arlen68 Olson653. The measurement result was -0.028448 {T-score}. The measurement process was recorded with status \"completed\".\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of bone (disorder) (SNOMED: 125605004). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nDr. Irvin970 Emard19 evaluated the patient on 2021-01-09T16:56:33+01:00. The evaluation produced a diagnostic statement of Fracture of ankle (disorder) (SNOMED: 16114001). The condition was recorded on 2021-01-09T16:56:33+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k10 \"Arlen68 Olson653\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k10 \"Arlen68 Olson653\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "v1 ClinicalVisit \"Emergency room admission\" hasCareProvider=p1; hasCareUnit=k1; hasDate=2021-01-09T16:56:33+01:00; hasPatient=k10; hasProcedure=k9\np1 Person \"Dr. Irvin970 Emard19\"",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_Emergency_room_admission_272d00e2 a chr:ClinicalVisit ;\n    rdfs:label \"Emergency room admission\" ;\n    chr:hasCareProvider ex:person_Dr_Irvin970_Emard19_a8939f3f ;\n    chr:hasCareUnit ex:careunit_SPECTRUM_HOME_HEALTH_AND_HOSPICE_CARE_5b69ea78 ;\n    chr:hasDate \"2021-01-09T16:56:33+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Arlen68_Olson653_55b63b77 ;\n    chr:hasProcedure ex:measurementprocess_DXA_Radius_and_Ulna_T-score_Bone_density_caeddf8c .\n\n",
+   "level": 3,
+   "shared_context": "Patient: Arlen68 Olson653 (ID: P-d638fa29)\nDate of visit: 2021-01-09T16:56:33+01:00\nCare unit: SPECTRUM HOME HEALTH AND HOSPICE CARE\nAttending physician: Dr. Irvin970 Emard19",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 19,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 6200,
+   "completion_tokens": 2474,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 19,
+   "prompt_tokens": 41282,
+   "completion_tokens": 4192,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 17,
+   "prompt_tokens": 35082,
+   "completion_tokens": 1718,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

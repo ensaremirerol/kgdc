@@ -1,0 +1,194 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_follow-up_monitoring_and_routine_review__bd27c6bd a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluationprocess_General_examination_of_patient_a8cfcf6e .
+
+ex:clinicalvisit_General_examination_of_patient_b374e009 a chr:ClinicalVisit ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCareProvider ex:person_Dr_Lynwood354_Tromp100_abc123 ;
+    chr:hasCareUnit ex:careunit_NASHOBA_VALLEY_MEDICAL_CENTER_4241f864 ;
+    chr:hasDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Arleen939_Marlyn309_Bergstrom287_cc12a9f4 ;
+    chr:hasProcedure ex:evaluationprocess_General_examination_of_patient_a8cfcf6e,
+        ex:measurementprocess_Body_Height_measurement_22b88d42,
+        ex:measurementprocess_Body_Weight_measurement_5f2b97e0,
+        ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_4282d493,
+        ex:measurementprocess_Heart_rate_measurement_3e569a6f,
+        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_99da9d65,
+        ex:measurementprocess_Respiratory_rate_measurement_9db09e3a,
+        ex:measurementprocess_Total_score_DAST-10_measurement_ec4ecab2,
+        ex:measurementprocess_Total_score_HARK_measurement_4bef1b07 .
+
+ex:careunit_NASHOBA_VALLEY_MEDICAL_CENTER_4241f864 a chr:CareUnit ;
+    rdfs:label "NASHOBA VALLEY MEDICAL CENTER" .
+
+ex:clinicalcondition_Stress_757121df a chr:ClinicalCondition ;
+    rdfs:label "Stress" ;
+    chr:hasCode <http://snomed.info/id/73595000> ;
+    chr:hasRecordDate "2019-03-15T14:56:37+01:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Stress_finding_073542c6 a chr:DiagnosticStatement ;
+    rdfs:label "Stress (finding)" ;
+    chr:hasCode <http://snomed.info/id/73595000> .
+
+ex:measurement_Body_Height_3a5f4f4d a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "159.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cm_bfcc7879 .
+
+ex:measurement_Body_Weight_ed757146 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "58.4"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_5c233fc2 .
+
+ex:measurement_Body_mass_index_BMI_Ratio_b855f89a a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "23.11"^^xsd:float ;
+    chr:hasUnit ex:unit_kgperm2_659d40e2 .
+
+ex:measurement_Heart_rate_4ec17b7e a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "63.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin_cc900e96 .
+
+ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_3ba63439 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr_10694d6b .
+
+ex:measurement_Respiratory_rate_e808f014 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "13.0"^^xsd:float ;
+    chr:hasUnit ex:unit_permin_cc900e96 .
+
+ex:measurement_Total_score_DAST-10_264a2bb2 a chr:Measurement ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasCode <https://loinc.org/82667-7> ;
+    chr:hasMeasuredDate "2019-03-15T16:08:18+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr_10694d6b .
+
+ex:measurement_Total_score_HARK_d9c503b4 a chr:Measurement ;
+    rdfs:label "Total score [HARK]" ;
+    chr:hasCode <https://loinc.org/76504-0> ;
+    chr:hasMeasuredDate "2019-03-15T15:29:16+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_cblscorecbr_10694d6b .
+
+ex:measurementprocess_Body_Height_measurement_22b88d42 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:person_Arleen939_Marlyn309_Bergstrom287_cc12a9f4 ;
+    chr:hasPerformedDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Lynwood354_Tromp100_abc123 ;
+    chr:hasResult ex:measurement_Body_Height_3a5f4f4d ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_Weight_measurement_5f2b97e0 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:person_Arleen939_Marlyn309_Bergstrom287_cc12a9f4 ;
+    chr:hasPerformedDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Lynwood354_Tromp100_abc123 ;
+    chr:hasResult ex:measurement_Body_Weight_ed757146 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_4282d493 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:person_Arleen939_Marlyn309_Bergstrom287_cc12a9f4 ;
+    chr:hasPerformedDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Lynwood354_Tromp100_abc123 ;
+    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_b855f89a ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Heart_rate_measurement_3e569a6f a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:person_Arleen939_Marlyn309_Bergstrom287_cc12a9f4 ;
+    chr:hasPerformedDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Lynwood354_Tromp100_abc123 ;
+    chr:hasResult ex:measurement_Heart_rate_4ec17b7e ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_99da9d65 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:person_Arleen939_Marlyn309_Bergstrom287_cc12a9f4 ;
+    chr:hasPerformedDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Lynwood354_Tromp100_abc123 ;
+    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_3ba63439 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Respiratory_rate_measurement_9db09e3a a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:person_Arleen939_Marlyn309_Bergstrom287_cc12a9f4 ;
+    chr:hasPerformedDate "2019-03-15T14:13:14+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Lynwood354_Tromp100_abc123 ;
+    chr:hasResult ex:measurement_Respiratory_rate_e808f014 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Total_score_DAST-10_measurement_ec4ecab2 a chr:MeasurementProcess ;
+    rdfs:label "Total score [DAST-10] measurement" ;
+    chr:hasPatient ex:person_Arleen939_Marlyn309_Bergstrom287_cc12a9f4 ;
+    chr:hasPerformedDate "2019-03-15T16:08:18+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Lynwood354_Tromp100_abc123 ;
+    chr:hasResult ex:measurement_Total_score_DAST-10_264a2bb2 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Total_score_HARK_measurement_4bef1b07 a chr:MeasurementProcess ;
+    rdfs:label "Total score [HARK] measurement" ;
+    chr:hasPatient ex:person_Arleen939_Marlyn309_Bergstrom287_cc12a9f4 ;
+    chr:hasPerformedDate "2019-03-15T15:29:16+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Lynwood354_Tromp100_abc123 ;
+    chr:hasResult ex:measurement_Total_score_HARK_d9c503b4 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:unit_cm_bfcc7879 a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg_5c233fc2 a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kgperm2_659d40e2 a chr:Unit ;
+    rdfs:label "kgperm2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:evaluationprocess_General_examination_of_patient_a8cfcf6e a chr:EvaluationProcess ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCondition ex:clinicalcondition_Stress_757121df ;
+    chr:hasObservation ex:diagnosticstatement_Stress_finding_073542c6 ;
+    chr:hasPatient ex:person_Arleen939_Marlyn309_Bergstrom287_cc12a9f4 ;
+    chr:hasPerformedDate "2019-03-15T14:56:37+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Lynwood354_Tromp100_abc123 .
+
+ex:unit_permin_cc900e96 a chr:Unit ;
+    rdfs:label "permin" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_cblscorecbr_10694d6b a chr:Unit ;
+    rdfs:label "cblscorecbr" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:person_Arleen939_Marlyn309_Bergstrom287_cc12a9f4 a chr:Person ;
+    rdfs:label "Arleen939 Marlyn309 Bergstrom287" .
+
+ex:person_Dr_Lynwood354_Tromp100_abc123 a chr:Person ;
+    rdfs:label "Dr. Lynwood354 Tromp100" .
+

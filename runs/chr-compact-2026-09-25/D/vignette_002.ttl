@@ -1,0 +1,245 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:clinicalvisit_General_examination_of_patient_a7e31377 a chr:ClinicalVisit ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCareProvider ex:person_Dr_Sherita708_Hudson301_abc123 ;
+    chr:hasCareUnit ex:careunit_SOUTH_BOSTON_COMMUNITY_HEALTH_CENTER_INC_318f0fb1 ;
+    chr:hasDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasProcedure ex:evaluationprocess_Evaluation_1d896de0,
+        ex:measurementprocess_Body_Height_measurement_b13482c4,
+        ex:measurementprocess_Body_Weight_measurement_61c7a0b8,
+        ex:measurementprocess_Body_mass_index_BMI_Percentile_Per_age_a_dbd31b7a,
+        ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_8dc7c68c,
+        ex:measurementprocess_Generalized_anxiety_disorder_7_item_GAD-_8d2d47fe,
+        ex:measurementprocess_Heart_rate_measurement_5dc7e550,
+        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_5da70e94,
+        ex:measurementprocess_Patient_Health_Questionnaire_2_item_PHQ-_31c82b96,
+        ex:measurementprocess_Respiratory_rate_measurement_d6625bac,
+        ex:measurementprocess_Total_score_DAST-10_measurement_fb69462d .
+
+ex:evaluationprocess_Evaluation_6455885a a chr:EvaluationProcess ;
+    rdfs:label "Evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Full-time_employment_finding_8fa28938 ;
+    chr:hasObservation ex:diagnosticstatement_Full-time_employment_finding_5020320b ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-11-18T18:22:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Sherita708_Hudson301_abc123 .
+
+ex:careunit_SOUTH_BOSTON_COMMUNITY_HEALTH_CENTER_INC_318f0fb1 a chr:CareUnit ;
+    rdfs:label "SOUTH BOSTON COMMUNITY HEALTH CENTER INC" .
+
+ex:clinicalcondition_Educated_to_high_school_level_finding_20d4caa2 a chr:ClinicalCondition ;
+    rdfs:label "Educated to high school level (finding)" ;
+    chr:hasCode <http://snomed.info/id/473461003> ;
+    chr:hasRecordDate "2016-11-18T18:22:15+01:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Educated_to_high_school_level_finding_2a5a34af a chr:DiagnosticStatement ;
+    rdfs:label "Educated to high school level (finding)" ;
+    chr:hasCode <http://snomed.info/id/473461003> .
+
+ex:evaluationprocess_Evaluation_1d896de0 a chr:EvaluationProcess ;
+    rdfs:label "Evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Educated_to_high_school_level_finding_20d4caa2,
+        ex:clinicalcondition_Full-time_employment_finding_8fa28938 ;
+    chr:hasObservation ex:diagnosticstatement_Educated_to_high_school_level_finding_2a5a34af,
+        ex:diagnosticstatement_Full-time_employment_finding_5020320b ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-11-18T18:22:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Sherita708_Hudson301_abc123 .
+
+ex:measurement_Body_Height_6adfa04e a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "160.8"^^xsd:float ;
+    chr:hasUnit ex:unit_cm_bfcc7879 .
+
+ex:measurement_Body_Weight_53eeb158 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "47.9"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_5c233fc2 .
+
+ex:measurement_Body_mass_index_BMI_Percentile_Per_age_a_4fb845b1 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Percentile] Per age and sex" ;
+    chr:hasCode <https://loinc.org/59576-9> ;
+    chr:hasMeasuredDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "12.909"^^xsd:float ;
+    chr:hasUnit ex:unit_x_5f053d39 .
+
+ex:measurement_Body_mass_index_BMI_Ratio_3c8ead58 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "18.5"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_m2_e4e558a3 .
+
+ex:measurement_Generalized_anxiety_disorder_7_item_GAD-_bc83f0fb a chr:Measurement ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasMeasuredDate "2016-11-18T18:47:01+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.0"^^xsd:float ;
+    chr:hasUnit ex:unit_Score_878926ce .
+
+ex:measurement_Heart_rate_f4da0b34 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "63.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_82986f23 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_Score_878926ce .
+
+ex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_61ca2417 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2016-11-18T19:29:47+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_Score_878926ce .
+
+ex:measurement_Respiratory_rate_7ffa16eb a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "13.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Total_score_DAST-10_83da94cd a chr:Measurement ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasCode <https://loinc.org/82667-7> ;
+    chr:hasMeasuredDate "2016-11-18T20:04:12+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_Score_878926ce .
+
+ex:measurementprocess_Body_Height_measurement_b13482c4 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Sherita708_Hudson301_abc123 ;
+    chr:hasResult ex:measurement_Body_Height_6adfa04e ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_Weight_measurement_61c7a0b8 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Sherita708_Hudson301_abc123 ;
+    chr:hasResult ex:measurement_Body_Weight_53eeb158 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_mass_index_BMI_Percentile_Per_age_a_dbd31b7a a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Percentile] Per age and sex measurement" ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Sherita708_Hudson301_abc123 ;
+    chr:hasResult ex:measurement_Body_mass_index_BMI_Percentile_Per_age_a_4fb845b1 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_8dc7c68c a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Sherita708_Hudson301_abc123 ;
+    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_3c8ead58 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Generalized_anxiety_disorder_7_item_GAD-_8d2d47fe a chr:MeasurementProcess ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] measurement" ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-11-18T18:47:01+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Sherita708_Hudson301_abc123 ;
+    chr:hasResult ex:measurement_Generalized_anxiety_disorder_7_item_GAD-_bc83f0fb ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Heart_rate_measurement_5dc7e550 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Sherita708_Hudson301_abc123 ;
+    chr:hasResult ex:measurement_Heart_rate_f4da0b34 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_5da70e94 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Sherita708_Hudson301_abc123 ;
+    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_82986f23 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Patient_Health_Questionnaire_2_item_PHQ-_31c82b96 a chr:MeasurementProcess ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] measurement" ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-11-18T19:29:47+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Sherita708_Hudson301_abc123 ;
+    chr:hasResult ex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_61ca2417 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Respiratory_rate_measurement_d6625bac a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-11-18T17:24:27+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Sherita708_Hudson301_abc123 ;
+    chr:hasResult ex:measurement_Respiratory_rate_7ffa16eb ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Total_score_DAST-10_measurement_fb69462d a chr:MeasurementProcess ;
+    rdfs:label "Total score [DAST-10] measurement" ;
+    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;
+    chr:hasPerformedDate "2016-11-18T20:04:12+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Sherita708_Hudson301_abc123 ;
+    chr:hasResult ex:measurement_Total_score_DAST-10_83da94cd ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:unit_cm_bfcc7879 a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg_5c233fc2 a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kg_m2_e4e558a3 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_x_5f053d39 a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:clinicalcondition_Full-time_employment_finding_8fa28938 a chr:ClinicalCondition ;
+    rdfs:label "Full-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160903007> ;
+    chr:hasRecordDate "2016-11-18T18:22:15+01:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Full-time_employment_finding_5020320b a chr:DiagnosticStatement ;
+    rdfs:label "Full-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160903007> .
+
+ex:unit_min_753e4226 a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_Score_878926ce a chr:Unit ;
+    rdfs:label "{Score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:person_Angelic427_Callie226_Schaden604_4b5a499e a chr:Person ;
+    rdfs:label "Angelic427 Callie226 Schaden604" .
+
+ex:person_Dr_Sherita708_Hudson301_abc123 a chr:Person ;
+    rdfs:label "Dr. Sherita708 Hudson301" .
+

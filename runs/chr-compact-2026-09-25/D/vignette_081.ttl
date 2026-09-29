@@ -1,0 +1,66 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_follow-up_monitoring_and_routine_review__d8a97061 a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_5f910d27 .
+
+ex:clinicalvisit_Encounter_for_symptom_69cc166a a chr:ClinicalVisit ;
+    rdfs:label "Encounter for symptom" ;
+    chr:hasCareProvider ex:person_Nickolas58_Schumm995_unresolved ;
+    chr:hasCareUnit ex:careunit_ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_B_5492ed90 ;
+    chr:hasDate "2007-05-07T03:35:54+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasProcedure ex:evaluationprocess_evaluation_5f910d27,
+        ex:measurementprocess_Body_temperature_measurement_f1886cd7 .
+
+ex:careunit_ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_B_5492ed90 a chr:CareUnit ;
+    rdfs:label "ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE" .
+
+ex:clinicalcondition_Streptococcal_sore_throat_c5ccaf92 a chr:ClinicalCondition ;
+    rdfs:label "Streptococcal sore throat" ;
+    chr:hasCode <http://snomed.info/id/43878008> ;
+    chr:hasRecordDate "2007-05-07T03:35:54+02:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Streptococcal_sore_throat_disorder_7f11dfdc a chr:DiagnosticStatement ;
+    rdfs:label "Streptococcal sore throat (disorder)" ;
+    chr:hasCode <http://snomed.info/id/43878008> .
+
+ex:measurement_Body_temperature_382b0966 a chr:Measurement ;
+    rdfs:label "Body temperature" ;
+    chr:hasCode <https://loinc.org/8310-5> ;
+    chr:hasMeasuredDate "2007-05-07T03:35:54+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "38.234"^^xsd:float ;
+    chr:hasUnit ex:unit_Cel_b876d74d .
+
+ex:measurementprocess_Body_temperature_measurement_f1886cd7 a chr:MeasurementProcess ;
+    rdfs:label "Body temperature measurement" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2007-05-07T03:35:54+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Nickolas58_Schumm995_unresolved ;
+    chr:hasResult ex:measurement_Body_temperature_382b0966 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_Cel_b876d74d a chr:Unit ;
+    rdfs:label "Cel" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .
+
+ex:evaluationprocess_evaluation_5f910d27 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Streptococcal_sore_throat_c5ccaf92 ;
+    chr:hasObservation ex:diagnosticstatement_Streptococcal_sore_throat_disorder_7f11dfdc ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2007-05-07T03:35:54+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Nickolas58_Schumm995_unresolved .
+
+ex:person_Estela596_Yetta429_Grant908_d3ecce59 a chr:Person ;
+    rdfs:label "Estela596 Yetta429 Grant908" .
+
+ex:person_Nickolas58_Schumm995_unresolved a chr:Person ;
+    rdfs:label "Dr. Nickolas58 Schumm995" .
+

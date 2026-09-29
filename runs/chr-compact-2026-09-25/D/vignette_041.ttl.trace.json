@@ -1,0 +1,751 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_General_examination_of_patient_d7920ecc a chr:ClinicalVisit ;\n    rdfs:label \"General examination of patient\" ;\n    chr:hasCareProvider ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasCareUnit ex:careunit_LOWELL_FAMILY_MEDICAL_CARE_PC_f7337d82 ;\n    chr:hasDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasProcedure ex:evaluationprocess_evaluated_the_patient_495d0aef,\n        ex:evaluationprocess_evaluated_the_patient_9bf88327,\n        ex:measurementprocess_Body_Height_fe0dfb67,\n        ex:measurementprocess_Body_Weight_c48c5e6b,\n        ex:measurementprocess_Body_mass_index_BMI_Ratio_2beec94d,\n        ex:measurementprocess_Cholesterol_Mass_volume_in_Serum_or_Plas_8f6fa3cd,\n        ex:measurementprocess_Cholesterol_in_HDL_Mass_volume_in_Serum__79d55160,\n        ex:measurementprocess_Cholesterol_in_LDL_Mass_volume_in_Serum__28d9ad1d,\n        ex:measurementprocess_FEV1_FVC_287a1af3,\n        ex:measurementprocess_Generalized_anxiety_disorder_7_item_GAD-_c95ad977,\n        ex:measurementprocess_Heart_rate_39715ba6,\n        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_a4a9f3c9,\n        ex:measurementprocess_Patient_Health_Questionnaire_2_item_PHQ-_74ca986f,\n        ex:measurementprocess_Respiratory_rate_aa81fc44,\n        ex:measurementprocess_Total_score_HARK_9e2f5db3,\n        ex:measurementprocess_Triglyceride_Mass_volume_in_Serum_or_Pla_33c767e4 .\n\nex:careunit_LOWELL_FAMILY_MEDICAL_CARE_PC_f7337d82 a chr:CareUnit ;\n    rdfs:label \"LOWELL FAMILY MEDICAL CARE PC\" .\n\nex:clinicalcondition_Limited_social_contact_finding_e69a203c a chr:ClinicalCondition ;\n    rdfs:label \"Limited social contact (finding)\" ;\n    chr:hasCode <http://snomed.info/id/423315002> ;\n    chr:hasRecordDate \"2018-04-15T12:29:33+02:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Medication_review_due_situation_89720f82 a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Limited_social_contact_finding_9302cbaa a chr:DiagnosticStatement ;\n    rdfs:label \"Limited social contact (finding)\" ;\n    chr:hasCode <http://snomed.info/id/423315002> .\n\nex:diagnosticstatement_Medication_review_due_situation_9b9831fe a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n\nex:evaluationprocess_evaluated_the_patient_495d0aef a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Medication_review_due_situation_89720f82 ;\n    chr:hasObservation ex:diagnosticstatement_Medication_review_due_situation_9b9831fe ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 .\n\nex:evaluationprocess_evaluated_the_patient_9bf88327 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Limited_social_contact_finding_e69a203c ;\n    chr:hasObservation ex:diagnosticstatement_Limited_social_contact_finding_9302cbaa ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T12:29:33+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 .\n\nex:measurement_Body_Height_c63d056e a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"164.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm_bfcc7879 .\n\nex:measurement_Body_Weight_262236c1 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.4\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_5c233fc2 .\n\nex:measurement_Body_mass_index_BMI_Ratio_d642131e a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"30.26\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_m2_e4e558a3 .\n\nex:measurement_Cholesterol_Mass_volume_in_Serum_or_Plas_ae37df19 a chr:Measurement ;\n    rdfs:label \"Cholesterol [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2093-3> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"197.96\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurement_Cholesterol_in_HDL_Mass_volume_in_Serum__d6d8a46a a chr:Measurement ;\n    rdfs:label \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2085-9> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"55.66\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurement_Cholesterol_in_LDL_Mass_volume_in_Serum__ee262f60 a chr:Measurement ;\n    rdfs:label \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" ;\n    chr:hasCode <https://loinc.org/18262-6> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"120.52\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurement_FEV1_FVC_35e61906 a chr:Measurement ;\n    rdfs:label \"FEV1/FVC\" ;\n    chr:hasCode <https://loinc.org/19926-5> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"60.042\"^^xsd:float ;\n    chr:hasUnit ex:unit_x_5f053d39 .\n\nex:measurement_Generalized_anxiety_disorder_7_item_GAD-_b23cdef4 a chr:Measurement ;\n    rdfs:label \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\" ;\n    chr:hasCode <https://loinc.org/70274-6> ;\n    chr:hasMeasuredDate \"2018-04-15T12:46:00+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Heart_rate_564f2b1a a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"95.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_0b780cd7 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"3.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_9e1aa9d7 a chr:Measurement ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" ;\n    chr:hasCode <https://loinc.org/55758-7> ;\n    chr:hasMeasuredDate \"2018-04-15T13:59:01+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Respiratory_rate_d28a00d4 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"16.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Total_score_HARK_648dda25 a chr:Measurement ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasCode <https://loinc.org/76504-0> ;\n    chr:hasMeasuredDate \"2018-04-15T13:16:20+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Triglyceride_Mass_volume_in_Serum_or_Pla_372fb3bd a chr:Measurement ;\n    rdfs:label \"Triglyceride [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2571-8> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"108.87\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurementprocess_Body_Height_fe0dfb67 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Body_Height_c63d056e ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_Weight_c48c5e6b a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Body_Weight_262236c1 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_mass_index_BMI_Ratio_2beec94d a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_d642131e ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Cholesterol_Mass_volume_in_Serum_or_Plas_8f6fa3cd a chr:MeasurementProcess ;\n    rdfs:label \"Cholesterol [Mass/volume] in Serum or Plasma\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Cholesterol_Mass_volume_in_Serum_or_Plas_ae37df19 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Cholesterol_in_HDL_Mass_volume_in_Serum__79d55160 a chr:MeasurementProcess ;\n    rdfs:label \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Cholesterol_in_HDL_Mass_volume_in_Serum__d6d8a46a ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Cholesterol_in_LDL_Mass_volume_in_Serum__28d9ad1d a chr:MeasurementProcess ;\n    rdfs:label \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Cholesterol_in_LDL_Mass_volume_in_Serum__ee262f60 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_FEV1_FVC_287a1af3 a chr:MeasurementProcess ;\n    rdfs:label \"FEV1/FVC\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_FEV1_FVC_35e61906 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Generalized_anxiety_disorder_7_item_GAD-_c95ad977 a chr:MeasurementProcess ;\n    rdfs:label \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T12:46:00+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Generalized_anxiety_disorder_7_item_GAD-_b23cdef4 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Heart_rate_39715ba6 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Heart_rate_564f2b1a ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_a4a9f3c9 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_0b780cd7 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Patient_Health_Questionnaire_2_item_PHQ-_74ca986f a chr:MeasurementProcess ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T13:59:01+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_9e1aa9d7 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Respiratory_rate_aa81fc44 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Respiratory_rate_d28a00d4 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Total_score_HARK_9e2f5db3 a chr:MeasurementProcess ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T13:16:20+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Total_score_HARK_648dda25 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Triglyceride_Mass_volume_in_Serum_or_Pla_33c767e4 a chr:MeasurementProcess ;\n    rdfs:label \"Triglyceride [Mass/volume] in Serum or Plasma\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_d123 ;\n    chr:hasResult ex:measurement_Triglyceride_Mass_volume_in_Serum_or_Pla_372fb3bd ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:unit_cm_bfcc7879 a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_kg_5c233fc2 a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kg_m2_e4e558a3 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_x_5f053d39 a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:unit_min_753e4226 a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:unit_mg_dL_e016cb17 a chr:Unit ;\n    rdfs:label \"mg/dL\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .\n\nex:unit_score_0399f823 a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:person_Cory323_Frank378_Heller342_d6cd38d4 a chr:Person ;\n    rdfs:label \"Cory323 Frank378 Heller342\" .\n\nex:person_Dr_Hank686_Schneider199_d123 a chr:Person ;\n    rdfs:label \"Dr. Hank686 Schneider199\" .\n\n",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199\nEncounter type: General examination of patient (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"LOWELL FAMILY MEDICAL CARE PC\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_LOWELL_FAMILY_MEDICAL_CARE_PC_f7337d82 a chr:CareUnit ;\n    rdfs:label \"LOWELL FAMILY MEDICAL CARE PC\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Hank686 Schneider199 evaluated the patient on 2018-04-15T11:44:05+02:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2018-04-15T11:44:05+02:00.\n\nDr. Hank686 Schneider199 evaluated the patient on 2018-04-15T12:29:33+02:00. The evaluation produced a diagnostic statement of Limited social contact (finding) (SNOMED: 423315002). The condition was recorded on 2018-04-15T12:29:33+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Medication review due (situation)\" hasCode=<http://snomed.info/id/314529007>\nds2 DiagnosticStatement \"Limited social contact (finding)\" hasCode=<http://snomed.info/id/423315002>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Limited_social_contact_finding_9302cbaa a chr:DiagnosticStatement ;\n    rdfs:label \"Limited social contact (finding)\" ;\n    chr:hasCode <http://snomed.info/id/423315002> .\n\nex:diagnosticstatement_Medication_review_due_situation_9b9831fe a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199\nEncounter type: General examination of patient (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Cory323 Frank378 Heller342\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Cory323_Frank378_Heller342_d6cd38d4 a chr:Person ;\n    rdfs:label \"Cory323 Frank378 Heller342\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus#1",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2018-04-15T11:44:05+02:00, a FEV1/FVC (LOINC: 19926-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 60.042 %. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 164 cm. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 81.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 30.26 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 95 /min. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 16 /min. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 197.96 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Triglyceride [Mass/volume] in Serum or Plasma (LOINC: 2571-8) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 108.87 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay (LOINC: 18262-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 120.52 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol in HDL [Mass/volume] in Serum or Plasma (LOINC: 2085-9) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 55.66 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T12:46:00+02:00, a Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] (LOINC: 70274-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "s1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus#2",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2018-04-15T13:16:20+02:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T13:59:01+02:00, a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ps1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Severity",
+   "concepts": [
+    "chr:Severity"
+   ],
+   "text": "On 2018-04-15T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "s1 Severity \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasCode=<https://loinc.org/72514-3>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:severity_Pain_severity_-_0-10_verbal_numeric_rati_88c27837 a chr:Severity ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> .\n",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit#1",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2018-04-15T11:44:05+02:00, a FEV1/FVC (LOINC: 19926-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 60.042 %. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 164 cm. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 81.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 30.26 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 95 /min. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 16 /min. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 197.96 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Triglyceride [Mass/volume] in Serum or Plasma (LOINC: 2571-8) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 108.87 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay (LOINC: 18262-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 120.52 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol in HDL [Mass/volume] in Serum or Plasma (LOINC: 2085-9) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 55.66 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T12:46:00+02:00, a Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] (LOINC: 70274-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "u1 Unit \"%\" hasCode=https://biomedit.ch/rdf/sphn-resource/ucum/percent\nu2 Unit \"cm\" hasCode=https://biomedit.ch/rdf/sphn-resource/ucum/cm\nu3 Unit \"{score}\" hasCode=https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr\nu4 Unit \"kg\" hasCode=https://biomedit.ch/rdf/sphn-resource/ucum/kg\nu5 Unit \"kg/m2\" hasCode=https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2\nu6 Unit \"/min\" hasCode=https://biomedit.ch/rdf/sphn-resource/ucum/permin\nu7 Unit \"mg/dL\" hasCode=https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_cm_bfcc7879 a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_kg_5c233fc2 a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kg_m2_e4e558a3 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_mg_dL_e016cb17 a chr:Unit ;\n    rdfs:label \"mg/dL\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .\n\nex:unit_min_753e4226 a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:unit_score_0399f823 a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:unit_x_5f053d39 a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit#2",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2018-04-15T13:16:20+02:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T13:59:01+02:00, a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "u1 Unit \"{score}\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_score_0399f823 a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n",
+   "level": 0,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Hank686 Schneider199 evaluated the patient on 2018-04-15T11:44:05+02:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2018-04-15T11:44:05+02:00.\n\nDr. Hank686 Schneider199 evaluated the patient on 2018-04-15T12:29:33+02:00. The evaluation produced a diagnostic statement of Limited social contact (finding) (SNOMED: 423315002). The condition was recorded on 2018-04-15T12:29:33+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- c1: cannot read 'k3' (expected property=value)\n- c2: cannot read 'k2' (expected property=value)"
+    },
+    {
+     "cycle": 1,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "k2 DiagnosticStatement \"Limited social contact (finding)\" hasCode=<http://snomed.info/id/423315002>\nk3 DiagnosticStatement \"Medication review due (situation)\" hasCode=<http://snomed.info/id/314529007>\nc1 ClinicalCondition \"Medication review due (situation)\" hasCode=<http://snomed.info/id/314529007>; hasRecordDate=2018-04-15T11:44:05+02:00\nc2 ClinicalCondition \"Limited social contact (finding)\" hasCode=<http://snomed.info/id/423315002>; hasRecordDate=2018-04-15T12:29:33+02:00",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalcondition_Limited_social_contact_finding_e69a203c a chr:ClinicalCondition ;\n    rdfs:label \"Limited social contact (finding)\" ;\n    chr:hasCode <http://snomed.info/id/423315002> ;\n    chr:hasRecordDate \"2018-04-15T12:29:33+02:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Medication_review_due_situation_89720f82 a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime .\n",
+   "level": 1,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement#1",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2018-04-15T11:44:05+02:00, a FEV1/FVC (LOINC: 19926-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 60.042 %. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 164 cm. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 81.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 30.26 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 95 /min. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 16 /min. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 197.96 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Triglyceride [Mass/volume] in Serum or Plasma (LOINC: 2571-8) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 108.87 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay (LOINC: 18262-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 120.52 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol in HDL [Mass/volume] in Serum or Plasma (LOINC: 2085-9) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 55.66 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T12:46:00+02:00, a Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] (LOINC: 70274-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 Measurement \"FEV1/FVC\" hasCode=<https://loinc.org/19926-5>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=60.042; hasUnit=k13\nm2 Measurement \"Body Height\" hasCode=<https://loinc.org/8302-2>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=164.0; hasUnit=k7\nm3 Measurement \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasCode=<https://loinc.org/72514-3>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=3.0; hasUnit=k12\nm4 Measurement \"Body Weight\" hasCode=<https://loinc.org/29463-7>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=81.4; hasUnit=k8\nm5 Measurement \"Body mass index (BMI) [Ratio]\" hasCode=<https://loinc.org/39156-5>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=30.26; hasUnit=k9\nm6 Measurement \"Heart rate\" hasCode=<https://loinc.org/8867-4>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=95.0; hasUnit=k11\nm7 Measurement \"Respiratory rate\" hasCode=<https://loinc.org/9279-1>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=16.0; hasUnit=k11\nm8 Measurement \"Cholesterol [Mass/volume] in Serum or Plasma\" hasCode=<https://loinc.org/2093-3>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=197.96; hasUnit=k10\nm9 Measurement \"Triglyceride [Mass/volume] in Serum or Plasma\" hasCode=<https://loinc.org/2571-8>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=108.87; hasUnit=k10\nm10 Measurement \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" hasCode=<https://loinc.org/18262-6>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=120.52; hasUnit=k10\nm11 Measurement \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" hasCode=<https://loinc.org/2085-9>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=55.66; hasUnit=k10\nm12 Measurement \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\" hasCode=<https://loinc.org/70274-6>; hasMeasuredDate=2018-04-15T12:46:00+02:00; hasQuantityValue=1.0; hasUnit=k12",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Body_Height_c63d056e a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"164.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm_bfcc7879 .\n\nex:measurement_Body_Weight_262236c1 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.4\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_5c233fc2 .\n\nex:measurement_Body_mass_index_BMI_Ratio_d642131e a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"30.26\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_m2_e4e558a3 .\n\nex:measurement_Cholesterol_Mass_volume_in_Serum_or_Plas_ae37df19 a chr:Measurement ;\n    rdfs:label \"Cholesterol [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2093-3> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"197.96\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurement_Cholesterol_in_HDL_Mass_volume_in_Serum__d6d8a46a a chr:Measurement ;\n    rdfs:label \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2085-9> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"55.66\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurement_Cholesterol_in_LDL_Mass_volume_in_Serum__ee262f60 a chr:Measurement ;\n    rdfs:label \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" ;\n    chr:hasCode <https://loinc.org/18262-6> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"120.52\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurement_FEV1_FVC_35e61906 a chr:Measurement ;\n    rdfs:label \"FEV1/FVC\" ;\n    chr:hasCode <https://loinc.org/19926-5> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"60.042\"^^xsd:float ;\n    chr:hasUnit ex:unit_x_5f053d39 .\n\nex:measurement_Generalized_anxiety_disorder_7_item_GAD-_b23cdef4 a chr:Measurement ;\n    rdfs:label \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\" ;\n    chr:hasCode <https://loinc.org/70274-6> ;\n    chr:hasMeasuredDate \"2018-04-15T12:46:00+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Heart_rate_564f2b1a a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"95.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_0b780cd7 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"3.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Respiratory_rate_d28a00d4 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"16.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Triglyceride_Mass_volume_in_Serum_or_Pla_372fb3bd a chr:Measurement ;\n    rdfs:label \"Triglyceride [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2571-8> ;\n    chr:hasMeasuredDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"108.87\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n",
+   "level": 1,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement#2",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2018-04-15T13:16:20+02:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T13:59:01+02:00, a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 Measurement \"Total score [HARK]\" hasCode=<https://loinc.org/76504-0>; hasMeasuredDate=2018-04-15T13:16:20+02:00; hasQuantityValue=0.0; hasUnit=k12\nm2 Measurement \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" hasCode=<https://loinc.org/55758-7>; hasMeasuredDate=2018-04-15T13:59:01+02:00; hasQuantityValue=2.0; hasUnit=k12",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_9e1aa9d7 a chr:Measurement ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" ;\n    chr:hasCode <https://loinc.org/55758-7> ;\n    chr:hasMeasuredDate \"2018-04-15T13:59:01+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Total_score_HARK_648dda25 a chr:Measurement ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasCode <https://loinc.org/76504-0> ;\n    chr:hasMeasuredDate \"2018-04-15T13:16:20+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n",
+   "level": 1,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Hank686 Schneider199 evaluated the patient on 2018-04-15T11:44:05+02:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2018-04-15T11:44:05+02:00.\n\nDr. Hank686 Schneider199 evaluated the patient on 2018-04-15T12:29:33+02:00. The evaluation produced a diagnostic statement of Limited social contact (finding) (SNOMED: 423315002). The condition was recorded on 2018-04-15T12:29:33+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k20 \"Cory323 Frank378 Heller342\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- m1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k20 \"Cory323 Frank378 Heller342\"\n- m1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- u1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k20 \"Cory323 Frank378 Heller342\"\n- u1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "ep1 EvaluationProcess \"evaluated the patient\" hasCondition=k3; hasObservation=k5; hasPatient=k20; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=u1\nep2 EvaluationProcess \"evaluated the patient\" hasCondition=k2; hasObservation=k4; hasPatient=k20; hasPerformedDate=2018-04-15T12:29:33+02:00; hasPerformer=u1\nu1 Person \"Dr. Hank686 Schneider199\"",
+   "scope_dropped": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_evaluated_the_patient_495d0aef a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Medication_review_due_situation_89720f82 ;\n    chr:hasObservation ex:diagnosticstatement_Medication_review_due_situation_9b9831fe ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_45b26181 .\n\nex:evaluationprocess_evaluated_the_patient_9bf88327 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Limited_social_contact_finding_e69a203c ;\n    chr:hasObservation ex:diagnosticstatement_Limited_social_contact_finding_9302cbaa ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T12:29:33+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_45b26181 .\n\n",
+   "level": 2,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess#1",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2018-04-15T11:44:05+02:00, a FEV1/FVC (LOINC: 19926-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 60.042 %. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 164 cm. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 81.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 30.26 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 95 /min. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 16 /min. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 197.96 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Triglyceride [Mass/volume] in Serum or Plasma (LOINC: 2571-8) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 108.87 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay (LOINC: 18262-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 120.52 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol in HDL [Mass/volume] in Serum or Plasma (LOINC: 2085-9) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 55.66 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T12:46:00+02:00, a Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] (LOINC: 70274-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 MeasurementProcess \"FEV1/FVC\" hasPatient=k20; hasPerformedDate=2018-04-15T11:44:05+02:00; hasResult=k12; hasStatus=k21\nk12 Measurement \"FEV1/FVC\" hasCode=<https://loinc.org/19926-5>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=60.042; hasUnit=k29\nm2 MeasurementProcess \"Body Height\" hasPatient=k20; hasPerformedDate=2018-04-15T11:44:05+02:00; hasResult=k6; hasStatus=k21\nk6 Measurement \"Body Height\" hasCode=<https://loinc.org/8302-2>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=164.0; hasUnit=k23\nm3 MeasurementProcess \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasPatient=k20; hasPerformedDate=2018-04-15T11:44:05+02:00; hasResult=k22; hasStatus=k21\nk22 Measurement \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasCode=<https://loinc.org/72514-3>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=3.0; hasUnit=k28\nm4 MeasurementProcess \"Body Weight\" hasPatient=k20; hasPerformedDate=2018-04-15T11:44:05+02:00; hasResult=k7; hasStatus=k21\nk7 Measurement \"Body Weight\" hasCode=<https://loinc.org/29463-7>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=81.4; hasUnit=k24\nm5 MeasurementProcess \"Body mass index (BMI) [Ratio]\" hasPatient=k20; hasPerformedDate=2018-04-15T11:44:05+02:00; hasResult=k8; hasStatus=k21\nk8 Measurement \"Body mass index (BMI) [Ratio]\" hasCode=<https://loinc.org/39156-5>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=30.26; hasUnit=k25\nm6 MeasurementProcess \"Heart rate\" hasPatient=k20; hasPerformedDate=2018-04-15T11:44:05+02:00; hasResult=k14; hasStatus=k21\nk14 Measurement \"Heart rate\" hasCode=<https://loinc.org/8867-4>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=95.0; hasUnit=k27\nm7 MeasurementProcess \"Respiratory rate\" hasPatient=k20; hasPerformedDate=2018-04-15T11:44:05+02:00; hasResult=k17; hasStatus=k21\nk17 Measurement \"Respiratory rate\" hasCode=<https://loinc.org/9279-1>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=16.0; hasUnit=k27\nm8 MeasurementProcess \"Cholesterol [Mass/volume] in Serum or Plasma\" hasPatient=k20; hasPerformedDate=2018-04-15T11:44:05+02:00; hasResult=k9; hasStatus=k21\nk9 Measurement \"Cholesterol [Mass/volume] in Serum or Plasma\" hasCode=<https://loinc.org/2093-3>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=197.96; hasUnit=k26\nm9 MeasurementProcess \"Triglyceride [Mass/volume] in Serum or Plasma\" hasPatient=k20; hasPerformedDate=2018-04-15T11:44:05+02:00; hasResult=k19; hasStatus=k21\nk19 Measurement \"Triglyceride [Mass/volume] in Serum or Plasma\" hasCode=<https://loinc.org/2571-8>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=108.87; hasUnit=k26\nm10 MeasurementProcess \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" hasPatient=k20; hasPerformedDate=2018-04-15T11:44:05+02:00; hasResult=k11; hasStatus=k21\nk11 Measurement \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" hasCode=<https://loinc.org/18262-6>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=120.52; hasUnit=k26\nm11 MeasurementProcess \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" hasPatient=k20; hasPerformedDate=2018-04-15T11:44:05+02:00; hasResult=k10; hasStatus=k21\nk10 Measurement \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" hasCode=<https://loinc.org/2085-9>; hasMeasuredDate=2018-04-15T11:44:05+02:00; hasQuantityValue=55.66; hasUnit=k26\nm12 MeasurementProcess \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\" hasPatient=k20; hasPerformedDate=2018-04-15T12:46:00+02:00; hasResult=k13; hasStatus=k21\nk13 Measurement \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\" hasCode=<https://loinc.org/70274-6>; hasMeasuredDate=2018-04-15T12:46:00+02:00; hasQuantityValue=1.0; hasUnit=k28",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Body_Height_fe0dfb67 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Body_Height_c63d056e ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_Weight_c48c5e6b a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Body_Weight_262236c1 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_mass_index_BMI_Ratio_2beec94d a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_d642131e ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Cholesterol_Mass_volume_in_Serum_or_Plas_8f6fa3cd a chr:MeasurementProcess ;\n    rdfs:label \"Cholesterol [Mass/volume] in Serum or Plasma\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Cholesterol_Mass_volume_in_Serum_or_Plas_ae37df19 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Cholesterol_in_HDL_Mass_volume_in_Serum__79d55160 a chr:MeasurementProcess ;\n    rdfs:label \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Cholesterol_in_HDL_Mass_volume_in_Serum__d6d8a46a ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Cholesterol_in_LDL_Mass_volume_in_Serum__28d9ad1d a chr:MeasurementProcess ;\n    rdfs:label \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Cholesterol_in_LDL_Mass_volume_in_Serum__ee262f60 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_FEV1_FVC_287a1af3 a chr:MeasurementProcess ;\n    rdfs:label \"FEV1/FVC\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_FEV1_FVC_35e61906 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Generalized_anxiety_disorder_7_item_GAD-_c95ad977 a chr:MeasurementProcess ;\n    rdfs:label \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T12:46:00+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Generalized_anxiety_disorder_7_item_GAD-_b23cdef4 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Heart_rate_39715ba6 a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Heart_rate_564f2b1a ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_a4a9f3c9 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:severity_Pain_severity_-_0-10_verbal_numeric_rati_88c27837 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Respiratory_rate_aa81fc44 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Respiratory_rate_d28a00d4 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Triglyceride_Mass_volume_in_Serum_or_Pla_33c767e4 a chr:MeasurementProcess ;\n    rdfs:label \"Triglyceride [Mass/volume] in Serum or Plasma\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Triglyceride_Mass_volume_in_Serum_or_Pla_372fb3bd ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n",
+   "level": 2,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess#2",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2018-04-15T13:16:20+02:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T13:59:01+02:00, a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k20 \"Cory323 Frank378 Heller342\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- mp2: hasPerformer=Dr. Hank686 Schneider199 is not a declared or KNOWN ENTITY handle\n- mp1: hasPerformer=Dr. Hank686 Schneider199 is not a declared or KNOWN ENTITY handle"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k20 \"Cory323 Frank378 Heller342\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "p1 Person \"Dr. Hank686 Schneider199\"\nmp2 MeasurementProcess \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" hasPatient=k20; hasPerformedDate=2018-04-15T13:59:01+02:00; hasResult=k16; hasStatus=k21; hasPerformer=p1\nmp1 MeasurementProcess \"Total score [HARK]\" hasPatient=k20; hasPerformedDate=2018-04-15T13:16:20+02:00; hasResult=k18; hasStatus=k21; hasPerformer=p1",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Patient_Health_Questionnaire_2_item_PHQ-_74ca986f a chr:MeasurementProcess ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T13:59:01+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_45b26181 ;\n    chr:hasResult ex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_9e1aa9d7 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Total_score_HARK_9e2f5db3 a chr:MeasurementProcess ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T13:16:20+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_45b26181 ;\n    chr:hasResult ex:measurement_Total_score_HARK_648dda25 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\n",
+   "level": 2,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 LOWELL FAMILY MEDICAL CARE PC\n===================================================\n\nPatient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199\nEncounter type: General examination of patient (procedure)\n\nOn 2018-04-15T11:44:05+02:00, a FEV1/FVC (LOINC: 19926-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 60.042 %. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 164 cm. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 81.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 30.26 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 95 /min. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 16 /min. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 197.96 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Triglyceride [Mass/volume] in Serum or Plasma (LOINC: 2571-8) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 108.87 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay (LOINC: 18262-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 120.52 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol in HDL [Mass/volume] in Serum or Plasma (LOINC: 2085-9) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 55.66 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T12:46:00+02:00, a Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] (LOINC: 70274-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T13:16:20+02:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T13:59:01+02:00, a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Hank686 Schneider199 evaluated the patient on 2018-04-15T11:44:05+02:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2018-04-15T11:44:05+02:00.\n\nDr. Hank686 Schneider199 evaluated the patient on 2018-04-15T12:29:33+02:00. The evaluation produced a diagnostic statement of Limited social contact (finding) (SNOMED: 423315002). The condition was recorded on 2018-04-15T12:29:33+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- ex:person_Dr_Hank686_Schneider199_45b26181: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- m22 (MeasurementProcess) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k22 \"Body Height\", k23 \"Body Weight\", k24 \"Body mass index (BMI) [Ratio]\", k25 \"Cholesterol [Mass/volume] in Serum or Plasma\", k26 \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\", k27 \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\", k28 \"FEV1/FVC\", k29 \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\", k30 \"Heart rate\", k31 \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\", k32 \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\", k33 \"Respiratory rate\"\n- m23 (MeasurementProcess) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k22 \"Body Height\", k23 \"Body Weight\", k24 \"Body mass index (BMI) [Ratio]\", k25 \"Cholesterol [Mass/volume] in Serum or Plasma\", k26 \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\", k27 \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\", k28 \"FEV1/FVC\", k29 \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\", k30 \"Heart rate\", k31 \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\", k32 \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\", k33 \"Respiratory rate\"\n- m24 (MeasurementProcess) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k22 \"Body Height\", k23 \"Body Weight\", k24 \"Body mass index (BMI) [Ratio]\", k25 \"Cholesterol [Mass/volume] in Serum or Plasma\", k26 \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\", k27 \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\", k28 \"FEV1/FVC\", k29 \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\", k30 \"Heart rate\", k31 \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\", k32 \"Patient He"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- m1 (ClinicalVisit) was removed: other agents build ClinicalVisit. Describe only the classes you were asked for and leave out statements that need anything else.\n- d2 (DiagnosticStatement) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"Limited social contact (finding)\", k5 \"Medication review due (situation)\"\n- p2 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"evaluated the patient\", k7 \"evaluated the patient\", k22 \"Body Height\", k23 \"Body Weight\", k24 \"Body mass index (BMI) [Ratio]\", k25 \"Cholesterol [Mass/volume] in Serum or Plasma\", k26 \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\", k27 \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\", k28 \"FEV1/FVC\", k29 \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\", k30 \"Heart rate\", k31 \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\"\n- p4 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"evaluated the patient\", k7 \"evaluated the patient\", k22 \"Body Height\", k23 \"Body Weight\", k24 \"Body mass index (BMI) [Ratio]\", k25 \"Cholesterol [Mass/volume] in Serum or Plasma\", k26 \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\", k27 \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\", k28 \"FEV1/FVC\", k29 \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\", k30 \"Heart rate\", k31 \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\"\n- p5 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"evaluated the patient\", k7 \"evaluated the patient\", k22 \"Body Height\", k23 \"Body Weight\", k24 \"Body mass index (BMI) [Ratio]\", k25 \"Cholesterol [Mass/"
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "m1 ClinicalVisit \"General examination of patient (procedure)\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasProcedure=p1; hasProcedure=p2; hasProcedure=p3; hasProcedure=p4; hasProcedure=p5; hasProcedure=p6; hasProcedure=p7; hasProcedure=p8; hasProcedure=p9; hasProcedure=p10; hasProcedure=p11; hasProcedure=p12; hasProcedure=p13; hasProcedure=p14; hasProcedure=p15\np1 MedicalProcedure \"FEV1/FVC\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r1\nr1 Measurement \"FEV1/FVC\" hasMeasuredDate=2018-04-15T11:44:05+02:00; hasCode=<https://loinc.org/19926-5>; hasQuantityValue=60.042; hasUnit=k45\np2 MedicalProcedure \"Body Height\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r2\nr2 Measurement \"Body Height\" hasMeasuredDate=2018-04-15T11:44:05+02:00; hasCode=<https://loinc.org/8302-2>; hasQuantityValue=164; hasUnit=k39\np3 MedicalProcedure \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r3\nr3 Measurement \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasMeasuredDate=2018-04-15T11:44:05+02:00; hasCode=<https://loinc.org/72514-3>; hasQuantityValue=3; hasUnit=k44\np4 MedicalProcedure \"Body Weight\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r4\nr4 Measurement \"Body Weight\" hasMeasuredDate=2018-04-15T11:44:05+02:00; hasCode=<https://loinc.org/29463-7>; hasQuantityValue=81.4; hasUnit=k40\np5 MedicalProcedure \"Body mass index (BMI) [Ratio]\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r5\nr5 Measurement \"Body mass index (BMI) [Ratio]\" hasMeasuredDate=2018-04-15T11:44:05+02:00; hasCode=<https://loinc.org/39156-5>; hasQuantityValue=30.26; hasUnit=k41\np6 MedicalProcedure \"Heart rate\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r6\nr6 Measurement \"Heart rate\" hasMeasuredDate=2018-04-15T11:44:05+02:00; hasCode=<https://loinc.org/8867-4>; hasQuantityValue=95; hasUnit=k43\np7 MedicalProcedure \"Respiratory rate\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r7\nr7 Measurement \"Respiratory rate\" hasMeasuredDate=2018-04-15T11:44:05+02:00; hasCode=<https://loinc.org/9279-1>; hasQuantityValue=16; hasUnit=k43\np8 MedicalProcedure \"Cholesterol [Mass/volume] in Serum or Plasma\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r8\nr8 Measurement \"Cholesterol [Mass/volume] in Serum or Plasma\" hasMeasuredDate=2018-04-15T11:44:05+02:00; hasCode=<https://loinc.org/2093-3>; hasQuantityValue=197.96; hasUnit=k42\np9 MedicalProcedure \"Triglyceride [Mass/volume] in Serum or Plasma\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r9\nr9 Measurement \"Triglyceride [Mass/volume] in Serum or Plasma\" hasMeasuredDate=2018-04-15T11:44:05+02:00; hasCode=<https://loinc.org/2571-8>; hasQuantityValue=108.87; hasUnit=k42\np10 MedicalProcedure \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r10\nr10 Measurement \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" hasMeasuredDate=2018-04-15T11:44:05+02:00; hasCode=<https://loinc.org/18262-6>; hasQuantityValue=120.52; hasUnit=k42\np11 MedicalProcedure \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r11\nr11 Measurement \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" hasMeasuredDate=2018-04-15T11:44:05+02:00; hasCode=<https://loinc.org/2085-9>; hasQuantityValue=55.66; hasUnit=k42\np12 MedicalProcedure \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\" hasPatient=k36; hasPerformedDate=2018-04-15T12:46:00+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r12\nr12 Measurement \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\" hasMeasuredDate=2018-04-15T12:46:00+02:00; hasCode=<https://loinc.org/70274-6>; hasQuantityValue=1; hasUnit=k44\np13 MedicalProcedure \"Total score [HARK]\" hasPatient=k36; hasPerformedDate=2018-04-15T13:16:20+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r13\nr13 Measurement \"Total score [HARK]\" hasMeasuredDate=2018-04-15T13:16:20+02:00; hasCode=<https://loinc.org/76504-0>; hasQuantityValue=0; hasUnit=k44\np14 MedicalProcedure \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" hasPatient=k36; hasPerformedDate=2018-04-15T13:59:01+02:00; hasPerformer=p_dr; hasStatus=k37; hasResult=r14\nr14 Measurement \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" hasMeasuredDate=2018-04-15T13:59:01+02:00; hasCode=<https://loinc.org/55758-7>; hasQuantityValue=2; hasUnit=k44\np15 MedicalProcedure \"General examination of patient (procedure)\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasProcedure=k6; hasProcedure=k7\np_dr Person \"Dr. Hank686 Schneider199\"\np_eval1 MedicalProcedure \"evaluated the patient\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p_dr; hasResult=d1\nd1 DiagnosticStatement \"Medication review due (situation)\" hasCode=<http://snomed.info/id/314529007>; hasPatient=k36\np_eval2 MedicalProcedure \"evaluated the patient\" hasPatient=k36; hasPerformedDate=2018-04-15T12:29:33+02:00; hasPerformer=p_dr; hasResult=d2\nd2 DiagnosticStatement \"Limited social contact (finding)\" hasCode=<http://snomed.info/id/423315002>; hasPatient=k36\n# UNRESOLVED: hasMedicalProcedure \u2014 not stated in the text",
+   "scope_dropped": 34,
+   "unresolved": [
+    "UNRESOLVED: hasMedicalProcedure \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Body_Height_c63d056e a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> .\n\nex:measurement_Body_Weight_262236c1 a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> .\n\nex:measurement_Body_mass_index_BMI_Ratio_d642131e a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> .\n\nex:measurement_Cholesterol_Mass_volume_in_Serum_or_Plas_ae37df19 a chr:Measurement ;\n    rdfs:label \"Cholesterol [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2093-3> .\n\nex:measurement_Cholesterol_in_HDL_Mass_volume_in_Serum__d6d8a46a a chr:Measurement ;\n    rdfs:label \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2085-9> .\n\nex:measurement_Cholesterol_in_LDL_Mass_volume_in_Serum__ee262f60 a chr:Measurement ;\n    rdfs:label \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" ;\n    chr:hasCode <https://loinc.org/18262-6> .\n\nex:measurement_FEV1_FVC_35e61906 a chr:Measurement ;\n    rdfs:label \"FEV1/FVC\" ;\n    chr:hasCode <https://loinc.org/19926-5> .\n\nex:measurement_Generalized_anxiety_disorder_7_item_GAD-_b23cdef4 a chr:Measurement ;\n    rdfs:label \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\" ;\n    chr:hasCode <https://loinc.org/70274-6> .\n\nex:measurement_Heart_rate_564f2b1a a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> .\n\nex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_0b780cd7 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> .\n\nex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_9e1aa9d7 a chr:Measurement ;\n    rdfs:label \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" ;\n    chr:hasCode <https://loinc.org/55758-7> .\n\nex:measurement_Respiratory_rate_d28a00d4 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> .\n\nex:measurement_Total_score_HARK_648dda25 a chr:Measurement ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasCode <https://loinc.org/76504-0> .\n\nex:measurement_Triglyceride_Mass_volume_in_Serum_or_Pla_372fb3bd a chr:Measurement ;\n    rdfs:label \"Triglyceride [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2571-8> .\n\nex:person_Cory323_Frank378_Heller342_d6cd38d4 a chr:MedicalProcedure ;\n    rdfs:label \"FEV1/FVC\" ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasPerformedDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Hank686_Schneider199_45b26181 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\n\n# UNRESOLVED: hasMedicalProcedure \u2014 not stated in the text",
+   "level": 3,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 LOWELL FAMILY MEDICAL CARE PC\n===================================================\n\nPatient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199\nEncounter type: General examination of patient (procedure)\n\nOn 2018-04-15T11:44:05+02:00, a FEV1/FVC (LOINC: 19926-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 60.042 %. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 164 cm. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 3 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 81.4 kg. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 30.26 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 95 /min. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 16 /min. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 197.96 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Triglyceride [Mass/volume] in Serum or Plasma (LOINC: 2571-8) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 108.87 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay (LOINC: 18262-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 120.52 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T11:44:05+02:00, a Cholesterol in HDL [Mass/volume] in Serum or Plasma (LOINC: 2085-9) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 55.66 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T12:46:00+02:00, a Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ] (LOINC: 70274-6) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T13:16:20+02:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2018-04-15T13:59:01+02:00, a Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] (LOINC: 55758-7) measurement was performed on Cory323 Frank378 Heller342. The measurement result was 2 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Hank686 Schneider199 evaluated the patient on 2018-04-15T11:44:05+02:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2018-04-15T11:44:05+02:00.\n\nDr. Hank686 Schneider199 evaluated the patient on 2018-04-15T12:29:33+02:00. The evaluation produced a diagnostic statement of Limited social contact (finding) (SNOMED: 423315002). The condition was recorded on 2018-04-15T12:29:33+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k36 \"Cory323 Frank378 Heller342\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k36 \"Cory323 Frank378 Heller342\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "p1 Person \"Dr. Hank686 Schneider199\"\nv1 ClinicalVisit \"General examination of patient\" hasCareProvider=p1; hasCareUnit=k1; hasDate=2018-04-15T11:44:05+02:00; hasPatient=k36; hasProcedure=k22; hasProcedure=k23; hasProcedure=k24; hasProcedure=k25; hasProcedure=k26; hasProcedure=k27; hasProcedure=k28; hasProcedure=k29; hasProcedure=k30; hasProcedure=k31; hasProcedure=k32; hasProcedure=k33; hasProcedure=k34; hasProcedure=k35\nk22 MedicalProcedure \"Body Height\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k8\nk23 MedicalProcedure \"Body Weight\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k9\nk24 MedicalProcedure \"Body mass index (BMI) [Ratio]\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k10\nk25 MedicalProcedure \"Cholesterol [Mass/volume] in Serum or Plasma\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k11\nk26 MedicalProcedure \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k12\nk27 MedicalProcedure \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k13\nk28 MedicalProcedure \"FEV1/FVC\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k14\nk29 MedicalProcedure \"Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]\" hasPatient=k36; hasPerformedDate=2018-04-15T12:46:00+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k15\nk30 MedicalProcedure \"Heart rate\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k16\nk31 MedicalProcedure \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k17\nk32 MedicalProcedure \"Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]\" hasPatient=k36; hasPerformedDate=2018-04-15T13:59:01+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k18\nk33 MedicalProcedure \"Respiratory rate\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k19\nk34 MedicalProcedure \"Total score [HARK]\" hasPatient=k36; hasPerformedDate=2018-04-15T13:16:20+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k20\nk35 MedicalProcedure \"Triglyceride [Mass/volume] in Serum or Plasma\" hasPatient=k36; hasPerformedDate=2018-04-15T11:44:05+02:00; hasPerformer=p1; hasStatus=k37; hasProcedure=k21",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_General_examination_of_patient_d7920ecc a chr:ClinicalVisit ;\n    rdfs:label \"General examination of patient\" ;\n    chr:hasCareProvider ex:person_Dr_Hank686_Schneider199_45b26181 ;\n    chr:hasCareUnit ex:careunit_LOWELL_FAMILY_MEDICAL_CARE_PC_f7337d82 ;\n    chr:hasDate \"2018-04-15T11:44:05+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;\n    chr:hasProcedure ex:measurementprocess_Body_Height_fe0dfb67,\n        ex:measurementprocess_Body_Weight_c48c5e6b,\n        ex:measurementprocess_Body_mass_index_BMI_Ratio_2beec94d,\n        ex:measurementprocess_Cholesterol_Mass_volume_in_Serum_or_Plas_8f6fa3cd,\n        ex:measurementprocess_Cholesterol_in_HDL_Mass_volume_in_Serum__79d55160,\n        ex:measurementprocess_Cholesterol_in_LDL_Mass_volume_in_Serum__28d9ad1d,\n        ex:measurementprocess_FEV1_FVC_287a1af3,\n        ex:measurementprocess_Generalized_anxiety_disorder_7_item_GAD-_c95ad977,\n        ex:measurementprocess_Heart_rate_39715ba6,\n        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_a4a9f3c9,\n        ex:measurementprocess_Patient_Health_Questionnaire_2_item_PHQ-_74ca986f,\n        ex:measurementprocess_Respiratory_rate_aa81fc44,\n        ex:measurementprocess_Total_score_HARK_9e2f5db3,\n        ex:measurementprocess_Triglyceride_Mass_volume_in_Serum_or_Pla_33c767e4 .\n\n",
+   "level": 3,
+   "shared_context": "Patient: Cory323 Frank378 Heller342 (ID: P-0c9a1821)\nDate of visit: 2018-04-15T11:44:05+02:00\nCare unit: LOWELL FAMILY MEDICAL CARE PC\nAttending physician: Dr. Hank686 Schneider199",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 26,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 13599,
+   "completion_tokens": 9690,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 26,
+   "prompt_tokens": 79846,
+   "completion_tokens": 20695,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 24,
+   "prompt_tokens": 66247,
+   "completion_tokens": 11005,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

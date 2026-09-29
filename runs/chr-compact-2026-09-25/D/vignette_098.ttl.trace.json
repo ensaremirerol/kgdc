@@ -1,0 +1,528 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_A_care_plan_was_established_that_refers__c4fd258c a chr:CarePlan ;\n    rdfs:label \"A care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_58c57d01 .\n\nex:clinicalvisit_Encounter_for_symptom_procedure_50f4a857 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for symptom (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_V\u00edctor493_Ch\u00e1vez927 ;\n    chr:hasCareUnit ex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f ;\n    chr:hasDate \"2019-07-08T15:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasProcedure ex:evaluationprocess_evaluation_58c57d01,\n        ex:measurementprocess_Body_temperature_measurement_ba970d45 .\n\nex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f a chr:CareUnit ;\n    rdfs:label \"4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\" .\n\nex:clinicalcondition_Acute_viral_pharyngitis_disorder_f4b04a65 a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2019-07-08T15:30:59+02:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .\n\nex:measurement_Body_temperature_bb245fc0 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-07-08T15:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.063\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_b876d74d .\n\nex:measurementprocess_Body_temperature_measurement_ba970d45 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2019-07-08T15:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V\u00edctor493_Ch\u00e1vez927 ;\n    chr:hasResult ex:measurement_Body_temperature_bb245fc0 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:unit_Cel_b876d74d a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n\nex:evaluationprocess_evaluation_58c57d01 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Acute_viral_pharyngitis_disorder_f4b04a65 ;\n    chr:hasObservation ex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2019-07-08T15:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V\u00edctor493_Ch\u00e1vez927 .\n\nex:person_Dr_V\u00edctor493_Ch\u00e1vez927 a chr:Person ;\n    rdfs:label \"Dr. V\u00edctor493 Ch\u00e1vez927\" .\n\nex:person_Harvey63_Napoleon578_Homenick806_7b803456 a chr:Person ;\n    rdfs:label \"Harvey63 Napoleon578 Homenick806\" .\n\n",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\n=================================================================\n\nPatient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f a chr:CareUnit ;\n    rdfs:label \"4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2019-07-08T15:30:59+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-07-08T15:30:59+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cc1 ClinicalCondition \"Acute viral pharyngitis (disorder)\" hasCode=<http://snomed.info/id/195662009>; hasRecordDate=2019-07-08T15:30:59+02:00",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalcondition_Acute_viral_pharyngitis_disorder_f4b04a65 a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2019-07-08T15:30:59+02:00\"^^xsd:dateTime .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2019-07-08T15:30:59+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-07-08T15:30:59+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Acute viral pharyngitis (disorder)\" hasCode=<http://snomed.info/id/195662009>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\n=================================================================\n\nPatient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Harvey63 Napoleon578 Homenick806\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Harvey63_Napoleon578_Homenick806_7b803456 a chr:Person ;\n    rdfs:label \"Harvey63 Napoleon578 Homenick806\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2019-07-08T15:30:59+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 37.063 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ps1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2019-07-08T15:30:59+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 37.063 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "u1 Unit \"Cel\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/Cel>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_Cel_b876d74d a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2019-07-08T15:30:59+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-07-08T15:30:59+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- ep1: hasPerformer=p1 is not a declared or KNOWN ENTITY handle"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"Harvey63 Napoleon578 Homenick806\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- v1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"Harvey63 Napoleon578 Homenick806\"\n- v1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "ep1 EvaluationProcess \"evaluation\" hasCondition=k2; hasObservation=k3; hasPatient=k4; hasPerformedDate=2019-07-08T15:30:59+02:00; hasPerformer=v1\nv1 Person \"Dr. V\u00edctor493 Ch\u00e1vez927\"",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_evaluation_58c57d01 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Acute_viral_pharyngitis_disorder_f4b04a65 ;\n    chr:hasObservation ex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2019-07-08T15:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 .\n\n",
+   "level": 1,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2019-07-08T15:30:59+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 37.063 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 Measurement \"Body temperature\" hasCode=<https://loinc.org/8310-5>; hasMeasuredDate=2019-07-08T15:30:59+02:00; hasQuantityValue=37.063; hasUnit=k6",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Body_temperature_bb245fc0 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-07-08T15:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.063\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_b876d74d .\n",
+   "level": 1,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2019-07-08T15:30:59+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 37.063 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"Harvey63 Napoleon578 Homenick806\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"Harvey63 Napoleon578 Homenick806\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "m1 MeasurementProcess \"Body temperature measurement\" hasPatient=k6; hasPerformedDate=2019-07-08T15:30:59+02:00; hasPerformer=p1; hasResult=m2; hasStatus=k7\nm2 Measurement \"Body temperature\" hasCode=<https://loinc.org/8310-5>; hasMeasuredDate=2019-07-08T15:30:59+02:00; hasQuantityValue=37.063; hasUnit=k8\np1 Person \"Dr. V\u00edctor493 Ch\u00e1vez927\"",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Body_temperature_measurement_ba970d45 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2019-07-08T15:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;\n    chr:hasResult ex:measurement_Body_temperature_bb245fc0 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurement_Body_temperature_bb245fc0 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-07-08T15:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.063\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_b876d74d .\n\n",
+   "level": 2,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\n=================================================================\n\nPatient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)\n\nOn 2019-07-08T15:30:59+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 37.063 Cel. The measurement process was recorded with status \"completed\".\n\nDr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2019-07-08T15:30:59+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-07-08T15:30:59+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Harvey63 Napoleon578 Homenick806\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "cp1 CarePlan \"A care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\" hasMedicalProcedure=k4",
+   "scope_dropped": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_A_care_plan_was_established_that_refers__c4fd258c a chr:CarePlan ;\n    rdfs:label \"A care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_58c57d01 .\n",
+   "level": 3,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\n=================================================================\n\nPatient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)\n\nOn 2019-07-08T15:30:59+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 37.063 Cel. The measurement process was recorded with status \"completed\".\n\nDr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2019-07-08T15:30:59+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-07-08T15:30:59+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p2 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"evaluation\", k6 \"Body temperature measurement\"\n- p3 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"evaluation\", k6 \"Body temperature measurement\"\n- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Harvey63 Napoleon578 Homenick806\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person.\n- p2: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.\n- p3: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Harvey63 Napoleon578 Homenick806\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Harvey63 Napoleon578 Homenick806\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "v1 ClinicalVisit \"Encounter for symptom (procedure)\" hasCareProvider=p1; hasCareUnit=k1; hasDate=2019-07-08T15:30:59+02:00; hasPatient=k7; hasProcedure=k4; hasProcedure=k6\np1 Person \"Dr. V\u00edctor493 Ch\u00e1vez927\"",
+   "scope_dropped": 5,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_Encounter_for_symptom_procedure_50f4a857 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for symptom (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;\n    chr:hasCareUnit ex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f ;\n    chr:hasDate \"2019-07-08T15:30:59+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasProcedure ex:evaluationprocess_evaluation_58c57d01,\n        ex:measurementprocess_Body_temperature_measurement_ba970d45 .\n\n",
+   "level": 3,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-07-08T15:30:59+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 21,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 5653,
+   "completion_tokens": 1936,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 21,
+   "prompt_tokens": 43631,
+   "completion_tokens": 3331,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 19,
+   "prompt_tokens": 37978,
+   "completion_tokens": 1395,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

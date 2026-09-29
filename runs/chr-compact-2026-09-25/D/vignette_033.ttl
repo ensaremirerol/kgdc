@@ -1,0 +1,84 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_follow-up_monitoring_and_routine_review__708109f8 a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_d1eab388 .
+
+ex:clinicalvisit_Emergency_room_admission_d48c88b3 a chr:ClinicalVisit ;
+    rdfs:label "Emergency room admission" ;
+    chr:hasCareProvider ex:person_Dr_Jacque955_Streich926_d1e2f3g4 ;
+    chr:hasCareUnit ex:careunit_ACCLAIM_HOME_HEALTH_CARE_INC_d5ce86c0 ;
+    chr:hasDate "2022-07-21T19:21:20+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasProcedure ex:evaluationprocess_evaluation_2022eec0,
+        ex:evaluationprocess_evaluation_d1eab388,
+        ex:measurementprocess_DXA_Radius_and_Ulna_T-score_Bone_density_a15556bd .
+
+ex:careunit_ACCLAIM_HOME_HEALTH_CARE_INC_d5ce86c0 a chr:CareUnit ;
+    rdfs:label "ACCLAIM HOME HEALTH CARE, INC" .
+
+ex:clinicalcondition_Fracture_of_bone_disorder_1a9ded1b a chr:ClinicalCondition ;
+    rdfs:label "Fracture of bone (disorder)" ;
+    chr:hasCode <http://snomed.info/id/125605004> ;
+    chr:hasRecordDate "2022-07-21T19:21:20+02:00"^^xsd:dateTime .
+
+ex:clinicalcondition_Fracture_subluxation_of_wrist_disorder_cc218fb1 a chr:ClinicalCondition ;
+    rdfs:label "Fracture subluxation of wrist (disorder)" ;
+    chr:hasCode <http://snomed.info/id/263102004> ;
+    chr:hasRecordDate "2022-07-21T19:21:20+02:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Fracture_of_bone_disorder_20cd8c31 a chr:DiagnosticStatement ;
+    rdfs:label "Fracture of bone (disorder)" ;
+    chr:hasCode <http://snomed.info/id/125605004> .
+
+ex:diagnosticstatement_Fracture_subluxation_of_wrist_disorder_b6e812e6 a chr:DiagnosticStatement ;
+    rdfs:label "Fracture subluxation of wrist (disorder)" ;
+    chr:hasCode <http://snomed.info/id/263102004> .
+
+ex:evaluationprocess_evaluation_2022eec0 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Fracture_subluxation_of_wrist_disorder_cc218fb1 ;
+    chr:hasObservation ex:diagnosticstatement_Fracture_subluxation_of_wrist_disorder_b6e812e6 ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2022-07-21T19:21:20+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Jacque955_Streich926_d1e2f3g4 .
+
+ex:measurement_DXA_Radius_and_Ulna_T-score_Bone_density_ab91511f a chr:Measurement ;
+    rdfs:label "DXA Radius and Ulna [T-score] Bone density" ;
+    chr:hasCode <https://loinc.org/38265-5> ;
+    chr:hasMeasuredDate "2022-07-21T20:00:00+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.086642"^^xsd:float ;
+    chr:hasUnit ex:unit_T-score_91b511f3 .
+
+ex:measurementprocess_DXA_Radius_and_Ulna_T-score_Bone_density_a15556bd a chr:MeasurementProcess ;
+    rdfs:label "DXA Radius and Ulna [T-score] Bone density" ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2022-07-21T20:00:00+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Jacque955_Streich926_d1e2f3g4 ;
+    chr:hasResult ex:measurement_DXA_Radius_and_Ulna_T-score_Bone_density_ab91511f ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_T-score_91b511f3 a chr:Unit ;
+    rdfs:label "{T-score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblT-scorecbr> .
+
+ex:evaluationprocess_evaluation_d1eab388 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Fracture_of_bone_disorder_1a9ded1b ;
+    chr:hasObservation ex:diagnosticstatement_Fracture_of_bone_disorder_20cd8c31 ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2022-07-21T19:21:20+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Jacque955_Streich926_d1e2f3g4 .
+
+ex:person_Casey401_Elijah719_Parker433_8f53547d a chr:Person ;
+    rdfs:label "Casey401 Elijah719 Parker433" .
+
+ex:person_Dr_Jacque955_Streich926_d1e2f3g4 a chr:Person ;
+    rdfs:label "Dr. Jacque955 Streich926" .
+

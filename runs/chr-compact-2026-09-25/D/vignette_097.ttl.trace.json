@@ -1,0 +1,487 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__462c68c4 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_4c4d8891 .\n\nex:clinicalvisit_Encounter_for_check_up_procedure_04b855c5 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for check up (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;\n    chr:hasCareUnit ex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f ;\n    chr:hasDate \"2019-04-25T21:11:55+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasProcedure ex:evaluationprocess_evaluated_the_patient_4c4d8891,\n        ex:measurementprocess_Hemoglobin_gastrointestinal_lower_Presen_4185bc8e,\n        ex:measurementprocess_Polyp_size_greatest_dimension_657a9f39 .\n\nex:anatomicalstructure_colon_276efd85 a chr:AnatomicalStructure ;\n    rdfs:label \"colon\" .\n\nex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f a chr:CareUnit ;\n    rdfs:label \"4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\" .\n\nex:clinicalcondition_Polyp_of_colon_disorder_0b524f2d a chr:ClinicalCondition ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> ;\n    chr:hasLocatedIn ex:anatomicalstructure_colon_276efd85 ;\n    chr:hasRecordDate \"2019-04-25T21:49:47+02:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Polyp_of_colon_disorder_b28ad383 a chr:DiagnosticStatement ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> .\n\nex:measurement_Hemoglobin_gastrointestinal_lower_Presen_daae1c7e a chr:Measurement ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" ;\n    chr:hasCode <https://loinc.org/57905-2> ;\n    chr:hasMeasuredDate \"2019-04-25T21:49:47+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"20.354\"^^xsd:float ;\n    chr:hasUnit ex:unit_ng_mL_46667ecc .\n\nex:measurement_Polyp_size_greatest_dimension_8f20a805 a chr:Measurement ;\n    rdfs:label \"Polyp size greatest dimension\" ;\n    chr:hasCode <https://loinc.org/33756-8> ;\n    chr:hasMeasuredDate \"2019-04-25T21:49:47+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"5.8247\"^^xsd:float ;\n    chr:hasUnit ex:unit_mm_36a823ca .\n\nex:measurementprocess_Hemoglobin_gastrointestinal_lower_Presen_4185bc8e a chr:MeasurementProcess ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2019-04-25T21:49:47+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;\n    chr:hasResult ex:measurement_Hemoglobin_gastrointestinal_lower_Presen_daae1c7e ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Polyp_size_greatest_dimension_657a9f39 a chr:MeasurementProcess ;\n    rdfs:label \"Polyp size greatest dimension\" ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2019-04-25T21:49:47+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;\n    chr:hasResult ex:measurement_Polyp_size_greatest_dimension_8f20a805 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:unit_mm_36a823ca a chr:Unit ;\n    rdfs:label \"mm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mm> .\n\nex:unit_ng_mL_46667ecc a chr:Unit ;\n    rdfs:label \"ng/mL\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ngpermL> .\n\nex:evaluationprocess_evaluated_the_patient_4c4d8891 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Polyp_of_colon_disorder_0b524f2d ;\n    chr:hasObservation ex:diagnosticstatement_Polyp_of_colon_disorder_b28ad383 ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2019-04-25T21:49:47+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 a chr:Person ;\n    rdfs:label \"Dr. V\u00edctor493 Ch\u00e1vez927\" .\n\nex:person_Harvey63_Napoleon578_Homenick806_7b803456 a chr:Person ;\n    rdfs:label \"Harvey63 Napoleon578 Homenick806\" .\n\n",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for check up (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f a chr:CareUnit ;\n    rdfs:label \"4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2019-04-25T21:49:47+02:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2019-04-25T21:49:47+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cc1 ClinicalCondition \"Polyp of colon (disorder)\" hasCode=http://snomed.info/id/68496003; hasRecordDate=2019-04-25T21:49:47+02:00; hasLocatedIn=as1\nas1 AnatomicalStructure \"colon\"\n# UNRESOLVED: hasCode \u2014 not stated in the text for AnatomicalStructure\n# UNRESOLVED: hasSeverity \u2014 not stated in the text for ClinicalCondition",
+   "unresolved": [
+    "UNRESOLVED: hasCode \u2014 not stated in the text for AnatomicalStructure",
+    "UNRESOLVED: hasSeverity \u2014 not stated in the text for ClinicalCondition"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalcondition_Polyp_of_colon_disorder_0b524f2d a chr:ClinicalCondition ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> ;\n    chr:hasLocatedIn ex:anatomicalstructure_colon_276efd85 ;\n    chr:hasRecordDate \"2019-04-25T21:49:47+02:00\"^^xsd:dateTime .\n\nex:anatomicalstructure_colon_276efd85 a chr:AnatomicalStructure ;\n    rdfs:label \"colon\" .\n\n\n# UNRESOLVED: hasCode \u2014 not stated in the text for AnatomicalStructure\n# UNRESOLVED: hasSeverity \u2014 not stated in the text for ClinicalCondition\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2019-04-25T21:49:47+02:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2019-04-25T21:49:47+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Polyp of colon (disorder)\" hasCode=<http://snomed.info/id/68496003>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Polyp_of_colon_disorder_b28ad383 a chr:DiagnosticStatement ;\n    rdfs:label \"Polyp of colon (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/68496003> .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for check up (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Harvey63 Napoleon578 Homenick806\"\nd1 Person \"Dr. V\u00edctor493 Ch\u00e1vez927\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 a chr:Person ;\n    rdfs:label \"Dr. V\u00edctor493 Ch\u00e1vez927\" .\n\nex:person_Harvey63_Napoleon578_Homenick806_7b803456 a chr:Person ;\n    rdfs:label \"Harvey63 Napoleon578 Homenick806\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2019-04-25T21:49:47+02:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 5.8247 mm. The measurement process was recorded with status \"completed\".\n\nOn 2019-04-25T21:49:47+02:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 20.354 ng/mL. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ps1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2019-04-25T21:49:47+02:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 5.8247 mm. The measurement process was recorded with status \"completed\".\n\nOn 2019-04-25T21:49:47+02:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 20.354 ng/mL. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "u1 Unit \"mm\" hasCode=https://biomedit.ch/rdf/sphn-resource/ucum/mm\nu2 Unit \"ng/mL\" hasCode=https://biomedit.ch/rdf/sphn-resource/ucum/ngpermL",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_mm_36a823ca a chr:Unit ;\n    rdfs:label \"mm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mm> .\n\nex:unit_ng_mL_46667ecc a chr:Unit ;\n    rdfs:label \"ng/mL\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ngpermL> .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2019-04-25T21:49:47+02:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2019-04-25T21:49:47+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ep1 EvaluationProcess \"evaluated the patient\" hasPatient=k6; hasPerformedDate=2019-04-25T21:49:47+02:00; hasPerformer=k5; hasCondition=k3; hasObservation=k4",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_evaluated_the_patient_4c4d8891 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Polyp_of_colon_disorder_0b524f2d ;\n    chr:hasObservation ex:diagnosticstatement_Polyp_of_colon_disorder_b28ad383 ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2019-04-25T21:49:47+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 .\n",
+   "level": 1,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2019-04-25T21:49:47+02:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 5.8247 mm. The measurement process was recorded with status \"completed\".\n\nOn 2019-04-25T21:49:47+02:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 20.354 ng/mL. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 Measurement \"Polyp size greatest dimension\" hasCode=<https://loinc.org/33756-8>; hasMeasuredDate=2019-04-25T21:49:47+02:00; hasQuantityValue=5.8247; hasUnit=k8\nm2 Measurement \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" hasCode=<https://loinc.org/57905-2>; hasMeasuredDate=2019-04-25T21:49:47+02:00; hasQuantityValue=20.354; hasUnit=k9",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Hemoglobin_gastrointestinal_lower_Presen_daae1c7e a chr:Measurement ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" ;\n    chr:hasCode <https://loinc.org/57905-2> ;\n    chr:hasMeasuredDate \"2019-04-25T21:49:47+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"20.354\"^^xsd:float ;\n    chr:hasUnit ex:unit_ng_mL_46667ecc .\n\nex:measurement_Polyp_size_greatest_dimension_8f20a805 a chr:Measurement ;\n    rdfs:label \"Polyp size greatest dimension\" ;\n    chr:hasCode <https://loinc.org/33756-8> ;\n    chr:hasMeasuredDate \"2019-04-25T21:49:47+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"5.8247\"^^xsd:float ;\n    chr:hasUnit ex:unit_mm_36a823ca .\n",
+   "level": 1,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2019-04-25T21:49:47+02:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 5.8247 mm. The measurement process was recorded with status \"completed\".\n\nOn 2019-04-25T21:49:47+02:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 20.354 ng/mL. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 MeasurementProcess \"Polyp size greatest dimension\" hasPerformedDate=2019-04-25T21:49:47+02:00; hasPatient=k9; hasPerformer=k8; hasResult=k7; hasStatus=k10\nk7 Measurement \"Polyp size greatest dimension\" hasMeasuredDate=2019-04-25T21:49:47+02:00; hasQuantityValue=5.8247; hasUnit=k11; hasCode=<https://loinc.org/33756-8>\nm2 MeasurementProcess \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" hasPerformedDate=2019-04-25T21:49:47+02:00; hasPatient=k9; hasPerformer=k8; hasResult=k6; hasStatus=k10\nk6 Measurement \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" hasMeasuredDate=2019-04-25T21:49:47+02:00; hasQuantityValue=20.354; hasUnit=k12; hasCode=<https://loinc.org/57905-2>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Hemoglobin_gastrointestinal_lower_Presen_4185bc8e a chr:MeasurementProcess ;\n    rdfs:label \"Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen\" ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2019-04-25T21:49:47+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;\n    chr:hasResult ex:measurement_Hemoglobin_gastrointestinal_lower_Presen_daae1c7e ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Polyp_size_greatest_dimension_657a9f39 a chr:MeasurementProcess ;\n    rdfs:label \"Polyp size greatest dimension\" ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2019-04-25T21:49:47+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;\n    chr:hasResult ex:measurement_Polyp_size_greatest_dimension_8f20a805 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n",
+   "level": 2,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\n=================================================================\n\nPatient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for check up (procedure)\n\nOn 2019-04-25T21:49:47+02:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 5.8247 mm. The measurement process was recorded with status \"completed\".\n\nOn 2019-04-25T21:49:47+02:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 20.354 ng/mL. The measurement process was recorded with status \"completed\".\n\nDr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2019-04-25T21:49:47+02:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2019-04-25T21:49:47+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cp1 CarePlan \"follow-up monitoring and routine review consistent with the diagnosis\" hasMedicalProcedure=k5",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__462c68c4 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_4c4d8891 .\n",
+   "level": 3,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\n=================================================================\n\nPatient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for check up (procedure)\n\nOn 2019-04-25T21:49:47+02:00, a Polyp size greatest dimension (LOINC: 33756-8) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 5.8247 mm. The measurement process was recorded with status \"completed\".\n\nOn 2019-04-25T21:49:47+02:00, a Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen (LOINC: 57905-2) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 20.354 ng/mL. The measurement process was recorded with status \"completed\".\n\nDr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2019-04-25T21:49:47+02:00. The evaluation produced a diagnostic statement of Polyp of colon (disorder) (SNOMED: 68496003). The condition was recorded on 2019-04-25T21:49:47+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "v1 ClinicalVisit \"Encounter for check up (procedure)\" hasCareProvider=k10; hasCareUnit=k2; hasDate=2019-04-25T21:11:55+02:00; hasPatient=k11; hasProcedure=k8; hasProcedure=k9; hasProcedure=k5",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_Encounter_for_check_up_procedure_04b855c5 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for check up (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;\n    chr:hasCareUnit ex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f ;\n    chr:hasDate \"2019-04-25T21:11:55+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasProcedure ex:evaluationprocess_evaluated_the_patient_4c4d8891,\n        ex:measurementprocess_Hemoglobin_gastrointestinal_lower_Presen_4185bc8e,\n        ex:measurementprocess_Polyp_size_greatest_dimension_657a9f39 .\n",
+   "level": 3,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2019-04-25T21:11:55+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 13,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 6605,
+   "completion_tokens": 2658,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 13,
+   "prompt_tokens": 29356,
+   "completion_tokens": 3591,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 11,
+   "prompt_tokens": 22751,
+   "completion_tokens": 933,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

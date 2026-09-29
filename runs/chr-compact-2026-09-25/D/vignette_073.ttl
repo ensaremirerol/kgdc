@@ -1,0 +1,216 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_follow-up_monitoring_and_routine_review__ca90db41 a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluationprocess_Evaluation_1d45893a .
+
+ex:clinicalvisit_Well_child_visit_d0d257b8 a chr:ClinicalVisit ;
+    rdfs:label "Well child visit" ;
+    chr:hasCareProvider ex:person_Dr_Cari853_Kohler843_11cc2708 ;
+    chr:hasCareUnit ex:careunit_DR_HE_S_PRIMARY_CARE_FOR_ADULTS_INC_e62be304 ;
+    chr:hasDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;
+    chr:hasProcedure ex:evaluationprocess_Evaluation_1d45893a,
+        ex:evaluationprocess_Evaluation_ee7d2805,
+        ex:measurementprocess_Body_Height_measurement_58adb44f,
+        ex:measurementprocess_Body_Weight_measurement_b4052fa6,
+        ex:measurementprocess_Body_mass_index_BMI_Percentile_Per_age_a_f128d7cc,
+        ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_8552a646,
+        ex:measurementprocess_Heart_rate_measurement_9146e10c,
+        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_583b3fa0,
+        ex:measurementprocess_Patient_Health_Questionnaire-9_Modified__6a87a079,
+        ex:measurementprocess_Respiratory_rate_measurement_5243fc47 .
+
+ex:careunit_DR_HE_S_PRIMARY_CARE_FOR_ADULTS_INC_e62be304 a chr:CareUnit ;
+    rdfs:label "DR. HE'S PRIMARY CARE FOR ADULTS INC" .
+
+ex:clinicalcondition_Gingivitis_disorder_10e60aaf a chr:ClinicalCondition ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> ;
+    chr:hasRecordDate "2025-11-25T04:57:57+01:00"^^xsd:dateTime .
+
+ex:clinicalcondition_Medication_review_due_situation_5da0483f a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Gingivitis_disorder_5fe13758 a chr:DiagnosticStatement ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> .
+
+ex:diagnosticstatement_Medication_review_due_situation_9b9831fe a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:evaluationprocess_Evaluation_ee7d2805 a chr:EvaluationProcess ;
+    rdfs:label "Evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Gingivitis_disorder_10e60aaf ;
+    chr:hasObservation ex:diagnosticstatement_Gingivitis_disorder_5fe13758 ;
+    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;
+    chr:hasPerformedDate "2025-11-25T04:57:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 .
+
+ex:measurement_Body_Height_14444c0a a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "162.9"^^xsd:float ;
+    chr:hasUnit ex:unit_cm_bfcc7879 .
+
+ex:measurement_Body_Weight_e9417aac a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "65.1"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_5c233fc2 .
+
+ex:measurement_Body_mass_index_BMI_Percentile_Per_age_a_d85941d0 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Percentile] Per age and sex" ;
+    chr:hasCode <https://loinc.org/59576-9> ;
+    chr:hasMeasuredDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "91.807"^^xsd:float ;
+    chr:hasUnit ex:unit_x_5f053d39 .
+
+ex:measurement_Body_mass_index_BMI_Ratio_a69e58ef a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "24.55"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_m2_e4e558a3 .
+
+ex:measurement_Heart_rate_b44cc5d5 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "72.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_de6ee13d a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Patient_Health_Questionnaire-9_Modified__58f6b30a a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen]" ;
+    chr:hasCode <https://loinc.org/89204-2> ;
+    chr:hasMeasuredDate "2025-11-25T04:57:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Respiratory_rate_1ddbe6eb a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "13.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurementprocess_Body_Height_measurement_58adb44f a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;
+    chr:hasPerformedDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;
+    chr:hasResult ex:measurement_Body_Height_14444c0a ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_Weight_measurement_b4052fa6 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;
+    chr:hasPerformedDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;
+    chr:hasResult ex:measurement_Body_Weight_e9417aac ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_mass_index_BMI_Percentile_Per_age_a_f128d7cc a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Percentile] Per age and sex measurement" ;
+    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;
+    chr:hasPerformedDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;
+    chr:hasResult ex:measurement_Body_mass_index_BMI_Percentile_Per_age_a_d85941d0 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_8552a646 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;
+    chr:hasPerformedDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;
+    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_a69e58ef ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Heart_rate_measurement_9146e10c a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;
+    chr:hasPerformedDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;
+    chr:hasResult ex:measurement_Heart_rate_b44cc5d5 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_583b3fa0 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;
+    chr:hasPerformedDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;
+    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_de6ee13d ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Patient_Health_Questionnaire-9_Modified__6a87a079 a chr:MeasurementProcess ;
+    rdfs:label "Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] measurement" ;
+    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;
+    chr:hasPerformedDate "2025-11-25T04:57:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;
+    chr:hasResult ex:measurement_Patient_Health_Questionnaire-9_Modified__58f6b30a ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Respiratory_rate_measurement_5243fc47 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;
+    chr:hasPerformedDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;
+    chr:hasResult ex:measurement_Respiratory_rate_1ddbe6eb ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:unit_cm_bfcc7879 a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg_5c233fc2 a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kg_m2_e4e558a3 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_x_5f053d39 a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:evaluationprocess_Evaluation_1d45893a a chr:EvaluationProcess ;
+    rdfs:label "Evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Medication_review_due_situation_5da0483f ;
+    chr:hasObservation ex:diagnosticstatement_Medication_review_due_situation_9b9831fe ;
+    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;
+    chr:hasPerformedDate "2025-11-25T04:20:29+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 .
+
+ex:unit_min_753e4226 a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_score_0399f823 a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 a chr:Person ;
+    rdfs:label "Dolores502 Marisol435 Nevárez403" .
+
+ex:person_Dr_Cari853_Kohler843_11cc2708 a chr:Person ;
+    rdfs:label "Dr. Cari853 Kohler843" .
+

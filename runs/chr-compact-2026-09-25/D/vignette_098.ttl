@@ -1,0 +1,66 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_A_care_plan_was_established_that_refers__c4fd258c a chr:CarePlan ;
+    rdfs:label "A care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis." ;
+    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_58c57d01 .
+
+ex:clinicalvisit_Encounter_for_symptom_procedure_50f4a857 a chr:ClinicalVisit ;
+    rdfs:label "Encounter for symptom (procedure)" ;
+    chr:hasCareProvider ex:person_Dr_Víctor493_Chávez927 ;
+    chr:hasCareUnit ex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f ;
+    chr:hasDate "2019-07-08T15:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasProcedure ex:evaluationprocess_evaluation_58c57d01,
+        ex:measurementprocess_Body_temperature_measurement_ba970d45 .
+
+ex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f a chr:CareUnit ;
+    rdfs:label "4499 ACUSHNET AVENUE OPERATING COMPANY, LLC" .
+
+ex:clinicalcondition_Acute_viral_pharyngitis_disorder_f4b04a65 a chr:ClinicalCondition ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> ;
+    chr:hasRecordDate "2019-07-08T15:30:59+02:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 a chr:DiagnosticStatement ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> .
+
+ex:measurement_Body_temperature_bb245fc0 a chr:Measurement ;
+    rdfs:label "Body temperature" ;
+    chr:hasCode <https://loinc.org/8310-5> ;
+    chr:hasMeasuredDate "2019-07-08T15:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "37.063"^^xsd:float ;
+    chr:hasUnit ex:unit_Cel_b876d74d .
+
+ex:measurementprocess_Body_temperature_measurement_ba970d45 a chr:MeasurementProcess ;
+    rdfs:label "Body temperature measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2019-07-08T15:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Víctor493_Chávez927 ;
+    chr:hasResult ex:measurement_Body_temperature_bb245fc0 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_Cel_b876d74d a chr:Unit ;
+    rdfs:label "Cel" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .
+
+ex:evaluationprocess_evaluation_58c57d01 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Acute_viral_pharyngitis_disorder_f4b04a65 ;
+    chr:hasObservation ex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2019-07-08T15:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Víctor493_Chávez927 .
+
+ex:person_Dr_Víctor493_Chávez927 a chr:Person ;
+    rdfs:label "Dr. Víctor493 Chávez927" .
+
+ex:person_Harvey63_Napoleon578_Homenick806_7b803456 a chr:Person ;
+    rdfs:label "Harvey63 Napoleon578 Homenick806" .
+

@@ -1,0 +1,463 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__3a85e56e a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_73dccabd .\n\nex:clinicalvisit_General_examination_of_patient_ec39a811 a chr:ClinicalVisit ;\n    rdfs:label \"General examination of patient\" ;\n    chr:hasCareProvider ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasCareUnit ex:careunit_JEWISH_FAMILY_CHILDREN_S_SERVICE_cabd2654 ;\n    chr:hasDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasProcedure ex:evaluationprocess_evaluated_the_patient_73dccabd,\n        ex:evaluationprocess_evaluated_the_patient_9b39f235,\n        ex:measurementprocess_Body_Height_measurement_09416aa0,\n        ex:measurementprocess_Body_Weight_measurement_6846cd07,\n        ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_38ab4f5c,\n        ex:measurementprocess_Cholesterol_Mass_volume_in_Serum_or_Plas_69f9e184,\n        ex:measurementprocess_Cholesterol_in_HDL_Mass_volume_in_Serum__f61b482e,\n        ex:measurementprocess_Cholesterol_in_LDL_Mass_volume_in_Serum__ad2fc40a,\n        ex:measurementprocess_Fall_risk_total_Morse_Fall_Scale_measure_029e2d21,\n        ex:measurementprocess_Heart_rate_measurement_258cfebe,\n        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_c14dbd7c,\n        ex:measurementprocess_Respiratory_rate_measurement_65fe0c65,\n        ex:measurementprocess_Total_score_HARK_measurement_402fb03c,\n        ex:measurementprocess_Triglyceride_Mass_volume_in_Serum_or_Pla_3490c128 .\n\nex:severity_Pain_severity_-_0-10_verbal_numeric_rati_88c27837 a chr:Severity ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> .\n\nex:careunit_JEWISH_FAMILY_CHILDREN_S_SERVICE_cabd2654 a chr:CareUnit ;\n    rdfs:label \"JEWISH FAMILY & CHILDREN'S SERVICE\" .\n\nex:clinicalcondition_Gingivitis_disorder_188848c9 a chr:ClinicalCondition ;\n    rdfs:label \"Gingivitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/66383009> ;\n    chr:hasRecordDate \"2016-09-22T20:42:29+02:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Unemployed_finding_1de44aea a chr:ClinicalCondition ;\n    rdfs:label \"Unemployed (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73438004> ;\n    chr:hasRecordDate \"2016-09-22T19:42:34+02:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Gingivitis_disorder_5fe13758 a chr:DiagnosticStatement ;\n    rdfs:label \"Gingivitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/66383009> .\n\nex:diagnosticstatement_Unemployed_finding_4cea7c14 a chr:DiagnosticStatement ;\n    rdfs:label \"Unemployed (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73438004> .\n\nex:evaluationprocess_evaluated_the_patient_9b39f235 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Unemployed_finding_1de44aea ;\n    chr:hasObservation ex:diagnosticstatement_Unemployed_finding_4cea7c14 ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T19:42:34+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 .\n\nex:measurement_Body_Height_b7f4d7d4 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"172.7\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm_bfcc7879 .\n\nex:measurement_Body_Weight_52058fbe a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"82.2\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_5c233fc2 .\n\nex:measurement_Body_mass_index_BMI_Ratio_d864be70 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"27.56\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_m2_e4e558a3 .\n\nex:measurement_Cholesterol_Mass_volume_in_Serum_or_Plas_cbabf412 a chr:Measurement ;\n    rdfs:label \"Cholesterol [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2093-3> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"159.14\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurement_Cholesterol_in_HDL_Mass_volume_in_Serum__ab0be19f a chr:Measurement ;\n    rdfs:label \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2085-9> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"52.85\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurement_Cholesterol_in_LDL_Mass_volume_in_Serum__a8e97192 a chr:Measurement ;\n    rdfs:label \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" ;\n    chr:hasCode <https://loinc.org/18262-6> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.72\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurement_Fall_risk_total_Morse_Fall_Scale_bacf9108 a chr:Measurement ;\n    rdfs:label \"Fall risk total [Morse Fall Scale]\" ;\n    chr:hasCode <https://loinc.org/59460-6> ;\n    chr:hasMeasuredDate \"2016-09-22T20:08:29+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"103.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_x_2b284c9f .\n\nex:measurement_Heart_rate_e205ee76 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"95.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_3c5f735b a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Respiratory_rate_81e2bd21 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"12.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Total_score_HARK_0c770d6d a chr:Measurement ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasCode <https://loinc.org/76504-0> ;\n    chr:hasMeasuredDate \"2016-09-22T20:42:29+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Triglyceride_Mass_volume_in_Serum_or_Pla_4ccb9bf7 a chr:Measurement ;\n    rdfs:label \"Triglyceride [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2571-8> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"122.84\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurementprocess_Body_Height_measurement_09416aa0 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_Body_Height_b7f4d7d4 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_Weight_measurement_6846cd07 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_Body_Weight_52058fbe ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_38ab4f5c a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_d864be70 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Cholesterol_Mass_volume_in_Serum_or_Plas_69f9e184 a chr:MeasurementProcess ;\n    rdfs:label \"Cholesterol [Mass/volume] in Serum or Plasma measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_Cholesterol_Mass_volume_in_Serum_or_Plas_cbabf412 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Cholesterol_in_HDL_Mass_volume_in_Serum__f61b482e a chr:MeasurementProcess ;\n    rdfs:label \"Cholesterol in HDL [Mass/volume] in Serum or Plasma measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_Cholesterol_in_HDL_Mass_volume_in_Serum__ab0be19f ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Cholesterol_in_LDL_Mass_volume_in_Serum__ad2fc40a a chr:MeasurementProcess ;\n    rdfs:label \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_Cholesterol_in_LDL_Mass_volume_in_Serum__a8e97192 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Fall_risk_total_Morse_Fall_Scale_measure_029e2d21 a chr:MeasurementProcess ;\n    rdfs:label \"Fall risk total [Morse Fall Scale] measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T20:08:29+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_Fall_risk_total_Morse_Fall_Scale_bacf9108 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Heart_rate_measurement_258cfebe a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_Heart_rate_e205ee76 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_c14dbd7c a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_3c5f735b ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Respiratory_rate_measurement_65fe0c65 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_Respiratory_rate_81e2bd21 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Total_score_HARK_measurement_402fb03c a chr:MeasurementProcess ;\n    rdfs:label \"Total score [HARK] measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T20:42:29+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_Total_score_HARK_0c770d6d ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Triglyceride_Mass_volume_in_Serum_or_Pla_3490c128 a chr:MeasurementProcess ;\n    rdfs:label \"Triglyceride [Mass/volume] in Serum or Plasma measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 ;\n    chr:hasResult ex:measurement_Triglyceride_Mass_volume_in_Serum_or_Pla_4ccb9bf7 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:unit_cm_bfcc7879 a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_kg_5c233fc2 a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kg_m2_e4e558a3 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_x_2b284c9f a chr:Unit ;\n    rdfs:label \"{#}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblcbr> .\n\nex:evaluationprocess_evaluated_the_patient_73dccabd a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Gingivitis_disorder_188848c9 ;\n    chr:hasObservation ex:diagnosticstatement_Gingivitis_disorder_5fe13758 ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T20:42:29+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819 .\n\nex:unit_min_753e4226 a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:unit_score_0399f823 a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:unit_mg_dL_e016cb17 a chr:Unit ;\n    rdfs:label \"mg/dL\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:person_Casey401_Elijah719_Parker433_8f53547d a chr:Person ;\n    rdfs:label \"Casey401 Elijah719 Parker433\" .\n\nex:person_Dr_Eldridge510_Marquardt819 a chr:Person ;\n    rdfs:label \"Dr. Eldridge510 Marquardt819\" .\n\n",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"JEWISH FAMILY & CHILDREN'S SERVICE\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_JEWISH_FAMILY_CHILDREN_S_SERVICE_cabd2654 a chr:CareUnit ;\n    rdfs:label \"JEWISH FAMILY & CHILDREN'S SERVICE\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Eldridge510 Marquardt819 evaluated the patient on 2016-09-22T19:42:34+02:00. The evaluation produced a diagnostic statement of Unemployed (finding) (SNOMED: 73438004). The condition was recorded on 2016-09-22T19:42:34+02:00.\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2016-09-22T20:42:29+02:00. The evaluation produced a diagnostic statement of Gingivitis (disorder) (SNOMED: 66383009). The condition was recorded on 2016-09-22T20:42:29+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Unemployed (finding)\" hasCode=<http://snomed.info/id/73438004>\nds2 DiagnosticStatement \"Gingivitis (disorder)\" hasCode=<http://snomed.info/id/66383009>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Gingivitis_disorder_5fe13758 a chr:DiagnosticStatement ;\n    rdfs:label \"Gingivitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/66383009> .\n\nex:diagnosticstatement_Unemployed_finding_4cea7c14 a chr:DiagnosticStatement ;\n    rdfs:label \"Unemployed (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73438004> .\n",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2016-09-22T18:59:56+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 172.7 cm. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 82.2 kg. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 27.56 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 95 /min. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 12 /min. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 159.14 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Triglyceride [Mass/volume] in Serum or Plasma (LOINC: 2571-8) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 122.84 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay (LOINC: 18262-6) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 81.72 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Cholesterol in HDL [Mass/volume] in Serum or Plasma (LOINC: 2085-9) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 52.85 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T20:08:29+02:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 103 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T20:42:29+02:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 Measurement \"Body Height\" hasCode=<https://loinc.org/8302-2>; hasMeasuredDate=2016-09-22T18:59:56+02:00; hasQuantityValue=172.7; hasUnit=u1\nu1 Unit \"cm\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/cm>\nm2 Measurement \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasCode=<https://loinc.org/72514-3>; hasMeasuredDate=2016-09-22T18:59:56+02:00; hasQuantityValue=0; hasUnit=u2\nu2 Unit \"{score}\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr>\nm3 Measurement \"Body Weight\" hasCode=<https://loinc.org/29463-7>; hasMeasuredDate=2016-09-22T18:59:56+02:00; hasQuantityValue=82.2; hasUnit=u3\nu3 Unit \"kg\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/kg>\nm4 Measurement \"Body mass index (BMI) [Ratio]\" hasCode=<https://loinc.org/39156-5>; hasMeasuredDate=2016-09-22T18:59:56+02:00; hasQuantityValue=27.56; hasUnit=u4\nu4 Unit \"kg/m2\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2>\nm5 Measurement \"Heart rate\" hasCode=<https://loinc.org/8867-4>; hasMeasuredDate=2016-09-22T18:59:56+02:00; hasQuantityValue=95; hasUnit=u5\nu5 Unit \"/min\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/permin>\nm6 Measurement \"Respiratory rate\" hasCode=<https://loinc.org/9279-1>; hasMeasuredDate=2016-09-22T18:59:56+02:00; hasQuantityValue=12; hasUnit=u5\nm7 Measurement \"Cholesterol [Mass/volume] in Serum or Plasma\" hasCode=<https://loinc.org/2093-3>; hasMeasuredDate=2016-09-22T18:59:56+02:00; hasQuantityValue=159.14; hasUnit=u6\nu6 Unit \"mg/dL\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL>\nm8 Measurement \"Triglyceride [Mass/volume] in Serum or Plasma\" hasCode=<https://loinc.org/2571-8>; hasMeasuredDate=2016-09-22T18:59:56+02:00; hasQuantityValue=122.84; hasUnit=u6\nm9 Measurement \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" hasCode=<https://loinc.org/18262-6>; hasMeasuredDate=2016-09-22T18:59:56+02:00; hasQuantityValue=81.72; hasUnit=u6\nm10 Measurement \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" hasCode=<https://loinc.org/2085-9>; hasMeasuredDate=2016-09-22T18:59:56+02:00; hasQuantityValue=52.85; hasUnit=u6\nm11 Measurement \"Fall risk total [Morse Fall Scale]\" hasCode=<https://loinc.org/59460-6>; hasMeasuredDate=2016-09-22T20:08:29+02:00; hasQuantityValue=103; hasUnit=u7\nu7 Unit \"{#}\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/cblcbr>\nm12 Measurement \"Total score [HARK]\" hasCode=<https://loinc.org/76504-0>; hasMeasuredDate=2016-09-22T20:42:29+02:00; hasQuantityValue=0; hasUnit=u2",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Body_Height_b7f4d7d4 a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"172.7\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm_bfcc7879 .\n\nex:measurement_Body_Weight_52058fbe a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"82.2\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_5c233fc2 .\n\nex:measurement_Body_mass_index_BMI_Ratio_d864be70 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"27.56\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_m2_e4e558a3 .\n\nex:measurement_Cholesterol_Mass_volume_in_Serum_or_Plas_cbabf412 a chr:Measurement ;\n    rdfs:label \"Cholesterol [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2093-3> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"159.14\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurement_Cholesterol_in_HDL_Mass_volume_in_Serum__ab0be19f a chr:Measurement ;\n    rdfs:label \"Cholesterol in HDL [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2085-9> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"52.85\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurement_Cholesterol_in_LDL_Mass_volume_in_Serum__a8e97192 a chr:Measurement ;\n    rdfs:label \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay\" ;\n    chr:hasCode <https://loinc.org/18262-6> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"81.72\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:measurement_Fall_risk_total_Morse_Fall_Scale_bacf9108 a chr:Measurement ;\n    rdfs:label \"Fall risk total [Morse Fall Scale]\" ;\n    chr:hasCode <https://loinc.org/59460-6> ;\n    chr:hasMeasuredDate \"2016-09-22T20:08:29+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"103.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_x_2b284c9f .\n\nex:measurement_Heart_rate_e205ee76 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"95.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_3c5f735b a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Respiratory_rate_81e2bd21 a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"12.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Total_score_HARK_0c770d6d a chr:Measurement ;\n    rdfs:label \"Total score [HARK]\" ;\n    chr:hasCode <https://loinc.org/76504-0> ;\n    chr:hasMeasuredDate \"2016-09-22T20:42:29+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"0.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Triglyceride_Mass_volume_in_Serum_or_Pla_4ccb9bf7 a chr:Measurement ;\n    rdfs:label \"Triglyceride [Mass/volume] in Serum or Plasma\" ;\n    chr:hasCode <https://loinc.org/2571-8> ;\n    chr:hasMeasuredDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"122.84\"^^xsd:float ;\n    chr:hasUnit ex:unit_mg_dL_e016cb17 .\n\nex:unit_cm_bfcc7879 a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_kg_5c233fc2 a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kg_m2_e4e558a3 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_x_2b284c9f a chr:Unit ;\n    rdfs:label \"{#}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblcbr> .\n\nex:unit_min_753e4226 a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:unit_score_0399f823 a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:unit_mg_dL_e016cb17 a chr:Unit ;\n    rdfs:label \"mg/dL\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .\n",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Casey401 Elijah719 Parker433\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Casey401_Elijah719_Parker433_8f53547d a chr:Person ;\n    rdfs:label \"Casey401 Elijah719 Parker433\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Severity",
+   "concepts": [
+    "chr:Severity"
+   ],
+   "text": "On 2016-09-22T18:59:56+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "s1 Severity \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasCode=<https://loinc.org/72514-3>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:severity_Pain_severity_-_0-10_verbal_numeric_rati_88c27837 a chr:Severity ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> .\n",
+   "level": 0,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Eldridge510 Marquardt819 evaluated the patient on 2016-09-22T19:42:34+02:00. The evaluation produced a diagnostic statement of Unemployed (finding) (SNOMED: 73438004). The condition was recorded on 2016-09-22T19:42:34+02:00.\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2016-09-22T20:42:29+02:00. The evaluation produced a diagnostic statement of Gingivitis (disorder) (SNOMED: 66383009). The condition was recorded on 2016-09-22T20:42:29+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cc1 ClinicalCondition \"Unemployed (finding)\" hasCode=<http://snomed.info/id/73438004>; hasRecordDate=2016-09-22T19:42:34+02:00\ncc2 ClinicalCondition \"Gingivitis (disorder)\" hasCode=<http://snomed.info/id/66383009>; hasRecordDate=2016-09-22T20:42:29+02:00",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalcondition_Gingivitis_disorder_188848c9 a chr:ClinicalCondition ;\n    rdfs:label \"Gingivitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/66383009> ;\n    chr:hasRecordDate \"2016-09-22T20:42:29+02:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Unemployed_finding_1de44aea a chr:ClinicalCondition ;\n    rdfs:label \"Unemployed (finding)\" ;\n    chr:hasCode <http://snomed.info/id/73438004> ;\n    chr:hasRecordDate \"2016-09-22T19:42:34+02:00\"^^xsd:dateTime .\n",
+   "level": 1,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2016-09-22T18:59:56+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 172.7 cm. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 82.2 kg. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 27.56 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 95 /min. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 12 /min. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 159.14 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Triglyceride [Mass/volume] in Serum or Plasma (LOINC: 2571-8) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 122.84 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay (LOINC: 18262-6) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 81.72 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Cholesterol in HDL [Mass/volume] in Serum or Plasma (LOINC: 2085-9) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 52.85 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T20:08:29+02:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 103 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T20:42:29+02:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "mp1 MeasurementProcess \"Body Height measurement\" hasPatient=k16; hasPerformedDate=2016-09-22T18:59:56+02:00; hasResult=k4; hasStatus=ps1\nmp2 MeasurementProcess \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" hasPatient=k16; hasPerformedDate=2016-09-22T18:59:56+02:00; hasResult=k12; hasStatus=ps1\nmp3 MeasurementProcess \"Body Weight measurement\" hasPatient=k16; hasPerformedDate=2016-09-22T18:59:56+02:00; hasResult=k5; hasStatus=ps1\nmp4 MeasurementProcess \"Body mass index (BMI) [Ratio] measurement\" hasPatient=k16; hasPerformedDate=2016-09-22T18:59:56+02:00; hasResult=k6; hasStatus=ps1\nmp5 MeasurementProcess \"Heart rate measurement\" hasPatient=k16; hasPerformedDate=2016-09-22T18:59:56+02:00; hasResult=k11; hasStatus=ps1\nmp6 MeasurementProcess \"Respiratory rate measurement\" hasPatient=k16; hasPerformedDate=2016-09-22T18:59:56+02:00; hasResult=k13; hasStatus=ps1\nmp7 MeasurementProcess \"Cholesterol [Mass/volume] in Serum or Plasma measurement\" hasPatient=k16; hasPerformedDate=2016-09-22T18:59:56+02:00; hasResult=k7; hasStatus=ps1\nmp8 MeasurementProcess \"Triglyceride [Mass/volume] in Serum or Plasma measurement\" hasPatient=k16; hasPerformedDate=2016-09-22T18:59:56+02:00; hasResult=k15; hasStatus=ps1\nmp9 MeasurementProcess \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay measurement\" hasPatient=k16; hasPerformedDate=2016-09-22T18:59:56+02:00; hasResult=k9; hasStatus=ps1\nmp10 MeasurementProcess \"Cholesterol in HDL [Mass/volume] in Serum or Plasma measurement\" hasPatient=k16; hasPerformedDate=2016-09-22T18:59:56+02:00; hasResult=k8; hasStatus=ps1\nmp11 MeasurementProcess \"Fall risk total [Morse Fall Scale] measurement\" hasPatient=k16; hasPerformedDate=2016-09-22T20:08:29+02:00; hasResult=k10; hasStatus=ps1\nmp12 MeasurementProcess \"Total score [HARK] measurement\" hasPatient=k16; hasPerformedDate=2016-09-22T20:42:29+02:00; hasResult=k14; hasStatus=ps1\nps1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Body_Height_measurement_09416aa0 a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Body_Height_b7f4d7d4 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_Weight_measurement_6846cd07 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Body_Weight_52058fbe ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_38ab4f5c a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_d864be70 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Cholesterol_Mass_volume_in_Serum_or_Plas_69f9e184 a chr:MeasurementProcess ;\n    rdfs:label \"Cholesterol [Mass/volume] in Serum or Plasma measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Cholesterol_Mass_volume_in_Serum_or_Plas_cbabf412 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Cholesterol_in_HDL_Mass_volume_in_Serum__f61b482e a chr:MeasurementProcess ;\n    rdfs:label \"Cholesterol in HDL [Mass/volume] in Serum or Plasma measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Cholesterol_in_HDL_Mass_volume_in_Serum__ab0be19f ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Cholesterol_in_LDL_Mass_volume_in_Serum__ad2fc40a a chr:MeasurementProcess ;\n    rdfs:label \"Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Cholesterol_in_LDL_Mass_volume_in_Serum__a8e97192 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Fall_risk_total_Morse_Fall_Scale_measure_029e2d21 a chr:MeasurementProcess ;\n    rdfs:label \"Fall risk total [Morse Fall Scale] measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T20:08:29+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Fall_risk_total_Morse_Fall_Scale_bacf9108 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Heart_rate_measurement_258cfebe a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Heart_rate_e205ee76 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_c14dbd7c a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_3c5f735b ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Respiratory_rate_measurement_65fe0c65 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Respiratory_rate_81e2bd21 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Total_score_HARK_measurement_402fb03c a chr:MeasurementProcess ;\n    rdfs:label \"Total score [HARK] measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T20:42:29+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Total_score_HARK_0c770d6d ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Triglyceride_Mass_volume_in_Serum_or_Pla_3490c128 a chr:MeasurementProcess ;\n    rdfs:label \"Triglyceride [Mass/volume] in Serum or Plasma measurement\" ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Triglyceride_Mass_volume_in_Serum_or_Pla_4ccb9bf7 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 1,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Eldridge510 Marquardt819 evaluated the patient on 2016-09-22T19:42:34+02:00. The evaluation produced a diagnostic statement of Unemployed (finding) (SNOMED: 73438004). The condition was recorded on 2016-09-22T19:42:34+02:00.\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2016-09-22T20:42:29+02:00. The evaluation produced a diagnostic statement of Gingivitis (disorder) (SNOMED: 66383009). The condition was recorded on 2016-09-22T20:42:29+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k30 \"Casey401 Elijah719 Parker433\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- dr1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k30 \"Casey401 Elijah719 Parker433\"\n- dr1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- dr1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k30 \"Casey401 Elijah719 Parker433\"\n- dr1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "ep2 EvaluationProcess \"evaluated the patient\" hasCondition=k2; hasObservation=k4; hasPatient=k30; hasPerformedDate=2016-09-22T20:42:29+02:00; hasPerformer=dr1\nep1 EvaluationProcess \"evaluated the patient\" hasCondition=k3; hasObservation=k5; hasPatient=k30; hasPerformedDate=2016-09-22T19:42:34+02:00; hasPerformer=dr1\ndr1 Person \"Dr. Eldridge510 Marquardt819\"\n# UNRESOLVED: dr1 hasPerformer must be a chr:Person \u2014 dr1 is the performer of ep1 and ep2, but the text does not provide a handle for the physician in the KNOWN ENTITIES.\n# Note: The violation dr1 (Person) was removed is fixed by linking to k30 for the patient and declaring dr1 as a Person.\n# Note: The violation dr1: Object of chr:hasPerformer must be a chr:Person is addressed by declaring dr1 as a Person.",
+   "scope_dropped": 3,
+   "unresolved": [
+    "UNRESOLVED: dr1 hasPerformer must be a chr:Person \u2014 dr1 is the performer of ep1 and ep2, but the text does not provide a handle for the physician in the KNOWN ENTITIES."
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_evaluated_the_patient_73dccabd a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Gingivitis_disorder_188848c9 ;\n    chr:hasObservation ex:diagnosticstatement_Gingivitis_disorder_5fe13758 ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T20:42:29+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_0e6b5e91 .\n\nex:evaluationprocess_evaluated_the_patient_9b39f235 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Unemployed_finding_1de44aea ;\n    chr:hasObservation ex:diagnosticstatement_Unemployed_finding_4cea7c14 ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasPerformedDate \"2016-09-22T19:42:34+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_0e6b5e91 .\n\n\n# UNRESOLVED: dr1 hasPerformer must be a chr:Person \u2014 dr1 is the performer of ep1 and ep2, but the text does not provide a handle for the physician in the KNOWN ENTITIES.",
+   "level": 2,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 JEWISH FAMILY & CHILDREN'S SERVICE\n========================================================\n\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)\n\nOn 2016-09-22T18:59:56+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 172.7 cm. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 82.2 kg. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 27.56 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 95 /min. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 12 /min. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 159.14 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Triglyceride [Mass/volume] in Serum or Plasma (LOINC: 2571-8) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 122.84 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay (LOINC: 18262-6) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 81.72 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Cholesterol in HDL [Mass/volume] in Serum or Plasma (LOINC: 2085-9) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 52.85 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T20:08:29+02:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 103 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T20:42:29+02:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2016-09-22T19:42:34+02:00. The evaluation produced a diagnostic statement of Unemployed (finding) (SNOMED: 73438004). The condition was recorded on 2016-09-22T19:42:34+02:00.\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2016-09-22T20:42:29+02:00. The evaluation produced a diagnostic statement of Gingivitis (disorder) (SNOMED: 66383009). The condition was recorded on 2016-09-22T20:42:29+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- ex:person_Dr_Eldridge510_Marquardt819_0e6b5e91: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k32 \"Casey401 Elijah719 Parker433\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "cp1 CarePlan \"follow-up monitoring and routine review consistent with the diagnosis\" hasMedicalProcedure=k6",
+   "scope_dropped": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__3a85e56e a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_73dccabd .\n",
+   "level": 3,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 JEWISH FAMILY & CHILDREN'S SERVICE\n========================================================\n\nPatient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)\n\nOn 2016-09-22T18:59:56+02:00, a Body Height (LOINC: 8302-2) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 172.7 cm. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Body Weight (LOINC: 29463-7) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 82.2 kg. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 27.56 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Heart rate (LOINC: 8867-4) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 95 /min. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 12 /min. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Cholesterol [Mass/volume] in Serum or Plasma (LOINC: 2093-3) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 159.14 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Triglyceride [Mass/volume] in Serum or Plasma (LOINC: 2571-8) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 122.84 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay (LOINC: 18262-6) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 81.72 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T18:59:56+02:00, a Cholesterol in HDL [Mass/volume] in Serum or Plasma (LOINC: 2085-9) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 52.85 mg/dL. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T20:08:29+02:00, a Fall risk total [Morse Fall Scale] (LOINC: 59460-6) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 103 {#}. The measurement process was recorded with status \"completed\".\n\nOn 2016-09-22T20:42:29+02:00, a Total score [HARK] (LOINC: 76504-0) measurement was performed on Casey401 Elijah719 Parker433. The measurement result was 0 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2016-09-22T19:42:34+02:00. The evaluation produced a diagnostic statement of Unemployed (finding) (SNOMED: 73438004). The condition was recorded on 2016-09-22T19:42:34+02:00.\n\nDr. Eldridge510 Marquardt819 evaluated the patient on 2016-09-22T20:42:29+02:00. The evaluation produced a diagnostic statement of Gingivitis (disorder) (SNOMED: 66383009). The condition was recorded on 2016-09-22T20:42:29+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k32 \"Casey401 Elijah719 Parker433\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k32 \"Casey401 Elijah719 Parker433\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "v1 ClinicalVisit \"General examination of patient\" hasCareProvider=p1; hasCareUnit=k1; hasDate=2016-09-22T18:59:56+02:00; hasPatient=k32; hasProcedure=k20; hasProcedure=k21; hasProcedure=k22; hasProcedure=k23; hasProcedure=k24; hasProcedure=k25; hasProcedure=k26; hasProcedure=k27; hasProcedure=k28; hasProcedure=k29; hasProcedure=k30; hasProcedure=k31\np1 Person \"Dr. Eldridge510 Marquardt819\"",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_General_examination_of_patient_ec39a811 a chr:ClinicalVisit ;\n    rdfs:label \"General examination of patient\" ;\n    chr:hasCareProvider ex:person_Dr_Eldridge510_Marquardt819_0e6b5e91 ;\n    chr:hasCareUnit ex:careunit_JEWISH_FAMILY_CHILDREN_S_SERVICE_cabd2654 ;\n    chr:hasDate \"2016-09-22T18:59:56+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;\n    chr:hasProcedure ex:measurementprocess_Body_Height_measurement_09416aa0,\n        ex:measurementprocess_Body_Weight_measurement_6846cd07,\n        ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_38ab4f5c,\n        ex:measurementprocess_Cholesterol_Mass_volume_in_Serum_or_Plas_69f9e184,\n        ex:measurementprocess_Cholesterol_in_HDL_Mass_volume_in_Serum__f61b482e,\n        ex:measurementprocess_Cholesterol_in_LDL_Mass_volume_in_Serum__ad2fc40a,\n        ex:measurementprocess_Fall_risk_total_Morse_Fall_Scale_measure_029e2d21,\n        ex:measurementprocess_Heart_rate_measurement_258cfebe,\n        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_c14dbd7c,\n        ex:measurementprocess_Respiratory_rate_measurement_65fe0c65,\n        ex:measurementprocess_Total_score_HARK_measurement_402fb03c,\n        ex:measurementprocess_Triglyceride_Mass_volume_in_Serum_or_Pla_3490c128 .\n\n",
+   "level": 3,
+   "shared_context": "Patient: Casey401 Elijah719 Parker433 (ID: P-411ed18e)\nDate of visit: 2016-09-22T18:59:56+02:00\nCare unit: JEWISH FAMILY & CHILDREN'S SERVICE\nAttending physician: Dr. Eldridge510 Marquardt819\nEncounter type: General examination of patient (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:Severity"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:EvaluationProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 17,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 12398,
+   "completion_tokens": 8457,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 17,
+   "prompt_tokens": 55085,
+   "completion_tokens": 11618,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 15,
+   "prompt_tokens": 42687,
+   "completion_tokens": 3161,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

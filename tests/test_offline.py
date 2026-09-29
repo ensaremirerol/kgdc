@@ -228,3 +228,39 @@ def test_identical_individuals_merged():
     assert len(list(g.objects(m, URIRef(PFX.split("<")[1].split(">")[0] + "hasQuantityValue")))) == 1
     assert len(list(g.objects(m, RDFS.label))) == 2
     assert pipeline.merge_identical(g) == 0
+
+
+def test_close_open_statements():
+    """`;` followed only by an UNRESOLVED comment, then a new subject or the end, is closed with `.`."""
+    from kgdc.pipeline import close_open_statements
+    ttl = 'ex:a a chr:X ;\n    rdfs:label "a" ;\n    # UNRESOLVED: x\n\nex:b a chr:Y ;\n    # UNRESOLVED: y\n    rdfs:label "b" ;\n    # UNRESOLVED: z'
+    out = close_open_statements(ttl)
+    assert 'rdfs:label "a" .' in out and 'ex:b a chr:Y ;' in out and out.rstrip().endswith("# UNRESOLVED: z")
+    assert 'rdfs:label "b" .' in out
+
+
+def test_with_prefixes_drops_echoed_prompt_labels():
+    """Merge replies sometimes start by repeating the prompt's header lines; only those leading lines go."""
+    import kgdc
+    from rdflib import Graph
+    from kgdc.pipeline import with_prefixes
+    s = kgdc.load("examples/chr/ontology.ttl", "examples/chr/shapes.ttl")
+    reply = 'PREFIXES: chr:, ex: — declared for you\nAllowed classes: chr:Person\n\nex:p a chr:Person ;\n    rdfs:label "Note: kept" .\n'
+    g = Graph().parse(data=with_prefixes(reply, s), format="turtle")
+    assert len(g) == 2 and any("Note: kept" in str(o) for o in g.objects())
+
+
+def test_drop_undeclared_removes_unknown_terms_and_their_node():
+    """A node typed only with an undeclared class goes with all its statements; declared ones stay."""
+    import kgdc
+    from rdflib import Graph
+    from kgdc.pipeline import drop_undeclared, drop_dangling, with_prefixes
+    s = kgdc.load("examples/chr/ontology.ttl", "examples/chr/shapes.ttl")
+    ttl = with_prefixes('ex:p a chr:Person ; rdfs:label "P" .\n'
+                        'ex:e a sulo:Evaluation ; rdfs:label "E" ; chr:hasPatient ex:p .\n'
+                        'ex:v a chr:ClinicalVisit ; chr:hasPatient ex:p ; chr:hasProcedure ex:e ; chr:notAProperty "x" .\n', s)
+    g = Graph().parse(data=ttl, format="turtle")
+    assert drop_undeclared(g, s) == 4          # the 3 statements about ex:e (its type included) + the undeclared property
+    drop_dangling(g, s.prefixes["ex"])          # the visit's link to the removed ex:e
+    subjects = {str(x).rsplit("/", 1)[-1] for x in g.subjects()}
+    assert subjects == {"p", "v"} and len(g) == 4

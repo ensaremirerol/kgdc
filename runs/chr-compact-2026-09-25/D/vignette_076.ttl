@@ -1,0 +1,368 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_Care_plan_b772df58 a chr:CarePlan ;
+    rdfs:label "Care plan" ;
+    chr:hasMedicalProcedure ex:evaluationprocess_Evaluation_04f821ce .
+
+ex:clinicalvisit_Encounter_for_check_up_091f1bee a chr:ClinicalVisit ;
+    rdfs:label "Encounter for check up" ;
+    chr:hasCareProvider ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasCareUnit ex:careunit_ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_B_5492ed90 ;
+    chr:hasDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasProcedure ex:evaluationprocess_Evaluation_04f821ce,
+        ex:evaluationprocess_Evaluation_c77cafde,
+        ex:measurementprocess_Body_Height_4fe256b5,
+        ex:measurementprocess_Body_Weight_d8a31791,
+        ex:measurementprocess_Body_mass_index_BMI_Ratio_fa22672b,
+        ex:measurementprocess_Calcium_Mass_volume_in_Blood_b26be516,
+        ex:measurementprocess_Carbon_dioxide_total_Moles_volume_in_Blo_f4f58bdd,
+        ex:measurementprocess_Chloride_Moles_volume_in_Blood_ff96b80a,
+        ex:measurementprocess_Creatinine_Mass_volume_in_Blood_b8638c3a,
+        ex:measurementprocess_Glucose_Mass_volume_in_Blood_867a4b22,
+        ex:measurementprocess_Heart_rate_4f4f37f9,
+        ex:measurementprocess_Hemoglobin_A1c_Hemoglobin_total_in_Blood_15b0d978,
+        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_fc82f4bb,
+        ex:measurementprocess_Patient_Health_Questionnaire_2_item_PHQ-_9669c64b,
+        ex:measurementprocess_Potassium_Moles_volume_in_Blood_01b87897,
+        ex:measurementprocess_Respiratory_rate_3d0b7657,
+        ex:measurementprocess_Sodium_Moles_volume_in_Blood_3d1e9ee1,
+        ex:measurementprocess_Total_score_DAST-10_49464087,
+        ex:measurementprocess_Urea_nitrogen_Mass_volume_in_Blood_c8d3f141 .
+
+ex:careunit_ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_B_5492ed90 a chr:CareUnit ;
+    rdfs:label "ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE" .
+
+ex:clinicalcondition_Full-time_employment_finding_5f8484ee a chr:ClinicalCondition ;
+    rdfs:label "Full-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160903007> ;
+    chr:hasRecordDate "2002-02-11T21:17:18+01:00"^^xsd:dateTime .
+
+ex:clinicalcondition_Social_isolation_finding_27ae4e3d a chr:ClinicalCondition ;
+    rdfs:label "Social isolation (finding)" ;
+    chr:hasCode <http://snomed.info/id/422650009> ;
+    chr:hasRecordDate "2002-02-11T21:17:18+01:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Full-time_employment_finding_5020320b a chr:DiagnosticStatement ;
+    rdfs:label "Full-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160903007> .
+
+ex:diagnosticstatement_Social_isolation_finding_626a9ba4 a chr:DiagnosticStatement ;
+    rdfs:label "Social isolation (finding)" ;
+    chr:hasCode <http://snomed.info/id/422650009> .
+
+ex:evaluationprocess_Evaluation_c77cafde a chr:EvaluationProcess ;
+    rdfs:label "Evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Social_isolation_finding_27ae4e3d ;
+    chr:hasObservation ex:diagnosticstatement_Social_isolation_finding_626a9ba4 ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T21:17:18+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 .
+
+ex:measurement_Body_Height_705e71dc a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "156.6"^^xsd:float ;
+    chr:hasUnit ex:unit_cm_bfcc7879 .
+
+ex:measurement_Body_Weight_1cf25f11 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "72.2"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_5c233fc2 .
+
+ex:measurement_Body_mass_index_BMI_Ratio_56a80837 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "29.44"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_m2_e4e558a3 .
+
+ex:measurement_Calcium_Mass_volume_in_Blood_70726b71 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/49765-1> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "10.05"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL_e016cb17 .
+
+ex:measurement_Carbon_dioxide_total_Moles_volume_in_Blo_e3d09c8f a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "25.78"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L_7b8c8b44 .
+
+ex:measurement_Chloride_Moles_volume_in_Blood_0d15376e a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "110.52"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L_7b8c8b44 .
+
+ex:measurement_Creatinine_Mass_volume_in_Blood_e6e80d07 a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/38483-4> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.91"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL_e016cb17 .
+
+ex:measurement_Glucose_Mass_volume_in_Blood_333e8737 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "84.68"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL_e016cb17 .
+
+ex:measurement_Heart_rate_f2b3f324 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "77.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_212bfa5c a chr:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.17"^^xsd:float ;
+    chr:hasUnit ex:unit_x_5f053d39 .
+
+ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_4397c08b a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_7d23527e a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2002-02-11T21:53:37+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Potassium_Moles_volume_in_Blood_ec63398f a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6298-4> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.83"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L_7b8c8b44 .
+
+ex:measurement_Respiratory_rate_f1f587b4 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "15.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Sodium_Moles_volume_in_Blood_f11394cd a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2947-0> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "138.91"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L_7b8c8b44 .
+
+ex:measurement_Total_score_DAST-10_37541c00 a chr:Measurement ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasCode <https://loinc.org/82667-7> ;
+    chr:hasMeasuredDate "2002-02-11T22:31:00+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Urea_nitrogen_Mass_volume_in_Blood_e01a8766 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6299-2> ;
+    chr:hasMeasuredDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "19.4"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL_e016cb17 .
+
+ex:measurementprocess_Body_Height_4fe256b5 a chr:MeasurementProcess ;
+    rdfs:label "Body Height" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Body_Height_705e71dc ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_Weight_d8a31791 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Body_Weight_1cf25f11 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_mass_index_BMI_Ratio_fa22672b a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_56a80837 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Calcium_Mass_volume_in_Blood_b26be516 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Blood" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Calcium_Mass_volume_in_Blood_70726b71 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Carbon_dioxide_total_Moles_volume_in_Blo_f4f58bdd a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Carbon_dioxide_total_Moles_volume_in_Blo_e3d09c8f ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Chloride_Moles_volume_in_Blood_ff96b80a a chr:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Blood" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Chloride_Moles_volume_in_Blood_0d15376e ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Creatinine_Mass_volume_in_Blood_b8638c3a a chr:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Blood" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Creatinine_Mass_volume_in_Blood_e6e80d07 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Glucose_Mass_volume_in_Blood_867a4b22 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Blood" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Glucose_Mass_volume_in_Blood_333e8737 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Heart_rate_4f4f37f9 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Heart_rate_f2b3f324 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Hemoglobin_A1c_Hemoglobin_total_in_Blood_15b0d978 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_212bfa5c ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_fc82f4bb a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_4397c08b ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Patient_Health_Questionnaire_2_item_PHQ-_9669c64b a chr:MeasurementProcess ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T21:53:37+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_7d23527e ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Potassium_Moles_volume_in_Blood_01b87897 a chr:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Blood" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Potassium_Moles_volume_in_Blood_ec63398f ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Respiratory_rate_3d0b7657 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Respiratory_rate_f1f587b4 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Sodium_Moles_volume_in_Blood_3d1e9ee1 a chr:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Blood" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Sodium_Moles_volume_in_Blood_f11394cd ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Total_score_DAST-10_49464087 a chr:MeasurementProcess ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T22:31:00+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Total_score_DAST-10_37541c00 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Urea_nitrogen_Mass_volume_in_Blood_c8d3f141 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood" ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T20:35:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 ;
+    chr:hasResult ex:measurement_Urea_nitrogen_Mass_volume_in_Blood_e01a8766 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:unit_cm_bfcc7879 a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg_5c233fc2 a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kg_m2_e4e558a3 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_x_5f053d39 a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:evaluationprocess_Evaluation_04f821ce a chr:EvaluationProcess ;
+    rdfs:label "Evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Full-time_employment_finding_5f8484ee ;
+    chr:hasObservation ex:diagnosticstatement_Full-time_employment_finding_5020320b ;
+    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;
+    chr:hasPerformedDate "2002-02-11T21:17:18+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 .
+
+ex:unit_min_753e4226 a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_score_0399f823 a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:unit_mg_dL_e016cb17 a chr:Unit ;
+    rdfs:label "mg/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
+
+ex:unit_mmol_L_7b8c8b44 a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:person_Dr_Nickolas58_Schumm995_a1b2c3d4 a chr:Person ;
+    rdfs:label "Dr. Nickolas58 Schumm995" .
+
+ex:person_Estela596_Yetta429_Grant908_d3ecce59 a chr:Person ;
+    rdfs:label "Estela596 Yetta429 Grant908" .
+

@@ -1,0 +1,66 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_follow-up_monitoring_and_routine_review__632fe8f4 a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_caa52904 .
+
+ex:clinicalvisit_Encounter_for_symptom_procedure_7729f1b8 a chr:ClinicalVisit ;
+    rdfs:label "Encounter for symptom (procedure)" ;
+    chr:hasCareProvider ex:person_Dr_Louis204_Hauck852_e7ff3be0 ;
+    chr:hasCareUnit ex:careunit_WHITTIER_REHABILTATION_HOSPITAL_4666d138 ;
+    chr:hasDate "2023-04-26T00:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;
+    chr:hasProcedure ex:evaluationprocess_evaluation_caa52904,
+        ex:measurementprocess_Body_temperature_measurement_5cc7b2ec .
+
+ex:careunit_WHITTIER_REHABILTATION_HOSPITAL_4666d138 a chr:CareUnit ;
+    rdfs:label "WHITTIER REHABILTATION HOSPITAL" .
+
+ex:clinicalcondition_Acute_viral_pharyngitis_disorder_56b19ebf a chr:ClinicalCondition ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> ;
+    chr:hasRecordDate "2023-04-26T00:34:22+02:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 a chr:DiagnosticStatement ;
+    rdfs:label "Acute viral pharyngitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/195662009> .
+
+ex:measurement_Body_temperature_85ebe1f4 a chr:Measurement ;
+    rdfs:label "Body temperature" ;
+    chr:hasCode <https://loinc.org/8310-5> ;
+    chr:hasMeasuredDate "2023-04-26T00:34:22+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "37.632"^^xsd:float ;
+    chr:hasUnit ex:unit_Cel_b876d74d .
+
+ex:measurementprocess_Body_temperature_measurement_5cc7b2ec a chr:MeasurementProcess ;
+    rdfs:label "Body temperature measurement" ;
+    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;
+    chr:hasPerformedDate "2023-04-26T00:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Louis204_Hauck852_e7ff3be0 ;
+    chr:hasResult ex:measurement_Body_temperature_85ebe1f4 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:unit_Cel_b876d74d a chr:Unit ;
+    rdfs:label "Cel" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .
+
+ex:evaluationprocess_evaluation_caa52904 a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Acute_viral_pharyngitis_disorder_56b19ebf ;
+    chr:hasObservation ex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 ;
+    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;
+    chr:hasPerformedDate "2023-04-26T00:34:22+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Louis204_Hauck852_e7ff3be0 .
+
+ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 a chr:Person ;
+    rdfs:label "Arturo47 Lauren941 Heidenreich818" .
+
+ex:person_Dr_Louis204_Hauck852_e7ff3be0 a chr:Person ;
+    rdfs:label "Dr. Louis204 Hauck852" .
+

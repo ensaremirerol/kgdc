@@ -1,0 +1,572 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_A_care_plan_was_established_that_refers__cd47e470 a chr:CarePlan ;\n    rdfs:label \"A care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_ea3edbb2 .\n\nex:clinicalvisit_Patient_encounter_procedure_procedure_e4f728de a chr:ClinicalVisit ;\n    rdfs:label \"Patient encounter procedure (procedure)\" ;\n    chr:hasCareProvider ex:person_Willian804_Batz141_abc123 ;\n    chr:hasCareUnit ex:careunit_BOSTON_MEDICAL_CENTER_CORPORATION-_9cc6e849 ;\n    chr:hasDate \"2016-12-13T23:01:53+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;\n    chr:hasProcedure ex:evaluationprocess_evaluated_the_patient_ea3edbb2,\n        ex:measurementprocess_Pain_severity_-_Reported_77b4af2a .\n\nex:severity_Pain_severity_-_Reported_dd9cc665 a chr:Severity ;\n    rdfs:label \"Pain severity - Reported\" ;\n    chr:hasCode <https://loinc.org/38208-5> .\n\nex:careunit_BOSTON_MEDICAL_CENTER_CORPORATION-_9cc6e849 a chr:CareUnit ;\n    rdfs:label \"BOSTON MEDICAL CENTER CORPORATION-\" .\n\nex:clinicalcondition_Acute_infective_cystitis_disorder_afe848da a chr:ClinicalCondition ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> ;\n    chr:hasRecordDate \"2017-05-09T18:24:27+02:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Acute_infective_cystitis_disorder_af014ee8 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> .\n\nex:measurement_Pain_severity_-_Reported_ed182806 a chr:Measurement ;\n    rdfs:label \"Pain severity - Reported\" ;\n    chr:hasCode <https://loinc.org/38208-5> ;\n    chr:hasMeasuredDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.8386\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurementprocess_Pain_severity_-_Reported_77b4af2a a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - Reported\" ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;\n    chr:hasPerformedDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141_abc123 ;\n    chr:hasResult ex:measurement_Pain_severity_-_Reported_ed182806 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:unit_score_0399f823 a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:evaluationprocess_evaluated_the_patient_ea3edbb2 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Acute_infective_cystitis_disorder_afe848da ;\n    chr:hasObservation ex:diagnosticstatement_Acute_infective_cystitis_disorder_af014ee8 ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;\n    chr:hasPerformedDate \"2017-05-09T18:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Willian804_Batz141_abc123 .\n\nex:person_Angelic427_Callie226_Schaden604_4b5a499e a chr:Person ;\n    rdfs:label \"Angelic427 Callie226 Schaden604\" .\n\nex:person_Willian804_Batz141_abc123 a chr:Person ;\n    rdfs:label \"Dr. Willian804 Batz141\" .\n\n",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"BOSTON MEDICAL CENTER CORPORATION-\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_BOSTON_MEDICAL_CENTER_CORPORATION-_9cc6e849 a chr:CareUnit ;\n    rdfs:label \"BOSTON MEDICAL CENTER CORPORATION-\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Willian804 Batz141 evaluated the patient on 2017-05-09T18:24:27+02:00. The evaluation produced a diagnostic statement of Acute infective cystitis (disorder) (SNOMED: 307426000). The condition was recorded on 2017-05-09T18:24:27+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Acute infective cystitis (disorder)\" hasCode=<http://snomed.info/id/307426000>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Acute_infective_cystitis_disorder_af014ee8 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> .\n",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Angelic427 Callie226 Schaden604\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Angelic427_Callie226_Schaden604_4b5a499e a chr:Person ;\n    rdfs:label \"Angelic427 Callie226 Schaden604\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ps1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Severity",
+   "concepts": [
+    "chr:Severity"
+   ],
+   "text": "On 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "s1 Severity \"Pain severity - Reported\" hasCode=<https://loinc.org/38208-5>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:severity_Pain_severity_-_Reported_dd9cc665 a chr:Severity ;\n    rdfs:label \"Pain severity - Reported\" ;\n    chr:hasCode <https://loinc.org/38208-5> .\n",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "u1 Unit \"{score}\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_score_0399f823 a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n",
+   "level": 0,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Willian804 Batz141 evaluated the patient on 2017-05-09T18:24:27+02:00. The evaluation produced a diagnostic statement of Acute infective cystitis (disorder) (SNOMED: 307426000). The condition was recorded on 2017-05-09T18:24:27+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cc1 ClinicalCondition \"Acute infective cystitis (disorder)\" hasCode=http://snomed.info/id/307426000; hasRecordDate=2017-05-09T18:24:27+02:00; hasCode=http://snomed.info/id/307426000",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalcondition_Acute_infective_cystitis_disorder_afe848da a chr:ClinicalCondition ;\n    rdfs:label \"Acute infective cystitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/307426000> ;\n    chr:hasRecordDate \"2017-05-09T18:24:27+02:00\"^^xsd:dateTime .\n",
+   "level": 1,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- u1 (Unit) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"{score}\"\n- u1: Object of chr:hasUnit must be a chr:Unit individual."
+    },
+    {
+     "cycle": 1,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "m1 Measurement \"Pain severity - Reported\" hasCode=<https://loinc.org/38208-5>; hasMeasuredDate=2016-12-13T23:46:57+01:00; hasQuantityValue=2.8386; hasUnit=k6",
+   "scope_dropped": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Pain_severity_-_Reported_ed182806 a chr:Measurement ;\n    rdfs:label \"Pain severity - Reported\" ;\n    chr:hasCode <https://loinc.org/38208-5> ;\n    chr:hasMeasuredDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"2.8386\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n",
+   "level": 1,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Willian804 Batz141 evaluated the patient on 2017-05-09T18:24:27+02:00. The evaluation produced a diagnostic statement of Acute infective cystitis (disorder) (SNOMED: 307426000). The condition was recorded on 2017-05-09T18:24:27+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k5 \"Angelic427 Callie226 Schaden604\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k5 \"Angelic427 Callie226 Schaden604\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "ep1 EvaluationProcess \"evaluated the patient\" hasCondition=k2; hasObservation=k3; hasPatient=k5; hasPerformedDate=2017-05-09T18:24:27+02:00; hasPerformer=p1\np1 Person \"Dr. Willian804 Batz141\"",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_evaluated_the_patient_ea3edbb2 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Acute_infective_cystitis_disorder_afe848da ;\n    chr:hasObservation ex:diagnosticstatement_Acute_infective_cystitis_disorder_af014ee8 ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;\n    chr:hasPerformedDate \"2017-05-09T18:24:27+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Willian804_Batz141_2efd2432 .\n\n",
+   "level": 2,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- m1 (Measurement) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"Pain severity - Reported\"\n- m1: Object of chr:hasResult must be a chr:Measurement."
+    },
+    {
+     "cycle": 1,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "mp1 MeasurementProcess \"Pain severity - Reported\" hasPatient=k5; hasPerformedDate=2016-12-13T23:46:57+01:00; hasResult=k4; hasStatus=k6\nm1 Measurement \"Pain severity - Reported\" hasPatient=k5; hasMeasuredDate=2016-12-13T23:46:57+01:00; hasQuantityValue=2.8386; hasUnit=k8; hasCode=<https://loinc.org/38208-5>",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Pain_severity_-_Reported_77b4af2a a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - Reported\" ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;\n    chr:hasPerformedDate \"2016-12-13T23:46:57+01:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Pain_severity_-_Reported_ed182806 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\n",
+   "level": 2,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BOSTON MEDICAL CENTER CORPORATION-\n========================================================\n\nPatient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)\n\nOn 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Willian804 Batz141 evaluated the patient on 2017-05-09T18:24:27+02:00. The evaluation produced a diagnostic statement of Acute infective cystitis (disorder) (SNOMED: 307426000). The condition was recorded on 2017-05-09T18:24:27+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- ex:person_Dr_Willian804_Batz141_2efd2432: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Angelic427 Callie226 Schaden604\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "cp1 CarePlan \"A care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\" hasMedicalProcedure=k4",
+   "scope_dropped": 1,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_A_care_plan_was_established_that_refers__cd47e470 a chr:CarePlan ;\n    rdfs:label \"A care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_ea3edbb2 .\n",
+   "level": 3,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 BOSTON MEDICAL CENTER CORPORATION-\n========================================================\n\nPatient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)\n\nOn 2016-12-13T23:46:57+01:00, a Pain severity - Reported (LOINC: 38208-5) measurement was performed on Angelic427 Callie226 Schaden604. The measurement result was 2.8386 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Willian804 Batz141 evaluated the patient on 2017-05-09T18:24:27+02:00. The evaluation produced a diagnostic statement of Acute infective cystitis (disorder) (SNOMED: 307426000). The condition was recorded on 2017-05-09T18:24:27+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p2 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"evaluated the patient\", k6 \"Pain severity - Reported\"\n- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Angelic427 Callie226 Schaden604\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person.\n- p2: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p2 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"evaluated the patient\", k6 \"Pain severity - Reported\"\n- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Angelic427 Callie226 Schaden604\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person.\n- p2: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof."
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "v1 ClinicalVisit \"Patient encounter procedure (procedure)\" hasCareProvider=p1; hasCareUnit=k1; hasDate=2016-12-13T23:01:53+01:00; hasPatient=k7; hasProcedure=p2\np1 Person \"Dr. Willian804 Batz141\"\np2 MedicalProcedure \"Pain severity - Reported\" hasPatient=k7; hasPerformedDate=2016-12-13T23:46:57+01:00; hasPerformer=p1; hasStatus=k8",
+   "scope_dropped": 4,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_Patient_encounter_procedure_procedure_e4f728de a chr:ClinicalVisit ;\n    rdfs:label \"Patient encounter procedure (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_Willian804_Batz141_2efd2432 ;\n    chr:hasCareUnit ex:careunit_BOSTON_MEDICAL_CENTER_CORPORATION-_9cc6e849 ;\n    chr:hasDate \"2016-12-13T23:01:53+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Angelic427_Callie226_Schaden604_4b5a499e ;\n    chr:hasProcedure ex:medicalprocedure_Pain_severity_-_Reported_65edeca6 .\n\n",
+   "level": 3,
+   "shared_context": "Patient: Angelic427 Callie226 Schaden604 (ID: P-5e117ba0)\nDate of visit: 2016-12-13T23:01:53+01:00\nCare unit: BOSTON MEDICAL CENTER CORPORATION-\nAttending physician: Dr. Willian804 Batz141\nEncounter type: Patient encounter procedure (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 20,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 5642,
+   "completion_tokens": 1979,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 20,
+   "prompt_tokens": 40700,
+   "completion_tokens": 3268,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 18,
+   "prompt_tokens": 35058,
+   "completion_tokens": 1289,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

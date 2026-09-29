@@ -31,6 +31,18 @@ if a.mcp:
         if t["notes"]: print(f"  {t['class']} notes: {t['notes']}", file=sys.stderr)
     for i in r.issues: print("  ISSUE: " + i, file=sys.stderr)
 else:
+    if progress.enabled:   # the graph that came out, class by class
+        from collections import Counter
+        from rdflib import RDF, Graph
+        g = Graph().parse(data=r.ttl, format="turtle")
+        types = Counter(o.n3(g.namespace_manager) for o in g.objects(None, RDF.type))
+        progress.stage("Final graph")
+        print(f"{len(g)} statements, {len(set(g.subjects(RDF.type)))} entities"
+              + (f", written to {a.out}" if a.out else " (Turtle on stdout)"), file=sys.stderr)
+        for cls, n in types.most_common():
+            print(f"  {n:4d}  {cls}", file=sys.stderr)
+        print(("passes every SHACL constraint" if r.conforms else f"{r.violations.count('Constraint Violation')} SHACL violation(s) left")
+              + (f"; merge step: {r.error}" if r.error else ""), file=sys.stderr)
     print(f"conforms={r.conforms} segments={len(r.segments)} llm_calls={r.llm_calls} unresolved={len(r.unresolved)}", file=sys.stderr)
 for role, u in r.usage.items():
     cost = f"${u['cost']:.4f}" if u["cost"] is not None else "n/a"

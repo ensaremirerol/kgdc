@@ -1,0 +1,347 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:clinicalvisit_General_examination_of_patient_ce1a2d81 a chr:ClinicalVisit ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCareProvider ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasCareUnit ex:careunit_CHILD_FAMILY_SERVICES_INC_f19df2b4 ;
+    chr:hasDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasProcedure ex:evaluationprocess_General_examination_99cb4670,
+        ex:measurementprocess_Body_Height_measurement_6dc22d1f,
+        ex:measurementprocess_Body_Weight_measurement_56ba7caf,
+        ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_e7a6cfe5,
+        ex:measurementprocess_Calcium_Mass_volume_in_Blood_measurement_ec41aecf,
+        ex:measurementprocess_Carbon_dioxide_total_Moles_volume_in_Blo_ae63f89a,
+        ex:measurementprocess_Chloride_Moles_volume_in_Blood_9d2c8b7b,
+        ex:measurementprocess_Creatinine_Mass_volume_in_Blood_measurem_67e5656c,
+        ex:measurementprocess_Glucose_Mass_volume_in_Blood_measurement_e1cfc32f,
+        ex:measurementprocess_Heart_rate_measurement_4dab32fe,
+        ex:measurementprocess_Hemoglobin_A1c_Hemoglobin_total_in_Blood_ffc8edc7,
+        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_5ae2981c,
+        ex:measurementprocess_Potassium_Moles_volume_in_Blood_faaf24ac,
+        ex:measurementprocess_Respiratory_rate_measurement_cf349961,
+        ex:measurementprocess_Sodium_Moles_volume_in_Blood_measurement_2e89927c,
+        ex:measurementprocess_Total_score_DAST-10_7e29b73d,
+        ex:measurementprocess_Urea_nitrogen_Mass_volume_in_Blood_measu_5a964999 .
+
+ex:evaluationprocess_General_examination_a2db2f64 a chr:EvaluationProcess ;
+    rdfs:label "General examination" ;
+    chr:hasCondition ex:clinicalcondition_Medication_review_due_situation_57e22123 ;
+    chr:hasObservation ex:diagnosticstatement_Medication_review_due_situation_9b9831fe ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db .
+
+ex:careunit_CHILD_FAMILY_SERVICES_INC_f19df2b4 a chr:CareUnit ;
+    rdfs:label "CHILD & FAMILY SERVICES, INC." .
+
+ex:clinicalcondition_Medication_review_due_situation_57e22123 a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime .
+
+ex:clinicalcondition_Stress_finding_0004455b a chr:ClinicalCondition ;
+    rdfs:label "Stress (finding)" ;
+    chr:hasCode <http://snomed.info/id/73595000> ;
+    chr:hasRecordDate "2017-07-07T21:14:41+02:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Medication_review_due_situation_9b9831fe a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:diagnosticstatement_Stress_finding_073542c6 a chr:DiagnosticStatement ;
+    rdfs:label "Stress (finding)" ;
+    chr:hasCode <http://snomed.info/id/73595000> .
+
+ex:evaluationprocess_General_examination_99cb4670 a chr:EvaluationProcess ;
+    rdfs:label "General examination" ;
+    chr:hasCondition ex:clinicalcondition_Stress_finding_0004455b ;
+    chr:hasObservation ex:diagnosticstatement_Stress_finding_073542c6 ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T21:14:41+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db .
+
+ex:measurement_Body_Height_05d06c12 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "172.9"^^xsd:float ;
+    chr:hasUnit ex:unit_cm_ae8f71e1 .
+
+ex:measurement_Body_Weight_0aed1360 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "82.3"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_6c4d2f77 .
+
+ex:measurement_Body_mass_index_BMI_Ratio_3ce76cdd a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.53"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_m2_e4e558a3 .
+
+ex:measurement_Calcium_Mass_volume_in_Blood_ff4374d5 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/49765-1> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "9.11"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL_e016cb17 .
+
+ex:measurement_Carbon_dioxide_total_Moles_volume_in_Blo_ac189dd2 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "28.58"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L_7b8c8b44 .
+
+ex:measurement_Chloride_Moles_volume_in_Blood_abf4a7ad a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "107.35"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L_7b8c8b44 .
+
+ex:measurement_Creatinine_Mass_volume_in_Blood_35df948c a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/38483-4> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.99"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL_e016cb17 .
+
+ex:measurement_Glucose_Mass_volume_in_Blood_d47d6109 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "73.8"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL_e016cb17 .
+
+ex:measurement_Heart_rate_5defd6de a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "65.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_e1365ad3 a chr:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6.02"^^xsd:float ;
+    chr:hasUnit ex:unit_x_5f053d39 .
+
+ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_f6a4b2e2 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Potassium_Moles_volume_in_Blood_9f2e17c1 a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6298-4> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4.34"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L_7b8c8b44 .
+
+ex:measurement_Respiratory_rate_45f0cfbb a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "12.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Sodium_Moles_volume_in_Blood_2163ba36 a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2947-0> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "143.75"^^xsd:float ;
+    chr:hasUnit ex:unit_mmol_L_7b8c8b44 .
+
+ex:measurement_Total_score_DAST-10_fb93ab5a a chr:Measurement ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasCode <https://loinc.org/82667-7> ;
+    chr:hasMeasuredDate "2017-07-07T21:48:27+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "2.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Urea_nitrogen_Mass_volume_in_Blood_1078b242 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6299-2> ;
+    chr:hasMeasuredDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "19.01"^^xsd:float ;
+    chr:hasUnit ex:unit_mg_dL_e016cb17 .
+
+ex:measurementprocess_Body_Height_measurement_6dc22d1f a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Body_Height_05d06c12 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_Weight_measurement_56ba7caf a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Body_Weight_0aed1360 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_e7a6cfe5 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_3ce76cdd ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Calcium_Mass_volume_in_Blood_measurement_ec41aecf a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Calcium_Mass_volume_in_Blood_ff4374d5 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Carbon_dioxide_total_Moles_volume_in_Blo_ae63f89a a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Carbon_dioxide_total_Moles_volume_in_Blo_ac189dd2 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Chloride_Moles_volume_in_Blood_9d2c8b7b a chr:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Blood" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Chloride_Moles_volume_in_Blood_abf4a7ad ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Creatinine_Mass_volume_in_Blood_measurem_67e5656c a chr:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Creatinine_Mass_volume_in_Blood_35df948c ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Glucose_Mass_volume_in_Blood_measurement_e1cfc32f a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Glucose_Mass_volume_in_Blood_d47d6109 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Heart_rate_measurement_4dab32fe a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Heart_rate_5defd6de ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Hemoglobin_A1c_Hemoglobin_total_in_Blood_ffc8edc7 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_e1365ad3 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_5ae2981c a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_f6a4b2e2 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Potassium_Moles_volume_in_Blood_faaf24ac a chr:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Blood" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Potassium_Moles_volume_in_Blood_9f2e17c1 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Respiratory_rate_measurement_cf349961 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Respiratory_rate_45f0cfbb ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Sodium_Moles_volume_in_Blood_measurement_2e89927c a chr:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Blood measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Sodium_Moles_volume_in_Blood_2163ba36 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Total_score_DAST-10_7e29b73d a chr:MeasurementProcess ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T21:48:27+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Total_score_DAST-10_fb93ab5a ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Urea_nitrogen_Mass_volume_in_Blood_measu_5a964999 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2017-07-07T20:30:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Assunta351_Haley279_4833e0db ;
+    chr:hasResult ex:measurement_Urea_nitrogen_Mass_volume_in_Blood_1078b242 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:unit_cm_ae8f71e1 a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg_6c4d2f77 a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kg_m2_e4e558a3 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_x_5f053d39 a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_min_753e4226 a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_score_0399f823 a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:unit_mg_dL_e016cb17 a chr:Unit ;
+    rdfs:label "mg/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
+
+ex:unit_mmol_L_7b8c8b44 a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:person_Dr_Assunta351_Haley279_4833e0db a chr:Person ;
+    rdfs:label "Dr. Assunta351 Haley279" .
+
+ex:person_Harvey63_Napoleon578_Homenick806_7b803456 a chr:Person ;
+    rdfs:label "Harvey63 Napoleon578 Homenick806" .
+

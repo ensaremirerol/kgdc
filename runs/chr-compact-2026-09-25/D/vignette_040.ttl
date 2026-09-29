@@ -1,0 +1,88 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_follow-up_monitoring_and_routine_review__2081fff6 a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_f302f8bb .
+
+ex:clinicalvisit_Encounter_for_check_up_procedure_46779204 a chr:ClinicalVisit ;
+    rdfs:label "Encounter for check up (procedure)" ;
+    chr:hasCareProvider ex:person_Dr_Margene509_Schamberger479_d6cd38d4 ;
+    chr:hasCareUnit ex:careunit_THE_LOWELL_GENERAL_HOSPITAL_232d4e12 ;
+    chr:hasDate "2017-04-11T14:32:19+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;
+    chr:hasProcedure ex:evaluationprocess_evaluation_f302f8bb,
+        ex:measurementprocess_Hemoglobin_gastrointestinal_lower_Presen_1ca647b1,
+        ex:measurementprocess_Polyp_size_greatest_dimension_1d3dcfe8 .
+
+ex:careunit_THE_LOWELL_GENERAL_HOSPITAL_232d4e12 a chr:CareUnit ;
+    rdfs:label "THE LOWELL GENERAL HOSPITAL" .
+
+ex:clinicalcondition_Polyp_of_colon_a1d9f015 a chr:ClinicalCondition ;
+    rdfs:label "Polyp of colon" ;
+    chr:hasCode <http://snomed.info/id/68496003> ;
+    chr:hasRecordDate "2017-04-11T15:00:14+02:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Polyp_of_colon_disorder_b28ad383 a chr:DiagnosticStatement ;
+    rdfs:label "Polyp of colon (disorder)" ;
+    chr:hasCode <http://snomed.info/id/68496003> .
+
+ex:measurement_Hemoglobin_gastrointestinal_lower_Presen_db282322 a chr:Measurement ;
+    rdfs:label "Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen" ;
+    chr:hasCode <https://loinc.org/57905-2> ;
+    chr:hasMeasuredDate "2017-04-11T15:00:14+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "242.07"^^xsd:float ;
+    chr:hasUnit ex:unit_ng_mL_46667ecc .
+
+ex:measurement_Polyp_size_greatest_dimension_7ce92cf0 a chr:Measurement ;
+    rdfs:label "Polyp size greatest dimension" ;
+    chr:hasCode <https://loinc.org/33756-8> ;
+    chr:hasMeasuredDate "2017-04-11T15:00:14+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "11.962"^^xsd:float ;
+    chr:hasUnit ex:unit_mm_36a823ca .
+
+ex:measurementprocess_Hemoglobin_gastrointestinal_lower_Presen_1ca647b1 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen" ;
+    chr:hasCode <https://loinc.org/57905-2> ;
+    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;
+    chr:hasPerformedDate "2017-04-11T15:00:14+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Margene509_Schamberger479_d6cd38d4 ;
+    chr:hasResult ex:measurement_Hemoglobin_gastrointestinal_lower_Presen_db282322 ;
+    chr:hasStatus ex:processstatus_completed_4d75f0c5 .
+
+ex:measurementprocess_Polyp_size_greatest_dimension_1d3dcfe8 a chr:MeasurementProcess ;
+    rdfs:label "Polyp size greatest dimension" ;
+    chr:hasCode <https://loinc.org/33756-8> ;
+    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;
+    chr:hasPerformedDate "2017-04-11T15:00:14+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Margene509_Schamberger479_d6cd38d4 ;
+    chr:hasResult ex:measurement_Polyp_size_greatest_dimension_7ce92cf0 ;
+    chr:hasStatus ex:processstatus_completed_4d75f0c5 .
+
+ex:unit_mm_36a823ca a chr:Unit ;
+    rdfs:label "mm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mm> .
+
+ex:unit_ng_mL_46667ecc a chr:Unit ;
+    rdfs:label "ng/mL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ngpermL> .
+
+ex:evaluationprocess_evaluation_f302f8bb a chr:EvaluationProcess ;
+    rdfs:label "evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Polyp_of_colon_a1d9f015 ;
+    chr:hasObservation ex:diagnosticstatement_Polyp_of_colon_disorder_b28ad383 ;
+    chr:hasPatient ex:person_Cory323_Frank378_Heller342_d6cd38d4 ;
+    chr:hasPerformedDate "2017-04-11T15:00:14+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Margene509_Schamberger479_d6cd38d4 .
+
+ex:processstatus_completed_4d75f0c5 a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:person_Cory323_Frank378_Heller342_d6cd38d4 a chr:Person ;
+    rdfs:label "Cory323 Frank378 Heller342" .
+
+ex:person_Dr_Margene509_Schamberger479_d6cd38d4 a chr:Person ;
+    rdfs:label "Dr. Margene509 Schamberger479" .
+

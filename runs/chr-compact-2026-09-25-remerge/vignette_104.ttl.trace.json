@@ -1,0 +1,556 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__db081e71 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_8449d91d .\n\nex:clinicalvisit_Encounter_for_symptom_procedure_c42c0382 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for symptom (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_Margaret865_Reinger292_a1b2c3 ;\n    chr:hasCareUnit ex:careunit_CARNEY_HOSPITAL_a3030786 ;\n    chr:hasDate \"2019-06-28T15:04:38+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Aracely711_Devon268_Collins926_4eb37ca6 ;\n    chr:hasProcedure ex:evaluationprocess_evaluated_the_patient_8449d91d,\n        ex:measurementprocess_Body_temperature_measurement_ab49f63c .\n\nex:careunit_CARNEY_HOSPITAL_a3030786 a chr:CareUnit ;\n    rdfs:label \"CARNEY HOSPITAL\" .\n\nex:clinicalcondition_Acute_viral_pharyngitis_disorder_7963fec2 a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2019-06-28T15:04:38+02:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .\n\nex:measurement_Body_temperature_d0cca763 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-06-28T15:04:38+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.279\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_5485e5e2 .\n\nex:measurementprocess_Body_temperature_measurement_ab49f63c a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Aracely711_Devon268_Collins926_4eb37ca6 ;\n    chr:hasPerformedDate \"2019-06-28T15:04:38+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Margaret865_Reinger292_a1b2c3 ;\n    chr:hasResult ex:measurement_Body_temperature_d0cca763 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:unit_Cel_5485e5e2 a chr:Unit ;\n    rdfs:label \"Cel\" .\n\nex:evaluationprocess_evaluated_the_patient_8449d91d a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Acute_viral_pharyngitis_disorder_7963fec2 ;\n    chr:hasObservation ex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 ;\n    chr:hasPatient ex:person_Aracely711_Devon268_Collins926_4eb37ca6 ;\n    chr:hasPerformedDate \"2019-06-28T15:04:38+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Margaret865_Reinger292_a1b2c3 .\n\nex:person_Aracely711_Devon268_Collins926_4eb37ca6 a chr:Person ;\n    rdfs:label \"Aracely711 Devon268 Collins926\" .\n\nex:person_Dr_Margaret865_Reinger292_a1b2c3 a chr:Person ;\n    rdfs:label \"Dr. Margaret865 Reinger292\" .\n\n",
+ "conforms": false,
+ "violations": "Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:message Literal(\"A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path chr:hasCode ; sh:pattern Literal(\"^https://biomedit\\.ch/rdf/sphn-resource/ucum/\") ]\n\tFocus Node: ex:unit_Cel_5485e5e2\n\tResult Path: chr:hasCode\n\tMessage: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (https://biomedit.ch/rdf/sphn-resource/ucum/...).\n",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 CARNEY HOSPITAL\n=====================================\n\nPatient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"CARNEY HOSPITAL\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_CARNEY_HOSPITAL_a3030786 a chr:CareUnit ;\n    rdfs:label \"CARNEY HOSPITAL\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Margaret865 Reinger292 evaluated the patient on 2019-06-28T15:04:38+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-06-28T15:04:38+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cc1 ClinicalCondition \"Acute viral pharyngitis (disorder)\" hasCode=http://snomed.info/id/195662009; hasRecordDate=2019-06-28T15:04:38+02:00",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalcondition_Acute_viral_pharyngitis_disorder_7963fec2 a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2019-06-28T15:04:38+02:00\"^^xsd:dateTime .\n",
+   "level": 0,
+   "shared_context": "Patient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Margaret865 Reinger292 evaluated the patient on 2019-06-28T15:04:38+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-06-28T15:04:38+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Acute viral pharyngitis (disorder)\" hasCode=<http://snomed.info/id/195662009>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .\n",
+   "level": 0,
+   "shared_context": "Patient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 CARNEY HOSPITAL\n=====================================\n\nPatient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Aracely711 Devon268 Collins926\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Aracely711_Devon268_Collins926_4eb37ca6 a chr:Person ;\n    rdfs:label \"Aracely711 Devon268 Collins926\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2019-06-28T15:04:38+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Aracely711 Devon268 Collins926. The measurement result was 37.279 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ps1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2019-06-28T15:04:38+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Aracely711 Devon268 Collins926. The measurement result was 37.279 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- u1: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (<https://biomedit.ch/rdf/sphn-resource/ucum/...).>"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- u1: cannot read '<https://biomedit.ch/rdf/sphn-resource/ucum/Cel>' (expected property=value)\n- :hasCode: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- u1: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (<https://biomedit.ch/rdf/sphn-resource/ucum/...).>"
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- m1: cannot read 'chr:hasCode <https://loinc.org/8310-5>' (expected property=value)\n- m1: cannot read 'chr:hasMeasuredDate \"2019-06-28T15:04:38+02:00\"' (expected property=value)\n- m1: cannot read 'chr:hasQuantityValue 37.279' (expected property=value)\n- p1: cannot read 'chr:hasPerformedDate \"2019-06-28T15:04:38+02:00\"' (expected property=value)\n- u1: cannot read 'chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel>' (expected property=value)\n- p1: chr:hasPerformer=d1 is not a declared or KNOWN ENTITY handle\n- p1: chr:hasStatus=s1 is not a declared or KNOWN ENTITY handle\n- m1 (Measurement) was removed: other agents build Measurement. Describe only the classes you were asked for and leave out statements that need anything else.\n- p1 (MeasurementProcess) was removed: other agents build MeasurementProcess. Describe only the classes you were asked for and leave out statements that need anything else.\n- u1: A chr:Unit must have chr:hasCode pointing to a UCUM IRI (<https://biomedit.ch/rdf/sphn-resource/ucum/...).>"
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "m1 chr:Measurement \"Body temperature\" chr:hasCode <https://loinc.org/8310-5>; chr:hasMeasuredDate \"2019-06-28T15:04:38+02:00\"; chr:hasQuantityValue 37.279; chr:hasUnit=u1\np1 chr:MeasurementProcess \"Body temperature measurement process\" chr:hasPatient=p1; chr:hasPerformedDate \"2019-06-28T15:04:38+02:00\"; chr:hasResult=m1; chr:hasPerformer=d1; chr:hasStatus=s1\nu1 Unit chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel>\n# UNRESOLVED: u1 chr:hasCode must be a valid UCUM IRI \u2014 \"Cel\" is not a valid UCUM code in the text provided (UCUM for Celsius is typically C)",
+   "scope_dropped": 2,
+   "unresolved": [
+    "UNRESOLVED: u1 chr:hasCode must be a valid UCUM IRI \u2014 \"Cel\" is not a valid UCUM code in the text provided (UCUM for Celsius is typically C)"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n\nex:unit_Cel_5485e5e2 a chr:Unit .\n\n\n# UNRESOLVED: u1 chr:hasCode must be a valid UCUM IRI \u2014 \"Cel\" is not a valid UCUM code in the text provided (UCUM for Celsius is typically C)",
+   "level": 0,
+   "shared_context": "Patient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Margaret865 Reinger292 evaluated the patient on 2019-06-28T15:04:38+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-06-28T15:04:38+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- ep1: hasPerformer=p1 is not a declared or KNOWN ENTITY handle"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"Aracely711 Devon268 Collins926\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- m1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"Aracely711 Devon268 Collins926\"\n- m1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "ep1 EvaluationProcess \"evaluated the patient\" hasCondition=k2; hasObservation=k3; hasPatient=k4; hasPerformedDate=2019-06-28T15:04:38+02:00; hasPerformer=m1\nm1 Person \"Dr. Margaret865 Reinger292\"",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_evaluated_the_patient_8449d91d a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Acute_viral_pharyngitis_disorder_7963fec2 ;\n    chr:hasObservation ex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 ;\n    chr:hasPatient ex:person_Aracely711_Devon268_Collins926_4eb37ca6 ;\n    chr:hasPerformedDate \"2019-06-28T15:04:38+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Margaret865_Reinger292_2868922a .\n\n",
+   "level": 1,
+   "shared_context": "Patient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2019-06-28T15:04:38+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Aracely711 Devon268 Collins926. The measurement result was 37.279 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- u1 (Unit) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"\"\n- u1: Object of chr:hasUnit must be a chr:Unit individual."
+    },
+    {
+     "cycle": 1,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "m1 Measurement \"Body temperature\" hasCode=<https://loinc.org/8310-5>; hasMeasuredDate=2019-06-28T15:04:38+02:00; hasQuantityValue=37.279; hasUnit=k6\nk6 Unit hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/Cel>\n# UNRESOLVED: u1 (Unit) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead: k6 \"\" \u2014 the text does not provide a UCUM code for \"Cel\" to link to k6.",
+   "scope_dropped": 1,
+   "unresolved": [
+    "UNRESOLVED: u1 (Unit) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead: k6 \"\" \u2014 the text does not provide a UCUM code for \"Cel\" to link to k6."
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Body_temperature_d0cca763 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-06-28T15:04:38+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.279\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_5485e5e2 .\n\n\n# UNRESOLVED: u1 (Unit) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead: k6 \"\" \u2014 the text does not provide a UCUM code for \"Cel\" to link to k6.\n",
+   "level": 1,
+   "shared_context": "Patient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2019-06-28T15:04:38+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Aracely711 Devon268 Collins926. The measurement result was 37.279 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"Aracely711 Devon268 Collins926\"\n- u1 (Unit) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k8 \"\"\n- p1: Object of chr:hasPerformer must be a chr:Person.\n- u1: Object of chr:hasUnit must be a chr:Unit individual."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"Aracely711 Devon268 Collins926\"\n- u1 (Unit) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k8 \"\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "m1 MeasurementProcess \"Body temperature measurement\" hasPatient=k6; hasPerformedDate=2019-06-28T15:04:38+02:00; hasPerformer=p1; hasResult=k5; hasStatus=k7\np1 Person \"Dr. Margaret865 Reinger292\"\nk5 Measurement \"Body temperature\" hasMeasuredDate=2019-06-28T15:04:38+02:00; hasQuantityValue=37.279; hasCode=<https://loinc.org/8310-5>; hasUnit=u1\nu1 Unit \"Cel\"\n# UNRESOLVED: u1 hasCode must be a UCUM code (not stated in the text)",
+   "scope_dropped": 4,
+   "unresolved": [
+    "UNRESOLVED: u1 hasCode must be a UCUM code (not stated in the text)"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Body_temperature_measurement_ab49f63c a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Aracely711_Devon268_Collins926_4eb37ca6 ;\n    chr:hasPerformedDate \"2019-06-28T15:04:38+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Margaret865_Reinger292_2868922a ;\n    chr:hasResult ex:measurement_Body_temperature_d0cca763 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\n\n# UNRESOLVED: u1 hasCode must be a UCUM code (not stated in the text)",
+   "level": 2,
+   "shared_context": "Patient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 CARNEY HOSPITAL\n=====================================\n\nPatient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292\nEncounter type: Encounter for symptom (procedure)\n\nOn 2019-06-28T15:04:38+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Aracely711 Devon268 Collins926. The measurement result was 37.279 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Margaret865 Reinger292 evaluated the patient on 2019-06-28T15:04:38+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-06-28T15:04:38+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- ex:person_Dr_Margaret865_Reinger292_2868922a: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- m1 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"evaluated the patient\", k6 \"Body temperature measurement\"\n- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Aracely711 Devon268 Collins926\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "cp1 CarePlan \"follow-up monitoring and routine review consistent with the diagnosis\" hasMedicalProcedure=k4",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__db081e71 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_8449d91d .\n",
+   "level": 3,
+   "shared_context": "Patient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 CARNEY HOSPITAL\n=====================================\n\nPatient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292\nEncounter type: Encounter for symptom (procedure)\n\nOn 2019-06-28T15:04:38+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Aracely711 Devon268 Collins926. The measurement result was 37.279 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Margaret865 Reinger292 evaluated the patient on 2019-06-28T15:04:38+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-06-28T15:04:38+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p2 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"evaluated the patient\", k6 \"Body temperature measurement\"\n- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Aracely711 Devon268 Collins926\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person.\n- p2: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- m1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Aracely711 Devon268 Collins926\"\n- m1: Object of chr:hasCareProvider must be a chr:Person.\n- m1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- m1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Aracely711 Devon268 Collins926\"\n- m1: Object of chr:hasCareProvider must be a chr:Person.\n- m1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "v1 ClinicalVisit \"Encounter for symptom (procedure)\" hasCareProvider=p1; hasCareUnit=k1; hasDate=2019-06-28T15:04:38+02:00; hasPatient=k7; hasProcedure=k4; hasProcedure=k6\np1 Person \"Dr. Margaret865 Reinger292\"",
+   "scope_dropped": 4,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_Encounter_for_symptom_procedure_c42c0382 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for symptom (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_Margaret865_Reinger292_2868922a ;\n    chr:hasCareUnit ex:careunit_CARNEY_HOSPITAL_a3030786 ;\n    chr:hasDate \"2019-06-28T15:04:38+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Aracely711_Devon268_Collins926_4eb37ca6 ;\n    chr:hasProcedure ex:evaluationprocess_evaluated_the_patient_8449d91d,\n        ex:measurementprocess_Body_temperature_measurement_ab49f63c .\n\n",
+   "level": 3,
+   "shared_context": "Patient: Aracely711 Devon268 Collins926 (ID: P-4f0dee62)\nDate of visit: 2019-06-28T15:04:38+02:00\nCare unit: CARNEY HOSPITAL\nAttending physician: Dr. Margaret865 Reinger292",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 24,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 5864,
+   "completion_tokens": 1916,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 24,
+   "prompt_tokens": 47556,
+   "completion_tokens": 4161,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 22,
+   "prompt_tokens": 41692,
+   "completion_tokens": 2245,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": "merge output rejected (at line 55 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'in the text\\n\\nex:evaluationproces): kept the un-merged union",
+ "remerge": {
+  "conforms": false,
+  "error": null,
+  "original_error": "merge output rejected (at line 55 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'in the text\\n\\nex:evaluationproces): kept the un-merged union"
+ }
+}

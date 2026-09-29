@@ -1,0 +1,90 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_follow-up_monitoring_and_routine_review__462c68c4 a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_4c4d8891 .
+
+ex:clinicalvisit_Encounter_for_check_up_procedure_04b855c5 a chr:ClinicalVisit ;
+    rdfs:label "Encounter for check up (procedure)" ;
+    chr:hasCareProvider ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;
+    chr:hasCareUnit ex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f ;
+    chr:hasDate "2019-04-25T21:11:55+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasProcedure ex:evaluationprocess_evaluated_the_patient_4c4d8891,
+        ex:measurementprocess_Hemoglobin_gastrointestinal_lower_Presen_4185bc8e,
+        ex:measurementprocess_Polyp_size_greatest_dimension_657a9f39 .
+
+ex:anatomicalstructure_colon_276efd85 a chr:AnatomicalStructure ;
+    rdfs:label "colon" .
+
+ex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f a chr:CareUnit ;
+    rdfs:label "4499 ACUSHNET AVENUE OPERATING COMPANY, LLC" .
+
+ex:clinicalcondition_Polyp_of_colon_disorder_0b524f2d a chr:ClinicalCondition ;
+    rdfs:label "Polyp of colon (disorder)" ;
+    chr:hasCode <http://snomed.info/id/68496003> ;
+    chr:hasLocatedIn ex:anatomicalstructure_colon_276efd85 ;
+    chr:hasRecordDate "2019-04-25T21:49:47+02:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Polyp_of_colon_disorder_b28ad383 a chr:DiagnosticStatement ;
+    rdfs:label "Polyp of colon (disorder)" ;
+    chr:hasCode <http://snomed.info/id/68496003> .
+
+ex:measurement_Hemoglobin_gastrointestinal_lower_Presen_daae1c7e a chr:Measurement ;
+    rdfs:label "Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen" ;
+    chr:hasCode <https://loinc.org/57905-2> ;
+    chr:hasMeasuredDate "2019-04-25T21:49:47+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "20.354"^^xsd:float ;
+    chr:hasUnit ex:unit_ng_mL_46667ecc .
+
+ex:measurement_Polyp_size_greatest_dimension_8f20a805 a chr:Measurement ;
+    rdfs:label "Polyp size greatest dimension" ;
+    chr:hasCode <https://loinc.org/33756-8> ;
+    chr:hasMeasuredDate "2019-04-25T21:49:47+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "5.8247"^^xsd:float ;
+    chr:hasUnit ex:unit_mm_36a823ca .
+
+ex:measurementprocess_Hemoglobin_gastrointestinal_lower_Presen_4185bc8e a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin.gastrointestinal.lower [Presence] in Stool by Immunoassay --1st specimen" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2019-04-25T21:49:47+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;
+    chr:hasResult ex:measurement_Hemoglobin_gastrointestinal_lower_Presen_daae1c7e ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Polyp_size_greatest_dimension_657a9f39 a chr:MeasurementProcess ;
+    rdfs:label "Polyp size greatest dimension" ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2019-04-25T21:49:47+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;
+    chr:hasResult ex:measurement_Polyp_size_greatest_dimension_8f20a805 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:unit_mm_36a823ca a chr:Unit ;
+    rdfs:label "mm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mm> .
+
+ex:unit_ng_mL_46667ecc a chr:Unit ;
+    rdfs:label "ng/mL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ngpermL> .
+
+ex:evaluationprocess_evaluated_the_patient_4c4d8891 a chr:EvaluationProcess ;
+    rdfs:label "evaluated the patient" ;
+    chr:hasCondition ex:clinicalcondition_Polyp_of_colon_disorder_0b524f2d ;
+    chr:hasObservation ex:diagnosticstatement_Polyp_of_colon_disorder_b28ad383 ;
+    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;
+    chr:hasPerformedDate "2019-04-25T21:49:47+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 a chr:Person ;
+    rdfs:label "Dr. Víctor493 Chávez927" .
+
+ex:person_Harvey63_Napoleon578_Homenick806_7b803456 a chr:Person ;
+    rdfs:label "Harvey63 Napoleon578 Homenick806" .
+

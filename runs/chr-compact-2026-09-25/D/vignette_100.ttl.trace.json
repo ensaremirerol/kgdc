@@ -1,0 +1,546 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__0a55908e a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_ee003138 .\n\nex:clinicalvisit_Encounter_for_check_up_procedure_bc47f9cc a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for check up (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;\n    chr:hasCareUnit ex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f ;\n    chr:hasDate \"2020-05-29T21:49:47+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasProcedure ex:evaluationprocess_evaluated_the_patient_ee003138,\n        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_4e49a0ce .\n\nex:severity_Pain_severity_-_0-10_verbal_numeric_rati_88c27837 a chr:Severity ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> .\n\nex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f a chr:CareUnit ;\n    rdfs:label \"4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\" .\n\nex:clinicalcondition_Recurrent_rectal_polyp_disorder_0ea2cf85 a chr:ClinicalCondition ;\n    rdfs:label \"Recurrent rectal polyp (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/713197008> ;\n    chr:hasRecordDate \"2020-05-29T22:22:08+02:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Recurrent_rectal_polyp_disorder_dd6a4ede a chr:DiagnosticStatement ;\n    rdfs:label \"Recurrent rectal polyp (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/713197008> .\n\nex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_25d05b47 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2020-05-29T22:22:08+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_4e49a0ce a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2020-05-29T22:22:08+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;\n    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_25d05b47 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:unit_score_0399f823 a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:evaluationprocess_evaluated_the_patient_ee003138 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Recurrent_rectal_polyp_disorder_0ea2cf85 ;\n    chr:hasObservation ex:diagnosticstatement_Recurrent_rectal_polyp_disorder_dd6a4ede ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2020-05-29T22:22:08+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 .\n\nex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 a chr:Person ;\n    rdfs:label \"Dr. V\u00edctor493 Ch\u00e1vez927\" .\n\nex:person_Harvey63_Napoleon578_Homenick806_7b803456 a chr:Person ;\n    rdfs:label \"Harvey63 Napoleon578 Homenick806\" .\n\n",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\n=================================================================\n\nPatient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for check up (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f a chr:CareUnit ;\n    rdfs:label \"4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2020-05-29T22:22:08+02:00. The evaluation produced a diagnostic statement of Recurrent rectal polyp (disorder) (SNOMED: 713197008). The condition was recorded on 2020-05-29T22:22:08+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Recurrent rectal polyp (disorder)\" hasCode=<http://snomed.info/id/713197008>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Recurrent_rectal_polyp_disorder_dd6a4ede a chr:DiagnosticStatement ;\n    rdfs:label \"Recurrent rectal polyp (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/713197008> .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\n=================================================================\n\nPatient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for check up (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Harvey63 Napoleon578 Homenick806\"\np2 Person \"Dr. V\u00edctor493 Ch\u00e1vez927\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 a chr:Person ;\n    rdfs:label \"Dr. V\u00edctor493 Ch\u00e1vez927\" .\n\nex:person_Harvey63_Napoleon578_Homenick806_7b803456 a chr:Person ;\n    rdfs:label \"Harvey63 Napoleon578 Homenick806\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2020-05-29T22:22:08+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 6 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ps1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Severity",
+   "concepts": [
+    "chr:Severity"
+   ],
+   "text": "On 2020-05-29T22:22:08+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 6 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "s1 Severity \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasCode=<https://loinc.org/72514-3>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:severity_Pain_severity_-_0-10_verbal_numeric_rati_88c27837 a chr:Severity ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2020-05-29T22:22:08+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 6 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "u1 Unit \"{score}\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_score_0399f823 a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n",
+   "level": 0,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2020-05-29T22:22:08+02:00. The evaluation produced a diagnostic statement of Recurrent rectal polyp (disorder) (SNOMED: 713197008). The condition was recorded on 2020-05-29T22:22:08+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- cc1: chr:hasConditionEndDate must be an xsd:dateTime. (value k2)"
+    },
+    {
+     "cycle": 1,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "cc1 ClinicalCondition \"Recurrent rectal polyp (disorder)\" hasCode=<http://snomed.info/id/713197008>; hasRecordDate=2020-05-29T22:22:08+02:00\n# UNRESOLVED: hasConditionEndDate \u2014 not stated in the text\n# UNRESOLVED: hasLocatedIn \u2014 not stated in the text\n# UNRESOLVED: hasSeverity \u2014 not stated in the text",
+   "unresolved": [
+    "UNRESOLVED: hasConditionEndDate \u2014 not stated in the text",
+    "UNRESOLVED: hasLocatedIn \u2014 not stated in the text",
+    "UNRESOLVED: hasSeverity \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalcondition_Recurrent_rectal_polyp_disorder_0ea2cf85 a chr:ClinicalCondition ;\n    rdfs:label \"Recurrent rectal polyp (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/713197008> ;\n    chr:hasRecordDate \"2020-05-29T22:22:08+02:00\"^^xsd:dateTime .\n\n\n# UNRESOLVED: hasConditionEndDate \u2014 not stated in the text\n# UNRESOLVED: hasLocatedIn \u2014 not stated in the text\n# UNRESOLVED: hasSeverity \u2014 not stated in the text\n",
+   "level": 1,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2020-05-29T22:22:08+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 6 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 Measurement \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasCode=<https://loinc.org/72514-3>; hasMeasuredDate=2020-05-29T22:22:08+02:00; hasQuantityValue=6; hasUnit=k7\nu1 Unit \"{score}\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_25d05b47 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2020-05-29T22:22:08+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:unit_score_0399f823 a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n",
+   "level": 1,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2020-05-29T22:22:08+02:00. The evaluation produced a diagnostic statement of Recurrent rectal polyp (disorder) (SNOMED: 713197008). The condition was recorded on 2020-05-29T22:22:08+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ep1 EvaluationProcess \"evaluated the patient\" hasCondition=k2; hasObservation=k3; hasPatient=k6; hasPerformedDate=2020-05-29T22:22:08+02:00; hasPerformer=k5",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_evaluated_the_patient_ee003138 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Recurrent_rectal_polyp_disorder_0ea2cf85 ;\n    chr:hasObservation ex:diagnosticstatement_Recurrent_rectal_polyp_disorder_dd6a4ede ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2020-05-29T22:22:08+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 .\n",
+   "level": 2,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2020-05-29T22:22:08+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 6 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 MeasurementProcess \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasPatient=k6; hasPerformedDate=2020-05-29T22:22:08+02:00; hasPerformer=k5; hasResult=m2; hasStatus=k7\nm2 Measurement \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasCode=<https://loinc.org/72514-3>; hasMeasuredDate=2020-05-29T22:22:08+02:00; hasQuantityValue=6; hasUnit=k9",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_4e49a0ce a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasPerformedDate \"2020-05-29T22:22:08+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;\n    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_25d05b47 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_25d05b47 a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2020-05-29T22:22:08+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n",
+   "level": 2,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\n=================================================================\n\nPatient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for check up (procedure)\n\nOn 2020-05-29T22:22:08+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 6 {score}. The measurement process was recorded with status \"completed\".\n\nDr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2020-05-29T22:22:08+02:00. The evaluation produced a diagnostic statement of Recurrent rectal polyp (disorder) (SNOMED: 713197008). The condition was recorded on 2020-05-29T22:22:08+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cp1 CarePlan \"follow-up monitoring and routine review consistent with the diagnosis\" hasMedicalProcedure=k4",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__0a55908e a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_ee003138 .\n",
+   "level": 3,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\n=================================================================\n\nPatient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927\nEncounter type: Encounter for check up (procedure)\n\nOn 2020-05-29T22:22:08+02:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Harvey63 Napoleon578 Homenick806. The measurement result was 6 {score}. The measurement process was recorded with status \"completed\".\n\nDr. V\u00edctor493 Ch\u00e1vez927 evaluated the patient on 2020-05-29T22:22:08+02:00. The evaluation produced a diagnostic statement of Recurrent rectal polyp (disorder) (SNOMED: 713197008). The condition was recorded on 2020-05-29T22:22:08+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "v1 ClinicalVisit \"Encounter for check up (procedure)\" hasCareProvider=k7; hasCareUnit=k1; hasDate=2020-05-29T21:49:47+02:00; hasPatient=k8; hasProcedure=k6\nk6 MedicalProcedure \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasPatient=k8; hasPerformedDate=2020-05-29T22:22:08+02:00; hasPerformer=k7; hasStatus=k9\nk6 hasProcedure=k5\nk5 hasCode=<https://loinc.org/72514-3>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_Encounter_for_check_up_procedure_bc47f9cc a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for check up (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_V_ctor493_Ch_vez927_ea02fc20 ;\n    chr:hasCareUnit ex:careunit_4499_ACUSHNET_AVENUE_OPERATING_COMPANY_L_b036ef6f ;\n    chr:hasDate \"2020-05-29T21:49:47+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Harvey63_Napoleon578_Homenick806_7b803456 ;\n    chr:hasProcedure ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_4e49a0ce .\n",
+   "level": 3,
+   "shared_context": "Patient: Harvey63 Napoleon578 Homenick806 (ID: P-4edfbba8)\nDate of visit: 2020-05-29T21:49:47+02:00\nCare unit: 4499 ACUSHNET AVENUE OPERATING COMPANY, LLC\nAttending physician: Dr. V\u00edctor493 Ch\u00e1vez927",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Severity",
+     "chr:Unit"
+    ],
+    [
+     "chr:ClinicalCondition",
+     "chr:Measurement"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 15,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 5997,
+   "completion_tokens": 2172,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 15,
+   "prompt_tokens": 31474,
+   "completion_tokens": 3087,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 13,
+   "prompt_tokens": 25477,
+   "completion_tokens": 915,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

@@ -1,0 +1,683 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:CarePlan_1 a chr:CarePlan ;
+    rdfs:label "A care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluation_20140716T164723 .
+
+ex:unit_score a chr:Unit ;
+    rdfs:label "[Score]" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/sblscoresbr> .
+
+ex:visit_20140716T164723 a chr:ClinicalVisit ;
+    rdfs:label "General examination of patient (procedure)" ;
+    chr:hasCareProvider ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasCareUnit ex:GROVE_HILL_MEDICAL_CENTER_PC ;
+    chr:hasDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasProcedure ex:evaluation_20140716T164723,
+        ex:evaluation_20140716T174319,
+        ex:evaluation_20140716T190027,
+        ex:process_2339_0,
+        ex:process_29463_7,
+        ex:process_39156_5,
+        ex:process_4548_4,
+        ex:process_5803_2,
+        ex:process_5804_0,
+        ex:process_5811_5,
+        ex:process_6299_2,
+        ex:process_72514_3,
+        ex:process_8302_2,
+        ex:process_8867_4,
+        ex:process_9279_1,
+        ex:process_bilirubin_urine_20140716T164723,
+        ex:process_calcium_20140716T164723,
+        ex:process_carbon_dioxide_20140716T164723,
+        ex:process_chloride_20140716T164723,
+        ex:process_cholesterol_20140716T164723,
+        ex:process_cholesterol_hdl_20140716T164723,
+        ex:process_cholesterol_ldl_20140716T164723,
+        ex:process_creatinine_20140716T164723,
+        ex:process_gfr_20140716T164723,
+        ex:process_glucose_mass_volume_in_blood,
+        ex:process_glucose_serum_20140716T164723,
+        ex:process_glucose_urine_20140716T164723,
+        ex:process_heart_rate,
+        ex:process_hemoglobin_a1c_hemoglobin_total_in_blood,
+        ex:process_ketones_urine_20140716T164723,
+        ex:process_phq2_20140716T190027,
+        ex:process_potassium_20140716T164723,
+        ex:process_protein_mass_volume_in_urine_by_test_strip,
+        ex:process_respiratory_rate,
+        ex:process_sodium_20140716T164723,
+        ex:process_specific_gravity_urine_by_test_strip,
+        ex:process_total_score_20140716T181659,
+        ex:process_triglyceride_20140716T164723,
+        ex:process_urea_nitrogen_20140716T164723 .
+
+ex:DiagnosticStatement_Gingivitis_disorder a chr:DiagnosticStatement ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> .
+
+ex:DiagnosticStatement_Medication_review_due_situation a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:DiagnosticStatement_Victim_of_intimate_partner_abuse_finding a chr:DiagnosticStatement ;
+    rdfs:label "Victim of intimate partner abuse (finding)" ;
+    chr:hasCode <http://snomed.info/id/706893006> .
+
+ex:GROVE_HILL_MEDICAL_CENTER_PC a chr:CareUnit ;
+    rdfs:label "GROVE HILL MEDICAL CENTER PC" .
+
+ex:Gingivitis_disorder a chr:ClinicalCondition ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> ;
+    chr:hasRecordDate "2014-07-16T19:00:27+02:00"^^xsd:dateTime .
+
+ex:Medication_review_due_situation a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime .
+
+ex:Victim_of_intimate_partner_abuse_finding a chr:ClinicalCondition ;
+    rdfs:label "Victim of intimate partner abuse (finding)" ;
+    chr:hasCode <http://snomed.info/id/706893006> ;
+    chr:hasRecordDate "2014-07-16T17:43:19+02:00"^^xsd:dateTime .
+
+ex:evaluation_20140716T174319 a chr:EvaluationProcess ;
+    rdfs:label "Dr. Kathrine376 Reinger292 evaluated the patient" ;
+    chr:hasCondition ex:Victim_of_intimate_partner_abuse_finding ;
+    chr:hasObservation ex:DiagnosticStatement_Victim_of_intimate_partner_abuse_finding ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T17:43:19+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 .
+
+ex:evaluation_20140716T190027 a chr:EvaluationProcess ;
+    rdfs:label "Dr. Kathrine376 Reinger292 evaluated the patient" ;
+    chr:hasCondition ex:Gingivitis_disorder ;
+    chr:hasObservation ex:DiagnosticStatement_Gingivitis_disorder ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T19:00:27+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 .
+
+ex:measurement_2339_0 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 77.68 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_29463_7 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 106.6 ;
+    chr:hasUnit ex:unit_kg .
+
+ex:measurement_39156_5 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 28.01 ;
+    chr:hasUnit ex:unit_kgperm2 .
+
+ex:measurement_5803_2 a chr:Measurement ;
+    rdfs:label "pH of Urine by Test strip" ;
+    chr:hasCode <https://loinc.org/5803-2> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 6.8269 ;
+    chr:hasUnit ex:unit_ph .
+
+ex:measurement_6299_2 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/6299-2> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 16.51 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_72514_3 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 3.0 ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_8302_2 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 195.1 ;
+    chr:hasUnit ex:unit_cm .
+
+ex:measurement_CarbonDioxide_20565-8 a chr:Measurement ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/20565-8> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 22.86 ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_Chloride_2069-3 a chr:Measurement ;
+    rdfs:label "Chloride [Moles/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2069-3> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 101.71 ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_CholesterolHDL_2085-9 a chr:Measurement ;
+    rdfs:label "Cholesterol in HDL [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2085-9> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 54.01 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_CholesterolLDL_18262-6 a chr:Measurement ;
+    rdfs:label "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay" ;
+    chr:hasCode <https://loinc.org/18262-6> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 78.2 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_Cholesterol_2093-3 a chr:Measurement ;
+    rdfs:label "Cholesterol [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2093-3> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 159.71 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_Creatinine_38483-4 a chr:Measurement ;
+    rdfs:label "Creatinine [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/38483-4> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 4.59 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_PHQ2_55758-7 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2014-07-16T19:00:27+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 1.0 ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_TotalScore_76504-0 a chr:Measurement ;
+    rdfs:label "Total score [HARK]" ;
+    chr:hasCode <https://loinc.org/76504-0> ;
+    chr:hasMeasuredDate "2014-07-16T18:16:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 0.0 ;
+    chr:hasUnit ex:unit_cblscorecbr .
+
+ex:measurement_Triglyceride_2571-8 a chr:Measurement ;
+    rdfs:label "Triglyceride [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2571-8> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 137.51 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_bilirubin_20505-4 a chr:Measurement ;
+    rdfs:label "Bilirubin.total [Mass/volume] in Urine by Test strip" ;
+    chr:hasCode <https://loinc.org/20505-4> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 1.2139 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_calcium_17861-6 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/17861-6> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 9.28 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_calcium_49765-1 a chr:Measurement ;
+    rdfs:label "Calcium [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/49765-1> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 9.28 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_gfr_33914-3 a chr:Measurement ;
+    rdfs:label "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M" ;
+    chr:hasCode <https://loinc.org/33914-3> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 42.318 ;
+    chr:hasUnit ex:unit_mLper_cbl1dot73sbr .
+
+ex:measurement_glucose_2345-7 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/2345-7> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 77.68 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_glucose_urine_5792-7 a chr:Measurement ;
+    rdfs:label "Glucose [Mass/volume] in Urine by Test strip" ;
+    chr:hasCode <https://loinc.org/5792-7> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 2.1128 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_ketones_5797-6 a chr:Measurement ;
+    rdfs:label "Ketones [Mass/volume] in Urine by Test strip" ;
+    chr:hasCode <https://loinc.org/5797-6> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 0.99191 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_potassium_2823-3 a chr:Measurement ;
+    rdfs:label "Potassium [Moles/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2823-3> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 4.33 ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_sodium_2951-2 a chr:Measurement ;
+    rdfs:label "Sodium [Moles/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/2951-2> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 142.98 ;
+    chr:hasUnit ex:unit_mmolperL .
+
+ex:measurement_urea_nitrogen_3094-0 a chr:Measurement ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Serum or Plasma" ;
+    chr:hasCode <https://loinc.org/3094-0> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 16.51 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:process_2339_0 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Blood measurement" ;
+    chr:hasCode <https://loinc.org/2339-0> ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_2339_0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_29463_7 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_29463_7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_39156_5 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_39156_5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_4548_4 a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood measurement" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_4548_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_5803_2 a chr:MeasurementProcess ;
+    rdfs:label "pH of Urine by Test strip measurement" ;
+    chr:hasCode <https://loinc.org/5803-2> ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_5803_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_5804_0 a chr:MeasurementProcess ;
+    rdfs:label "Protein [Mass/volume] in Urine by Test strip measurement" ;
+    chr:hasCode <https://loinc.org/5804-0> ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_5804_0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_5811_5 a chr:MeasurementProcess ;
+    rdfs:label "Specific gravity of Urine by Test strip measurement" ;
+    chr:hasCode <https://loinc.org/5811-5> ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_5811_5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_6299_2 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Blood measurement" ;
+    chr:hasCode <https://loinc.org/6299-2> ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_6299_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_72514_3 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_72514_3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_8302_2 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_8302_2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_8867_4 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_8867_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_9279_1 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_9279_1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_bilirubin_urine_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Bilirubin.total [Mass/volume] in Urine by Test strip measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_bilirubin_20505-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_calcium_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Calcium [Mass/volume] in Blood measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_calcium_49765-1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_carbon_dioxide_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Carbon dioxide, total [Moles/volume] in Blood measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_CarbonDioxide_20565-8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_chloride_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Chloride [Moles/volume] in Blood measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_Chloride_2069-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_cholesterol_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Cholesterol [Mass/volume] in Serum or Plasma measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_Cholesterol_2093-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_cholesterol_hdl_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Cholesterol in HDL [Mass/volume] in Serum or Plasma measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_CholesterolHDL_2085-9 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_cholesterol_ldl_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_CholesterolLDL_18262-6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_creatinine_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Creatinine [Mass/volume] in Blood measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_Creatinine_38483-4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_gfr_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_gfr_33914-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_glucose_mass_volume_in_blood a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Blood measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_glucose_2345-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_glucose_serum_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Serum or Plasma measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_calcium_17861-6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_glucose_urine_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Glucose [Mass/volume] in Urine by Test strip measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_glucose_urine_5792-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_heart_rate a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_8867_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_hemoglobin_a1c_hemoglobin_total_in_blood a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_4548_4 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_ketones_urine_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Ketones [Mass/volume] in Urine by Test strip measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_ketones_5797-6 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_phq2_20140716T190027 a chr:MeasurementProcess ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T19:00:27+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_PHQ2_55758-7 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_potassium_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Potassium [Moles/volume] in Blood measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_potassium_2823-3 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_protein_mass_volume_in_urine_by_test_strip a chr:MeasurementProcess ;
+    rdfs:label "Protein [Mass/volume] in Urine by Test strip measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_5804_0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_respiratory_rate a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_9279_1 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_sodium_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Sodium [Moles/volume] in Blood measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_sodium_2951-2 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_specific_gravity_urine_by_test_strip a chr:MeasurementProcess ;
+    rdfs:label "Specific gravity of Urine by Test strip measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_5811_5 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_total_score_20140716T181659 a chr:MeasurementProcess ;
+    rdfs:label "Total score [HARK] measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T18:16:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_TotalScore_76504-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_triglyceride_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Triglyceride [Mass/volume] in Serum or Plasma measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_Triglyceride_2571-8 ;
+    chr:hasStatus ex:status_completed .
+
+ex:process_urea_nitrogen_20140716T164723 a chr:MeasurementProcess ;
+    rdfs:label "Urea nitrogen [Mass/volume] in Serum or Plasma measurement process" ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 ;
+    chr:hasResult ex:measurement_urea_nitrogen_3094-0 ;
+    chr:hasStatus ex:status_completed .
+
+ex:unit_cm a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kgperm2 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_mLper_cbl1dot73sbr a chr:Unit ;
+    rdfs:label "mL/min/{1.73_m2}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mLpermincbl1dot73sbr> .
+
+ex:unit_nominal a chr:Unit ;
+    rdfs:label "{nominal}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblnominalcbr> .
+
+ex:unit_percent a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_ph a chr:Unit ;
+    rdfs:label "pH" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/ph> .
+
+ex:evaluation_20140716T164723 a chr:EvaluationProcess ;
+    rdfs:label "Dr. Kathrine376 Reinger292 evaluated the patient" ;
+    chr:hasCondition ex:Medication_review_due_situation ;
+    chr:hasObservation ex:DiagnosticStatement_Medication_review_due_situation ;
+    chr:hasPatient ex:Bryant814_Clarence5_Grimes165 ;
+    chr:hasPerformedDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:Dr_Kathrine376_Reinger292 .
+
+ex:measurement_4548_4 a chr:Measurement ;
+    rdfs:label "Hemoglobin A1c/Hemoglobin.total in Blood" ;
+    chr:hasCode <https://loinc.org/4548-4> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 3.06 ;
+    chr:hasUnit ex:unit_percent .
+
+ex:measurement_5804_0 a chr:Measurement ;
+    rdfs:label "Protein [Mass/volume] in Urine by Test strip" ;
+    chr:hasCode <https://loinc.org/5804-0> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 349.61 ;
+    chr:hasUnit ex:unit_mgperdL .
+
+ex:measurement_5811_5 a chr:Measurement ;
+    rdfs:label "Specific gravity of Urine by Test strip" ;
+    chr:hasCode <https://loinc.org/5811-5> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 1.0104 ;
+    chr:hasUnit ex:unit_nominal .
+
+ex:measurement_8867_4 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 93.0 ;
+    chr:hasUnit ex:unit_permin .
+
+ex:measurement_9279_1 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2014-07-16T16:47:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue 16.0 ;
+    chr:hasUnit ex:unit_permin .
+
+ex:unit_permin a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_cblscorecbr a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:unit_mmolperL a chr:Unit ;
+    rdfs:label "mmol/L" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mmolperL> .
+
+ex:unit_mgperdL a chr:Unit ;
+    rdfs:label "mg/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/mgperdL> .
+
+ex:status_completed a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:Bryant814_Clarence5_Grimes165 a chr:Person ;
+    rdfs:label "Bryant814 Clarence5 Grimes165" .
+
+ex:Dr_Kathrine376_Reinger292 a chr:Person ;
+    rdfs:label "Dr. Kathrine376 Reinger292" .
+

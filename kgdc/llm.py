@@ -7,10 +7,10 @@ import threading
 import time
 from collections import defaultdict
 
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 from openai import OpenAI
 
-load_dotenv()
+load_dotenv(find_dotenv(usecwd=True))   # the .env of the directory you run from (or a parent), also in Docker
 
 _RETRYABLE = ("429", "500", "502", "503", "504", "Connection error", "empty choices", "timed out", "Timeout")
 
@@ -67,6 +67,8 @@ def chat(prompt: str, model: str | None = None, temperature: float = 0.0, attemp
             extra = {"usage": {"include": True}}   # OpenRouter: report cost; ignored elsewhere
             if os.getenv(role + "PROVIDER_SORT"):   # OpenRouter: e.g. "throughput" to avoid slow providers
                 extra["provider"] = {"sort": os.environ[role + "PROVIDER_SORT"], "allow_fallbacks": True}
+            if os.getenv(role + "PROVIDER_IGNORE"):   # OpenRouter: comma-separated providers to skip, e.g. one that hangs
+                extra.setdefault("provider", {})["ignore"] = [p.strip() for p in os.environ[role + "PROVIDER_IGNORE"].split(",")]
             kw = {"max_tokens": int(os.environ[role + "MAX_TOKENS"])} if role == "LLM_BIG_" and os.getenv("LLM_BIG_MAX_TOKENS") else {}   # a merge writes the whole graph: endpoints cap output by default
             if max_tokens:   # the caller knows the reply is short (edit-list merge): leave the context to the input
                 kw["max_tokens"] = max_tokens

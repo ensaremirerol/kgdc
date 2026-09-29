@@ -1,0 +1,196 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_follow-up_monitoring_and_routine_review__a0d1a711 a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluationprocess_Evaluation_066b21b6 .
+
+ex:clinicalvisit_Encounter_for_symptom_procedure_4c41ec39 a chr:ClinicalVisit ;
+    rdfs:label "Encounter for symptom (procedure)" ;
+    chr:hasCareProvider ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;
+    chr:hasCareUnit ex:careunit_BERKSHIRE_MEDICAL_CENTER_INC_bdb16359 ;
+    chr:hasDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasProcedure ex:evaluationprocess_Evaluation_066b21b6,
+        ex:evaluationprocess_Evaluation_34bccaca,
+        ex:evaluationprocess_Evaluation_4bb577a4,
+        ex:evaluationprocess_Evaluation_c07587ab,
+        ex:measurementprocess_Body_Weight_measurement_b115655b,
+        ex:measurementprocess_Body_temperature_measurement_ea1cdbd0,
+        ex:measurementprocess_Heart_rate_measurement_25af1001,
+        ex:measurementprocess_Oxygen_saturation_in_Arterial_blood_meas_7d824302,
+        ex:measurementprocess_Respiratory_rate_measurement_009c8326 .
+
+ex:careunit_BERKSHIRE_MEDICAL_CENTER_INC_bdb16359 a chr:CareUnit ;
+    rdfs:label "BERKSHIRE MEDICAL CENTER INC" .
+
+ex:clinicalcondition_Cough_finding_c6dc4dab a chr:ClinicalCondition ;
+    rdfs:label "Cough (finding)" ;
+    chr:hasCode <http://snomed.info/id/49727002> ;
+    chr:hasRecordDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime .
+
+ex:clinicalcondition_Disease_caused_by_severe_acute_respirato_aa390e03 a chr:ClinicalCondition ;
+    rdfs:label "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)" ;
+    chr:hasCode <http://snomed.info/id/840539006> ;
+    chr:hasRecordDate "2020-12-04T10:06:43+01:00"^^xsd:dateTime .
+
+ex:clinicalcondition_Fever_finding_e1fc2ad1 a chr:ClinicalCondition ;
+    rdfs:label "Fever (finding)" ;
+    chr:hasCode <http://snomed.info/id/386661006> ;
+    chr:hasRecordDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime .
+
+ex:clinicalcondition_Loss_of_taste_finding_ad4e92b3 a chr:ClinicalCondition ;
+    rdfs:label "Loss of taste (finding)" ;
+    chr:hasCode <http://snomed.info/id/36955009> ;
+    chr:hasRecordDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Cough_finding_e476f139 a chr:DiagnosticStatement ;
+    rdfs:label "Cough (finding)" ;
+    chr:hasCode <http://snomed.info/id/49727002> .
+
+ex:diagnosticstatement_Disease_caused_by_severe_acute_respirato_defe9342 a chr:DiagnosticStatement ;
+    rdfs:label "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)" ;
+    chr:hasCode <http://snomed.info/id/840539006> .
+
+ex:diagnosticstatement_Fever_finding_68972a76 a chr:DiagnosticStatement ;
+    rdfs:label "Fever (finding)" ;
+    chr:hasCode <http://snomed.info/id/386661006> .
+
+ex:diagnosticstatement_Loss_of_taste_finding_5b5fd23c a chr:DiagnosticStatement ;
+    rdfs:label "Loss of taste (finding)" ;
+    chr:hasCode <http://snomed.info/id/36955009> .
+
+ex:evaluationprocess_Evaluation_34bccaca a chr:EvaluationProcess ;
+    rdfs:label "Evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Disease_caused_by_severe_acute_respirato_aa390e03 ;
+    chr:hasObservation ex:diagnosticstatement_Disease_caused_by_severe_acute_respirato_defe9342 ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2020-12-04T10:06:43+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d .
+
+ex:evaluationprocess_Evaluation_4bb577a4 a chr:EvaluationProcess ;
+    rdfs:label "Evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Loss_of_taste_finding_ad4e92b3 ;
+    chr:hasObservation ex:diagnosticstatement_Loss_of_taste_finding_5b5fd23c ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d .
+
+ex:evaluationprocess_Evaluation_c07587ab a chr:EvaluationProcess ;
+    rdfs:label "Evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Cough_finding_c6dc4dab ;
+    chr:hasObservation ex:diagnosticstatement_Cough_finding_e476f139 ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d .
+
+ex:measurement_Body_Weight_9c2b87c9 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "56.1"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_5c233fc2 .
+
+ex:measurement_Body_temperature_8c8fcab7 a chr:Measurement ;
+    rdfs:label "Body temperature" ;
+    chr:hasCode <https://loinc.org/8310-5> ;
+    chr:hasMeasuredDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "38.656"^^xsd:float ;
+    chr:hasUnit ex:unit_Cel_b876d74d .
+
+ex:measurement_Heart_rate_35908c6f a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "85.723"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Oxygen_saturation_in_Arterial_blood_c4f88113 a chr:Measurement ;
+    rdfs:label "Oxygen saturation in Arterial blood" ;
+    chr:hasCode <https://loinc.org/2708-6> ;
+    chr:hasMeasuredDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "82.21"^^xsd:float ;
+    chr:hasUnit ex:unit_x_5f053d39 .
+
+ex:measurement_Respiratory_rate_5d0c1b69 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "18.345"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurementprocess_Body_Weight_measurement_b115655b a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;
+    chr:hasResult ex:measurement_Body_Weight_9c2b87c9 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_temperature_measurement_ea1cdbd0 a chr:MeasurementProcess ;
+    rdfs:label "Body temperature measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;
+    chr:hasResult ex:measurement_Body_temperature_8c8fcab7 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Heart_rate_measurement_25af1001 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;
+    chr:hasResult ex:measurement_Heart_rate_35908c6f ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Oxygen_saturation_in_Arterial_blood_meas_7d824302 a chr:MeasurementProcess ;
+    rdfs:label "Oxygen saturation in Arterial blood measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;
+    chr:hasResult ex:measurement_Oxygen_saturation_in_Arterial_blood_c4f88113 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Respiratory_rate_measurement_009c8326 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d ;
+    chr:hasResult ex:measurement_Respiratory_rate_5d0c1b69 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:unit_Cel_b876d74d a chr:Unit ;
+    rdfs:label "Cel" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .
+
+ex:unit_kg_5c233fc2 a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_x_5f053d39 a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:evaluationprocess_Evaluation_066b21b6 a chr:EvaluationProcess ;
+    rdfs:label "Evaluation" ;
+    chr:hasCondition ex:clinicalcondition_Fever_finding_e1fc2ad1 ;
+    chr:hasObservation ex:diagnosticstatement_Fever_finding_68972a76 ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2020-12-04T09:01:15+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Carroll471_Eichmann909_7d53bb5d .
+
+ex:unit_min_753e4226 a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:person_Daren950_Ed239_Strosin214_6aa3c602 a chr:Person ;
+    rdfs:label "Daren950 Ed239 Strosin214" .
+
+ex:person_Dr_Carroll471_Eichmann909_7d53bb5d a chr:Person ;
+    rdfs:label "Dr. Carroll471 Eichmann909" .
+

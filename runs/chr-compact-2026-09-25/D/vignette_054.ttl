@@ -1,0 +1,216 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_follow-up_monitoring_and_routine_review__a27f1fc7 a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluationprocess_General_examination_of_patient_eeca880d .
+
+ex:clinicalvisit_General_examination_of_patient_757bb9b3 a chr:ClinicalVisit ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCareProvider ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasCareUnit ex:careunit_COMMUNITY_HEALTH_PROGRAMS_INC_9df647b4 ;
+    chr:hasDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasProcedure ex:evaluationprocess_General_examination_of_patient_eeca880d,
+        ex:evaluationprocess_General_examination_of_patient_fa8ec598,
+        ex:measurementprocess_Body_Height_measurement_85042d01,
+        ex:measurementprocess_Body_Weight_measurement_44a5de09,
+        ex:measurementprocess_Body_mass_index_BMI_Percentile_Per_age_a_8d0c98e6,
+        ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_20d915f6,
+        ex:measurementprocess_Heart_rate_measurement_a6674f1b,
+        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_ab8e5792,
+        ex:measurementprocess_Patient_Health_Questionnaire_2_item_PHQ-_2b3d9c88,
+        ex:measurementprocess_Respiratory_rate_measurement_8bd7d972 .
+
+ex:careunit_COMMUNITY_HEALTH_PROGRAMS_INC_9df647b4 a chr:CareUnit ;
+    rdfs:label "COMMUNITY HEALTH PROGRAMS INC" .
+
+ex:clinicalcondition_Gingivitis_disorder_ad00152c a chr:ClinicalCondition ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> ;
+    chr:hasRecordDate "2023-10-14T11:17:23+02:00"^^xsd:dateTime .
+
+ex:clinicalcondition_Medication_review_due_ad00152c a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Gingivitis_disorder_5fe13758 a chr:DiagnosticStatement ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> .
+
+ex:diagnosticstatement_Medication_review_due_situation_9b9831fe a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:evaluationprocess_General_examination_of_patient_fa8ec598 a chr:EvaluationProcess ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCondition ex:clinicalcondition_Gingivitis_disorder_ad00152c ;
+    chr:hasObservation ex:diagnosticstatement_Gingivitis_disorder_5fe13758 ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2023-10-14T11:17:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 .
+
+ex:measurement_Body_Height_a87201cb a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "177.2"^^xsd:float ;
+    chr:hasUnit ex:unit_cm_bfcc7879 .
+
+ex:measurement_Body_Weight_ff95ca70 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "66.0"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_5c233fc2 .
+
+ex:measurement_Body_mass_index_BMI_Percentile_Per_age_a_f5e9c132 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Percentile] Per age and sex" ;
+    chr:hasCode <https://loinc.org/59576-9> ;
+    chr:hasMeasuredDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "28.044"^^xsd:float ;
+    chr:hasUnit ex:unit_x_5f053d39 .
+
+ex:measurement_Body_mass_index_BMI_Ratio_a1621b16 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "21.02"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_m2_e4e558a3 .
+
+ex:measurement_Heart_rate_a8ec2a55 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "82.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_9c9fa987 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_b1ddd771 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2023-10-14T11:17:23+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Respiratory_rate_77f1236a a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "14.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurementprocess_Body_Height_measurement_85042d01 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Body_Height_a87201cb ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_Weight_measurement_44a5de09 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Body_Weight_ff95ca70 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_mass_index_BMI_Percentile_Per_age_a_8d0c98e6 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Percentile] Per age and sex measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Body_mass_index_BMI_Percentile_Per_age_a_f5e9c132 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_20d915f6 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_a1621b16 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Heart_rate_measurement_a6674f1b a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Heart_rate_a8ec2a55 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_ab8e5792 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_9c9fa987 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Patient_Health_Questionnaire_2_item_PHQ-_2b3d9c88 a chr:MeasurementProcess ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported] measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2023-10-14T11:17:23+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_b1ddd771 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Respiratory_rate_measurement_8bd7d972 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 ;
+    chr:hasResult ex:measurement_Respiratory_rate_77f1236a ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:unit_cm_bfcc7879 a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg_5c233fc2 a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kg_m2_e4e558a3 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_x_5f053d39 a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:evaluationprocess_General_examination_of_patient_eeca880d a chr:EvaluationProcess ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCondition ex:clinicalcondition_Medication_review_due_ad00152c ;
+    chr:hasObservation ex:diagnosticstatement_Medication_review_due_situation_9b9831fe ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2023-10-14T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378 .
+
+ex:unit_min_753e4226 a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_score_0399f823 a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:person_Daren950_Ed239_Strosin214_6aa3c602 a chr:Person ;
+    rdfs:label "Daren950 Ed239 Strosin214" .
+
+ex:person_Dr_Ping698_Weissnat378 a chr:Person ;
+    rdfs:label "Dr. Ping698 Weissnat378" .
+

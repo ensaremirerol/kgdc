@@ -1,0 +1,366 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__ca90db41 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_Evaluation_1d45893a .\n\nex:clinicalvisit_Well_child_visit_d0d257b8 a chr:ClinicalVisit ;\n    rdfs:label \"Well child visit\" ;\n    chr:hasCareProvider ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasCareUnit ex:careunit_DR_HE_S_PRIMARY_CARE_FOR_ADULTS_INC_e62be304 ;\n    chr:hasDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasProcedure ex:evaluationprocess_Evaluation_1d45893a,\n        ex:evaluationprocess_Evaluation_ee7d2805,\n        ex:measurementprocess_Body_Height_measurement_58adb44f,\n        ex:measurementprocess_Body_Weight_measurement_b4052fa6,\n        ex:measurementprocess_Body_mass_index_BMI_Percentile_Per_age_a_f128d7cc,\n        ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_8552a646,\n        ex:measurementprocess_Heart_rate_measurement_9146e10c,\n        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_583b3fa0,\n        ex:measurementprocess_Patient_Health_Questionnaire-9_Modified__6a87a079,\n        ex:measurementprocess_Respiratory_rate_measurement_5243fc47 .\n\nex:careunit_DR_HE_S_PRIMARY_CARE_FOR_ADULTS_INC_e62be304 a chr:CareUnit ;\n    rdfs:label \"DR. HE'S PRIMARY CARE FOR ADULTS INC\" .\n\nex:clinicalcondition_Gingivitis_disorder_10e60aaf a chr:ClinicalCondition ;\n    rdfs:label \"Gingivitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/66383009> ;\n    chr:hasRecordDate \"2025-11-25T04:57:57+01:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Medication_review_due_situation_5da0483f a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Gingivitis_disorder_5fe13758 a chr:DiagnosticStatement ;\n    rdfs:label \"Gingivitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/66383009> .\n\nex:diagnosticstatement_Medication_review_due_situation_9b9831fe a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n\nex:evaluationprocess_Evaluation_ee7d2805 a chr:EvaluationProcess ;\n    rdfs:label \"Evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Gingivitis_disorder_10e60aaf ;\n    chr:hasObservation ex:diagnosticstatement_Gingivitis_disorder_5fe13758 ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:57:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 .\n\nex:measurement_Body_Height_14444c0a a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"162.9\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm_bfcc7879 .\n\nex:measurement_Body_Weight_e9417aac a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"65.1\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_5c233fc2 .\n\nex:measurement_Body_mass_index_BMI_Percentile_Per_age_a_d85941d0 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Percentile] Per age and sex\" ;\n    chr:hasCode <https://loinc.org/59576-9> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"91.807\"^^xsd:float ;\n    chr:hasUnit ex:unit_x_5f053d39 .\n\nex:measurement_Body_mass_index_BMI_Ratio_a69e58ef a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"24.55\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_m2_e4e558a3 .\n\nex:measurement_Heart_rate_b44cc5d5 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"72.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_de6ee13d a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Patient_Health_Questionnaire-9_Modified__58f6b30a a chr:Measurement ;\n    rdfs:label \"Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen]\" ;\n    chr:hasCode <https://loinc.org/89204-2> ;\n    chr:hasMeasuredDate \"2025-11-25T04:57:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Respiratory_rate_1ddbe6eb a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"13.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurementprocess_Body_Height_measurement_58adb44f a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Body_Height_14444c0a ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_Weight_measurement_b4052fa6 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Body_Weight_e9417aac ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_mass_index_BMI_Percentile_Per_age_a_f128d7cc a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Percentile] Per age and sex measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Body_mass_index_BMI_Percentile_Per_age_a_d85941d0 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_8552a646 a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_a69e58ef ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Heart_rate_measurement_9146e10c a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Heart_rate_b44cc5d5 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_583b3fa0 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_de6ee13d ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Patient_Health_Questionnaire-9_Modified__6a87a079 a chr:MeasurementProcess ;\n    rdfs:label \"Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:57:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Patient_Health_Questionnaire-9_Modified__58f6b30a ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Respiratory_rate_measurement_5243fc47 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Respiratory_rate_1ddbe6eb ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:unit_cm_bfcc7879 a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_kg_5c233fc2 a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kg_m2_e4e558a3 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_x_5f053d39 a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:evaluationprocess_Evaluation_1d45893a a chr:EvaluationProcess ;\n    rdfs:label \"Evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Medication_review_due_situation_5da0483f ;\n    chr:hasObservation ex:diagnosticstatement_Medication_review_due_situation_9b9831fe ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 .\n\nex:unit_min_753e4226 a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:unit_score_0399f823 a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 a chr:Person ;\n    rdfs:label \"Dolores502 Marisol435 Nev\u00e1rez403\" .\n\nex:person_Dr_Cari853_Kohler843_11cc2708 a chr:Person ;\n    rdfs:label \"Dr. Cari853 Kohler843\" .\n\n",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "Patient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"DR. HE'S PRIMARY CARE FOR ADULTS INC\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_DR_HE_S_PRIMARY_CARE_FOR_ADULTS_INC_e62be304 a chr:CareUnit ;\n    rdfs:label \"DR. HE'S PRIMARY CARE FOR ADULTS INC\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Cari853 Kohler843 evaluated the patient on 2025-11-25T04:20:29+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2025-11-25T04:20:29+01:00.\n\nDr. Cari853 Kohler843 evaluated the patient on 2025-11-25T04:57:57+01:00. The evaluation produced a diagnostic statement of Gingivitis (disorder) (SNOMED: 66383009). The condition was recorded on 2025-11-25T04:57:57+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cc1 ClinicalCondition \"Medication review due (situation)\" hasCode=http://snomed.info/id/314529007; hasRecordDate=2025-11-25T04:20:29+01:00\ncc2 ClinicalCondition \"Gingivitis (disorder)\" hasCode=http://snomed.info/id/66383009; hasRecordDate=2025-11-25T04:57:57+01:00",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalcondition_Gingivitis_disorder_10e60aaf a chr:ClinicalCondition ;\n    rdfs:label \"Gingivitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/66383009> ;\n    chr:hasRecordDate \"2025-11-25T04:57:57+01:00\"^^xsd:dateTime .\n\nex:clinicalcondition_Medication_review_due_situation_5da0483f a chr:ClinicalCondition ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> ;\n    chr:hasRecordDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime .\n",
+   "level": 0,
+   "shared_context": "Patient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Cari853 Kohler843 evaluated the patient on 2025-11-25T04:20:29+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2025-11-25T04:20:29+01:00.\n\nDr. Cari853 Kohler843 evaluated the patient on 2025-11-25T04:57:57+01:00. The evaluation produced a diagnostic statement of Gingivitis (disorder) (SNOMED: 66383009). The condition was recorded on 2025-11-25T04:57:57+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Medication review due (situation)\" hasCode=<http://snomed.info/id/314529007>\nds2 DiagnosticStatement \"Gingivitis (disorder)\" hasCode=<http://snomed.info/id/66383009>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Gingivitis_disorder_5fe13758 a chr:DiagnosticStatement ;\n    rdfs:label \"Gingivitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/66383009> .\n\nex:diagnosticstatement_Medication_review_due_situation_9b9831fe a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n",
+   "level": 0,
+   "shared_context": "Patient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2025-11-25T04:20:29+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 162.9 cm. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 65.1 kg. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 24.55 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Body mass index (BMI) [Percentile] Per age and sex (LOINC: 59576-9) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 91.807 %. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 72 /min. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:57:57+01:00, a Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] (LOINC: 89204-2) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 Measurement \"Body Height\" hasCode=<https://loinc.org/8302-2>; hasMeasuredDate=2025-11-25T04:20:29+01:00; hasQuantityValue=162.9; hasUnit=u1\nu1 Unit \"cm\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/cm>\nm2 Measurement \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" hasCode=<https://loinc.org/72514-3>; hasMeasuredDate=2025-11-25T04:20:29+01:00; hasQuantityValue=1; hasUnit=u2\nu2 Unit \"{score}\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr>\nm3 Measurement \"Body Weight\" hasCode=<https://loinc.org/29463-7>; hasMeasuredDate=2025-11-25T04:20:29+01:00; hasQuantityValue=65.1; hasUnit=u3\nu3 Unit \"kg\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/kg>\nm4 Measurement \"Body mass index (BMI) [Ratio]\" hasCode=<https://loinc.org/39156-5>; hasMeasuredDate=2025-11-25T04:20:29+01:00; hasQuantityValue=24.55; hasUnit=u4\nu4 Unit \"kg/m2\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2>\nm5 Measurement \"Body mass index (BMI) [Percentile] Per age and sex\" hasCode=<https://loinc.org/59576-9>; hasMeasuredDate=2025-11-25T04:20:29+01:00; hasQuantityValue=91.807; hasUnit=u5\nu5 Unit \"%\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/percent>\nm6 Measurement \"Heart rate\" hasCode=<https://loinc.org/8867-4>; hasMeasuredDate=2025-11-25T04:20:29+01:00; hasQuantityValue=72; hasUnit=u6\nu6 Unit \"/min\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/permin>\nm7 Measurement \"Respiratory rate\" hasCode=<https://loinc.org/9279-1>; hasMeasuredDate=2025-11-25T04:20:29+01:00; hasQuantityValue=13; hasUnit=u6\nm8 Measurement \"Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen]\" hasCode=<https://loinc.org/89204-2>; hasMeasuredDate=2025-11-25T04:57:57+01:00; hasQuantityValue=1; hasUnit=u2",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Body_Height_14444c0a a chr:Measurement ;\n    rdfs:label \"Body Height\" ;\n    chr:hasCode <https://loinc.org/8302-2> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"162.9\"^^xsd:float ;\n    chr:hasUnit ex:unit_cm_bfcc7879 .\n\nex:measurement_Body_Weight_e9417aac a chr:Measurement ;\n    rdfs:label \"Body Weight\" ;\n    chr:hasCode <https://loinc.org/29463-7> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"65.1\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_5c233fc2 .\n\nex:measurement_Body_mass_index_BMI_Percentile_Per_age_a_d85941d0 a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Percentile] Per age and sex\" ;\n    chr:hasCode <https://loinc.org/59576-9> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"91.807\"^^xsd:float ;\n    chr:hasUnit ex:unit_x_5f053d39 .\n\nex:measurement_Body_mass_index_BMI_Ratio_a69e58ef a chr:Measurement ;\n    rdfs:label \"Body mass index (BMI) [Ratio]\" ;\n    chr:hasCode <https://loinc.org/39156-5> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"24.55\"^^xsd:float ;\n    chr:hasUnit ex:unit_kg_m2_e4e558a3 .\n\nex:measurement_Heart_rate_b44cc5d5 a chr:Measurement ;\n    rdfs:label \"Heart rate\" ;\n    chr:hasCode <https://loinc.org/8867-4> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"72.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_de6ee13d a chr:Measurement ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported\" ;\n    chr:hasCode <https://loinc.org/72514-3> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Patient_Health_Questionnaire-9_Modified__58f6b30a a chr:Measurement ;\n    rdfs:label \"Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen]\" ;\n    chr:hasCode <https://loinc.org/89204-2> ;\n    chr:hasMeasuredDate \"2025-11-25T04:57:57+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"1.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_score_0399f823 .\n\nex:measurement_Respiratory_rate_1ddbe6eb a chr:Measurement ;\n    rdfs:label \"Respiratory rate\" ;\n    chr:hasCode <https://loinc.org/9279-1> ;\n    chr:hasMeasuredDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"13.0\"^^xsd:float ;\n    chr:hasUnit ex:unit_min_753e4226 .\n\nex:unit_cm_bfcc7879 a chr:Unit ;\n    rdfs:label \"cm\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .\n\nex:unit_kg_5c233fc2 a chr:Unit ;\n    rdfs:label \"kg\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .\n\nex:unit_kg_m2_e4e558a3 a chr:Unit ;\n    rdfs:label \"kg/m2\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .\n\nex:unit_x_5f053d39 a chr:Unit ;\n    rdfs:label \"%\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:unit_min_753e4226 a chr:Unit ;\n    rdfs:label \"/min\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .\n\nex:unit_score_0399f823 a chr:Unit ;\n    rdfs:label \"{score}\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .\n",
+   "level": 0,
+   "shared_context": "Patient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "Patient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Dolores502 Marisol435 Nev\u00e1rez403\"\np2 Person \"Dr. Cari853 Kohler843\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 a chr:Person ;\n    rdfs:label \"Dolores502 Marisol435 Nev\u00e1rez403\" .\n\nex:person_Dr_Cari853_Kohler843_11cc2708 a chr:Person ;\n    rdfs:label \"Dr. Cari853 Kohler843\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Cari853 Kohler843 evaluated the patient on 2025-11-25T04:20:29+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2025-11-25T04:20:29+01:00.\n\nDr. Cari853 Kohler843 evaluated the patient on 2025-11-25T04:57:57+01:00. The evaluation produced a diagnostic statement of Gingivitis (disorder) (SNOMED: 66383009). The condition was recorded on 2025-11-25T04:57:57+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ep1 EvaluationProcess \"Evaluation\" hasCondition=k3; hasObservation=k5; hasPatient=k14; hasPerformedDate=2025-11-25T04:20:29+01:00; hasPerformer=k15\nep2 EvaluationProcess \"Evaluation\" hasCondition=k2; hasObservation=k4; hasPatient=k14; hasPerformedDate=2025-11-25T04:57:57+01:00; hasPerformer=k15",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_Evaluation_1d45893a a chr:EvaluationProcess ;\n    rdfs:label \"Evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Medication_review_due_situation_5da0483f ;\n    chr:hasObservation ex:diagnosticstatement_Medication_review_due_situation_9b9831fe ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 .\n\nex:evaluationprocess_Evaluation_ee7d2805 a chr:EvaluationProcess ;\n    rdfs:label \"Evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Gingivitis_disorder_10e60aaf ;\n    chr:hasObservation ex:diagnosticstatement_Gingivitis_disorder_5fe13758 ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:57:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 .\n",
+   "level": 1,
+   "shared_context": "Patient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2025-11-25T04:20:29+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 162.9 cm. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 65.1 kg. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 24.55 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Body mass index (BMI) [Percentile] Per age and sex (LOINC: 59576-9) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 91.807 %. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 72 /min. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:57:57+01:00, a Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] (LOINC: 89204-2) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "mp1 MeasurementProcess \"Body Height measurement\" hasPatient=k14; hasPerformedDate=2025-11-25T04:20:29+01:00; hasPerformer=k15; hasResult=k6; hasStatus=ps1\nmp2 MeasurementProcess \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" hasPatient=k14; hasPerformedDate=2025-11-25T04:20:29+01:00; hasPerformer=k15; hasResult=k11; hasStatus=ps1\nmp3 MeasurementProcess \"Body Weight measurement\" hasPatient=k14; hasPerformedDate=2025-11-25T04:20:29+01:00; hasPerformer=k15; hasResult=k7; hasStatus=ps1\nmp4 MeasurementProcess \"Body mass index (BMI) [Ratio] measurement\" hasPatient=k14; hasPerformedDate=2025-11-25T04:20:29+01:00; hasPerformer=k15; hasResult=k9; hasStatus=ps1\nmp5 MeasurementProcess \"Body mass index (BMI) [Percentile] Per age and sex measurement\" hasPatient=k14; hasPerformedDate=2025-11-25T04:20:29+01:00; hasPerformer=k15; hasResult=k8; hasStatus=ps1\nmp6 MeasurementProcess \"Heart rate measurement\" hasPatient=k14; hasPerformedDate=2025-11-25T04:20:29+01:00; hasPerformer=k15; hasResult=k10; hasStatus=ps1\nmp7 MeasurementProcess \"Respiratory rate measurement\" hasPatient=k14; hasPerformedDate=2025-11-25T04:20:29+01:00; hasPerformer=k15; hasResult=k13; hasStatus=ps1\nmp8 MeasurementProcess \"Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] measurement\" hasPatient=k14; hasPerformedDate=2025-11-25T04:57:57+01:00; hasPerformer=k15; hasResult=k12; hasStatus=ps1\nps1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Body_Height_measurement_58adb44f a chr:MeasurementProcess ;\n    rdfs:label \"Body Height measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Body_Height_14444c0a ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_Weight_measurement_b4052fa6 a chr:MeasurementProcess ;\n    rdfs:label \"Body Weight measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Body_Weight_e9417aac ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_mass_index_BMI_Percentile_Per_age_a_f128d7cc a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Percentile] Per age and sex measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Body_mass_index_BMI_Percentile_Per_age_a_d85941d0 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_8552a646 a chr:MeasurementProcess ;\n    rdfs:label \"Body mass index (BMI) [Ratio] measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_a69e58ef ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Heart_rate_measurement_9146e10c a chr:MeasurementProcess ;\n    rdfs:label \"Heart rate measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Heart_rate_b44cc5d5 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_583b3fa0 a chr:MeasurementProcess ;\n    rdfs:label \"Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_de6ee13d ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Patient_Health_Questionnaire-9_Modified__6a87a079 a chr:MeasurementProcess ;\n    rdfs:label \"Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:57:57+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Patient_Health_Questionnaire-9_Modified__58f6b30a ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurementprocess_Respiratory_rate_measurement_5243fc47 a chr:MeasurementProcess ;\n    rdfs:label \"Respiratory rate measurement\" ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasPerformedDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasResult ex:measurement_Respiratory_rate_1ddbe6eb ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 1,
+   "shared_context": "Patient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 DR. HE'S PRIMARY CARE FOR ADULTS INC\n==========================================================\n\nPatient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)\n\nOn 2025-11-25T04:20:29+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 162.9 cm. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 65.1 kg. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 24.55 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Body mass index (BMI) [Percentile] Per age and sex (LOINC: 59576-9) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 91.807 %. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 72 /min. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:57:57+01:00, a Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] (LOINC: 89204-2) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Cari853 Kohler843 evaluated the patient on 2025-11-25T04:20:29+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2025-11-25T04:20:29+01:00.\n\nDr. Cari853 Kohler843 evaluated the patient on 2025-11-25T04:57:57+01:00. The evaluation produced a diagnostic statement of Gingivitis (disorder) (SNOMED: 66383009). The condition was recorded on 2025-11-25T04:57:57+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cp1 CarePlan \"follow-up monitoring and routine review consistent with the diagnosis\" hasMedicalProcedure=k6",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__ca90db41 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_Evaluation_1d45893a .\n",
+   "level": 2,
+   "shared_context": "Patient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 DR. HE'S PRIMARY CARE FOR ADULTS INC\n==========================================================\n\nPatient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)\n\nOn 2025-11-25T04:20:29+01:00, a Body Height (LOINC: 8302-2) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 162.9 cm. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Pain severity - 0-10 verbal numeric rating [Score] - Reported (LOINC: 72514-3) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Body Weight (LOINC: 29463-7) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 65.1 kg. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Body mass index (BMI) [Ratio] (LOINC: 39156-5) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 24.55 kg/m2. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Body mass index (BMI) [Percentile] Per age and sex (LOINC: 59576-9) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 91.807 %. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Heart rate (LOINC: 8867-4) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 72 /min. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:20:29+01:00, a Respiratory rate (LOINC: 9279-1) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 13 /min. The measurement process was recorded with status \"completed\".\n\nOn 2025-11-25T04:57:57+01:00, a Patient Health Questionnaire-9: Modified for Teens total score [Reported.PHQ.Teen] (LOINC: 89204-2) measurement was performed on Dolores502 Marisol435 Nev\u00e1rez403. The measurement result was 1 {score}. The measurement process was recorded with status \"completed\".\n\nDr. Cari853 Kohler843 evaluated the patient on 2025-11-25T04:20:29+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2025-11-25T04:20:29+01:00.\n\nDr. Cari853 Kohler843 evaluated the patient on 2025-11-25T04:57:57+01:00. The evaluation produced a diagnostic statement of Gingivitis (disorder) (SNOMED: 66383009). The condition was recorded on 2025-11-25T04:57:57+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "v1 ClinicalVisit \"Well child visit\" hasCareProvider=k25; hasCareUnit=k1; hasDate=2025-11-25T04:20:29+01:00; hasPatient=k24; hasProcedure=k16; hasProcedure=k21; hasProcedure=k17; hasProcedure=k19; hasProcedure=k18; hasProcedure=k20; hasProcedure=k23; hasProcedure=k22; hasProcedure=k6; hasProcedure=k7",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_Well_child_visit_d0d257b8 a chr:ClinicalVisit ;\n    rdfs:label \"Well child visit\" ;\n    chr:hasCareProvider ex:person_Dr_Cari853_Kohler843_11cc2708 ;\n    chr:hasCareUnit ex:careunit_DR_HE_S_PRIMARY_CARE_FOR_ADULTS_INC_e62be304 ;\n    chr:hasDate \"2025-11-25T04:20:29+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Dolores502_Marisol435_Nev_rez403_2c3192e2 ;\n    chr:hasProcedure ex:evaluationprocess_Evaluation_1d45893a,\n        ex:evaluationprocess_Evaluation_ee7d2805,\n        ex:measurementprocess_Body_Height_measurement_58adb44f,\n        ex:measurementprocess_Body_Weight_measurement_b4052fa6,\n        ex:measurementprocess_Body_mass_index_BMI_Percentile_Per_age_a_f128d7cc,\n        ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_8552a646,\n        ex:measurementprocess_Heart_rate_measurement_9146e10c,\n        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_583b3fa0,\n        ex:measurementprocess_Patient_Health_Questionnaire-9_Modified__6a87a079,\n        ex:measurementprocess_Respiratory_rate_measurement_5243fc47 .\n",
+   "level": 2,
+   "shared_context": "Patient: Dolores502 Marisol435 Nev\u00e1rez403 (ID: P-70538f53)\nDate of visit: 2025-11-25T04:20:29+01:00\nCare unit: DR. HE'S PRIMARY CARE FOR ADULTS INC\nAttending physician: Dr. Cari853 Kohler843\nEncounter type: Well child visit (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 11,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 10589,
+   "completion_tokens": 6354,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 11,
+   "prompt_tokens": 33451,
+   "completion_tokens": 8269,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 9,
+   "prompt_tokens": 22862,
+   "completion_tokens": 1915,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

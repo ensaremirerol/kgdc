@@ -1,0 +1,525 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__85b4a3d0 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_92aedbf9 .\n\nex:clinicalvisit_Encounter_for_symptom_procedure_3130f5d1 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for symptom (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_Louis204_Hauck852_abc123 ;\n    chr:hasCareUnit ex:careunit_WHITTIER_REHABILTATION_HOSPITAL_4666d138 ;\n    chr:hasDate \"2019-06-05T12:34:22+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;\n    chr:hasProcedure ex:evaluationprocess_evaluated_the_patient_92aedbf9,\n        ex:measurementprocess_Body_temperature_measurement_544cf8c7 .\n\nex:careunit_WHITTIER_REHABILTATION_HOSPITAL_4666d138 a chr:CareUnit ;\n    rdfs:label \"WHITTIER REHABILTATION HOSPITAL\" .\n\nex:clinicalcondition_Acute_viral_pharyngitis_disorder_540f1dc3 a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2019-06-05T12:34:22+02:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .\n\nex:measurement_Body_temperature_d2dd130b a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-06-05T12:34:22+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.53\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_b876d74d .\n\nex:measurementprocess_Body_temperature_measurement_544cf8c7 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;\n    chr:hasPerformedDate \"2019-06-05T12:34:22+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Louis204_Hauck852_abc123 ;\n    chr:hasResult ex:measurement_Body_temperature_d2dd130b ;\n    chr:hasStatus ex:processstatus_completed_e7225ed4 .\n\nex:processstatus_completed_e7225ed4 a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:unit_Cel_b876d74d a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n\nex:evaluationprocess_evaluated_the_patient_92aedbf9 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Acute_viral_pharyngitis_disorder_540f1dc3 ;\n    chr:hasObservation ex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 ;\n    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;\n    chr:hasPerformedDate \"2019-06-05T12:34:22+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Louis204_Hauck852_abc123 .\n\nex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 a chr:Person ;\n    rdfs:label \"Arturo47 Lauren941 Heidenreich818\" .\n\nex:person_Dr_Louis204_Hauck852_abc123 a chr:Person ;\n    rdfs:label \"Dr. Louis204 Hauck852\" .\n\n",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\n=====================================================\n\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"WHITTIER REHABILTATION HOSPITAL\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_WHITTIER_REHABILTATION_HOSPITAL_4666d138 a chr:CareUnit ;\n    rdfs:label \"WHITTIER REHABILTATION HOSPITAL\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Louis204 Hauck852 evaluated the patient on 2019-06-05T12:34:22+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-06-05T12:34:22+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cc1 ClinicalCondition \"Acute viral pharyngitis (disorder)\" hasCode=<http://snomed.info/id/195662009>; hasRecordDate=2019-06-05T12:34:22+02:00",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalcondition_Acute_viral_pharyngitis_disorder_540f1dc3 a chr:ClinicalCondition ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> ;\n    chr:hasRecordDate \"2019-06-05T12:34:22+02:00\"^^xsd:dateTime .\n",
+   "level": 0,
+   "shared_context": "Patient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Louis204 Hauck852 evaluated the patient on 2019-06-05T12:34:22+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-06-05T12:34:22+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Acute viral pharyngitis (disorder)\" hasCode=<http://snomed.info/id/195662009>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 a chr:DiagnosticStatement ;\n    rdfs:label \"Acute viral pharyngitis (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/195662009> .\n",
+   "level": 0,
+   "shared_context": "Patient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\n=====================================================\n\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Arturo47 Lauren941 Heidenreich818\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 a chr:Person ;\n    rdfs:label \"Arturo47 Lauren941 Heidenreich818\" .\n",
+   "level": 0,
+   "shared_context": "Patient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2019-06-05T12:34:22+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 37.53 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ps1 ProcessStatus \"completed\" hasCode=<https://loinc.org/8310-5>\n# UNRESOLVED: hasCode for ProcessStatus \u2014 not stated in the text",
+   "unresolved": [
+    "UNRESOLVED: hasCode for ProcessStatus \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:processstatus_completed_e7225ed4 a chr:ProcessStatus ;\n    rdfs:label \"completed\" ;\n    chr:hasCode <https://loinc.org/8310-5> .\n\n\n# UNRESOLVED: hasCode for ProcessStatus \u2014 not stated in the text\n",
+   "level": 0,
+   "shared_context": "Patient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2019-06-05T12:34:22+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 37.53 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "u1 Unit \"Cel\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/Cel>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_Cel_b876d74d a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n",
+   "level": 0,
+   "shared_context": "Patient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Louis204 Hauck852 evaluated the patient on 2019-06-05T12:34:22+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-06-05T12:34:22+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"Arturo47 Lauren941 Heidenreich818\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"Arturo47 Lauren941 Heidenreich818\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "ep1 EvaluationProcess \"evaluated the patient\" hasCondition=k2; hasObservation=k3; hasPatient=k4; hasPerformedDate=2019-06-05T12:34:22+02:00; hasPerformer=p1\np1 Person \"Dr. Louis204 Hauck852\"",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_evaluated_the_patient_92aedbf9 a chr:EvaluationProcess ;\n    rdfs:label \"evaluated the patient\" ;\n    chr:hasCondition ex:clinicalcondition_Acute_viral_pharyngitis_disorder_540f1dc3 ;\n    chr:hasObservation ex:diagnosticstatement_Acute_viral_pharyngitis_disorder_8c46f8d1 ;\n    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;\n    chr:hasPerformedDate \"2019-06-05T12:34:22+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Louis204_Hauck852_e7ff3be0 .\n\n",
+   "level": 1,
+   "shared_context": "Patient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2019-06-05T12:34:22+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 37.53 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 Measurement \"Body temperature\" hasCode=<https://loinc.org/8310-5>; hasMeasuredDate=2019-06-05T12:34:22+02:00; hasQuantityValue=37.53; hasUnit=k6",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Body_temperature_d2dd130b a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-06-05T12:34:22+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.53\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_b876d74d .\n",
+   "level": 1,
+   "shared_context": "Patient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2019-06-05T12:34:22+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 37.53 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- ex:person_Dr_Louis204_Hauck852_e7ff3be0: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"Arturo47 Lauren941 Heidenreich818\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"Arturo47 Lauren941 Heidenreich818\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "m1 MeasurementProcess \"Body temperature measurement\" hasPatient=k6; hasPerformedDate=2019-06-05T12:34:22+02:00; hasPerformer=p1; hasResult=m2; hasStatus=k7\np1 Person \"Dr. Louis204 Hauck852\"\nm2 Measurement \"Body temperature\" hasMeasuredDate=2019-06-05T12:34:22+02:00; hasQuantityValue=37.53; hasUnit=k8; hasCode=<https://loinc.org/8310-5>",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Body_temperature_measurement_544cf8c7 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;\n    chr:hasPerformedDate \"2019-06-05T12:34:22+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Louis204_Hauck852_e7ff3be0 ;\n    chr:hasResult ex:measurement_Body_temperature_d2dd130b ;\n    chr:hasStatus ex:processstatus_completed_e7225ed4 .\n\nex:measurement_Body_temperature_d2dd130b a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2019-06-05T12:34:22+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"37.53\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_b876d74d .\n\n",
+   "level": 2,
+   "shared_context": "Patient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\n=====================================================\n\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for symptom (procedure)\n\nOn 2019-06-05T12:34:22+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 37.53 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Louis204 Hauck852 evaluated the patient on 2019-06-05T12:34:22+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-06-05T12:34:22+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- ex:person_Dr_Louis204_Hauck852_e7ff3be0: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- m2 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"evaluated the patient\", k6 \"Body temperature measurement\"\n- m3 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"evaluated the patient\", k6 \"Body temperature measurement\"\n- m1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Arturo47 Lauren941 Heidenreich818\"\n- m1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- m1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "cp1 CarePlan \"follow-up monitoring and routine review consistent with the diagnosis\" hasMedicalProcedure=k4",
+   "scope_dropped": 3,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__85b4a3d0 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluated_the_patient_92aedbf9 .\n",
+   "level": 3,
+   "shared_context": "Patient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\n=====================================================\n\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for symptom (procedure)\n\nOn 2019-06-05T12:34:22+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 37.53 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Louis204 Hauck852 evaluated the patient on 2019-06-05T12:34:22+02:00. The evaluation produced a diagnostic statement of Acute viral pharyngitis (disorder) (SNOMED: 195662009). The condition was recorded on 2019-06-05T12:34:22+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- cannot read: hasPerformedDate=2019-06-05T12:34:22+02:00\n- cannot read: hasPerformer=p1\n- p2 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"evaluated the patient\", k6 \"Body temperature measurement\"\n- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Arturo47 Lauren941 Heidenreich818\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person.\n- p2: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Arturo47 Lauren941 Heidenreich818\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Arturo47 Lauren941 Heidenreich818\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "p1 Person \"Dr. Louis204 Hauck852\"\nv1 ClinicalVisit \"Encounter for symptom (procedure)\" hasCareProvider=p1; hasCareUnit=k1; hasDate=2019-06-05T12:34:22+02:00; hasPatient=k7; hasProcedure=k4; hasProcedure=k6",
+   "scope_dropped": 4,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_Encounter_for_symptom_procedure_3130f5d1 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for symptom (procedure)\" ;\n    chr:hasCareProvider ex:person_Dr_Louis204_Hauck852_e7ff3be0 ;\n    chr:hasCareUnit ex:careunit_WHITTIER_REHABILTATION_HOSPITAL_4666d138 ;\n    chr:hasDate \"2019-06-05T12:34:22+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;\n    chr:hasProcedure ex:evaluationprocess_evaluated_the_patient_92aedbf9,\n        ex:measurementprocess_Body_temperature_measurement_544cf8c7 .\n\n",
+   "level": 3,
+   "shared_context": "Patient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2019-06-05T12:34:22+02:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 20,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 5652,
+   "completion_tokens": 1943,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 20,
+   "prompt_tokens": 41413,
+   "completion_tokens": 3623,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 18,
+   "prompt_tokens": 35761,
+   "completion_tokens": 1680,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

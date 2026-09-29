@@ -1,16 +1,16 @@
-# Results snapshot, 2026-09-21 (interim)
+# Results snapshot, 2026-09-21
 
-All kgdc runs: ordered mode, gemma4-g1 (27B, LiteLLM) for both roles, 4 documents in parallel.
+All kgdc runs: ordered mode, Gemma 4 26B-A4B-it (4-bit AWQ, served through LiteLLM as `gemma4-g1`) for both roles,
+4 documents in parallel, agents writing Turtle (the compact format came later, see `../2026-09-25/`).
 
 ## CHR vignettes (200-document batch, final)
 
 Scorer: identity-hash triple F1 (Thesis `pipeline/canonical_iri.py`), honorifics stripped from labels and
 redundant supertypes dropped on both sides (`examples/chr/score.py`). Thesis systems A/B/D are the committed
 gpt-oss-120b outputs of the Thesis repo, rescored with the same scorer; unparseable outputs count as F1 = 0.
-Files: `chr_kgdc_final_scores.txt` (per document, final), `chr_kgdc_pass1_scores.txt` (pass 1, before the
-second and third passes), `chr_thesis_{a,b,d}_scores.txt`, `chr_summary_final.txt`, `chr_comparison_final.txt`,
-`chr_comparison_final_no_dev.txt` (without the 11 development vignettes), `chr_comparison_interim.txt`
-(157-document snapshot taken during pass 1).
+Files: `chr_kgdc_final_scores.txt` (per document), `chr_thesis_{a,b,d}_scores.txt`, `chr_summary_final.txt`,
+`chr_comparison_final.txt`, `chr_comparison_final_no_dev.txt` (without the 11 development vignettes). The outputs
+and traces are in `runs/chr-2026-09-21/`; intermediate passes are in git history (before commit `repo-cleanup`).
 
 ```
 documents: 200 (unscorable outputs count as F1 = 0: kgdc 0, thesis_a 4, thesis_b 2, thesis_d 3)
@@ -30,7 +30,7 @@ kgdc vs thesis_d: mean ΔF1 = +0.503, median = +0.471, wins/ties/losses = 200/0/
 ```
 
 Without the development vignettes (189 documents): kgdc macro 0.836 / micro 0.811; A 0.315, B 0.310, D 0.330 macro.
-After the three passes, 15 outputs with a mistyped vocabulary namespace were rewritten to the canonical one (`runs/.../nsfix/` keeps the originals; NOTES 60).
+After the three passes, 15 outputs with a mistyped vocabulary namespace were rewritten to the canonical one (lab notes 60).
 
 Identical-individual merge (`merge_identical`, NOTES 62) applied offline to the 200 final outputs: macro 0.839 → 0.844,
 micro 0.813 → 0.822 (P 0.767 → 0.782, R unchanged); 935 nodes merged in 73 documents, 21 documents better, none worse.
@@ -42,7 +42,7 @@ kgdc 0.696 / A 0.289 / B 0.285.
 
 Run structure: pass 1 (all 200; 90 s worker timeout and cut-off merge replies hurt the largest documents),
 pass 2 (36 documents re-run with the scope filter and chunked agents), pass 3 (15 documents re-run after
-the scope-filter level-0 fix). `runs/chr-2026-09-21/pass1/`, `pass2/` and `truncated/` keep the replaced outputs.
+the scope-filter level-0 fix). The replaced outputs of the earlier passes are in git history.
 
 ## WebNLG (20 documents each, label-level F1, `examples/webnlg/score.py`)
 

@@ -11,7 +11,7 @@ from dataclasses import dataclass, field
 from rdflib import RDF, RDFS, XSD, Graph, Literal, URIRef
 
 from . import compact, llm, prompts
-from .progress import log
+from .progress import log, stage
 from .schema import Schema
 from .validate import _BAD_IRI, unresolved, validate
 
@@ -75,6 +75,7 @@ def json_call(prompt: str, model=None, attempts: int = 2, max_tokens: int | None
 
 
 def _segment(schema: Schema, text: str, task: str) -> tuple[str, list[dict]]:
+    stage("Step 1/5 - split the note into passages")
     log("segmenting (orchestrator) ...")
     data = json_call(prompts.segment(schema, text, task), model=BIG_MODEL)   # planning: big model
     if not isinstance(data, dict):
@@ -107,6 +108,21 @@ def _whole_sentences(text: str, span: str) -> str:
     ends = [m.start() for m in _BOUNDARY.finditer(text)] + [len(text)]
     end = min(b for b in ends if b >= j)
     return text[start:end].strip()
+
+
+def drop_undeclared(g: Graph, schema: Schema) -> int:
+    """Remove what uses a class or property the ontology does not declare. The vocabulary check reports such
+    terms to the agent; when its repair budget runs out they would otherwise stay (one graph kept a
+    sulo:Evaluation node written in the last repair round). An individual whose only types are undeclared
+    goes with all its statements; links to it are then dropped by drop_dangling."""
+    from .validate import _ALLOWED_PREDS
+    declared = lambda iri: str(iri) in schema.terms
+    ghosts = {s for s in set(g.subjects(RDF.type, None)) if not any(declared(c) for c in g.objects(s, RDF.type))}
+    bad = [(s, p, o) for s, p, o in g
+           if s in ghosts or (str(p) not in schema.terms and str(p) not in _ALLOWED_PREDS) or (p == RDF.type and not declared(o))]
+    for t in bad:
+        g.remove(t)
+    return len(bad)
 
 
 def drop_dangling(g: Graph, ns: str) -> int:
@@ -241,14 +257,30 @@ def own_violations(report: str, ttl: str, known_ttl: str, schema: Schema) -> str
     return "\n".join(keep).strip()
 
 
-_PREFIX_LINE = re.compile(r"^\s*(@prefix|PREFIX)\s.*$", re.I | re.M)
+_PREFIX_LINE = re.compile(r"^\s*(@prefix|PREFIX|PREFIXES:)\s.*$", re.I | re.M)   # PREFIXES: = the prompt's own line, echoed back
+_PROMPT_ECHO = re.compile(r"\A(?:[ \t]*\n|[A-Z][A-Za-z ]*:[ \t][^\n]*\n)+")   # leading prompt labels echoed back ("Allowed classes: ...")
+
+
+def close_open_statements(ttl: str) -> str:
+    """A statement left open by a comment: `…;` then `# UNRESOLVED: …` and then the next subject (or the end).
+    The model writes the required note after the `;`, which makes the whole reply unparsable (paper, Discussion)."""
+    lines = ttl.split("\n")
+    for i, line in enumerate(lines):
+        if not line.rstrip().endswith(";"):
+            continue
+        j = i + 1
+        while j < len(lines) and (not lines[j].strip() or lines[j].lstrip().startswith("#")):
+            j += 1
+        if j == len(lines) or not lines[j][:1].isspace():   # end of reply, or a new subject at column 0
+            lines[i] = line.rstrip()[:-1].rstrip() + " ."
+    return "\n".join(lines)
 
 
 def with_prefixes(ttl: str, schema: Schema) -> str:
     """Agents never see or write namespace IRIs (one mistyped character turned every term of a
     document into foreign vocabulary): drop any prefix declaration the model produced and put
     the canonical block in front."""
-    return schema.prefix_block() + "\n\n" + _PREFIX_LINE.sub("", ttl).strip() + "\n"
+    return schema.prefix_block() + "\n\n" + close_open_statements(_PROMPT_ECHO.sub("", _PREFIX_LINE.sub("", ttl).strip())) + "\n"
 
 
 def flags() -> dict:
@@ -575,6 +607,9 @@ def _union(schema: Schema, ttls: list[str]) -> tuple[str, list[str]]:
     n = merge_identical(g)
     if n:
         log(f"union: merged {n} identical individual(s)")
+    n = drop_undeclared(g, schema)
+    if n:
+        log(f"union: dropped {n} statement(s) with a class or property the ontology does not declare")
     n = drop_dangling(g, schema.prefixes.get("ex", "http://example.org/data/"))
     if n:
         log(f"union: dropped {n} link(s) to undeclared individuals")
@@ -622,6 +657,7 @@ def _final(schema: Schema, text: str, merged: str, report: str, unres: list[str]
         gf = Graph().parse(data=final, format="turtle")
         drop_redundant_types(gf, schema)
         merge_identical(gf)
+        drop_undeclared(gf, schema)
         drop_dangling(gf, schema.prefixes.get("ex", "http://example.org/data/"))
         n_union = len(Graph().parse(data=merged, format="turtle"))
         if len(gf) < MERGE_MIN_KEEP * n_union:   # a merge dedupes, it does not lose half the graph: the reply was cut short
@@ -752,6 +788,7 @@ def _final_edits(schema: Schema, text: str, merged: str, report: str, unres: lis
         cur.bind(p, ns)
     drop_redundant_types(cur, schema)
     merge_identical(cur)
+    drop_undeclared(cur, schema)
     drop_dangling(cur, schema.prefixes.get("ex", "http://example.org/data/"))
     final = cur.serialize(format="turtle")
     ok, rep, _ = validate(final, schema)
@@ -764,6 +801,7 @@ def run_ordered(schema: Schema, text: str, workers: int = 4, task: str = "") -> 
     context, segs = _segment(schema, text, task)
     present = sorted({c for s in segs for c in s.get("concepts", []) if c in schema.classes})
     levels = schema.build_order(present)
+    stage("Step 2/5 - order the classes by their links")
     log("build order: " + " -> ".join("[" + ", ".join(c.split(":")[-1] for c in l) + "]" for l in levels))
     built = Graph()
     for p_, ns in schema.prefixes.items():
@@ -771,7 +809,9 @@ def run_ordered(schema: Schema, text: str, workers: int = 4, task: str = "") -> 
     traces = []
     for level in levels:
         known, known_ttl = _known_block(built, schema), built.serialize(format="turtle")
-        log(f"level {levels.index(level)}: {len(level)} agent(s), {len(known.splitlines()) if known else 0} known entities")
+        stage(f"Steps 3+4 - level {levels.index(level) + 1}/{len(levels)}: extract and check "
+              f"{', '.join(c.split(':')[-1] for c in level)}")
+        log(f"{len(level)} class(es), {len(known.splitlines()) if known else 0} known entities from earlier levels")
         jobs = []
         for cls in level:
             spans = [s["text"] for s in segs if cls in s.get("concepts", [])]
@@ -793,11 +833,18 @@ def run_ordered(schema: Schema, text: str, workers: int = 4, task: str = "") -> 
                 g = Graph().parse(data=t["ttl"], format="turtle")
             except Exception:  # noqa: BLE001 — kept in the trace; merge pass gets it as text
                 t["unparsed"] = True
+                log(f"  -> {t['id'].split(':')[-1]}: reply could not be read, passed to the merge as text")
                 continue
+            last = t["cycles"][-1] if t["cycles"] else {}
+            n_ent = len(set(g.subjects(RDF.type)))
+            log(f"  -> {t['id'].split(':')[-1]}: {n_ent} {'entity' if n_ent == 1 else 'entities'}, {len(t['cycles'])} check(s), "
+                + ("passes" if last.get("conforms") else "violations left")
+                + (f", {len(t['unresolved'])} unresolved" if t["unresolved"] else ""))
             for trip in g:   # rdflib parses illegal IRIs but cannot serialise them; keep the graph serialisable
                 if not any(isinstance(x, URIRef) and _BAD_IRI.search(str(x)) for x in trip):
                     built.add(trip)
         traces += level_traces
+    stage("Step 5/5 - merge the agent outputs")
     merged, _ = _union(schema, [built.serialize(format="turtle")])
     unparsed = [t["ttl"] for t in traces if t.get("unparsed")]
     _, report, _ = validate(merged, schema)

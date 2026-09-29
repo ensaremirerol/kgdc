@@ -1,0 +1,483 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__775fb30e a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_58d50b7c .\n\nex:clinicalvisit_Encounter_for_check_up_134e73e6 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for check up\" ;\n    chr:hasCareProvider ex:person_Dr_Louis204_Hauck852_e7ff3be ;\n    chr:hasCareUnit ex:careunit_WHITTIER_REHABILTATION_HOSPITAL_4666d138 ;\n    chr:hasDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;\n    chr:hasProcedure ex:evaluationprocess_evaluation_58d50b7c,\n        ex:measurementprocess_Hemoglobin_A1c_Hemoglobin_total_in_Blood_0039da2c .\n\nex:careunit_WHITTIER_REHABILTATION_HOSPITAL_4666d138 a chr:CareUnit ;\n    rdfs:label \"WHITTIER REHABILTATION HOSPITAL\" .\n\nex:clinicalcondition_condition_b667d755 a chr:ClinicalCondition ;\n    rdfs:label \"condition\" ;\n    chr:hasRecordDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Medication_review_due_situation_9b9831fe a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n\nex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_365db136 a chr:Measurement ;\n    rdfs:label \"Hemoglobin A1c/Hemoglobin.total in Blood\" ;\n    chr:hasCode <https://loinc.org/4548-4> ;\n    chr:hasMeasuredDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.31\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent_8b8cf0cd .\n\nex:measurementprocess_Hemoglobin_A1c_Hemoglobin_total_in_Blood_0039da2c a chr:MeasurementProcess ;\n    rdfs:label \"Hemoglobin A1c/Hemoglobin.total in Blood measurement\" ;\n    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;\n    chr:hasPerformedDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Louis204_Hauck852_e7ff3be ;\n    chr:hasResult ex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_365db136 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:unit_percent_8b8cf0cd a chr:Unit ;\n    rdfs:label \"percent\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n\nex:evaluationprocess_evaluation_58d50b7c a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_condition_b667d755 ;\n    chr:hasObservation ex:diagnosticstatement_Medication_review_due_situation_9b9831fe ;\n    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;\n    chr:hasPerformedDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Louis204_Hauck852_e7ff3be .\n\nex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 a chr:Person ;\n    rdfs:label \"Arturo47 Lauren941 Heidenreich818\" .\n\nex:person_Dr_Louis204_Hauck852_e7ff3be a chr:Person ;\n    rdfs:label \"Dr. Louis204 Hauck852\" .\n\n",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"WHITTIER REHABILTATION HOSPITAL\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_WHITTIER_REHABILTATION_HOSPITAL_4666d138 a chr:CareUnit ;\n    rdfs:label \"WHITTIER REHABILTATION HOSPITAL\" .\n",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Louis204 Hauck852 evaluated the patient on 2016-12-26T01:34:22+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2016-12-26T01:34:22+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Medication review due (situation)\" hasCode=<http://snomed.info/id/314529007>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Medication_review_due_situation_9b9831fe a chr:DiagnosticStatement ;\n    rdfs:label \"Medication review due (situation)\" ;\n    chr:hasCode <http://snomed.info/id/314529007> .\n",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Arturo47 Lauren941 Heidenreich818\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 a chr:Person ;\n    rdfs:label \"Arturo47 Lauren941 Heidenreich818\" .\n",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2016-12-26T01:34:22+01:00, a Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 6.31 %. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ps1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Unit",
+   "concepts": [
+    "chr:Unit"
+   ],
+   "text": "On 2016-12-26T01:34:22+01:00, a Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 6.31 %. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "u1 Unit \"percent\" hasCode=https://biomedit.ch/rdf/sphn-resource/ucum/percent",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:unit_percent_8b8cf0cd a chr:Unit ;\n    rdfs:label \"percent\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Louis204 Hauck852 evaluated the patient on 2016-12-26T01:34:22+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2016-12-26T01:34:22+01:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k3 \"Arturo47 Lauren941 Heidenreich818\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- m1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k3 \"Arturo47 Lauren941 Heidenreich818\"\n- m1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- m1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k3 \"Arturo47 Lauren941 Heidenreich818\"\n- m1: Object of chr:hasPerformer must be a chr:Person."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "ep1 EvaluationProcess \"evaluation\" hasCondition=cc1; hasObservation=k2; hasPatient=k3; hasPerformedDate=2016-12-26T01:34:22+01:00; hasPerformer=p1\np1 Person \"Dr. Louis204 Hauck852\"\ncc1 ClinicalCondition \"condition\" hasRecordDate=2016-12-26T01:34:22+01:00\n# UNRESOLVED: cc1 hasCode \u2014 not stated in the text\n# UNRESOLVED: cc1 hasSeverity \u2014 not stated in the text",
+   "scope_dropped": 3,
+   "unresolved": [
+    "UNRESOLVED: cc1 hasCode \u2014 not stated in the text",
+    "UNRESOLVED: cc1 hasSeverity \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_evaluation_58d50b7c a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_condition_b667d755 ;\n    chr:hasObservation ex:diagnosticstatement_Medication_review_due_situation_9b9831fe ;\n    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;\n    chr:hasPerformedDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Louis204_Hauck852_e7ff3be0 .\n\nex:clinicalcondition_condition_b667d755 a chr:ClinicalCondition ;\n    rdfs:label \"condition\" ;\n    chr:hasRecordDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime .\n\n\n# UNRESOLVED: cc1 hasCode \u2014 not stated in the text\n# UNRESOLVED: cc1 hasSeverity \u2014 not stated in the text",
+   "level": 1,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2016-12-26T01:34:22+01:00, a Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 6.31 %. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 Measurement \"Hemoglobin A1c/Hemoglobin.total in Blood\" hasCode=<https://loinc.org/4548-4>; hasMeasuredDate=2016-12-26T01:34:22+01:00; hasQuantityValue=6.31; hasUnit=u1\nu1 Unit \"percent\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/percent>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_365db136 a chr:Measurement ;\n    rdfs:label \"Hemoglobin A1c/Hemoglobin.total in Blood\" ;\n    chr:hasCode <https://loinc.org/4548-4> ;\n    chr:hasMeasuredDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.31\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent_8b8cf0cd .\n\nex:unit_percent_8b8cf0cd a chr:Unit ;\n    rdfs:label \"percent\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .\n",
+   "level": 1,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2016-12-26T01:34:22+01:00, a Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 6.31 %. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- ex:person_Dr_Louis204_Hauck852_e7ff3be0: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"Arturo47 Lauren941 Heidenreich818\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- cannot read: Wait, looking at the violation: \"p1 (Person) was removed: individuals of this class were built by earlier agents. Link t\n- cannot read: Let's re-evaluate:\n- The: cannot read 'is \"Dr. Louis204 Hauck852\". He is not in KNOWN ENTITIES' (expected property=value)\n- The: cannot read 'is k6' (expected property=value)\n- The: cannot read 'says p1 was removed because it was a duplicate of k6' (expected property=value)\n- I: cannot read 'declare the physician as p1' (expected property=value)\n- The: 'process hasPerformer' is not a property name (expected property=value)\n- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6 \"Arturo47 Lauren941 Heidenreich818\"\n- The: sulo:measurement is not a class of the vocabulary\n- The: sulo:patient is not a class of the vocabulary\n- The: sulo:physician is not a class of the vocabulary\n- The: sulo:violation is not a class of the vocabulary\n- I: sulo:will is not a class of the vocabulary\n- p1: Object of chr:hasPerformer must be a chr:Person.\n- sulo:measurement: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:patient: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:physician: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:violation: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:will: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:measurement: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:patient: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:physician: rdf:type must be a cla"
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "m1 MeasurementProcess \"Hemoglobin A1c/Hemoglobin.total in Blood measurement\" hasPatient=k6; hasPerformedDate=2016-12-26T01:34:22+01:00; hasPerformer=p1; hasResult=m2; hasStatus=k7\nm2 Measurement \"Hemoglobin A1c/Hemoglobin.total in Blood\" hasMeasuredDate=2016-12-26T01:34:22+01:00; hasQuantityValue=6.31; hasUnit=k8; hasCode=<https://loinc.org/4548-4>\np1 Person \"Dr. Louis204 Hauck852\"\n# UNRESOLVED: m1 hasPerformer must be a chr:Person \u2014 the text names Dr. Louis204 Hauck852 as the attending physician, but no Person individual for him is provided in the KNOWN ENTITIES or text to link to. (Note: The violation p1 was removed because the performer must be a Person, and the previous p1 was a duplicate/incorrectly handled Person. I am declaring p1 as the physician to fix the type error, but since the physician is not a KNOWN ENTITY, I must declare him. However, the prompt says \"Link to the matching KNOWN ENTITY instead of creating one: k6\". k6 is the patient. The performer is the physician. Since the physician is not a known entity, I declare him as p1 to satisfy the type requirement.)\n\nWait, looking at the violation: \"p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k6\". This implies the previous agent mistakenly thought the performer was the patient k6. The performer is the physician.\n\nLet's re-evaluate:\nThe physician is \"Dr. Louis204 Hauck852\". He is not in KNOWN ENTITIES.\nThe patient is k6.\nThe measurement process hasPerformer=Physician.\nThe violation says p1 was removed because it was a duplicate of k6.\nI will declare the physician as p1.\n\nm1 MeasurementProcess \"Hemoglobin A1c/Hemoglobin.total in Blood measurement\" hasPatient=k6; hasPerformedDate=2016-12-26T01:34:22+01:00; hasPerformer=p1; hasResult=m2; hasStatus=k7\nm2 Measurement \"Hemoglobin A1c/Hemoglobin.total in Blood\" hasMeasuredDate=2016-12-26T01:34:22+01:00; hasQuantityValue=6.31; hasUnit=k8; hasCode=<https://loinc.org/4548-4>\np1 Person \"Dr. Louis204 Hauck852\"",
+   "scope_dropped": 2,
+   "unresolved": [
+    "UNRESOLVED: m1 hasPerformer must be a chr:Person \u2014 the text names Dr. Louis204 Hauck852 as the attending physician, but no Person individual for him is provided in the KNOWN ENTITIES or text to link to. (Note: The violation p1 was removed because the performer must be a Person, and the previous p1 was a duplicate/incorrectly handled Person. I am declaring p1 as the physician to fix the type error, but since the physician is not a KNOWN ENTITY, I must declare him. However, the prompt says \"Link to the matching KNOWN ENTITY instead of creating one: k6\". k6 is the patient. The performer is the physician. Since the physician is not a known entity, I declare him as p1 to satisfy the type requirement.)"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Hemoglobin_A1c_Hemoglobin_total_in_Blood_0039da2c a chr:MeasurementProcess ;\n    rdfs:label \"Hemoglobin A1c/Hemoglobin.total in Blood measurement\" ;\n    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;\n    chr:hasPerformedDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Dr_Louis204_Hauck852_e7ff3be0 ;\n    chr:hasResult ex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_365db136 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:physician_d02b2f57 a sulo:measurement,\n        sulo:patient,\n        sulo:physician,\n        sulo:violation .\n\nex:will_29c3ce58 a sulo:will .\n\nex:measurement_Hemoglobin_A1c_Hemoglobin_total_in_Blood_365db136 a chr:Measurement ;\n    rdfs:label \"Hemoglobin A1c/Hemoglobin.total in Blood\" ;\n    chr:hasCode <https://loinc.org/4548-4> ;\n    chr:hasMeasuredDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"6.31\"^^xsd:float ;\n    chr:hasUnit ex:unit_percent_8b8cf0cd .\n\n\n# UNRESOLVED: m1 hasPerformer must be a chr:Person \u2014 the text names Dr. Louis204 Hauck852 as the attending physician, but no Person individual for him is provided in the KNOWN ENTITIES or text to link to. (Note: The violation p1 was removed because the performer must be a Person, and the previous p1 was a duplicate/incorrectly handled Person. I am declaring p1 as the physician to fix the type error, but since the physician is not a KNOWN ENTITY, I must declare him. However, the prompt says \"Link to the matching KNOWN ENTITY instead of creating one: k6\". k6 is the patient. The performer is the physician. Since the physician is not a known entity, I declare him as p1 to satisfy the type requirement.)",
+   "level": 2,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\n=====================================================\n\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)\n\nOn 2016-12-26T01:34:22+01:00, a Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 6.31 %. The measurement process was recorded with status \"completed\".\n\nDr. Louis204 Hauck852 evaluated the patient on 2016-12-26T01:34:22+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2016-12-26T01:34:22+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- ex:person_Dr_Louis204_Hauck852_e7ff3be0: Object of chr:hasPerformer must be a chr:Person.\n- sulo:measurement: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:patient: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:physician: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:violation: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:will: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:measurement: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:patient: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:physician: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:violation: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:will: rdf:type must be a class declared in the CHR schema; this class is not in the schema."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- ex:person_Dr_Louis204_Hauck852_e7ff3be0: Object of chr:hasPerformer must be a chr:Person.\n- sulo:measurement: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:patient: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:physician: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:violation: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:will: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:measurement: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:patient: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:physician: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:violation: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:will: rdf:type must be a class declared in the CHR schema; this class is not in the schema."
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "cp1 CarePlan \"follow-up monitoring and routine review consistent with the diagnosis\" hasMedicalProcedure=k4\n# UNRESOLVED: sulo:measurement rdf:type must be a class declared in the CHR schema \u2014 not stated in the text\n# UNRESOLVED: sulo:patient rdf:type must be a class declared in the CHR schema \u2014 not stated in the text\n# UNRESOLVED: sulo:physician rdf:type must be a class declared in the CHR schema \u2014 not stated in the text\n# UNRESOLVED: sulo:violation rdf:type must be a class declared in the CHR schema \u2014 not stated in the text\n# UNRESOLVED: sulo:will rdf:type must be a class declared in the CHR schema \u2014 not stated in the text\n# UNRESOLVED: ex:person_Dr_Louis204_Hauck852_e7ff3be: chr:hasPerformer must be a chr:Person \u2014 not stated in the text",
+   "unresolved": [
+    "UNRESOLVED: sulo:measurement rdf:type must be a class declared in the CHR schema \u2014 not stated in the text",
+    "UNRESOLVED: sulo:patient rdf:type must be a class declared in the CHR schema \u2014 not stated in the text",
+    "UNRESOLVED: sulo:physician rdf:type must be a class declared in the CHR schema \u2014 not stated in the text",
+    "UNRESOLVED: sulo:violation rdf:type must be a class declared in the CHR schema \u2014 not stated in the text",
+    "UNRESOLVED: sulo:will rdf:type must be a class declared in the CHR schema \u2014 not stated in the text",
+    "UNRESOLVED: ex:person_Dr_Louis204_Hauck852_e7ff3be: chr:hasPerformer must be a chr:Person \u2014 not stated in the text"
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__775fb30e a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_58d50b7c .\n\n\n# UNRESOLVED: sulo:measurement rdf:type must be a class declared in the CHR schema \u2014 not stated in the text\n# UNRESOLVED: sulo:patient rdf:type must be a class declared in the CHR schema \u2014 not stated in the text\n# UNRESOLVED: sulo:physician rdf:type must be a class declared in the CHR schema \u2014 not stated in the text\n# UNRESOLVED: sulo:violation rdf:type must be a class declared in the CHR schema \u2014 not stated in the text\n# UNRESOLVED: sulo:will rdf:type must be a class declared in the CHR schema \u2014 not stated in the text\n# UNRESOLVED: ex:person_Dr_Louis204_Hauck852_e7ff3be: chr:hasPerformer must be a chr:Person \u2014 not stated in the text\n",
+   "level": 3,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\n=====================================================\n\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)\n\nOn 2016-12-26T01:34:22+01:00, a Hemoglobin A1c/Hemoglobin.total in Blood (LOINC: 4548-4) measurement was performed on Arturo47 Lauren941 Heidenreich818. The measurement result was 6.31 %. The measurement process was recorded with status \"completed\".\n\nDr. Louis204 Hauck852 evaluated the patient on 2016-12-26T01:34:22+01:00. The evaluation produced a diagnostic statement of Medication review due (situation) (SNOMED: 314529007). The condition was recorded on 2016-12-26T01:34:22+01:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p2 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"evaluation\", k6 \"Hemoglobin A1c/Hemoglobin.total in Blood measurement\"\n- p3 (MedicalProcedure) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k4 \"evaluation\", k6 \"Hemoglobin A1c/Hemoglobin.total in Blood measurement\"\n- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Arturo47 Lauren941 Heidenreich818\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person.\n- sulo:measurement: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:patient: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:physician: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:violation: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:will: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- p2: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.\n- p3: Object of chr:hasProcedure must be a chr:MedicalProcedure or subclass thereof.\n- sulo:measurement: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:patient: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:physician: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:violation: rdf:type must be a class declared in the CHR schema; this class is not in the sche"
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Arturo47 Lauren941 Heidenreich818\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person.\n- sulo:measurement: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:patient: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:physician: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:violation: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:will: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:measurement: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:patient: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:physician: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:violation: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:will: rdf:type must be a class declared in the CHR schema; this class is not in the schema."
+    },
+    {
+     "cycle": 2,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Arturo47 Lauren941 Heidenreich818\"\n- p1: Object of chr:hasCareProvider must be a chr:Person.\n- p1: Object of chr:hasPerformer must be a chr:Person.\n- sulo:measurement: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:patient: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:physician: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:violation: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:will: rdf:type must be a class declared in the CHR schema (a subclass of chr:CHRConcept); this class is not in the schema.\n- sulo:measurement: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:patient: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:physician: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:violation: rdf:type must be a class declared in the CHR schema; this class is not in the schema.\n- sulo:will: rdf:type must be a class declared in the CHR schema; this class is not in the schema."
+    }
+   ],
+   "llm_calls": 3,
+   "reply": "v1 ClinicalVisit \"Encounter for check up\" hasCareProvider=p1; hasCareUnit=k1; hasDate=2016-12-26T01:34:22+01:00; hasPatient=k7; hasProcedure=k4; hasProcedure=k6\np1 Person \"Dr. Louis204 Hauck852\"",
+   "scope_dropped": 5,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_Encounter_for_check_up_134e73e6 a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for check up\" ;\n    chr:hasCareProvider ex:person_Dr_Louis204_Hauck852_e7ff3be0 ;\n    chr:hasCareUnit ex:careunit_WHITTIER_REHABILTATION_HOSPITAL_4666d138 ;\n    chr:hasDate \"2016-12-26T01:34:22+01:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Arturo47_Lauren941_Heidenreich818_288b55c8 ;\n    chr:hasProcedure ex:evaluationprocess_evaluation_58d50b7c,\n        ex:measurementprocess_Hemoglobin_A1c_Hemoglobin_total_in_Blood_0039da2c .\n\n",
+   "level": 3,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 WHITTIER REHABILTATION HOSPITAL\nPatient: Arturo47 Lauren941 Heidenreich818 (ID: P-622122bd)\nDate of visit: 2016-12-26T01:34:22+01:00\nCare unit: WHITTIER REHABILTATION HOSPITAL\nAttending physician: Dr. Louis204 Hauck852\nEncounter type: Encounter for check up (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:DiagnosticStatement",
+     "chr:Person",
+     "chr:ProcessStatus",
+     "chr:Unit"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:Measurement"
+    ],
+    [
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 19,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 7657,
+   "completion_tokens": 1929,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 19,
+   "prompt_tokens": 43270,
+   "completion_tokens": 4425,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 17,
+   "prompt_tokens": 35613,
+   "completion_tokens": 2496,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

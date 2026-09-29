@@ -1,0 +1,427 @@
+{
+ "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__d8a97061 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_5f910d27 .\n\nex:clinicalvisit_Encounter_for_symptom_69cc166a a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for symptom\" ;\n    chr:hasCareProvider ex:person_Nickolas58_Schumm995_unresolved ;\n    chr:hasCareUnit ex:careunit_ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_B_5492ed90 ;\n    chr:hasDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;\n    chr:hasProcedure ex:evaluationprocess_evaluation_5f910d27,\n        ex:measurementprocess_Body_temperature_measurement_f1886cd7 .\n\nex:careunit_ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_B_5492ed90 a chr:CareUnit ;\n    rdfs:label \"ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" .\n\nex:clinicalcondition_Streptococcal_sore_throat_c5ccaf92 a chr:ClinicalCondition ;\n    rdfs:label \"Streptococcal sore throat\" ;\n    chr:hasCode <http://snomed.info/id/43878008> ;\n    chr:hasRecordDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime .\n\nex:diagnosticstatement_Streptococcal_sore_throat_disorder_7f11dfdc a chr:DiagnosticStatement ;\n    rdfs:label \"Streptococcal sore throat (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/43878008> .\n\nex:measurement_Body_temperature_382b0966 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"38.234\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_b876d74d .\n\nex:measurementprocess_Body_temperature_measurement_f1886cd7 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;\n    chr:hasPerformedDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Nickolas58_Schumm995_unresolved ;\n    chr:hasResult ex:measurement_Body_temperature_382b0966 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n\nex:unit_Cel_b876d74d a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n\nex:evaluationprocess_evaluation_5f910d27 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Streptococcal_sore_throat_c5ccaf92 ;\n    chr:hasObservation ex:diagnosticstatement_Streptococcal_sore_throat_disorder_7f11dfdc ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;\n    chr:hasPerformedDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Nickolas58_Schumm995_unresolved .\n\nex:person_Estela596_Yetta429_Grant908_d3ecce59 a chr:Person ;\n    rdfs:label \"Estela596 Yetta429 Grant908\" .\n\nex:person_Nickolas58_Schumm995_unresolved a chr:Person ;\n    rdfs:label \"Dr. Nickolas58 Schumm995\" .\n\n",
+ "conforms": true,
+ "violations": "",
+ "unresolved": [],
+ "segments": [
+  {
+   "id": "chr:CareUnit",
+   "concepts": [
+    "chr:CareUnit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cu1 CareUnit \"ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careunit_ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_B_5492ed90 a chr:CareUnit ;\n    rdfs:label \"ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\" .\n",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalCondition",
+   "concepts": [
+    "chr:ClinicalCondition"
+   ],
+   "text": "Dr. Nickolas58 Schumm995 evaluated the patient on 2007-05-07T03:35:54+02:00. The evaluation produced a diagnostic statement of Streptococcal sore throat (disorder) (SNOMED: 43878008). The condition was recorded on 2007-05-07T03:35:54+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cc1 ClinicalCondition \"Streptococcal sore throat\" hasCode=<http://snomed.info/id/43878008>; hasRecordDate=2007-05-07T03:35:54+02:00",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalcondition_Streptococcal_sore_throat_c5ccaf92 a chr:ClinicalCondition ;\n    rdfs:label \"Streptococcal sore throat\" ;\n    chr:hasCode <http://snomed.info/id/43878008> ;\n    chr:hasRecordDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime .\n",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:DiagnosticStatement",
+   "concepts": [
+    "chr:DiagnosticStatement"
+   ],
+   "text": "Dr. Nickolas58 Schumm995 evaluated the patient on 2007-05-07T03:35:54+02:00. The evaluation produced a diagnostic statement of Streptococcal sore throat (disorder) (SNOMED: 43878008). The condition was recorded on 2007-05-07T03:35:54+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ds1 DiagnosticStatement \"Streptococcal sore throat (disorder)\" hasCode=<http://snomed.info/id/43878008>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:diagnosticstatement_Streptococcal_sore_throat_disorder_7f11dfdc a chr:DiagnosticStatement ;\n    rdfs:label \"Streptococcal sore throat (disorder)\" ;\n    chr:hasCode <http://snomed.info/id/43878008> .\n",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Measurement",
+   "concepts": [
+    "chr:Measurement"
+   ],
+   "text": "On 2007-05-07T03:35:54+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 38.234 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "m1 Measurement \"Body temperature\" hasCode=<https://loinc.org/8310-5>; hasMeasuredDate=2007-05-07T03:35:54+02:00; hasQuantityValue=38.234; hasUnit=u1\nu1 Unit \"Cel\" hasCode=<https://biomedit.ch/rdf/sphn-resource/ucum/Cel>",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurement_Body_temperature_382b0966 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"38.234\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_b876d74d .\n\nex:unit_Cel_b876d74d a chr:Unit ;\n    rdfs:label \"Cel\" ;\n    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/Cel> .\n",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:Person",
+   "concepts": [
+    "chr:Person"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "p1 Person \"Estela596 Yetta429 Grant908\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:person_Estela596_Yetta429_Grant908_d3ecce59 a chr:Person ;\n    rdfs:label \"Estela596 Yetta429 Grant908\" .\n",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ProcessStatus",
+   "concepts": [
+    "chr:ProcessStatus"
+   ],
+   "text": "On 2007-05-07T03:35:54+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 38.234 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "ps1 ProcessStatus \"completed\"",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:processstatus_completed_a853d69f a chr:ProcessStatus ;\n    rdfs:label \"completed\" .\n",
+   "level": 0,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:EvaluationProcess",
+   "concepts": [
+    "chr:EvaluationProcess"
+   ],
+   "text": "Dr. Nickolas58 Schumm995 evaluated the patient on 2007-05-07T03:35:54+02:00. The evaluation produced a diagnostic statement of Streptococcal sore throat (disorder) (SNOMED: 43878008). The condition was recorded on 2007-05-07T03:35:54+02:00.",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k5 \"Estela596 Yetta429 Grant908\"\n- p1: Object of chr:hasPerformer must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "ep1 EvaluationProcess \"evaluation\" hasCondition=k2; hasObservation=k3; hasPatient=k5; hasPerformedDate=2007-05-07T03:35:54+02:00; hasPerformer=k5\n# UNRESOLVED: hasPerformer must be a Person \u2014 the text names Dr. Nickolas58 Schumm995, but no Person entity for him exists in the KNOWN ENTITIES or text.",
+   "scope_dropped": 1,
+   "unresolved": [
+    "UNRESOLVED: hasPerformer must be a Person \u2014 the text names Dr. Nickolas58 Schumm995, but no Person entity for him exists in the KNOWN ENTITIES or text."
+   ],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:evaluationprocess_evaluation_5f910d27 a chr:EvaluationProcess ;\n    rdfs:label \"evaluation\" ;\n    chr:hasCondition ex:clinicalcondition_Streptococcal_sore_throat_c5ccaf92 ;\n    chr:hasObservation ex:diagnosticstatement_Streptococcal_sore_throat_disorder_7f11dfdc ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;\n    chr:hasPerformedDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPerformer ex:person_Estela596_Yetta429_Grant908_d3ecce59 .\n\n\n# UNRESOLVED: hasPerformer must be a Person \u2014 the text names Dr. Nickolas58 Schumm995, but no Person entity for him exists in the KNOWN ENTITIES or text.\n",
+   "level": 1,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:MeasurementProcess",
+   "concepts": [
+    "chr:MeasurementProcess"
+   ],
+   "text": "On 2007-05-07T03:35:54+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 38.234 Cel. The measurement process was recorded with status \"completed\".",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "mp1 MeasurementProcess \"Body temperature measurement\" hasPatient=k5; hasPerformedDate=2007-05-07T03:35:54+02:00; hasResult=m1; hasStatus=k6\nm1 Measurement \"Body temperature\" hasCode=<https://loinc.org/8310-5>; hasMeasuredDate=2007-05-07T03:35:54+02:00; hasQuantityValue=38.234; hasUnit=k7",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:measurementprocess_Body_temperature_measurement_f1886cd7 a chr:MeasurementProcess ;\n    rdfs:label \"Body temperature measurement\" ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;\n    chr:hasPerformedDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasResult ex:measurement_Body_temperature_382b0966 ;\n    chr:hasStatus ex:processstatus_completed_a853d69f .\n\nex:measurement_Body_temperature_382b0966 a chr:Measurement ;\n    rdfs:label \"Body temperature\" ;\n    chr:hasCode <https://loinc.org/8310-5> ;\n    chr:hasMeasuredDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasQuantityValue \"38.234\"^^xsd:float ;\n    chr:hasUnit ex:unit_Cel_b876d74d .\n",
+   "level": 1,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:CarePlan",
+   "concepts": [
+    "chr:CarePlan"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\n======================================================================\n\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)\n\nOn 2007-05-07T03:35:54+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 38.234 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Nickolas58 Schumm995 evaluated the patient on 2007-05-07T03:35:54+02:00. The evaluation produced a diagnostic statement of Streptococcal sore throat (disorder) (SNOMED: 43878008). The condition was recorded on 2007-05-07T03:35:54+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": true,
+     "violations": ""
+    }
+   ],
+   "llm_calls": 1,
+   "reply": "cp1 CarePlan \"follow-up monitoring and routine review consistent with the diagnosis\" hasMedicalProcedure=k4",
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sulo: <https://w3id.org/sulo/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:careplan_follow-up_monitoring_and_routine_review__d8a97061 a chr:CarePlan ;\n    rdfs:label \"follow-up monitoring and routine review consistent with the diagnosis\" ;\n    chr:hasMedicalProcedure ex:evaluationprocess_evaluation_5f910d27 .\n",
+   "level": 2,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  },
+  {
+   "id": "chr:ClinicalVisit",
+   "concepts": [
+    "chr:ClinicalVisit"
+   ],
+   "text": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\n======================================================================\n\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)\n\nOn 2007-05-07T03:35:54+02:00, a Body temperature (LOINC: 8310-5) measurement was performed on Estela596 Yetta429 Grant908. The measurement result was 38.234 Cel. The measurement process was recorded with status \"completed\".\n\nDr. Nickolas58 Schumm995 evaluated the patient on 2007-05-07T03:35:54+02:00. The evaluation produced a diagnostic statement of Streptococcal sore throat (disorder) (SNOMED: 43878008). The condition was recorded on 2007-05-07T03:35:54+02:00.\n\nA care plan was established that refers to follow-up monitoring and routine review consistent with the diagnosis.\n",
+   "cycles": [
+    {
+     "cycle": 0,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Estela596 Yetta429 Grant908\"\n- p1: Object of chr:hasCareProvider must be a chr:Person."
+    },
+    {
+     "cycle": 1,
+     "conforms": false,
+     "violations": "- p1 (Person) was removed: individuals of this class were built by earlier agents. Link to the matching KNOWN ENTITY instead of creating one: k7 \"Estela596 Yetta429 Grant908\"\n- p1: Object of chr:hasCareProvider must be a chr:Person."
+    }
+   ],
+   "llm_calls": 2,
+   "reply": "v1 ClinicalVisit \"Encounter for symptom\" hasCareProvider=p1; hasCareUnit=k1; hasDate=2007-05-07T03:35:54+02:00; hasPatient=k7; hasProcedure=k6\np1 Person \"Dr. Nickolas58 Schumm995\"",
+   "scope_dropped": 2,
+   "unresolved": [],
+   "ttl": "@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .\n@prefix ex: <http://example.org/data/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nex:clinicalvisit_Encounter_for_symptom_69cc166a a chr:ClinicalVisit ;\n    rdfs:label \"Encounter for symptom\" ;\n    chr:hasCareProvider ex:person_Dr_Nickolas58_Schumm995_9b752550 ;\n    chr:hasCareUnit ex:careunit_ENCOMPASS_HEALTH_BRAINTREE_HOSPITAL_OF_B_5492ed90 ;\n    chr:hasDate \"2007-05-07T03:35:54+02:00\"^^xsd:dateTime ;\n    chr:hasPatient ex:person_Estela596_Yetta429_Grant908_d3ecce59 ;\n    chr:hasProcedure ex:measurementprocess_Body_temperature_measurement_f1886cd7 .\n\n",
+   "level": 2,
+   "shared_context": "CLINICAL VISIT NOTE \u2014 ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nPatient: Estela596 Yetta429 Grant908 (ID: P-dd0bda6a)\nDate of visit: 2007-05-07T03:35:54+02:00\nCare unit: ENCOMPASS HEALTH BRAINTREE HOSPITAL OF BRAINTREE\nAttending physician: Dr. Nickolas58 Schumm995\nEncounter type: Encounter for symptom (procedure)",
+   "build_order": [
+    [
+     "chr:CareUnit",
+     "chr:ClinicalCondition",
+     "chr:DiagnosticStatement",
+     "chr:Measurement",
+     "chr:Person",
+     "chr:ProcessStatus"
+    ],
+    [
+     "chr:EvaluationProcess",
+     "chr:MeasurementProcess"
+    ],
+    [
+     "chr:CarePlan",
+     "chr:ClinicalVisit"
+    ]
+   ]
+  }
+ ],
+ "llm_calls": 14,
+ "usage": {
+  "orchestrator": {
+   "calls": 2,
+   "prompt_tokens": 5676,
+   "completion_tokens": 1953,
+   "cost": null,
+   "model": "gemma4-g1"
+  },
+  "total": {
+   "calls": 14,
+   "prompt_tokens": 30252,
+   "completion_tokens": 2811,
+   "cost": null,
+   "model": null
+  },
+  "worker": {
+   "calls": 12,
+   "prompt_tokens": 24576,
+   "completion_tokens": 858,
+   "cost": null,
+   "model": "gemma4-g1"
+  }
+ },
+ "error": null
+}

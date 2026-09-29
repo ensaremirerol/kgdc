@@ -1,0 +1,443 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:clinicalvisit_General_examination_of_patient_2ce129b3 a chr:ClinicalVisit ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCareProvider ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasCareUnit ex:careunit_COMMUNITY_HEALTH_PROGRAMS_INC_9df647b4 ;
+    chr:hasDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasProcedure ex:evaluationprocess_General_examination_of_patient_0ca9f197,
+        ex:measurementprocess_Body_Height_measurement_e8b7daea,
+        ex:measurementprocess_Body_Weight_measurement_968cebd7,
+        ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_a83aad37,
+        ex:measurementprocess_Erythrocyte_DistWidth_in_Blood_by_Automa_77fd6216,
+        ex:measurementprocess_Erythrocytes_volume_in_Blood_by_Automate_652ddfeb,
+        ex:measurementprocess_Generalized_anxiety_disorder_7_item_GAD-_fcc0fcac,
+        ex:measurementprocess_Heart_rate_measurement_0d83a5e5,
+        ex:measurementprocess_Hematocrit_Volume_Fraction_of_Blood_by_A_f4a032a6,
+        ex:measurementprocess_Hemoglobin_Mass_volume_in_Blood_measurem_d97f8d9d,
+        ex:measurementprocess_Leukocytes_volume_in_Blood_by_Automated__9e323a9f,
+        ex:measurementprocess_MCHC_Entitic_Mass_volume_in_Red_Blood_Ce_42f91a04,
+        ex:measurementprocess_MCH_Entitic_mass_by_Automated_count_meas_d0c314d1,
+        ex:measurementprocess_MCV_Entitic_mean_volume_in_Red_Blood_Cel_fa1cfef9,
+        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_ef5f80c0,
+        ex:measurementprocess_Patient_Health_Questionnaire_2_item_PHQ-_89ff16ca,
+        ex:measurementprocess_Platelet_Entitic_mean_volume_in_Blood_by_cc298a27,
+        ex:measurementprocess_Platelet_distribution_width_Entitic_volu_c299536b,
+        ex:measurementprocess_Platelets_volume_in_Blood_by_Automated_c_bfe72d15,
+        ex:measurementprocess_Respiratory_rate_measurement_2ff76864,
+        ex:measurementprocess_Total_score_DAST-10_3b6663bf,
+        ex:measurementprocess_Total_score_HARK_7bf0cbe4 .
+
+ex:evaluationprocess_General_examination_of_patient_cead9413 a chr:EvaluationProcess ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCondition ex:clinicalcondition_Medication_review_due_situation_832e313a ;
+    chr:hasObservation ex:diagnosticstatement_Medication_review_due_situation_9b9831fe ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 .
+
+ex:severity_Pain_severity_-_0-10_verbal_numeric_rati_88c27837 a chr:Severity ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> .
+
+ex:careunit_COMMUNITY_HEALTH_PROGRAMS_INC_9df647b4 a chr:CareUnit ;
+    rdfs:label "COMMUNITY HEALTH PROGRAMS INC" .
+
+ex:clinicalcondition_Gingivitis_disorder_fbc85511 a chr:ClinicalCondition ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> ;
+    chr:hasRecordDate "2025-10-25T13:19:56+02:00"^^xsd:dateTime .
+
+ex:clinicalcondition_Medication_review_due_situation_832e313a a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Gingivitis_disorder_5fe13758 a chr:DiagnosticStatement ;
+    rdfs:label "Gingivitis (disorder)" ;
+    chr:hasCode <http://snomed.info/id/66383009> .
+
+ex:diagnosticstatement_Medication_review_due_situation_9b9831fe a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:evaluationprocess_General_examination_of_patient_0ca9f197 a chr:EvaluationProcess ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCondition ex:clinicalcondition_Gingivitis_disorder_fbc85511 ;
+    chr:hasObservation ex:diagnosticstatement_Gingivitis_disorder_5fe13758 ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T13:19:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 .
+
+ex:measurement_Body_Height_09004c85 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "177.4"^^xsd:float ;
+    chr:hasUnit ex:unit_cm_bfcc7879 .
+
+ex:measurement_Body_Weight_ce781593 a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "69.3"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_5c233fc2 .
+
+ex:measurement_Body_mass_index_BMI_Ratio_bb393609 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "22.02"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_m2_e4e558a3 .
+
+ex:measurement_Erythrocyte_DistWidth_in_Blood_by_Automa_1afc679e a chr:Measurement ;
+    rdfs:label "Erythrocyte [DistWidth] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/788-0> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "41.776"^^xsd:float ;
+    chr:hasUnit ex:unit_fL_c8fa0591 .
+
+ex:measurement_Erythrocytes_volume_in_Blood_by_Automate_64a2172e a chr:Measurement ;
+    rdfs:label "Erythrocytes [#/volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/789-8> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "4008500.0"^^xsd:float ;
+    chr:hasUnit ex:unit_uL_658fa75b .
+
+ex:measurement_Generalized_anxiety_disorder_7_item_GAD-_78d533c7 a chr:Measurement ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]" ;
+    chr:hasCode <https://loinc.org/70274-6> ;
+    chr:hasMeasuredDate "2025-10-25T11:23:40+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Heart_rate_567eb7c4 a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "72.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Hematocrit_Volume_Fraction_of_Blood_by_A_cb6dcd4a a chr:Measurement ;
+    rdfs:label "Hematocrit [Volume Fraction] of Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/4544-3> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "45.3"^^xsd:float ;
+    chr:hasUnit ex:unit_x_5f053d39 .
+
+ex:measurement_Hemoglobin_Mass_volume_in_Blood_eca7c2ce a chr:Measurement ;
+    rdfs:label "Hemoglobin [Mass/volume] in Blood" ;
+    chr:hasCode <https://loinc.org/718-7> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "16.569"^^xsd:float ;
+    chr:hasUnit ex:unit_g_dL_f0f2f692 .
+
+ex:measurement_Leukocytes_volume_in_Blood_by_Automated__96abc210 a chr:Measurement ;
+    rdfs:label "Leukocytes [#/volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/6690-2> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "6858.4"^^xsd:float ;
+    chr:hasUnit ex:unit_uL_658fa75b .
+
+ex:measurement_MCHC_Entitic_Mass_volume_in_Red_Blood_Ce_17bc1b3a a chr:Measurement ;
+    rdfs:label "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count" ;
+    chr:hasCode <https://loinc.org/786-4> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "33.04"^^xsd:float ;
+    chr:hasUnit ex:unit_g_dL_f0f2f692 .
+
+ex:measurement_MCH_Entitic_mass_by_Automated_count_938d91e6 a chr:Measurement ;
+    rdfs:label "MCH [Entitic mass] by Automated count" ;
+    chr:hasCode <https://loinc.org/785-6> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "32.865"^^xsd:float ;
+    chr:hasUnit ex:unit_pg_88a65d7b .
+
+ex:measurement_MCV_Entitic_mean_volume_in_Red_Blood_Cel_f2ddce18 a chr:Measurement ;
+    rdfs:label "MCV [Entitic mean volume] in Red Blood Cells by Automated count" ;
+    chr:hasCode <https://loinc.org/787-2> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "84.47"^^xsd:float ;
+    chr:hasUnit ex:unit_fL_c8fa0591 .
+
+ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_96f50a41 a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_3dd6b443 a chr:Measurement ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasCode <https://loinc.org/55758-7> ;
+    chr:hasMeasuredDate "2025-10-25T12:42:24+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Platelet_Entitic_mean_volume_in_Blood_by_efe7555d a chr:Measurement ;
+    rdfs:label "Platelet [Entitic mean volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/32623-1> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "9.4204"^^xsd:float ;
+    chr:hasUnit ex:unit_fL_c8fa0591 .
+
+ex:measurement_Platelet_distribution_width_Entitic_volu_20a95042 a chr:Measurement ;
+    rdfs:label "Platelet distribution width [Entitic volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/32207-3> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "295.16"^^xsd:float ;
+    chr:hasUnit ex:unit_fL_c8fa0591 .
+
+ex:measurement_Platelets_volume_in_Blood_by_Automated_c_86b7840d a chr:Measurement ;
+    rdfs:label "Platelets [#/volume] in Blood by Automated count" ;
+    chr:hasCode <https://loinc.org/777-3> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "188.09"^^xsd:float ;
+    chr:hasUnit ex:unit_10_3_uL_9f5749a3 .
+
+ex:measurement_Respiratory_rate_7ee82127 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "14.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Total_score_DAST-10_163153ef a chr:Measurement ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasCode <https://loinc.org/82667-7> ;
+    chr:hasMeasuredDate "2025-10-25T13:19:56+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Total_score_HARK_07ab0f77 a chr:Measurement ;
+    rdfs:label "Total score [HARK]" ;
+    chr:hasCode <https://loinc.org/76504-0> ;
+    chr:hasMeasuredDate "2025-10-25T12:02:59+02:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurementprocess_Body_Height_measurement_e8b7daea a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Body_Height_09004c85 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_Weight_measurement_968cebd7 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Body_Weight_ce781593 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_a83aad37 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_bb393609 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Erythrocyte_DistWidth_in_Blood_by_Automa_77fd6216 a chr:MeasurementProcess ;
+    rdfs:label "Erythrocyte [DistWidth] in Blood by Automated count" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Erythrocyte_DistWidth_in_Blood_by_Automa_1afc679e ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Erythrocytes_volume_in_Blood_by_Automate_652ddfeb a chr:MeasurementProcess ;
+    rdfs:label "Erythrocytes [#/volume] in Blood by Automated count measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Erythrocytes_volume_in_Blood_by_Automate_64a2172e ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Generalized_anxiety_disorder_7_item_GAD-_fcc0fcac a chr:MeasurementProcess ;
+    rdfs:label "Generalized anxiety disorder 7 item (GAD-7) total score [Reported.PHQ]" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T11:23:40+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Generalized_anxiety_disorder_7_item_GAD-_78d533c7 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Heart_rate_measurement_0d83a5e5 a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Heart_rate_567eb7c4 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Hematocrit_Volume_Fraction_of_Blood_by_A_f4a032a6 a chr:MeasurementProcess ;
+    rdfs:label "Hematocrit [Volume Fraction] of Blood by Automated count measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Hematocrit_Volume_Fraction_of_Blood_by_A_cb6dcd4a ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Hemoglobin_Mass_volume_in_Blood_measurem_d97f8d9d a chr:MeasurementProcess ;
+    rdfs:label "Hemoglobin [Mass/volume] in Blood measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Hemoglobin_Mass_volume_in_Blood_eca7c2ce ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Leukocytes_volume_in_Blood_by_Automated__9e323a9f a chr:MeasurementProcess ;
+    rdfs:label "Leukocytes [#/volume] in Blood by Automated count measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Leukocytes_volume_in_Blood_by_Automated__96abc210 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_MCHC_Entitic_Mass_volume_in_Red_Blood_Ce_42f91a04 a chr:MeasurementProcess ;
+    rdfs:label "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_MCHC_Entitic_Mass_volume_in_Red_Blood_Ce_17bc1b3a ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_MCH_Entitic_mass_by_Automated_count_meas_d0c314d1 a chr:MeasurementProcess ;
+    rdfs:label "MCH [Entitic mass] by Automated count measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_MCH_Entitic_mass_by_Automated_count_938d91e6 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_MCV_Entitic_mean_volume_in_Red_Blood_Cel_fa1cfef9 a chr:MeasurementProcess ;
+    rdfs:label "MCV [Entitic mean volume] in Red Blood Cells by Automated count measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_MCV_Entitic_mean_volume_in_Red_Blood_Cel_f2ddce18 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_ef5f80c0 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_96f50a41 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Patient_Health_Questionnaire_2_item_PHQ-_89ff16ca a chr:MeasurementProcess ;
+    rdfs:label "Patient Health Questionnaire 2 item (PHQ-2) total score [Reported]" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T12:42:24+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Patient_Health_Questionnaire_2_item_PHQ-_3dd6b443 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Platelet_Entitic_mean_volume_in_Blood_by_cc298a27 a chr:MeasurementProcess ;
+    rdfs:label "Platelet [Entitic mean volume] in Blood by Automated count" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Platelet_Entitic_mean_volume_in_Blood_by_efe7555d ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Platelet_distribution_width_Entitic_volu_c299536b a chr:MeasurementProcess ;
+    rdfs:label "Platelet distribution width [Entitic volume] in Blood by Automated count" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Platelet_distribution_width_Entitic_volu_20a95042 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Platelets_volume_in_Blood_by_Automated_c_bfe72d15 a chr:MeasurementProcess ;
+    rdfs:label "Platelets [#/volume] in Blood by Automated count" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Platelets_volume_in_Blood_by_Automated_c_86b7840d ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Respiratory_rate_measurement_2ff76864 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T10:01:15+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Respiratory_rate_7ee82127 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Total_score_DAST-10_3b6663bf a chr:MeasurementProcess ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T13:19:56+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Total_score_DAST-10_163153ef ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Total_score_HARK_7bf0cbe4 a chr:MeasurementProcess ;
+    rdfs:label "Total score [HARK]" ;
+    chr:hasPatient ex:person_Daren950_Ed239_Strosin214_6aa3c602 ;
+    chr:hasPerformedDate "2025-10-25T12:02:59+02:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Ping698_Weissnat378_81da0e68 ;
+    chr:hasResult ex:measurement_Total_score_HARK_07ab0f77 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:unit_10_3_uL_9f5749a3 a chr:Unit ;
+    rdfs:label "10*3/uL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/10exp3peruL> .
+
+ex:unit_cm_bfcc7879 a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg_5c233fc2 a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kg_m2_e4e558a3 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_pg_88a65d7b a chr:Unit ;
+    rdfs:label "pg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/pg> .
+
+ex:unit_x_5f053d39 a chr:Unit ;
+    rdfs:label "%" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/percent> .
+
+ex:unit_g_dL_f0f2f692 a chr:Unit ;
+    rdfs:label "g/dL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/gperdL> .
+
+ex:unit_min_753e4226 a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_uL_658fa75b a chr:Unit ;
+    rdfs:label "#/uL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/peruL> .
+
+ex:unit_fL_c8fa0591 a chr:Unit ;
+    rdfs:label "fL" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/fL> .
+
+ex:unit_score_0399f823 a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:person_Daren950_Ed239_Strosin214_6aa3c602 a chr:Person ;
+    rdfs:label "Daren950 Ed239 Strosin214" .
+
+ex:person_Dr_Ping698_Weissnat378_81da0e68 a chr:Person ;
+    rdfs:label "Dr. Ping698 Weissnat378" .
+

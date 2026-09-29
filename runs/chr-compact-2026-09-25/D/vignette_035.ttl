@@ -1,0 +1,231 @@
+@prefix chr: <https://w3id.org/shexmap/resource/ontology-schema/d285f599-dc2e-4bd0-83f3-df21defa8821/> .
+@prefix ex: <http://example.org/data/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:careplan_follow-up_monitoring_and_routine_review__7419b3ac a chr:CarePlan ;
+    rdfs:label "follow-up monitoring and routine review consistent with the diagnosis" ;
+    chr:hasMedicalProcedure ex:evaluationprocess_General_examination_of_patient_300648c8 .
+
+ex:clinicalvisit_General_examination_of_patient_39bc31be a chr:ClinicalVisit ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCareProvider ex:person_Dr_Eldridge510_Marquardt819_abc123 ;
+    chr:hasCareUnit ex:careunit_JEWISH_FAMILY_CHILDREN_S_SERVICE_cabd2654 ;
+    chr:hasDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasProcedure ex:evaluationprocess_General_examination_of_patient_300648c8,
+        ex:measurementprocess_Body_Height_measurement_f796fba2,
+        ex:measurementprocess_Body_Weight_measurement_04fdf6b7,
+        ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_f96ba0b6,
+        ex:measurementprocess_Fall_risk_total_Morse_Fall_Scale_measure_6c448733,
+        ex:measurementprocess_Heart_rate_measurement_ceaf9c6d,
+        ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_82dd4fe5,
+        ex:measurementprocess_Respiratory_rate_measurement_2118e627,
+        ex:measurementprocess_Total_score_DAST-10_measurement_599835a8,
+        ex:measurementprocess_Total_score_HARK_measurement_ed1dfe22 .
+
+ex:evaluationprocess_Part-time_employment_finding_8889bf7f a chr:EvaluationProcess ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCondition ex:clinicalcondition_Part-time_employment_finding_fc4201a3 ;
+    chr:hasObservation ex:diagnosticstatement_Part-time_employment_finding_95bdcbac ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2023-11-02T18:56:54+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_abc123 .
+
+ex:careunit_JEWISH_FAMILY_CHILDREN_S_SERVICE_cabd2654 a chr:CareUnit ;
+    rdfs:label "JEWISH FAMILY & CHILDREN'S SERVICE" .
+
+ex:clinicalcondition_Medication_review_due_situation_8fc53b5e a chr:ClinicalCondition ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> ;
+    chr:hasRecordDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime .
+
+ex:clinicalcondition_Part-time_employment_finding_fc4201a3 a chr:ClinicalCondition ;
+    rdfs:label "Part-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160904001> ;
+    chr:hasRecordDate "2023-11-02T18:56:54+01:00"^^xsd:dateTime .
+
+ex:diagnosticstatement_Medication_review_due_situation_9b9831fe a chr:DiagnosticStatement ;
+    rdfs:label "Medication review due (situation)" ;
+    chr:hasCode <http://snomed.info/id/314529007> .
+
+ex:diagnosticstatement_Part-time_employment_finding_95bdcbac a chr:DiagnosticStatement ;
+    rdfs:label "Part-time employment (finding)" ;
+    chr:hasCode <http://snomed.info/id/160904001> .
+
+ex:measurement_Body_Height_19a8c2e7 a chr:Measurement ;
+    rdfs:label "Body Height" ;
+    chr:hasCode <https://loinc.org/8302-2> ;
+    chr:hasMeasuredDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "172.7"^^xsd:float ;
+    chr:hasUnit ex:unit_cm_bfcc7879 .
+
+ex:measurement_Body_Weight_e62cb20f a chr:Measurement ;
+    rdfs:label "Body Weight" ;
+    chr:hasCode <https://loinc.org/29463-7> ;
+    chr:hasMeasuredDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "82.2"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_5c233fc2 .
+
+ex:measurement_Body_mass_index_BMI_Ratio_40fe2643 a chr:Measurement ;
+    rdfs:label "Body mass index (BMI) [Ratio]" ;
+    chr:hasCode <https://loinc.org/39156-5> ;
+    chr:hasMeasuredDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "27.56"^^xsd:float ;
+    chr:hasUnit ex:unit_kg_m2_e4e558a3 .
+
+ex:measurement_Fall_risk_total_Morse_Fall_Scale_fb1b0370 a chr:Measurement ;
+    rdfs:label "Fall risk total [Morse Fall Scale]" ;
+    chr:hasCode <https://loinc.org/59460-6> ;
+    chr:hasMeasuredDate "2023-11-02T19:24:09+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "1.0"^^xsd:float ;
+    chr:hasUnit ex:unit_x_900c8c93 .
+
+ex:measurement_Heart_rate_e322421d a chr:Measurement ;
+    rdfs:label "Heart rate" ;
+    chr:hasCode <https://loinc.org/8867-4> ;
+    chr:hasMeasuredDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "69.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_c6f2c26d a chr:Measurement ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ;
+    chr:hasCode <https://loinc.org/72514-3> ;
+    chr:hasMeasuredDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "3.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Respiratory_rate_fffb8383 a chr:Measurement ;
+    rdfs:label "Respiratory rate" ;
+    chr:hasCode <https://loinc.org/9279-1> ;
+    chr:hasMeasuredDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "13.0"^^xsd:float ;
+    chr:hasUnit ex:unit_min_753e4226 .
+
+ex:measurement_Total_score_DAST-10_44b35bac a chr:Measurement ;
+    rdfs:label "Total score [DAST-10]" ;
+    chr:hasCode <https://loinc.org/82667-7> ;
+    chr:hasMeasuredDate "2023-11-02T20:39:57+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurement_Total_score_HARK_8980b8c3 a chr:Measurement ;
+    rdfs:label "Total score [HARK]" ;
+    chr:hasCode <https://loinc.org/76504-0> ;
+    chr:hasMeasuredDate "2023-11-02T20:05:46+01:00"^^xsd:dateTime ;
+    chr:hasQuantityValue "0.0"^^xsd:float ;
+    chr:hasUnit ex:unit_score_0399f823 .
+
+ex:measurementprocess_Body_Height_measurement_f796fba2 a chr:MeasurementProcess ;
+    rdfs:label "Body Height measurement" ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_abc123 ;
+    chr:hasResult ex:measurement_Body_Height_19a8c2e7 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_Weight_measurement_04fdf6b7 a chr:MeasurementProcess ;
+    rdfs:label "Body Weight measurement" ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_abc123 ;
+    chr:hasResult ex:measurement_Body_Weight_e62cb20f ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Body_mass_index_BMI_Ratio_measurement_f96ba0b6 a chr:MeasurementProcess ;
+    rdfs:label "Body mass index (BMI) [Ratio] measurement" ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_abc123 ;
+    chr:hasResult ex:measurement_Body_mass_index_BMI_Ratio_40fe2643 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Fall_risk_total_Morse_Fall_Scale_measure_6c448733 a chr:MeasurementProcess ;
+    rdfs:label "Fall risk total [Morse Fall Scale] measurement" ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2023-11-02T19:24:09+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_abc123 ;
+    chr:hasResult ex:measurement_Fall_risk_total_Morse_Fall_Scale_fb1b0370 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Heart_rate_measurement_ceaf9c6d a chr:MeasurementProcess ;
+    rdfs:label "Heart rate measurement" ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_abc123 ;
+    chr:hasResult ex:measurement_Heart_rate_e322421d ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Pain_severity_-_0-10_verbal_numeric_rati_82dd4fe5 a chr:MeasurementProcess ;
+    rdfs:label "Pain severity - 0-10 verbal numeric rating [Score] - Reported measurement" ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_abc123 ;
+    chr:hasResult ex:measurement_Pain_severity_-_0-10_verbal_numeric_rati_c6f2c26d ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Respiratory_rate_measurement_2118e627 a chr:MeasurementProcess ;
+    rdfs:label "Respiratory rate measurement" ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_abc123 ;
+    chr:hasResult ex:measurement_Respiratory_rate_fffb8383 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Total_score_DAST-10_measurement_599835a8 a chr:MeasurementProcess ;
+    rdfs:label "Total score [DAST-10] measurement" ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2023-11-02T20:39:57+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_abc123 ;
+    chr:hasResult ex:measurement_Total_score_DAST-10_44b35bac ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:measurementprocess_Total_score_HARK_measurement_ed1dfe22 a chr:MeasurementProcess ;
+    rdfs:label "Total score [HARK] measurement" ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2023-11-02T20:05:46+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_abc123 ;
+    chr:hasResult ex:measurement_Total_score_HARK_8980b8c3 ;
+    chr:hasStatus ex:processstatus_completed_a853d69f .
+
+ex:unit_cm_bfcc7879 a chr:Unit ;
+    rdfs:label "cm" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cm> .
+
+ex:unit_kg_5c233fc2 a chr:Unit ;
+    rdfs:label "kg" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kg> .
+
+ex:unit_kg_m2_e4e558a3 a chr:Unit ;
+    rdfs:label "kg/m2" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/kgperm2> .
+
+ex:unit_x_900c8c93 a chr:Unit ;
+    rdfs:label "{#}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cbl#cbr> .
+
+ex:evaluationprocess_General_examination_of_patient_300648c8 a chr:EvaluationProcess ;
+    rdfs:label "General examination of patient" ;
+    chr:hasCondition ex:clinicalcondition_Medication_review_due_situation_8fc53b5e ;
+    chr:hasObservation ex:diagnosticstatement_Medication_review_due_situation_9b9831fe ;
+    chr:hasPatient ex:person_Casey401_Elijah719_Parker433_8f53547d ;
+    chr:hasPerformedDate "2023-11-02T17:59:56+01:00"^^xsd:dateTime ;
+    chr:hasPerformer ex:person_Dr_Eldridge510_Marquardt819_abc123 .
+
+ex:unit_min_753e4226 a chr:Unit ;
+    rdfs:label "/min" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/permin> .
+
+ex:unit_score_0399f823 a chr:Unit ;
+    rdfs:label "{score}" ;
+    chr:hasCode <https://biomedit.ch/rdf/sphn-resource/ucum/cblscorecbr> .
+
+ex:processstatus_completed_a853d69f a chr:ProcessStatus ;
+    rdfs:label "completed" .
+
+ex:person_Casey401_Elijah719_Parker433_8f53547d a chr:Person ;
+    rdfs:label "Casey401 Elijah719 Parker433" .
+
+ex:person_Dr_Eldridge510_Marquardt819_abc123 a chr:Person ;
+    rdfs:label "Dr. Eldridge510 Marquardt819" .
+
